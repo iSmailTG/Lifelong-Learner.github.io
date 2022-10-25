@@ -70,9 +70,9 @@ ul.task-list li input[type="checkbox"] {
     }
 
     const options = {
-      valueNames: ['listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      valueNames: ['listing-date','listing-title','listing-author','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
       
-      searchColumns: ["listing-categories"],
+      searchColumns: ["listing-date","listing-title","listing-author","listing-image","listing-description","listing-categories"],
     };
 
     window['quarto-listings'] = window['quarto-listings'] || {};
@@ -151,7 +151,7 @@ ul.task-list li input[type="checkbox"] {
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(0)</span></div></div></div>
+    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(2)</span></div><div class="category" data-category="Deep Learning">Deep Learning <span class="quarto-category-count">(2)</span></div><div class="category" data-category="Fastai">Fastai <span class="quarto-category-count">(2)</span></div><div class="category" data-category="Pytorch">Pytorch <span class="quarto-category-count">(2)</span></div></div></div>
 <!-- main -->
 <main class="content quarto-banner-title-block column-page-left" id="quarto-document-content">
 
@@ -164,7 +164,89 @@ ul.task-list li input[type="checkbox"] {
 
 <div class="quarto-listing quarto-listing-container-default" id="listing-listing">
 <div class="list quarto-listing-default">
+<div class="quarto-post image-right" data-index="0" data-categories="Fastai,Pytorch,Deep Learning" data-listing-date-sort="1666652400000" data-listing-file-modified-sort="1666656524279" data-listing-reading-time-sort="6.92">
+<div class="thumbnail">
+<p><a href="./posts/Fastai_ch1/Chapter1.html"> <img src="./posts/Fastai_ch1/fastbook.jpg" class="thumnail-image"> </a></p>
+</div>
+<div class="body">
+<a href="./posts/Fastai_ch1/Chapter1.html">
+<h3 class="no-anchor listing-title">
+Chapter 1: Deep learning for coders with fastai and pytorch
+</h3>
+<div class="listing-subtitle">
 
+</div>
+</a>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('Fastai'); return false;">
+Fastai
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('Pytorch'); return false;">
+Pytorch
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('Deep Learning'); return false;">
+Deep Learning
+</div>
+</div>
+<a href="./posts/Fastai_ch1/Chapter1.html">
+<div class="listing-description">
+In this notes series I will go through fastai course 2022 and also the book of <em>Deep Learning for Coders with Fastai and PyTorch</em> side by side. The way I build this seires of blog posts does not respect the order of which Jeremy build the course v5, the notebook is more influenced by <strong>The Book</strong> since we need to read it anyway in order to answear the questionnaire at the end of each Lesson.<br>
+Hope you enjoy the Walk!
+</div>
+</a>
+</div>
+<div class="metadata">
+<a href="./posts/Fastai_ch1/Chapter1.html">
+<div class="listing-date">
+Oct 25, 2022
+</div>
+<div class="listing-author">
+Ismail TG
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="1" data-categories="Fastai,Pytorch,Deep Learning" data-listing-date-sort="1666652400000" data-listing-file-modified-sort="1666656526467" data-listing-reading-time-sort="7.835">
+<div class="thumbnail">
+<p><a href="./posts/Fastai_ch1/Ch1_Questionnaire.html"> <img src="./posts/Fastai_ch1/fastai-book-2.jpg" class="thumnail-image"> </a></p>
+</div>
+<div class="body">
+<a href="./posts/Fastai_ch1/Ch1_Questionnaire.html">
+<h3 class="no-anchor listing-title">
+Chapter 1: Questionnaire and Further Research
+</h3>
+<div class="listing-subtitle">
+
+</div>
+</a>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('Fastai'); return false;">
+Fastai
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('Pytorch'); return false;">
+Pytorch
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('Deep Learning'); return false;">
+Deep Learning
+</div>
+</div>
+<a href="./posts/Fastai_ch1/Ch1_Questionnaire.html">
+<div class="listing-description">
+<strong>Do you need these for deep learning?</strong>
+</div>
+</a>
+</div>
+<div class="metadata">
+<a href="./posts/Fastai_ch1/Ch1_Questionnaire.html">
+<div class="listing-date">
+Oct 25, 2022
+</div>
+<div class="listing-author">
+Ismail TG
+</div>
+</a>
+</div>
+</div>
 </div>
 <div class="listing-no-matching d-none">
 No matching items
