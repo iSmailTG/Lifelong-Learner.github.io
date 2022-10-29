@@ -222,13 +222,13 @@ ___<br>
 <p>Q4:<br>
 <strong>What is a list comprehension? Create one now that selects odd numbers from a list and doubles them.</strong><br>
 ___</p>
-<div class="cell" data-execution_count="3">
+<div class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># list with odd and even numbers</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>lisst <span class="op">=</span>  [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">31</span>, <span class="dv">17</span>, <span class="dv">70</span>]</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co"># using list-comprehension to select only odd numbers</span></span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>double_odd <span class="op">=</span> [<span class="dv">2</span><span class="op">*</span>i <span class="cf">for</span> i <span class="kw">in</span> lisst <span class="cf">if</span> i<span class="op">%</span><span class="dv">2</span><span class="op">==</span><span class="dv">1</span>]</span>
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>double_odd</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="3">
+<div class="cell-output cell-output-display" data-execution_count="1">
 <pre><code>[2, 6, 10, 62, 34]</code></pre>
 </div>
 </div>
@@ -246,30 +246,30 @@ ___<br>
 <p>Q9:<br>
 <strong>Create a 3x3 tensor or array containing the numbers from 1 to 9. Double it. Select the bottom right 4 numbers.</strong><br>
 ___</p>
-<div class="cell" data-execution_count="4">
+<div class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> torch</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="cell" data-execution_count="5">
+<div class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>r3_tens <span class="op">=</span> torch.Tensor(<span class="bu">list</span>(<span class="bu">range</span>(<span class="dv">1</span>,<span class="dv">10</span>))).view(<span class="dv">3</span>,<span class="dv">3</span>)</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>r3_tens</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="5">
+<div class="cell-output cell-output-display" data-execution_count="3">
 <pre><code>tensor([[1., 2., 3.],
         [4., 5., 6.],
         [7., 8., 9.]])</code></pre>
 </div>
 </div>
-<div class="cell" data-execution_count="7">
+<div class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>double_tens<span class="op">=</span> <span class="dv">2</span><span class="op">*</span>r3_tens</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>double_tens</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="7">
+<div class="cell-output cell-output-display" data-execution_count="4">
 <pre><code>tensor([[ 2.,  4.,  6.],
         [ 8., 10., 12.],
         [14., 16., 18.]])</code></pre>
 </div>
 </div>
-<div class="cell" data-execution_count="9">
+<div class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>double_tens[<span class="dv">1</span>:, <span class="dv">1</span>:]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="9">
+<div class="cell-output cell-output-display" data-execution_count="5">
 <pre><code>tensor([[10., 12.],
         [16., 18.]])</code></pre>
 </div>
@@ -284,7 +284,129 @@ _____ * Metrics are calculated on validation set, so we have good measure of the
 <p>Q12&amp;13:</p>
 <p><strong>What is SGD?</strong><br>
 <strong>Why does SGD use mini-batches?</strong><br>
-____ * SGD or Stochastic Gradient Descent is an optimization function that help us to update weights and minimize the loss.</p>
+____ * SGD or Stochastic Gradient Descent is an optimization function that help us to update weights and minimize the loss. * SGD updates gradients after each mini batch, otherwise it will take a lot of time if we decide to update the gradients after going through all the dataset, or the model won’t learn much if we decide to updates the gradients after each data point.</p>
+<p>Q14:<br>
+<strong>What are the seven steps in SGD for machine learning?</strong><br>
+___<br>
+* Initialize the parameters * Calculate the predictions * Calculate the loss * Calculate the gradients * Step the weights * Redo the whole process from step 2 * Stop</p>
+<p>Q15:<br>
+<strong>How do we initialize the weights in a model?</strong><br>
+___<br>
+* Usually we initialize weights by picking random values</p>
+<p>Q16:<br>
+<strong>What is “loss”?</strong><br>
+___<br>
+* The loss is function that uses the model in order to optimizes it’s predictions</p>
+<p>Q17:<br>
+<strong>What’s the gradients?</strong><br>
+___<br>
+* The gradients are values that dictate how much should we change the weights in order to minimize the loss</p>
+<p>Q18:<br>
+<strong>Why can’t we always use a high learning rate?</strong><br>
+___<br>
+* Picking a large learning rate will get the loss worse.</p>
+<p>Q19:<br>
+<strong>Do you need to know how to calculate gradients yourself?</strong> ___<br>
+* It’s important to understand the math behind each concept in Deep Learning, but we don’t need to do everything by ourself, we could use frameworks like pytorch and fastai.</p>
+<p>Q20:<br>
+<strong>Why can’t we use accuracy as a loss function?</strong><br>
+___<br>
+* Loss function changes as the weights changes, but the accuracy only changes when the predictions change.</p>
+<p>Q21:<br>
+<strong>Draw the sigmoid function. What is special about its shape?</strong><br>
+___<br>
+* Sigmoid takes an input and return a number always between 0 and 1.</p>
+<div class="cell" data-execution_count="6">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> sigmoid(x): <span class="cf">return</span> <span class="dv">1</span><span class="op">/</span>(<span class="dv">1</span><span class="op">+</span>torch.exp(<span class="op">-</span>x))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-execution_count="7">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> fastbook <span class="im">import</span> <span class="op">*</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> fastai.vision.widgets <span class="im">import</span> <span class="op">*</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-execution_count="8">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>plot_function(torch.sigmoid, title<span class="op">=</span><span class="st">'Sigmoid'</span>, <span class="bu">min</span><span class="op">=-</span><span class="dv">4</span>, <span class="bu">max</span><span class="op">=</span><span class="dv">4</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<p><img src="Questionnaire_files/figure-html/cell-9-output-1.png" class="img-fluid"></p>
+</div>
+</div>
+<p>Q22:<br>
+<strong>What is the difference between a loss function and a metric?</strong><br>
+___<br>
+* Loss is what model uses to optimize the predidictions, while metrics is what we (the ML practitioner) use to understand the performance of the model.</p>
+<p>Q23:<br>
+<strong>What is the function to calculate new weights using a learning rate?</strong><br>
+___<br>
+* The optimizer function</p>
+<p>Q24:<br>
+<strong>What does the <code>DataLoader</code> class do?</strong><br>
+___ * Can be used to iterate through data, create batches, transform data..</p>
+<p>Q25:<br>
+<strong>Write pseudocode showing the basic steps taken in each epoch for SGD.</strong><br>
+____</p>
+<pre><code>
+predictions = linear_model(x)
+loss = mnist_loss(predictions, y)
+loss.backward()
+for parameter in parameters:
+    parameter.data -= parameter.grad.data * learning_rate
+    parameter.grad = None</code></pre>
+<p>Q26:<br>
+<strong>Create a function which, if passed two arguments [1,2,3,4] and ‘abcd’ , returns [(1, ‘a’), (2, ‘b’), (3, ‘c’), (4, ‘d’)] . What is special about that output data structure?</strong><br>
+___</p>
+<ul>
+<li>This kind of datascructure is convinient for machine learning where we need to iterate through dataset.</li>
+</ul>
+<div class="cell" data-execution_count="9">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>inputs <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>]</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>labels <span class="op">=</span> [<span class="st">'a'</span>, <span class="st">'b'</span>, <span class="st">'c'</span>, <span class="st">'d'</span>]</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> data_func(xb, yb):</span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="bu">list</span>(<span class="bu">zip</span>(xb, yb))</span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>data_func(inputs, labels)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="9">
+<pre><code>[(1, 'a'), (2, 'b'), (3, 'c'), (4, 'd')]</code></pre>
+</div>
+</div>
+<p>Q27:<br>
+<strong>What does view in Pytorch do?</strong> ____<br>
+* It changes the shape of the tensor without changing it content.</p>
+<p>Q28:<br>
+<strong>What are the “bias” parameters in a neural network? Why do we need them?</strong><br>
+___<br>
+* Bias allow us to all kind of multiplications without thinking if the inputs are zero in some cases.</p>
+<p>Q29:<br>
+<strong>What does the <code>@</code> operator do in Python?</strong><br>
+___<br>
+* In python <code>@</code> is used to do matrix multiplication.</p>
+<p>Q30:<br>
+<strong>What does the <code>backward</code> method do?</strong><br>
+___ * Backward tells pytorch to calculate the change in the gradients at that point</p>
+<p>Q31:<br>
+<strong>Why do we have to zero the gradients?</strong><br>
+___ * zero gradients tell pytorch to not track the changes in gradients while we updates the weights.</p>
+<p>Q32:<br>
+<strong>What information do we have to pass to <code>Learner</code>?</strong><br>
+___ * things we pass to <code>Learner</code> : - DataLoaders - architecture - loss_func - metrics</p>
+<p>Q33:<br>
+<strong>Show Python or pseudocode for the basic steps of a training loop.</strong><br>
+____</p>
+<pre><code>
+
+    def train_epoch(model, lr, params):
+        for xb,yb in dl:
+            calc_grad(xb, yb, model)
+            for p in params:
+                p.data -= p.grad*lr
+                p.grad.zero_()
+    for i in range(5):
+        train_epoch(model, lr, params)
+
+</code></pre>
+<p>Q34:<br>
+<strong>What is “ReLU”? Draw a plot of it for values from <code>-2</code> to <code>+2</code>.</strong><br>
+___ * ReLU stands from Rectified Linear Unit. This non-linear finction return any negative activations into zero. <img src="q1.png" class="img-fluid" alt="relu"></p>
+<p>Q35:<br>
+<strong>What is an “activation function”?</strong><br>
+___ * An activation function is a non-linear function that takes the outputs activations fron one layer of the neural network as inputs and output it after some kind of computation to another layer o NN.</p>
 
 
 </section>
