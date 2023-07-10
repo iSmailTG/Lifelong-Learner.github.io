@@ -6,10 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Ismail TG">
-<meta name="dcterms.date" content="2022-10-29">
 
-<title>Lifelong-Learner.github.io - Chapter 6: Questionnaire</title>
+<title>Lifelong-Learner.github.io – ma_eda</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -141,41 +139,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     </nav>
 </header>
 <!-- content -->
-<header id="title-block-header" class="quarto-title-block default page-columns page-full">
-  <div class="quarto-title-banner page-columns page-full">
-    <div class="quarto-title column-body">
-      <h1 class="title">Chapter 6: Questionnaire</h1>
-                                <div class="quarto-categories">
-                <div class="quarto-category">Fastai</div>
-                <div class="quarto-category">Pytorch</div>
-                <div class="quarto-category">Pandas</div>
-                <div class="quarto-category">Deep Learning</div>
-              </div>
-                  </div>
-  </div>
-    
-  
-  <div class="quarto-title-meta">
-
-      <div>
-      <div class="quarto-title-meta-heading">Author</div>
-      <div class="quarto-title-meta-contents">
-               <p>Ismail TG </p>
-            </div>
-    </div>
-      
-      <div>
-      <div class="quarto-title-meta-heading">Published</div>
-      <div class="quarto-title-meta-contents">
-        <p class="date">October 29, 2022</p>
-      </div>
-    </div>
-    
-      
-    </div>
-    
-  
-  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
     
@@ -184,28 +148,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 
-
-<p>Q1:<br>
-<strong>How could multi-label classification improve the usability of the bear classifier?</strong></p>
-<pre><code>Multi-label classfication gives the models in production the ability to return 0 prediction if the user inputs an image that doesn't contains any of the classes we trained the model to predict. In the case of bear classification inference, if we upload an image that doesn't contains any bear, our model still predict  a class.</code></pre>
-<p>Q2:<br>
-<strong>How do we encode the dependent variable in a multi-label classification problem?</strong></p>
-<pre><code>In multi-label classification we use One-Hot encoders, which is represented as an list with zeros and ones, where one(s) represent the label of that particular image.</code></pre>
-<p>Q3:<br>
-<strong>How do you access the rows and columns of a DataFrame as if it was a matrix?</strong></p>
-<pre><code>We could use .iloc or loc to access any row or colum of a DataFrame</code></pre>
-<p>Q4:<br>
-<strong>How do you get a column by name from a DataFrame?</strong></p>
-<div class="cell" data-execution_count="1">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" data-execution_count="15">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> fastai.imports <span class="im">import</span> <span class="op">*</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="cell" data-execution_count="2">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>dic <span class="op">=</span> {<span class="st">'col1'</span>:[<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>], <span class="st">'col2'</span>:[<span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>]}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div class="cell" data-execution_count="5">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span>  pd.DataFrame(dic)</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>df</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="5">
+<div class="cell" data-execution_count="16">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_csv(<span class="st">'train.csv'</span>)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>df</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="16">
 <div>
 
 
@@ -213,87 +162,262 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <thead>
 <tr class="header">
 <th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th">col1</th>
-<th data-quarto-table-cell-role="th">col2</th>
+<th data-quarto-table-cell-role="th">id</th>
+<th data-quarto-table-cell-role="th">anchor</th>
+<th data-quarto-table-cell-role="th">target</th>
+<th data-quarto-table-cell-role="th">context</th>
+<th data-quarto-table-cell-role="th">score</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">0</td>
-<td>1</td>
-<td>4</td>
+<td>37d61fd2272659b1</td>
+<td>abatement</td>
+<td>abatement of pollution</td>
+<td>A47</td>
+<td>0.50</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">1</td>
-<td>2</td>
-<td>5</td>
+<td>7b9652b17b68b7a4</td>
+<td>abatement</td>
+<td>act of abating</td>
+<td>A47</td>
+<td>0.75</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">2</td>
-<td>3</td>
-<td>6</td>
+<td>36d72442aefd8232</td>
+<td>abatement</td>
+<td>active catalyst</td>
+<td>A47</td>
+<td>0.25</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>5296b0c19e1ce60e</td>
+<td>abatement</td>
+<td>eliminating process</td>
+<td>A47</td>
+<td>0.50</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>54c1e3b9184cb5b6</td>
+<td>abatement</td>
+<td>forest region</td>
+<td>A47</td>
+<td>0.00</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">36468</td>
+<td>8e1386cbefd7f245</td>
+<td>wood article</td>
+<td>wooden article</td>
+<td>B44</td>
+<td>1.00</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">36469</td>
+<td>42d9e032d1cd3242</td>
+<td>wood article</td>
+<td>wooden box</td>
+<td>B44</td>
+<td>0.50</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">36470</td>
+<td>208654ccb9e14fa3</td>
+<td>wood article</td>
+<td>wooden handle</td>
+<td>B44</td>
+<td>0.50</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">36471</td>
+<td>756ec035e694722b</td>
+<td>wood article</td>
+<td>wooden material</td>
+<td>B44</td>
+<td>0.75</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">36472</td>
+<td>8d135da0b55b8c88</td>
+<td>wood article</td>
+<td>wooden substrate</td>
+<td>B44</td>
+<td>0.50</td>
 </tr>
 </tbody>
 </table>
 
+<p>36473 rows × 5 columns</p>
 </div>
 </div>
 </div>
-<div class="cell" data-execution_count="8">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># access column by name:</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>df.col1</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="8">
-<pre><code>0    1
-1    2
-2    3
-Name: col1, dtype: int64</code></pre>
+<div class="cell" data-execution_count="17">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'section'</span>] <span class="op">=</span> df.context.<span class="bu">str</span>[<span class="dv">0</span>]</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>df.section</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="17">
+<pre><code>0        A
+1        A
+2        A
+3        A
+4        A
+        ..
+36468    B
+36469    B
+36470    B
+36471    B
+36472    B
+Name: section, Length: 36473, dtype: object</code></pre>
 </div>
 </div>
-<div class="cell" data-execution_count="10">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># or this way</span></span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'col2'</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="10">
-<pre><code>0    4
-1    5
-2    6
-Name: col2, dtype: int64</code></pre>
+<div class="cell" data-execution_count="18">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>df[df.score<span class="op">==</span><span class="dv">1</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="18">
+<div>
+
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">id</th>
+<th data-quarto-table-cell-role="th">anchor</th>
+<th data-quarto-table-cell-role="th">target</th>
+<th data-quarto-table-cell-role="th">context</th>
+<th data-quarto-table-cell-role="th">score</th>
+<th data-quarto-table-cell-role="th">section</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">28</td>
+<td>473137168ebf7484</td>
+<td>abatement</td>
+<td>abating</td>
+<td>F24</td>
+<td>1.0</td>
+<td>F</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">158</td>
+<td>621b048d70aa8867</td>
+<td>absorbent properties</td>
+<td>absorbent characteristics</td>
+<td>D01</td>
+<td>1.0</td>
+<td>D</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">161</td>
+<td>bc20a1c961cb073a</td>
+<td>absorbent properties</td>
+<td>absorption properties</td>
+<td>D01</td>
+<td>1.0</td>
+<td>D</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">311</td>
+<td>e955700dffd68624</td>
+<td>acid absorption</td>
+<td>absorption of acid</td>
+<td>B08</td>
+<td>1.0</td>
+<td>B</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">315</td>
+<td>3a09aba546aac675</td>
+<td>acid absorption</td>
+<td>acid absorption</td>
+<td>B08</td>
+<td>1.0</td>
+<td>B</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">36398</td>
+<td>913141526432f1d6</td>
+<td>wiring trough</td>
+<td>wiring troughs</td>
+<td>F16</td>
+<td>1.0</td>
+<td>F</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">36435</td>
+<td>ee0746f2a8ecef97</td>
+<td>wood article</td>
+<td>wood articles</td>
+<td>B05</td>
+<td>1.0</td>
+<td>B</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">36440</td>
+<td>ecaf479135cf0dfd</td>
+<td>wood article</td>
+<td>wooden article</td>
+<td>B05</td>
+<td>1.0</td>
+<td>B</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">36464</td>
+<td>8ceaa2b5c2d56250</td>
+<td>wood article</td>
+<td>wood article</td>
+<td>B44</td>
+<td>1.0</td>
+<td>B</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">36468</td>
+<td>8e1386cbefd7f245</td>
+<td>wood article</td>
+<td>wooden article</td>
+<td>B44</td>
+<td>1.0</td>
+<td>B</td>
+</tr>
+</tbody>
+</table>
+
+<p>1154 rows × 6 columns</p>
 </div>
 </div>
-<p>Q5:<br>
-<strong>What is the difference between a <code>Dataset</code> and <code>DataLoader</code>?</strong></p>
-<pre><code>Dataset could be any collection the return a tuple with dependent and independent variables when we index to it (DataFrame in our case)
-DataLoader is an iterator that provide the stream of mini batch, shuffling the datapoints..</code></pre>
-<p>Q6:<br>
-<strong>What does a <code>Datasets</code> object normally contain?</strong></p>
-<pre><code>Datasets objects contains Training Dataset and Validation Dataset</code></pre>
-<p>Q7:<br>
-<strong>What does a <code>DataLoaders</code> object normally contain?</strong></p>
-<pre><code>Dataloaders contains training DataLoader and Validation DataLoader</code></pre>
-<p>Q8:<br>
-<strong>What does <code>lambda</code> do in Python?</strong></p>
-<pre><code>It provides a shortcut for declaring small anonymous functions</code></pre>
-<p>Q9:<br>
-<strong>What are the methods to customize how the independent and dependent variables are created with the data block API?</strong></p>
-<pre><code>We could use functions to customize how to define the independent and dependent variable, then assign these functions to get_x and get_y </code></pre>
-<p>Q10:<br>
-<strong>Why is softmax not an appropriate output activation function when using a one hot encoded target?</strong></p>
-<pre><code>Softmax pushes the model to pick one class among others, while when using one-hot encoding with multi-label classification we have more the one class per image.</code></pre>
-<p>Q12:<br>
-<strong>What is the difference between <code>nn.BCELoss</code> and <code>nn.BCEWithLogitsLoss</code>?</strong></p>
-<pre><code>nn.BCELoss has no sigmoid while nn.BCEWithLogitsLoss includes sigmoid in it.</code></pre>
-<p>Q13:<br>
-<strong>When is it okay to tune a hyperparameter on the validation set?</strong></p>
-<pre><code>When the results seems to have a smooth curve, what indicates the results change  based on changes to the hyper-parameters.</code></pre>
-<p>Q14:<br>
-<strong>How is <code>y_range</code> implemented in fastai?</strong></p>
-<pre><code>function define the range of our targets. In fastai this function is implemented using the `sigmoid_range`</code></pre>
-<p>Q16:<br>
-<strong>What is a regression problem? What loss function should you use for such a problem?</strong></p>
-<pre><code>Regression problem is where we have to predict a continous value.
-Usually in this kind of problem the mean squared error is used</code></pre>
-<p>Q17:<br>
-<strong>What do you need to do to make sure the fastai library applies the same data augmentation to your input images and your target point coordinates?</strong></p>
-<pre><code>The PointBlock class needs to be passed to the blocks parameter.</code></pre>
+</div>
+<div class="cell" data-execution_count="19">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> torch.utils.data <span class="im">import</span> DataLoader</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> warnings,transformers,logging,torch</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> transformers <span class="im">import</span> TrainingArguments,Trainer</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> transformers <span class="im">import</span> AutoModelForSequenceClassification,AutoTokenizer</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-error">
+<pre><code>ImportError: tokenizers&gt;=0.11.1,!=0.11.3,&lt;0.13 is required for a normal functioning of this module, but found tokenizers==0.13.1.
+Try: pip install transformers -U or pip install -e '.[dev]' if you're working with git main</code></pre>
+</div>
+</div>
 
 
 
