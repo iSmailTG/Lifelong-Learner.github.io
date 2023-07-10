@@ -5,6 +5,8 @@ website:
   title: "Lifelong-Learner.github.io"
   navbar:
     right:
+      - text: "Blog"
+        file: blog.qmd
       - about.qmd
       - icon: github
         href: https://github.com/ismaai008l
