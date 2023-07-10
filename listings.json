@@ -1,9 +1,5 @@
 [
   {
-    "listing": "/blog.html",
-    "items": []
-  },
-  {
     "listing": "/index.html",
     "items": [
       "/posts/Fastai_NLP/MA_eda.html",
