@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.1.251">
+<meta name="generator" content="quarto-1.3.450">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Lifelong-Learner.github.io</title>
+<title>Ismail’s Personal Blog - Lifelong-Learner.github.io</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -17,7 +17,7 @@ div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
   width: 0.8em;
-  margin: 0 0.8em 0.2em -1.6em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
 </style>
@@ -57,7 +57,8 @@ ul.task-list li input[type="checkbox"] {
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
     "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit"
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
   }
 }</script>
 <script>
@@ -90,6 +91,7 @@ ul.task-list li input[type="checkbox"] {
   })
   </script>
 
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <link rel="stylesheet" href="styles.css">
@@ -103,29 +105,36 @@ ul.task-list li input[type="checkbox"] {
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container">
     <a class="navbar-brand" href="./index.html">
-    <span class="navbar-title">Lifelong-Learner.github.io</span>
+    <span class="navbar-title">Ismail’s Personal Blog</span>
     </a>
   </div>
+            <div id="quarto-search" class="" title="Search"></div>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./about.html">About</a>
+    <a class="nav-link" href="./blog.html" rel="" target="">
+ <span class="menu-text">Blog</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./about.html" rel="" target="">
+ <span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="https://github.com/ismaai008l"><i class="bi bi-github" role="img">
+    <a class="nav-link" href="https://github.com/ismaai008l" rel="" target=""><i class="bi bi-github" role="img">
 </i> 
- </a>
+ <span class="menu-text"></span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="https://twitter.com/ismailTG3"><i class="bi bi-twitter" role="img">
+    <a class="nav-link" href="https://twitter.com/ismailTG3" rel="" target=""><i class="bi bi-twitter" role="img">
 </i> 
- </a>
+ <span class="menu-text"></span></a>
   </li>  
 </ul>
-              <div id="quarto-search" class="" title="Search"></div>
+            <div class="quarto-navbar-tools">
+</div>
           </div> <!-- /navcollapse -->
       </div> <!-- /container-fluid -->
     </nav>
@@ -142,6 +151,7 @@ ul.task-list li input[type="checkbox"] {
   <div class="quarto-title-meta">
 
       
+    
       
     </div>
     
@@ -151,7 +161,7 @@ ul.task-list li input[type="checkbox"] {
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(12)</span></div><div class="category" data-category="Deep Learning">Deep Learning <span class="quarto-category-count">(12)</span></div><div class="category" data-category="Fastai">Fastai <span class="quarto-category-count">(12)</span></div><div class="category" data-category="Gradio">Gradio <span class="quarto-category-count">(2)</span></div><div class="category" data-category="HugginFace">HugginFace <span class="quarto-category-count">(2)</span></div><div class="category" data-category="Numpy">Numpy <span class="quarto-category-count">(3)</span></div><div class="category" data-category="Pandas">Pandas <span class="quarto-category-count">(3)</span></div><div class="category" data-category="Pytorch">Pytorch <span class="quarto-category-count">(12)</span></div></div></div>
+    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(13)</span></div><div class="category" data-category="Deep Learning">Deep Learning <span class="quarto-category-count">(12)</span></div><div class="category" data-category="Fastai">Fastai <span class="quarto-category-count">(12)</span></div><div class="category" data-category="Gradio">Gradio <span class="quarto-category-count">(2)</span></div><div class="category" data-category="HugginFace">HugginFace <span class="quarto-category-count">(2)</span></div><div class="category" data-category="Numpy">Numpy <span class="quarto-category-count">(3)</span></div><div class="category" data-category="Pandas">Pandas <span class="quarto-category-count">(3)</span></div><div class="category" data-category="Pytorch">Pytorch <span class="quarto-category-count">(12)</span></div></div></div>
 <!-- main -->
 <main class="content quarto-banner-title-block column-page-left" id="quarto-document-content">
 
@@ -164,9 +174,29 @@ ul.task-list li input[type="checkbox"] {
 
 <div class="quarto-listing quarto-listing-container-default" id="listing-listing">
 <div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="Fastai,Pytorch,Deep Learning" data-listing-date-sort="1667170800000" data-listing-file-modified-sort="1667176646902" data-listing-reading-time-sort="1.975">
+<div class="quarto-post image-right" data-index="0" data-listing-file-modified-sort="1695692433541" data-listing-reading-time-sort="0">
 <div class="thumbnail">
-<p><a href="./posts/Fastai_ch7/Questionnaire.html"> <img src="./posts/Fastai_ch7/fastai-book-2.jpg" class="thumnail-image"> </a></p>
+<p><a href="./posts/Fastai_NLP/MA_eda.html"> <div class="listing-item-img-placeholder card-img-top" >&nbsp;</div> </a></p>
+</div>
+<div class="body">
+<a href="./posts/Fastai_NLP/MA_eda.html">
+<h3 class="no-anchor listing-title">
+</h3>
+<div class="listing-subtitle">
+
+</div>
+<div class="listing-description">
+36473 rows × 5 columns
+</div>
+</a>
+</div>
+<div class="metadata">
+<a href="./posts/Fastai_NLP/MA_eda.html"> </a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="1" data-categories="Fastai,Pytorch,Deep Learning" data-listing-date-sort="1667170800000" data-listing-file-modified-sort="1695692433725" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2">
+<div class="thumbnail">
+<p><a href="./posts/Fastai_ch7/Questionnaire.html"> <img src="./posts/Fastai_ch7/fastai-book-2.jpg" class="thumbnail-image"> </a></p>
 </div>
 <div class="body">
 <a href="./posts/Fastai_ch7/Questionnaire.html">
@@ -192,7 +222,7 @@ Deep Learning
 <div class="listing-description">
 Q1:<br>
 <strong>What is the difference between ImageNet and Imagenette? When is it better to experiment on one versus the other?</strong><br>
-* ImageNet is dataset with 1.3 million images and 1000 gategories, while <code>Imagenette</code> is a dataset that represent a small portion of <code>ImageNet</code> with 10 classes. * For studying/devloping ideas/ prototyping we better use a small dataset.
+* ImageNet…<code></code><code></code>
 </div>
 </a>
 </div>
@@ -207,9 +237,9 @@ Ismail TG
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="1" data-categories="Fastai,Pytorch,Deep Learning" data-listing-date-sort="1667084400000" data-listing-file-modified-sort="1667088273116" data-listing-reading-time-sort="6.425">
+<div class="quarto-post image-right" data-index="2" data-categories="Fastai,Pytorch,Deep Learning" data-listing-date-sort="1667084400000" data-listing-file-modified-sort="1695692433725" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7">
 <div class="thumbnail">
-<p><a href="./posts/Fastai_ch7/Ch7.html"> <img src="./posts/Fastai_ch7/fastbook.jpg" class="thumnail-image"> </a></p>
+<p><a href="./posts/Fastai_ch7/Ch7.html"> <img src="./posts/Fastai_ch7/fastbook.jpg" class="thumbnail-image"> </a></p>
 </div>
 <div class="body">
 <a href="./posts/Fastai_ch7/Ch7.html">
@@ -248,9 +278,53 @@ Ismail TG
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="2" data-categories="Fastai,Pytorch,Pandas,Deep Learning" data-listing-date-sort="1666998000000" data-listing-file-modified-sort="1667083693425" data-listing-reading-time-sort="2.51">
+<div class="quarto-post image-right" data-index="3" data-categories="Fastai,Pytorch,Numpy,Deep Learning" data-listing-date-sort="1666998000000" data-listing-file-modified-sort="1695692433717" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="11">
 <div class="thumbnail">
-<p><a href="./posts/Fastai_ch6/Questionnaire.html"> <img src="./posts/Fastai_ch6/fastai-book-2.jpg" class="thumnail-image"> </a></p>
+<p><a href="./posts/Fastai_ch6/Ch6.html"> <img src="./posts/Fastai_ch6/fastbook.jpg" class="thumbnail-image"> </a></p>
+</div>
+<div class="body">
+<a href="./posts/Fastai_ch6/Ch6.html">
+<h3 class="no-anchor listing-title">
+Chapter 6: Deep learning for coders with fastai and pytorch
+</h3>
+<div class="listing-subtitle">
+
+</div>
+</a>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('Fastai'); return false;">
+Fastai
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('Pytorch'); return false;">
+Pytorch
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('Numpy'); return false;">
+Numpy
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('Deep Learning'); return false;">
+Deep Learning
+</div>
+</div>
+<a href="./posts/Fastai_ch6/Ch6.html">
+<div class="listing-description">
+5011 rows × 3 columns
+</div>
+</a>
+</div>
+<div class="metadata">
+<a href="./posts/Fastai_ch6/Ch6.html">
+<div class="listing-date">
+Oct 29, 2022
+</div>
+<div class="listing-author">
+Ismail TG
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="4" data-categories="Fastai,Pytorch,Pandas,Deep Learning" data-listing-date-sort="1666998000000" data-listing-file-modified-sort="1695692433717" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3">
+<div class="thumbnail">
+<p><a href="./posts/Fastai_ch6/Questionnaire.html"> <img src="./posts/Fastai_ch6/fastai-book-2.jpg" class="thumbnail-image"> </a></p>
 </div>
 <div class="body">
 <a href="./posts/Fastai_ch6/Questionnaire.html">
@@ -293,53 +367,9 @@ Ismail TG
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="3" data-categories="Fastai,Pytorch,Numpy,Deep Learning" data-listing-date-sort="1666998000000" data-listing-file-modified-sort="1667083902556" data-listing-reading-time-sort="10.425">
+<div class="quarto-post image-right" data-index="5" data-categories="Fastai,Pytorch,Deep Learning" data-listing-date-sort="1666998000000" data-listing-file-modified-sort="1695692433677" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5">
 <div class="thumbnail">
-<p><a href="./posts/Fastai_ch6/Ch6.html"> <img src="./posts/Fastai_ch6/fastbook.jpg" class="thumnail-image"> </a></p>
-</div>
-<div class="body">
-<a href="./posts/Fastai_ch6/Ch6.html">
-<h3 class="no-anchor listing-title">
-Chapter 6: Deep learning for coders with fastai and pytorch
-</h3>
-<div class="listing-subtitle">
-
-</div>
-</a>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('Fastai'); return false;">
-Fastai
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('Pytorch'); return false;">
-Pytorch
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('Numpy'); return false;">
-Numpy
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('Deep Learning'); return false;">
-Deep Learning
-</div>
-</div>
-<a href="./posts/Fastai_ch6/Ch6.html">
-<div class="listing-description">
-5011 rows × 3 columns
-</div>
-</a>
-</div>
-<div class="metadata">
-<a href="./posts/Fastai_ch6/Ch6.html">
-<div class="listing-date">
-Oct 29, 2022
-</div>
-<div class="listing-author">
-Ismail TG
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="4" data-categories="Fastai,Pytorch,Deep Learning" data-listing-date-sort="1666998000000" data-listing-file-modified-sort="1667011492504" data-listing-reading-time-sort="4.455">
-<div class="thumbnail">
-<p><a href="./posts/Fastai_ch5/Questionnaire.html"> <img src="./posts/Fastai_ch5/fastai-book-2.jpg" class="thumnail-image"> </a></p>
+<p><a href="./posts/Fastai_ch5/Questionnaire.html"> <img src="./posts/Fastai_ch5/fastai-book-2.jpg" class="thumbnail-image"> </a></p>
 </div>
 <div class="body">
 <a href="./posts/Fastai_ch5/Questionnaire.html">
@@ -366,7 +396,7 @@ Deep Learning
 Q1:<br>
 <strong>Why do we first resize to a large size on the CPU, and then to a smaller size on the GPU?</strong><br>
 ____<br>
-* Reisizing images is done image per image on cpu, while transformation is done one gpu. This method is called presizing: - crop the image and resize it to 460 by 460 first, this operation is done on CPU. - then we do the data augmentation in batches, by cropping a rotated random part of that 460^2 image, and taking the cropped image then resize again to a 224 by 224 image, all this operation are done on batch level, which mean on GPU
+* Reisizing images is done image per image on cpu, while transformation is done one gpu. This method is called presizing: - crop the image and resize it to 460 by 460…
 </div>
 </a>
 </div>
@@ -381,51 +411,9 @@ Ismail TG
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="5" data-categories="Fastai,Pytorch,Deep Learning" data-listing-date-sort="1666738800000" data-listing-file-modified-sort="1667002751640" data-listing-reading-time-sort="6.045">
+<div class="quarto-post image-right" data-index="6" data-categories="Fastai,Pytorch,Numpy,Pandas,Deep Learning" data-listing-date-sort="1666738800000" data-listing-file-modified-sort="1695692433649" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="21">
 <div class="thumbnail">
-<p><a href="./posts/Fastai_ch4/Questionnaire.html"> <img src="./posts/Fastai_ch4/fastai-book-2.jpg" class="thumnail-image"> </a></p>
-</div>
-<div class="body">
-<a href="./posts/Fastai_ch4/Questionnaire.html">
-<h3 class="no-anchor listing-title">
-Chapter 4: Questionnaire
-</h3>
-<div class="listing-subtitle">
-
-</div>
-</a>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('Fastai'); return false;">
-Fastai
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('Pytorch'); return false;">
-Pytorch
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('Deep Learning'); return false;">
-Deep Learning
-</div>
-</div>
-<a href="./posts/Fastai_ch4/Questionnaire.html">
-<div class="listing-description">
-Q1:<br>
-<strong>How is a grayscale image represented on a computer? How about a color image?</strong> ___ * Grayscale image is way of turning an array/tensor to grayscale value on each pixel of that image, the values went from 0 to 256, the darker the pixel the closer to 256.
-</div>
-</a>
-</div>
-<div class="metadata">
-<a href="./posts/Fastai_ch4/Questionnaire.html">
-<div class="listing-date">
-Oct 26, 2022
-</div>
-<div class="listing-author">
-Ismail TG
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="6" data-categories="Fastai,Pytorch,Numpy,Pandas,Deep Learning" data-listing-date-sort="1666738800000" data-listing-file-modified-sort="1666785867023" data-listing-reading-time-sort="20.65">
-<div class="thumbnail">
-<p><a href="./posts/Fastai_ch4/Ch4.html"> <img src="./posts/Fastai_ch4/fastbook.jpg" class="thumnail-image"> </a></p>
+<p><a href="./posts/Fastai_ch4/Ch4.html"> <img src="./posts/Fastai_ch4/fastbook.jpg" class="thumbnail-image"> </a></p>
 </div>
 <div class="body">
 <a href="./posts/Fastai_ch4/Ch4.html">
@@ -455,7 +443,9 @@ Deep Learning
 </div>
 <a href="./posts/Fastai_ch4/Ch4.html">
 <div class="listing-description">
-<img src="Ch4_files/figure-html/cell-10-output-1.png" class="img-fluid">
+<strong>to avoide that we can take 2 approaches:</strong><br>
+* Take the mean of the absolute value of differences, this method called <code>L1</code> norm or <strong>mean absolute difference</strong> .<br>
+* Take the mean of the square of differences (which makes everything positive) and then take the square root (which undoes the…<code></code><strong></strong>
 </div>
 </a>
 </div>
@@ -470,9 +460,51 @@ Ismail TG
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="7" data-categories="Fastai,Pytorch,Numpy,Pandas,Deep Learning" data-listing-date-sort="1666738800000" data-listing-file-modified-sort="1666977933335" data-listing-reading-time-sort="17.985">
+<div class="quarto-post image-right" data-index="7" data-categories="Fastai,Pytorch,Deep Learning" data-listing-date-sort="1666738800000" data-listing-file-modified-sort="1695692433649" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7">
 <div class="thumbnail">
-<p><a href="./posts/Fastai_ch5/Fastai-Ch5.html"> <img src="./posts/Fastai_ch5/fastbook.jpg" class="thumnail-image"> </a></p>
+<p><a href="./posts/Fastai_ch4/Questionnaire.html"> <img src="./posts/Fastai_ch4/fastai-book-2.jpg" class="thumbnail-image"> </a></p>
+</div>
+<div class="body">
+<a href="./posts/Fastai_ch4/Questionnaire.html">
+<h3 class="no-anchor listing-title">
+Chapter 4: Questionnaire
+</h3>
+<div class="listing-subtitle">
+
+</div>
+</a>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('Fastai'); return false;">
+Fastai
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('Pytorch'); return false;">
+Pytorch
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('Deep Learning'); return false;">
+Deep Learning
+</div>
+</div>
+<a href="./posts/Fastai_ch4/Questionnaire.html">
+<div class="listing-description">
+Q1:<br>
+<strong>How is a grayscale image represented on a computer? How about a color image?</strong> ___ * Grayscale image is way of turning an array/tensor to grayscale value on…
+</div>
+</a>
+</div>
+<div class="metadata">
+<a href="./posts/Fastai_ch4/Questionnaire.html">
+<div class="listing-date">
+Oct 26, 2022
+</div>
+<div class="listing-author">
+Ismail TG
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="8" data-categories="Fastai,Pytorch,Numpy,Pandas,Deep Learning" data-listing-date-sort="1666738800000" data-listing-file-modified-sort="1695692433677" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="18">
+<div class="thumbnail">
+<p><a href="./posts/Fastai_ch5/Fastai-Ch5.html"> <img src="./posts/Fastai_ch5/fastbook.jpg" class="thumbnail-image"> </a></p>
 </div>
 <div class="body">
 <a href="./posts/Fastai_ch5/Fastai-Ch5.html">
@@ -502,7 +534,7 @@ Deep Learning
 </div>
 <a href="./posts/Fastai_ch5/Fastai-Ch5.html">
 <div class="listing-description">
-In real world scenarios, the first thing we do is we get in contact with data, usualy at this phase we know nothing about the dataset. We then start to look how to extract the data we want from it, and what the data looks like, and how it is structured.
+In real world scenarios, the first thing we do is we get in contact with…
 </div>
 </a>
 </div>
@@ -517,9 +549,9 @@ Ismail TG
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="8" data-categories="Fastai,Pytorch,HugginFace,Gradio,Deep Learning" data-listing-date-sort="1666652400000" data-listing-file-modified-sort="1666736983946" data-listing-reading-time-sort="3.875">
+<div class="quarto-post image-right" data-index="9" data-categories="Fastai,Pytorch,HugginFace,Gradio,Deep Learning" data-listing-date-sort="1666652400000" data-listing-file-modified-sort="1695692433637" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4">
 <div class="thumbnail">
-<p><a href="./posts/Fastai_ch2/Questionnaire.html"> <img src="./posts/Fastai_ch2/fastai-book-2.jpg" class="thumnail-image"> </a></p>
+<p><a href="./posts/Fastai_ch2/Questionnaire.html"> <img src="./posts/Fastai_ch2/fastai-book-2.jpg" class="thumbnail-image"> </a></p>
 </div>
 <div class="body">
 <a href="./posts/Fastai_ch2/Questionnaire.html">
@@ -551,7 +583,7 @@ Deep Learning
 <div class="listing-description">
 Q1:<br>
 <strong>Provide an example of where the bear classification model might work poorly in production, due to structural or style differences in the training data.</strong><br>
-___ * There is many cases where the <code>bear_classifaction</code> model could produce low results because of low quality of training data: - imbalance dataset: where we have much datapoint of one class way more than other classes, what causes the model to be biased toward one class. - the image used in training are low quality, low resolution.
+___ * There is…<code></code>
 </div>
 </a>
 </div>
@@ -566,9 +598,9 @@ Ismail TG
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="9" data-categories="Fastai,Pytorch,HugginFace,Gradio,Deep Learning" data-listing-date-sort="1666652400000" data-listing-file-modified-sort="1666785900707" data-listing-reading-time-sort="7.565">
+<div class="quarto-post image-right" data-index="10" data-categories="Fastai,Pytorch,HugginFace,Gradio,Deep Learning" data-listing-date-sort="1666652400000" data-listing-file-modified-sort="1695692433637" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="8">
 <div class="thumbnail">
-<p><a href="./posts/Fastai_ch2/2022_09_09_Fastai_Lesson2.html"> <img src="./posts/Fastai_ch2/fastbook.jpg" class="thumnail-image"> </a></p>
+<p><a href="./posts/Fastai_ch2/2022_09_09_Fastai_Lesson2.html"> <img src="./posts/Fastai_ch2/fastbook.jpg" class="thumbnail-image"> </a></p>
 </div>
 <div class="body">
 <a href="./posts/Fastai_ch2/2022_09_09_Fastai_Lesson2.html">
@@ -598,7 +630,8 @@ Deep Learning
 </div>
 <a href="./posts/Fastai_ch2/2022_09_09_Fastai_Lesson2.html">
 <div class="listing-description">
-<img src="1.png" class="img-fluid figure-img">
+In this Chapter we will build a model that can differentiate among 3 types of bears: Grizzly, Black, Teddy-bear.<br>
+Often we can find the data we need for a…<strong></strong><br><strong></strong>
 </div>
 </a>
 </div>
@@ -613,9 +646,9 @@ Ismail TG
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="10" data-categories="Fastai,Pytorch,Deep Learning" data-listing-date-sort="1666652400000" data-listing-file-modified-sort="1666656524279" data-listing-reading-time-sort="6.92">
+<div class="quarto-post image-right" data-index="11" data-categories="Fastai,Pytorch,Deep Learning" data-listing-date-sort="1666652400000" data-listing-file-modified-sort="1695692433593" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7">
 <div class="thumbnail">
-<p><a href="./posts/Fastai_ch1/Chapter1.html"> <img src="./posts/Fastai_ch1/fastbook.jpg" class="thumnail-image"> </a></p>
+<p><a href="./posts/Fastai_ch1/Chapter1.html"> <img src="./posts/Fastai_ch1/fastbook.jpg" class="thumbnail-image"> </a></p>
 </div>
 <div class="body">
 <a href="./posts/Fastai_ch1/Chapter1.html">
@@ -639,8 +672,7 @@ Deep Learning
 </div>
 <a href="./posts/Fastai_ch1/Chapter1.html">
 <div class="listing-description">
-In this notes series I will go through fastai course 2022 and also the book of <em>Deep Learning for Coders with Fastai and PyTorch</em> side by side. The way I build this seires of blog posts does not respect the order of which Jeremy build the course v5, the notebook is more influenced by <strong>The Book</strong> since we need to read it anyway in order to answear the questionnaire at the end of each Lesson.<br>
-Hope you enjoy the Walk!
+In this notes series I will go through fastai course 2022 and also the book of <em>Deep Learning for Coders with Fastai and PyTorch</em> side by side. The way I build this seires of blog posts does not respect the order of which Jeremy build…<strong></strong><br>
 </div>
 </a>
 </div>
@@ -655,9 +687,9 @@ Ismail TG
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="11" data-categories="Fastai,Pytorch,Deep Learning" data-listing-date-sort="1666652400000" data-listing-file-modified-sort="1666656526467" data-listing-reading-time-sort="7.835">
+<div class="quarto-post image-right" data-index="12" data-categories="Fastai,Pytorch,Deep Learning" data-listing-date-sort="1666652400000" data-listing-file-modified-sort="1695692433581" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="8">
 <div class="thumbnail">
-<p><a href="./posts/Fastai_ch1/Ch1_Questionnaire.html"> <img src="./posts/Fastai_ch1/fastai-book-2.jpg" class="thumnail-image"> </a></p>
+<p><a href="./posts/Fastai_ch1/Ch1_Questionnaire.html"> <img src="./posts/Fastai_ch1/fastai-book-2.jpg" class="thumbnail-image"> </a></p>
 </div>
 <div class="body">
 <a href="./posts/Fastai_ch1/Ch1_Questionnaire.html">
@@ -728,9 +760,23 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     icon: icon
   };
   anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
   const clipboard = new window.ClipboardJS('.code-copy-button', {
-    target: function(trigger) {
-      return trigger.previousElementSibling;
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
     }
   });
   clipboard.on('success', function(e) {
@@ -742,7 +788,24 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     button.classList.add('code-copy-button-checked');
     var currentTitle = button.getAttribute("title");
     button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
     setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
       button.setAttribute("title", currentTitle);
       button.classList.remove('code-copy-button-checked');
     }, 1000);
@@ -778,24 +841,128 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return note.innerHTML;
     });
   }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
   var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
   for (var i=0; i<bibliorefs.length; i++) {
     const ref = bibliorefs[i];
-    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
-    tippyHover(ref, function() {
-      var popup = window.document.createElement('div');
-      cites.forEach(function(cite) {
-        var citeDiv = window.document.createElement('div');
-        citeDiv.classList.add('hanging-indent');
-        citeDiv.classList.add('csl-entry');
-        var biblioDiv = window.document.getElementById('ref-' + cite);
-        if (biblioDiv) {
-          citeDiv.innerHTML = biblioDiv.innerHTML;
-        }
-        popup.appendChild(citeDiv);
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
       });
-      return popup.innerHTML;
-    });
+    }
   }
 });
 </script>
