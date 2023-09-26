@@ -2,7 +2,7 @@ project:
   type: website
 
 website:
-  title: "Ismail's Blog"
+  title: "Ismail's Personal Blog"
   navbar:
     right:
       - text: "Blog"
