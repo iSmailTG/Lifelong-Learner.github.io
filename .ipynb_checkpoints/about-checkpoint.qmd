@@ -1,0 +1,19 @@
+---
+title: "About"
+image: profile.jpg
+about:
+  template: jolla
+  links:
+    - icon: twitter
+      text: Twitter
+      href: https://twitter.com/ismailTG3
+    - icon: linkedin
+      text: LinkedIn
+      href: https://linkedin.com
+    - icon: github
+      text: Github
+      href: https://github.com/ismaai008l
+
+---
+
+In this Blog I share my learning journey through machine learning and datascience.
