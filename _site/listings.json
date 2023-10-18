@@ -1,13 +1,10 @@
 [
   {
-    "listing": "/blog.html",
-    "items": []
-  },
-  {
     "listing": "/index.html",
     "items": [
       "/posts/Fastai_NLP/MA_eda.html",
       "/posts/Haystack_1/Haystack_1.html",
+      "/posts/Haystack_2/ch3_haystack.html",
       "/posts/Fastai_ch7/Questionnaire.html",
       "/posts/Fastai_ch7/Ch7.html",
       "/posts/Fastai_ch6/Ch6.html",
@@ -21,5 +18,9 @@
       "/posts/Fastai_ch1/Chapter1.html",
       "/posts/Fastai_ch1/Ch1_Questionnaire.html"
     ]
+  },
+  {
+    "listing": "/blog.html",
+    "items": []
   }
 ]
