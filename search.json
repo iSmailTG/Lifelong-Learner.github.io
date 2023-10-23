@@ -84,13 +84,6 @@
     "text": "Longer sequences:\n\nTransformer model cannot handle very long sentences, usually they have between 512 and 1024 tokens as maximum length for a sentence.\nI we have a situation where we need to deal with very large sequence we either:\n\nuse models that can handle long sentences\nuse truncation method\n\nTruncation is a way of making sequences of the same batch the same length, either by picking the length of the longest sequence or the short one"
   },
   {
-    "objectID": "posts/HuggingFace_2/HuggingFace_NLP_course_Notes_2.html#longer-sequences-1",
-    "href": "posts/HuggingFace_2/HuggingFace_NLP_course_Notes_2.html#longer-sequences-1",
-    "title": "Hugging Face Course Notes: Chapter2",
-    "section": "Longer sequences:",
-    "text": "Longer sequences:\n\nTransformer model cannot handle very long sentences, usually they have between 512 and 1024 tokens as maximum length for a sentence.\nI we have a situation where we need to deal with very large sequence we either:\n\nuse models that can handle long sentences\nuse truncation method\n\nTruncation is a way of making sequences of the same batch the same length, either by picking the length of the longest sequence or the short one"
-  },
-  {
     "objectID": "posts/Fastai_ch5/Questionnaire.html",
     "href": "posts/Fastai_ch5/Questionnaire.html",
     "title": "Chapter 5: Questionnaire",
