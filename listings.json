@@ -1,11 +1,8 @@
 [
   {
-    "listing": "/blog.html",
-    "items": []
-  },
-  {
     "listing": "/index.html",
     "items": [
+      "/posts/Data PreProcessing For NLP Problem/Multi_choice_with_SWAG.html",
       "/posts/HuggingFace_3/HuggungFace_NLP_course_Notes_3.html",
       "/posts/HuggingFace_2/HuggingFace_NLP_course_Notes_2.html",
       "/posts/HuggingFace_1/HuggingFace_NLP_course_Notes.html",
@@ -25,5 +22,9 @@
       "/posts/Fastai_ch1/Chapter1.html",
       "/posts/Fastai_ch1/Ch1_Questionnaire.html"
     ]
+  },
+  {
+    "listing": "/blog.html",
+    "items": []
   }
 ]
