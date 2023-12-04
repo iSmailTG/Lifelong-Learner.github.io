@@ -6,8 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Ismail TG">
+<meta name="dcterms.date" content="2023-11-28">
 
-<title>Ismail’s Personal Blog - Introduction:</title>
+<title>Ismail’s Personal Blog - Multi Choice with Swag Dataset</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -144,14 +146,32 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">Introduction:</h1>
-                      </div>
+      <h1 class="title">Multi Choice with Swag Dataset</h1>
+                                <div class="quarto-categories">
+                <div class="quarto-category">HuggingFace</div>
+                <div class="quarto-category">Pytorch</div>
+                <div class="quarto-category">NLP</div>
+                <div class="quarto-category">Datasets</div>
+              </div>
+                  </div>
   </div>
     
   
   <div class="quarto-title-meta">
 
+      <div>
+      <div class="quarto-title-meta-heading">Author</div>
+      <div class="quarto-title-meta-contents">
+               <p>Ismail TG </p>
+            </div>
+    </div>
       
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">November 28, 2023</p>
+      </div>
+    </div>
     
       
     </div>
@@ -167,77 +187,22 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 
+<section id="introduction" class="level1">
+<h1>Introduction:</h1>
 <ul>
 <li>In this notebook I will try to investigate the <strong><code>SWAG</code></strong> datasets.</li>
 <li>The idea is to understand how to deal with multiple choice datasets and how to prepare them for the next step.</li>
 <li>Multiple choice is frequent problem in the filed of LLMs and NLP in general</li>
 <li>So the preprocessing of data will have a huge effect on the success of any proposed solution</li>
 </ul>
-<div class="cell" data-outputid="02708000-f93c-4a0a-d7e1-3a97b24b16b9" data-execution_count="50">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="op">!</span>pip install transformers</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>Requirement already satisfied: transformers in /usr/local/lib/python3.10/dist-packages (4.35.2)
-Requirement already satisfied: filelock in /usr/local/lib/python3.10/dist-packages (from transformers) (3.13.1)
-Requirement already satisfied: huggingface-hub&lt;1.0,&gt;=0.16.4 in /usr/local/lib/python3.10/dist-packages (from transformers) (0.19.4)
-Requirement already satisfied: numpy&gt;=1.17 in /usr/local/lib/python3.10/dist-packages (from transformers) (1.23.5)
-Requirement already satisfied: packaging&gt;=20.0 in /usr/local/lib/python3.10/dist-packages (from transformers) (23.2)
-Requirement already satisfied: pyyaml&gt;=5.1 in /usr/local/lib/python3.10/dist-packages (from transformers) (6.0.1)
-Requirement already satisfied: regex!=2019.12.17 in /usr/local/lib/python3.10/dist-packages (from transformers) (2023.6.3)
-Requirement already satisfied: requests in /usr/local/lib/python3.10/dist-packages (from transformers) (2.31.0)
-Requirement already satisfied: tokenizers&lt;0.19,&gt;=0.14 in /usr/local/lib/python3.10/dist-packages (from transformers) (0.15.0)
-Requirement already satisfied: safetensors&gt;=0.3.1 in /usr/local/lib/python3.10/dist-packages (from transformers) (0.4.0)
-Requirement already satisfied: tqdm&gt;=4.27 in /usr/local/lib/python3.10/dist-packages (from transformers) (4.66.1)
-Requirement already satisfied: fsspec&gt;=2023.5.0 in /usr/local/lib/python3.10/dist-packages (from huggingface-hub&lt;1.0,&gt;=0.16.4-&gt;transformers) (2023.6.0)
-Requirement already satisfied: typing-extensions&gt;=3.7.4.3 in /usr/local/lib/python3.10/dist-packages (from huggingface-hub&lt;1.0,&gt;=0.16.4-&gt;transformers) (4.5.0)
-Requirement already satisfied: charset-normalizer&lt;4,&gt;=2 in /usr/local/lib/python3.10/dist-packages (from requests-&gt;transformers) (3.3.2)
-Requirement already satisfied: idna&lt;4,&gt;=2.5 in /usr/local/lib/python3.10/dist-packages (from requests-&gt;transformers) (3.4)
-Requirement already satisfied: urllib3&lt;3,&gt;=1.21.1 in /usr/local/lib/python3.10/dist-packages (from requests-&gt;transformers) (2.0.7)
-Requirement already satisfied: certifi&gt;=2017.4.17 in /usr/local/lib/python3.10/dist-packages (from requests-&gt;transformers) (2023.7.22)</code></pre>
-</div>
-</div>
-<div class="cell" data-outputid="2bc21966-52fe-4447-a039-64506a56e843" data-execution_count="52">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="op">!</span>pip install datasets</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>Requirement already satisfied: datasets in /usr/local/lib/python3.10/dist-packages (2.15.0)
-Requirement already satisfied: numpy&gt;=1.17 in /usr/local/lib/python3.10/dist-packages (from datasets) (1.23.5)
-Requirement already satisfied: pyarrow&gt;=8.0.0 in /usr/local/lib/python3.10/dist-packages (from datasets) (9.0.0)
-Requirement already satisfied: pyarrow-hotfix in /usr/local/lib/python3.10/dist-packages (from datasets) (0.6)
-Requirement already satisfied: dill&lt;0.3.8,&gt;=0.3.0 in /usr/local/lib/python3.10/dist-packages (from datasets) (0.3.7)
-Requirement already satisfied: pandas in /usr/local/lib/python3.10/dist-packages (from datasets) (1.5.3)
-Requirement already satisfied: requests&gt;=2.19.0 in /usr/local/lib/python3.10/dist-packages (from datasets) (2.31.0)
-Requirement already satisfied: tqdm&gt;=4.62.1 in /usr/local/lib/python3.10/dist-packages (from datasets) (4.66.1)
-Requirement already satisfied: xxhash in /usr/local/lib/python3.10/dist-packages (from datasets) (3.4.1)
-Requirement already satisfied: multiprocess in /usr/local/lib/python3.10/dist-packages (from datasets) (0.70.15)
-Requirement already satisfied: fsspec[http]&lt;=2023.10.0,&gt;=2023.1.0 in /usr/local/lib/python3.10/dist-packages (from datasets) (2023.6.0)
-Requirement already satisfied: aiohttp in /usr/local/lib/python3.10/dist-packages (from datasets) (3.8.6)
-Requirement already satisfied: huggingface-hub&gt;=0.18.0 in /usr/local/lib/python3.10/dist-packages (from datasets) (0.19.4)
-Requirement already satisfied: packaging in /usr/local/lib/python3.10/dist-packages (from datasets) (23.2)
-Requirement already satisfied: pyyaml&gt;=5.1 in /usr/local/lib/python3.10/dist-packages (from datasets) (6.0.1)
-Requirement already satisfied: attrs&gt;=17.3.0 in /usr/local/lib/python3.10/dist-packages (from aiohttp-&gt;datasets) (23.1.0)
-Requirement already satisfied: charset-normalizer&lt;4.0,&gt;=2.0 in /usr/local/lib/python3.10/dist-packages (from aiohttp-&gt;datasets) (3.3.2)
-Requirement already satisfied: multidict&lt;7.0,&gt;=4.5 in /usr/local/lib/python3.10/dist-packages (from aiohttp-&gt;datasets) (6.0.4)
-Requirement already satisfied: async-timeout&lt;5.0,&gt;=4.0.0a3 in /usr/local/lib/python3.10/dist-packages (from aiohttp-&gt;datasets) (4.0.3)
-Requirement already satisfied: yarl&lt;2.0,&gt;=1.0 in /usr/local/lib/python3.10/dist-packages (from aiohttp-&gt;datasets) (1.9.2)
-Requirement already satisfied: frozenlist&gt;=1.1.1 in /usr/local/lib/python3.10/dist-packages (from aiohttp-&gt;datasets) (1.4.0)
-Requirement already satisfied: aiosignal&gt;=1.1.2 in /usr/local/lib/python3.10/dist-packages (from aiohttp-&gt;datasets) (1.3.1)
-Requirement already satisfied: filelock in /usr/local/lib/python3.10/dist-packages (from huggingface-hub&gt;=0.18.0-&gt;datasets) (3.13.1)
-Requirement already satisfied: typing-extensions&gt;=3.7.4.3 in /usr/local/lib/python3.10/dist-packages (from huggingface-hub&gt;=0.18.0-&gt;datasets) (4.5.0)
-Requirement already satisfied: idna&lt;4,&gt;=2.5 in /usr/local/lib/python3.10/dist-packages (from requests&gt;=2.19.0-&gt;datasets) (3.4)
-Requirement already satisfied: urllib3&lt;3,&gt;=1.21.1 in /usr/local/lib/python3.10/dist-packages (from requests&gt;=2.19.0-&gt;datasets) (2.0.7)
-Requirement already satisfied: certifi&gt;=2017.4.17 in /usr/local/lib/python3.10/dist-packages (from requests&gt;=2.19.0-&gt;datasets) (2023.7.22)
-Requirement already satisfied: python-dateutil&gt;=2.8.1 in /usr/local/lib/python3.10/dist-packages (from pandas-&gt;datasets) (2.8.2)
-Requirement already satisfied: pytz&gt;=2020.1 in /usr/local/lib/python3.10/dist-packages (from pandas-&gt;datasets) (2023.3.post1)
-Requirement already satisfied: six&gt;=1.5 in /usr/local/lib/python3.10/dist-packages (from python-dateutil&gt;=2.8.1-&gt;pandas-&gt;datasets) (1.16.0)</code></pre>
-</div>
-</div>
 <div class="cell" data-execution_count="55">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># load the dataset</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> datasets <span class="im">import</span> load_dataset</span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>dataset <span class="op">=</span> load_dataset(<span class="st">'swag'</span>, <span class="st">'regular'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># load the dataset</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> datasets <span class="im">import</span> load_dataset</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>dataset <span class="op">=</span> load_dataset(<span class="st">'swag'</span>, <span class="st">'regular'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell" data-outputid="77217f90-a443-47cd-aeda-db885317e33a" data-execution_count="56">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># let's grab a sample</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>dataset[<span class="st">'train'</span>][<span class="dv">0</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># let's grab a sample</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>dataset[<span class="st">'train'</span>][<span class="dv">0</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="56">
 <pre><code>{'video-id': 'anetv_jkn6uvmqwh4',
  'fold-ind': '3416',
@@ -263,29 +228,29 @@ Requirement already satisfied: six&gt;=1.5 in /usr/local/lib/python3.10/dist-pac
 <li>Now let’s initialized <code>BERT</code> and load its <code>tokenizer</code>.</li>
 </ul>
 <div class="cell" data-execution_count="58">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> transformers <span class="im">import</span> AutoTokenizer</span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>tokenizer <span class="op">=</span> AutoTokenizer.from_pretrained(<span class="st">'bert-base-uncased'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> transformers <span class="im">import</span> AutoTokenizer</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>tokenizer <span class="op">=</span> AutoTokenizer.from_pretrained(<span class="st">'bert-base-uncased'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <ul>
 <li>The idea here is to tokenize a start sentence with each one of the 4 choices,</li>
 </ul>
 <div class="cell" data-execution_count="59">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>ending_names <span class="op">=</span> [<span class="st">"ending0"</span>, <span class="st">"ending1"</span>, <span class="st">"ending2"</span>, <span class="st">"ending3"</span>]</span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> preprocess_function(examples):</span>
-<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>    first_sentences <span class="op">=</span> [[context] <span class="op">*</span> <span class="dv">4</span> <span class="cf">for</span> context <span class="kw">in</span> examples[<span class="st">"sent1"</span>]]</span>
-<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>    question_headers <span class="op">=</span> examples[<span class="st">"sent2"</span>]</span>
-<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>    second_sentences <span class="op">=</span> [</span>
-<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>        [<span class="ss">f"</span><span class="sc">{</span>header<span class="sc">}</span><span class="ss"> </span><span class="sc">{</span>examples[end][i]<span class="sc">}</span><span class="ss">"</span> <span class="cf">for</span> end <span class="kw">in</span> ending_names]</span>
-<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> i, header <span class="kw">in</span> <span class="bu">enumerate</span>(question_headers)</span>
-<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>    ]</span>
-<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a>    first_sentences <span class="op">=</span> <span class="bu">sum</span>(first_sentences, [])</span>
-<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a>    second_sentences <span class="op">=</span> <span class="bu">sum</span>(second_sentences, [])</span>
-<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a>    tokenized_examples <span class="op">=</span> tokenizer(first_sentences, second_sentences, truncation<span class="op">=</span><span class="va">True</span>)</span>
-<span id="cb9-16"><a href="#cb9-16" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> {k: [v[i : i <span class="op">+</span> <span class="dv">4</span>] <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">0</span>, <span class="bu">len</span>(v), <span class="dv">4</span>)] <span class="cf">for</span> k, v <span class="kw">in</span> tokenized_examples.items()}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>ending_names <span class="op">=</span> [<span class="st">"ending0"</span>, <span class="st">"ending1"</span>, <span class="st">"ending2"</span>, <span class="st">"ending3"</span>]</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> preprocess_function(examples):</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>    first_sentences <span class="op">=</span> [[context] <span class="op">*</span> <span class="dv">4</span> <span class="cf">for</span> context <span class="kw">in</span> examples[<span class="st">"sent1"</span>]]</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>    question_headers <span class="op">=</span> examples[<span class="st">"sent2"</span>]</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>    second_sentences <span class="op">=</span> [</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>        [<span class="ss">f"</span><span class="sc">{</span>header<span class="sc">}</span><span class="ss"> </span><span class="sc">{</span>examples[end][i]<span class="sc">}</span><span class="ss">"</span> <span class="cf">for</span> end <span class="kw">in</span> ending_names]</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> i, header <span class="kw">in</span> <span class="bu">enumerate</span>(question_headers)</span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>    ]</span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>    first_sentences <span class="op">=</span> <span class="bu">sum</span>(first_sentences, [])</span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>    second_sentences <span class="op">=</span> <span class="bu">sum</span>(second_sentences, [])</span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>    tokenized_examples <span class="op">=</span> tokenizer(first_sentences, second_sentences, truncation<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> {k: [v[i : i <span class="op">+</span> <span class="dv">4</span>] <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">0</span>, <span class="bu">len</span>(v), <span class="dv">4</span>)] <span class="cf">for</span> k, v <span class="kw">in</span> tokenized_examples.items()}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <ul>
 <li><p>To understand each operation of that function we will do it step-by-step:</p>
@@ -295,21 +260,21 @@ Requirement already satisfied: six&gt;=1.5 in /usr/local/lib/python3.10/dist-pac
 </ul></li>
 </ul>
 <div class="cell" data-execution_count="60">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>endings <span class="op">=</span> [<span class="st">"ending0"</span>, <span class="st">"ending1"</span>, <span class="st">"ending2"</span>, <span class="st">"ending3"</span>]</span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>train_ds <span class="op">=</span> dataset[<span class="st">'train'</span>]</span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>smp <span class="op">=</span> train_ds[:<span class="dv">20</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>endings <span class="op">=</span> [<span class="st">"ending0"</span>, <span class="st">"ending1"</span>, <span class="st">"ending2"</span>, <span class="st">"ending3"</span>]</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>train_ds <span class="op">=</span> dataset[<span class="st">'train'</span>]</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>smp <span class="op">=</span> train_ds[:<span class="dv">20</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <ul>
 <li>Multiply each <code>sent1</code> by 4 and stack them all in a list:</li>
 </ul>
 <div class="cell" data-execution_count="61">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>sent_1 <span class="op">=</span> [[sent] <span class="op">*</span> <span class="dv">4</span> <span class="cf">for</span> sent <span class="kw">in</span> smp[<span class="st">'sent1'</span>]]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>sent_1 <span class="op">=</span> [[sent] <span class="op">*</span> <span class="dv">4</span> <span class="cf">for</span> sent <span class="kw">in</span> smp[<span class="st">'sent1'</span>]]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <ul>
 <li>Let’s retrieve the length of that list and see what’s inside one element of it.</li>
 </ul>
 <div class="cell" data-outputid="51416942-b830-4a47-e26f-c6453d2f0c1c" data-execution_count="62">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>sent_1[<span class="dv">2</span>], <span class="bu">len</span>(sent_1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>sent_1[<span class="dv">2</span>], <span class="bu">len</span>(sent_1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="62">
 <pre><code>(['A group of members in green uniforms walks waving flags.',
   'A group of members in green uniforms walks waving flags.',
@@ -323,7 +288,7 @@ Requirement already satisfied: six&gt;=1.5 in /usr/local/lib/python3.10/dist-pac
 <li>Now we will create a list of the second-sentence or the header.</li>
 </ul>
 <div class="cell" data-execution_count="63">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>headers <span class="op">=</span> smp[<span class="st">'sent2'</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>headers <span class="op">=</span> smp[<span class="st">'sent2'</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <ul>
 <li>At this point we have:
@@ -334,7 +299,7 @@ Requirement already satisfied: six&gt;=1.5 in /usr/local/lib/python3.10/dist-pac
 <li>The idea here is to create pairs of each <code>header</code> +<code>sent_2</code> for each <code>sent_1</code>.</li>
 </ul>
 <div class="cell" data-execution_count="64">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>sent_2 <span class="op">=</span> [[<span class="ss">f'</span><span class="sc">{</span>head<span class="sc">}{</span>smp[end][i]<span class="sc">}</span><span class="ss">'</span> <span class="cf">for</span> end <span class="kw">in</span> endings] <span class="cf">for</span> i, head <span class="kw">in</span> <span class="bu">enumerate</span>(headers)]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>sent_2 <span class="op">=</span> [[<span class="ss">f'</span><span class="sc">{</span>head<span class="sc">}{</span>smp[end][i]<span class="sc">}</span><span class="ss">'</span> <span class="cf">for</span> end <span class="kw">in</span> endings] <span class="cf">for</span> i, head <span class="kw">in</span> <span class="bu">enumerate</span>(headers)]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -346,15 +311,15 @@ Requirement already satisfied: six&gt;=1.5 in /usr/local/lib/python3.10/dist-pac
 <li>Now we need to <strong>flatten</strong> the pair of sentences, so we could tokenize them:</li>
 </ul>
 <div class="cell" data-execution_count="65">
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>frst_sent <span class="op">=</span> <span class="bu">sum</span>(sent_1, [])</span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>scnd_sent <span class="op">=</span> <span class="bu">sum</span>(sent_2, [])</span>
-<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>tok_smp <span class="op">=</span> tokenizer(frst_sent, scnd_sent, truncation<span class="op">=</span><span class="va">True</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>frst_sent <span class="op">=</span> <span class="bu">sum</span>(sent_1, [])</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>scnd_sent <span class="op">=</span> <span class="bu">sum</span>(sent_2, [])</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>tok_smp <span class="op">=</span> tokenizer(frst_sent, scnd_sent, truncation<span class="op">=</span><span class="va">True</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <ul>
 <li>We tokenize the pair of list sentences which will return a dictionary with 3 keys:</li>
 </ul>
 <div class="cell" data-outputid="a580136c-b58f-42d7-f71c-4a059c5e69a7" data-execution_count="68">
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>tok_smp.keys()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>tok_smp.keys()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="68">
 <pre><code>dict_keys(['input_ids', 'token_type_ids', 'attention_mask'])</code></pre>
 </div>
@@ -363,23 +328,24 @@ Requirement already satisfied: six&gt;=1.5 in /usr/local/lib/python3.10/dist-pac
 <li>But since we already flattend the pairs before the tokenization step, we need to get them unflatten again so we can pass it through the <code>map()</code> function in order to be computed by the model.</li>
 </ul>
 <div class="cell" data-execution_count="69">
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>outputs <span class="op">=</span> {k: [v[i: i <span class="op">+</span> <span class="dv">4</span>] <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">0</span>, <span class="bu">len</span>(v), <span class="dv">4</span>)] <span class="cf">for</span> k, v <span class="kw">in</span> tok_smp.items()}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>outputs <span class="op">=</span> {k: [v[i: i <span class="op">+</span> <span class="dv">4</span>] <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">0</span>, <span class="bu">len</span>(v), <span class="dv">4</span>)] <span class="cf">for</span> k, v <span class="kw">in</span> tok_smp.items()}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <ul>
 <li>Lets check if we get the unflatten step right, we just need to make sure that the <code>input_ids</code> of the first sentence has the same values in both: <code>tok_smp</code> and <code>outputs</code>:</li>
 </ul>
 <div class="cell" data-execution_count="74">
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>flatten_smp <span class="op">=</span> tok_smp[<span class="st">'input_ids'</span>]</span>
-<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>unflatten_smp <span class="op">=</span> outputs[<span class="st">'input_ids'</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>flatten_smp <span class="op">=</span> tok_smp[<span class="st">'input_ids'</span>]</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>unflatten_smp <span class="op">=</span> outputs[<span class="st">'input_ids'</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell" data-outputid="21ff1639-09f6-4aec-bfd3-4a866a21f985" data-execution_count="76">
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>flatten_smp[<span class="dv">0</span>:<span class="dv">4</span>] <span class="op">==</span> unflatten_smp[<span class="dv">0</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>flatten_smp[<span class="dv">0</span>:<span class="dv">4</span>] <span class="op">==</span> unflatten_smp[<span class="dv">0</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="76">
 <pre><code>True</code></pre>
 </div>
 </div>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
