@@ -2,14 +2,14 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.450">
+<meta name="generator" content="quarto-1.5.57">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Ismail TG">
 <meta name="dcterms.date" content="2024-02-27">
 
-<title>Ismail’s Personal Blog - Hugging Face Course Notes: Chapter5</title>
+<title>Hugging Face Course Notes: Chapter5 – Ismail's Personal Blog</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -24,7 +24,7 @@ ul.task-list li input[type="checkbox"] {
 }
 /* CSS for syntax highlighting */
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span { line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -35,7 +35,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -59,7 +59,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </style>
 
 
-<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script><script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="../../site_libs/quarto-nav/headroom.min.js"></script>
 <script src="../../site_libs/clipboard/clipboard.min.js"></script>
 <script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
@@ -81,7 +81,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   "collapse-after": 3,
   "panel-placement": "end",
   "type": "overlay",
-  "limit": 20,
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -90,13 +96,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-more-match-text": "more match in this document",
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancel",
     "search-submit-button-title": "Submit",
     "search-label": "Search"
   }
 }</script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+
 <script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
 <script src="https://unpkg.com/@jupyter-widgets/html-manager@*/dist/embed-amd.js" crossorigin="anonymous"></script>
 
@@ -107,42 +114,42 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <body class="nav-fixed fullcontent">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg navbar-dark ">
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
-      <div class="navbar-brand-container">
+      <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">Ismail’s Personal Blog</span>
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../../blog.html" rel="" target="">
- <span class="menu-text">Blog</span></a>
+    <a class="nav-link" href="../../blog.html"> 
+<span class="menu-text">Blog</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../about.html" rel="" target="">
- <span class="menu-text">About</span></a>
+    <a class="nav-link" href="../../about.html"> 
+<span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="https://github.com/ismaai008l" rel="" target=""><i class="bi bi-github" role="img">
+    <a class="nav-link" href="https://github.com/ismaai008l"> <i class="bi bi-github" role="img">
 </i> 
- <span class="menu-text"></span></a>
+<span class="menu-text"></span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="https://twitter.com/ismailTG3" rel="" target=""><i class="bi bi-twitter" role="img">
+    <a class="nav-link" href="https://twitter.com/ismailTG3"> <i class="bi bi-twitter" role="img">
 </i> 
- <span class="menu-text"></span></a>
+<span class="menu-text"></span></a>
   </li>  
 </ul>
+          </div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
 </div>
-          </div> <!-- /navcollapse -->
       </div> <!-- /container-fluid -->
     </nav>
 </header>
@@ -193,7 +200,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 
-<div class="cell" data-outputid="9699ff8f-8a26-41e1-cd19-d6c442548617">
+
+<div id="cell-1" class="cell" data-outputid="9699ff8f-8a26-41e1-cd19-d6c442548617">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="op">!</span>pip install datasets</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Collecting datasets
@@ -236,7 +244,7 @@ Installing collected packages: dill, multiprocess, datasets
 Successfully installed datasets-2.17.1 dill-0.3.8 multiprocess-0.70.16</code></pre>
 </div>
 </div>
-<div class="cell" data-outputid="afe46f37-ea07-4f99-cc92-8a65c48e7e7f">
+<div id="cell-2" class="cell" data-outputid="afe46f37-ea07-4f99-cc92-8a65c48e7e7f">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="op">!</span>pip install transformers</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Requirement already satisfied: transformers in /usr/local/lib/python3.10/dist-packages (4.37.2)
@@ -258,10 +266,10 @@ Requirement already satisfied: urllib3&lt;3,&gt;=1.21.1 in /usr/local/lib/python
 Requirement already satisfied: certifi&gt;=2017.4.17 in /usr/local/lib/python3.10/dist-packages (from requests-&gt;transformers) (2024.2.2)</code></pre>
 </div>
 </div>
-<div class="cell">
+<div id="cell-3" class="cell">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> datasets <span class="im">import</span> load_dataset</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="cell">
+<div id="cell-4" class="cell">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> transformers <span class="im">import</span> AutoTokenizer</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <section id="intrudoction" class="level2">
@@ -307,7 +315,7 @@ load_dataset("pandas", data_files="my_dataframe.pkl")
     * The training and test splits are hosted on GitHub, so we can download them with a simple wget command:
 
 
-::: {.cell outputId='6433a784-3bd2-4b27-f0fc-3135e17e61bb'}
+::: {#cell-9 .cell outputId='6433a784-3bd2-4b27-f0fc-3135e17e61bb'}
 ``` {.python .cell-code}
 !wget https://github.com/crux82/squad-it/raw/master/SQuAD_it-train.json.gz
 !wget https://github.com/crux82/squad-it/raw/master/SQuAD_it-test.json.gz</code></pre>
@@ -349,20 +357,20 @@ SQuAD_it-test.json. 100%[===================&gt;]   1.00M  --.-KB/s    in 0.07s
 <ul>
 <li>We need decompress them frist:</li>
 </ul>
-<div class="cell" data-outputid="7fc8b0ff-4815-428a-85f8-61955b3199b0">
+<div id="cell-11" class="cell" data-outputid="7fc8b0ff-4815-428a-85f8-61955b3199b0">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="op">!</span>gzip <span class="op">-</span>dkv SQuAD_it<span class="op">-*</span>.json.gz</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>SQuAD_it-test.json.gz:   87.5% -- created SQuAD_it-test.json
 SQuAD_it-train.json.gz:  82.3% -- created SQuAD_it-train.json</code></pre>
 </div>
 </div>
-<div class="cell">
+<div id="cell-12" class="cell">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="op">!</span>rm <span class="op">-</span>rf SQuAD_it<span class="op">-*</span>.json.gz</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <ul>
 <li>Now we can download our dataset from local file as if it from the hub:</li>
 </ul>
-<div class="cell" data-outputid="576ffe7d-f40d-4d9a-8723-40e6e33dd076">
+<div id="cell-14" class="cell" data-outputid="576ffe7d-f40d-4d9a-8723-40e6e33dd076">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>dataset <span class="op">=</span> load_dataset(<span class="st">'json'</span>, data_files<span class="op">=</span> <span class="st">"SQuAD_it-train.json"</span>, field<span class="op">=</span> <span class="st">"data"</span> )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <script type="application/vnd.jupyter.widget-view+json">
@@ -373,7 +381,7 @@ SQuAD_it-train.json.gz:  82.3% -- created SQuAD_it-train.json</code></pre>
 <ul>
 <li>Be default downloading local file creates a DatasetDict with train split:</li>
 </ul>
-<div class="cell" data-outputid="6ea839b5-9566-4272-e147-a39a0dddb4a9">
+<div id="cell-16" class="cell" data-outputid="6ea839b5-9566-4272-e147-a39a0dddb4a9">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>dataset</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="7">
 <pre><code>DatasetDict({
@@ -387,14 +395,14 @@ SQuAD_it-train.json.gz:  82.3% -- created SQuAD_it-train.json</code></pre>
 <ul>
 <li>We can view that we have <code>442</code> rows, let’s see one of them:</li>
 </ul>
-<div class="cell">
+<div id="cell-18" class="cell">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>dataset[<span class="st">'train'</span>][<span class="dv">0</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <ul>
 <li>Great, we’ve loaded our first local dataset! But while this worked for the training set, what we really want is to include both the train and test splits in a single DatasetDict object so we can apply Dataset.map() functions across both splits at once.</li>
 <li>To do this, we can provide a dictionary to the <code>data_files</code> argument that maps each split name to a file associated with that split:</li>
 </ul>
-<div class="cell" data-outputid="7db6a711-9b2c-4fa9-92c4-26595f759626">
+<div id="cell-20" class="cell" data-outputid="7db6a711-9b2c-4fa9-92c4-26595f759626">
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># the proper way to load dataset from local file:</span></span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>data_files <span class="op">=</span> {<span class="st">"train"</span>: <span class="st">"SQuAD_it-train.json"</span>, <span class="st">"test"</span>: <span class="st">"SQuAD_it-test.json"</span>}</span>
 <span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>squad_it_dataset <span class="op">=</span> load_dataset(<span class="st">"json"</span>, data_files<span class="op">=</span>data_files, field<span class="op">=</span><span class="st">"data"</span>)</span>
@@ -426,7 +434,7 @@ SQuAD_it-train.json.gz:  82.3% -- created SQuAD_it-train.json</code></pre>
 <li><p>This is exactly what we wanted. Now, we can apply various preprocessing techniques to clean up the data, tokenize the reviews, and so on.</p></li>
 <li><p>The loading scripts in Datasets acually support the automatic decompression of the input files, we could have skipped the use of gzip by pointing the data_files argument directly to the compressed files:</p></li>
 </ul>
-<div class="cell" data-outputid="216f1526-f2c4-41fa-8576-734496f4c181">
+<div id="cell-23" class="cell" data-outputid="216f1526-f2c4-41fa-8576-734496f4c181">
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>data_files <span class="op">=</span> {<span class="st">'train'</span>: <span class="st">'SQuAD_it-train.json.gz'</span>, <span class="st">'test'</span>: <span class="st">'SQuAD_it-test.json.gz'</span>}</span>
 <span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>dataset <span class="op">=</span> load_dataset(<span class="st">'json'</span>, data_files<span class="op">=</span>data_files, field<span class="op">=</span> <span class="st">'data'</span>)</span>
 <span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>dataset</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -463,7 +471,7 @@ SQuAD_it-train.json.gz:  82.3% -- created SQuAD_it-train.json</code></pre>
 <li>Loading remote files is very similar to loading locally, we just need to point to <code>data_file</code> the <code>url</code> where the data is stored instead to providing the path to lacal files.</li>
 <li>For example the <code>SQuAD_it</code> dataset is stored on <code>github</code> so we could build our dataset from that <code>url</code> directly:</li>
 </ul>
-<div class="cell" data-outputid="02a3aea5-6693-4dab-bd21-3931092917f5">
+<div id="cell-26" class="cell" data-outputid="02a3aea5-6693-4dab-bd21-3931092917f5">
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>data_files <span class="op">=</span> {<span class="st">'train'</span>:<span class="st">'https://github.com/crux82/squad-it/raw/master/SQuAD_it-train.json.gz'</span>,</span>
 <span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>              <span class="st">'test'</span>: <span class="st">'https://github.com/crux82/squad-it/raw/master/SQuAD_it-test.json.gz'</span>}</span>
 <span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>dataset <span class="op">=</span> load_dataset(<span class="st">'json'</span>, data_files<span class="op">=</span>data_files, field<span class="op">=</span><span class="st">'data'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -502,7 +510,7 @@ SQuAD_it-train.json.gz:  82.3% -- created SQuAD_it-train.json</code></pre>
 <li><p>Here we will use <a href="https://archive.ics.uci.edu/static/public/462/drug+review+dataset+drugs+com.zip">Drug Review Dataset</a> from <a href="https://archive.ics.uci.edu/ml/index.php">UC Irvine Machine Learning Repository</a> which contains patient reviews on various drugs, along with the condition being treated and a 10-star rating of the patient’s satisfaction.</p></li>
 <li><p>First we need to download it and unzip it:</p></li>
 </ul>
-<div class="cell" data-outputid="85e0488b-52a4-4ddb-a650-de546a731018">
+<div id="cell-29" class="cell" data-outputid="85e0488b-52a4-4ddb-a650-de546a731018">
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="op">!</span>wget https:<span class="op">//</span>archive.ics.uci.edu<span class="op">/</span>static<span class="op">/</span>public<span class="op">/</span><span class="dv">462</span><span class="op">/</span>drug<span class="op">+</span>review<span class="op">+</span>dataset<span class="op">+</span>drugs<span class="op">+</span>com.<span class="bu">zip</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>--2024-02-27 14:22:46--  https://archive.ics.uci.edu/static/public/462/drug+review+dataset+drugs+com.zip
@@ -518,7 +526,7 @@ drug+review+dataset     [       &lt;=&gt;          ]  41.00M  30.7MB/s    in 1.3
 </code></pre>
 </div>
 </div>
-<div class="cell" data-outputid="0b94e920-9624-47a4-b5b8-5ca00a096159">
+<div id="cell-30" class="cell" data-outputid="0b94e920-9624-47a4-b5b8-5ca00a096159">
 <div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="op">!</span>unzip drug<span class="op">+</span>review<span class="op">+</span>dataset<span class="op">+</span>drugs<span class="op">+</span>com.<span class="bu">zip</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Archive:  drug+review+dataset+drugs+com.zip
@@ -529,7 +537,7 @@ drug+review+dataset     [       &lt;=&gt;          ]  41.00M  30.7MB/s    in 1.3
 <ul>
 <li>We will use <code>csv</code> arguments here even though we have <code>tsv</code> files, we just need to specifying the delimiter argument in the load_dataset() function as follows:</li>
 </ul>
-<div class="cell" data-outputid="3fd11f48-f251-4b99-c9a0-7df8224402ca">
+<div id="cell-32" class="cell" data-outputid="3fd11f48-f251-4b99-c9a0-7df8224402ca">
 <div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>data_files <span class="op">=</span> {<span class="st">'train'</span>: <span class="st">'drugsComTrain_raw.tsv'</span>,</span>
 <span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>              <span class="st">'test'</span>: <span class="st">'drugsComTest_raw.tsv'</span>}</span>
 <span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>dataset <span class="op">=</span> load_dataset(<span class="st">'csv'</span>, data_files<span class="op">=</span>data_files, delimiter<span class="op">=</span> <span class="st">'</span><span class="ch">\t</span><span class="st">'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -547,7 +555,7 @@ drug+review+dataset     [       &lt;=&gt;          ]  41.00M  30.7MB/s    in 1.3
 <ul>
 <li>A good practice when doing any sort of data analysis is to grab a small random sample to get a quick feel for the type of data you’re working with. In Datasets, we can create a random sample by chaining the Dataset.shuffle() and Dataset.select() functions together:</li>
 </ul>
-<div class="cell" data-outputid="275bc99e-643d-4bd4-9a51-6600d8ae1ac2">
+<div id="cell-34" class="cell" data-outputid="275bc99e-643d-4bd4-9a51-6600d8ae1ac2">
 <div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>drug_sample <span class="op">=</span> dataset[<span class="st">'train'</span>].shuffle(seed<span class="op">=</span> <span class="dv">42</span>).select(<span class="bu">range</span>(<span class="dv">1000</span>))</span>
 <span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>drug_sample[:<span class="dv">2</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="20">
@@ -574,14 +582,14 @@ drug+review+dataset     [       &lt;=&gt;          ]  41.00M  30.7MB/s    in 1.3
 <li><p>We will adress each issue with Dataset library:</p></li>
 <li><p>First the <code>unnamed</code> column may be just Id fro each patient, so we check if each one of those IDs is unique or not:</p></li>
 </ul>
-<div class="cell">
+<div id="cell-37" class="cell">
 <div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> split <span class="kw">in</span> dataset.keys():</span>
 <span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">assert</span> <span class="bu">len</span>(dataset[split]) <span class="op">==</span> <span class="bu">len</span>(dataset[split].unique(<span class="st">"Unnamed: 0"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <ul>
 <li>It’s better to rename that column to something more meaningfull:</li>
 </ul>
-<div class="cell" data-outputid="a0d1350a-efff-4aea-a40e-e5ade5881053">
+<div id="cell-39" class="cell" data-outputid="a0d1350a-efff-4aea-a40e-e5ade5881053">
 <div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>dataset <span class="op">=</span> dataset.rename_column(<span class="st">'Unnamed: 0'</span>, <span class="st">'patient_id'</span>)</span>
 <span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>dataset</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="25">
@@ -600,11 +608,11 @@ drug+review+dataset     [       &lt;=&gt;          ]  41.00M  30.7MB/s    in 1.3
 <ul>
 <li>Now we have to lower case all the <code>condition</code> values. This can be easily achieved by <code>.map()</code> method:</li>
 </ul>
-<div class="cell">
+<div id="cell-41" class="cell">
 <div class="sourceCode cell-code" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> lower_case(example):</span>
 <span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> {<span class="st">'condition'</span>: example[<span class="st">'condition'</span>].lower()}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="cell" data-outputid="3df6da34-3171-4161-b0f0-91abe41d27b2">
+<div id="cell-42" class="cell" data-outputid="3df6da34-3171-4161-b0f0-91abe41d27b2">
 <div class="sourceCode cell-code" id="cb32"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>dataset.<span class="bu">map</span>(lower_case)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <script type="application/vnd.jupyter.widget-view+json">
@@ -612,7 +620,67 @@ drug+review+dataset     [       &lt;=&gt;          ]  41.00M  30.7MB/s    in 1.3
 </script>
 </div>
 <div class="cell-output cell-output-error">
-<pre><code>AttributeError: 'NoneType' object has no attribute 'lower'</code></pre>
+<div class="ansi-escaped-output">
+<pre><span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">AttributeError</span>                            Traceback (most recent call last)
+<span class="ansi-green-fg">&lt;ipython-input-27-b34dfc422493&gt;</span> in <span class="ansi-cyan-fg">&lt;cell line: 1&gt;</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-fg">----&gt; 1</span><span class="ansi-red-fg"> </span>dataset<span class="ansi-blue-fg">.</span>map<span class="ansi-blue-fg">(</span>lower_case<span class="ansi-blue-fg">)</span>
+
+<span class="ansi-green-fg">/usr/local/lib/python3.10/dist-packages/datasets/dataset_dict.py</span> in <span class="ansi-cyan-fg">map</span><span class="ansi-blue-fg">(self, function, with_indices, with_rank, input_columns, batched, batch_size, drop_last_batch, remove_columns, keep_in_memory, load_from_cache_file, cache_file_names, writer_batch_size, features, disable_nullable, fn_kwargs, num_proc, desc)</span>
+<span class="ansi-green-fg ansi-bold">    866</span>             cache_file_names <span class="ansi-blue-fg">=</span> <span class="ansi-blue-fg">{</span>k<span class="ansi-blue-fg">:</span> <span class="ansi-green-fg">None</span> <span class="ansi-green-fg">for</span> k <span class="ansi-green-fg">in</span> self<span class="ansi-blue-fg">}</span>
+<span class="ansi-green-fg ansi-bold">    867</span>         return DatasetDict(
+<span class="ansi-green-fg">--&gt; 868</span><span class="ansi-red-fg">             {
+</span><span class="ansi-green-fg ansi-bold">    869</span>                 k: dataset.map(
+<span class="ansi-green-fg ansi-bold">    870</span>                     function<span class="ansi-blue-fg">=</span>function<span class="ansi-blue-fg">,</span>
+
+<span class="ansi-green-fg">/usr/local/lib/python3.10/dist-packages/datasets/dataset_dict.py</span> in <span class="ansi-cyan-fg">&lt;dictcomp&gt;</span><span class="ansi-blue-fg">(.0)</span>
+<span class="ansi-green-fg ansi-bold">    867</span>         return DatasetDict(
+<span class="ansi-green-fg ansi-bold">    868</span>             {
+<span class="ansi-green-fg">--&gt; 869</span><span class="ansi-red-fg">                 k: dataset.map(
+</span><span class="ansi-green-fg ansi-bold">    870</span>                     function<span class="ansi-blue-fg">=</span>function<span class="ansi-blue-fg">,</span>
+<span class="ansi-green-fg ansi-bold">    871</span>                     with_indices<span class="ansi-blue-fg">=</span>with_indices<span class="ansi-blue-fg">,</span>
+
+<span class="ansi-green-fg">/usr/local/lib/python3.10/dist-packages/datasets/arrow_dataset.py</span> in <span class="ansi-cyan-fg">wrapper</span><span class="ansi-blue-fg">(*args, **kwargs)</span>
+<span class="ansi-green-fg ansi-bold">    591</span>             self<span class="ansi-blue-fg">:</span> <span class="ansi-blue-fg">"Dataset"</span> <span class="ansi-blue-fg">=</span> kwargs<span class="ansi-blue-fg">.</span>pop<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">"self"</span><span class="ansi-blue-fg">)</span>
+<span class="ansi-green-fg ansi-bold">    592</span>         <span class="ansi-red-fg"># apply actual function</span>
+<span class="ansi-green-fg">--&gt; 593</span><span class="ansi-red-fg">         </span>out<span class="ansi-blue-fg">:</span> Union<span class="ansi-blue-fg">[</span><span class="ansi-blue-fg">"Dataset"</span><span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">"DatasetDict"</span><span class="ansi-blue-fg">]</span> <span class="ansi-blue-fg">=</span> func<span class="ansi-blue-fg">(</span>self<span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">*</span>args<span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">**</span>kwargs<span class="ansi-blue-fg">)</span>
+<span class="ansi-green-fg ansi-bold">    594</span>         datasets<span class="ansi-blue-fg">:</span> List<span class="ansi-blue-fg">[</span><span class="ansi-blue-fg">"Dataset"</span><span class="ansi-blue-fg">]</span> <span class="ansi-blue-fg">=</span> list<span class="ansi-blue-fg">(</span>out<span class="ansi-blue-fg">.</span>values<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">)</span> <span class="ansi-green-fg">if</span> isinstance<span class="ansi-blue-fg">(</span>out<span class="ansi-blue-fg">,</span> dict<span class="ansi-blue-fg">)</span> <span class="ansi-green-fg">else</span> <span class="ansi-blue-fg">[</span>out<span class="ansi-blue-fg">]</span>
+<span class="ansi-green-fg ansi-bold">    595</span>         <span class="ansi-green-fg">for</span> dataset <span class="ansi-green-fg">in</span> datasets<span class="ansi-blue-fg">:</span>
+
+<span class="ansi-green-fg">/usr/local/lib/python3.10/dist-packages/datasets/arrow_dataset.py</span> in <span class="ansi-cyan-fg">wrapper</span><span class="ansi-blue-fg">(*args, **kwargs)</span>
+<span class="ansi-green-fg ansi-bold">    556</span>         }
+<span class="ansi-green-fg ansi-bold">    557</span>         <span class="ansi-red-fg"># apply actual function</span>
+<span class="ansi-green-fg">--&gt; 558</span><span class="ansi-red-fg">         </span>out<span class="ansi-blue-fg">:</span> Union<span class="ansi-blue-fg">[</span><span class="ansi-blue-fg">"Dataset"</span><span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">"DatasetDict"</span><span class="ansi-blue-fg">]</span> <span class="ansi-blue-fg">=</span> func<span class="ansi-blue-fg">(</span>self<span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">*</span>args<span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">**</span>kwargs<span class="ansi-blue-fg">)</span>
+<span class="ansi-green-fg ansi-bold">    559</span>         datasets<span class="ansi-blue-fg">:</span> List<span class="ansi-blue-fg">[</span><span class="ansi-blue-fg">"Dataset"</span><span class="ansi-blue-fg">]</span> <span class="ansi-blue-fg">=</span> list<span class="ansi-blue-fg">(</span>out<span class="ansi-blue-fg">.</span>values<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">)</span> <span class="ansi-green-fg">if</span> isinstance<span class="ansi-blue-fg">(</span>out<span class="ansi-blue-fg">,</span> dict<span class="ansi-blue-fg">)</span> <span class="ansi-green-fg">else</span> <span class="ansi-blue-fg">[</span>out<span class="ansi-blue-fg">]</span>
+<span class="ansi-green-fg ansi-bold">    560</span>         <span class="ansi-red-fg"># re-apply format to the output</span>
+
+<span class="ansi-green-fg">/usr/local/lib/python3.10/dist-packages/datasets/arrow_dataset.py</span> in <span class="ansi-cyan-fg">map</span><span class="ansi-blue-fg">(self, function, with_indices, with_rank, input_columns, batched, batch_size, drop_last_batch, remove_columns, keep_in_memory, load_from_cache_file, cache_file_name, writer_batch_size, features, disable_nullable, fn_kwargs, num_proc, suffix_template, new_fingerprint, desc)</span>
+<span class="ansi-green-fg ansi-bold">   3103</span>                     desc<span class="ansi-blue-fg">=</span>desc <span class="ansi-green-fg">or</span> <span class="ansi-blue-fg">"Map"</span><span class="ansi-blue-fg">,</span>
+<span class="ansi-green-fg ansi-bold">   3104</span>                 ) as pbar:
+<span class="ansi-green-fg">-&gt; 3105</span><span class="ansi-red-fg">                     </span><span class="ansi-green-fg">for</span> rank<span class="ansi-blue-fg">,</span> done<span class="ansi-blue-fg">,</span> content <span class="ansi-green-fg">in</span> Dataset<span class="ansi-blue-fg">.</span>_map_single<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">**</span>dataset_kwargs<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
+<span class="ansi-green-fg ansi-bold">   3106</span>                         <span class="ansi-green-fg">if</span> done<span class="ansi-blue-fg">:</span>
+<span class="ansi-green-fg ansi-bold">   3107</span>                             shards_done <span class="ansi-blue-fg">+=</span> <span class="ansi-cyan-fg">1</span>
+
+<span class="ansi-green-fg">/usr/local/lib/python3.10/dist-packages/datasets/arrow_dataset.py</span> in <span class="ansi-cyan-fg">_map_single</span><span class="ansi-blue-fg">(shard, function, with_indices, with_rank, input_columns, batched, batch_size, drop_last_batch, remove_columns, keep_in_memory, cache_file_name, writer_batch_size, features, disable_nullable, fn_kwargs, new_fingerprint, rank, offset)</span>
+<span class="ansi-green-fg ansi-bold">   3456</span>                     _time <span class="ansi-blue-fg">=</span> time<span class="ansi-blue-fg">.</span>time<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span>
+<span class="ansi-green-fg ansi-bold">   3457</span>                     <span class="ansi-green-fg">for</span> i<span class="ansi-blue-fg">,</span> example <span class="ansi-green-fg">in</span> shard_iterable<span class="ansi-blue-fg">:</span>
+<span class="ansi-green-fg">-&gt; 3458</span><span class="ansi-red-fg">                         </span>example <span class="ansi-blue-fg">=</span> apply_function_on_filtered_inputs<span class="ansi-blue-fg">(</span>example<span class="ansi-blue-fg">,</span> i<span class="ansi-blue-fg">,</span> offset<span class="ansi-blue-fg">=</span>offset<span class="ansi-blue-fg">)</span>
+<span class="ansi-green-fg ansi-bold">   3459</span>                         <span class="ansi-green-fg">if</span> update_data<span class="ansi-blue-fg">:</span>
+<span class="ansi-green-fg ansi-bold">   3460</span>                             <span class="ansi-green-fg">if</span> i <span class="ansi-blue-fg">==</span> <span class="ansi-cyan-fg">0</span><span class="ansi-blue-fg">:</span>
+
+<span class="ansi-green-fg">/usr/local/lib/python3.10/dist-packages/datasets/arrow_dataset.py</span> in <span class="ansi-cyan-fg">apply_function_on_filtered_inputs</span><span class="ansi-blue-fg">(pa_inputs, indices, check_same_num_examples, offset)</span>
+<span class="ansi-green-fg ansi-bold">   3359</span>             <span class="ansi-green-fg">if</span> with_rank<span class="ansi-blue-fg">:</span>
+<span class="ansi-green-fg ansi-bold">   3360</span>                 additional_args <span class="ansi-blue-fg">+=</span> <span class="ansi-blue-fg">(</span>rank<span class="ansi-blue-fg">,</span><span class="ansi-blue-fg">)</span>
+<span class="ansi-green-fg">-&gt; 3361</span><span class="ansi-red-fg">             </span>processed_inputs <span class="ansi-blue-fg">=</span> function<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">*</span>fn_args<span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">*</span>additional_args<span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">**</span>fn_kwargs<span class="ansi-blue-fg">)</span>
+<span class="ansi-green-fg ansi-bold">   3362</span>             <span class="ansi-green-fg">if</span> isinstance<span class="ansi-blue-fg">(</span>processed_inputs<span class="ansi-blue-fg">,</span> LazyDict<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
+<span class="ansi-green-fg ansi-bold">   3363</span>                 processed_inputs = {
+
+<span class="ansi-green-fg">&lt;ipython-input-26-98b6e79f37ab&gt;</span> in <span class="ansi-cyan-fg">lower_case</span><span class="ansi-blue-fg">(example)</span>
+<span class="ansi-green-fg ansi-bold">      1</span> <span class="ansi-green-fg">def</span> lower_case<span class="ansi-blue-fg">(</span>example<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
+<span class="ansi-green-fg">----&gt; 2</span><span class="ansi-red-fg">   </span><span class="ansi-green-fg">return</span> <span class="ansi-blue-fg">{</span><span class="ansi-blue-fg">'condition'</span><span class="ansi-blue-fg">:</span> example<span class="ansi-blue-fg">[</span><span class="ansi-blue-fg">'condition'</span><span class="ansi-blue-fg">]</span><span class="ansi-blue-fg">.</span>lower<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">}</span>
+
+<span class="ansi-red-fg">AttributeError</span>: 'NoneType' object has no attribute 'lower'</pre>
+</div>
 </div>
 </div>
 <ul>
@@ -620,8 +688,8 @@ drug+review+dataset     [       &lt;=&gt;          ]  41.00M  30.7MB/s    in 1.3
 <li>Let’s drop these rows using Dataset.filter(), which works in a similar way to Dataset.map() and expects a function that receives a single example of the dataset.</li>
 <li>We will use the <code>lambda</code> function:</li>
 </ul>
-<div class="cell" data-outputid="f4d5e75d-7817-4c89-b4c7-96b0a1cfee91">
-<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>dataset <span class="op">=</span> dataset.<span class="bu">filter</span>(<span class="kw">lambda</span> x: x[<span class="st">'condition'</span>] <span class="kw">is</span> <span class="kw">not</span> <span class="va">None</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="cell-44" class="cell" data-outputid="f4d5e75d-7817-4c89-b4c7-96b0a1cfee91">
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>dataset <span class="op">=</span> dataset.<span class="bu">filter</span>(<span class="kw">lambda</span> x: x[<span class="st">'condition'</span>] <span class="kw">is</span> <span class="kw">not</span> <span class="va">None</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <script type="application/vnd.jupyter.widget-view+json">
 {"model_id":"4297e5fcf44d4cf281a2d73b49774173","version_major":2,"version_minor":0,"quarto_mimetype":"application/vnd.jupyter.widget-view+json"}
@@ -636,8 +704,8 @@ drug+review+dataset     [       &lt;=&gt;          ]  41.00M  30.7MB/s    in 1.3
 <ul>
 <li>Now lets aplly <code>.map()</code> method on lower_case() funtion:</li>
 </ul>
-<div class="cell" data-outputid="ab590615-8528-4382-9ec9-13cd6bb8ab79">
-<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>dataset <span class="op">=</span> dataset.<span class="bu">map</span>(lower_case)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="cell-46" class="cell" data-outputid="ab590615-8528-4382-9ec9-13cd6bb8ab79">
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>dataset <span class="op">=</span> dataset.<span class="bu">map</span>(lower_case)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <script type="application/vnd.jupyter.widget-view+json">
 {"model_id":"ef234f70d12a4a398d4caa545290315e","version_major":2,"version_minor":0,"quarto_mimetype":"application/vnd.jupyter.widget-view+json"}
@@ -655,15 +723,15 @@ drug+review+dataset     [       &lt;=&gt;          ]  41.00M  30.7MB/s    in 1.3
 <ul>
 <li>When dealing with reviews datasets, its good practice to count the number of words in each review, so lets create a function that achieve that goal:</li>
 </ul>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> compute_review_length(example):</span>
-<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> {<span class="st">'review_length'</span>: <span class="bu">len</span>(example[<span class="st">'review'</span>].split())}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="cell-48" class="cell">
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> compute_review_length(example):</span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> {<span class="st">'review_length'</span>: <span class="bu">len</span>(example[<span class="st">'review'</span>].split())}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <ul>
 <li><code>compute_review_length()</code> returns a dictionary whose key does not correspond to one of the column names in the dataset. In this case, when <code>compute_review_length()</code> is passed to <code>Dataset.map()</code>, it will be applied to all the rows in the dataset to create a new review_length column:</li>
 </ul>
-<div class="cell" data-outputid="caf32fed-4de9-47c4-ad94-2685a73f1e53">
-<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>dataset <span class="op">=</span> dataset.<span class="bu">map</span>(compute_review_length)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="cell-50" class="cell" data-outputid="caf32fed-4de9-47c4-ad94-2685a73f1e53">
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>dataset <span class="op">=</span> dataset.<span class="bu">map</span>(compute_review_length)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <script type="application/vnd.jupyter.widget-view+json">
 {"model_id":"b2078fe3572c46d786beb6f5b2320455","version_major":2,"version_minor":0,"quarto_mimetype":"application/vnd.jupyter.widget-view+json"}
@@ -675,8 +743,8 @@ drug+review+dataset     [       &lt;=&gt;          ]  41.00M  30.7MB/s    in 1.3
 </script>
 </div>
 </div>
-<div class="cell" data-outputid="4007e8c1-20be-4b22-e91c-48d05099a39f">
-<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>dataset[<span class="st">'train'</span>][<span class="dv">2</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="cell-51" class="cell" data-outputid="4007e8c1-20be-4b22-e91c-48d05099a39f">
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>dataset[<span class="st">'train'</span>][<span class="dv">2</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="33">
 <pre><code>{'patient_id': 92703,
  'drugName': 'Lybrel',
@@ -691,8 +759,8 @@ drug+review+dataset     [       &lt;=&gt;          ]  41.00M  30.7MB/s    in 1.3
 <ul>
 <li>As expected, we can see a review_length column has been added to our training set. We can sort this new column with Dataset.sort() to see what the extreme values look like:</li>
 </ul>
-<div class="cell" data-outputid="2f5fb303-bee8-493a-c186-e13857902957">
-<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a>dataset[<span class="st">'train'</span>].sort(<span class="st">'review_length'</span>)[:<span class="dv">3</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="cell-53" class="cell" data-outputid="2f5fb303-bee8-493a-c186-e13857902957">
+<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a>dataset[<span class="st">'train'</span>].sort(<span class="st">'review_length'</span>)[:<span class="dv">3</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="35">
 <pre><code>{'patient_id': [111469, 13653, 53602],
  'drugName': ['Ledipasvir / sofosbuvir',
@@ -709,8 +777,8 @@ drug+review+dataset     [       &lt;=&gt;          ]  41.00M  30.7MB/s    in 1.3
 <ul>
 <li>We could delete rows that countains review with less than 30 words, by using the combination of lambda function + <code>.filter()</code>:</li>
 </ul>
-<div class="cell" data-outputid="ede8bb80-3560-4b0b-e967-e616bb18f952">
-<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a>dataset <span class="op">=</span> dataset.<span class="bu">filter</span>(<span class="kw">lambda</span> x: x[<span class="st">'review_length'</span>] <span class="op">&gt;</span> <span class="dv">30</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="cell-55" class="cell" data-outputid="ede8bb80-3560-4b0b-e967-e616bb18f952">
+<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a>dataset <span class="op">=</span> dataset.<span class="bu">filter</span>(<span class="kw">lambda</span> x: x[<span class="st">'review_length'</span>] <span class="op">&gt;</span> <span class="dv">30</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <script type="application/vnd.jupyter.widget-view+json">
 {"model_id":"8eab9c1cb8044bda9f2a8502d96ee90e","version_major":2,"version_minor":0,"quarto_mimetype":"application/vnd.jupyter.widget-view+json"}
@@ -725,14 +793,14 @@ drug+review+dataset     [       &lt;=&gt;          ]  41.00M  30.7MB/s    in 1.3
 <ul>
 <li>The last problemm we have to deal with is <code>html</code> characters, We can use Python’s html module to unescape these characters, like so:</li>
 </ul>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> html</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="cell-57" class="cell">
+<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> html</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <ul>
 <li>We’ll use Dataset.map() to unescape all the HTML characters in our corpus:</li>
 </ul>
-<div class="cell" data-outputid="a81f824c-17ea-41e3-8565-233da6fe59fa">
-<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a>dataset <span class="op">=</span> dataset.<span class="bu">map</span>(<span class="kw">lambda</span> x: {<span class="st">'review'</span>: html.unescape(x[<span class="st">'review'</span>])})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="cell-59" class="cell" data-outputid="a81f824c-17ea-41e3-8565-233da6fe59fa">
+<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a>dataset <span class="op">=</span> dataset.<span class="bu">map</span>(<span class="kw">lambda</span> x: {<span class="st">'review'</span>: html.unescape(x[<span class="st">'review'</span>])})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <script type="application/vnd.jupyter.widget-view+json">
 {"model_id":"c8884dd4f31a49a09ddbae750a63c28b","version_major":2,"version_minor":0,"quarto_mimetype":"application/vnd.jupyter.widget-view+json"}
@@ -750,8 +818,8 @@ drug+review+dataset     [       &lt;=&gt;          ]  41.00M  30.7MB/s    in 1.3
 <ul>
 <li>The last mapping we apply on dataset takes almost <code>40s</code> to execute, this duration can be reduced if we pass an argument to the <code>.map()</code> method: <code>batched=True</code>, this will create batches and lets the code applied in many elements at once, we could also construct the code in list comprehension instead of regular for loop, which also add preformance the operation:</li>
 </ul>
-<div class="cell" data-outputid="3aff5cdb-692b-497e-c811-8657a5c832b3">
-<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a>new_dataset <span class="op">=</span> dataset.<span class="bu">map</span>(<span class="kw">lambda</span> x: {<span class="st">'review'</span>: [html.unescape(o) <span class="cf">for</span> o <span class="kw">in</span> x[<span class="st">'review'</span>]]}, batched<span class="op">=</span> <span class="va">True</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="cell-61" class="cell" data-outputid="3aff5cdb-692b-497e-c811-8657a5c832b3">
+<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a>new_dataset <span class="op">=</span> dataset.<span class="bu">map</span>(<span class="kw">lambda</span> x: {<span class="st">'review'</span>: [html.unescape(o) <span class="cf">for</span> o <span class="kw">in</span> x[<span class="st">'review'</span>]]}, batched<span class="op">=</span> <span class="va">True</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <script type="application/vnd.jupyter.widget-view+json">
 {"model_id":"4a68222379b8436d8d8911593bbc7997","version_major":2,"version_minor":0,"quarto_mimetype":"application/vnd.jupyter.widget-view+json"}
@@ -768,11 +836,11 @@ drug+review+dataset     [       &lt;=&gt;          ]  41.00M  30.7MB/s    in 1.3
 <li><p>Using <code>.map()</code> with batched set to true is very powerful tool that will help us later with <code>tokenizer()</code></p></li>
 <li><p>Now lets tokenize our dataset since we are done EDA part:</p></li>
 </ul>
-<div class="cell" data-outputid="be79062e-42a7-4d06-b3c6-dc5fd695bb16">
-<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a>mdl <span class="op">=</span> <span class="st">'bert-base-uncased'</span></span>
-<span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a>tokenizer <span class="op">=</span> AutoTokenizer.from_pretrained(mdl)</span>
-<span id="cb46-3"><a href="#cb46-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> tokenizer_function(example):</span>
-<span id="cb46-4"><a href="#cb46-4" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> tokenizer(example[<span class="st">'review'</span>], truncation<span class="op">=</span> <span class="va">True</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="cell-64" class="cell" data-outputid="be79062e-42a7-4d06-b3c6-dc5fd695bb16">
+<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a>mdl <span class="op">=</span> <span class="st">'bert-base-uncased'</span></span>
+<span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a>tokenizer <span class="op">=</span> AutoTokenizer.from_pretrained(mdl)</span>
+<span id="cb45-3"><a href="#cb45-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> tokenizer_function(example):</span>
+<span id="cb45-4"><a href="#cb45-4" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> tokenizer(example[<span class="st">'review'</span>], truncation<span class="op">=</span> <span class="va">True</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <script type="application/vnd.jupyter.widget-view+json">
 {"model_id":"ae784e9f53a645d89f5bef2fdd5cf4b4","version_major":2,"version_minor":0,"quarto_mimetype":"application/vnd.jupyter.widget-view+json"}
@@ -794,8 +862,8 @@ drug+review+dataset     [       &lt;=&gt;          ]  41.00M  30.7MB/s    in 1.3
 </script>
 </div>
 </div>
-<div class="cell" data-outputid="0a7ae41b-df1b-4425-e6f8-9dc09ca69c0b">
-<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a>tokenized_ds <span class="op">=</span> dataset.<span class="bu">map</span>(tokenizer_function, batched<span class="op">=</span><span class="va">True</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="cell-65" class="cell" data-outputid="0a7ae41b-df1b-4425-e6f8-9dc09ca69c0b">
+<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a>tokenized_ds <span class="op">=</span> dataset.<span class="bu">map</span>(tokenizer_function, batched<span class="op">=</span><span class="va">True</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <script type="application/vnd.jupyter.widget-view+json">
 {"model_id":"1b0ec9bfea7945698e8dcb8aa84baa25","version_major":2,"version_minor":0,"quarto_mimetype":"application/vnd.jupyter.widget-view+json"}
@@ -812,21 +880,21 @@ drug+review+dataset     [       &lt;=&gt;          ]  41.00M  30.7MB/s    in 1.3
 <li><p>In machine learning, an example is usually defined as the set of features that we feed to the model. In some contexts, these features will be the set of columns in a Dataset, but in others (like here and for question answering), multiple features can be extracted from a single example and belong to a single column.</p></li>
 <li><p>Let’s have a look at how it works! Here we will tokenize our examples and truncate them to a maximum length of 128, but we will ask the tokenizer to return all the chunks of the texts instead of just the first one. This can be done with return_overflowing_tokens=True:</p></li>
 </ul>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb48"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> tokenize_split(example):</span>
-<span id="cb48-2"><a href="#cb48-2" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> tokenizer(</span>
-<span id="cb48-3"><a href="#cb48-3" aria-hidden="true" tabindex="-1"></a>      example[<span class="st">'review'</span>],</span>
-<span id="cb48-4"><a href="#cb48-4" aria-hidden="true" tabindex="-1"></a>      truncation<span class="op">=</span> <span class="va">True</span>,</span>
-<span id="cb48-5"><a href="#cb48-5" aria-hidden="true" tabindex="-1"></a>      max_length<span class="op">=</span> <span class="dv">128</span>,</span>
-<span id="cb48-6"><a href="#cb48-6" aria-hidden="true" tabindex="-1"></a>      return_overflowing_tokens<span class="op">=</span> <span class="va">True</span></span>
-<span id="cb48-7"><a href="#cb48-7" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="cell-69" class="cell">
+<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> tokenize_split(example):</span>
+<span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> tokenizer(</span>
+<span id="cb47-3"><a href="#cb47-3" aria-hidden="true" tabindex="-1"></a>      example[<span class="st">'review'</span>],</span>
+<span id="cb47-4"><a href="#cb47-4" aria-hidden="true" tabindex="-1"></a>      truncation<span class="op">=</span> <span class="va">True</span>,</span>
+<span id="cb47-5"><a href="#cb47-5" aria-hidden="true" tabindex="-1"></a>      max_length<span class="op">=</span> <span class="dv">128</span>,</span>
+<span id="cb47-6"><a href="#cb47-6" aria-hidden="true" tabindex="-1"></a>      return_overflowing_tokens<span class="op">=</span> <span class="va">True</span></span>
+<span id="cb47-7"><a href="#cb47-7" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <ul>
 <li>Let’s test this before we pass it to the map() function:</li>
 </ul>
-<div class="cell" data-outputid="a999f89e-8f4a-41b3-8684-1df9bda2a740">
-<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a>res <span class="op">=</span> tokenize_split(dataset[<span class="st">'train'</span>][<span class="dv">0</span>])</span>
-<span id="cb49-2"><a href="#cb49-2" aria-hidden="true" tabindex="-1"></a>[<span class="bu">len</span>(inp) <span class="cf">for</span> inp <span class="kw">in</span> res[<span class="st">'input_ids'</span>]]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="cell-71" class="cell" data-outputid="a999f89e-8f4a-41b3-8684-1df9bda2a740">
+<div class="sourceCode cell-code" id="cb48"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a>res <span class="op">=</span> tokenize_split(dataset[<span class="st">'train'</span>][<span class="dv">0</span>])</span>
+<span id="cb48-2"><a href="#cb48-2" aria-hidden="true" tabindex="-1"></a>[<span class="bu">len</span>(inp) <span class="cf">for</span> inp <span class="kw">in</span> res[<span class="st">'input_ids'</span>]]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="46">
 <pre><code>[128, 45]</code></pre>
 </div>
@@ -834,23 +902,85 @@ drug+review+dataset     [       &lt;=&gt;          ]  41.00M  30.7MB/s    in 1.3
 <ul>
 <li>So, our first example in the training set became two features because it was tokenized to more than the maximum number of tokens we specified: the first one of length 128 and the second one of length 45. Now let’s do this for all elements of the dataset!</li>
 </ul>
-<div class="cell" data-outputid="f5dd5c78-f9ab-460f-f051-489e479d09b6">
-<div class="sourceCode cell-code" id="cb51"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a>tokenized_ds <span class="op">=</span> dataset.<span class="bu">map</span>(tokenize_split, batched<span class="op">=</span> <span class="va">True</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="cell-73" class="cell" data-outputid="f5dd5c78-f9ab-460f-f051-489e479d09b6">
+<div class="sourceCode cell-code" id="cb50"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a>tokenized_ds <span class="op">=</span> dataset.<span class="bu">map</span>(tokenize_split, batched<span class="op">=</span> <span class="va">True</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <script type="application/vnd.jupyter.widget-view+json">
 {"model_id":"6a7342307efd43e6a23f48e092f03694","version_major":2,"version_minor":0,"quarto_mimetype":"application/vnd.jupyter.widget-view+json"}
 </script>
 </div>
 <div class="cell-output cell-output-error">
-<pre><code>ArrowInvalid: Column 8 named input_ids expected length 1000 but got length 1447</code></pre>
+<div class="ansi-escaped-output">
+<pre><span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">ArrowInvalid</span>                              Traceback (most recent call last)
+<span class="ansi-green-fg">&lt;ipython-input-47-4c142a3791ef&gt;</span> in <span class="ansi-cyan-fg">&lt;cell line: 1&gt;</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-fg">----&gt; 1</span><span class="ansi-red-fg"> </span>tokenized_ds <span class="ansi-blue-fg">=</span> dataset<span class="ansi-blue-fg">.</span>map<span class="ansi-blue-fg">(</span>tokenize_split<span class="ansi-blue-fg">,</span> batched<span class="ansi-blue-fg">=</span> <span class="ansi-green-fg">True</span><span class="ansi-blue-fg">)</span>
+
+<span class="ansi-green-fg">/usr/local/lib/python3.10/dist-packages/datasets/dataset_dict.py</span> in <span class="ansi-cyan-fg">map</span><span class="ansi-blue-fg">(self, function, with_indices, with_rank, input_columns, batched, batch_size, drop_last_batch, remove_columns, keep_in_memory, load_from_cache_file, cache_file_names, writer_batch_size, features, disable_nullable, fn_kwargs, num_proc, desc)</span>
+<span class="ansi-green-fg ansi-bold">    866</span>             cache_file_names <span class="ansi-blue-fg">=</span> <span class="ansi-blue-fg">{</span>k<span class="ansi-blue-fg">:</span> <span class="ansi-green-fg">None</span> <span class="ansi-green-fg">for</span> k <span class="ansi-green-fg">in</span> self<span class="ansi-blue-fg">}</span>
+<span class="ansi-green-fg ansi-bold">    867</span>         return DatasetDict(
+<span class="ansi-green-fg">--&gt; 868</span><span class="ansi-red-fg">             {
+</span><span class="ansi-green-fg ansi-bold">    869</span>                 k: dataset.map(
+<span class="ansi-green-fg ansi-bold">    870</span>                     function<span class="ansi-blue-fg">=</span>function<span class="ansi-blue-fg">,</span>
+
+<span class="ansi-green-fg">/usr/local/lib/python3.10/dist-packages/datasets/dataset_dict.py</span> in <span class="ansi-cyan-fg">&lt;dictcomp&gt;</span><span class="ansi-blue-fg">(.0)</span>
+<span class="ansi-green-fg ansi-bold">    867</span>         return DatasetDict(
+<span class="ansi-green-fg ansi-bold">    868</span>             {
+<span class="ansi-green-fg">--&gt; 869</span><span class="ansi-red-fg">                 k: dataset.map(
+</span><span class="ansi-green-fg ansi-bold">    870</span>                     function<span class="ansi-blue-fg">=</span>function<span class="ansi-blue-fg">,</span>
+<span class="ansi-green-fg ansi-bold">    871</span>                     with_indices<span class="ansi-blue-fg">=</span>with_indices<span class="ansi-blue-fg">,</span>
+
+<span class="ansi-green-fg">/usr/local/lib/python3.10/dist-packages/datasets/arrow_dataset.py</span> in <span class="ansi-cyan-fg">wrapper</span><span class="ansi-blue-fg">(*args, **kwargs)</span>
+<span class="ansi-green-fg ansi-bold">    591</span>             self<span class="ansi-blue-fg">:</span> <span class="ansi-blue-fg">"Dataset"</span> <span class="ansi-blue-fg">=</span> kwargs<span class="ansi-blue-fg">.</span>pop<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">"self"</span><span class="ansi-blue-fg">)</span>
+<span class="ansi-green-fg ansi-bold">    592</span>         <span class="ansi-red-fg"># apply actual function</span>
+<span class="ansi-green-fg">--&gt; 593</span><span class="ansi-red-fg">         </span>out<span class="ansi-blue-fg">:</span> Union<span class="ansi-blue-fg">[</span><span class="ansi-blue-fg">"Dataset"</span><span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">"DatasetDict"</span><span class="ansi-blue-fg">]</span> <span class="ansi-blue-fg">=</span> func<span class="ansi-blue-fg">(</span>self<span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">*</span>args<span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">**</span>kwargs<span class="ansi-blue-fg">)</span>
+<span class="ansi-green-fg ansi-bold">    594</span>         datasets<span class="ansi-blue-fg">:</span> List<span class="ansi-blue-fg">[</span><span class="ansi-blue-fg">"Dataset"</span><span class="ansi-blue-fg">]</span> <span class="ansi-blue-fg">=</span> list<span class="ansi-blue-fg">(</span>out<span class="ansi-blue-fg">.</span>values<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">)</span> <span class="ansi-green-fg">if</span> isinstance<span class="ansi-blue-fg">(</span>out<span class="ansi-blue-fg">,</span> dict<span class="ansi-blue-fg">)</span> <span class="ansi-green-fg">else</span> <span class="ansi-blue-fg">[</span>out<span class="ansi-blue-fg">]</span>
+<span class="ansi-green-fg ansi-bold">    595</span>         <span class="ansi-green-fg">for</span> dataset <span class="ansi-green-fg">in</span> datasets<span class="ansi-blue-fg">:</span>
+
+<span class="ansi-green-fg">/usr/local/lib/python3.10/dist-packages/datasets/arrow_dataset.py</span> in <span class="ansi-cyan-fg">wrapper</span><span class="ansi-blue-fg">(*args, **kwargs)</span>
+<span class="ansi-green-fg ansi-bold">    556</span>         }
+<span class="ansi-green-fg ansi-bold">    557</span>         <span class="ansi-red-fg"># apply actual function</span>
+<span class="ansi-green-fg">--&gt; 558</span><span class="ansi-red-fg">         </span>out<span class="ansi-blue-fg">:</span> Union<span class="ansi-blue-fg">[</span><span class="ansi-blue-fg">"Dataset"</span><span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">"DatasetDict"</span><span class="ansi-blue-fg">]</span> <span class="ansi-blue-fg">=</span> func<span class="ansi-blue-fg">(</span>self<span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">*</span>args<span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">**</span>kwargs<span class="ansi-blue-fg">)</span>
+<span class="ansi-green-fg ansi-bold">    559</span>         datasets<span class="ansi-blue-fg">:</span> List<span class="ansi-blue-fg">[</span><span class="ansi-blue-fg">"Dataset"</span><span class="ansi-blue-fg">]</span> <span class="ansi-blue-fg">=</span> list<span class="ansi-blue-fg">(</span>out<span class="ansi-blue-fg">.</span>values<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">)</span> <span class="ansi-green-fg">if</span> isinstance<span class="ansi-blue-fg">(</span>out<span class="ansi-blue-fg">,</span> dict<span class="ansi-blue-fg">)</span> <span class="ansi-green-fg">else</span> <span class="ansi-blue-fg">[</span>out<span class="ansi-blue-fg">]</span>
+<span class="ansi-green-fg ansi-bold">    560</span>         <span class="ansi-red-fg"># re-apply format to the output</span>
+
+<span class="ansi-green-fg">/usr/local/lib/python3.10/dist-packages/datasets/arrow_dataset.py</span> in <span class="ansi-cyan-fg">map</span><span class="ansi-blue-fg">(self, function, with_indices, with_rank, input_columns, batched, batch_size, drop_last_batch, remove_columns, keep_in_memory, load_from_cache_file, cache_file_name, writer_batch_size, features, disable_nullable, fn_kwargs, num_proc, suffix_template, new_fingerprint, desc)</span>
+<span class="ansi-green-fg ansi-bold">   3103</span>                     desc<span class="ansi-blue-fg">=</span>desc <span class="ansi-green-fg">or</span> <span class="ansi-blue-fg">"Map"</span><span class="ansi-blue-fg">,</span>
+<span class="ansi-green-fg ansi-bold">   3104</span>                 ) as pbar:
+<span class="ansi-green-fg">-&gt; 3105</span><span class="ansi-red-fg">                     </span><span class="ansi-green-fg">for</span> rank<span class="ansi-blue-fg">,</span> done<span class="ansi-blue-fg">,</span> content <span class="ansi-green-fg">in</span> Dataset<span class="ansi-blue-fg">.</span>_map_single<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">**</span>dataset_kwargs<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
+<span class="ansi-green-fg ansi-bold">   3106</span>                         <span class="ansi-green-fg">if</span> done<span class="ansi-blue-fg">:</span>
+<span class="ansi-green-fg ansi-bold">   3107</span>                             shards_done <span class="ansi-blue-fg">+=</span> <span class="ansi-cyan-fg">1</span>
+
+<span class="ansi-green-fg">/usr/local/lib/python3.10/dist-packages/datasets/arrow_dataset.py</span> in <span class="ansi-cyan-fg">_map_single</span><span class="ansi-blue-fg">(shard, function, with_indices, with_rank, input_columns, batched, batch_size, drop_last_batch, remove_columns, keep_in_memory, cache_file_name, writer_batch_size, features, disable_nullable, fn_kwargs, new_fingerprint, rank, offset)</span>
+<span class="ansi-green-fg ansi-bold">   3499</span>                                 writer<span class="ansi-blue-fg">.</span>write_table<span class="ansi-blue-fg">(</span>pa<span class="ansi-blue-fg">.</span>Table<span class="ansi-blue-fg">.</span>from_pandas<span class="ansi-blue-fg">(</span>batch<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">)</span>
+<span class="ansi-green-fg ansi-bold">   3500</span>                             <span class="ansi-green-fg">else</span><span class="ansi-blue-fg">:</span>
+<span class="ansi-green-fg">-&gt; 3501</span><span class="ansi-red-fg">                                 </span>writer<span class="ansi-blue-fg">.</span>write_batch<span class="ansi-blue-fg">(</span>batch<span class="ansi-blue-fg">)</span>
+<span class="ansi-green-fg ansi-bold">   3502</span>                         num_examples_progress_update <span class="ansi-blue-fg">+=</span> num_examples_in_batch
+<span class="ansi-green-fg ansi-bold">   3503</span>                         <span class="ansi-green-fg">if</span> time<span class="ansi-blue-fg">.</span>time<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span> <span class="ansi-blue-fg">&gt;</span> _time <span class="ansi-blue-fg">+</span> config<span class="ansi-blue-fg">.</span>PBAR_REFRESH_TIME_INTERVAL<span class="ansi-blue-fg">:</span>
+
+<span class="ansi-green-fg">/usr/local/lib/python3.10/dist-packages/datasets/arrow_writer.py</span> in <span class="ansi-cyan-fg">write_batch</span><span class="ansi-blue-fg">(self, batch_examples, writer_batch_size)</span>
+<span class="ansi-green-fg ansi-bold">    567</span>                 inferred_features<span class="ansi-blue-fg">[</span>col<span class="ansi-blue-fg">]</span> <span class="ansi-blue-fg">=</span> typed_sequence<span class="ansi-blue-fg">.</span>get_inferred_type<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span>
+<span class="ansi-green-fg ansi-bold">    568</span>         schema <span class="ansi-blue-fg">=</span> inferred_features<span class="ansi-blue-fg">.</span>arrow_schema <span class="ansi-green-fg">if</span> self<span class="ansi-blue-fg">.</span>pa_writer <span class="ansi-green-fg">is</span> <span class="ansi-green-fg">None</span> <span class="ansi-green-fg">else</span> self<span class="ansi-blue-fg">.</span>schema
+<span class="ansi-green-fg">--&gt; 569</span><span class="ansi-red-fg">         </span>pa_table <span class="ansi-blue-fg">=</span> pa<span class="ansi-blue-fg">.</span>Table<span class="ansi-blue-fg">.</span>from_arrays<span class="ansi-blue-fg">(</span>arrays<span class="ansi-blue-fg">,</span> schema<span class="ansi-blue-fg">=</span>schema<span class="ansi-blue-fg">)</span>
+<span class="ansi-green-fg ansi-bold">    570</span>         self<span class="ansi-blue-fg">.</span>write_table<span class="ansi-blue-fg">(</span>pa_table<span class="ansi-blue-fg">,</span> writer_batch_size<span class="ansi-blue-fg">)</span>
+<span class="ansi-green-fg ansi-bold">    571</span> 
+
+<span class="ansi-green-fg">/usr/local/lib/python3.10/dist-packages/pyarrow/table.pxi</span> in <span class="ansi-cyan-fg">pyarrow.lib.Table.from_arrays</span><span class="ansi-blue-fg">()</span>
+
+<span class="ansi-green-fg">/usr/local/lib/python3.10/dist-packages/pyarrow/table.pxi</span> in <span class="ansi-cyan-fg">pyarrow.lib.Table.validate</span><span class="ansi-blue-fg">()</span>
+
+<span class="ansi-green-fg">/usr/local/lib/python3.10/dist-packages/pyarrow/error.pxi</span> in <span class="ansi-cyan-fg">pyarrow.lib.check_status</span><span class="ansi-blue-fg">()</span>
+
+<span class="ansi-red-fg">ArrowInvalid</span>: Column 8 named input_ids expected length 1000 but got length 1447</pre>
+</div>
 </div>
 </div>
 <ul>
 <li>Looking at the error message will give us a clue: there is a mismatch in the lengths of one of the columns, one being of length 1,463 and the other of length 1,000. here those 1,000 examples gave 1,463 new features, resulting in a shape error.</li>
 <li>The problem is that we’re trying to mix two different datasets of different sizes: the drug_dataset columns will have a certain number of examples (the 1,000 in our error), but the tokenized_dataset we are building will have more (the 1,463 in the error message; it is more than 1,000 because we are tokenizing long reviews into more than one example by using return_overflowing_tokens=True). That doesn’t work for a Dataset, so we need to either remove the columns from the old dataset or make them the same size as they are in the new dataset. We can do the former with the remove_columns argument:</li>
 </ul>
-<div class="cell" data-outputid="d2c45dbf-8298-4335-c12b-6204b11e2e74">
-<div class="sourceCode cell-code" id="cb53"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a>tokenized_ds <span class="op">=</span> dataset.<span class="bu">map</span>(tokenize_split, batched<span class="op">=</span> <span class="va">True</span>, remove_columns<span class="op">=</span> dataset[<span class="st">'train'</span>].column_names)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="cell-75" class="cell" data-outputid="d2c45dbf-8298-4335-c12b-6204b11e2e74">
+<div class="sourceCode cell-code" id="cb51"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a>tokenized_ds <span class="op">=</span> dataset.<span class="bu">map</span>(tokenize_split, batched<span class="op">=</span> <span class="va">True</span>, remove_columns<span class="op">=</span> dataset[<span class="st">'train'</span>].column_names)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <script type="application/vnd.jupyter.widget-view+json">
 {"model_id":"37991ca076564c268f72becdd2c2bba2","version_major":2,"version_minor":0,"quarto_mimetype":"application/vnd.jupyter.widget-view+json"}
@@ -862,14 +992,14 @@ drug+review+dataset     [       &lt;=&gt;          ]  41.00M  30.7MB/s    in 1.3
 </script>
 </div>
 </div>
-<div class="cell" data-outputid="eb21c298-694a-49d4-a5c6-e7e6110f344f">
-<div class="sourceCode cell-code" id="cb54"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a><span class="bu">len</span>(tokenized_ds[<span class="st">'train'</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="cell-76" class="cell" data-outputid="eb21c298-694a-49d4-a5c6-e7e6110f344f">
+<div class="sourceCode cell-code" id="cb52"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a><span class="bu">len</span>(tokenized_ds[<span class="st">'train'</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="57">
 <pre><code>204198</code></pre>
 </div>
 </div>
-<div class="cell" data-outputid="a953c111-db36-4f4d-fd51-e904696a48d3">
-<div class="sourceCode cell-code" id="cb56"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb56-1"><a href="#cb56-1" aria-hidden="true" tabindex="-1"></a><span class="bu">len</span>(dataset[<span class="st">'train'</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="cell-77" class="cell" data-outputid="a953c111-db36-4f4d-fd51-e904696a48d3">
+<div class="sourceCode cell-code" id="cb54"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a><span class="bu">len</span>(dataset[<span class="st">'train'</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="58">
 <pre><code>138514</code></pre>
 </div>
@@ -918,18 +1048,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
     return false;
   }
-  const clipboard = new window.ClipboardJS('.code-copy-button', {
-    text: function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-    }
-  });
-  clipboard.on('success', function(e) {
+  const onCopySuccess = function(e) {
     // button target
     const button = e.trigger;
     // don't keep focus
@@ -961,11 +1080,50 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }, 1000);
     // clear code selection
     e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
   });
-  function tippyHover(el, contentFn) {
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp("https:\/\/ismaai008l\.github\.io\/Lifelong-Learner\.github\.io\/");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -975,8 +1133,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -988,7 +1155,130 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      return note.innerHTML;
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
     });
   }
       let selectedAnnoteEl;
@@ -1032,6 +1322,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
+            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -1057,6 +1348,32 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
       // Attach click handler to the DT
       const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
       for (const annoteDlNode of annoteDls) {
@@ -1117,6 +1434,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script>
 </div> <!-- /content -->
+
 
 
 

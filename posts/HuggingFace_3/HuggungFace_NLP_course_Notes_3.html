@@ -2,14 +2,14 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.450">
+<meta name="generator" content="quarto-1.5.57">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Ismail TG">
 <meta name="dcterms.date" content="2023-10-19">
 
-<title>Ismail’s Personal Blog - Hugging Face Course Notes: Chapter3</title>
+<title>Hugging Face Course Notes: Chapter3 – Ismail's Personal Blog</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -24,7 +24,7 @@ ul.task-list li input[type="checkbox"] {
 }
 /* CSS for syntax highlighting */
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span { line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -35,7 +35,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -59,7 +59,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </style>
 
 
-<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script><script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="../../site_libs/quarto-nav/headroom.min.js"></script>
 <script src="../../site_libs/clipboard/clipboard.min.js"></script>
 <script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
@@ -81,7 +81,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   "collapse-after": 3,
   "panel-placement": "end",
   "type": "overlay",
-  "limit": 20,
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -90,13 +96,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-more-match-text": "more match in this document",
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancel",
     "search-submit-button-title": "Submit",
     "search-label": "Search"
   }
 }</script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+
 <script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
 <script src="https://unpkg.com/@jupyter-widgets/html-manager@*/dist/embed-amd.js" crossorigin="anonymous"></script>
 
@@ -107,42 +114,42 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <body class="nav-fixed fullcontent">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg navbar-dark ">
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
-      <div class="navbar-brand-container">
+      <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">Ismail’s Personal Blog</span>
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../../blog.html" rel="" target="">
- <span class="menu-text">Blog</span></a>
+    <a class="nav-link" href="../../blog.html"> 
+<span class="menu-text">Blog</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../about.html" rel="" target="">
- <span class="menu-text">About</span></a>
+    <a class="nav-link" href="../../about.html"> 
+<span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="https://github.com/ismaai008l" rel="" target=""><i class="bi bi-github" role="img">
+    <a class="nav-link" href="https://github.com/ismaai008l"> <i class="bi bi-github" role="img">
 </i> 
- <span class="menu-text"></span></a>
+<span class="menu-text"></span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="https://twitter.com/ismailTG3" rel="" target=""><i class="bi bi-twitter" role="img">
+    <a class="nav-link" href="https://twitter.com/ismailTG3"> <i class="bi bi-twitter" role="img">
 </i> 
- <span class="menu-text"></span></a>
+<span class="menu-text"></span></a>
   </li>  
 </ul>
+          </div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
 </div>
-          </div> <!-- /navcollapse -->
       </div> <!-- /container-fluid -->
     </nav>
 </header>
@@ -193,6 +200,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 
+
 <section id="introduction" class="level1">
 <h1>Introduction:</h1>
 <ul>
@@ -205,11 +213,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ul></li>
 <li>But first let’s do the usuall by picking an architecture/model/tokenizer, and then train it some sample data:</li>
 </ul>
-<div class="cell" data-execution_count="5">
+<div id="cell-2" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> torch</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> transformers <span class="im">import</span> AutoTokenizer, AutoModelForSequenceClassification, AdamW</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="cell" data-outputid="97dc3e9a-af16-4e1b-de0c-aac54c3705ae" data-execution_count="6">
+<div id="cell-3" class="cell" data-outputid="97dc3e9a-af16-4e1b-de0c-aac54c3705ae" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>mdl_ckp <span class="op">=</span> <span class="st">'bert-base-uncased'</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>tokenizer <span class="op">=</span> AutoTokenizer.from_pretrained(mdl_ckp)</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>model <span class="op">=</span> AutoModelForSequenceClassification.from_pretrained(mdl_ckp)</span>
@@ -245,11 +253,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.</code></pre>
 </div>
 </div>
-<div class="cell" data-execution_count="7">
+<div id="cell-4" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># will be axplained later</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>batch[<span class="st">'labels'</span>] <span class="op">=</span> torch.tensor([<span class="dv">1</span>, <span class="dv">1</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="cell" data-execution_count="8">
+<div id="cell-5" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># training</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>optimizer <span class="op">=</span> torch.optim.AdamW(model.parameters())</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>loss <span class="op">=</span> model(<span class="op">**</span>batch).loss</span>
@@ -270,7 +278,7 @@ You should probably TRAIN this model on a down-stream task to be able to use it 
 <ul>
 <li>We can easily download a dataset from the Hub just like we did with models before:</li>
 </ul>
-<div class="cell" data-outputid="05d77262-ea40-4df5-d85a-276becfcae6e" data-execution_count="9">
+<div id="cell-8" class="cell" data-outputid="05d77262-ea40-4df5-d85a-276becfcae6e" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># load dataset</span></span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> datasets <span class="im">import</span> load_dataset</span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>raw_ds <span class="op">=</span> load_dataset(<span class="st">'glue'</span>, <span class="st">'mrpc'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -325,7 +333,7 @@ You should probably TRAIN this model on a down-stream task to be able to use it 
 </script>
 </div>
 </div>
-<div class="cell" data-outputid="1471ac17-9df4-4f34-c737-8fbf4ccd5e43" data-execution_count="10">
+<div id="cell-9" class="cell" data-outputid="1471ac17-9df4-4f34-c737-8fbf4ccd5e43" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>raw_ds</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="10">
 <pre><code>DatasetDict({
@@ -354,7 +362,7 @@ You should probably TRAIN this model on a down-stream task to be able to use it 
 </ul></li>
 <li>We can access each pair of sentences in our raw_datasets object by indexing, like with a dictionary:</li>
 </ul>
-<div class="cell" data-outputid="a357d389-d651-4845-9a3a-4ab5f0c9200a" data-execution_count="11">
+<div id="cell-12" class="cell" data-outputid="a357d389-d651-4845-9a3a-4ab5f0c9200a" data-execution_count="11">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># training set</span></span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>train_ds <span class="op">=</span> raw_ds[<span class="st">'train'</span>]</span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>train_ds[<span class="dv">22</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -370,7 +378,7 @@ You should probably TRAIN this model on a down-stream task to be able to use it 
 <li>Labels are already <code>int</code> value so we won’t need to preprocess them.</li>
 <li>What means <code>label: 0</code>?</li>
 </ul>
-<div class="cell" data-outputid="e6af8a93-a42d-4cab-a2af-6a582671f412" data-execution_count="12">
+<div id="cell-14" class="cell" data-outputid="e6af8a93-a42d-4cab-a2af-6a582671f412" data-execution_count="12">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># what means each label</span></span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>train_ds.features</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="12">
@@ -383,7 +391,7 @@ You should probably TRAIN this model on a down-stream task to be able to use it 
 <ul>
 <li><strong>0</strong> for <code>not_equivalent</code> and <strong>1</strong> for <code>equivalent</code></li>
 </ul>
-<div class="cell" data-execution_count="13">
+<div id="cell-16" class="cell" data-execution_count="13">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> transformers <span class="im">import</span> AutoTokenizer</span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>tokenizer <span class="op">=</span> AutoTokenizer.from_pretrained(mdl_ckp)</span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>train_seq1 <span class="op">=</span> tokenizer(train_ds[<span class="st">'sentence1'</span>])</span>
@@ -397,7 +405,7 @@ You should probably TRAIN this model on a down-stream task to be able to use it 
 <li>We need to apply a proper preparation of the data in order feed the model pairs of sequences instead 2 sentences separtly.</li>
 <li>This can be done first whith the tokenizer, we create pairs of tokens and compute them the way <strong>BERT</strong> expect:</li>
 </ul>
-<div class="cell" data-outputid="ff261c59-ffc7-49af-f94d-b9b991507402" data-execution_count="14">
+<div id="cell-19" class="cell" data-outputid="ff261c59-ffc7-49af-f94d-b9b991507402" data-execution_count="14">
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co">#example</span></span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="bu">input</span> <span class="op">=</span> tokenizer(<span class="st">'this is the first sentence'</span>, <span class="st">'this is number 2'</span>)</span>
 <span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="bu">input</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -409,7 +417,7 @@ You should probably TRAIN this model on a down-stream task to be able to use it 
 <li>The tokenizer output: <code>input_ids</code>, <code>attention_mask</code>, but also <code>token_type_ids</code>.</li>
 <li>This feature tells us that the tokenizer is aware that we are dealing with the two sentences, each is represented by either <code>0</code> or <code>1</code></li>
 </ul>
-<div class="cell" data-outputid="4c8d767b-f50e-4830-e4b9-481a5ca6d0e4" data-execution_count="15">
+<div id="cell-21" class="cell" data-outputid="4c8d767b-f50e-4830-e4b9-481a5ca6d0e4" data-execution_count="15">
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="bu">input</span>.token_type_ids</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="15">
 <pre><code>[0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1]</code></pre>
@@ -418,7 +426,7 @@ You should probably TRAIN this model on a down-stream task to be able to use it 
 <ul>
 <li>If we convert each <code>input_ids</code> back to token we can have and idea of what happend:</li>
 </ul>
-<div class="cell" data-outputid="612f7db4-bd4b-4468-89d1-d5b06983f539" data-execution_count="16">
+<div id="cell-23" class="cell" data-outputid="612f7db4-bd4b-4468-89d1-d5b06983f539" data-execution_count="16">
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>tokenizer.convert_ids_to_tokens(<span class="bu">input</span>[<span class="st">'input_ids'</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="16">
 <pre><code>['[CLS]',
@@ -440,7 +448,7 @@ You should probably TRAIN this model on a down-stream task to be able to use it 
 <li>Note that not all model’s tokenizer can perform this because the way each model is trained, here <code>BERT</code> have seen pairs and knows how to deal with them.</li>
 <li>We can then pass pairs of sentences to the tokenizer like this:</li>
 </ul>
-<div class="cell" data-execution_count="17">
+<div id="cell-25" class="cell" data-execution_count="17">
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>tokenized_dataset <span class="op">=</span> tokenizer(train_ds[<span class="st">'sentence1'</span>], train_ds[<span class="st">'sentence2'</span>], truncation<span class="op">=</span><span class="va">True</span>, padding<span class="op">=</span><span class="va">True</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <ul>
@@ -449,7 +457,7 @@ You should probably TRAIN this model on a down-stream task to be able to use it 
 <li>To work around this problem we will use <code>map()</code> method which will keep data as dataset, and also it will give us more flexibility if we need more preprocessing more than just tokenizing.</li>
 <li><code>map()</code> works by applying a function to each element of the dataset, let’s create a function that tokenize pairs of sentences so the map method use it over the whole dataset:</li>
 </ul>
-<div class="cell" data-execution_count="18">
+<div id="cell-27" class="cell" data-execution_count="18">
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> func_tokenize(example):</span>
 <span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> tokenizer(example[<span class="st">'sentence1'</span>], example[<span class="st">'sentence2'</span>], truncation<span class="op">=</span><span class="va">True</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
@@ -458,7 +466,7 @@ You should probably TRAIN this model on a down-stream task to be able to use it 
 <li>We didn’t include the <code>padding</code> here, because it’s not sufficient to pad the whole dataset based on the longest sentence, when we can do it on the batch level</li>
 <li>We can pass the batching as argument in the <code>map()</code> method</li>
 </ul>
-<div class="cell" data-outputid="2516b131-48cf-428d-8da3-a3f9944c9861" data-execution_count="19">
+<div id="cell-29" class="cell" data-outputid="2516b131-48cf-428d-8da3-a3f9944c9861" data-execution_count="19">
 <div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>tokenized_datasets <span class="op">=</span> raw_ds.<span class="bu">map</span>(func_tokenize, batched<span class="op">=</span><span class="va">True</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <script type="application/vnd.jupyter.widget-view+json">
@@ -480,7 +488,7 @@ You should probably TRAIN this model on a down-stream task to be able to use it 
 <li><p>Let’s take a look on pair exmaple from the training dataset:</p></li>
 <li><p>We get what we expected, the 3 keys representing tokenization process, plus the dictionary key we already have: <code>label</code>, <code>idx</code> and <code>sentence1&amp;2</code>:</p></li>
 </ul>
-<div class="cell" data-outputid="3f19cfc9-8d8a-41ae-8a6f-78fd1c5e8e97" data-execution_count="20">
+<div id="cell-32" class="cell" data-outputid="3f19cfc9-8d8a-41ae-8a6f-78fd1c5e8e97" data-execution_count="20">
 <div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>tokenized_datasets[<span class="st">'train'</span>][<span class="dv">55</span>].keys()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="20">
 <pre><code>dict_keys(['sentence1', 'sentence2', 'label', 'idx', 'input_ids', 'token_type_ids', 'attention_mask'])</code></pre>
@@ -499,7 +507,7 @@ You should probably TRAIN this model on a down-stream task to be able to use it 
 <li>As we said before the padding process should be done on batch level, which means each batch will have its samples padded according to the longest sequence otherwise we will get samples a with lot of paddings.</li>
 <li>In practice we have to define a collate-function that apply the correct amount of padding to the items of the dataset we want to batch together.</li>
 </ul>
-<div class="cell" data-execution_count="21">
+<div id="cell-34" class="cell" data-execution_count="21">
 <div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> transformers <span class="im">import</span> DataCollatorWithPadding</span>
 <span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>data_collator <span class="op">=</span> DataCollatorWithPadding(tokenizer<span class="op">=</span>tokenizer)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
@@ -508,7 +516,7 @@ You should probably TRAIN this model on a down-stream task to be able to use it 
 <li>We need first to remove columns <code>idx</code>, <code>sentence1</code>, <code>sentence2</code> since we don’t need them.</li>
 <li>Let’s have a look at the length of each entry in the batch:</li>
 </ul>
-<div class="cell" data-outputid="910ec416-f3c5-498b-8fef-f2733f61b768" data-execution_count="22">
+<div id="cell-36" class="cell" data-outputid="910ec416-f3c5-498b-8fef-f2733f61b768" data-execution_count="22">
 <div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>samples <span class="op">=</span> tokenized_datasets[<span class="st">'train'</span>][:<span class="dv">8</span>]</span>
 <span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>samples <span class="op">=</span> {k: v <span class="cf">for</span> k, v <span class="kw">in</span> samples.items() <span class="cf">if</span> k <span class="kw">not</span> <span class="kw">in</span> [<span class="st">'idx'</span>, <span class="st">'sentence1'</span>, <span class="st">'sentence2'</span>]}</span>
 <span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>[<span class="bu">len</span>(x) <span class="cf">for</span> x <span class="kw">in</span> samples[<span class="st">'input_ids'</span>]]</span>
@@ -517,7 +525,7 @@ You should probably TRAIN this model on a down-stream task to be able to use it 
 <pre><code>[50, 59, 47, 67, 59, 50, 62, 32]</code></pre>
 </div>
 </div>
-<div class="cell" data-outputid="e1913d41-cc08-4207-f797-d467aaa45834" data-execution_count="23">
+<div id="cell-37" class="cell" data-outputid="e1913d41-cc08-4207-f797-d467aaa45834" data-execution_count="23">
 <div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>samples.keys()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="23">
 <pre><code>dict_keys(['label', 'input_ids', 'token_type_ids', 'attention_mask'])</code></pre>
@@ -526,7 +534,7 @@ You should probably TRAIN this model on a down-stream task to be able to use it 
 <ul>
 <li>These samples are varying between <code>32</code> and <code>67</code>, so our job here is to pad all the other sequence in this particular in respect to the treshold.</li>
 </ul>
-<div class="cell" data-outputid="8eb8538d-8526-45eb-bb82-8807b545ecdd" data-execution_count="24">
+<div id="cell-39" class="cell" data-outputid="8eb8538d-8526-45eb-bb82-8807b545ecdd" data-execution_count="24">
 <div class="sourceCode cell-code" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>sample_batch <span class="op">=</span> data_collator(samples)</span>
 <span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>{k:v.shape <span class="cf">for</span> k, v <span class="kw">in</span> sample_batch.items()}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
@@ -542,7 +550,7 @@ You should probably TRAIN this model on a down-stream task to be able to use it 
 <ul>
 <li>Let’s check again if our <code>input_ids</code> have the same length:</li>
 </ul>
-<div class="cell" data-outputid="eba5e8af-d2b2-46fb-b55c-0000af95e66f" data-execution_count="25">
+<div id="cell-41" class="cell" data-outputid="eba5e8af-d2b2-46fb-b55c-0000af95e66f" data-execution_count="25">
 <div class="sourceCode cell-code" id="cb33"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>[<span class="bu">len</span>(i) <span class="cf">for</span> i <span class="kw">in</span> sample_batch[<span class="st">'input_ids'</span>]]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="25">
 <pre><code>[67, 67, 67, 67, 67, 67, 67, 67]</code></pre>
@@ -559,10 +567,10 @@ You should probably TRAIN this model on a down-stream task to be able to use it 
 <li>But first we have to define <code>TrainingArguments</code> that contains all the <em>Hyperparameters</em> the <strong><code>Trainer</code></strong> will use for the training and evaluation.</li>
 <li>We just need to provide where the model will be saved, as long as the checkpoints, everything else is set as defaults which will work for learning purposes.</li>
 </ul>
-<div class="cell" data-execution_count="26">
+<div id="cell-43" class="cell" data-execution_count="26">
 <div class="sourceCode cell-code" id="cb35"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>output_dir <span class="op">=</span> <span class="st">'my_folder'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="cell" data-execution_count="27">
+<div id="cell-44" class="cell" data-execution_count="27">
 <div class="sourceCode cell-code" id="cb36"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> transformers <span class="im">import</span> TrainingArguments</span>
 <span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a>training_args <span class="op">=</span> TrainingArguments(output_dir<span class="op">=</span>output_dir)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -570,7 +578,7 @@ You should probably TRAIN this model on a down-stream task to be able to use it 
 <ul>
 <li>For this dataset we will use <code>AutoModelForSequenceClassification</code> class with 2 labels:</li>
 </ul>
-<div class="cell" data-outputid="be3e8493-ca90-454d-c438-687fd0cc58b9" data-execution_count="28">
+<div id="cell-46" class="cell" data-outputid="be3e8493-ca90-454d-c438-687fd0cc58b9" data-execution_count="28">
 <div class="sourceCode cell-code" id="cb37"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> transformers <span class="im">import</span> AutoModelForSequenceClassification</span>
 <span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a>model <span class="op">=</span> AutoModelForSequenceClassification.from_pretrained(mdl_ckp, num_labels<span class="op">=</span><span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -583,7 +591,7 @@ You should probably TRAIN this model on a down-stream task to be able to use it 
 <li>The BERT model we instantiated now will be the back-bone for our process, but we will delete the head and add the <code>AutoModelForSequenceClassification</code> head that fit our situation.</li>
 <li>The weights are initialized randomly for the head, which means we need to train them from scratch which is exactly what we will do:</li>
 </ul>
-<div class="cell" data-execution_count="29">
+<div id="cell-48" class="cell" data-execution_count="29">
 <div class="sourceCode cell-code" id="cb39"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> transformers <span class="im">import</span> Trainer</span>
 <span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a>trainer <span class="op">=</span> Trainer(</span>
@@ -599,7 +607,7 @@ You should probably TRAIN this model on a down-stream task to be able to use it 
 <li>When the tokenizer is passed as argument like this, usually we won’t need to define <code>data_collator</code> since it already defined with <code>DataCollatorWithPadding</code>, and the <code>Trainer</code> will retrieve it from the tokenizer anyway.</li>
 <li>Now we fine-tune the model on our dataset:</li>
 </ul>
-<div class="cell" data-outputid="d2123981-7055-4655-aa19-5fd27db8a7a8" data-execution_count="30">
+<div id="cell-50" class="cell" data-outputid="d2123981-7055-4655-aa19-5fd27db8a7a8" data-execution_count="30">
 <div class="sourceCode cell-code" id="cb40"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a>trainer.train()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 
@@ -609,7 +617,7 @@ You should probably TRAIN this model on a down-stream task to be able to use it 
       [1377/1377 03:21, Epoch 3/3]
     </div>
     
-<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
 <thead>
 <tr class="header">
 <th data-quarto-table-cell-role="th">Step</th>
@@ -652,7 +660,7 @@ You should probably TRAIN this model on a down-stream task to be able to use it 
 </ul></li>
 <li>Here we get some predictions from our model:</li>
 </ul>
-<div class="cell" data-outputid="496c79ae-81c1-45b2-8c81-af5264ef7ede" data-execution_count="31">
+<div id="cell-53" class="cell" data-outputid="496c79ae-81c1-45b2-8c81-af5264ef7ede" data-execution_count="31">
 <div class="sourceCode cell-code" id="cb42"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a>predictions <span class="op">=</span> trainer.predict(tokenized_datasets[<span class="st">"validation"</span>])</span>
 <span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(predictions.predictions.shape, predictions.label_ids.shape)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
@@ -669,7 +677,7 @@ You should probably TRAIN this model on a down-stream task to be able to use it 
 <li>It represent the logits for each element of the dataset we passed to <code>predict()</code> .</li>
 <li>To transform them into predictions that we can compare to our labels, we need to take the index with the maximum value on the second axis:</li>
 </ul>
-<div class="cell" data-execution_count="32">
+<div id="cell-55" class="cell" data-execution_count="32">
 <div class="sourceCode cell-code" id="cb44"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb44-3"><a href="#cb44-3" aria-hidden="true" tabindex="-1"></a>preds <span class="op">=</span> np.argmax(predictions.predictions, axis<span class="op">=-</span><span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -678,7 +686,7 @@ You should probably TRAIN this model on a down-stream task to be able to use it 
 <li>Now we have ot build our <code>compute_metrics()</code> function in order to compare the predictions of the model with the actual labels.</li>
 <li>We will use the metrics from the huggingFace library **’evaluate<code>**, we just need to loa the meetrics associated with the dataset we used</code>mrpc`:</li>
 </ul>
-<div class="cell" data-outputid="db294ab0-39ea-4ad4-a62b-c3f53378e211" data-execution_count="33">
+<div id="cell-57" class="cell" data-outputid="db294ab0-39ea-4ad4-a62b-c3f53378e211" data-execution_count="33">
 <div class="sourceCode cell-code" id="cb45"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> evaluate</span>
 <span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a>metric <span class="op">=</span> evaluate.load(<span class="st">'glue'</span>, <span class="st">'mrpc'</span>)</span>
 <span id="cb45-3"><a href="#cb45-3" aria-hidden="true" tabindex="-1"></a>metric.compute(predictions<span class="op">=</span> preds, references<span class="op">=</span> predictions.label_ids)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -694,7 +702,7 @@ You should probably TRAIN this model on a down-stream task to be able to use it 
 <ul>
 <li>Now let’s wrap everething in a single function:</li>
 </ul>
-<div class="cell" data-execution_count="38">
+<div id="cell-59" class="cell" data-execution_count="38">
 <div class="sourceCode cell-code" id="cb47"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> compute_metrics(eval_preds):</span>
 <span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a>  metric <span class="op">=</span> evaluate.load(<span class="st">'glue'</span>, <span class="st">'mrpc'</span>)</span>
 <span id="cb47-3"><a href="#cb47-3" aria-hidden="true" tabindex="-1"></a>  logits, labels <span class="op">=</span> eval_preds</span>
@@ -704,7 +712,7 @@ You should probably TRAIN this model on a down-stream task to be able to use it 
 <ul>
 <li>Now let’s use it the training loop so it report all the metrics at the end of each epoch:</li>
 </ul>
-<div class="cell" data-execution_count="40">
+<div id="cell-61" class="cell" data-execution_count="40">
 <div class="sourceCode cell-code" id="cb48"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a>training_args <span class="op">=</span> TrainingArguments(<span class="st">'test-train'</span>, evaluation_strategy<span class="op">=</span> <span class="st">'epoch'</span>)</span>
 <span id="cb48-2"><a href="#cb48-2" aria-hidden="true" tabindex="-1"></a>trainer<span class="op">=</span> Trainer(</span>
 <span id="cb48-3"><a href="#cb48-3" aria-hidden="true" tabindex="-1"></a>    model,</span>
@@ -716,7 +724,7 @@ You should probably TRAIN this model on a down-stream task to be able to use it 
 <span id="cb48-9"><a href="#cb48-9" aria-hidden="true" tabindex="-1"></a>    compute_metrics<span class="op">=</span> compute_metrics</span>
 <span id="cb48-10"><a href="#cb48-10" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="cell" data-outputid="1754d418-8066-40f7-ffcc-ddb23cde1894" data-execution_count="41">
+<div id="cell-62" class="cell" data-outputid="1754d418-8066-40f7-ffcc-ddb23cde1894" data-execution_count="41">
 <div class="sourceCode cell-code" id="cb49"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a>trainer.train()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 
@@ -726,7 +734,7 @@ You should probably TRAIN this model on a down-stream task to be able to use it 
       [1377/1377 03:39, Epoch 3/3]
     </div>
     
-<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
 <thead>
 <tr class="header">
 <th data-quarto-table-cell-role="th">Epoch</th>
@@ -776,7 +784,7 @@ You should probably TRAIN this model on a down-stream task to be able to use it 
 <li>In this section we will try to achieve the same results we had with <code>Trainer</code> API.</li>
 <li>Since we already done with the preprocessing of the dataset, we just have to to some tweaks regarding some columns of the dataset we won’t use:</li>
 </ul>
-<div class="cell" data-outputid="f229d810-9d2c-4443-de07-61d17143e5c8" data-execution_count="42">
+<div id="cell-66" class="cell" data-outputid="f229d810-9d2c-4443-de07-61d17143e5c8" data-execution_count="42">
 <div class="sourceCode cell-code" id="cb51"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a>tokenized_ds <span class="op">=</span> tokenized_datasets.remove_columns([<span class="st">'sentence1'</span>, <span class="st">'sentence2'</span>, <span class="st">'idx'</span>])</span>
 <span id="cb51-2"><a href="#cb51-2" aria-hidden="true" tabindex="-1"></a>tokenized_ds <span class="op">=</span> tokenized_ds.rename_column(<span class="st">'label'</span>, <span class="st">'labels'</span>)</span>
 <span id="cb51-3"><a href="#cb51-3" aria-hidden="true" tabindex="-1"></a>tokenized_ds.set_format(<span class="st">'torch'</span>)</span>
@@ -788,18 +796,18 @@ You should probably TRAIN this model on a down-stream task to be able to use it 
 <ul>
 <li>Now we need to define the <code>DataLoader</code> that will help us to feed the model the dataset in batches:</li>
 </ul>
-<div class="cell" data-execution_count="45">
+<div id="cell-68" class="cell" data-execution_count="45">
 <div class="sourceCode cell-code" id="cb53"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> torch</span>
 <span id="cb53-2"><a href="#cb53-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> torch.utils.data <span class="im">import</span> DataLoader</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="cell" data-execution_count="46">
+<div id="cell-69" class="cell" data-execution_count="46">
 <div class="sourceCode cell-code" id="cb54"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a>train_dataloader <span class="op">=</span> DataLoader(tokenized_ds[<span class="st">'train'</span>], shuffle<span class="op">=</span> <span class="va">True</span>, batch_size<span class="op">=</span> <span class="dv">8</span>, collate_fn<span class="op">=</span> data_collator)</span>
 <span id="cb54-2"><a href="#cb54-2" aria-hidden="true" tabindex="-1"></a>eval_dataloader <span class="op">=</span> DataLoader(tokenized_ds[<span class="st">'validation'</span>], batch_size<span class="op">=</span> <span class="dv">8</span>, collate_fn<span class="op">=</span> data_collator)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <ul>
 <li>Check the training data loader:</li>
 </ul>
-<div class="cell" data-outputid="b7eac9d3-c0b3-494a-ec06-59dae40f1cce" data-execution_count="48">
+<div id="cell-71" class="cell" data-outputid="b7eac9d3-c0b3-494a-ec06-59dae40f1cce" data-execution_count="48">
 <div class="sourceCode cell-code" id="cb55"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb55-1"><a href="#cb55-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> batch <span class="kw">in</span> train_dataloader:</span>
 <span id="cb55-2"><a href="#cb55-2" aria-hidden="true" tabindex="-1"></a>  <span class="cf">break</span></span>
 <span id="cb55-3"><a href="#cb55-3" aria-hidden="true" tabindex="-1"></a>{k:v.shape <span class="cf">for</span> k,v <span class="kw">in</span> batch.items()}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -813,7 +821,7 @@ You should probably TRAIN this model on a down-stream task to be able to use it 
 <ul>
 <li>Make sure that everything will go smoothly during the training , we pass a batch to the model:</li>
 </ul>
-<div class="cell" data-outputid="d0aa96c0-c890-4992-e041-6803e2b2b061" data-execution_count="50">
+<div id="cell-73" class="cell" data-outputid="d0aa96c0-c890-4992-e041-6803e2b2b061" data-execution_count="50">
 <div class="sourceCode cell-code" id="cb57"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb57-1"><a href="#cb57-1" aria-hidden="true" tabindex="-1"></a>model <span class="op">=</span> AutoModelForSequenceClassification.from_pretrained(mdl_ckp, num_labels<span class="op">=</span> <span class="dv">2</span>)</span>
 <span id="cb57-2"><a href="#cb57-2" aria-hidden="true" tabindex="-1"></a>output<span class="op">=</span> model(<span class="op">**</span>batch)</span>
 <span id="cb57-3"><a href="#cb57-3" aria-hidden="true" tabindex="-1"></a>output.loss, output.logits.shape</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -833,7 +841,7 @@ You should probably TRAIN this model on a down-stream task to be able to use it 
 </ul></li>
 <li>Sonce we want to replicate the <code>Trainer</code> and its defaults parameters, the optimizer used by <code>Trainer</code> is <strong>Adam</strong>, we will use a slightly different optimizer <strong><code>AdamW</code></strong>:</li>
 </ul>
-<div class="cell" data-outputid="77ccbf01-c2e4-495c-8c9d-83ed72dc948a" data-execution_count="51">
+<div id="cell-75" class="cell" data-outputid="77ccbf01-c2e4-495c-8c9d-83ed72dc948a" data-execution_count="51">
 <div class="sourceCode cell-code" id="cb60"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb60-1"><a href="#cb60-1" aria-hidden="true" tabindex="-1"></a>optimizer <span class="op">=</span> AdamW(model.parameters(), lr<span class="op">=</span> <span class="fl">5e-5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>/usr/local/lib/python3.10/dist-packages/transformers/optimization.py:411: FutureWarning: This implementation of AdamW is deprecated and will be removed in a future version. Use the PyTorch implementation torch.optim.AdamW instead, or set `no_deprecation_warning=True` to disable this warning
@@ -844,7 +852,7 @@ You should probably TRAIN this model on a down-stream task to be able to use it 
 <li>Finally the learning-rate scheduler used by the <code>Trainer</code> is just a simple linear decay from the highest learning-rate <code>5e-5</code> to <code>0</code>.</li>
 <li>In order to define it we just need to know the number of training steps.</li>
 </ul>
-<div class="cell" data-execution_count="55">
+<div id="cell-77" class="cell" data-execution_count="55">
 <div class="sourceCode cell-code" id="cb62"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb62-1"><a href="#cb62-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> transformers <span class="im">import</span> get_scheduler</span>
 <span id="cb62-2"><a href="#cb62-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb62-3"><a href="#cb62-3" aria-hidden="true" tabindex="-1"></a>num_epochs <span class="op">=</span> <span class="dv">3</span></span>
@@ -859,7 +867,7 @@ You should probably TRAIN this model on a down-stream task to be able to use it 
 <ul>
 <li>As we mension before, <code>Trainer</code> works out of the box with any set of hardware we have, but now we have to set the GPU as device during the training:</li>
 </ul>
-<div class="cell" data-outputid="3d9b57f6-c7c6-4b77-b1e6-6f81367491ae" data-execution_count="52">
+<div id="cell-79" class="cell" data-outputid="3d9b57f6-c7c6-4b77-b1e6-6f81367491ae" data-execution_count="52">
 <div class="sourceCode cell-code" id="cb63"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb63-1"><a href="#cb63-1" aria-hidden="true" tabindex="-1"></a>device <span class="op">=</span> torch.device(<span class="st">'cuda'</span>) <span class="cf">if</span> torch.cuda.is_available <span class="cf">else</span> torch.device(<span class="st">'cpu'</span>)</span>
 <span id="cb63-2"><a href="#cb63-2" aria-hidden="true" tabindex="-1"></a>model.to(device)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="52">
@@ -915,7 +923,7 @@ You should probably TRAIN this model on a down-stream task to be able to use it 
 <ul>
 <li>Now we have all the ingredients to start out training loop:</li>
 </ul>
-<div class="cell">
+<div id="cell-82" class="cell">
 <div class="sourceCode cell-code" id="cb65"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb65-1"><a href="#cb65-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> tqdm.auto <span class="im">import</span> tqdm</span>
 <span id="cb65-2"><a href="#cb65-2" aria-hidden="true" tabindex="-1"></a>progress_bar <span class="op">=</span> tqdm(<span class="bu">range</span>(num_training_steps))</span>
 <span id="cb65-3"><a href="#cb65-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -938,7 +946,7 @@ You should probably TRAIN this model on a down-stream task to be able to use it 
 <ul>
 <li>Evaluation loop is basically the same as <code>compute_metrics()</code> function we built before:</li>
 </ul>
-<div class="cell">
+<div id="cell-84" class="cell">
 <div class="sourceCode cell-code" id="cb66"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb66-1"><a href="#cb66-1" aria-hidden="true" tabindex="-1"></a>metric <span class="op">=</span> evaluate.load(<span class="st">'glue'</span>, <span class="st">'mrpc'</span>)</span>
 <span id="cb66-2"><a href="#cb66-2" aria-hidden="true" tabindex="-1"></a>model.<span class="bu">eval</span>()</span>
 <span id="cb66-3"><a href="#cb66-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> batch <span class="kw">in</span> eval_dataloader:</span>
@@ -1001,18 +1009,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
     return false;
   }
-  const clipboard = new window.ClipboardJS('.code-copy-button', {
-    text: function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-    }
-  });
-  clipboard.on('success', function(e) {
+  const onCopySuccess = function(e) {
     // button target
     const button = e.trigger;
     // don't keep focus
@@ -1044,11 +1041,50 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }, 1000);
     // clear code selection
     e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
   });
-  function tippyHover(el, contentFn) {
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp("https:\/\/ismaai008l\.github\.io\/Lifelong-Learner\.github\.io\/");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -1058,8 +1094,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -1071,7 +1116,130 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      return note.innerHTML;
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
     });
   }
       let selectedAnnoteEl;
@@ -1115,6 +1283,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
+            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -1140,6 +1309,32 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
       // Attach click handler to the DT
       const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
       for (const annoteDlNode of annoteDls) {
@@ -1200,6 +1395,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script>
 </div> <!-- /content -->
+
 
 
 

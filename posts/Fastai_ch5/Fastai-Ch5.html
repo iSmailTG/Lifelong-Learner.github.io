@@ -2,14 +2,14 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.450">
+<meta name="generator" content="quarto-1.5.57">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Ismail TG">
 <meta name="dcterms.date" content="2022-10-26">
 
-<title>Ismail’s Personal Blog - Chapter 5: Deep learning for coders with fastai and pytorch</title>
+<title>Chapter 5: Deep learning for coders with fastai and pytorch – Ismail's Personal Blog</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -24,7 +24,7 @@ ul.task-list li input[type="checkbox"] {
 }
 /* CSS for syntax highlighting */
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span { line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -35,7 +35,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -59,7 +59,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </style>
 
 
-<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script><script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="../../site_libs/quarto-nav/headroom.min.js"></script>
 <script src="../../site_libs/clipboard/clipboard.min.js"></script>
 <script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
@@ -81,7 +81,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   "collapse-after": 3,
   "panel-placement": "end",
   "type": "overlay",
-  "limit": 20,
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -90,18 +96,46 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-more-match-text": "more match in this document",
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancel",
     "search-submit-button-title": "Submit",
     "search-label": "Search"
   }
 }</script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+
 <script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
 <script src="https://unpkg.com/@jupyter-widgets/html-manager@*/dist/embed-amd.js" crossorigin="anonymous"></script>
 
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="../../styles.css">
 </head>
@@ -109,42 +143,42 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <body class="nav-fixed fullcontent">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg navbar-dark ">
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
-      <div class="navbar-brand-container">
+      <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">Ismail’s Personal Blog</span>
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../../blog.html" rel="" target="">
- <span class="menu-text">Blog</span></a>
+    <a class="nav-link" href="../../blog.html"> 
+<span class="menu-text">Blog</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../about.html" rel="" target="">
- <span class="menu-text">About</span></a>
+    <a class="nav-link" href="../../about.html"> 
+<span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="https://github.com/ismaai008l" rel="" target=""><i class="bi bi-github" role="img">
+    <a class="nav-link" href="https://github.com/ismaai008l"> <i class="bi bi-github" role="img">
 </i> 
- <span class="menu-text"></span></a>
+<span class="menu-text"></span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="https://twitter.com/ismailTG3" rel="" target=""><i class="bi bi-twitter" role="img">
+    <a class="nav-link" href="https://twitter.com/ismailTG3"> <i class="bi bi-twitter" role="img">
 </i> 
- <span class="menu-text"></span></a>
+<span class="menu-text"></span></a>
   </li>  
 </ul>
+          </div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
 </div>
-          </div> <!-- /navcollapse -->
       </div> <!-- /container-fluid -->
     </nav>
 </header>
@@ -194,6 +228,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 
+
 <section id="image-classification" class="level1">
 <h1>Image Classification</h1>
 <ul>
@@ -201,7 +236,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>It takes many tweaks and parameters changing in order to “polish” a model.</li>
 <li>In order to achieve this goal we need to be familiar with many concepts and technics, different types of layers, regularization methods, optimizers, how to put layers together into architectures, labeling techniques, and much more.</li>
 </ul>
-<div class="cell" data-outputid="b9dfbc8f-6580-442d-d1b9-d979e1c0109c" data-execution_count="1">
+<div id="cell-3" class="cell" data-outputid="b9dfbc8f-6580-442d-d1b9-d979e1c0109c" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="op">!</span> [ <span class="op">-</span>e <span class="op">/</span>content ] <span class="op">&amp;&amp;</span> pip install <span class="op">-</span>Uqq fastbook</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> fastbook</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>fastbook.setup_book()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -220,7 +255,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 Mounted at /content/gdrive</code></pre>
 </div>
 </div>
-<div class="cell" data-execution_count="2">
+<div id="cell-4" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> fastbook <span class="im">import</span> <span class="op">*</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> fastai.vision.widgets <span class="im">import</span> <span class="op">*</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
@@ -252,7 +287,7 @@ Mounted at /content/gdrive</code></pre>
 <li>network streams</li>
 </ul></li>
 </ul>
-<div class="cell" data-outputid="71d97011-ca2e-4a6a-99f5-7f10143579fa" data-execution_count="3">
+<div id="cell-7" class="cell" data-outputid="71d97011-ca2e-4a6a-99f5-7f10143579fa" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># download the dataset</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> fastai.vision.<span class="bu">all</span> <span class="im">import</span> <span class="op">*</span></span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>path <span class="op">=</span> untar_data(URLs.PETS)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -283,7 +318,7 @@ Mounted at /content/gdrive</code></pre>
     
 </div>
 </div>
-<div class="cell" data-outputid="07455616-0517-49b4-80ca-05c53ac34c50" data-execution_count="5">
+<div id="cell-8" class="cell" data-outputid="07455616-0517-49b4-80ca-05c53ac34c50" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co">#get the path as variable, and see what inside</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>Path.BASE_PATH <span class="op">=</span> path</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>path.ls()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -298,7 +333,7 @@ Mounted at /content/gdrive</code></pre>
 <li><code>annotations</code></li>
 </ul></li>
 </ul>
-<div class="cell" data-outputid="c796f139-fc97-41ce-9f1c-86d731e96600" data-execution_count="6">
+<div id="cell-10" class="cell" data-outputid="c796f139-fc97-41ce-9f1c-86d731e96600" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co">#take a look at what inside the images directory</span></span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>(path<span class="op">/</span><span class="st">'images'</span>).ls()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="6">
@@ -309,7 +344,7 @@ Mounted at /content/gdrive</code></pre>
 <li>When we took a look at these names, we see some paterns: we already know from <code>chapter1</code> that cats name are uppercase, here we see that after the breed’s name there is a <code>(_)</code> then a number, and finally the extension.</li>
 <li>This may help us to write some code that extract the breed from a single <code>Path</code>.</li>
 </ul>
-<div class="cell" data-outputid="b1ae1724-4205-40eb-b039-fe1e885d7390" data-execution_count="7">
+<div id="cell-12" class="cell" data-outputid="b1ae1724-4205-40eb-b039-fe1e885d7390" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co">#pick one </span></span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>fname <span class="op">=</span> (path<span class="op">/</span><span class="st">"images"</span>).ls()[<span class="dv">0</span>]</span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>fname</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -320,7 +355,7 @@ Mounted at /content/gdrive</code></pre>
 <ul>
 <li>The best way to work with strings and extract patterns from them is to use <code>Regex</code>, which stands for <strong>Regular Expression</strong>.</li>
 </ul>
-<div class="cell" data-outputid="1bd98346-bcfd-4bec-82f5-3fa4ec8bdec0" data-execution_count="8">
+<div id="cell-14" class="cell" data-outputid="1bd98346-bcfd-4bec-82f5-3fa4ec8bdec0" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>re.findall(<span class="vs">r'(.+)_\d+.jpg$'</span>, fname.name)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="8">
 <pre><code>['german_shorthaired']</code></pre>
@@ -330,7 +365,7 @@ Mounted at /content/gdrive</code></pre>
 <li>Now we need to label the whole dataset using this code.</li>
 <li>Fastai comes with many classes for labeling, in this case when we need to label with help of <code>regex</code> we could use <code>RegexLabeller</code> class within <code>DataBlaock</code> <code>API</code>.</li>
 </ul>
-<div class="cell" data-execution_count="9">
+<div id="cell-16" class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>pets <span class="op">=</span> DataBlock(blocks <span class="op">=</span> (ImageBlock, CategoryBlock),</span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>                 get_items<span class="op">=</span>get_image_files, </span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>                 splitter<span class="op">=</span>RandomSplitter(seed<span class="op">=</span><span class="dv">42</span>),</span>
@@ -359,11 +394,15 @@ batch_tfms=aug_transforms(size=224, min_scale=0.75))
 * `DataBlock` is just a blueprint for orginizing data before we feed it to the model, you have no guarantee that your template is going to work on your data source as you intend.
 * So, before training a model you should always check your data. You can do this using the show_batch method:
 
-::: {.cell outputId='0f1711e2-f2c6-4703-ed64-1ea456f04a2d' execution_count=10}
+::: {#cell-23 .cell outputId='0f1711e2-f2c6-4703-ed64-1ea456f04a2d' execution_count=10}
 ``` {.python .cell-code}
 dls.show_batch(nrows=1, ncols=4 ,unique= True)</code></pre>
 <div class="cell-output cell-output-display">
-<p><img src="Fastai-Ch5_files/figure-html/cell-10-output-1.png" class="img-fluid"></p>
+<div>
+<figure class="figure">
+<p><img src="Fastai-Ch5_files/figure-html/cell-10-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
 </div>
 <p>:::</p>
 <ul>
@@ -378,7 +417,7 @@ dls.show_batch(nrows=1, ncols=4 ,unique= True)</code></pre>
 <ul>
 <li>Once we feel like the datablock is well created, we better begin train the model, and use it as a tool of cleaning the data. If there’s a problem with data or the model, we better know that before we lost lot of time and energy on data cleaning even before testing the model.</li>
 </ul>
-<div class="cell" data-outputid="733c3312-d487-47c6-bebe-6f89eafeb16f" data-execution_count="11">
+<div id="cell-28" class="cell" data-outputid="733c3312-d487-47c6-bebe-6f89eafeb16f" data-execution_count="11">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># train the model</span></span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>learn <span class="op">=</span> vision_learner(dls, resnet34, metrics<span class="op">=</span>error_rate)</span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>learn.fine_tune(<span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -413,7 +452,7 @@ Downloading: "https://download.pytorch.org/models/resnet34-b627a593.pth" to /roo
 </style>
 </div>
 <div class="cell-output cell-output-display">
-<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
 <thead>
 <tr class="header">
 <th data-quarto-table-cell-role="th">epoch</th>
@@ -453,7 +492,7 @@ Downloading: "https://download.pytorch.org/models/resnet34-b627a593.pth" to /roo
 </style>
 </div>
 <div class="cell-output cell-output-display">
-<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
 <thead>
 <tr class="header">
 <th data-quarto-table-cell-role="th">epoch</th>
@@ -494,7 +533,7 @@ Downloading: "https://download.pytorch.org/models/resnet34-b627a593.pth" to /roo
 <li>the chosen loss function will suite the kind of model we build, and the type of dataset we have.</li>
 </ul></li>
 </ul>
-<div class="cell" data-outputid="2f3a0898-a25e-40c3-b4b0-0c4588133276" data-execution_count="12">
+<div id="cell-31" class="cell" data-outputid="2f3a0898-a25e-40c3-b4b0-0c4588133276" data-execution_count="12">
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># check the loss function</span></span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>learn.loss_func</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="12">
@@ -525,13 +564,13 @@ Downloading: "https://download.pytorch.org/models/resnet34-b627a593.pth" to /roo
 <ul>
 <li>In order to understand the cross-entropy loss, let’s grab a batch of data</li>
 </ul>
-<div class="cell" data-execution_count="13">
+<div id="cell-36" class="cell" data-execution_count="13">
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>x,y <span class="op">=</span> dls.one_batch()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <ul>
 <li>It return the activations of dependent and independent variable of one mini-batch</li>
 </ul>
-<div class="cell" data-outputid="3a7dbedd-df41-44f0-a5ec-46d1d7d50a8b" data-execution_count="14">
+<div id="cell-38" class="cell" data-outputid="3a7dbedd-df41-44f0-a5ec-46d1d7d50a8b" data-execution_count="14">
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co"># independent variable</span></span>
 <span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>y, <span class="bu">len</span>(y)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="14">
@@ -543,7 +582,7 @@ Downloading: "https://download.pytorch.org/models/resnet34-b627a593.pth" to /roo
 <ul>
 <li>It return 64 number, each represent on of the 37 breeds index</li>
 </ul>
-<div class="cell" data-outputid="cf31f01a-3a69-4c05-e15f-74de2a83271c" data-execution_count="15">
+<div id="cell-40" class="cell" data-outputid="cf31f01a-3a69-4c05-e15f-74de2a83271c" data-execution_count="15">
 <div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co"># all indepent variables</span></span>
 <span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>dls.vocab, <span class="bu">len</span>(dls.vocab)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="15">
@@ -554,7 +593,7 @@ Downloading: "https://download.pytorch.org/models/resnet34-b627a593.pth" to /roo
 <ul>
 <li>Here we use <code>get_preds</code> to get the predictions for each image in the dataset or mini-batch (like in this example).</li>
 </ul>
-<div class="cell" data-outputid="888eeac4-848a-40f4-c504-cfc62c91bdc1" data-execution_count="16">
+<div id="cell-42" class="cell" data-outputid="888eeac4-848a-40f4-c504-cfc62c91bdc1" data-execution_count="16">
 <div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>preds,_ <span class="op">=</span> learn.get_preds(dl<span class="op">=</span>[(x,y)])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 
@@ -578,7 +617,7 @@ Downloading: "https://download.pytorch.org/models/resnet34-b627a593.pth" to /roo
 
 </div>
 </div>
-<div class="cell" data-outputid="1353d4bf-cd6b-46c9-c2f4-76a12fe9ce54" data-execution_count="17">
+<div id="cell-43" class="cell" data-outputid="1353d4bf-cd6b-46c9-c2f4-76a12fe9ce54" data-execution_count="17">
 <div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="co"># prediction for image [0] in the mini-batch</span></span>
 <span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>preds[<span class="dv">0</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="17">
@@ -593,7 +632,7 @@ Downloading: "https://download.pytorch.org/models/resnet34-b627a593.pth" to /roo
 <li>if we sum() them up they add up to 1:</li>
 </ul></li>
 </ul>
-<div class="cell" data-outputid="49c56fa1-efc3-4c0b-d84d-e590eed56dd5" data-execution_count="18">
+<div id="cell-45" class="cell" data-outputid="49c56fa1-efc3-4c0b-d84d-e590eed56dd5" data-execution_count="18">
 <div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>preds[<span class="dv">0</span>].<span class="bu">sum</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="18">
 <pre><code>TensorBase(1.0000)</code></pre>
@@ -608,21 +647,25 @@ Downloading: "https://download.pytorch.org/models/resnet34-b627a593.pth" to /roo
 <ul>
 <li>As we said before, <code>Softmax</code> is similar to <code>sigmoid</code> function we use before, but it only can handel more than 2 classes.</li>
 </ul>
-<div class="cell" data-outputid="1fb827da-8820-4f2e-89ff-67488f5ec344" data-execution_count="19">
+<div id="cell-49" class="cell" data-outputid="1fb827da-8820-4f2e-89ff-67488f5ec344" data-execution_count="19">
 <div class="sourceCode cell-code" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="co"># reminder of sigmoid</span></span>
 <span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>plot_function(torch.sigmoid, <span class="bu">min</span><span class="op">=-</span><span class="dv">4</span>,<span class="bu">max</span><span class="op">=</span><span class="dv">4</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
-<p><img src="Fastai-Ch5_files/figure-html/cell-19-output-1.png" class="img-fluid"></p>
+<div>
+<figure class="figure">
+<p><img src="Fastai-Ch5_files/figure-html/cell-19-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
 </div>
 </div>
 <ul>
 <li>This function allow us to predict whether a activation number is pointing to each category of the <strong>two</strong>, by calculating which activation is big and by much. But in our case today we have 37 category, which means by this logic we need a activation for each one.</li>
 <li>First let’s create a similar situation where we have only 2 categories, but we won’t solve it as it’s a binary problem (<code>it's 3</code>) but as 2 categories problem, each has it’s activation, and their probabilty sum up to 1.</li>
 </ul>
-<div class="cell" data-execution_count="20">
+<div id="cell-51" class="cell" data-execution_count="20">
 <div class="sourceCode cell-code" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>torch.random.manual_seed(<span class="dv">42</span>)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="cell" data-outputid="22a6a922-6506-484b-b8fb-09610287efa1" data-execution_count="21">
+<div id="cell-52" class="cell" data-outputid="22a6a922-6506-484b-b8fb-09610287efa1" data-execution_count="21">
 <div class="sourceCode cell-code" id="cb32"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>acts <span class="op">=</span> torch.randn((<span class="dv">6</span>,<span class="dv">2</span>))<span class="op">*</span><span class="dv">2</span></span>
 <span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>acts</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="21">
@@ -637,7 +680,7 @@ Downloading: "https://download.pytorch.org/models/resnet34-b627a593.pth" to /roo
 <ul>
 <li>We can’t just take the sigmoid of this directly, since we don’t get rows that add to 1 (i.e., we want the probability of being a 3 plus the probability of being a 7 to add up to 1):</li>
 </ul>
-<div class="cell" data-outputid="7f8ea585-604f-4d84-e0a1-d5d789552815" data-execution_count="22">
+<div id="cell-54" class="cell" data-outputid="7f8ea585-604f-4d84-e0a1-d5d789552815" data-execution_count="22">
 <div class="sourceCode cell-code" id="cb34"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>sigmoid(acts)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="22">
 <pre><code>tensor([[0.6623, 0.5641],
@@ -654,10 +697,10 @@ Downloading: "https://download.pytorch.org/models/resnet34-b627a593.pth" to /roo
 <li>And we still need to substract an activation from another beacuse that represent how much the model sure about an image is assigned to each category, thats for first column.</li>
 <li>In the second colun we just use 1 - prediction (activation of the second column)</li>
 </ul>
-<div class="cell" data-execution_count="23">
+<div id="cell-56" class="cell" data-execution_count="23">
 <div class="sourceCode cell-code" id="cb36"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>diffs <span class="op">=</span> acts[:, <span class="dv">0</span>] <span class="op">-</span> acts[:, <span class="dv">1</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="cell" data-execution_count="24">
+<div id="cell-57" class="cell" data-execution_count="24">
 <div class="sourceCode cell-code" id="cb37"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="co"># create the sigmoid function of both categories</span></span>
 <span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a>sigm_ver <span class="op">=</span> torch.stack([diffs.sigmoid(), <span class="dv">1</span><span class="op">-</span>diffs.sigmoid()], dim<span class="op">=</span><span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
@@ -669,7 +712,7 @@ Downloading: "https://download.pytorch.org/models/resnet34-b627a593.pth" to /roo
 <ul>
 <li>Let’s check that <code>softmax</code> returns the same values as <code>sigmoid</code> for the first column, and those values subtracted from 1 for the second column:</li>
 </ul>
-<div class="cell" data-outputid="203825d0-2cb4-4183-aea3-58fd4970e9fa" data-execution_count="25">
+<div id="cell-60" class="cell" data-outputid="203825d0-2cb4-4183-aea3-58fd4970e9fa" data-execution_count="25">
 <div class="sourceCode cell-code" id="cb39"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a>sm_acts <span class="op">=</span> torch.softmax(acts, dim<span class="op">=</span><span class="dv">1</span>)</span>
 <span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a>sm_acts, sigm_ver</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="25">
@@ -700,15 +743,15 @@ Downloading: "https://download.pytorch.org/models/resnet34-b627a593.pth" to /roo
 <li>In the previous chapter when we created <code>mnis_loss</code>, we used <code>torch.where</code> to select between the <code>input</code> and <code>1-input</code>.</li>
 <li>With softmax, we will use indexing.</li>
 </ul>
-<div class="cell" data-execution_count="26">
+<div id="cell-64" class="cell" data-execution_count="26">
 <div class="sourceCode cell-code" id="cb41"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="co"># the pretended targets</span></span>
 <span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a>targs <span class="op">=</span> tensor([<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">0</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="cell" data-execution_count="27">
+<div id="cell-65" class="cell" data-execution_count="27">
 <div class="sourceCode cell-code" id="cb42"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="co"># create an index</span></span>
 <span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a>idx <span class="op">=</span> <span class="bu">range</span>(<span class="dv">6</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="cell" data-outputid="18c61349-1e17-4f54-b1a5-421b00b2f4d3" data-execution_count="28">
+<div id="cell-66" class="cell" data-outputid="18c61349-1e17-4f54-b1a5-421b00b2f4d3" data-execution_count="28">
 <div class="sourceCode cell-code" id="cb43"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="co"># the softmax activations</span></span>
 <span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a>sm_acts</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="28">
@@ -723,7 +766,7 @@ Downloading: "https://download.pytorch.org/models/resnet34-b627a593.pth" to /roo
 <ul>
 <li>Here we make the <code>targs</code> decide which activation we pick in each row</li>
 </ul>
-<div class="cell" data-outputid="c0889161-c10d-47bf-ca38-104330292bd6" data-execution_count="29">
+<div id="cell-68" class="cell" data-outputid="c0889161-c10d-47bf-ca38-104330292bd6" data-execution_count="29">
 <div class="sourceCode cell-code" id="cb45"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a>sm_acts[idx, targs]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="29">
 <pre><code>tensor([0.6025, 0.4979, 0.1332, 0.0034, 0.4041, 0.3661])</code></pre>
@@ -732,7 +775,7 @@ Downloading: "https://download.pytorch.org/models/resnet34-b627a593.pth" to /roo
 <ul>
 <li>let’s display what we just did :</li>
 </ul>
-<div class="cell" data-outputid="c3781985-2845-4245-aaae-55b8d8721f91" data-execution_count="30">
+<div id="cell-70" class="cell" data-outputid="c3781985-2845-4245-aaae-55b8d8721f91" data-execution_count="30">
 <div class="sourceCode cell-code" id="cb47"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> IPython.display <span class="im">import</span> HTML</span>
 <span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.DataFrame(sm_acts, columns<span class="op">=</span>[<span class="st">"3"</span>,<span class="st">"7"</span>])</span>
 <span id="cb47-3"><a href="#cb47-3" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'targs'</span>] <span class="op">=</span> targs</span>
@@ -746,7 +789,7 @@ Downloading: "https://download.pytorch.org/models/resnet34-b627a593.pth" to /roo
 <div class="cell-output cell-output-display">
 
 
-<table data-quarto-postprocess="true" class="table table-sm table-striped small">
+<table class="caption-top table table-sm table-striped small" data-quarto-postprocess="true">
 <thead>
 <tr class="header">
 <th class="col_heading level0 col0" data-quarto-table-cell-role="th">3</th>
@@ -807,13 +850,13 @@ Downloading: "https://download.pytorch.org/models/resnet34-b627a593.pth" to /roo
 <li>But idea here is not to use it in a simple binary problem, because <code>torch.where</code> could did the same job here, but is to use it in order to solve a multi-categorie problem</li>
 </ul>
 <p>PyTorch provides a function that does exactly the same thing as <code>sm_acts[range(n), targ]</code> (except it takes the negative, because when applying the log afterward, we will have negative numbers), called <code>nll_loss</code> (<em>NLL</em> stands for <em>negative log likelihood</em>):</p>
-<div class="cell" data-outputid="0e82a345-5cf2-435e-856f-64183342c501" data-execution_count="31">
+<div id="cell-73" class="cell" data-outputid="0e82a345-5cf2-435e-856f-64183342c501" data-execution_count="31">
 <div class="sourceCode cell-code" id="cb48"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="op">-</span>sm_acts[idx, targs]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="31">
 <pre><code>tensor([-0.6025, -0.4979, -0.1332, -0.0034, -0.4041, -0.3661])</code></pre>
 </div>
 </div>
-<div class="cell" data-outputid="72e5d1dd-f8e0-4489-cea3-5eae8423ad49" data-execution_count="32">
+<div id="cell-74" class="cell" data-outputid="72e5d1dd-f8e0-4489-cea3-5eae8423ad49" data-execution_count="32">
 <div class="sourceCode cell-code" id="cb50"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a>F.nll_loss(sm_acts, targs, reduction<span class="op">=</span><span class="st">'none'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="32">
 <pre><code>tensor([-0.6025, -0.4979, -0.1332, -0.0034, -0.4041, -0.3661])</code></pre>
@@ -825,7 +868,7 @@ Downloading: "https://download.pytorch.org/models/resnet34-b627a593.pth" to /roo
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="2.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">cross-entropy-loss-function.png</figcaption>
+<figcaption>cross-entropy-loss-function.png</figcaption>
 </figure>
 </div>
 <ul>
@@ -851,16 +894,16 @@ Downloading: "https://download.pytorch.org/models/resnet34-b627a593.pth" to /roo
 <li>or : <code>nn.CrossEntropyLoss()</code></li>
 </ul></li>
 </ul>
-<div class="cell" data-execution_count="33">
+<div id="cell-79" class="cell" data-execution_count="33">
 <div class="sourceCode cell-code" id="cb52"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a>loss_func <span class="op">=</span> nn.CrossEntropyLoss()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="cell" data-outputid="6b778c8a-99be-4f33-d6be-2867252718e1" data-execution_count="34">
+<div id="cell-80" class="cell" data-outputid="6b778c8a-99be-4f33-d6be-2867252718e1" data-execution_count="34">
 <div class="sourceCode cell-code" id="cb53"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a>loss_func(acts, targs)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="34">
 <pre><code>tensor(1.8045)</code></pre>
 </div>
 </div>
-<div class="cell" data-outputid="43f1c051-68ac-412d-a4dc-e2ec3a9af052" data-execution_count="35">
+<div id="cell-81" class="cell" data-outputid="43f1c051-68ac-412d-a4dc-e2ec3a9af052" data-execution_count="35">
 <div class="sourceCode cell-code" id="cb55"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb55-1"><a href="#cb55-1" aria-hidden="true" tabindex="-1"></a>nn.CrossEntropyLoss()(acts, targs)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="35">
 <pre><code>tensor(1.8045)</code></pre>
@@ -869,7 +912,7 @@ Downloading: "https://download.pytorch.org/models/resnet34-b627a593.pth" to /roo
 <ul>
 <li>The <code>nn.CrossEntrpyLoss()</code> make do all the steps for us, but if we want to go through all those steps one by one <code>softmas+log then negative log</code> we could do it also:</li>
 </ul>
-<div class="cell" data-outputid="c4767369-8cad-4d51-9ed7-e7ebe4a39083" data-execution_count="36">
+<div id="cell-83" class="cell" data-outputid="c4767369-8cad-4d51-9ed7-e7ebe4a39083" data-execution_count="36">
 <div class="sourceCode cell-code" id="cb57"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb57-1"><a href="#cb57-1" aria-hidden="true" tabindex="-1"></a>F.nll_loss(nn.Softmax()(acts).log(), targs,)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>/usr/local/lib/python3.7/dist-packages/ipykernel_launcher.py:1: UserWarning: Implicit dimension choice for softmax has been deprecated. Change the call to include dim=X as an argument.
@@ -882,7 +925,7 @@ Downloading: "https://download.pytorch.org/models/resnet34-b627a593.pth" to /roo
 <ul>
 <li>Adding the <code>reduction='none'</code> to this functions will return the loss of each row, if we didn’t add this aparameter the fuction will return the mean loss of all rows.</li>
 </ul>
-<div class="cell" data-outputid="d8f36ee1-1886-4ae6-a7d0-f236546eb76d" data-execution_count="37">
+<div id="cell-85" class="cell" data-outputid="d8f36ee1-1886-4ae6-a7d0-f236546eb76d" data-execution_count="37">
 <div class="sourceCode cell-code" id="cb60"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb60-1"><a href="#cb60-1" aria-hidden="true" tabindex="-1"></a>nn.CrossEntropyLoss(reduction<span class="op">=</span><span class="st">'none'</span>)(acts, targs)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="37">
 <pre><code>tensor([0.5067, 0.6973, 2.0160, 5.6958, 0.9062, 1.0048])</code></pre>
@@ -896,7 +939,7 @@ Downloading: "https://download.pytorch.org/models/resnet34-b627a593.pth" to /roo
 <li>As we saw in <strong>chapter 3</strong> it’s hard for us to interpret the loss function, since it’s some the computers use in order to updates the parameters and optimize the performance.</li>
 <li>But we can use some kind of demonstration that shows where the model did good, and where did bad.</li>
 </ul>
-<div class="cell" data-outputid="57acddc2-fb98-4523-cb2f-e3cfbca23c5a" data-execution_count="38">
+<div id="cell-88" class="cell" data-outputid="57acddc2-fb98-4523-cb2f-e3cfbca23c5a" data-execution_count="38">
 <div class="sourceCode cell-code" id="cb62"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb62-1"><a href="#cb62-1" aria-hidden="true" tabindex="-1"></a>interp <span class="op">=</span> ClassificationInterpretation.from_learner(learn)</span>
 <span id="cb62-2"><a href="#cb62-2" aria-hidden="true" tabindex="-1"></a>interp.plot_confusion_matrix(figsize<span class="op">=</span>(<span class="dv">12</span>,<span class="dv">12</span>), dpi<span class="op">=</span><span class="dv">60</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
@@ -942,7 +985,11 @@ Downloading: "https://download.pytorch.org/models/resnet34-b627a593.pth" to /roo
 
 </div>
 <div class="cell-output cell-output-display">
-<p><img src="Fastai-Ch5_files/figure-html/cell-38-output-5.png" class="img-fluid"></p>
+<div>
+<figure class="figure">
+<p><img src="Fastai-Ch5_files/figure-html/cell-38-output-5.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
 </div>
 </div>
 <ul>
@@ -951,7 +998,7 @@ Downloading: "https://download.pytorch.org/models/resnet34-b627a593.pth" to /roo
 <li>thats why we will use<code>interp.most_confused(min_val=5)</code> to output to most bad decisions the model taked</li>
 </ul></li>
 </ul>
-<div class="cell" data-outputid="e26e46bb-eebd-490a-df0c-9ff64806764a" data-execution_count="39">
+<div id="cell-90" class="cell" data-outputid="e26e46bb-eebd-490a-df0c-9ff64806764a" data-execution_count="39">
 <div class="sourceCode cell-code" id="cb63"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb63-1"><a href="#cb63-1" aria-hidden="true" tabindex="-1"></a>interp.most_confused(min_val<span class="op">=</span><span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 
@@ -996,7 +1043,7 @@ Downloading: "https://download.pytorch.org/models/resnet34-b627a593.pth" to /roo
 <li>minimize the loss and updating parameters with less steps</li>
 </ul></li>
 </ul>
-<div class="cell" data-outputid="c7a26dd8-cacb-40fe-f136-da3b6b2eaf45" data-execution_count="40">
+<div id="cell-96" class="cell" data-outputid="c7a26dd8-cacb-40fe-f136-da3b6b2eaf45" data-execution_count="40">
 <div class="sourceCode cell-code" id="cb65"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb65-1"><a href="#cb65-1" aria-hidden="true" tabindex="-1"></a>learn <span class="op">=</span> vision_learner(dls, resnet34, metrics<span class="op">=</span>error_rate)</span>
 <span id="cb65-2"><a href="#cb65-2" aria-hidden="true" tabindex="-1"></a>learn.fine_tune(<span class="dv">1</span>, base_lr<span class="op">=</span><span class="fl">0.1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
@@ -1024,7 +1071,7 @@ Downloading: "https://download.pytorch.org/models/resnet34-b627a593.pth" to /roo
 </style>
 </div>
 <div class="cell-output cell-output-display">
-<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
 <thead>
 <tr class="header">
 <th data-quarto-table-cell-role="th">epoch</th>
@@ -1064,7 +1111,7 @@ Downloading: "https://download.pytorch.org/models/resnet34-b627a593.pth" to /roo
 </style>
 </div>
 <div class="cell-output cell-output-display">
-<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
 <thead>
 <tr class="header">
 <th data-quarto-table-cell-role="th">epoch</th>
@@ -1107,7 +1154,7 @@ Downloading: "https://download.pytorch.org/models/resnet34-b627a593.pth" to /roo
 </ul></li>
 <li>Both point are giving the same value usually.</li>
 </ul>
-<div class="cell" data-outputid="948d8f51-6ee3-406d-85ab-db6890d3c602" data-execution_count="42">
+<div id="cell-98" class="cell" data-outputid="948d8f51-6ee3-406d-85ab-db6890d3c602" data-execution_count="42">
 <div class="sourceCode cell-code" id="cb67"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb67-1"><a href="#cb67-1" aria-hidden="true" tabindex="-1"></a>learn <span class="op">=</span> vision_learner(dls, resnet34, metrics<span class="op">=</span>error_rate)</span>
 <span id="cb67-2"><a href="#cb67-2" aria-hidden="true" tabindex="-1"></a>lr_min,lr_steep <span class="op">=</span> learn.lr_find(suggest_funcs<span class="op">=</span>(minimum, steep))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
@@ -1132,10 +1179,14 @@ Downloading: "https://download.pytorch.org/models/resnet34-b627a593.pth" to /roo
 
 </div>
 <div class="cell-output cell-output-display">
-<p><img src="Fastai-Ch5_files/figure-html/cell-41-output-3.png" class="img-fluid"></p>
+<div>
+<figure class="figure">
+<p><img src="Fastai-Ch5_files/figure-html/cell-41-output-3.png" class="img-fluid figure-img"></p>
+</figure>
 </div>
 </div>
-<div class="cell" data-outputid="e02c5d2b-86d2-41fc-a733-91e5c46d5829" data-execution_count="43">
+</div>
+<div id="cell-99" class="cell" data-outputid="e02c5d2b-86d2-41fc-a733-91e5c46d5829" data-execution_count="43">
 <div class="sourceCode cell-code" id="cb68"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb68-1"><a href="#cb68-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Minimum/10: </span><span class="sc">{</span>lr_min<span class="sc">:.2e}</span><span class="ss">, steepest point: </span><span class="sc">{</span>lr_steep<span class="sc">:.2e}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Minimum/10: 1.00e-02, steepest point: 4.37e-03</code></pre>
@@ -1148,7 +1199,7 @@ Downloading: "https://download.pytorch.org/models/resnet34-b627a593.pth" to /roo
 <li>we need to pick the learning rate where the just start to decrease all the way to the minimum: <code>1e-3</code></li>
 </ul></li>
 </ul>
-<div class="cell" data-outputid="321bda5c-51f6-4e7c-cea5-7b1defe411bc" data-execution_count="44">
+<div id="cell-101" class="cell" data-outputid="321bda5c-51f6-4e7c-cea5-7b1defe411bc" data-execution_count="44">
 <div class="sourceCode cell-code" id="cb70"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb70-1"><a href="#cb70-1" aria-hidden="true" tabindex="-1"></a>learn <span class="op">=</span> vision_learner(dls, resnet34, metrics<span class="op">=</span>error_rate)</span>
 <span id="cb70-2"><a href="#cb70-2" aria-hidden="true" tabindex="-1"></a>learn.fine_tune(<span class="dv">2</span>, base_lr<span class="op">=</span><span class="fl">3e-3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
@@ -1170,7 +1221,7 @@ Downloading: "https://download.pytorch.org/models/resnet34-b627a593.pth" to /roo
 </style>
 </div>
 <div class="cell-output cell-output-display">
-<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
 <thead>
 <tr class="header">
 <th data-quarto-table-cell-role="th">epoch</th>
@@ -1210,7 +1261,7 @@ Downloading: "https://download.pytorch.org/models/resnet34-b627a593.pth" to /roo
 </style>
 </div>
 <div class="cell-output cell-output-display">
-<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
 <thead>
 <tr class="header">
 <th data-quarto-table-cell-role="th">epoch</th>
@@ -1263,7 +1314,7 @@ Downloading: "https://download.pytorch.org/models/resnet34-b627a593.pth" to /roo
 <li><p>Of Course this is just the <em>default</em> approach, <code>fine_tune</code> has many parameters that allow us to apply different tweaks for each specific situation.</p></li>
 <li><p>For now, let’s do this process manually without using <code>fine_tune</code></p></li>
 </ul>
-<div class="cell" data-execution_count="45">
+<div id="cell-106" class="cell" data-execution_count="45">
 <div class="sourceCode cell-code" id="cb71"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb71-1"><a href="#cb71-1" aria-hidden="true" tabindex="-1"></a><span class="co"># check fine_tune source acode</span></span>
 <span id="cb71-2"><a href="#cb71-2" aria-hidden="true" tabindex="-1"></a>learn.fine_tune??</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
@@ -1274,7 +1325,7 @@ Downloading: "https://download.pytorch.org/models/resnet34-b627a593.pth" to /roo
 </ul></li>
 <li>Then train the added layer with randome weights for number of epochs with a learning rate we pick</li>
 </ul>
-<div class="cell" data-outputid="77d14197-3adf-487f-e6e5-729f9e0dca0d" data-execution_count="46">
+<div id="cell-108" class="cell" data-outputid="77d14197-3adf-487f-e6e5-729f9e0dca0d" data-execution_count="46">
 <div class="sourceCode cell-code" id="cb72"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb72-1"><a href="#cb72-1" aria-hidden="true" tabindex="-1"></a>learn <span class="op">=</span> vision_learner(dls, resnet34, metrics<span class="op">=</span>error_rate)</span>
 <span id="cb72-2"><a href="#cb72-2" aria-hidden="true" tabindex="-1"></a>learn.fit_one_cycle(<span class="dv">3</span>, <span class="fl">3e-3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
@@ -1296,7 +1347,7 @@ Downloading: "https://download.pytorch.org/models/resnet34-b627a593.pth" to /roo
 </style>
 </div>
 <div class="cell-output cell-output-display">
-<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
 <thead>
 <tr class="header">
 <th data-quarto-table-cell-role="th">epoch</th>
@@ -1335,13 +1386,13 @@ Downloading: "https://download.pytorch.org/models/resnet34-b627a593.pth" to /roo
 <ul>
 <li>Now we need to unfreeze the model:</li>
 </ul>
-<div class="cell" data-execution_count="47">
+<div id="cell-110" class="cell" data-execution_count="47">
 <div class="sourceCode cell-code" id="cb73"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb73-1"><a href="#cb73-1" aria-hidden="true" tabindex="-1"></a>learn.unfreeze()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <ul>
 <li>Now we run <code>lr_find</code> again, because having more layers to train, and weights that have already been trained for three epochs, means our previously found learning rate isn’t appropriate any more:</li>
 </ul>
-<div class="cell" data-outputid="17b697ff-8faf-45a6-c727-b19b1ca8ece7" data-execution_count="48">
+<div id="cell-112" class="cell" data-outputid="17b697ff-8faf-45a6-c727-b19b1ca8ece7" data-execution_count="48">
 <div class="sourceCode cell-code" id="cb74"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb74-1"><a href="#cb74-1" aria-hidden="true" tabindex="-1"></a>learn.lr_find()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 
@@ -1368,17 +1419,21 @@ Downloading: "https://download.pytorch.org/models/resnet34-b627a593.pth" to /roo
 <pre><code>SuggestedLRs(valley=9.999999747378752e-06)</code></pre>
 </div>
 <div class="cell-output cell-output-display">
-<p><img src="Fastai-Ch5_files/figure-html/cell-47-output-4.png" class="img-fluid"></p>
+<div>
+<figure class="figure">
+<p><img src="Fastai-Ch5_files/figure-html/cell-47-output-4.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
 </div>
 </div>
 <ul>
 <li>As we see here the graph is different than what we saw before when we use randome weights to train the model, because that the model has been trained already.</li>
 <li>The approach to pick the right <code>lr</code> here is to chose a point before the sharp increase.</li>
 </ul>
-<div class="cell">
+<div id="cell-114" class="cell">
 <div class="sourceCode cell-code" id="cb76"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb76-1"><a href="#cb76-1" aria-hidden="true" tabindex="-1"></a><span class="dv">34</span><span class="er">se3a</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="cell" data-outputid="00577add-6b54-4930-9785-e9661152acdd" data-execution_count="49">
+<div id="cell-115" class="cell" data-outputid="00577add-6b54-4930-9785-e9661152acdd" data-execution_count="49">
 <div class="sourceCode cell-code" id="cb77"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb77-1"><a href="#cb77-1" aria-hidden="true" tabindex="-1"></a>learn.fit_one_cycle(<span class="dv">6</span> , lr_max<span class="op">=</span><span class="fl">4.786300905834651e-06</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 
@@ -1399,7 +1454,7 @@ Downloading: "https://download.pytorch.org/models/resnet34-b627a593.pth" to /roo
 </style>
 </div>
 <div class="cell-output cell-output-display">
-<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
 <thead>
 <tr class="header">
 <th data-quarto-table-cell-role="th">epoch</th>
@@ -1483,7 +1538,7 @@ Downloading: "https://download.pytorch.org/models/resnet34-b627a593.pth" to /roo
 </ul></li>
 <li>Let’s see this technic in action</li>
 </ul>
-<div class="cell" data-outputid="90cdc81c-ca8a-4669-8bab-0650946d9771" data-execution_count="50">
+<div id="cell-118" class="cell" data-outputid="90cdc81c-ca8a-4669-8bab-0650946d9771" data-execution_count="50">
 <div class="sourceCode cell-code" id="cb78"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb78-1"><a href="#cb78-1" aria-hidden="true" tabindex="-1"></a>learn <span class="op">=</span> vision_learner(dls, resnet34, metrics<span class="op">=</span>error_rate)</span>
 <span id="cb78-2"><a href="#cb78-2" aria-hidden="true" tabindex="-1"></a>learn.fit_one_cycle(<span class="dv">3</span>, <span class="fl">3e-3</span>)</span>
 <span id="cb78-3"><a href="#cb78-3" aria-hidden="true" tabindex="-1"></a>learn.unfreeze()</span>
@@ -1513,7 +1568,7 @@ Downloading: "https://download.pytorch.org/models/resnet34-b627a593.pth" to /roo
 </style>
 </div>
 <div class="cell-output cell-output-display">
-<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
 <thead>
 <tr class="header">
 <th data-quarto-table-cell-role="th">epoch</th>
@@ -1567,7 +1622,7 @@ Downloading: "https://download.pytorch.org/models/resnet34-b627a593.pth" to /roo
 </style>
 </div>
 <div class="cell-output cell-output-display">
-<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
 <thead>
 <tr class="header">
 <th data-quarto-table-cell-role="th">epoch</th>
@@ -1683,10 +1738,14 @@ Downloading: "https://download.pytorch.org/models/resnet34-b627a593.pth" to /roo
 <ul>
 <li>We can plot the training and the validation loss</li>
 </ul>
-<div class="cell" data-outputid="9888b6fe-d4fd-44bd-ed83-018e4a262eac" data-execution_count="51">
+<div id="cell-120" class="cell" data-outputid="9888b6fe-d4fd-44bd-ed83-018e4a262eac" data-execution_count="51">
 <div class="sourceCode cell-code" id="cb80"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb80-1"><a href="#cb80-1" aria-hidden="true" tabindex="-1"></a>learn.recorder.plot_loss()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
-<p><img src="Fastai-Ch5_files/figure-html/cell-51-output-1.png" class="img-fluid"></p>
+<div>
+<figure class="figure">
+<p><img src="Fastai-Ch5_files/figure-html/cell-51-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
 </div>
 </div>
 </section>
@@ -1719,7 +1778,7 @@ Downloading: "https://download.pytorch.org/models/resnet34-b627a593.pth" to /roo
 </ul></li>
 <li>You can’t really know ahead of time what the best architecture for your particular problem is—you need to try training some. So let’s try a ResNet-50 now with mixed precision:</li>
 </ul>
-<div class="cell" data-outputid="da9de3a5-281a-4b62-e633-b9ca61c4998d" data-execution_count="52">
+<div id="cell-125" class="cell" data-outputid="da9de3a5-281a-4b62-e633-b9ca61c4998d" data-execution_count="52">
 <div class="sourceCode cell-code" id="cb81"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb81-1"><a href="#cb81-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> fastai.callback.fp16 <span class="im">import</span> <span class="op">*</span></span>
 <span id="cb81-2"><a href="#cb81-2" aria-hidden="true" tabindex="-1"></a>learn <span class="op">=</span> vision_learner(dls, resnet50, metrics<span class="op">=</span>error_rate).to_fp16()</span>
 <span id="cb81-3"><a href="#cb81-3" aria-hidden="true" tabindex="-1"></a>learn.fine_tune(<span class="dv">6</span>, freeze_epochs<span class="op">=</span><span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -1752,7 +1811,7 @@ Downloading: "https://download.pytorch.org/models/resnet50-0676ba61.pth" to /roo
 </style>
 </div>
 <div class="cell-output cell-output-display">
-<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
 <thead>
 <tr class="header">
 <th data-quarto-table-cell-role="th">epoch</th>
@@ -1806,7 +1865,7 @@ Downloading: "https://download.pytorch.org/models/resnet50-0676ba61.pth" to /roo
 </style>
 </div>
 <div class="cell-output cell-output-display">
-<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
 <thead>
 <tr class="header">
 <th data-quarto-table-cell-role="th">epoch</th>
@@ -1914,18 +1973,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
     return false;
   }
-  const clipboard = new window.ClipboardJS('.code-copy-button', {
-    text: function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-    }
-  });
-  clipboard.on('success', function(e) {
+  const onCopySuccess = function(e) {
     // button target
     const button = e.trigger;
     // don't keep focus
@@ -1957,11 +2005,50 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }, 1000);
     // clear code selection
     e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
   });
-  function tippyHover(el, contentFn) {
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp("https:\/\/ismaai008l\.github\.io\/Lifelong-Learner\.github\.io\/");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -1971,8 +2058,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -1984,7 +2080,130 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      return note.innerHTML;
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
     });
   }
       let selectedAnnoteEl;
@@ -2028,6 +2247,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
+            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -2053,6 +2273,32 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
       // Attach click handler to the DT
       const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
       for (const annoteDlNode of annoteDls) {
@@ -2113,6 +2359,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script>
 </div> <!-- /content -->
+
 
 
 
