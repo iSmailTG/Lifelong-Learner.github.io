@@ -175,9 +175,6 @@ ul.task-list li input[type="checkbox"] {
 │   ├── chapter6_text_classification:  introduces different LLM fine-tuning approaches.  
 │   ├── chapter7_instruction_following:  explores the instruction fine-tuning process of LLMs.  
 └──  </code></pre>
-</section>
-<section id="chapter--1-" class="level2">
-<h2 class="anchored" data-anchor-id="chapter--1-">Chapter -1-:</h2>
 <ul>
 <li><p>The aim of this chapter is to introduce the foundational concepts of large language models (LLMs) and the advancements in deep learning that made them possible</p>
 <ul>
@@ -202,7 +199,29 @@ ul.task-list li input[type="checkbox"] {
 <ul>
 <li>machine translation</li>
 <li>sentiments analysis</li>
-<li>text generation ..</li>
+<li>text generation<br>
+..</li>
+</ul></li>
+</ul>
+</section>
+<section id="stages-of-building-and-using-llms" class="level3">
+<h3 class="anchored" data-anchor-id="stages-of-building-and-using-llms">Stages of building and using LLMs:</h3>
+<ul>
+<li>Building LLM form scratch allow us to understand the <strong>mechanics</strong> and <strong>limitations</strong> of language models, and provide us with skills set required for pretraining or fine-tuning phase.</li>
+<li>Custom-built LLM outperform general purpose one.
+<ul>
+<li>Many companies prefer to build their own domain-specific llm to keep their private data in-home and not share it with third party.</li>
+<li>developing small lm open the door for deployment on devices like laptops or even mobiles rather than huge servers.</li>
+</ul></li>
+<li>creating LLM is a process where pre-training and fine-tuning takes place.
+<ul>
+<li><code>pre</code> indicates that it is the first phase, model is trained on huge chunk of data where it learns basic knowledge and broad pattern of the language.</li>
+<li>the <code>fine-tuning</code> phase is where the model get further training but on very specific task and get its knowledge narrowed.</li>
+</ul></li>
+<li>Fine-tuning can be devised in 2 category:
+<ul>
+<li><strong>Instruction fine-tuning</strong>: where the model get trained one pair of <strong>instruction =&gt; output</strong> dataset.</li>
+<li>Where <strong>classification tuning</strong> the data consist of text and associated class label.</li>
 </ul></li>
 </ul>
 
