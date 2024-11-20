@@ -224,6 +224,50 @@ ul.task-list li input[type="checkbox"] {
 <li>Where <strong>classification tuning</strong> the data consist of text and associated class label.</li>
 </ul></li>
 </ul>
+</section>
+<section id="introducing-the-transformer-architecture" class="level3">
+<h3 class="anchored" data-anchor-id="introducing-the-transformer-architecture">Introducing the Transformer architecture:</h3>
+<ul>
+<li><p>All modern LLM rely on <strong>Transformer</strong> architecture which was presented for the first time in <a href="https://arxiv.org/abs/1706.03762">this</a> famous paper: <strong>Attention is all you need</strong>.</p></li>
+<li><p>Transformer consist of two submodal: 1-encoder and 2-decoder. - encoder module process the input text into some numerical representation that capture meaning.<br>
+- decoder uses the numerical values and generate text<br>
+</p></li>
+<li><p>the key component of the transformer architecture is attention mechanism, we will talk about it later.</p></li>
+<li><p><strong>Transformer Variants</strong>:<br>
+- Models like BERT and GPT are based on the original transformer architecture but adapt it for different tasks.<br>
+- <strong>BERT’s Training Strategy</strong>: BERT uses a masked word prediction approach, where it predicts missing words in a sentence, making it suitable for tasks like text classification and sentiment analysis.<br>
+- <strong>GPT vs.&nbsp;BERT</strong>: GPT is designed for generative tasks, whereas BERT excels in tasks requiring understanding of context, like sentiment prediction and document categorization.<br>
+- <strong>BERT’s Real-world Application</strong>: Platforms like X (formerly Twitter) use BERT for tasks such as detecting toxic content.</p></li>
+<li><p><strong>GPT Focus</strong>: GPT utilizes the <em>Decoder</em> portion of the transformer architecture and is designed for text generation tasks.</p></li>
+<li><p><strong>Zero-shot and Few-shot Learning</strong>: GPT models excel in zero-shot learning, meaning they can handle tasks without specific prior examples. They also perform well in few-shot learning, where they learn from a small number of provided examples.</p></li>
+<li><p><strong>Versatility</strong>: While GPT models are optimized for text completion, they exhibit broad adaptability and can tackle a wide range of tasks, showcasing their flexibility in natural language processing.</p></li>
+</ul>
+</section>
+<section id="utilizing-large-datasets" class="level3">
+<h3 class="anchored" data-anchor-id="utilizing-large-datasets">Utilizing large datasets:</h3>
+<ul>
+<li><p>Diverse Training Data: Large datasets used for training GPT- and BERT-like models contain billions of words, covering a broad range of topics and languages (both natural and programming).</p></li>
+<li><p>Comprehensive Corpus: These datasets are designed to ensure comprehensive exposure to diverse linguistic and contextual patterns.</p></li>
+</ul>
+</section>
+<section id="a-closer-look-at-the-gpt-architecture" class="level3">
+<h3 class="anchored" data-anchor-id="a-closer-look-at-the-gpt-architecture">A closer look at the GPT architecture:</h3>
+<ul>
+<li><p>GPT Origin: GPT was introduced in the paper <a href="https://mng.bz/x2qg">Improving Language Understanding</a> by Generative Pre-Training by Radford et al.&nbsp;from OpenAI.</p></li>
+<li><p>GPT-3: A scaled-up version of the original GPT with more parameters and a larger training dataset.</p></li>
+<li><p>ChatGPT’s Base Model: The initial ChatGPT model was derived by fine-tuning GPT-3 on a large instruction dataset, using methods from OpenAI’s InstructGPT paper.</p></li>
+<li><p>Model Versatility: Despite being trained on a simple next-word prediction task, GPT models excel in various tasks like text completion, spelling correction, classification, and language translation.</p></li>
+<li><p>Self-Supervised Learning: The next-word prediction task is a type of self-supervised learning, where the model uses the structure of the data itself for training.</p></li>
+<li><p>Label Creation: Labels are generated dynamically, with the next word in a sentence or document serving as the prediction target.</p></li>
+<li><p>Training on Massive Datasets: This approach enables the use of large, unlabeled text datasets for training, as explicit labeling of data is unnecessary.</p></li>
+</ul>
+</section>
+<section id="building-a-large-language-model" class="level3">
+<h3 class="anchored" data-anchor-id="building-a-large-language-model">Building a large language model:</h3>
+<ul>
+<li>Now we understand the basic theory behind LLM and how they were introduced, its time to build them from scratch.</li>
+</ul>
+<p><img src="pic-1.png" class="img-fluid" alt="Three main phases of coding an LLM"> &gt;Source: Book: Build A Large Language Model by <em>Sebastian Raschka</em></p>
 
 
 </section>
