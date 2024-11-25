@@ -213,7 +213,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>The main idea here is that words that have appear in similar context atend to have similar meaning which also efect their embedding.</li>
 <li>So if these words are projected in two dimensional embedding they will be appeared in clusters. <strong>Image</strong></li>
 </ul></li>
-<li>In current LLM embeddings are way mor larger and have higher dimensionality.
+<li>In current LLM embeddings are way more larger and have higher dimensionality.
 <ul>
 <li>For example <strong>GPT-2</strong> (117 Millions Parameters) used embeddings of <code>768</code> dimensions, where the largest <strong>GPT-3</strong> (117 Billions Parameters) uses <code>12.288</code>.</li>
 <li>Each word will be projected to 12.288 dimensions.</li>
@@ -228,7 +228,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><p><strong>Efficient Representation</strong>: The way text is tokenized affects how efficiently the LLM processes input and generates output, balancing between <strong>accuracy</strong> (preserving meaning) and <strong>memory usage</strong> (fewer tokens).</p></li>
 <li><p>Here we will work with raw text called <strong>The Veredict</strong> and apply some kind of tokenization on it:</p></li>
 </ul>
-<div id="ab1c02e1-3236-46dd-9ad1-3ad8a9309e2b" class="cell" data-execution_count="2">
+<div id="ab1c02e1-3236-46dd-9ad1-3ad8a9309e2b" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> urllib.request</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>url <span class="op">=</span>  (<span class="st">"https://raw.githubusercontent.com/rasbt/"</span></span>
@@ -236,8 +236,370 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a> <span class="st">"the-verdict.txt"</span>)</span>
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>file_path <span class="op">=</span> <span class="st">"the-veredict.txt"</span></span>
 <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>urllib.request.urlretrieve(url, file_path)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="2">
-<pre><code>('the-veredict.txt', &lt;http.client.HTTPMessage at 0x7a241c17b650&gt;)</code></pre>
+<div class="cell-output cell-output-display" data-execution_count="1">
+<pre><code>('the-veredict.txt', &lt;http.client.HTTPMessage at 0x7607905fe4b0&gt;)</code></pre>
+</div>
+</div>
+<ul>
+<li>Open the data and check its length (how many chars):
+<ul>
+<li>the text contains <code>20479</code> charaters:</li>
+</ul></li>
+</ul>
+<div id="31747301-4352-4ac1-a30d-0719f7c4b865" class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> <span class="bu">open</span> (<span class="st">"the-veredict.txt"</span>, <span class="st">"r"</span>, encoding<span class="op">=</span> <span class="st">"utf-8"</span>) <span class="im">as</span> f:</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    raw_text <span class="op">=</span> f.read()</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"total number of characters: </span><span class="sc">{</span><span class="bu">len</span>(raw_text)<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>total number of characters: 20479</code></pre>
+</div>
+</div>
+<ul>
+<li>Take a look on first <code>100 character</code>:</li>
+</ul>
+<div id="4d456a1a-5ea0-4144-88fb-54cbb2c68a11" class="cell" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>raw_text[:<span class="dv">99</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="5">
+<pre><code>'I HAD always thought Jack Gisburn rather a cheap genius--though a good fellow enough--so it was no '</code></pre>
+</div>
+</div>
+<ul>
+<li>The goal is to tokenize the <code>20479</code> charaters in order to turn theem into embeddings.</li>
+<li>We will <code>Regular Expression</code> as a tool to tokenize the text, just to understand the idea of tokenization since it is not the right tool for this for our context is great.</li>
+<li>lets take this simple text:</li>
+</ul>
+<div id="f4ebbbf5-d60c-4082-a0d1-91a8c2b88ee4" class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>simple_text <span class="op">=</span> <span class="st">'Hi there! how was your day?'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ul>
+<li>Now lets split it to small pieces (words) with spaces <code>" "</code>:</li>
+</ul>
+<div id="71e8d37d-10e8-4094-9bba-69de3a83d307" class="cell" data-execution_count="8">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> re</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>tokenz <span class="op">=</span> re.split(<span class="vs">r"\s"</span>, simple_text)</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>tokenz</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="8">
+<pre><code>['Hi', 'there!', 'how', 'was', 'your', 'day?']</code></pre>
+</div>
+</div>
+<ul>
+<li>We need to make sur to seperate ponctuations from words:</li>
+</ul>
+<div id="e1dfad5c-85df-4a03-93cf-7e2ae1cdb5c2" class="cell" data-execution_count="23">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>tokenz <span class="op">=</span> re.split(<span class="vs">r'([!?]|\s)'</span>, simple_text)</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>tokenz</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="23">
+<pre><code>['Hi',
+ ' ',
+ 'there',
+ '!',
+ '',
+ ' ',
+ 'how',
+ ' ',
+ 'was',
+ ' ',
+ 'your',
+ ' ',
+ 'day',
+ '?',
+ '']</code></pre>
+</div>
+</div>
+<ul>
+<li>Remove whitespaces:</li>
+</ul>
+<div id="b895703b-f483-474d-9f5a-3e3034a4eece" class="cell" data-execution_count="24">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>words <span class="op">=</span> [word <span class="cf">for</span> word <span class="kw">in</span> tokenz <span class="cf">if</span> word.strip()]</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>words</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="24">
+<pre><code>['Hi', 'there', '!', 'how', 'was', 'your', 'day', '?']</code></pre>
+</div>
+</div>
+<ul>
+<li>Now lets add more special charatcters and ponctuations such as question marks, quotation marks, and the double-dashes :</li>
+</ul>
+<div id="cc078d85-64cd-45d8-bec2-df5bc509f16d" class="cell" data-execution_count="28">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>tokenz <span class="op">=</span> re.split(<span class="vs">r'([,.:!?_;"()\']|--|\s)'</span>,simple_text)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ul>
+<li>Now lets apply this simple tokenizer on our <code>raw_text</code>:</li>
+</ul>
+<div id="730396b5-7308-40a0-a8b7-051bf15c99a7" class="cell" data-execution_count="31">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>tokenz <span class="op">=</span> re.split(<span class="vs">r'([.,:;()_!?"\']|--|\s)'</span>, raw_text)</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>tokenz <span class="op">=</span> [word.strip() <span class="cf">for</span> word <span class="kw">in</span> tokenz <span class="cf">if</span> word.strip()]</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="bu">len</span>(tokenz)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="31">
+<pre><code>4690</code></pre>
+</div>
+</div>
+</section>
+<section id="converting-tokens-into-token-ids" class="level3">
+<h3 class="anchored" data-anchor-id="converting-tokens-into-token-ids">Converting tokens into token IDs:</h3>
+<ul>
+<li>Since we now have tokenz we could transform all <code>str</code> words into <code>int</code> ID.</li>
+<li>First we need to build vocabulary for all words we have in our <code>tokenz</code> before converting token ID into embeddings. <strong>Image</strong></li>
+</ul>
+<div id="afd32ee7-b610-4f00-adba-22a378799e57" class="cell" data-execution_count="33">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>vocabulary <span class="op">=</span> <span class="bu">sorted</span>(<span class="bu">set</span>(tokenz))</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="bu">len</span>(vocabulary)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="33">
+<pre><code>1130</code></pre>
+</div>
+</div>
+<ul>
+<li>After sorting the vocabulary and getting rid of all repeated words we have <code>1130</code> unique token in our vovabulary.</li>
+<li>Here we assign an <code>int</code> for each vocabulary element:</li>
+</ul>
+<div id="a912c20c-83de-4bf2-b610-7b8357b0cd71" class="cell" data-execution_count="36">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>vocab <span class="op">=</span> {tok: integer <span class="cf">for</span> integer, tok <span class="kw">in</span> <span class="bu">enumerate</span>(vocabulary)}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="5808f213-a779-4b33-8f68-821ded83c058" class="cell" data-execution_count="39">
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> v, i <span class="kw">in</span> vocab.items():</span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> i <span class="op">&lt;</span> <span class="dv">50</span>:</span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>i<span class="sc">}</span><span class="ss">:</span><span class="sc">{</span>v<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>0:!
+1:"
+2:'
+3:(
+4:)
+5:,
+6:--
+7:.
+8::
+9:;
+10:?
+11:A
+12:Ah
+13:Among
+14:And
+15:Are
+16:Arrt
+17:As
+18:At
+19:Be
+20:Begin
+21:Burlington
+22:But
+23:By
+24:Carlo
+25:Chicago
+26:Claude
+27:Come
+28:Croft
+29:Destroyed
+30:Devonshire
+31:Don
+32:Dubarry
+33:Emperors
+34:Florence
+35:For
+36:Gallery
+37:Gideon
+38:Gisburn
+39:Gisburns
+40:Grafton
+41:Greek
+42:Grindle
+43:Grindles
+44:HAD
+45:Had
+46:Hang
+47:Has
+48:He
+49:Her</code></pre>
+</div>
+</div>
+<ul>
+<li>Now we have create a simple tokenizer class that handles encoding and decoding of text based on a given vocabulary:
+<ul>
+<li>Takes a <code>vocab</code> dictionary as a class attribute</li>
+<li><code>self.str_to_int</code>: Stores the vocabulary mapping from string to integer.</li>
+<li><code>self.int_to_str</code>: Creates a reverse dictionary that maps integers back to strings.</li>
+</ul></li>
+<li><strong><code>encode</code> Method:</strong>
+<ul>
+<li>Converts text into a list of integer IDs based on the vocabulary.</li>
+<li>Splits the text into words and punctuation while preserving punctuation as separate items.</li>
+<li>Removes leading/trailing spaces from each item and filters out empty strings.</li>
+<li>Converts the processed words/punctuation into a list of corresponding integer IDs using the <code>str_to_int</code> dictionary.</li>
+<li>Returns the list of IDs.</li>
+</ul></li>
+<li><strong><code>decode</code> Method:</strong>
+<ul>
+<li>Converts a list of integer IDs back into text.</li>
+<li>Converts the list of integer IDs into corresponding words/punctuation using the <code>int_to_str</code> dictionary and joins them into a single string with spaces between words.</li>
+<li>Cleans up the text by removing spaces before punctuation marks using a regular expression.</li>
+<li>Returns the decoded text with properly placed punctuation.</li>
+</ul></li>
+</ul>
+<div id="d676729d-2ea7-45b8-8df1-d55556af0177" class="cell" data-execution_count="53">
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> SimpleTokenizerV1:</span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, vocab):</span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.str_to_int <span class="op">=</span> vocab</span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.int_to_str <span class="op">=</span> {i:s <span class="cf">for</span> s,i <span class="kw">in</span> vocab.items()}</span>
+<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> encode(<span class="va">self</span>, text):</span>
+<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a>        preprocessed <span class="op">=</span> re.split(<span class="vs">r'([,.?_!"()\']|--|\s)'</span>, text)</span>
+<span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a>        preprocessed <span class="op">=</span> [item.strip() <span class="cf">for</span> item <span class="kw">in</span> preprocessed <span class="cf">if</span> item.strip()]</span>
+<span id="cb22-9"><a href="#cb22-9" aria-hidden="true" tabindex="-1"></a>        ids <span class="op">=</span> [<span class="va">self</span>.str_to_int[s] <span class="cf">for</span> s <span class="kw">in</span> preprocessed]</span>
+<span id="cb22-10"><a href="#cb22-10" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> ids</span>
+<span id="cb22-11"><a href="#cb22-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-12"><a href="#cb22-12" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> decode(<span class="va">self</span>, ids):</span>
+<span id="cb22-13"><a href="#cb22-13" aria-hidden="true" tabindex="-1"></a>        text <span class="op">=</span> <span class="st">" "</span>.join([<span class="va">self</span>.int_to_str[i] <span class="cf">for</span> i <span class="kw">in</span> ids])</span>
+<span id="cb22-14"><a href="#cb22-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-15"><a href="#cb22-15" aria-hidden="true" tabindex="-1"></a>        text <span class="op">=</span> re.sub(<span class="vs">r'\s+([,.?!"()\'])'</span>, <span class="vs">r'\1'</span>, text)</span>
+<span id="cb22-16"><a href="#cb22-16" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> text</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ul>
+<li>Now we could instentiate a tokenizer object from the class <code>SimpleTokenizerV1</code> and tokenize a passage from our raw text:</li>
+</ul>
+<div id="6c9411d6-c06e-40da-a3bc-6905bf31d2ec" class="cell" data-execution_count="54">
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>tokenizer <span class="op">=</span> SimpleTokenizerV1(vocab)</span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>text <span class="op">=</span> <span class="st">""""It's the last he painted, you know,"</span></span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a><span class="st"> Mrs. Gisburn said with pardonable pride."""</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="af033886-2db0-4115-ad3c-0a627d8ce443" class="cell" data-execution_count="56">
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>ids <span class="op">=</span> tokenizer.encode(text)</span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>ids</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="56">
+<pre><code>[1,
+ 56,
+ 2,
+ 850,
+ 988,
+ 602,
+ 533,
+ 746,
+ 5,
+ 1126,
+ 596,
+ 5,
+ 1,
+ 67,
+ 7,
+ 38,
+ 851,
+ 1108,
+ 754,
+ 793,
+ 7]</code></pre>
+</div>
+</div>
+<ul>
+<li>we can also get pass this ids into <code>decode()</code> method and get back the original text:</li>
+</ul>
+<div id="8e7822c2-2f26-4ab6-a206-bd3b5c409c52" class="cell" data-execution_count="57">
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>text <span class="op">=</span> tokenizer.decode(ids)</span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>text</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="57">
+<pre><code>'" It\' s the last he painted, you know," Mrs. Gisburn said with pardonable pride.'</code></pre>
+</div>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Untitled_files/figure-html/5d77e725-72c1-41cf-8f16-77b6ffcf9878-1-29868ee0-2f23-49d7-a41f-70bc6085cf5b.png" class="img-fluid figure-img"></p>
+<figcaption>decoder_encode.png</figcaption>
+</figure>
+</div>
+</section>
+<section id="adding-special-context-tokens" class="level3">
+<h3 class="anchored" data-anchor-id="adding-special-context-tokens">Adding special context tokens:</h3>
+<ul>
+<li>We need to modeify the tokenizer to
+<ul>
+<li>accept <code>Uknown words</code>.*</li>
+<li>use <code>special tokens</code> to handel markers of thes unkown words abd document boundaries.</li>
+</ul></li>
+<li>If the tokenizer encounter words that doesn’t belong to the vocabulary will use <code>&lt;|Unk|&gt;</code> as marker for it.</li>
+<li>We can also specify bondaries between documents that help the model during training to understand where the document ends and where begins.</li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Untitled_files/figure-html/118e39e1-d03c-4f06-8bc7-03e6625c5576-1-f877fa4a-5855-45ca-ac1d-06af912f0c30.png" class="img-fluid figure-img"></p>
+<figcaption>end_of_text.png</figcaption>
+</figure>
+</div>
+<ul>
+<li>Lets modify the vocabulary to incorporate the <code>unkown</code> and <code>endoftext</code> markers:</li>
+</ul>
+<div id="c8fb7bd1-7ff9-426f-908d-903d245d5328" class="cell" data-execution_count="59">
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>all_tokenz <span class="op">=</span> <span class="bu">sorted</span>(<span class="bu">set</span>(tokenz))</span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>all_tokenz.extend([<span class="st">"&lt;|EOT|&gt;"</span>, <span class="st">"&lt;|UK|&gt;"</span>])</span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a>vocab <span class="op">=</span> {tokens: integers <span class="cf">for</span> integers, tokens <span class="kw">in</span> <span class="bu">enumerate</span>(all_tokenz)}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ul>
+<li>Check the last to items we just added:</li>
+</ul>
+<div id="ee747152-d371-4120-b5c3-bd153e4ba371" class="cell" data-execution_count="64">
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i, item <span class="kw">in</span> <span class="bu">enumerate</span>(<span class="bu">list</span>(vocab.items())[<span class="op">-</span><span class="dv">2</span>:]):</span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(item)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>('&lt;|EOT|&gt;', 1130)
+('&lt;|UK|&gt;', 1131)</code></pre>
+</div>
+</div>
+<ul>
+<li>Lets now re-build the tokenizer class adding this two features:</li>
+</ul>
+<div id="73156d1f-5029-4065-a139-371c562f9f31" class="cell" data-execution_count="66">
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> SimpleTokenizerV2:</span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, vocab):</span>
+<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.str_to_int <span class="op">=</span> vocab</span>
+<span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.int_to_str <span class="op">=</span> {i: v <span class="cf">for</span> v, i <span class="kw">in</span> vocab.items()}</span>
+<span id="cb31-5"><a href="#cb31-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-6"><a href="#cb31-6" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> encode(<span class="va">self</span>, text):</span>
+<span id="cb31-7"><a href="#cb31-7" aria-hidden="true" tabindex="-1"></a>        <span class="co"># split each word from [,."'?!();]</span></span>
+<span id="cb31-8"><a href="#cb31-8" aria-hidden="true" tabindex="-1"></a>        preprocessed <span class="op">=</span> re.split(<span class="vs">r'([,."!()?;\']|--|\s)'</span>, text)</span>
+<span id="cb31-9"><a href="#cb31-9" aria-hidden="true" tabindex="-1"></a>        <span class="co"># cut white spaces from each item in preprocessed</span></span>
+<span id="cb31-10"><a href="#cb31-10" aria-hidden="true" tabindex="-1"></a>        preprocessed <span class="op">=</span> [item.strip() <span class="cf">for</span> item <span class="kw">in</span> preprocessed <span class="cf">if</span> item.strip()]</span>
+<span id="cb31-11"><a href="#cb31-11" aria-hidden="true" tabindex="-1"></a>        <span class="co"># if the token isn't in the vocab mark it as uknown</span></span>
+<span id="cb31-12"><a href="#cb31-12" aria-hidden="true" tabindex="-1"></a>        preprocessed <span class="op">=</span> [item <span class="cf">if</span> item <span class="kw">in</span> <span class="va">self</span>.str_to_int <span class="cf">else</span> <span class="st">"&lt;|UK|&gt;"</span> <span class="cf">for</span> item <span class="kw">in</span> preprocessed]</span>
+<span id="cb31-13"><a href="#cb31-13" aria-hidden="true" tabindex="-1"></a>        ids <span class="op">=</span> [<span class="va">self</span>.str_to_int(s) <span class="cf">for</span> s <span class="kw">in</span> preprocessed]</span>
+<span id="cb31-14"><a href="#cb31-14" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> ids</span>
+<span id="cb31-15"><a href="#cb31-15" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> decode(<span class="va">self</span>, ids):</span>
+<span id="cb31-16"><a href="#cb31-16" aria-hidden="true" tabindex="-1"></a>        <span class="co"># add space after each element in int_to_str</span></span>
+<span id="cb31-17"><a href="#cb31-17" aria-hidden="true" tabindex="-1"></a>        text <span class="op">=</span> <span class="st">" "</span>.join([<span class="va">self</span>.int_to_str[i] <span class="cf">for</span> i <span class="kw">in</span> ids])</span>
+<span id="cb31-18"><a href="#cb31-18" aria-hidden="true" tabindex="-1"></a>        <span class="co"># apply some regulare expression magic </span></span>
+<span id="cb31-19"><a href="#cb31-19" aria-hidden="true" tabindex="-1"></a>        text <span class="op">=</span>  text <span class="op">=</span> re.sub(<span class="vs">r'\s+([,.:;?!"()\'])'</span>, <span class="vs">r'\1'</span>, text)</span>
+<span id="cb31-20"><a href="#cb31-20" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> text</span>
+<span id="cb31-21"><a href="#cb31-21" aria-hidden="true" tabindex="-1"></a>        </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ul>
+<li>Lets apply the new version of the tokenizer on some text:</li>
+</ul>
+<div id="5c80e8fc-63a2-4bd0-8c93-ad373ee09ef9" class="cell" data-execution_count="69">
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>txt1 <span class="op">=</span> <span class="st">"Hello, my name is Ismail!"</span></span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>txt2 <span class="op">=</span> <span class="st">"I like to drink Tea."</span></span>
+<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a>txts <span class="op">=</span> <span class="st">" &lt;|EOT|&gt; "</span>.join((txt1, txt2))</span>
+<span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a>txts</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="69">
+<pre><code>'Hello, my name is Ismail! &lt;|EOT|&gt; I like to drink Tea.'</code></pre>
+</div>
+</div>
+<ul>
+<li>Now we tokenize this example:</li>
+</ul>
+<div id="3fb964ec-5d32-4f71-9c02-35b980860d9d" class="cell" data-execution_count="70">
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>tokenizer <span class="op">=</span> SimpleTokenizerV2(vocab)</span>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>tokenizer.encode(txts)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-error">
+<div class="ansi-escaped-output">
+<pre><span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">TypeError</span>                                 Traceback (most recent call last)
+Cell <span class="ansi-green-fg">In[70], line 2</span>
+<span class="ansi-green-fg ansi-bold">      1</span> tokenizer <span style="color:rgb(98,98,98)">=</span> SimpleTokenizerV2(vocab)
+<span class="ansi-green-fg">----&gt; 2</span> <span class="ansi-yellow-bg">tokenizer</span><span style="color:rgb(98,98,98)" class="ansi-yellow-bg">.</span><span class="ansi-yellow-bg">encode</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">txts</span><span class="ansi-yellow-bg">)</span>
+
+Cell <span class="ansi-green-fg">In[66], line 13</span>, in <span class="ansi-cyan-fg">SimpleTokenizerV2.encode</span><span class="ansi-blue-fg">(self, text)</span>
+<span class="ansi-green-fg ansi-bold">     11</span> <span style="font-style:italic;color:rgb(95,135,135)"># if the token isn't in the vocab mark it as uknown</span>
+<span class="ansi-green-fg ansi-bold">     12</span> preprocessed <span style="color:rgb(98,98,98)">=</span> [item <span style="font-weight:bold;color:rgb(0,135,0)">if</span> item <span style="font-weight:bold;color:rgb(175,0,255)">in</span> <span style="color:rgb(0,135,0)">self</span><span style="color:rgb(98,98,98)">.</span>str_to_int <span style="font-weight:bold;color:rgb(0,135,0)">else</span> <span style="color:rgb(175,0,0)">"</span><span style="color:rgb(175,0,0)">&lt;|UK|&gt;</span><span style="color:rgb(175,0,0)">"</span> <span style="font-weight:bold;color:rgb(0,135,0)">for</span> item <span style="font-weight:bold;color:rgb(175,0,255)">in</span> preprocessed]
+<span class="ansi-green-fg">---&gt; 13</span> ids <span style="color:rgb(98,98,98)">=</span> [<span style="color:rgb(0,135,0)" class="ansi-yellow-bg">self</span><span style="color:rgb(98,98,98)" class="ansi-yellow-bg">.</span><span class="ansi-yellow-bg">str_to_int</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">s</span><span class="ansi-yellow-bg">)</span> <span style="font-weight:bold;color:rgb(0,135,0)">for</span> s <span style="font-weight:bold;color:rgb(175,0,255)">in</span> preprocessed]
+<span class="ansi-green-fg ansi-bold">     14</span> <span style="font-weight:bold;color:rgb(0,135,0)">return</span> ids
+
+<span class="ansi-red-fg">TypeError</span>: 'dict' object is not callable</pre>
+</div>
 </div>
 </div>
 
