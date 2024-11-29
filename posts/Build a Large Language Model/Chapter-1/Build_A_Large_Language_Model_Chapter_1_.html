@@ -73,7 +73,7 @@ ul.task-list li input[type="checkbox"] {
 <link rel="stylesheet" href="../../../styles.css">
 </head>
 
-<body class="nav-fixed fullcontent">
+<body class="floating nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top quarto-banner">
@@ -150,15 +150,54 @@ ul.task-list li input[type="checkbox"] {
   
   </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <nav id="TOC" role="doc-toc" class="toc-active" data-toc-expanded="2">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction:</a>
+  <ul class="collapse">
+  <li><a href="#structure-of-the-book" id="toc-structure-of-the-book" class="nav-link" data-scroll-target="#structure-of-the-book">Structure of the Book:</a>
+  <ul class="collapse">
+  <li><a href="#whats-an-llm" id="toc-whats-an-llm" class="nav-link" data-scroll-target="#whats-an-llm">What’s an LLM:</a></li>
+  <li><a href="#stages-of-building-and-using-llms" id="toc-stages-of-building-and-using-llms" class="nav-link" data-scroll-target="#stages-of-building-and-using-llms">Stages of building and using LLMs:</a></li>
+  <li><a href="#introducing-the-transformer-architecture" id="toc-introducing-the-transformer-architecture" class="nav-link" data-scroll-target="#introducing-the-transformer-architecture">Introducing the Transformer architecture:</a></li>
+  <li><a href="#utilizing-large-datasets" id="toc-utilizing-large-datasets" class="nav-link" data-scroll-target="#utilizing-large-datasets">Utilizing large datasets:</a></li>
+  <li><a href="#a-closer-look-at-the-gpt-architecture" id="toc-a-closer-look-at-the-gpt-architecture" class="nav-link" data-scroll-target="#a-closer-look-at-the-gpt-architecture">A closer look at the GPT architecture:</a></li>
+  <li><a href="#building-a-large-language-model" id="toc-building-a-large-language-model" class="nav-link" data-scroll-target="#building-a-large-language-model">Building a large language model:</a></li>
+  </ul></li>
+  </ul></li>
+  </ul>
+</nav>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+    </div>
 <!-- main -->
 <main class="content quarto-banner-title-block" id="quarto-document-content">
 
 
 
 
-
+<nav id="TOC-body" role="doc-toc">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#introduction" id="toc-introduction">Introduction:</a>
+  <ul>
+  <li><a href="#structure-of-the-book" id="toc-structure-of-the-book">Structure of the Book:</a>
+  <ul>
+  <li><a href="#whats-an-llm" id="toc-whats-an-llm">What’s an LLM:</a></li>
+  <li><a href="#stages-of-building-and-using-llms" id="toc-stages-of-building-and-using-llms">Stages of building and using LLMs:</a></li>
+  <li><a href="#introducing-the-transformer-architecture" id="toc-introducing-the-transformer-architecture">Introducing the Transformer architecture:</a></li>
+  <li><a href="#utilizing-large-datasets" id="toc-utilizing-large-datasets">Utilizing large datasets:</a></li>
+  <li><a href="#a-closer-look-at-the-gpt-architecture" id="toc-a-closer-look-at-the-gpt-architecture">A closer look at the GPT architecture:</a></li>
+  <li><a href="#building-a-large-language-model" id="toc-building-a-large-language-model">Building a large language model:</a></li>
+  </ul></li>
+  </ul></li>
+  </ul>
+</nav>
 <section id="introduction" class="level1">
 <h1>Introduction:</h1>
 <p>In this series on notebooks I will share my learning/note-taking of the book <a href="https://www.amazon.com/Build-Large-Language-Model-Scratch/dp/1633437167"><strong>Build a Large Lunguage Model(From Scratch)</strong></a> by the Author <a href="https://x.com/rasbt"><strong>Sebastian Raschka</strong></a>.</p>
@@ -367,7 +406,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp("https:\/\/ismaai008l\.github\.io\/Lifelong-Learner\.github\.io\/");
+      var filterRegex = new RegExp("https:\/\/iSmailTG\.github\.io\/Lifelong-Learner\.github\.io\/");
     var isInternal = (href) => {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }
