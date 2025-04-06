@@ -241,14 +241,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <ul>
 <li>LLM cannot perform any kind of computation on raw text, it can only work with numbers.</li>
 <li>Therefor we need to apply some kind of numerical transformation to all input text.</li>
-<li>This transformation called <strong>Embedding</strong> and the numerical representation of each word is <strong>Vector</strong></li>
-<li>The embedding process work also on other data format like <em>Audio</em> <em>Video</em> .. but each type has its own embedding model.<strong>Image</strong></li>
+<li>This transformation called <strong>Embedding</strong> and the numerical representation of each word is <strong>Vector</strong>.</li>
+<li>The embedding process work also on other data format like <em>Audio</em> <em>Video</em> .. but each type has its own embedding model. <img src="embeddings.png" class="img-fluid" alt="Embedding Layer with Different types of Data"></li>
 <li>Many algorithms have been developed to produce embeddings for words.</li>
 <li>The famous one was <em>World2Vec</em>.
 <ul>
 <li>Its approach was to train Neural Network on predicting embedding of a given word based on its context, and Vice-Versa.</li>
 <li>The main idea here is that words that have appear in similar context atend to have similar meaning which also efect their embedding.</li>
-<li>So if these words are projected in two dimensional embedding they will be appeared in clusters. <strong>Image</strong></li>
+<li>So if these words are projected in two dimensional embedding they will be appeared in clusters. <img src="two-dimensional.png" class="img-fluid" alt="clusters"></li>
 </ul></li>
 <li>In current LLM embeddings are way more larger and have higher dimensionality.
 <ul>
