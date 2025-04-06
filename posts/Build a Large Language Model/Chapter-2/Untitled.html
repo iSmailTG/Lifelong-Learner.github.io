@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Ismail TG">
-<meta name="dcterms.date" content="2024-11-23">
+<meta name="dcterms.date" content="2024-11-16">
 
 <title>Chapter 2: Build a Large Language Model – Ismail's Personal Blog</title>
 <style>
@@ -107,7 +107,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link rel="stylesheet" href="../../../styles.css">
 </head>
 
-<body class="nav-fixed fullcontent">
+<body class="floating nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top quarto-banner">
@@ -174,7 +174,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">November 23, 2024</p>
+        <p class="date">November 16, 2024</p>
       </div>
     </div>
     
@@ -184,15 +184,52 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   
   </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <nav id="TOC" role="doc-toc" class="toc-active" data-toc-expanded="2">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#about-this-chapter" id="toc-about-this-chapter" class="nav-link active" data-scroll-target="#about-this-chapter">About this Chapter:</a>
+  <ul class="collapse">
+  <li><a href="#understanding-word-embeddings" id="toc-understanding-word-embeddings" class="nav-link" data-scroll-target="#understanding-word-embeddings">Understanding word embeddings:</a></li>
+  <li><a href="#tokenizing-text" id="toc-tokenizing-text" class="nav-link" data-scroll-target="#tokenizing-text">Tokenizing text:</a></li>
+  <li><a href="#converting-tokens-into-token-ids" id="toc-converting-tokens-into-token-ids" class="nav-link" data-scroll-target="#converting-tokens-into-token-ids">Converting tokens into token IDs:</a></li>
+  <li><a href="#adding-special-context-tokens" id="toc-adding-special-context-tokens" class="nav-link" data-scroll-target="#adding-special-context-tokens">Adding special context tokens:</a></li>
+  <li><a href="#byte-pair-encoding" id="toc-byte-pair-encoding" class="nav-link" data-scroll-target="#byte-pair-encoding">Byte pair Encoding:</a></li>
+  <li><a href="#data-sampling-with-a-sliding-window" id="toc-data-sampling-with-a-sliding-window" class="nav-link" data-scroll-target="#data-sampling-with-a-sliding-window">Data sampling with a sliding window:</a></li>
+  <li><a href="#creating-token-embeddings" id="toc-creating-token-embeddings" class="nav-link" data-scroll-target="#creating-token-embeddings">Creating token embeddings:</a></li>
+  <li><a href="#encoding-word-positions" id="toc-encoding-word-positions" class="nav-link" data-scroll-target="#encoding-word-positions">Encoding word positions:</a></li>
+  </ul></li>
+  </ul>
+</nav>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+    </div>
 <!-- main -->
 <main class="content quarto-banner-title-block" id="quarto-document-content">
 
 
 
 
-
+<nav id="TOC-body" role="doc-toc">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#about-this-chapter" id="toc-about-this-chapter">About this Chapter:</a>
+  <ul>
+  <li><a href="#understanding-word-embeddings" id="toc-understanding-word-embeddings">Understanding word embeddings:</a></li>
+  <li><a href="#tokenizing-text" id="toc-tokenizing-text">Tokenizing text:</a></li>
+  <li><a href="#converting-tokens-into-token-ids" id="toc-converting-tokens-into-token-ids">Converting tokens into token IDs:</a></li>
+  <li><a href="#adding-special-context-tokens" id="toc-adding-special-context-tokens">Adding special context tokens:</a></li>
+  <li><a href="#byte-pair-encoding" id="toc-byte-pair-encoding">Byte pair Encoding:</a></li>
+  <li><a href="#data-sampling-with-a-sliding-window" id="toc-data-sampling-with-a-sliding-window">Data sampling with a sliding window:</a></li>
+  <li><a href="#creating-token-embeddings" id="toc-creating-token-embeddings">Creating token embeddings:</a></li>
+  <li><a href="#encoding-word-positions" id="toc-encoding-word-positions">Encoding word positions:</a></li>
+  </ul></li>
+  </ul>
+</nav>
 <section id="about-this-chapter" class="level2">
 <h2 class="anchored" data-anchor-id="about-this-chapter">About this Chapter:</h2>
 <ul>
