@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.5.57">
+<meta name="generator" content="quarto-1.6.43">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -71,10 +71,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-d4d76bf8491c20bad77d141916dc28e1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="../../../site_libs/bootstrap/bootstrap-1103899cd6f3886eaa78f2a2ecaca893.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -200,6 +200,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#creating-token-embeddings" id="toc-creating-token-embeddings" class="nav-link" data-scroll-target="#creating-token-embeddings">Creating token embeddings:</a></li>
   <li><a href="#encoding-word-positions" id="toc-encoding-word-positions" class="nav-link" data-scroll-target="#encoding-word-positions">Encoding word positions:</a></li>
   </ul></li>
+  <li><a href="#key-takeaways-from-chapter-2" id="toc-key-takeaways-from-chapter-2" class="nav-link" data-scroll-target="#key-takeaways-from-chapter-2">Key Takeaways from Chapter 2:</a></li>
   </ul>
 </nav>
 </nav>
@@ -228,6 +229,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#creating-token-embeddings" id="toc-creating-token-embeddings">Creating token embeddings:</a></li>
   <li><a href="#encoding-word-positions" id="toc-encoding-word-positions">Encoding word positions:</a></li>
   </ul></li>
+  <li><a href="#key-takeaways-from-chapter-2" id="toc-key-takeaways-from-chapter-2">Key Takeaways from Chapter 2:</a></li>
   </ul>
 </nav>
 <section id="about-this-chapter" class="level2">
@@ -301,8 +303,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <ul>
-<li>The goal is to tokenize the <code>20479</code> charaters in order to turn theem into embeddings.</li>
-<li>We will <code>Regular Expression</code> as a tool to tokenize the text, just to understand the idea of tokenization since it is not the right tool for this for our context is great.</li>
+<li>The goal is to tokenize the <code>20479</code> charaters in order to turn them into embeddings.</li>
+<li>We will use <code>Regular Expression</code> as a tool to tokenize the text, just to understand the idea of tokenization since it is not the right tool for this but for our context is great.</li>
 <li>lets take this simple text:</li>
 </ul>
 <div id="f4ebbbf5-d60c-4082-a0d1-91a8c2b88ee4" class="cell" data-execution_count="28">
@@ -320,7 +322,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <ul>
-<li>We need to make sur to seperate ponctuations from words:</li>
+<li>We need to make sure to seperate ponctuations from words:</li>
 </ul>
 <div id="e1dfad5c-85df-4a03-93cf-7e2ae1cdb5c2" class="cell" data-execution_count="30">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>tokenz <span class="op">=</span> re.split(<span class="vs">r'([!?]|\s)'</span>, simple_text)</span>
@@ -655,7 +657,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h3 class="anchored" data-anchor-id="byte-pair-encoding">Byte pair Encoding:</h3>
 <ul>
 <li>The <strong>Byte-pair-encoding</strong> <strong><code>BPE</code></strong> is a technique used in the tokenization schema for training most GPT models.</li>
-<li>We will use a library called <code>Tiktoken</code> to tokenize our input text in much effiecent way that our <code>TokenizeV2</code> class.</li>
+<li>We will use a library called <code>Tiktoken</code> to tokenize our input text in much efficient way that our <code>TokenizeV2</code> class.</li>
 </ul>
 <div id="f39663f4-83a2-42d2-9a41-57ed1abe9c84" class="cell" data-execution_count="47">
 <div class="sourceCode cell-code" id="cb38"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> importlib.metadata <span class="im">import</span> version</span>
@@ -1081,9 +1083,21 @@ Input shape:
 <pre><code>torch.Size([8, 4, 256])</code></pre>
 </div>
 </div>
-
-
 </section>
+</section>
+<section id="key-takeaways-from-chapter-2" class="level2">
+<h2 class="anchored" data-anchor-id="key-takeaways-from-chapter-2">Key Takeaways from Chapter 2:</h2>
+<ul>
+<li><p>Learned how to <strong>tokenize</strong> raw text and convert it into a structured format for model input.</p></li>
+<li><p>Explored <strong>Byte Pair Encoding (BPE)</strong> as a way to handle subword units efficiently.</p></li>
+<li><p>Understood how to convert tokens into <strong>token IDs</strong> using a vocabulary.</p></li>
+<li><p>Added <strong>special context tokens</strong> (like BOS and EOS) to guide the model during training.</p></li>
+<li><p>Used a <strong>sliding window</strong> approach for efficient data sampling from long texts.</p></li>
+<li><p>Built <strong>token embeddings</strong> to map token IDs into dense vector representations.</p></li>
+<li><p>Encoded positional information so the model can understand word order.</p></li>
+</ul>
+
+
 </section>
 
 </main> <!-- /main -->
@@ -1169,8 +1183,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   });
   clipboard.on('success', onCopySuccess);
   if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-    // For code content inside modals, clipBoardJS needs to be initialized with a container option
-    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
     const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
       text: getTextToCopy,
       container: window.document.getElementById('quarto-embedded-source-code-modal')
@@ -1281,7 +1293,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (window.Quarto?.typesetMath) {
         window.Quarto.typesetMath(note);
       }
-      // TODO in 1.5, we should make sure this works without a callout special case
       if (note.classList.contains("callout")) {
         return note.outerHTML;
       } else {
