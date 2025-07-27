@@ -10,6 +10,128 @@
 <atom:link href="https://iSmailTG.github.io/Lifelong-Learner.github.io/blog.xml" rel="self" type="application/rss+xml"/>
 <description></description>
 <generator>quarto-1.6.43</generator>
-<lastBuildDate>Sun, 20 Apr 2025 22:43:39 GMT</lastBuildDate>
+<lastBuildDate>Sun, 27 Jul 2025 22:02:57 GMT</lastBuildDate>
+<item>
+  <title></title>
+  <link>https://iSmailTG.github.io/Lifelong-Learner.github.io/posts/junk/untitled.html</link>
+  <description><![CDATA[ 
+
+
+
+
+<p>I’d be happy to continue with the Mini-GPT training code. Let’s finish the implementation:</p>
+<p>Now, let’s add a script that allows us to compare the two types of positional embeddings in the context of our Mini-GPT model, to see how they affect performance:</p>
+<p>Let me also provide a detailed explanation of the code implementation and key concepts:</p>
+<section id="positional-embeddings-implementation" class="level2">
+<h2 class="anchored" data-anchor-id="positional-embeddings-implementation">Positional Embeddings Implementation</h2>
+<p>The first artifact implements two types of positional embeddings, which are crucial for transformer models like GPT:</p>
+<section id="learned-positional-embeddings" class="level3">
+<h3 class="anchored" data-anchor-id="learned-positional-embeddings">1. Learned Positional Embeddings</h3>
+<ul>
+<li><strong>Implementation</strong>: An embedding layer that maps position indices to vectors</li>
+<li><strong>Key characteristics</strong>:
+<ul>
+<li>Parameters are learned during training</li>
+<li>More flexible as they can adapt to specific patterns in the data</li>
+<li>Requires additional memory for storing parameters</li>
+<li>Limited to the maximum sequence length seen during training</li>
+</ul></li>
+</ul>
+</section>
+<section id="sinusoidal-positional-embeddings" class="level3">
+<h3 class="anchored" data-anchor-id="sinusoidal-positional-embeddings">2. Sinusoidal Positional Embeddings</h3>
+<ul>
+<li><strong>Implementation</strong>: Mathematical functions (sine and cosine) with different frequencies</li>
+<li><strong>Key characteristics</strong>:
+<ul>
+<li>Fixed pattern that doesn’t require training</li>
+<li>More memory-efficient (no additional parameters)</li>
+<li>Can potentially generalize better to sequence lengths not seen during training</li>
+<li>Uses alternating sine and cosine functions across dimensions</li>
+</ul></li>
+</ul>
+<p>The code includes visualization capabilities to see how these different embeddings look across positions and dimensions.</p>
+</section>
+</section>
+<section id="mini-gpt-implementation" class="level2">
+<h2 class="anchored" data-anchor-id="mini-gpt-implementation">Mini-GPT Implementation</h2>
+<p>The second artifact implements a simplified GPT model with these key components:</p>
+<section id="key-components" class="level3">
+<h3 class="anchored" data-anchor-id="key-components">Key Components:</h3>
+<ol type="1">
+<li><strong>Multi-Head Attention</strong>: Allows the model to focus on different parts of the input sequence
+<ul>
+<li>Splits embeddings into multiple heads for parallel attention computation</li>
+<li>Computes query, key, and value projections</li>
+<li>Uses scaled dot-product attention with a causal mask for autoregressive generation</li>
+</ul></li>
+<li><strong>Feed-Forward Networks</strong>: Processes the attention outputs
+<ul>
+<li>Two linear transformations with a GELU activation</li>
+<li>Expands the dimension to <code>d_ff</code> and then back to <code>d_model</code></li>
+</ul></li>
+<li><strong>Decoder Blocks</strong>: The fundamental building blocks of GPT
+<ul>
+<li>Self-attention mechanism</li>
+<li>Feed-forward network</li>
+<li>Layer normalization and residual connections</li>
+</ul></li>
+<li><strong>Text Generation</strong>: Autoregressive sampling with temperature control
+<ul>
+<li>Supports top-k and nucleus (top-p) sampling for diverse generation</li>
+<li>Follows the standard autoregressive text generation process</li>
+</ul></li>
+<li><strong>Simple Tokenizer</strong>: A basic implementation for demonstration purposes
+<ul>
+<li>Handles word tokenization</li>
+<li>Builds vocabulary from input texts</li>
+<li>Provides encode/decode functionality</li>
+</ul></li>
+</ol>
+</section>
+</section>
+<section id="training-implementation" class="level2">
+<h2 class="anchored" data-anchor-id="training-implementation">Training Implementation</h2>
+<p>The third artifact shows how to train the Mini-GPT model:</p>
+<ul>
+<li>Sets up proper loss function (CrossEntropyLoss with padding ignored)</li>
+<li>Uses the AdamW optimizer with learning rate scheduling</li>
+<li>Implements gradient clipping to prevent exploding gradients</li>
+<li>Tracks and visualizes training metrics</li>
+<li>Demonstrates text generation with different temperature settings</li>
+</ul>
+</section>
+<section id="comparison-of-positional-embeddings" class="level2">
+<h2 class="anchored" data-anchor-id="comparison-of-positional-embeddings">Comparison of Positional Embeddings</h2>
+<p>The final artifact compares both positional embedding types in a real training scenario:</p>
+<ul>
+<li>Implements both models with identical architectures except for the positional embedding type</li>
+<li>Trains both models on the same data with identical hyperparameters</li>
+<li>Compares training loss curves and training times</li>
+<li>Tests text generation quality</li>
+<li>Assesses generalization to longer sequences (a key advantage of sinusoidal embeddings)</li>
+</ul>
+</section>
+<section id="key-takeaways" class="level2">
+<h2 class="anchored" data-anchor-id="key-takeaways">Key Takeaways</h2>
+<ol type="1">
+<li><p><strong>Architectural Understanding</strong>: The code demonstrates the essential components of transformer decoder models like GPT.</p></li>
+<li><p><strong>Positional Embeddings Trade-offs</strong>:</p>
+<ul>
+<li>Learned positional embeddings can adapt to specific patterns but require more parameters and may struggle with longer sequences.</li>
+<li>Sinusoidal positional embeddings are parameter-efficient and theoretically better for generalization to unseen sequence lengths.</li>
+</ul></li>
+<li><p><strong>Practical Implementation</strong>: The implementation includes training, evaluation, and text generation, forming a complete pipeline from data to generated text.</p></li>
+</ol>
+<p>These implementations provide a foundation to understand how modern language models work at their core, with a focus on the critical role of positional information in sequence modeling.</p>
+<p>Would you like me to explain any specific part of these implementations in more detail?</p>
+
+
+</section>
+
+ ]]></description>
+  <guid>https://iSmailTG.github.io/Lifelong-Learner.github.io/posts/junk/untitled.html</guid>
+  <pubDate>Sun, 27 Jul 2025 22:02:57 GMT</pubDate>
+</item>
 </channel>
 </rss>

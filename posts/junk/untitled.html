@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>blog – Ismail's Personal Blog</title>
+<title>untitled – Ismail's Personal Blog</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,24 +23,22 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-listing/list.min.js"></script>
-<script src="site_libs/quarto-listing/quarto-listing.js"></script>
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-d4d76bf8491c20bad77d141916dc28e1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-1103899cd6f3886eaa78f2a2ecaca893.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-d4d76bf8491c20bad77d141916dc28e1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-1103899cd6f3886eaa78f2a2ecaca893.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -68,77 +66,19 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script>
 
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-listing .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
 
-    const options = {
-      valueNames: ['listing-date','listing-title','listing-categories','listing-reading-time','listing-description',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      
-      searchColumns: ["listing-title","listing-author","listing-image","listing-description","listing-categories"],
-    };
+<link rel="stylesheet" href="../../styles.css">
+</head>
 
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
-
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
-
-<link rel="stylesheet" href="styles.css">
-<link rel="alternate" type="application/rss+xml" title="Ismail's Personal Blog" href="blog.xml" data-external="1"></head>
-
-<body class="nav-fixed">
+<body class="nav-fixed fullcontent">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">Ismail’s Personal Blog</span>
     </a>
   </div>
@@ -149,11 +89,11 @@ window.Quarto = {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./blog.html" aria-current="page"> 
+    <a class="nav-link" href="../../blog.html"> 
 <span class="menu-text">Blog</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./about.html"> 
+    <a class="nav-link" href="../../about.html"> 
 <span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item compact">
@@ -174,71 +114,127 @@ window.Quarto = {
     </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+<header id="title-block-header" class="quarto-title-block"></header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(1)</span></div></div></div>
+    
 <!-- main -->
-<main class="content column-page-left" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
+<main class="content quarto-banner-title-block" id="quarto-document-content">
 
 
 
 
+<p>I’d be happy to continue with the Mini-GPT training code. Let’s finish the implementation:</p>
+<p>Now, let’s add a script that allows us to compare the two types of positional embeddings in the context of our Mini-GPT model, to see how they affect performance:</p>
+<p>Let me also provide a detailed explanation of the code implementation and key concepts:</p>
+<section id="positional-embeddings-implementation" class="level2">
+<h2 class="anchored" data-anchor-id="positional-embeddings-implementation">Positional Embeddings Implementation</h2>
+<p>The first artifact implements two types of positional embeddings, which are crucial for transformer models like GPT:</p>
+<section id="learned-positional-embeddings" class="level3">
+<h3 class="anchored" data-anchor-id="learned-positional-embeddings">1. Learned Positional Embeddings</h3>
+<ul>
+<li><strong>Implementation</strong>: An embedding layer that maps position indices to vectors</li>
+<li><strong>Key characteristics</strong>:
+<ul>
+<li>Parameters are learned during training</li>
+<li>More flexible as they can adapt to specific patterns in the data</li>
+<li>Requires additional memory for storing parameters</li>
+<li>Limited to the maximum sequence length seen during training</li>
+</ul></li>
+</ul>
+</section>
+<section id="sinusoidal-positional-embeddings" class="level3">
+<h3 class="anchored" data-anchor-id="sinusoidal-positional-embeddings">2. Sinusoidal Positional Embeddings</h3>
+<ul>
+<li><strong>Implementation</strong>: Mathematical functions (sine and cosine) with different frequencies</li>
+<li><strong>Key characteristics</strong>:
+<ul>
+<li>Fixed pattern that doesn’t require training</li>
+<li>More memory-efficient (no additional parameters)</li>
+<li>Can potentially generalize better to sequence lengths not seen during training</li>
+<li>Uses alternating sine and cosine functions across dimensions</li>
+</ul></li>
+</ul>
+<p>The code includes visualization capabilities to see how these different embeddings look across positions and dimensions.</p>
+</section>
+</section>
+<section id="mini-gpt-implementation" class="level2">
+<h2 class="anchored" data-anchor-id="mini-gpt-implementation">Mini-GPT Implementation</h2>
+<p>The second artifact implements a simplified GPT model with these key components:</p>
+<section id="key-components" class="level3">
+<h3 class="anchored" data-anchor-id="key-components">Key Components:</h3>
+<ol type="1">
+<li><strong>Multi-Head Attention</strong>: Allows the model to focus on different parts of the input sequence
+<ul>
+<li>Splits embeddings into multiple heads for parallel attention computation</li>
+<li>Computes query, key, and value projections</li>
+<li>Uses scaled dot-product attention with a causal mask for autoregressive generation</li>
+</ul></li>
+<li><strong>Feed-Forward Networks</strong>: Processes the attention outputs
+<ul>
+<li>Two linear transformations with a GELU activation</li>
+<li>Expands the dimension to <code>d_ff</code> and then back to <code>d_model</code></li>
+</ul></li>
+<li><strong>Decoder Blocks</strong>: The fundamental building blocks of GPT
+<ul>
+<li>Self-attention mechanism</li>
+<li>Feed-forward network</li>
+<li>Layer normalization and residual connections</li>
+</ul></li>
+<li><strong>Text Generation</strong>: Autoregressive sampling with temperature control
+<ul>
+<li>Supports top-k and nucleus (top-p) sampling for diverse generation</li>
+<li>Follows the standard autoregressive text generation process</li>
+</ul></li>
+<li><strong>Simple Tokenizer</strong>: A basic implementation for demonstration purposes
+<ul>
+<li>Handles word tokenization</li>
+<li>Builds vocabulary from input texts</li>
+<li>Provides encode/decode functionality</li>
+</ul></li>
+</ol>
+</section>
+</section>
+<section id="training-implementation" class="level2">
+<h2 class="anchored" data-anchor-id="training-implementation">Training Implementation</h2>
+<p>The third artifact shows how to train the Mini-GPT model:</p>
+<ul>
+<li>Sets up proper loss function (CrossEntropyLoss with padding ignored)</li>
+<li>Uses the AdamW optimizer with learning rate scheduling</li>
+<li>Implements gradient clipping to prevent exploding gradients</li>
+<li>Tracks and visualizes training metrics</li>
+<li>Demonstrates text generation with different temperature settings</li>
+</ul>
+</section>
+<section id="comparison-of-positional-embeddings" class="level2">
+<h2 class="anchored" data-anchor-id="comparison-of-positional-embeddings">Comparison of Positional Embeddings</h2>
+<p>The final artifact compares both positional embedding types in a real training scenario:</p>
+<ul>
+<li>Implements both models with identical architectures except for the positional embedding type</li>
+<li>Trains both models on the same data with identical hyperparameters</li>
+<li>Compares training loss curves and training times</li>
+<li>Tests text generation quality</li>
+<li>Assesses generalization to longer sequences (a key advantage of sinusoidal embeddings)</li>
+</ul>
+</section>
+<section id="key-takeaways" class="level2">
+<h2 class="anchored" data-anchor-id="key-takeaways">Key Takeaways</h2>
+<ol type="1">
+<li><p><strong>Architectural Understanding</strong>: The code demonstrates the essential components of transformer decoder models like GPT.</p></li>
+<li><p><strong>Positional Embeddings Trade-offs</strong>:</p>
+<ul>
+<li>Learned positional embeddings can adapt to specific patterns but require more parameters and may struggle with longer sequences.</li>
+<li>Sinusoidal positional embeddings are parameter-efficient and theoretically better for generalization to unseen sequence lengths.</li>
+</ul></li>
+<li><p><strong>Practical Implementation</strong>: The implementation includes training, evaluation, and text generation, forming a complete pipeline from data to generated text.</p></li>
+</ol>
+<p>These implementations provide a foundation to understand how modern language models work at their core, with a focus on the critical role of positional information in sequence modeling.</p>
+<p>Would you like me to explain any specific part of these implementations in more detail?</p>
 
 
+</section>
 
-
-<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
-<div class="listing-actions-group">
-   <div class="input-group input-group-sm quarto-listing-sort">
-     <span class="input-group-text"><i class="bi bi-sort-down"></i></span>
-     <select id="listing-listing-sort" class="form-select" aria-label="Order By" onchange="window['quarto-listings']['listing-listing'].sort(this.options[this.selectedIndex].value, { order: this.options[this.selectedIndex].getAttribute('data-direction')})">
-       <option value="" disabled="" selected="" hidden="">Order By</option>
-       <option value="index" data-direction="asc">Default</option>
-         <option value="listing-title" data-direction="asc">
-          Title
-        </option>
-         <option value="listing-date-sort" data-direction="asc">
-          Date - Oldest
-        </option>
-         <option value="listing-date-sort" data-direction="desc">
-          Date - Newest
-        </option>
-     </select>
-  </div>
-    <div class="input-group input-group-sm quarto-listing-filter">
-      <span class="input-group-text"><i class="bi bi-search"></i></span>
-      <input type="text" class="search form-control" placeholder="Filter">
-    </div>
-</div>
-<div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-listing-file-modified-sort="1746934260200" data-listing-reading-time-sort="3" data-listing-word-count-sort="595">
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/junk/untitled.html" class="no-external">Positional Embeddings Implementation</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/junk/untitled.html" class="no-external"></a>
-</div>
-<div class="listing-description">
-<a href="./posts/junk/untitled.html" class="no-external">I’d be happy to continue with the Mini-GPT training code. Let’s finish the implementation:</a>
-</div>
-</div>
-<div class="metadata">
-<p><a href="./posts/junk/untitled.html" class="no-external"></a></p><a href="./posts/junk/untitled.html" class="no-external">
-<div class="listing-reading-time">
-3 min
-</div>
-</a>
-</div>
-</div>
-</div>
-<div class="listing-no-matching d-none">
-No matching items
-</div>
-</div></main> <!-- /main -->
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
