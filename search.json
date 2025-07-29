@@ -578,7 +578,7 @@
     "href": "posts/Manim-Project/Blog_0.html#filtering-clean-examples",
     "title": "Manim Project Part 1: Prepare The Dataset",
     "section": "Filtering Clean Examples",
-    "text": "Filtering Clean Examples\nTo keep the training signal clean, I applied a simple filter to remove any examples where:\n\nThe errorfield was not None\nThe video field was None\n\nThis will reduce the size of the dataset but we will have only data-points where the code is executable.\n\ndataset = dataset.filter(\n    lambda example: example['error'] is None and example['video'] is not None\n)\n\n\ndataset\n\nDatasetDict({\n    train: Dataset({\n        features: ['subject', 'topic', 'question', 'title', 'narration', 'visual_elements', 'equations', 'key_timestamps', 'visual_style', 'concept_id', 'python_code', 'scene_class_name', 'generation_time', 'filename', 'message', 'error', 'stdout', 'stderr', 'video'],\n        num_rows: 252\n    })\n})\n\n\nAs expected now we only have 252 which is not bad, since we are now sure that the dataset is high quality."
+    "text": "Filtering Clean Examples\nTo keep the training signal clean, I applied a simple filter to remove any examples where:\n\nThe errorfield was not None\nThe video field was None\n\nThis will reduce the size of the dataset but we will have only data-points where the code is executable.\n\ndataset = dataset.filter(\n    lambda example: example['error'] is None and example['video'] is not None\n)\n\n\ndataset\n\nAs expected now we only have 252 which is not bad, since we are now sure that the dataset is high quality."
   },
   {
     "objectID": "posts/Manim-Project/Blog_0.html#designing-prompt-format",
