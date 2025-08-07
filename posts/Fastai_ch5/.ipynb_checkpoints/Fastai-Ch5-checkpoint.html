@@ -1776,12 +1776,151 @@ Downloading: "https://download.pytorch.org/models/resnet34-b627a593.pth" to /roo
 <li>One technique that can speed things up a lot is <em>mixed-precision training</em>. This refers to using less-precise numbers (<em>half-precision floating point</em>, also called <em>fp16</em>) where possible during training.</li>
 <li>To enable this feature in fastai, just add <code>to_fp16()</code> after your <code>Learner</code> creation (you also need to import the module).</li>
 </ul></li>
-<li>You can’t really know ahead of time what the best architecture for your particular problem is you need to try training some. So let’s try a ResNet-50 now with mixed precision:</li>
+<li>You can’t really know ahead of time what the best architecture for your particular problem is—you need to try training some. So let’s try a ResNet-50 now with mixed precision:</li>
 </ul>
-<div id="cell-125" class="cell" data-outputid="da9de3a5-281a-4b62-e633-b9ca61c4998d">
+<div id="cell-125" class="cell" data-outputid="da9de3a5-281a-4b62-e633-b9ca61c4998d" data-execution_count="52">
 <div class="sourceCode cell-code" id="cb81"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb81-1"><a href="#cb81-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> fastai.callback.fp16 <span class="im">import</span> <span class="op">*</span></span>
 <span id="cb81-2"><a href="#cb81-2" aria-hidden="true" tabindex="-1"></a>learn <span class="op">=</span> vision_learner(dls, resnet50, metrics<span class="op">=</span>error_rate).to_fp16()</span>
 <span id="cb81-3"><a href="#cb81-3" aria-hidden="true" tabindex="-1"></a>learn.fine_tune(<span class="dv">6</span>, freeze_epochs<span class="op">=</span><span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>/usr/local/lib/python3.7/dist-packages/torchvision/models/_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and will be removed in 0.15. The current behavior is equivalent to passing `weights=ResNet50_Weights.IMAGENET1K_V1`. You can also use `weights=ResNet50_Weights.DEFAULT` to get the most up-to-date weights.
+  warnings.warn(msg)
+Downloading: "https://download.pytorch.org/models/resnet50-0676ba61.pth" to /root/.cache/torch/hub/checkpoints/resnet50-0676ba61.pth</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<script type="application/vnd.jupyter.widget-view+json">
+{"model_id":"3480deaea9b9405cbf63fa9fd8bf2b34","version_major":2,"version_minor":0,"quarto_mimetype":"application/vnd.jupyter.widget-view+json"}
+</script>
+</div>
+<div class="cell-output cell-output-display">
+
+<style>
+    /* Turns off some styling */
+    progress {
+        /* gets rid of default border in Firefox and Opera. */
+        border: none;
+        /* Needs to be in here for Safari polyfill so background images work as expected. */
+        background-size: auto;
+    }
+    progress:not([value]), progress:not([value])::-webkit-progress-bar {
+        background: repeating-linear-gradient(45deg, #7e7e7e, #7e7e7e 10px, #5c5c5c 10px, #5c5c5c 20px);
+    }
+    .progress-bar-interrupted, .progress-bar-interrupted::-webkit-progress-bar {
+        background: #F44336;
+    }
+</style>
+</div>
+<div class="cell-output cell-output-display">
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th">epoch</th>
+<th data-quarto-table-cell-role="th">train_loss</th>
+<th data-quarto-table-cell-role="th">valid_loss</th>
+<th data-quarto-table-cell-role="th">error_rate</th>
+<th data-quarto-table-cell-role="th">time</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>0</td>
+<td>1.314968</td>
+<td>0.331779</td>
+<td>0.112314</td>
+<td>01:07</td>
+</tr>
+<tr class="even">
+<td>1</td>
+<td>0.600175</td>
+<td>0.297889</td>
+<td>0.089310</td>
+<td>01:09</td>
+</tr>
+<tr class="odd">
+<td>2</td>
+<td>0.424932</td>
+<td>0.264503</td>
+<td>0.078484</td>
+<td>01:06</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="cell-output cell-output-display">
+
+<style>
+    /* Turns off some styling */
+    progress {
+        /* gets rid of default border in Firefox and Opera. */
+        border: none;
+        /* Needs to be in here for Safari polyfill so background images work as expected. */
+        background-size: auto;
+    }
+    progress:not([value]), progress:not([value])::-webkit-progress-bar {
+        background: repeating-linear-gradient(45deg, #7e7e7e, #7e7e7e 10px, #5c5c5c 10px, #5c5c5c 20px);
+    }
+    .progress-bar-interrupted, .progress-bar-interrupted::-webkit-progress-bar {
+        background: #F44336;
+    }
+</style>
+</div>
+<div class="cell-output cell-output-display">
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th">epoch</th>
+<th data-quarto-table-cell-role="th">train_loss</th>
+<th data-quarto-table-cell-role="th">valid_loss</th>
+<th data-quarto-table-cell-role="th">error_rate</th>
+<th data-quarto-table-cell-role="th">time</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>0</td>
+<td>0.294915</td>
+<td>0.276637</td>
+<td>0.076455</td>
+<td>01:08</td>
+</tr>
+<tr class="even">
+<td>1</td>
+<td>0.303050</td>
+<td>0.266962</td>
+<td>0.077131</td>
+<td>01:10</td>
+</tr>
+<tr class="odd">
+<td>2</td>
+<td>0.241821</td>
+<td>0.301895</td>
+<td>0.086604</td>
+<td>01:08</td>
+</tr>
+<tr class="even">
+<td>3</td>
+<td>0.144625</td>
+<td>0.222015</td>
+<td>0.060217</td>
+<td>01:08</td>
+</tr>
+<tr class="odd">
+<td>4</td>
+<td>0.082382</td>
+<td>0.166509</td>
+<td>0.056834</td>
+<td>01:10</td>
+</tr>
+<tr class="even">
+<td>5</td>
+<td>0.060593</td>
+<td>0.161509</td>
+<td>0.060893</td>
+<td>01:08</td>
+</tr>
+</tbody>
+</table>
+</div>
 </div>
 <ul>
 <li>We get better results, at less epochs, and less time per epochs only by usung deeper architecture.
@@ -1889,7 +2028,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp("https:\/\/iSmailTG\.github\.io\/Lifelong-Learner\.github\.io\/");
+      var filterRegex = new RegExp('/' + window.location.host + '/');
     var isInternal = (href) => {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }
