@@ -59,7 +59,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </style>
 
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script><script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="../../site_libs/quarto-nav/headroom.min.js"></script>
 <script src="../../site_libs/clipboard/clipboard.min.js"></script>
 <script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
@@ -102,10 +102,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Search"
   }
 }</script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
-
-<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
-<script src="https://unpkg.com/@jupyter-widgets/html-manager@*/dist/embed-amd.js" crossorigin="anonymous"></script>
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
@@ -236,28 +232,14 @@ window.Quarto = {
 <li>It takes many tweaks and parameters changing in order to “polish” a model.</li>
 <li>In order to achieve this goal we need to be familiar with many concepts and technics, different types of layers, regularization methods, optimizers, how to put layers together into architectures, labeling techniques, and much more.</li>
 </ul>
-<div id="cell-3" class="cell" data-outputid="b9dfbc8f-6580-442d-d1b9-d979e1c0109c" data-execution_count="1">
+<div id="cell-3" class="cell" data-outputid="b9dfbc8f-6580-442d-d1b9-d979e1c0109c">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="op">!</span> [ <span class="op">-</span>e <span class="op">/</span>content ] <span class="op">&amp;&amp;</span> pip install <span class="op">-</span>Uqq fastbook</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> fastbook</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>fastbook.setup_book()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>     |████████████████████████████████| 719 kB 30.4 MB/s 
-     |████████████████████████████████| 1.3 MB 60.3 MB/s 
-     |████████████████████████████████| 5.3 MB 53.0 MB/s 
-     |████████████████████████████████| 441 kB 66.2 MB/s 
-     |████████████████████████████████| 1.6 MB 54.6 MB/s 
-     |████████████████████████████████| 115 kB 75.5 MB/s 
-     |████████████████████████████████| 163 kB 67.3 MB/s 
-     |████████████████████████████████| 212 kB 71.5 MB/s 
-     |████████████████████████████████| 127 kB 76.1 MB/s 
-     |████████████████████████████████| 115 kB 62.1 MB/s 
-     |████████████████████████████████| 7.6 MB 58.8 MB/s 
-Mounted at /content/gdrive</code></pre>
 </div>
-</div>
-<div id="cell-4" class="cell" data-execution_count="2">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> fastbook <span class="im">import</span> <span class="op">*</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> fastai.vision.widgets <span class="im">import</span> <span class="op">*</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="cell-4" class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> fastbook <span class="im">import</span> <span class="op">*</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> fastai.vision.widgets <span class="im">import</span> <span class="op">*</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <section id="from-dogs-and-cats-to-pet-breeds" class="level2">
 <h2 class="anchored" data-anchor-id="from-dogs-and-cats-to-pet-breeds">From Dogs and Cats to Pet Breeds</h2>
@@ -287,44 +269,15 @@ Mounted at /content/gdrive</code></pre>
 <li>network streams</li>
 </ul></li>
 </ul>
-<div id="cell-7" class="cell" data-outputid="71d97011-ca2e-4a6a-99f5-7f10143579fa" data-execution_count="3">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># download the dataset</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> fastai.vision.<span class="bu">all</span> <span class="im">import</span> <span class="op">*</span></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>path <span class="op">=</span> untar_data(URLs.PETS)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display">
-
-<style>
-    /* Turns off some styling */
-    progress {
-        /* gets rid of default border in Firefox and Opera. */
-        border: none;
-        /* Needs to be in here for Safari polyfill so background images work as expected. */
-        background-size: auto;
-    }
-    progress:not([value]), progress:not([value])::-webkit-progress-bar {
-        background: repeating-linear-gradient(45deg, #7e7e7e, #7e7e7e 10px, #5c5c5c 10px, #5c5c5c 20px);
-    }
-    .progress-bar-interrupted, .progress-bar-interrupted::-webkit-progress-bar {
-        background: #F44336;
-    }
-</style>
+<div id="cell-7" class="cell" data-outputid="71d97011-ca2e-4a6a-99f5-7f10143579fa">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># download the dataset</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> fastai.vision.<span class="bu">all</span> <span class="im">import</span> <span class="op">*</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>path <span class="op">=</span> untar_data(URLs.PETS)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="cell-output cell-output-display">
-
-    <div>
-      <progress value="811712512" class="" max="811706944" style="width:300px; height:20px; vertical-align: middle;"></progress>
-      100.00% [811712512/811706944 01:02&lt;00:00]
-    </div>
-    
-</div>
-</div>
-<div id="cell-8" class="cell" data-outputid="07455616-0517-49b4-80ca-05c53ac34c50" data-execution_count="5">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co">#get the path as variable, and see what inside</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>Path.BASE_PATH <span class="op">=</span> path</span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>path.ls()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="5">
-<pre><code>(#2) [Path('images'),Path('annotations')]</code></pre>
-</div>
+<div id="cell-8" class="cell" data-outputid="07455616-0517-49b4-80ca-05c53ac34c50">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co">#get the path as variable, and see what inside</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>Path.BASE_PATH <span class="op">=</span> path</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>path.ls()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <ul>
 <li>As we notice here, the data is provided with 2 directories:
@@ -333,46 +286,37 @@ Mounted at /content/gdrive</code></pre>
 <li><code>annotations</code></li>
 </ul></li>
 </ul>
-<div id="cell-10" class="cell" data-outputid="c796f139-fc97-41ce-9f1c-86d731e96600" data-execution_count="6">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co">#take a look at what inside the images directory</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>(path<span class="op">/</span><span class="st">'images'</span>).ls()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="6">
-<pre><code>(#7393) [Path('images/german_shorthaired_87.jpg'),Path('images/Russian_Blue_200.jpg'),Path('images/Siamese_25.jpg'),Path('images/japanese_chin_48.jpg'),Path('images/miniature_pinscher_161.jpg'),Path('images/pug_150.jpg'),Path('images/pug_120.jpg'),Path('images/pug_63.jpg'),Path('images/samoyed_143.jpg'),Path('images/yorkshire_terrier_190.jpg')...]</code></pre>
-</div>
+<div id="cell-10" class="cell" data-outputid="c796f139-fc97-41ce-9f1c-86d731e96600">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co">#take a look at what inside the images directory</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>(path<span class="op">/</span><span class="st">'images'</span>).ls()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <ul>
 <li>When we took a look at these names, we see some paterns: we already know from <code>chapter1</code> that cats name are uppercase, here we see that after the breed’s name there is a <code>(_)</code> then a number, and finally the extension.</li>
 <li>This may help us to write some code that extract the breed from a single <code>Path</code>.</li>
 </ul>
-<div id="cell-12" class="cell" data-outputid="b1ae1724-4205-40eb-b039-fe1e885d7390" data-execution_count="7">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co">#pick one </span></span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>fname <span class="op">=</span> (path<span class="op">/</span><span class="st">"images"</span>).ls()[<span class="dv">0</span>]</span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>fname</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="7">
-<pre><code>Path('images/german_shorthaired_87.jpg')</code></pre>
-</div>
+<div id="cell-12" class="cell" data-outputid="b1ae1724-4205-40eb-b039-fe1e885d7390">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co">#pick one </span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>fname <span class="op">=</span> (path<span class="op">/</span><span class="st">"images"</span>).ls()[<span class="dv">0</span>]</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>fname</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <ul>
 <li>The best way to work with strings and extract patterns from them is to use <code>Regex</code>, which stands for <strong>Regular Expression</strong>.</li>
 </ul>
-<div id="cell-14" class="cell" data-outputid="1bd98346-bcfd-4bec-82f5-3fa4ec8bdec0" data-execution_count="8">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>re.findall(<span class="vs">r'(.+)_\d+.jpg$'</span>, fname.name)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="8">
-<pre><code>['german_shorthaired']</code></pre>
-</div>
+<div id="cell-14" class="cell" data-outputid="1bd98346-bcfd-4bec-82f5-3fa4ec8bdec0">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>re.findall(<span class="vs">r'(.+)_\d+.jpg$'</span>, fname.name)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <ul>
 <li>Now we need to label the whole dataset using this code.</li>
 <li>Fastai comes with many classes for labeling, in this case when we need to label with help of <code>regex</code> we could use <code>RegexLabeller</code> class within <code>DataBlaock</code> <code>API</code>.</li>
 </ul>
-<div id="cell-16" class="cell" data-execution_count="9">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>pets <span class="op">=</span> DataBlock(blocks <span class="op">=</span> (ImageBlock, CategoryBlock),</span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>                 get_items<span class="op">=</span>get_image_files, </span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>                 splitter<span class="op">=</span>RandomSplitter(seed<span class="op">=</span><span class="dv">42</span>),</span>
-<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>                 get_y<span class="op">=</span>using_attr(RegexLabeller(<span class="vs">r'(.+)_\d+.jpg$'</span>), <span class="st">'name'</span>),</span>
-<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>                 item_tfms<span class="op">=</span>Resize(<span class="dv">460</span>),</span>
-<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>                 batch_tfms<span class="op">=</span>aug_transforms(size<span class="op">=</span><span class="dv">224</span>, min_scale<span class="op">=</span><span class="fl">0.75</span>))</span>
-<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>dls <span class="op">=</span> pets.dataloaders(path<span class="op">/</span><span class="st">"images"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="cell-16" class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>pets <span class="op">=</span> DataBlock(blocks <span class="op">=</span> (ImageBlock, CategoryBlock),</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>                 get_items<span class="op">=</span>get_image_files, </span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>                 splitter<span class="op">=</span>RandomSplitter(seed<span class="op">=</span><span class="dv">42</span>),</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>                 get_y<span class="op">=</span>using_attr(RegexLabeller(<span class="vs">r'(.+)_\d+.jpg$'</span>), <span class="st">'name'</span>),</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>                 item_tfms<span class="op">=</span>Resize(<span class="dv">460</span>),</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>                 batch_tfms<span class="op">=</span>aug_transforms(size<span class="op">=</span><span class="dv">224</span>, min_scale<span class="op">=</span><span class="fl">0.75</span>))</span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>dls <span class="op">=</span> pets.dataloaders(path<span class="op">/</span><span class="st">"images"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="presizing" class="level2">
@@ -394,16 +338,9 @@ batch_tfms=aug_transforms(size=224, min_scale=0.75))
 * `DataBlock` is just a blueprint for orginizing data before we feed it to the model, you have no guarantee that your template is going to work on your data source as you intend.
 * So, before training a model you should always check your data. You can do this using the show_batch method:
 
-::: {#cell-23 .cell outputId='0f1711e2-f2c6-4703-ed64-1ea456f04a2d' execution_count=10}
+::: {#cell-23 .cell outputId='0f1711e2-f2c6-4703-ed64-1ea456f04a2d'}
 ``` {.python .cell-code}
 dls.show_batch(nrows=1, ncols=4 ,unique= True)</code></pre>
-<div class="cell-output cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="Fastai-Ch5_files/figure-html/cell-10-output-1.png" class="img-fluid figure-img"></p>
-</figure>
-</div>
-</div>
 <p>:::</p>
 <ul>
 <li><p>In case we made a mistake in the process of creating datablock, we could use <code>.summary</code> to track the problem.Here we didn’t resize the images in one formm, so couldn’t use the batch transform</p></li>
@@ -417,109 +354,10 @@ dls.show_batch(nrows=1, ncols=4 ,unique= True)</code></pre>
 <ul>
 <li>Once we feel like the datablock is well created, we better begin train the model, and use it as a tool of cleaning the data. If there’s a problem with data or the model, we better know that before we lost lot of time and energy on data cleaning even before testing the model.</li>
 </ul>
-<div id="cell-28" class="cell" data-outputid="733c3312-d487-47c6-bebe-6f89eafeb16f" data-execution_count="11">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># train the model</span></span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>learn <span class="op">=</span> vision_learner(dls, resnet34, metrics<span class="op">=</span>error_rate)</span>
-<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>learn.fine_tune(<span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>/usr/local/lib/python3.7/dist-packages/torchvision/models/_utils.py:209: UserWarning: The parameter 'pretrained' is deprecated since 0.13 and will be removed in 0.15, please use 'weights' instead.
-  f"The parameter '{pretrained_param}' is deprecated since 0.13 and will be removed in 0.15, "
-/usr/local/lib/python3.7/dist-packages/torchvision/models/_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and will be removed in 0.15. The current behavior is equivalent to passing `weights=ResNet34_Weights.IMAGENET1K_V1`. You can also use `weights=ResNet34_Weights.DEFAULT` to get the most up-to-date weights.
-  warnings.warn(msg)
-Downloading: "https://download.pytorch.org/models/resnet34-b627a593.pth" to /root/.cache/torch/hub/checkpoints/resnet34-b627a593.pth</code></pre>
-</div>
-<div class="cell-output cell-output-display">
-<script type="application/vnd.jupyter.widget-view+json">
-{"model_id":"ecfa21a5a69f4935bcb3bdccbbe333c0","version_major":2,"version_minor":0,"quarto_mimetype":"application/vnd.jupyter.widget-view+json"}
-</script>
-</div>
-<div class="cell-output cell-output-display">
-
-<style>
-    /* Turns off some styling */
-    progress {
-        /* gets rid of default border in Firefox and Opera. */
-        border: none;
-        /* Needs to be in here for Safari polyfill so background images work as expected. */
-        background-size: auto;
-    }
-    progress:not([value]), progress:not([value])::-webkit-progress-bar {
-        background: repeating-linear-gradient(45deg, #7e7e7e, #7e7e7e 10px, #5c5c5c 10px, #5c5c5c 20px);
-    }
-    .progress-bar-interrupted, .progress-bar-interrupted::-webkit-progress-bar {
-        background: #F44336;
-    }
-</style>
-</div>
-<div class="cell-output cell-output-display">
-<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
-<thead>
-<tr class="header">
-<th data-quarto-table-cell-role="th">epoch</th>
-<th data-quarto-table-cell-role="th">train_loss</th>
-<th data-quarto-table-cell-role="th">valid_loss</th>
-<th data-quarto-table-cell-role="th">error_rate</th>
-<th data-quarto-table-cell-role="th">time</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>0</td>
-<td>1.526362</td>
-<td>0.348364</td>
-<td>0.111637</td>
-<td>01:11</td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="cell-output cell-output-display">
-
-<style>
-    /* Turns off some styling */
-    progress {
-        /* gets rid of default border in Firefox and Opera. */
-        border: none;
-        /* Needs to be in here for Safari polyfill so background images work as expected. */
-        background-size: auto;
-    }
-    progress:not([value]), progress:not([value])::-webkit-progress-bar {
-        background: repeating-linear-gradient(45deg, #7e7e7e, #7e7e7e 10px, #5c5c5c 10px, #5c5c5c 20px);
-    }
-    .progress-bar-interrupted, .progress-bar-interrupted::-webkit-progress-bar {
-        background: #F44336;
-    }
-</style>
-</div>
-<div class="cell-output cell-output-display">
-<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
-<thead>
-<tr class="header">
-<th data-quarto-table-cell-role="th">epoch</th>
-<th data-quarto-table-cell-role="th">train_loss</th>
-<th data-quarto-table-cell-role="th">valid_loss</th>
-<th data-quarto-table-cell-role="th">error_rate</th>
-<th data-quarto-table-cell-role="th">time</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>0</td>
-<td>0.482150</td>
-<td>0.309586</td>
-<td>0.093369</td>
-<td>01:16</td>
-</tr>
-<tr class="even">
-<td>1</td>
-<td>0.327810</td>
-<td>0.229392</td>
-<td>0.064953</td>
-<td>01:17</td>
-</tr>
-</tbody>
-</table>
-</div>
+<div id="cell-28" class="cell" data-outputid="733c3312-d487-47c6-bebe-6f89eafeb16f">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># train the model</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>learn <span class="op">=</span> vision_learner(dls, resnet34, metrics<span class="op">=</span>error_rate)</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>learn.fine_tune(<span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="use-the-model-to-clean-the-data" class="level3">
@@ -533,12 +371,9 @@ Downloading: "https://download.pytorch.org/models/resnet34-b627a593.pth" to /roo
 <li>the chosen loss function will suite the kind of model we build, and the type of dataset we have.</li>
 </ul></li>
 </ul>
-<div id="cell-31" class="cell" data-outputid="2f3a0898-a25e-40c3-b4b0-0c4588133276" data-execution_count="12">
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># check the loss function</span></span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>learn.loss_func</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="12">
-<pre><code>FlattenedLoss of CrossEntropyLoss()</code></pre>
-</div>
+<div id="cell-31" class="cell" data-outputid="2f3a0898-a25e-40c3-b4b0-0c4588133276">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># check the loss function</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>learn.loss_func</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <ul>
 <li>The loss function used to train this model is <strong><code>Cross Entropy Loss</code></strong></li>
@@ -564,67 +399,32 @@ Downloading: "https://download.pytorch.org/models/resnet34-b627a593.pth" to /roo
 <ul>
 <li>In order to understand the cross-entropy loss, let’s grab a batch of data</li>
 </ul>
-<div id="cell-36" class="cell" data-execution_count="13">
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>x,y <span class="op">=</span> dls.one_batch()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="cell-36" class="cell">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>x,y <span class="op">=</span> dls.one_batch()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <ul>
 <li>It return the activations of dependent and independent variable of one mini-batch</li>
 </ul>
-<div id="cell-38" class="cell" data-outputid="3a7dbedd-df41-44f0-a5ec-46d1d7d50a8b" data-execution_count="14">
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co"># independent variable</span></span>
-<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>y, <span class="bu">len</span>(y)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="14">
-<pre><code>(TensorCategory([ 8, 34,  6, 33, 12, 15, 32, 14,  5, 27, 20, 32, 18, 24,  8, 29,  5,  4,  0, 28, 10, 12, 16, 25, 29,  3, 34, 27, 30, 15,  6, 15, 27, 34, 14, 21,  5, 17, 31, 26, 13, 35, 17, 35, 23, 14,
-                 35, 35,  8,  7, 21,  0, 22, 17, 19, 26, 16,  5, 15, 27, 11, 22, 34, 18], device='cuda:0'),
- 64)</code></pre>
-</div>
+<div id="cell-38" class="cell" data-outputid="3a7dbedd-df41-44f0-a5ec-46d1d7d50a8b">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># independent variable</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>y, <span class="bu">len</span>(y)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <ul>
 <li>It return 64 number, each represent on of the 37 breeds index</li>
 </ul>
-<div id="cell-40" class="cell" data-outputid="cf31f01a-3a69-4c05-e15f-74de2a83271c" data-execution_count="15">
-<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co"># all indepent variables</span></span>
-<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>dls.vocab, <span class="bu">len</span>(dls.vocab)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="15">
-<pre><code>(['Abyssinian', 'Bengal', 'Birman', 'Bombay', 'British_Shorthair', 'Egyptian_Mau', 'Maine_Coon', 'Persian', 'Ragdoll', 'Russian_Blue', 'Siamese', 'Sphynx', 'american_bulldog', 'american_pit_bull_terrier', 'basset_hound', 'beagle', 'boxer', 'chihuahua', 'english_cocker_spaniel', 'english_setter', 'german_shorthaired', 'great_pyrenees', 'havanese', 'japanese_chin', 'keeshond', 'leonberger', 'miniature_pinscher', 'newfoundland', 'pomeranian', 'pug', 'saint_bernard', 'samoyed', 'scottish_terrier', 'shiba_inu', 'staffordshire_bull_terrier', 'wheaten_terrier', 'yorkshire_terrier'],
- 37)</code></pre>
-</div>
+<div id="cell-40" class="cell" data-outputid="cf31f01a-3a69-4c05-e15f-74de2a83271c">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># all indepent variables</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>dls.vocab, <span class="bu">len</span>(dls.vocab)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <ul>
 <li>Here we use <code>get_preds</code> to get the predictions for each image in the dataset or mini-batch (like in this example).</li>
 </ul>
-<div id="cell-42" class="cell" data-outputid="888eeac4-848a-40f4-c504-cfc62c91bdc1" data-execution_count="16">
-<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>preds,_ <span class="op">=</span> learn.get_preds(dl<span class="op">=</span>[(x,y)])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display">
-
-<style>
-    /* Turns off some styling */
-    progress {
-        /* gets rid of default border in Firefox and Opera. */
-        border: none;
-        /* Needs to be in here for Safari polyfill so background images work as expected. */
-        background-size: auto;
-    }
-    progress:not([value]), progress:not([value])::-webkit-progress-bar {
-        background: repeating-linear-gradient(45deg, #7e7e7e, #7e7e7e 10px, #5c5c5c 10px, #5c5c5c 20px);
-    }
-    .progress-bar-interrupted, .progress-bar-interrupted::-webkit-progress-bar {
-        background: #F44336;
-    }
-</style>
+<div id="cell-42" class="cell" data-outputid="888eeac4-848a-40f4-c504-cfc62c91bdc1">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>preds,_ <span class="op">=</span> learn.get_preds(dl<span class="op">=</span>[(x,y)])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="cell-output cell-output-display">
-
-</div>
-</div>
-<div id="cell-43" class="cell" data-outputid="1353d4bf-cd6b-46c9-c2f4-76a12fe9ce54" data-execution_count="17">
-<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="co"># prediction for image [0] in the mini-batch</span></span>
-<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>preds[<span class="dv">0</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="17">
-<pre><code>TensorBase([1.0919e-05, 6.0375e-08, 8.5680e-05, 7.1281e-07, 1.8754e-06, 4.7956e-07, 1.1708e-04, 1.4080e-06, 9.9972e-01, 9.4731e-07, 6.8318e-08, 1.7055e-07, 1.9338e-06, 7.7372e-07, 1.7931e-07,
-            1.5261e-07, 1.1363e-08, 2.3353e-07, 1.3689e-07, 4.5361e-07, 7.1548e-08, 4.9425e-06, 1.0026e-05, 2.6908e-07, 3.5724e-07, 3.1201e-07, 1.0177e-08, 2.7219e-08, 1.6157e-06, 3.5337e-08,
-            1.8094e-06, 3.3425e-05, 2.3514e-08, 3.0318e-06, 1.4910e-07, 1.9582e-07, 9.5147e-08])</code></pre>
-</div>
+<div id="cell-43" class="cell" data-outputid="1353d4bf-cd6b-46c9-c2f4-76a12fe9ce54">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># prediction for image [0] in the mini-batch</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>preds[<span class="dv">0</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <ul>
 <li>The 37 predictions refer to the probability of each breed to match the image[0].
@@ -632,11 +432,8 @@ Downloading: "https://download.pytorch.org/models/resnet34-b627a593.pth" to /roo
 <li>if we sum() them up they add up to 1:</li>
 </ul></li>
 </ul>
-<div id="cell-45" class="cell" data-outputid="49c56fa1-efc3-4c0b-d84d-e590eed56dd5" data-execution_count="18">
-<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>preds[<span class="dv">0</span>].<span class="bu">sum</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="18">
-<pre><code>TensorBase(1.0000)</code></pre>
-</div>
+<div id="cell-45" class="cell" data-outputid="49c56fa1-efc3-4c0b-d84d-e590eed56dd5">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>preds[<span class="dv">0</span>].<span class="bu">sum</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <ul>
 <li>In order to transform the activations of our model into prediction, we use <strong><code>Soft-Max</code></strong></li>
@@ -647,49 +444,26 @@ Downloading: "https://download.pytorch.org/models/resnet34-b627a593.pth" to /roo
 <ul>
 <li>As we said before, <code>Softmax</code> is similar to <code>sigmoid</code> function we use before, but it only can handel more than 2 classes.</li>
 </ul>
-<div id="cell-49" class="cell" data-outputid="1fb827da-8820-4f2e-89ff-67488f5ec344" data-execution_count="19">
-<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="co"># reminder of sigmoid</span></span>
-<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>plot_function(torch.sigmoid, <span class="bu">min</span><span class="op">=-</span><span class="dv">4</span>,<span class="bu">max</span><span class="op">=</span><span class="dv">4</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="Fastai-Ch5_files/figure-html/cell-19-output-1.png" class="img-fluid figure-img"></p>
-</figure>
-</div>
-</div>
+<div id="cell-49" class="cell" data-outputid="1fb827da-8820-4f2e-89ff-67488f5ec344">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># reminder of sigmoid</span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>plot_function(torch.sigmoid, <span class="bu">min</span><span class="op">=-</span><span class="dv">4</span>,<span class="bu">max</span><span class="op">=</span><span class="dv">4</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <ul>
 <li>This function allow us to predict whether a activation number is pointing to each category of the <strong>two</strong>, by calculating which activation is big and by much. But in our case today we have 37 category, which means by this logic we need a activation for each one.</li>
 <li>First let’s create a similar situation where we have only 2 categories, but we won’t solve it as it’s a binary problem (<code>it's 3</code>) but as 2 categories problem, each has it’s activation, and their probabilty sum up to 1.</li>
 </ul>
-<div id="cell-51" class="cell" data-execution_count="20">
-<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>torch.random.manual_seed(<span class="dv">42</span>)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="cell-51" class="cell">
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>torch.random.manual_seed(<span class="dv">42</span>)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="cell-52" class="cell" data-outputid="22a6a922-6506-484b-b8fb-09610287efa1" data-execution_count="21">
-<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>acts <span class="op">=</span> torch.randn((<span class="dv">6</span>,<span class="dv">2</span>))<span class="op">*</span><span class="dv">2</span></span>
-<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>acts</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="21">
-<pre><code>tensor([[ 0.6734,  0.2576],
-        [ 0.4689,  0.4607],
-        [-2.2457, -0.3727],
-        [ 4.4164, -1.2760],
-        [ 0.9233,  0.5347],
-        [ 1.0698,  1.6187]])</code></pre>
-</div>
+<div id="cell-52" class="cell" data-outputid="22a6a922-6506-484b-b8fb-09610287efa1">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>acts <span class="op">=</span> torch.randn((<span class="dv">6</span>,<span class="dv">2</span>))<span class="op">*</span><span class="dv">2</span></span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>acts</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <ul>
 <li>We can’t just take the sigmoid of this directly, since we don’t get rows that add to 1 (i.e., we want the probability of being a 3 plus the probability of being a 7 to add up to 1):</li>
 </ul>
-<div id="cell-54" class="cell" data-outputid="7f8ea585-604f-4d84-e0a1-d5d789552815" data-execution_count="22">
-<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>sigmoid(acts)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="22">
-<pre><code>tensor([[0.6623, 0.5641],
-        [0.6151, 0.6132],
-        [0.0957, 0.4079],
-        [0.9881, 0.2182],
-        [0.7157, 0.6306],
-        [0.7446, 0.8346]])</code></pre>
-</div>
+<div id="cell-54" class="cell" data-outputid="7f8ea585-604f-4d84-e0a1-d5d789552815">
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>sigmoid(acts)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <ul>
 <li>Eevn though we try different approach to solve the same problem, we still have some similarities.</li>
@@ -697,12 +471,12 @@ Downloading: "https://download.pytorch.org/models/resnet34-b627a593.pth" to /roo
 <li>And we still need to substract an activation from another beacuse that represent how much the model sure about an image is assigned to each category, thats for first column.</li>
 <li>In the second colun we just use 1 - prediction (activation of the second column)</li>
 </ul>
-<div id="cell-56" class="cell" data-execution_count="23">
-<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>diffs <span class="op">=</span> acts[:, <span class="dv">0</span>] <span class="op">-</span> acts[:, <span class="dv">1</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="cell-56" class="cell">
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>diffs <span class="op">=</span> acts[:, <span class="dv">0</span>] <span class="op">-</span> acts[:, <span class="dv">1</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="cell-57" class="cell" data-execution_count="24">
-<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="co"># create the sigmoid function of both categories</span></span>
-<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a>sigm_ver <span class="op">=</span> torch.stack([diffs.sigmoid(), <span class="dv">1</span><span class="op">-</span>diffs.sigmoid()], dim<span class="op">=</span><span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="cell-57" class="cell">
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co"># create the sigmoid function of both categories</span></span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>sigm_ver <span class="op">=</span> torch.stack([diffs.sigmoid(), <span class="dv">1</span><span class="op">-</span>diffs.sigmoid()], dim<span class="op">=</span><span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <ul>
 <li>We can express the <code>softmax</code> function as:</li>
@@ -712,22 +486,9 @@ Downloading: "https://download.pytorch.org/models/resnet34-b627a593.pth" to /roo
 <ul>
 <li>Let’s check that <code>softmax</code> returns the same values as <code>sigmoid</code> for the first column, and those values subtracted from 1 for the second column:</li>
 </ul>
-<div id="cell-60" class="cell" data-outputid="203825d0-2cb4-4183-aea3-58fd4970e9fa" data-execution_count="25">
-<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a>sm_acts <span class="op">=</span> torch.softmax(acts, dim<span class="op">=</span><span class="dv">1</span>)</span>
-<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a>sm_acts, sigm_ver</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="25">
-<pre><code>(tensor([[0.6025, 0.3975],
-         [0.5021, 0.4979],
-         [0.1332, 0.8668],
-         [0.9966, 0.0034],
-         [0.5959, 0.4041],
-         [0.3661, 0.6339]]), tensor([[0.6025, 0.3975],
-         [0.5021, 0.4979],
-         [0.1332, 0.8668],
-         [0.9966, 0.0034],
-         [0.5959, 0.4041],
-         [0.3661, 0.6339]]))</code></pre>
-</div>
+<div id="cell-60" class="cell" data-outputid="203825d0-2cb4-4183-aea3-58fd4970e9fa">
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>sm_acts <span class="op">=</span> torch.softmax(acts, dim<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>sm_acts, sigm_ver</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <ul>
 <li>Softmax calculate the <span class="math inline">\(exp^{x}\)</span> and divide it by sum <span class="math inline">\(exp^{x}\)</span> of all activations of other categories.
@@ -743,124 +504,48 @@ Downloading: "https://download.pytorch.org/models/resnet34-b627a593.pth" to /roo
 <li>In the previous chapter when we created <code>mnis_loss</code>, we used <code>torch.where</code> to select between the <code>input</code> and <code>1-input</code>.</li>
 <li>With softmax, we will use indexing.</li>
 </ul>
-<div id="cell-64" class="cell" data-execution_count="26">
-<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="co"># the pretended targets</span></span>
-<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a>targs <span class="op">=</span> tensor([<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">0</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="cell-64" class="cell">
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="co"># the pretended targets</span></span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>targs <span class="op">=</span> tensor([<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">0</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="cell-65" class="cell" data-execution_count="27">
-<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="co"># create an index</span></span>
-<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a>idx <span class="op">=</span> <span class="bu">range</span>(<span class="dv">6</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="cell-65" class="cell">
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="co"># create an index</span></span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>idx <span class="op">=</span> <span class="bu">range</span>(<span class="dv">6</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="cell-66" class="cell" data-outputid="18c61349-1e17-4f54-b1a5-421b00b2f4d3" data-execution_count="28">
-<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="co"># the softmax activations</span></span>
-<span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a>sm_acts</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="28">
-<pre><code>tensor([[0.6025, 0.3975],
-        [0.5021, 0.4979],
-        [0.1332, 0.8668],
-        [0.9966, 0.0034],
-        [0.5959, 0.4041],
-        [0.3661, 0.6339]])</code></pre>
-</div>
+<div id="cell-66" class="cell" data-outputid="18c61349-1e17-4f54-b1a5-421b00b2f4d3">
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="co"># the softmax activations</span></span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>sm_acts</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <ul>
 <li>Here we make the <code>targs</code> decide which activation we pick in each row</li>
 </ul>
-<div id="cell-68" class="cell" data-outputid="c0889161-c10d-47bf-ca38-104330292bd6" data-execution_count="29">
-<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a>sm_acts[idx, targs]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="29">
-<pre><code>tensor([0.6025, 0.4979, 0.1332, 0.0034, 0.4041, 0.3661])</code></pre>
-</div>
+<div id="cell-68" class="cell" data-outputid="c0889161-c10d-47bf-ca38-104330292bd6">
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>sm_acts[idx, targs]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <ul>
 <li>let’s display what we just did :</li>
 </ul>
-<div id="cell-70" class="cell" data-outputid="c3781985-2845-4245-aaae-55b8d8721f91" data-execution_count="30">
-<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> IPython.display <span class="im">import</span> HTML</span>
-<span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.DataFrame(sm_acts, columns<span class="op">=</span>[<span class="st">"3"</span>,<span class="st">"7"</span>])</span>
-<span id="cb47-3"><a href="#cb47-3" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'targs'</span>] <span class="op">=</span> targs</span>
-<span id="cb47-4"><a href="#cb47-4" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'idx'</span>] <span class="op">=</span> idx</span>
-<span id="cb47-5"><a href="#cb47-5" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'result'</span>] <span class="op">=</span> sm_acts[<span class="bu">range</span>(<span class="dv">6</span>), targs]</span>
-<span id="cb47-6"><a href="#cb47-6" aria-hidden="true" tabindex="-1"></a>t <span class="op">=</span> df.style.hide_index()</span>
-<span id="cb47-7"><a href="#cb47-7" aria-hidden="true" tabindex="-1"></a><span class="co">#To have html code compatible with our script</span></span>
-<span id="cb47-8"><a href="#cb47-8" aria-hidden="true" tabindex="-1"></a>html <span class="op">=</span> t._repr_html_().split(<span class="st">'&lt;/style&gt;'</span>)[<span class="dv">1</span>]</span>
-<span id="cb47-9"><a href="#cb47-9" aria-hidden="true" tabindex="-1"></a>html <span class="op">=</span> re.sub(<span class="vs">r'&lt;table id="([^"]+)"\s*&gt;'</span>, <span class="vs">r'&lt;table &gt;'</span>, html)</span>
-<span id="cb47-10"><a href="#cb47-10" aria-hidden="true" tabindex="-1"></a>display(HTML(html))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display">
-
-
-<table class="caption-top table table-sm table-striped small" data-quarto-postprocess="true">
-<thead>
-<tr class="header">
-<th class="col_heading level0 col0" data-quarto-table-cell-role="th">3</th>
-<th class="col_heading level0 col1" data-quarto-table-cell-role="th">7</th>
-<th class="col_heading level0 col2" data-quarto-table-cell-role="th">targs</th>
-<th class="col_heading level0 col3" data-quarto-table-cell-role="th">idx</th>
-<th class="col_heading level0 col4" data-quarto-table-cell-role="th">result</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td id="T_881e8_row0_col0" class="data row0 col0">0.602469</td>
-<td id="T_881e8_row0_col1" class="data row0 col1">0.397531</td>
-<td id="T_881e8_row0_col2" class="data row0 col2">0</td>
-<td id="T_881e8_row0_col3" class="data row0 col3">0</td>
-<td id="T_881e8_row0_col4" class="data row0 col4">0.602469</td>
-</tr>
-<tr class="even">
-<td id="T_881e8_row1_col0" class="data row1 col0">0.502065</td>
-<td id="T_881e8_row1_col1" class="data row1 col1">0.497935</td>
-<td id="T_881e8_row1_col2" class="data row1 col2">1</td>
-<td id="T_881e8_row1_col3" class="data row1 col3">1</td>
-<td id="T_881e8_row1_col4" class="data row1 col4">0.497935</td>
-</tr>
-<tr class="odd">
-<td id="T_881e8_row2_col0" class="data row2 col0">0.133188</td>
-<td id="T_881e8_row2_col1" class="data row2 col1">0.866811</td>
-<td id="T_881e8_row2_col2" class="data row2 col2">0</td>
-<td id="T_881e8_row2_col3" class="data row2 col3">2</td>
-<td id="T_881e8_row2_col4" class="data row2 col4">0.133188</td>
-</tr>
-<tr class="even">
-<td id="T_881e8_row3_col0" class="data row3 col0">0.996640</td>
-<td id="T_881e8_row3_col1" class="data row3 col1">0.003360</td>
-<td id="T_881e8_row3_col2" class="data row3 col2">1</td>
-<td id="T_881e8_row3_col3" class="data row3 col3">3</td>
-<td id="T_881e8_row3_col4" class="data row3 col4">0.003360</td>
-</tr>
-<tr class="odd">
-<td id="T_881e8_row4_col0" class="data row4 col0">0.595949</td>
-<td id="T_881e8_row4_col1" class="data row4 col1">0.404051</td>
-<td id="T_881e8_row4_col2" class="data row4 col2">1</td>
-<td id="T_881e8_row4_col3" class="data row4 col3">4</td>
-<td id="T_881e8_row4_col4" class="data row4 col4">0.404051</td>
-</tr>
-<tr class="even">
-<td id="T_881e8_row5_col0" class="data row5 col0">0.366118</td>
-<td id="T_881e8_row5_col1" class="data row5 col1">0.633882</td>
-<td id="T_881e8_row5_col2" class="data row5 col2">0</td>
-<td id="T_881e8_row5_col3" class="data row5 col3">5</td>
-<td id="T_881e8_row5_col4" class="data row5 col4">0.366118</td>
-</tr>
-</tbody>
-</table>
-</div>
+<div id="cell-70" class="cell" data-outputid="c3781985-2845-4245-aaae-55b8d8721f91">
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> IPython.display <span class="im">import</span> HTML</span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.DataFrame(sm_acts, columns<span class="op">=</span>[<span class="st">"3"</span>,<span class="st">"7"</span>])</span>
+<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'targs'</span>] <span class="op">=</span> targs</span>
+<span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'idx'</span>] <span class="op">=</span> idx</span>
+<span id="cb31-5"><a href="#cb31-5" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'result'</span>] <span class="op">=</span> sm_acts[<span class="bu">range</span>(<span class="dv">6</span>), targs]</span>
+<span id="cb31-6"><a href="#cb31-6" aria-hidden="true" tabindex="-1"></a>t <span class="op">=</span> df.style.hide_index()</span>
+<span id="cb31-7"><a href="#cb31-7" aria-hidden="true" tabindex="-1"></a><span class="co">#To have html code compatible with our script</span></span>
+<span id="cb31-8"><a href="#cb31-8" aria-hidden="true" tabindex="-1"></a>html <span class="op">=</span> t._repr_html_().split(<span class="st">'&lt;/style&gt;'</span>)[<span class="dv">1</span>]</span>
+<span id="cb31-9"><a href="#cb31-9" aria-hidden="true" tabindex="-1"></a>html <span class="op">=</span> re.sub(<span class="vs">r'&lt;table id="([^"]+)"\s*&gt;'</span>, <span class="vs">r'&lt;table &gt;'</span>, html)</span>
+<span id="cb31-10"><a href="#cb31-10" aria-hidden="true" tabindex="-1"></a>display(HTML(html))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <ul>
 <li>But idea here is not to use it in a simple binary problem, because <code>torch.where</code> could did the same job here, but is to use it in order to solve a multi-categorie problem</li>
 </ul>
 <p>PyTorch provides a function that does exactly the same thing as <code>sm_acts[range(n), targ]</code> (except it takes the negative, because when applying the log afterward, we will have negative numbers), called <code>nll_loss</code> (<em>NLL</em> stands for <em>negative log likelihood</em>):</p>
-<div id="cell-73" class="cell" data-outputid="0e82a345-5cf2-435e-856f-64183342c501" data-execution_count="31">
-<div class="sourceCode cell-code" id="cb48"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="op">-</span>sm_acts[idx, targs]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="31">
-<pre><code>tensor([-0.6025, -0.4979, -0.1332, -0.0034, -0.4041, -0.3661])</code></pre>
+<div id="cell-73" class="cell" data-outputid="0e82a345-5cf2-435e-856f-64183342c501">
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="op">-</span>sm_acts[idx, targs]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</div>
-<div id="cell-74" class="cell" data-outputid="72e5d1dd-f8e0-4489-cea3-5eae8423ad49" data-execution_count="32">
-<div class="sourceCode cell-code" id="cb50"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a>F.nll_loss(sm_acts, targs, reduction<span class="op">=</span><span class="st">'none'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="32">
-<pre><code>tensor([-0.6025, -0.4979, -0.1332, -0.0034, -0.4041, -0.3661])</code></pre>
-</div>
+<div id="cell-74" class="cell" data-outputid="72e5d1dd-f8e0-4489-cea3-5eae8423ad49">
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>F.nll_loss(sm_acts, targs, reduction<span class="op">=</span><span class="st">'none'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="taking-the-log" class="level3">
@@ -894,42 +579,26 @@ Downloading: "https://download.pytorch.org/models/resnet34-b627a593.pth" to /roo
 <li>or : <code>nn.CrossEntropyLoss()</code></li>
 </ul></li>
 </ul>
-<div id="cell-79" class="cell" data-execution_count="33">
-<div class="sourceCode cell-code" id="cb52"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a>loss_func <span class="op">=</span> nn.CrossEntropyLoss()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="cell-79" class="cell">
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>loss_func <span class="op">=</span> nn.CrossEntropyLoss()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="cell-80" class="cell" data-outputid="6b778c8a-99be-4f33-d6be-2867252718e1" data-execution_count="34">
-<div class="sourceCode cell-code" id="cb53"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a>loss_func(acts, targs)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="34">
-<pre><code>tensor(1.8045)</code></pre>
+<div id="cell-80" class="cell" data-outputid="6b778c8a-99be-4f33-d6be-2867252718e1">
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>loss_func(acts, targs)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</div>
-<div id="cell-81" class="cell" data-outputid="43f1c051-68ac-412d-a4dc-e2ec3a9af052" data-execution_count="35">
-<div class="sourceCode cell-code" id="cb55"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb55-1"><a href="#cb55-1" aria-hidden="true" tabindex="-1"></a>nn.CrossEntropyLoss()(acts, targs)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="35">
-<pre><code>tensor(1.8045)</code></pre>
-</div>
+<div id="cell-81" class="cell" data-outputid="43f1c051-68ac-412d-a4dc-e2ec3a9af052">
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>nn.CrossEntropyLoss()(acts, targs)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <ul>
 <li>The <code>nn.CrossEntrpyLoss()</code> make do all the steps for us, but if we want to go through all those steps one by one <code>softmas+log then negative log</code> we could do it also:</li>
 </ul>
-<div id="cell-83" class="cell" data-outputid="c4767369-8cad-4d51-9ed7-e7ebe4a39083" data-execution_count="36">
-<div class="sourceCode cell-code" id="cb57"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb57-1"><a href="#cb57-1" aria-hidden="true" tabindex="-1"></a>F.nll_loss(nn.Softmax()(acts).log(), targs,)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>/usr/local/lib/python3.7/dist-packages/ipykernel_launcher.py:1: UserWarning: Implicit dimension choice for softmax has been deprecated. Change the call to include dim=X as an argument.
-  """Entry point for launching an IPython kernel.</code></pre>
-</div>
-<div class="cell-output cell-output-display" data-execution_count="36">
-<pre><code>tensor(1.8045)</code></pre>
-</div>
+<div id="cell-83" class="cell" data-outputid="c4767369-8cad-4d51-9ed7-e7ebe4a39083">
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>F.nll_loss(nn.Softmax()(acts).log(), targs,)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <ul>
 <li>Adding the <code>reduction='none'</code> to this functions will return the loss of each row, if we didn’t add this aparameter the fuction will return the mean loss of all rows.</li>
 </ul>
-<div id="cell-85" class="cell" data-outputid="d8f36ee1-1886-4ae6-a7d0-f236546eb76d" data-execution_count="37">
-<div class="sourceCode cell-code" id="cb60"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb60-1"><a href="#cb60-1" aria-hidden="true" tabindex="-1"></a>nn.CrossEntropyLoss(reduction<span class="op">=</span><span class="st">'none'</span>)(acts, targs)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="37">
-<pre><code>tensor([0.5067, 0.6973, 2.0160, 5.6958, 0.9062, 1.0048])</code></pre>
-</div>
+<div id="cell-85" class="cell" data-outputid="d8f36ee1-1886-4ae6-a7d0-f236546eb76d">
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>nn.CrossEntropyLoss(reduction<span class="op">=</span><span class="st">'none'</span>)(acts, targs)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 </section>
@@ -939,58 +608,9 @@ Downloading: "https://download.pytorch.org/models/resnet34-b627a593.pth" to /roo
 <li>As we saw in <strong>chapter 3</strong> it’s hard for us to interpret the loss function, since it’s some the computers use in order to updates the parameters and optimize the performance.</li>
 <li>But we can use some kind of demonstration that shows where the model did good, and where did bad.</li>
 </ul>
-<div id="cell-88" class="cell" data-outputid="57acddc2-fb98-4523-cb2f-e3cfbca23c5a" data-execution_count="38">
-<div class="sourceCode cell-code" id="cb62"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb62-1"><a href="#cb62-1" aria-hidden="true" tabindex="-1"></a>interp <span class="op">=</span> ClassificationInterpretation.from_learner(learn)</span>
-<span id="cb62-2"><a href="#cb62-2" aria-hidden="true" tabindex="-1"></a>interp.plot_confusion_matrix(figsize<span class="op">=</span>(<span class="dv">12</span>,<span class="dv">12</span>), dpi<span class="op">=</span><span class="dv">60</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display">
-
-<style>
-    /* Turns off some styling */
-    progress {
-        /* gets rid of default border in Firefox and Opera. */
-        border: none;
-        /* Needs to be in here for Safari polyfill so background images work as expected. */
-        background-size: auto;
-    }
-    progress:not([value]), progress:not([value])::-webkit-progress-bar {
-        background: repeating-linear-gradient(45deg, #7e7e7e, #7e7e7e 10px, #5c5c5c 10px, #5c5c5c 20px);
-    }
-    .progress-bar-interrupted, .progress-bar-interrupted::-webkit-progress-bar {
-        background: #F44336;
-    }
-</style>
-</div>
-<div class="cell-output cell-output-display">
-
-</div>
-<div class="cell-output cell-output-display">
-
-<style>
-    /* Turns off some styling */
-    progress {
-        /* gets rid of default border in Firefox and Opera. */
-        border: none;
-        /* Needs to be in here for Safari polyfill so background images work as expected. */
-        background-size: auto;
-    }
-    progress:not([value]), progress:not([value])::-webkit-progress-bar {
-        background: repeating-linear-gradient(45deg, #7e7e7e, #7e7e7e 10px, #5c5c5c 10px, #5c5c5c 20px);
-    }
-    .progress-bar-interrupted, .progress-bar-interrupted::-webkit-progress-bar {
-        background: #F44336;
-    }
-</style>
-</div>
-<div class="cell-output cell-output-display">
-
-</div>
-<div class="cell-output cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="Fastai-Ch5_files/figure-html/cell-38-output-5.png" class="img-fluid figure-img"></p>
-</figure>
-</div>
-</div>
+<div id="cell-88" class="cell" data-outputid="57acddc2-fb98-4523-cb2f-e3cfbca23c5a">
+<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a>interp <span class="op">=</span> ClassificationInterpretation.from_learner(learn)</span>
+<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a>interp.plot_confusion_matrix(figsize<span class="op">=</span>(<span class="dv">12</span>,<span class="dv">12</span>), dpi<span class="op">=</span><span class="dv">60</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <ul>
 <li>Its was easy to understand what happened when they were only 3 classes in bears model, but here we have 37 breeds.
@@ -998,32 +618,8 @@ Downloading: "https://download.pytorch.org/models/resnet34-b627a593.pth" to /roo
 <li>thats why we will use<code>interp.most_confused(min_val=5)</code> to output to most bad decisions the model taked</li>
 </ul></li>
 </ul>
-<div id="cell-90" class="cell" data-outputid="e26e46bb-eebd-490a-df0c-9ff64806764a" data-execution_count="39">
-<div class="sourceCode cell-code" id="cb63"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb63-1"><a href="#cb63-1" aria-hidden="true" tabindex="-1"></a>interp.most_confused(min_val<span class="op">=</span><span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display">
-
-<style>
-    /* Turns off some styling */
-    progress {
-        /* gets rid of default border in Firefox and Opera. */
-        border: none;
-        /* Needs to be in here for Safari polyfill so background images work as expected. */
-        background-size: auto;
-    }
-    progress:not([value]), progress:not([value])::-webkit-progress-bar {
-        background: repeating-linear-gradient(45deg, #7e7e7e, #7e7e7e 10px, #5c5c5c 10px, #5c5c5c 20px);
-    }
-    .progress-bar-interrupted, .progress-bar-interrupted::-webkit-progress-bar {
-        background: #F44336;
-    }
-</style>
-</div>
-<div class="cell-output cell-output-display">
-
-</div>
-<div class="cell-output cell-output-display" data-execution_count="39">
-<pre><code>[('Ragdoll', 'Birman', 6)]</code></pre>
-</div>
+<div id="cell-90" class="cell" data-outputid="e26e46bb-eebd-490a-df0c-9ff64806764a">
+<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a>interp.most_confused(min_val<span class="op">=</span><span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <ul>
 <li>The best way to understand what happend is to google the names of each breed and see why the model confused it with the other breed, so we know that the model is in the right track</li>
@@ -1043,95 +639,9 @@ Downloading: "https://download.pytorch.org/models/resnet34-b627a593.pth" to /roo
 <li>minimize the loss and updating parameters with less steps</li>
 </ul></li>
 </ul>
-<div id="cell-96" class="cell" data-outputid="c7a26dd8-cacb-40fe-f136-da3b6b2eaf45" data-execution_count="40">
-<div class="sourceCode cell-code" id="cb65"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb65-1"><a href="#cb65-1" aria-hidden="true" tabindex="-1"></a>learn <span class="op">=</span> vision_learner(dls, resnet34, metrics<span class="op">=</span>error_rate)</span>
-<span id="cb65-2"><a href="#cb65-2" aria-hidden="true" tabindex="-1"></a>learn.fine_tune(<span class="dv">1</span>, base_lr<span class="op">=</span><span class="fl">0.1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>/usr/local/lib/python3.7/dist-packages/torchvision/models/_utils.py:209: UserWarning: The parameter 'pretrained' is deprecated since 0.13 and will be removed in 0.15, please use 'weights' instead.
-  f"The parameter '{pretrained_param}' is deprecated since 0.13 and will be removed in 0.15, "
-/usr/local/lib/python3.7/dist-packages/torchvision/models/_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and will be removed in 0.15. The current behavior is equivalent to passing `weights=ResNet34_Weights.IMAGENET1K_V1`. You can also use `weights=ResNet34_Weights.DEFAULT` to get the most up-to-date weights.
-  warnings.warn(msg)</code></pre>
-</div>
-<div class="cell-output cell-output-display">
-
-<style>
-    /* Turns off some styling */
-    progress {
-        /* gets rid of default border in Firefox and Opera. */
-        border: none;
-        /* Needs to be in here for Safari polyfill so background images work as expected. */
-        background-size: auto;
-    }
-    progress:not([value]), progress:not([value])::-webkit-progress-bar {
-        background: repeating-linear-gradient(45deg, #7e7e7e, #7e7e7e 10px, #5c5c5c 10px, #5c5c5c 20px);
-    }
-    .progress-bar-interrupted, .progress-bar-interrupted::-webkit-progress-bar {
-        background: #F44336;
-    }
-</style>
-</div>
-<div class="cell-output cell-output-display">
-<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
-<thead>
-<tr class="header">
-<th data-quarto-table-cell-role="th">epoch</th>
-<th data-quarto-table-cell-role="th">train_loss</th>
-<th data-quarto-table-cell-role="th">valid_loss</th>
-<th data-quarto-table-cell-role="th">error_rate</th>
-<th data-quarto-table-cell-role="th">time</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>0</td>
-<td>2.615709</td>
-<td>5.479418</td>
-<td>0.529093</td>
-<td>01:11</td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="cell-output cell-output-display">
-
-<style>
-    /* Turns off some styling */
-    progress {
-        /* gets rid of default border in Firefox and Opera. */
-        border: none;
-        /* Needs to be in here for Safari polyfill so background images work as expected. */
-        background-size: auto;
-    }
-    progress:not([value]), progress:not([value])::-webkit-progress-bar {
-        background: repeating-linear-gradient(45deg, #7e7e7e, #7e7e7e 10px, #5c5c5c 10px, #5c5c5c 20px);
-    }
-    .progress-bar-interrupted, .progress-bar-interrupted::-webkit-progress-bar {
-        background: #F44336;
-    }
-</style>
-</div>
-<div class="cell-output cell-output-display">
-<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
-<thead>
-<tr class="header">
-<th data-quarto-table-cell-role="th">epoch</th>
-<th data-quarto-table-cell-role="th">train_loss</th>
-<th data-quarto-table-cell-role="th">valid_loss</th>
-<th data-quarto-table-cell-role="th">error_rate</th>
-<th data-quarto-table-cell-role="th">time</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>0</td>
-<td>3.068122</td>
-<td>1.406392</td>
-<td>0.443843</td>
-<td>01:15</td>
-</tr>
-</tbody>
-</table>
-</div>
+<div id="cell-96" class="cell" data-outputid="c7a26dd8-cacb-40fe-f136-da3b6b2eaf45">
+<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a>learn <span class="op">=</span> vision_learner(dls, resnet34, metrics<span class="op">=</span>error_rate)</span>
+<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a>learn.fine_tune(<span class="dv">1</span>, base_lr<span class="op">=</span><span class="fl">0.1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <ul>
 <li>Here we pick a learning rate <code>0.1</code> which is 5 times bigger than the last one <code>0.002</code> and we get bad results <code>error rate at: 0.5</code>
@@ -1154,43 +664,12 @@ Downloading: "https://download.pytorch.org/models/resnet34-b627a593.pth" to /roo
 </ul></li>
 <li>Both point are giving the same value usually.</li>
 </ul>
-<div id="cell-98" class="cell" data-outputid="948d8f51-6ee3-406d-85ab-db6890d3c602" data-execution_count="42">
-<div class="sourceCode cell-code" id="cb67"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb67-1"><a href="#cb67-1" aria-hidden="true" tabindex="-1"></a>learn <span class="op">=</span> vision_learner(dls, resnet34, metrics<span class="op">=</span>error_rate)</span>
-<span id="cb67-2"><a href="#cb67-2" aria-hidden="true" tabindex="-1"></a>lr_min,lr_steep <span class="op">=</span> learn.lr_find(suggest_funcs<span class="op">=</span>(minimum, steep))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display">
-
-<style>
-    /* Turns off some styling */
-    progress {
-        /* gets rid of default border in Firefox and Opera. */
-        border: none;
-        /* Needs to be in here for Safari polyfill so background images work as expected. */
-        background-size: auto;
-    }
-    progress:not([value]), progress:not([value])::-webkit-progress-bar {
-        background: repeating-linear-gradient(45deg, #7e7e7e, #7e7e7e 10px, #5c5c5c 10px, #5c5c5c 20px);
-    }
-    .progress-bar-interrupted, .progress-bar-interrupted::-webkit-progress-bar {
-        background: #F44336;
-    }
-</style>
+<div id="cell-98" class="cell" data-outputid="948d8f51-6ee3-406d-85ab-db6890d3c602">
+<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a>learn <span class="op">=</span> vision_learner(dls, resnet34, metrics<span class="op">=</span>error_rate)</span>
+<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a>lr_min,lr_steep <span class="op">=</span> learn.lr_find(suggest_funcs<span class="op">=</span>(minimum, steep))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="cell-output cell-output-display">
-
-</div>
-<div class="cell-output cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="Fastai-Ch5_files/figure-html/cell-41-output-3.png" class="img-fluid figure-img"></p>
-</figure>
-</div>
-</div>
-</div>
-<div id="cell-99" class="cell" data-outputid="e02c5d2b-86d2-41fc-a733-91e5c46d5829" data-execution_count="43">
-<div class="sourceCode cell-code" id="cb68"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb68-1"><a href="#cb68-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Minimum/10: </span><span class="sc">{</span>lr_min<span class="sc">:.2e}</span><span class="ss">, steepest point: </span><span class="sc">{</span>lr_steep<span class="sc">:.2e}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>Minimum/10: 1.00e-02, steepest point: 4.37e-03</code></pre>
-</div>
+<div id="cell-99" class="cell" data-outputid="e02c5d2b-86d2-41fc-a733-91e5c46d5829">
+<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Minimum/10: </span><span class="sc">{</span>lr_min<span class="sc">:.2e}</span><span class="ss">, steepest point: </span><span class="sc">{</span>lr_steep<span class="sc">:.2e}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <ul>
 <li>The plot shows that the loss between 10e-6 and 10e-3 almost didn’t change, but after it start to decrease until it reachs the minimum at 10e-1.</li>
@@ -1199,96 +678,9 @@ Downloading: "https://download.pytorch.org/models/resnet34-b627a593.pth" to /roo
 <li>we need to pick the learning rate where the just start to decrease all the way to the minimum: <code>1e-3</code></li>
 </ul></li>
 </ul>
-<div id="cell-101" class="cell" data-outputid="321bda5c-51f6-4e7c-cea5-7b1defe411bc" data-execution_count="44">
-<div class="sourceCode cell-code" id="cb70"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb70-1"><a href="#cb70-1" aria-hidden="true" tabindex="-1"></a>learn <span class="op">=</span> vision_learner(dls, resnet34, metrics<span class="op">=</span>error_rate)</span>
-<span id="cb70-2"><a href="#cb70-2" aria-hidden="true" tabindex="-1"></a>learn.fine_tune(<span class="dv">2</span>, base_lr<span class="op">=</span><span class="fl">3e-3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display">
-
-<style>
-    /* Turns off some styling */
-    progress {
-        /* gets rid of default border in Firefox and Opera. */
-        border: none;
-        /* Needs to be in here for Safari polyfill so background images work as expected. */
-        background-size: auto;
-    }
-    progress:not([value]), progress:not([value])::-webkit-progress-bar {
-        background: repeating-linear-gradient(45deg, #7e7e7e, #7e7e7e 10px, #5c5c5c 10px, #5c5c5c 20px);
-    }
-    .progress-bar-interrupted, .progress-bar-interrupted::-webkit-progress-bar {
-        background: #F44336;
-    }
-</style>
-</div>
-<div class="cell-output cell-output-display">
-<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
-<thead>
-<tr class="header">
-<th data-quarto-table-cell-role="th">epoch</th>
-<th data-quarto-table-cell-role="th">train_loss</th>
-<th data-quarto-table-cell-role="th">valid_loss</th>
-<th data-quarto-table-cell-role="th">error_rate</th>
-<th data-quarto-table-cell-role="th">time</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>0</td>
-<td>1.327572</td>
-<td>0.370063</td>
-<td>0.120433</td>
-<td>01:11</td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="cell-output cell-output-display">
-
-<style>
-    /* Turns off some styling */
-    progress {
-        /* gets rid of default border in Firefox and Opera. */
-        border: none;
-        /* Needs to be in here for Safari polyfill so background images work as expected. */
-        background-size: auto;
-    }
-    progress:not([value]), progress:not([value])::-webkit-progress-bar {
-        background: repeating-linear-gradient(45deg, #7e7e7e, #7e7e7e 10px, #5c5c5c 10px, #5c5c5c 20px);
-    }
-    .progress-bar-interrupted, .progress-bar-interrupted::-webkit-progress-bar {
-        background: #F44336;
-    }
-</style>
-</div>
-<div class="cell-output cell-output-display">
-<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
-<thead>
-<tr class="header">
-<th data-quarto-table-cell-role="th">epoch</th>
-<th data-quarto-table-cell-role="th">train_loss</th>
-<th data-quarto-table-cell-role="th">valid_loss</th>
-<th data-quarto-table-cell-role="th">error_rate</th>
-<th data-quarto-table-cell-role="th">time</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>0</td>
-<td>0.570779</td>
-<td>0.429716</td>
-<td>0.131935</td>
-<td>01:15</td>
-</tr>
-<tr class="even">
-<td>1</td>
-<td>0.322137</td>
-<td>0.246614</td>
-<td>0.073072</td>
-<td>01:17</td>
-</tr>
-</tbody>
-</table>
-</div>
+<div id="cell-101" class="cell" data-outputid="321bda5c-51f6-4e7c-cea5-7b1defe411bc">
+<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a>learn <span class="op">=</span> vision_learner(dls, resnet34, metrics<span class="op">=</span>error_rate)</span>
+<span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a>learn.fine_tune(<span class="dv">2</span>, base_lr<span class="op">=</span><span class="fl">3e-3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <ul>
 <li>The error rate get better 10 times just by using the learning rate methode. Loss also get better by this percentage.</li>
@@ -1314,9 +706,9 @@ Downloading: "https://download.pytorch.org/models/resnet34-b627a593.pth" to /roo
 <li><p>Of Course this is just the <em>default</em> approach, <code>fine_tune</code> has many parameters that allow us to apply different tweaks for each specific situation.</p></li>
 <li><p>For now, let’s do this process manually without using <code>fine_tune</code></p></li>
 </ul>
-<div id="cell-106" class="cell" data-execution_count="45">
-<div class="sourceCode cell-code" id="cb71"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb71-1"><a href="#cb71-1" aria-hidden="true" tabindex="-1"></a><span class="co"># check fine_tune source acode</span></span>
-<span id="cb71-2"><a href="#cb71-2" aria-hidden="true" tabindex="-1"></a>learn.fine_tune??</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="cell-106" class="cell">
+<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="co"># check fine_tune source acode</span></span>
+<span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a>learn.fine_tune??</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <ul>
 <li>First we create our learner from the <code>dls</code> and <code>arch</code> using <code>vision_learner</code>
@@ -1325,191 +717,31 @@ Downloading: "https://download.pytorch.org/models/resnet34-b627a593.pth" to /roo
 </ul></li>
 <li>Then train the added layer with randome weights for number of epochs with a learning rate we pick</li>
 </ul>
-<div id="cell-108" class="cell" data-outputid="77d14197-3adf-487f-e6e5-729f9e0dca0d" data-execution_count="46">
-<div class="sourceCode cell-code" id="cb72"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb72-1"><a href="#cb72-1" aria-hidden="true" tabindex="-1"></a>learn <span class="op">=</span> vision_learner(dls, resnet34, metrics<span class="op">=</span>error_rate)</span>
-<span id="cb72-2"><a href="#cb72-2" aria-hidden="true" tabindex="-1"></a>learn.fit_one_cycle(<span class="dv">3</span>, <span class="fl">3e-3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display">
-
-<style>
-    /* Turns off some styling */
-    progress {
-        /* gets rid of default border in Firefox and Opera. */
-        border: none;
-        /* Needs to be in here for Safari polyfill so background images work as expected. */
-        background-size: auto;
-    }
-    progress:not([value]), progress:not([value])::-webkit-progress-bar {
-        background: repeating-linear-gradient(45deg, #7e7e7e, #7e7e7e 10px, #5c5c5c 10px, #5c5c5c 20px);
-    }
-    .progress-bar-interrupted, .progress-bar-interrupted::-webkit-progress-bar {
-        background: #F44336;
-    }
-</style>
-</div>
-<div class="cell-output cell-output-display">
-<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
-<thead>
-<tr class="header">
-<th data-quarto-table-cell-role="th">epoch</th>
-<th data-quarto-table-cell-role="th">train_loss</th>
-<th data-quarto-table-cell-role="th">valid_loss</th>
-<th data-quarto-table-cell-role="th">error_rate</th>
-<th data-quarto-table-cell-role="th">time</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>0</td>
-<td>1.114612</td>
-<td>0.429605</td>
-<td>0.134641</td>
-<td>01:10</td>
-</tr>
-<tr class="even">
-<td>1</td>
-<td>0.538649</td>
-<td>0.245115</td>
-<td>0.083221</td>
-<td>01:10</td>
-</tr>
-<tr class="odd">
-<td>2</td>
-<td>0.313570</td>
-<td>0.207912</td>
-<td>0.065629</td>
-<td>01:10</td>
-</tr>
-</tbody>
-</table>
-</div>
+<div id="cell-108" class="cell" data-outputid="77d14197-3adf-487f-e6e5-729f9e0dca0d">
+<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a>learn <span class="op">=</span> vision_learner(dls, resnet34, metrics<span class="op">=</span>error_rate)</span>
+<span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a>learn.fit_one_cycle(<span class="dv">3</span>, <span class="fl">3e-3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <ul>
 <li>Now we need to unfreeze the model:</li>
 </ul>
-<div id="cell-110" class="cell" data-execution_count="47">
-<div class="sourceCode cell-code" id="cb73"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb73-1"><a href="#cb73-1" aria-hidden="true" tabindex="-1"></a>learn.unfreeze()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="cell-110" class="cell">
+<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a>learn.unfreeze()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <ul>
 <li>Now we run <code>lr_find</code> again, because having more layers to train, and weights that have already been trained for three epochs, means our previously found learning rate isn’t appropriate any more:</li>
 </ul>
-<div id="cell-112" class="cell" data-outputid="17b697ff-8faf-45a6-c727-b19b1ca8ece7" data-execution_count="48">
-<div class="sourceCode cell-code" id="cb74"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb74-1"><a href="#cb74-1" aria-hidden="true" tabindex="-1"></a>learn.lr_find()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display">
-
-<style>
-    /* Turns off some styling */
-    progress {
-        /* gets rid of default border in Firefox and Opera. */
-        border: none;
-        /* Needs to be in here for Safari polyfill so background images work as expected. */
-        background-size: auto;
-    }
-    progress:not([value]), progress:not([value])::-webkit-progress-bar {
-        background: repeating-linear-gradient(45deg, #7e7e7e, #7e7e7e 10px, #5c5c5c 10px, #5c5c5c 20px);
-    }
-    .progress-bar-interrupted, .progress-bar-interrupted::-webkit-progress-bar {
-        background: #F44336;
-    }
-</style>
-</div>
-<div class="cell-output cell-output-display">
-
-</div>
-<div class="cell-output cell-output-display" data-execution_count="48">
-<pre><code>SuggestedLRs(valley=9.999999747378752e-06)</code></pre>
-</div>
-<div class="cell-output cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="Fastai-Ch5_files/figure-html/cell-47-output-4.png" class="img-fluid figure-img"></p>
-</figure>
-</div>
-</div>
+<div id="cell-112" class="cell" data-outputid="17b697ff-8faf-45a6-c727-b19b1ca8ece7">
+<div class="sourceCode cell-code" id="cb48"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a>learn.lr_find()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <ul>
 <li>As we see here the graph is different than what we saw before when we use randome weights to train the model, because that the model has been trained already.</li>
 <li>The approach to pick the right <code>lr</code> here is to chose a point before the sharp increase.</li>
 </ul>
 <div id="cell-114" class="cell">
-<div class="sourceCode cell-code" id="cb76"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb76-1"><a href="#cb76-1" aria-hidden="true" tabindex="-1"></a><span class="dv">34</span><span class="er">se3a</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="dv">34</span><span class="er">se3a</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="cell-115" class="cell" data-outputid="00577add-6b54-4930-9785-e9661152acdd" data-execution_count="49">
-<div class="sourceCode cell-code" id="cb77"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb77-1"><a href="#cb77-1" aria-hidden="true" tabindex="-1"></a>learn.fit_one_cycle(<span class="dv">6</span> , lr_max<span class="op">=</span><span class="fl">4.786300905834651e-06</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display">
-
-<style>
-    /* Turns off some styling */
-    progress {
-        /* gets rid of default border in Firefox and Opera. */
-        border: none;
-        /* Needs to be in here for Safari polyfill so background images work as expected. */
-        background-size: auto;
-    }
-    progress:not([value]), progress:not([value])::-webkit-progress-bar {
-        background: repeating-linear-gradient(45deg, #7e7e7e, #7e7e7e 10px, #5c5c5c 10px, #5c5c5c 20px);
-    }
-    .progress-bar-interrupted, .progress-bar-interrupted::-webkit-progress-bar {
-        background: #F44336;
-    }
-</style>
-</div>
-<div class="cell-output cell-output-display">
-<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
-<thead>
-<tr class="header">
-<th data-quarto-table-cell-role="th">epoch</th>
-<th data-quarto-table-cell-role="th">train_loss</th>
-<th data-quarto-table-cell-role="th">valid_loss</th>
-<th data-quarto-table-cell-role="th">error_rate</th>
-<th data-quarto-table-cell-role="th">time</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>0</td>
-<td>0.260985</td>
-<td>0.207057</td>
-<td>0.062246</td>
-<td>01:16</td>
-</tr>
-<tr class="even">
-<td>1</td>
-<td>0.244476</td>
-<td>0.201592</td>
-<td>0.064276</td>
-<td>01:18</td>
-</tr>
-<tr class="odd">
-<td>2</td>
-<td>0.240523</td>
-<td>0.193317</td>
-<td>0.058187</td>
-<td>01:15</td>
-</tr>
-<tr class="even">
-<td>3</td>
-<td>0.234724</td>
-<td>0.189429</td>
-<td>0.054127</td>
-<td>01:15</td>
-</tr>
-<tr class="odd">
-<td>4</td>
-<td>0.227204</td>
-<td>0.188406</td>
-<td>0.056157</td>
-<td>01:21</td>
-</tr>
-<tr class="even">
-<td>5</td>
-<td>0.209963</td>
-<td>0.187695</td>
-<td>0.056157</td>
-<td>01:16</td>
-</tr>
-</tbody>
-</table>
-</div>
+<div id="cell-115" class="cell" data-outputid="00577add-6b54-4930-9785-e9661152acdd">
+<div class="sourceCode cell-code" id="cb50"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a>learn.fit_one_cycle(<span class="dv">6</span> , lr_max<span class="op">=</span><span class="fl">4.786300905834651e-06</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="discriminative-learning-rates" class="level3">
@@ -1538,215 +770,17 @@ Downloading: "https://download.pytorch.org/models/resnet34-b627a593.pth" to /roo
 </ul></li>
 <li>Let’s see this technic in action</li>
 </ul>
-<div id="cell-118" class="cell" data-outputid="90cdc81c-ca8a-4669-8bab-0650946d9771" data-execution_count="50">
-<div class="sourceCode cell-code" id="cb78"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb78-1"><a href="#cb78-1" aria-hidden="true" tabindex="-1"></a>learn <span class="op">=</span> vision_learner(dls, resnet34, metrics<span class="op">=</span>error_rate)</span>
-<span id="cb78-2"><a href="#cb78-2" aria-hidden="true" tabindex="-1"></a>learn.fit_one_cycle(<span class="dv">3</span>, <span class="fl">3e-3</span>)</span>
-<span id="cb78-3"><a href="#cb78-3" aria-hidden="true" tabindex="-1"></a>learn.unfreeze()</span>
-<span id="cb78-4"><a href="#cb78-4" aria-hidden="true" tabindex="-1"></a>learn.fit_one_cycle(<span class="dv">14</span>, lr_max<span class="op">=</span><span class="bu">slice</span>(<span class="fl">1e-6</span>,<span class="fl">1e-4</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>/usr/local/lib/python3.7/dist-packages/torchvision/models/_utils.py:209: UserWarning: The parameter 'pretrained' is deprecated since 0.13 and will be removed in 0.15, please use 'weights' instead.
-  f"The parameter '{pretrained_param}' is deprecated since 0.13 and will be removed in 0.15, "
-/usr/local/lib/python3.7/dist-packages/torchvision/models/_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and will be removed in 0.15. The current behavior is equivalent to passing `weights=ResNet34_Weights.IMAGENET1K_V1`. You can also use `weights=ResNet34_Weights.DEFAULT` to get the most up-to-date weights.
-  warnings.warn(msg)</code></pre>
-</div>
-<div class="cell-output cell-output-display">
-
-<style>
-    /* Turns off some styling */
-    progress {
-        /* gets rid of default border in Firefox and Opera. */
-        border: none;
-        /* Needs to be in here for Safari polyfill so background images work as expected. */
-        background-size: auto;
-    }
-    progress:not([value]), progress:not([value])::-webkit-progress-bar {
-        background: repeating-linear-gradient(45deg, #7e7e7e, #7e7e7e 10px, #5c5c5c 10px, #5c5c5c 20px);
-    }
-    .progress-bar-interrupted, .progress-bar-interrupted::-webkit-progress-bar {
-        background: #F44336;
-    }
-</style>
-</div>
-<div class="cell-output cell-output-display">
-<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
-<thead>
-<tr class="header">
-<th data-quarto-table-cell-role="th">epoch</th>
-<th data-quarto-table-cell-role="th">train_loss</th>
-<th data-quarto-table-cell-role="th">valid_loss</th>
-<th data-quarto-table-cell-role="th">error_rate</th>
-<th data-quarto-table-cell-role="th">time</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>0</td>
-<td>1.129876</td>
-<td>0.383506</td>
-<td>0.121786</td>
-<td>01:10</td>
-</tr>
-<tr class="even">
-<td>1</td>
-<td>0.516040</td>
-<td>0.284697</td>
-<td>0.092693</td>
-<td>01:13</td>
-</tr>
-<tr class="odd">
-<td>2</td>
-<td>0.328486</td>
-<td>0.217860</td>
-<td>0.071042</td>
-<td>01:11</td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="cell-output cell-output-display">
-
-<style>
-    /* Turns off some styling */
-    progress {
-        /* gets rid of default border in Firefox and Opera. */
-        border: none;
-        /* Needs to be in here for Safari polyfill so background images work as expected. */
-        background-size: auto;
-    }
-    progress:not([value]), progress:not([value])::-webkit-progress-bar {
-        background: repeating-linear-gradient(45deg, #7e7e7e, #7e7e7e 10px, #5c5c5c 10px, #5c5c5c 20px);
-    }
-    .progress-bar-interrupted, .progress-bar-interrupted::-webkit-progress-bar {
-        background: #F44336;
-    }
-</style>
-</div>
-<div class="cell-output cell-output-display">
-<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
-<thead>
-<tr class="header">
-<th data-quarto-table-cell-role="th">epoch</th>
-<th data-quarto-table-cell-role="th">train_loss</th>
-<th data-quarto-table-cell-role="th">valid_loss</th>
-<th data-quarto-table-cell-role="th">error_rate</th>
-<th data-quarto-table-cell-role="th">time</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>0</td>
-<td>0.269753</td>
-<td>0.210582</td>
-<td>0.071719</td>
-<td>01:15</td>
-</tr>
-<tr class="even">
-<td>1</td>
-<td>0.256654</td>
-<td>0.203205</td>
-<td>0.067659</td>
-<td>01:17</td>
-</tr>
-<tr class="odd">
-<td>2</td>
-<td>0.245040</td>
-<td>0.196284</td>
-<td>0.066982</td>
-<td>01:14</td>
-</tr>
-<tr class="even">
-<td>3</td>
-<td>0.222485</td>
-<td>0.197652</td>
-<td>0.066306</td>
-<td>01:14</td>
-</tr>
-<tr class="odd">
-<td>4</td>
-<td>0.186354</td>
-<td>0.193144</td>
-<td>0.062923</td>
-<td>01:17</td>
-</tr>
-<tr class="even">
-<td>5</td>
-<td>0.185777</td>
-<td>0.189425</td>
-<td>0.060217</td>
-<td>01:15</td>
-</tr>
-<tr class="odd">
-<td>6</td>
-<td>0.150886</td>
-<td>0.190105</td>
-<td>0.060893</td>
-<td>01:15</td>
-</tr>
-<tr class="even">
-<td>7</td>
-<td>0.146768</td>
-<td>0.186121</td>
-<td>0.057510</td>
-<td>01:18</td>
-</tr>
-<tr class="odd">
-<td>8</td>
-<td>0.134524</td>
-<td>0.177772</td>
-<td>0.054804</td>
-<td>01:15</td>
-</tr>
-<tr class="even">
-<td>9</td>
-<td>0.135853</td>
-<td>0.180999</td>
-<td>0.058187</td>
-<td>01:15</td>
-</tr>
-<tr class="odd">
-<td>10</td>
-<td>0.127154</td>
-<td>0.178239</td>
-<td>0.056834</td>
-<td>01:18</td>
-</tr>
-<tr class="even">
-<td>11</td>
-<td>0.110540</td>
-<td>0.179652</td>
-<td>0.056157</td>
-<td>01:15</td>
-</tr>
-<tr class="odd">
-<td>12</td>
-<td>0.122252</td>
-<td>0.180609</td>
-<td>0.056834</td>
-<td>01:14</td>
-</tr>
-<tr class="even">
-<td>13</td>
-<td>0.105743</td>
-<td>0.180926</td>
-<td>0.054804</td>
-<td>01:17</td>
-</tr>
-</tbody>
-</table>
-</div>
+<div id="cell-118" class="cell" data-outputid="90cdc81c-ca8a-4669-8bab-0650946d9771">
+<div class="sourceCode cell-code" id="cb51"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a>learn <span class="op">=</span> vision_learner(dls, resnet34, metrics<span class="op">=</span>error_rate)</span>
+<span id="cb51-2"><a href="#cb51-2" aria-hidden="true" tabindex="-1"></a>learn.fit_one_cycle(<span class="dv">3</span>, <span class="fl">3e-3</span>)</span>
+<span id="cb51-3"><a href="#cb51-3" aria-hidden="true" tabindex="-1"></a>learn.unfreeze()</span>
+<span id="cb51-4"><a href="#cb51-4" aria-hidden="true" tabindex="-1"></a>learn.fit_one_cycle(<span class="dv">14</span>, lr_max<span class="op">=</span><span class="bu">slice</span>(<span class="fl">1e-6</span>,<span class="fl">1e-4</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <ul>
 <li>We can plot the training and the validation loss</li>
 </ul>
-<div id="cell-120" class="cell" data-outputid="9888b6fe-d4fd-44bd-ed83-018e4a262eac" data-execution_count="51">
-<div class="sourceCode cell-code" id="cb80"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb80-1"><a href="#cb80-1" aria-hidden="true" tabindex="-1"></a>learn.recorder.plot_loss()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="Fastai-Ch5_files/figure-html/cell-51-output-1.png" class="img-fluid figure-img"></p>
-</figure>
-</div>
-</div>
+<div id="cell-120" class="cell" data-outputid="9888b6fe-d4fd-44bd-ed83-018e4a262eac">
+<div class="sourceCode cell-code" id="cb52"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a>learn.recorder.plot_loss()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="selecting-the-number-of-epochs" class="level3">
@@ -1779,9 +813,9 @@ Downloading: "https://download.pytorch.org/models/resnet34-b627a593.pth" to /roo
 <li>You can’t really know ahead of time what the best architecture for your particular problem is you need to try training some. So let’s try a ResNet-50 now with mixed precision:</li>
 </ul>
 <div id="cell-125" class="cell" data-outputid="da9de3a5-281a-4b62-e633-b9ca61c4998d">
-<div class="sourceCode cell-code" id="cb81"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb81-1"><a href="#cb81-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> fastai.callback.fp16 <span class="im">import</span> <span class="op">*</span></span>
-<span id="cb81-2"><a href="#cb81-2" aria-hidden="true" tabindex="-1"></a>learn <span class="op">=</span> vision_learner(dls, resnet50, metrics<span class="op">=</span>error_rate).to_fp16()</span>
-<span id="cb81-3"><a href="#cb81-3" aria-hidden="true" tabindex="-1"></a>learn.fine_tune(<span class="dv">6</span>, freeze_epochs<span class="op">=</span><span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb53"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> fastai.callback.fp16 <span class="im">import</span> <span class="op">*</span></span>
+<span id="cb53-2"><a href="#cb53-2" aria-hidden="true" tabindex="-1"></a>learn <span class="op">=</span> vision_learner(dls, resnet50, metrics<span class="op">=</span>error_rate).to_fp16()</span>
+<span id="cb53-3"><a href="#cb53-3" aria-hidden="true" tabindex="-1"></a>learn.fine_tune(<span class="dv">6</span>, freeze_epochs<span class="op">=</span><span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <ul>
 <li>We get better results, at less epochs, and less time per epochs only by usung deeper architecture.
@@ -1796,9 +830,6 @@ Downloading: "https://download.pytorch.org/models/resnet34-b627a593.pth" to /roo
 </section>
 
 </main> <!-- /main -->
-<script type="application/vnd.jupyter.widget-state+json">
-{"07eaf3abcfa9423cb778475986615814":{"model_module":"@jupyter-widgets/controls","model_module_version":"1.5.0","model_name":"DescriptionStyleModel","state":{"_model_module":"@jupyter-widgets/controls","_model_module_version":"1.5.0","_model_name":"DescriptionStyleModel","_view_count":null,"_view_module":"@jupyter-widgets/base","_view_module_version":"1.2.0","_view_name":"StyleView","description_width":""}},"103068837d454108ba7b1983f5509b83":{"model_module":"@jupyter-widgets/controls","model_module_version":"1.5.0","model_name":"ProgressStyleModel","state":{"_model_module":"@jupyter-widgets/controls","_model_module_version":"1.5.0","_model_name":"ProgressStyleModel","_view_count":null,"_view_module":"@jupyter-widgets/base","_view_module_version":"1.2.0","_view_name":"StyleView","bar_color":null,"description_width":""}},"124ab37ffe1f45509df61eb4f5d9d69a":{"model_module":"@jupyter-widgets/controls","model_module_version":"1.5.0","model_name":"ProgressStyleModel","state":{"_model_module":"@jupyter-widgets/controls","_model_module_version":"1.5.0","_model_name":"ProgressStyleModel","_view_count":null,"_view_module":"@jupyter-widgets/base","_view_module_version":"1.2.0","_view_name":"StyleView","bar_color":null,"description_width":""}},"20a035e67e904d4b810286c86cf26e05":{"model_module":"@jupyter-widgets/base","model_module_version":"1.2.0","model_name":"LayoutModel","state":{"_model_module":"@jupyter-widgets/base","_model_module_version":"1.2.0","_model_name":"LayoutModel","_view_count":null,"_view_module":"@jupyter-widgets/base","_view_module_version":"1.2.0","_view_name":"LayoutView","align_content":null,"align_items":null,"align_self":null,"border":null,"bottom":null,"display":null,"flex":null,"flex_flow":null,"grid_area":null,"grid_auto_columns":null,"grid_auto_flow":null,"grid_auto_rows":null,"grid_column":null,"grid_gap":null,"grid_row":null,"grid_template_areas":null,"grid_template_columns":null,"grid_template_rows":null,"height":null,"justify_content":null,"justify_items":null,"left":null,"margin":null,"max_height":null,"max_width":null,"min_height":null,"min_width":null,"object_fit":null,"object_position":null,"order":null,"overflow":null,"overflow_x":null,"overflow_y":null,"padding":null,"right":null,"top":null,"visibility":null,"width":null}},"3473e96a6da64d5db5bc47888b5bc71a":{"model_module":"@jupyter-widgets/controls","model_module_version":"1.5.0","model_name":"HTMLModel","state":{"_dom_classes":[],"_model_module":"@jupyter-widgets/controls","_model_module_version":"1.5.0","_model_name":"HTMLModel","_view_count":null,"_view_module":"@jupyter-widgets/controls","_view_module_version":"1.5.0","_view_name":"HTMLView","description":"","description_tooltip":null,"layout":"IPY_MODEL_20a035e67e904d4b810286c86cf26e05","placeholder":"​","style":"IPY_MODEL_cd8eb6976e0445dbad2b0542be1c520d","value":" 97.8M/97.8M [00:00&lt;00:00, 238MB/s]"}},"3480deaea9b9405cbf63fa9fd8bf2b34":{"model_module":"@jupyter-widgets/controls","model_module_version":"1.5.0","model_name":"HBoxModel","state":{"_dom_classes":[],"_model_module":"@jupyter-widgets/controls","_model_module_version":"1.5.0","_model_name":"HBoxModel","_view_count":null,"_view_module":"@jupyter-widgets/controls","_view_module_version":"1.5.0","_view_name":"HBoxView","box_style":"","children":["IPY_MODEL_7810a682e4064d628440084bbb886450","IPY_MODEL_cb5dd886c6ce44279b36886e2ceaeb0c","IPY_MODEL_3473e96a6da64d5db5bc47888b5bc71a"],"layout":"IPY_MODEL_491e912c48364ecd9167c81c1456ba6f"}},"491e912c48364ecd9167c81c1456ba6f":{"model_module":"@jupyter-widgets/base","model_module_version":"1.2.0","model_name":"LayoutModel","state":{"_model_module":"@jupyter-widgets/base","_model_module_version":"1.2.0","_model_name":"LayoutModel","_view_count":null,"_view_module":"@jupyter-widgets/base","_view_module_version":"1.2.0","_view_name":"LayoutView","align_content":null,"align_items":null,"align_self":null,"border":null,"bottom":null,"display":null,"flex":null,"flex_flow":null,"grid_area":null,"grid_auto_columns":null,"grid_auto_flow":null,"grid_auto_rows":null,"grid_column":null,"grid_gap":null,"grid_row":null,"grid_template_areas":null,"grid_template_columns":null,"grid_template_rows":null,"height":null,"justify_content":null,"justify_items":null,"left":null,"margin":null,"max_height":null,"max_width":null,"min_height":null,"min_width":null,"object_fit":null,"object_position":null,"order":null,"overflow":null,"overflow_x":null,"overflow_y":null,"padding":null,"right":null,"top":null,"visibility":null,"width":null}},"584eef277e45424cb15c012a1dd1a0e4":{"model_module":"@jupyter-widgets/controls","model_module_version":"1.5.0","model_name":"HTMLModel","state":{"_dom_classes":[],"_model_module":"@jupyter-widgets/controls","_model_module_version":"1.5.0","_model_name":"HTMLModel","_view_count":null,"_view_module":"@jupyter-widgets/controls","_view_module_version":"1.5.0","_view_name":"HTMLView","description":"","description_tooltip":null,"layout":"IPY_MODEL_8d49518e8a854ff7afa6db7b35ba22ad","placeholder":"​","style":"IPY_MODEL_de4daa621c034dbc96955e4d91037bf3","value":"100%"}},"7544608ce86045ad8806b8405b5d186a":{"model_module":"@jupyter-widgets/controls","model_module_version":"1.5.0","model_name":"FloatProgressModel","state":{"_dom_classes":[],"_model_module":"@jupyter-widgets/controls","_model_module_version":"1.5.0","_model_name":"FloatProgressModel","_view_count":null,"_view_module":"@jupyter-widgets/controls","_view_module_version":"1.5.0","_view_name":"ProgressView","bar_style":"success","description":"","description_tooltip":null,"layout":"IPY_MODEL_88f46bced5544d0481c9289992b941e8","max":87319819,"min":0,"orientation":"horizontal","style":"IPY_MODEL_103068837d454108ba7b1983f5509b83","value":87319819}},"7810a682e4064d628440084bbb886450":{"model_module":"@jupyter-widgets/controls","model_module_version":"1.5.0","model_name":"HTMLModel","state":{"_dom_classes":[],"_model_module":"@jupyter-widgets/controls","_model_module_version":"1.5.0","_model_name":"HTMLModel","_view_count":null,"_view_module":"@jupyter-widgets/controls","_view_module_version":"1.5.0","_view_name":"HTMLView","description":"","description_tooltip":null,"layout":"IPY_MODEL_e75f0d3818e24d27b1f2c53beb752163","placeholder":"​","style":"IPY_MODEL_a175cff1faa24be69f041775d8c782e9","value":"100%"}},"88f46bced5544d0481c9289992b941e8":{"model_module":"@jupyter-widgets/base","model_module_version":"1.2.0","model_name":"LayoutModel","state":{"_model_module":"@jupyter-widgets/base","_model_module_version":"1.2.0","_model_name":"LayoutModel","_view_count":null,"_view_module":"@jupyter-widgets/base","_view_module_version":"1.2.0","_view_name":"LayoutView","align_content":null,"align_items":null,"align_self":null,"border":null,"bottom":null,"display":null,"flex":null,"flex_flow":null,"grid_area":null,"grid_auto_columns":null,"grid_auto_flow":null,"grid_auto_rows":null,"grid_column":null,"grid_gap":null,"grid_row":null,"grid_template_areas":null,"grid_template_columns":null,"grid_template_rows":null,"height":null,"justify_content":null,"justify_items":null,"left":null,"margin":null,"max_height":null,"max_width":null,"min_height":null,"min_width":null,"object_fit":null,"object_position":null,"order":null,"overflow":null,"overflow_x":null,"overflow_y":null,"padding":null,"right":null,"top":null,"visibility":null,"width":null}},"8d49518e8a854ff7afa6db7b35ba22ad":{"model_module":"@jupyter-widgets/base","model_module_version":"1.2.0","model_name":"LayoutModel","state":{"_model_module":"@jupyter-widgets/base","_model_module_version":"1.2.0","_model_name":"LayoutModel","_view_count":null,"_view_module":"@jupyter-widgets/base","_view_module_version":"1.2.0","_view_name":"LayoutView","align_content":null,"align_items":null,"align_self":null,"border":null,"bottom":null,"display":null,"flex":null,"flex_flow":null,"grid_area":null,"grid_auto_columns":null,"grid_auto_flow":null,"grid_auto_rows":null,"grid_column":null,"grid_gap":null,"grid_row":null,"grid_template_areas":null,"grid_template_columns":null,"grid_template_rows":null,"height":null,"justify_content":null,"justify_items":null,"left":null,"margin":null,"max_height":null,"max_width":null,"min_height":null,"min_width":null,"object_fit":null,"object_position":null,"order":null,"overflow":null,"overflow_x":null,"overflow_y":null,"padding":null,"right":null,"top":null,"visibility":null,"width":null}},"95f776162258441cbc9bbd433b772ac1":{"model_module":"@jupyter-widgets/base","model_module_version":"1.2.0","model_name":"LayoutModel","state":{"_model_module":"@jupyter-widgets/base","_model_module_version":"1.2.0","_model_name":"LayoutModel","_view_count":null,"_view_module":"@jupyter-widgets/base","_view_module_version":"1.2.0","_view_name":"LayoutView","align_content":null,"align_items":null,"align_self":null,"border":null,"bottom":null,"display":null,"flex":null,"flex_flow":null,"grid_area":null,"grid_auto_columns":null,"grid_auto_flow":null,"grid_auto_rows":null,"grid_column":null,"grid_gap":null,"grid_row":null,"grid_template_areas":null,"grid_template_columns":null,"grid_template_rows":null,"height":null,"justify_content":null,"justify_items":null,"left":null,"margin":null,"max_height":null,"max_width":null,"min_height":null,"min_width":null,"object_fit":null,"object_position":null,"order":null,"overflow":null,"overflow_x":null,"overflow_y":null,"padding":null,"right":null,"top":null,"visibility":null,"width":null}},"a175cff1faa24be69f041775d8c782e9":{"model_module":"@jupyter-widgets/controls","model_module_version":"1.5.0","model_name":"DescriptionStyleModel","state":{"_model_module":"@jupyter-widgets/controls","_model_module_version":"1.5.0","_model_name":"DescriptionStyleModel","_view_count":null,"_view_module":"@jupyter-widgets/base","_view_module_version":"1.2.0","_view_name":"StyleView","description_width":""}},"acc2d440f08c4537bcdce9de80dad6d8":{"model_module":"@jupyter-widgets/base","model_module_version":"1.2.0","model_name":"LayoutModel","state":{"_model_module":"@jupyter-widgets/base","_model_module_version":"1.2.0","_model_name":"LayoutModel","_view_count":null,"_view_module":"@jupyter-widgets/base","_view_module_version":"1.2.0","_view_name":"LayoutView","align_content":null,"align_items":null,"align_self":null,"border":null,"bottom":null,"display":null,"flex":null,"flex_flow":null,"grid_area":null,"grid_auto_columns":null,"grid_auto_flow":null,"grid_auto_rows":null,"grid_column":null,"grid_gap":null,"grid_row":null,"grid_template_areas":null,"grid_template_columns":null,"grid_template_rows":null,"height":null,"justify_content":null,"justify_items":null,"left":null,"margin":null,"max_height":null,"max_width":null,"min_height":null,"min_width":null,"object_fit":null,"object_position":null,"order":null,"overflow":null,"overflow_x":null,"overflow_y":null,"padding":null,"right":null,"top":null,"visibility":null,"width":null}},"cb5dd886c6ce44279b36886e2ceaeb0c":{"model_module":"@jupyter-widgets/controls","model_module_version":"1.5.0","model_name":"FloatProgressModel","state":{"_dom_classes":[],"_model_module":"@jupyter-widgets/controls","_model_module_version":"1.5.0","_model_name":"FloatProgressModel","_view_count":null,"_view_module":"@jupyter-widgets/controls","_view_module_version":"1.5.0","_view_name":"ProgressView","bar_style":"success","description":"","description_tooltip":null,"layout":"IPY_MODEL_95f776162258441cbc9bbd433b772ac1","max":102530333,"min":0,"orientation":"horizontal","style":"IPY_MODEL_124ab37ffe1f45509df61eb4f5d9d69a","value":102530333}},"cd8eb6976e0445dbad2b0542be1c520d":{"model_module":"@jupyter-widgets/controls","model_module_version":"1.5.0","model_name":"DescriptionStyleModel","state":{"_model_module":"@jupyter-widgets/controls","_model_module_version":"1.5.0","_model_name":"DescriptionStyleModel","_view_count":null,"_view_module":"@jupyter-widgets/base","_view_module_version":"1.2.0","_view_name":"StyleView","description_width":""}},"de4daa621c034dbc96955e4d91037bf3":{"model_module":"@jupyter-widgets/controls","model_module_version":"1.5.0","model_name":"DescriptionStyleModel","state":{"_model_module":"@jupyter-widgets/controls","_model_module_version":"1.5.0","_model_name":"DescriptionStyleModel","_view_count":null,"_view_module":"@jupyter-widgets/base","_view_module_version":"1.2.0","_view_name":"StyleView","description_width":""}},"e4570c4419644c088f6ddad73443e0d9":{"model_module":"@jupyter-widgets/base","model_module_version":"1.2.0","model_name":"LayoutModel","state":{"_model_module":"@jupyter-widgets/base","_model_module_version":"1.2.0","_model_name":"LayoutModel","_view_count":null,"_view_module":"@jupyter-widgets/base","_view_module_version":"1.2.0","_view_name":"LayoutView","align_content":null,"align_items":null,"align_self":null,"border":null,"bottom":null,"display":null,"flex":null,"flex_flow":null,"grid_area":null,"grid_auto_columns":null,"grid_auto_flow":null,"grid_auto_rows":null,"grid_column":null,"grid_gap":null,"grid_row":null,"grid_template_areas":null,"grid_template_columns":null,"grid_template_rows":null,"height":null,"justify_content":null,"justify_items":null,"left":null,"margin":null,"max_height":null,"max_width":null,"min_height":null,"min_width":null,"object_fit":null,"object_position":null,"order":null,"overflow":null,"overflow_x":null,"overflow_y":null,"padding":null,"right":null,"top":null,"visibility":null,"width":null}},"e68cb964c5734951acabf37dedaca77e":{"model_module":"@jupyter-widgets/controls","model_module_version":"1.5.0","model_name":"HTMLModel","state":{"_dom_classes":[],"_model_module":"@jupyter-widgets/controls","_model_module_version":"1.5.0","_model_name":"HTMLModel","_view_count":null,"_view_module":"@jupyter-widgets/controls","_view_module_version":"1.5.0","_view_name":"HTMLView","description":"","description_tooltip":null,"layout":"IPY_MODEL_acc2d440f08c4537bcdce9de80dad6d8","placeholder":"​","style":"IPY_MODEL_07eaf3abcfa9423cb778475986615814","value":" 83.3M/83.3M [00:00&lt;00:00, 238MB/s]"}},"e75f0d3818e24d27b1f2c53beb752163":{"model_module":"@jupyter-widgets/base","model_module_version":"1.2.0","model_name":"LayoutModel","state":{"_model_module":"@jupyter-widgets/base","_model_module_version":"1.2.0","_model_name":"LayoutModel","_view_count":null,"_view_module":"@jupyter-widgets/base","_view_module_version":"1.2.0","_view_name":"LayoutView","align_content":null,"align_items":null,"align_self":null,"border":null,"bottom":null,"display":null,"flex":null,"flex_flow":null,"grid_area":null,"grid_auto_columns":null,"grid_auto_flow":null,"grid_auto_rows":null,"grid_column":null,"grid_gap":null,"grid_row":null,"grid_template_areas":null,"grid_template_columns":null,"grid_template_rows":null,"height":null,"justify_content":null,"justify_items":null,"left":null,"margin":null,"max_height":null,"max_width":null,"min_height":null,"min_width":null,"object_fit":null,"object_position":null,"order":null,"overflow":null,"overflow_x":null,"overflow_y":null,"padding":null,"right":null,"top":null,"visibility":null,"width":null}},"ecfa21a5a69f4935bcb3bdccbbe333c0":{"model_module":"@jupyter-widgets/controls","model_module_version":"1.5.0","model_name":"HBoxModel","state":{"_dom_classes":[],"_model_module":"@jupyter-widgets/controls","_model_module_version":"1.5.0","_model_name":"HBoxModel","_view_count":null,"_view_module":"@jupyter-widgets/controls","_view_module_version":"1.5.0","_view_name":"HBoxView","box_style":"","children":["IPY_MODEL_584eef277e45424cb15c012a1dd1a0e4","IPY_MODEL_7544608ce86045ad8806b8405b5d186a","IPY_MODEL_e68cb964c5734951acabf37dedaca77e"],"layout":"IPY_MODEL_e4570c4419644c088f6ddad73443e0d9"}}}
-</script>
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
