@@ -2,9 +2,9 @@
   {
     "objectID": "blog.html",
     "href": "blog.html",
-    "title": "Ismail's Personal Blog",
+    "title": "",
     "section": "",
-    "text": "Order By\n      Default\n      \n        Title\n      \n      \n        Date - Oldest\n      \n      \n        Date - Newest\n      \n    \n  \n    \n      \n      \n    \n\n\n\n\n\nPositional Embeddings Implementation\n\n\n\n\n\n\n\n3 min\n\n\n\n\nNo matching items"
+    "text": "Code\n\n\n\n\n\n\n\n\n\n\n\n\n   \n    \n    \n      Order By\n      Default\n      \n        Title\n      \n      \n        Date - Oldest\n      \n      \n        Date - Newest\n      \n    \n  \n    \n      \n      \n    \n\n\n\n\n\nPositional Embeddings Implementation\n\n\n\n\n\n\n\n3 min\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "posts/GPU engineering/Tensors.html",
@@ -723,42 +723,42 @@
   {
     "objectID": "posts/junk/untitled.html",
     "href": "posts/junk/untitled.html",
-    "title": "Ismail's Personal Blog",
+    "title": "",
     "section": "",
-    "text": "I’d be happy to continue with the Mini-GPT training code. Let’s finish the implementation:\nNow, let’s add a script that allows us to compare the two types of positional embeddings in the context of our Mini-GPT model, to see how they affect performance:\nLet me also provide a detailed explanation of the code implementation and key concepts:"
+    "text": "Code\nI’d be happy to continue with the Mini-GPT training code. Let’s finish the implementation:\nNow, let’s add a script that allows us to compare the two types of positional embeddings in the context of our Mini-GPT model, to see how they affect performance:\nLet me also provide a detailed explanation of the code implementation and key concepts:"
   },
   {
     "objectID": "posts/junk/untitled.html#positional-embeddings-implementation",
     "href": "posts/junk/untitled.html#positional-embeddings-implementation",
-    "title": "Ismail's Personal Blog",
+    "title": "",
     "section": "Positional Embeddings Implementation",
     "text": "Positional Embeddings Implementation\nThe first artifact implements two types of positional embeddings, which are crucial for transformer models like GPT:\n\n1. Learned Positional Embeddings\n\nImplementation: An embedding layer that maps position indices to vectors\nKey characteristics:\n\nParameters are learned during training\nMore flexible as they can adapt to specific patterns in the data\nRequires additional memory for storing parameters\nLimited to the maximum sequence length seen during training\n\n\n\n\n2. Sinusoidal Positional Embeddings\n\nImplementation: Mathematical functions (sine and cosine) with different frequencies\nKey characteristics:\n\nFixed pattern that doesn’t require training\nMore memory-efficient (no additional parameters)\nCan potentially generalize better to sequence lengths not seen during training\nUses alternating sine and cosine functions across dimensions\n\n\nThe code includes visualization capabilities to see how these different embeddings look across positions and dimensions."
   },
   {
     "objectID": "posts/junk/untitled.html#mini-gpt-implementation",
     "href": "posts/junk/untitled.html#mini-gpt-implementation",
-    "title": "Ismail's Personal Blog",
+    "title": "",
     "section": "Mini-GPT Implementation",
     "text": "Mini-GPT Implementation\nThe second artifact implements a simplified GPT model with these key components:\n\nKey Components:\n\nMulti-Head Attention: Allows the model to focus on different parts of the input sequence\n\nSplits embeddings into multiple heads for parallel attention computation\nComputes query, key, and value projections\nUses scaled dot-product attention with a causal mask for autoregressive generation\n\nFeed-Forward Networks: Processes the attention outputs\n\nTwo linear transformations with a GELU activation\nExpands the dimension to d_ff and then back to d_model\n\nDecoder Blocks: The fundamental building blocks of GPT\n\nSelf-attention mechanism\nFeed-forward network\nLayer normalization and residual connections\n\nText Generation: Autoregressive sampling with temperature control\n\nSupports top-k and nucleus (top-p) sampling for diverse generation\nFollows the standard autoregressive text generation process\n\nSimple Tokenizer: A basic implementation for demonstration purposes\n\nHandles word tokenization\nBuilds vocabulary from input texts\nProvides encode/decode functionality"
   },
   {
     "objectID": "posts/junk/untitled.html#training-implementation",
     "href": "posts/junk/untitled.html#training-implementation",
-    "title": "Ismail's Personal Blog",
+    "title": "",
     "section": "Training Implementation",
     "text": "Training Implementation\nThe third artifact shows how to train the Mini-GPT model:\n\nSets up proper loss function (CrossEntropyLoss with padding ignored)\nUses the AdamW optimizer with learning rate scheduling\nImplements gradient clipping to prevent exploding gradients\nTracks and visualizes training metrics\nDemonstrates text generation with different temperature settings"
   },
   {
     "objectID": "posts/junk/untitled.html#comparison-of-positional-embeddings",
     "href": "posts/junk/untitled.html#comparison-of-positional-embeddings",
-    "title": "Ismail's Personal Blog",
+    "title": "",
     "section": "Comparison of Positional Embeddings",
     "text": "Comparison of Positional Embeddings\nThe final artifact compares both positional embedding types in a real training scenario:\n\nImplements both models with identical architectures except for the positional embedding type\nTrains both models on the same data with identical hyperparameters\nCompares training loss curves and training times\nTests text generation quality\nAssesses generalization to longer sequences (a key advantage of sinusoidal embeddings)"
   },
   {
     "objectID": "posts/junk/untitled.html#key-takeaways",
     "href": "posts/junk/untitled.html#key-takeaways",
-    "title": "Ismail's Personal Blog",
+    "title": "",
     "section": "Key Takeaways",
     "text": "Key Takeaways\n\nArchitectural Understanding: The code demonstrates the essential components of transformer decoder models like GPT.\nPositional Embeddings Trade-offs:\n\nLearned positional embeddings can adapt to specific patterns but require more parameters and may struggle with longer sequences.\nSinusoidal positional embeddings are parameter-efficient and theoretically better for generalization to unseen sequence lengths.\n\nPractical Implementation: The implementation includes training, evaluation, and text generation, forming a complete pipeline from data to generated text.\n\nThese implementations provide a foundation to understand how modern language models work at their core, with a focus on the critical role of positional information in sequence modeling.\nWould you like me to explain any specific part of these implementations in more detail?"
   },

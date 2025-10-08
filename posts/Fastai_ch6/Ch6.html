@@ -74,10 +74,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-065a5179aebd64318d7ea99d77b64a9e.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-3a12b51ff0d0fb9893750dacdd7c721b.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-e784d42915133a20e7488e0f44bfbe89.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -216,9 +216,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><strong>In the process will study more deeply the output activations, targets, and loss functions in deep learning models.</strong></li>
 </ul>
 <div id="cell-3" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}}" data-outputid="b32f33eb-b73d-4c0d-a77d-f0276205d7c3" data-execution_count="1">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="op">!</span> [ <span class="op">-</span>e <span class="op">/</span>content ] <span class="op">&amp;&amp;</span> pip install <span class="op">-</span>Uqq fastbook</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> fastbook</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>fastbook.setup_book()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1"></a><span class="op">!</span> [ <span class="op">-</span>e <span class="op">/</span>content ] <span class="op">&amp;&amp;</span> pip install <span class="op">-</span>Uqq fastbook</span>
+<span id="cb1-2"><a href="#cb1-2"></a><span class="im">import</span> fastbook</span>
+<span id="cb1-3"><a href="#cb1-3"></a>fastbook.setup_book()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>     |████████████████████████████████| 719 kB 13.1 MB/s 
      |████████████████████████████████| 1.3 MB 27.4 MB/s 
@@ -235,7 +235,7 @@ Mounted at /content/gdrive</code></pre>
 </div>
 </div>
 <div id="cell-4" class="cell" data-execution_count="2">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> fastbook <span class="im">import</span> <span class="op">*</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1"></a><span class="im">from</span> fastbook <span class="im">import</span> <span class="op">*</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <section id="multi-label-classification" class="level2">
 <h2 class="anchored" data-anchor-id="multi-label-classification">Multi-Label Classification</h2>
@@ -252,8 +252,8 @@ Mounted at /content/gdrive</code></pre>
 <li>First download the data</li>
 </ul>
 <div id="cell-9" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:37}}" data-outputid="42baf762-532f-4add-a256-23c86980f8af" data-execution_count="3">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> fastai.vision.<span class="bu">all</span> <span class="im">import</span> <span class="op">*</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>path <span class="op">=</span> untar_data(URLs.PASCAL_2007)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1"></a><span class="im">from</span> fastai.vision.<span class="bu">all</span> <span class="im">import</span> <span class="op">*</span></span>
+<span id="cb4-2"><a href="#cb4-2"></a>path <span class="op">=</span> untar_data(URLs.PASCAL_2007)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 
 <style>
@@ -288,8 +288,8 @@ Mounted at /content/gdrive</code></pre>
 </ul></li>
 </ul>
 <div id="cell-11" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:424}}" data-outputid="6729ed6d-50ec-4d16-a204-0361ae5a496c" data-execution_count="4">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_csv(path<span class="op">/</span><span class="st">'train.csv'</span>)</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>df</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1"></a>df <span class="op">=</span> pd.read_csv(path<span class="op">/</span><span class="st">'train.csv'</span>)</span>
+<span id="cb5-2"><a href="#cb5-2"></a>df</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="4">
 <div id="df-9e5564c3-b521-401c-ae36-ae211e26907a">
     <div class="colab-df-container">
@@ -468,17 +468,17 @@ Mounted at /content/gdrive</code></pre>
 <li>Let’s create a <code>DataBlock</code> with no parameters, then create <code>Datasets</code> object from in by passing the actual <code>DataFrame</code> we will use <code>df</code></li>
 </ul>
 <div id="cell-15" class="cell" data-execution_count="5">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>dblock <span class="op">=</span> DataBlock()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1"></a>dblock <span class="op">=</span> DataBlock()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div id="cell-16" class="cell" data-execution_count="6">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># create datasets objects</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>dsets <span class="op">=</span> dblock.datasets(df)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1"></a><span class="co"># create datasets objects</span></span>
+<span id="cb7-2"><a href="#cb7-2"></a>dsets <span class="op">=</span> dblock.datasets(df)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <ul>
 <li>By default the dataset is randomly splited to train and validation 80%/20%</li>
 </ul>
 <div id="cell-18" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}}" data-outputid="b98d213b-4e6b-40fc-9e12-a57d1be1bcb6" data-execution_count="7">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="bu">len</span>(dsets.train), <span class="bu">len</span>(dsets.valid)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1"></a><span class="bu">len</span>(dsets.train), <span class="bu">len</span>(dsets.valid)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="7">
 <pre><code>(4009, 1002)</code></pre>
 </div>
@@ -487,8 +487,8 @@ Mounted at /content/gdrive</code></pre>
 <li>If we call the first item from one of the <code>Datasets</code> it return a row of DataFrame twice, assuming that we have two things: input and target, which we will build later.</li>
 </ul>
 <div id="cell-20" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}}" data-outputid="2621210f-31f9-4358-bd09-c247be3f080b" data-execution_count="8">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>x, y <span class="op">=</span> dsets.train[<span class="dv">0</span>]</span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>x, y</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1"></a>x, y <span class="op">=</span> dsets.train[<span class="dv">0</span>]</span>
+<span id="cb10-2"><a href="#cb10-2"></a>x, y</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="8">
 <pre><code>(fname       008663.jpg
  labels      car person
@@ -503,7 +503,7 @@ Mounted at /content/gdrive</code></pre>
 <li>The dependent variable is the image name, and the independent variable is the label, so let’s grab them</li>
 </ul>
 <div id="cell-22" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}}" data-outputid="00a6b3ec-231f-47c9-c426-7f1a90d4c172" data-execution_count="9">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>x[<span class="st">'fname'</span>], x[<span class="st">'labels'</span>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1"></a>x[<span class="st">'fname'</span>], x[<span class="st">'labels'</span>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="9">
 <pre><code>('008663.jpg', 'car person')</code></pre>
 </div>
@@ -513,9 +513,9 @@ Mounted at /content/gdrive</code></pre>
 <li>We will use <code>get_x</code> and <code>get_y</code> functions</li>
 </ul>
 <div id="cell-24" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}}" data-outputid="7d179420-45c0-4424-b92b-84de37e2b550" data-execution_count="10">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>dblock <span class="op">=</span> DataBlock(get_x <span class="op">=</span> <span class="kw">lambda</span> r: r[<span class="st">'fname'</span>], get_y <span class="op">=</span> <span class="kw">lambda</span> r: r[<span class="st">'labels'</span>])</span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>dsets <span class="op">=</span> dblock.datasets(df)</span>
-<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>dsets.train[<span class="dv">0</span>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1"></a>dblock <span class="op">=</span> DataBlock(get_x <span class="op">=</span> <span class="kw">lambda</span> r: r[<span class="st">'fname'</span>], get_y <span class="op">=</span> <span class="kw">lambda</span> r: r[<span class="st">'labels'</span>])</span>
+<span id="cb14-2"><a href="#cb14-2"></a>dsets <span class="op">=</span> dblock.datasets(df)</span>
+<span id="cb14-3"><a href="#cb14-3"></a>dsets.train[<span class="dv">0</span>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="10">
 <pre><code>('005620.jpg', 'aeroplane')</code></pre>
 </div>
@@ -524,20 +524,20 @@ Mounted at /content/gdrive</code></pre>
 <li>The problem with <code>lambdas</code> is cannot be saved when we create a learner, this is why it’s better to avoid them.</li>
 </ul>
 <div id="cell-26" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}}" data-outputid="320143c5-fbbb-48be-ead8-81b10df8300d" data-execution_count="11">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> get_x(r): <span class="cf">return</span> r[<span class="st">'fname'</span>]</span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> get_y(r): <span class="cf">return</span> r[<span class="st">'labels'</span>]</span>
-<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>dblock <span class="op">=</span>  DataBlock(get_x<span class="op">=</span> get_x, get_y<span class="op">=</span>get_y)</span>
-<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>dsets<span class="op">=</span> dblock.datasets(df)</span>
-<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>dsets.train[<span class="dv">0</span>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1"></a><span class="kw">def</span> get_x(r): <span class="cf">return</span> r[<span class="st">'fname'</span>]</span>
+<span id="cb16-2"><a href="#cb16-2"></a><span class="kw">def</span> get_y(r): <span class="cf">return</span> r[<span class="st">'labels'</span>]</span>
+<span id="cb16-3"><a href="#cb16-3"></a>dblock <span class="op">=</span>  DataBlock(get_x<span class="op">=</span> get_x, get_y<span class="op">=</span>get_y)</span>
+<span id="cb16-4"><a href="#cb16-4"></a>dsets<span class="op">=</span> dblock.datasets(df)</span>
+<span id="cb16-5"><a href="#cb16-5"></a>dsets.train[<span class="dv">0</span>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="11">
 <pre><code>('002549.jpg', 'tvmonitor')</code></pre>
 </div>
 </div>
 <div id="cell-27" class="cell" data-execution_count="12">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> PIL <span class="im">import</span> Image</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1"></a><span class="im">from</span> PIL <span class="im">import</span> Image</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div id="cell-28" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:392}}" data-outputid="2a0790cf-1448-47c0-a8df-e393c97bb236" data-execution_count="13">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>Image.<span class="bu">open</span>(path<span class="op">/</span><span class="st">'train'</span><span class="op">/</span><span class="st">'002549.jpg'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1"></a>Image.<span class="bu">open</span>(path<span class="op">/</span><span class="st">'train'</span><span class="op">/</span><span class="st">'002549.jpg'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="13">
 <div>
 <figure class="figure">
@@ -552,11 +552,11 @@ Mounted at /content/gdrive</code></pre>
 <li>Let’s recreate the datablock by adding this 2 things (path, split)</li>
 </ul>
 <div id="cell-30" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}}" data-outputid="71083f40-b5b1-462f-e624-a27194a30295" data-execution_count="14">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> get_x(r): <span class="cf">return</span> path<span class="op">/</span><span class="st">'train'</span><span class="op">/</span>r[<span class="st">'fname'</span>]</span>
-<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> get_y(r): <span class="cf">return</span> r[<span class="st">'labels'</span>].split(<span class="st">' '</span>)</span>
-<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>dblock <span class="op">=</span>  DataBlock(get_x<span class="op">=</span> get_x, get_y<span class="op">=</span>get_y)</span>
-<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>dsets<span class="op">=</span> dblock.datasets(df)</span>
-<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>dsets.train[<span class="dv">0</span>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1"></a><span class="kw">def</span> get_x(r): <span class="cf">return</span> path<span class="op">/</span><span class="st">'train'</span><span class="op">/</span>r[<span class="st">'fname'</span>]</span>
+<span id="cb20-2"><a href="#cb20-2"></a><span class="kw">def</span> get_y(r): <span class="cf">return</span> r[<span class="st">'labels'</span>].split(<span class="st">' '</span>)</span>
+<span id="cb20-3"><a href="#cb20-3"></a>dblock <span class="op">=</span>  DataBlock(get_x<span class="op">=</span> get_x, get_y<span class="op">=</span>get_y)</span>
+<span id="cb20-4"><a href="#cb20-4"></a>dsets<span class="op">=</span> dblock.datasets(df)</span>
+<span id="cb20-5"><a href="#cb20-5"></a>dsets.train[<span class="dv">0</span>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="14">
 <pre><code>(Path('/root/.fastai/data/pascal_2007/train/002844.jpg'), ['train'])</code></pre>
 </div>
@@ -570,18 +570,18 @@ Mounted at /content/gdrive</code></pre>
 </ul></li>
 </ul>
 <div id="cell-33" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}}" data-outputid="508df35c-c10c-4ae5-da50-18bfce4585f7" data-execution_count="16">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>dblock <span class="op">=</span> DataBlock(blocks<span class="op">=</span>(ImageBlock, MultiCategoryBlock),</span>
-<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>                   get_x<span class="op">=</span>get_x,</span>
-<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>                   get_y<span class="op">=</span>get_y)</span>
-<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>dsets<span class="op">=</span> dblock.datasets(df)</span>
-<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a>dsets.train[<span class="dv">0</span>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1"></a>dblock <span class="op">=</span> DataBlock(blocks<span class="op">=</span>(ImageBlock, MultiCategoryBlock),</span>
+<span id="cb22-2"><a href="#cb22-2"></a>                   get_x<span class="op">=</span>get_x,</span>
+<span id="cb22-3"><a href="#cb22-3"></a>                   get_y<span class="op">=</span>get_y)</span>
+<span id="cb22-4"><a href="#cb22-4"></a>dsets<span class="op">=</span> dblock.datasets(df)</span>
+<span id="cb22-5"><a href="#cb22-5"></a>dsets.train[<span class="dv">0</span>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="16">
 <pre><code>(PILImage mode=RGB size=500x375,
  TensorMultiCategory([0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 1., 0., 0., 0., 0., 0., 0., 0., 0.]))</code></pre>
 </div>
 </div>
 <div id="cell-34" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}}" data-outputid="a56873e6-fe2d-4711-a19d-517da794b5aa" data-execution_count="17">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>dsets.train[<span class="dv">0</span>][<span class="dv">1</span>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1"></a>dsets.train[<span class="dv">0</span>][<span class="dv">1</span>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="17">
 <pre><code>TensorMultiCategory([0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 1., 0., 0., 0., 0., 0., 0., 0., 0.])</code></pre>
 </div>
@@ -593,8 +593,8 @@ Mounted at /content/gdrive</code></pre>
 <li>Let’s see which category represent this particular image by using <code>toch.where</code></li>
 </ul>
 <div id="cell-36" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}}" data-outputid="d2585038-eb61-41b3-c5f3-099751430b44" data-execution_count="18">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>idxs <span class="op">=</span> torch.where(dsets.train[<span class="dv">77</span>][<span class="dv">1</span>]<span class="op">==</span><span class="fl">1.</span>)[<span class="dv">0</span>]</span>
-<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>dsets.train.vocab[idxs]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1"></a>idxs <span class="op">=</span> torch.where(dsets.train[<span class="dv">77</span>][<span class="dv">1</span>]<span class="op">==</span><span class="fl">1.</span>)[<span class="dv">0</span>]</span>
+<span id="cb26-2"><a href="#cb26-2"></a>dsets.train.vocab[idxs]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="18">
 <pre><code>(#2) ['person','sofa']</code></pre>
 </div>
@@ -603,7 +603,7 @@ Mounted at /content/gdrive</code></pre>
 <li>Till we use the randome splitter provided by default, instead of using the <code>is_valid</code> which can be used as splitter</li>
 </ul>
 <div id="cell-38" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}}" data-outputid="f5c395b1-b92a-4ebc-eaef-f0f37ea73efc" data-execution_count="19">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>df.is_valid</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb28"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1"></a>df.is_valid</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="19">
 <pre><code>0        True
 1        True
@@ -620,24 +620,24 @@ Name: is_valid, Length: 5011, dtype: bool</code></pre>
 </div>
 </div>
 <div id="cell-39" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}}" data-outputid="7f190d5d-5302-4be6-f311-553dd37e6cea" data-execution_count="20">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> splitter(df):</span>
-<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>    train <span class="op">=</span> df.index[<span class="op">~</span>df[<span class="st">'is_valid'</span>]].tolist()</span>
-<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a>    valid <span class="op">=</span> df.index[df[<span class="st">'is_valid'</span>]].tolist()</span>
-<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> train,valid</span>
-<span id="cb30-5"><a href="#cb30-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb30-6"><a href="#cb30-6" aria-hidden="true" tabindex="-1"></a>dblock <span class="op">=</span> DataBlock(blocks<span class="op">=</span>(ImageBlock, MultiCategoryBlock),</span>
-<span id="cb30-7"><a href="#cb30-7" aria-hidden="true" tabindex="-1"></a>                   splitter<span class="op">=</span>splitter,</span>
-<span id="cb30-8"><a href="#cb30-8" aria-hidden="true" tabindex="-1"></a>                   get_x<span class="op">=</span>get_x,</span>
-<span id="cb30-9"><a href="#cb30-9" aria-hidden="true" tabindex="-1"></a>                   get_y<span class="op">=</span>get_y)</span>
-<span id="cb30-10"><a href="#cb30-10" aria-hidden="true" tabindex="-1"></a>dsets <span class="op">=</span> dblock.datasets(df)</span>
-<span id="cb30-11"><a href="#cb30-11" aria-hidden="true" tabindex="-1"></a>dsets.train[<span class="dv">0</span>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb30"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1"></a><span class="kw">def</span> splitter(df):</span>
+<span id="cb30-2"><a href="#cb30-2"></a>    train <span class="op">=</span> df.index[<span class="op">~</span>df[<span class="st">'is_valid'</span>]].tolist()</span>
+<span id="cb30-3"><a href="#cb30-3"></a>    valid <span class="op">=</span> df.index[df[<span class="st">'is_valid'</span>]].tolist()</span>
+<span id="cb30-4"><a href="#cb30-4"></a>    <span class="cf">return</span> train,valid</span>
+<span id="cb30-5"><a href="#cb30-5"></a></span>
+<span id="cb30-6"><a href="#cb30-6"></a>dblock <span class="op">=</span> DataBlock(blocks<span class="op">=</span>(ImageBlock, MultiCategoryBlock),</span>
+<span id="cb30-7"><a href="#cb30-7"></a>                   splitter<span class="op">=</span>splitter,</span>
+<span id="cb30-8"><a href="#cb30-8"></a>                   get_x<span class="op">=</span>get_x,</span>
+<span id="cb30-9"><a href="#cb30-9"></a>                   get_y<span class="op">=</span>get_y)</span>
+<span id="cb30-10"><a href="#cb30-10"></a>dsets <span class="op">=</span> dblock.datasets(df)</span>
+<span id="cb30-11"><a href="#cb30-11"></a>dsets.train[<span class="dv">0</span>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="20">
 <pre><code>(PILImage mode=RGB size=500x333,
  TensorMultiCategory([0., 0., 0., 0., 0., 0., 1., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.]))</code></pre>
 </div>
 </div>
 <div id="cell-40" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}}" data-outputid="e5dc16c7-6f96-428b-93e6-024d2aeaf06d" data-execution_count="21">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb32"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="bu">len</span>(dsets.train), <span class="bu">len</span>(dsets.valid)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb32"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1"></a><span class="bu">len</span>(dsets.train), <span class="bu">len</span>(dsets.valid)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="21">
 <pre><code>(2501, 2510)</code></pre>
 </div>
@@ -646,15 +646,15 @@ Name: is_valid, Length: 5011, dtype: bool</code></pre>
 <li>One last we have to do before creating our dataloaders, is to make sure that all images are the same size by using <code>RandomResizeCrop</code></li>
 </ul>
 <div id="cell-42" class="cell" data-execution_count="22">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb34"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>dblock <span class="op">=</span> DataBlock(blocks<span class="op">=</span>(ImageBlock, MultiCategoryBlock),</span>
-<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>                   splitter<span class="op">=</span>splitter,</span>
-<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a>                   get_x<span class="op">=</span>get_x, </span>
-<span id="cb34-4"><a href="#cb34-4" aria-hidden="true" tabindex="-1"></a>                   get_y<span class="op">=</span>get_y,</span>
-<span id="cb34-5"><a href="#cb34-5" aria-hidden="true" tabindex="-1"></a>                   item_tfms <span class="op">=</span> RandomResizedCrop(<span class="dv">128</span>, min_scale<span class="op">=</span><span class="fl">0.35</span>))</span>
-<span id="cb34-6"><a href="#cb34-6" aria-hidden="true" tabindex="-1"></a>dls <span class="op">=</span> dblock.dataloaders(df)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb34"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1"></a>dblock <span class="op">=</span> DataBlock(blocks<span class="op">=</span>(ImageBlock, MultiCategoryBlock),</span>
+<span id="cb34-2"><a href="#cb34-2"></a>                   splitter<span class="op">=</span>splitter,</span>
+<span id="cb34-3"><a href="#cb34-3"></a>                   get_x<span class="op">=</span>get_x, </span>
+<span id="cb34-4"><a href="#cb34-4"></a>                   get_y<span class="op">=</span>get_y,</span>
+<span id="cb34-5"><a href="#cb34-5"></a>                   item_tfms <span class="op">=</span> RandomResizedCrop(<span class="dv">128</span>, min_scale<span class="op">=</span><span class="fl">0.35</span>))</span>
+<span id="cb34-6"><a href="#cb34-6"></a>dls <span class="op">=</span> dblock.dataloaders(df)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div id="cell-43" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:371}}" data-outputid="e211a565-386b-4030-8a2f-9c80aee3f307" data-execution_count="23">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb35"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>dls.show_batch(nrows<span class="op">=</span><span class="dv">2</span>, ncols<span class="op">=</span><span class="dv">4</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb35"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1"></a>dls.show_batch(nrows<span class="op">=</span><span class="dv">2</span>, ncols<span class="op">=</span><span class="dv">4</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
@@ -676,7 +676,7 @@ Name: is_valid, Length: 5011, dtype: bool</code></pre>
 </ul></li>
 </ul>
 <div id="cell-46" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:156,&quot;referenced_widgets&quot;:[&quot;94e62ffe55f44d6794d50dc1c39f004d&quot;,&quot;1b5331c098ca464596b072be2314e2e2&quot;,&quot;5db1d82c53374915a9117fc68575d775&quot;,&quot;97224850f9de4632af5347c504e40c77&quot;,&quot;3f093962b3c343889c535ac96bc736f0&quot;,&quot;90eb51cba1bb4028b7f366f91a7c2350&quot;,&quot;113568ff10364084abb8514d71650201&quot;,&quot;b32befbe2f474718973f015171947613&quot;,&quot;1e9358b589604d91ae84512d7395e625&quot;,&quot;6ce2649d8b2a463d89dab4d321eac9e7&quot;,&quot;17c8c272dcee44ffb123de319c417301&quot;]}}" data-outputid="01bcf380-4caf-47fd-8db8-37f844f8ac82" data-execution_count="24">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb36"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>learn <span class="op">=</span> vision_learner(dls, resnet18)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb36"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1"></a>learn <span class="op">=</span> vision_learner(dls, resnet18)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>/usr/local/lib/python3.7/dist-packages/torchvision/models/_utils.py:209: UserWarning: The parameter 'pretrained' is deprecated since 0.13 and will be removed in 0.15, please use 'weights' instead.
   f"The parameter '{pretrained_param}' is deprecated since 0.13 and will be removed in 0.15, "
@@ -694,15 +694,15 @@ Downloading: "https://download.pytorch.org/models/resnet18-f37072fd.pth" to /roo
 <li>Now we bring one batch and deconstruct it with <code>x</code> and <code>y</code>, then call the model as function by passing the independent variable as parameter, which will return activations.</li>
 </ul>
 <div id="cell-48" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}}" data-outputid="a0fa979c-8dd2-46a6-9e49-b6ce1bffd010" data-execution_count="25">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb38"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>x, y<span class="op">=</span> to_cpu(dls.train.one_batch())</span>
-<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a>activs<span class="op">=</span> learn.model(x)</span>
-<span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a>activs.shape</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb38"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1"></a>x, y<span class="op">=</span> to_cpu(dls.train.one_batch())</span>
+<span id="cb38-2"><a href="#cb38-2"></a>activs<span class="op">=</span> learn.model(x)</span>
+<span id="cb38-3"><a href="#cb38-3"></a>activs.shape</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="25">
 <pre><code>torch.Size([64, 20])</code></pre>
 </div>
 </div>
 <div id="cell-49" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}}" data-outputid="6ac29fbf-0509-480f-921b-7c222d1b09ea" data-execution_count="26">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb40"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a>activs[<span class="dv">2</span>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb40"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb40-1"><a href="#cb40-1"></a>activs[<span class="dv">2</span>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="26">
 <pre><code>TensorBase([ 2.1179, -0.0294,  0.7001, -0.3637,  0.9945,  3.5996, -3.0180,  1.5298,  0.8906, -0.3150,  0.7787,  0.9151,  3.0681, -4.6584,  1.9598, -0.6030, -1.8170,  2.2310,  1.1888, -0.0595],
            grad_fn=&lt;AliasBackward0&gt;)</code></pre>
@@ -713,9 +713,9 @@ Downloading: "https://download.pytorch.org/models/resnet18-f37072fd.pth" to /roo
 <li>The loss we will use here is similar to the one we used in mnist dataset: <code>mnist_loss</code>, the only different is we will add <code>log()</code>.</li>
 </ul>
 <div id="cell-51" class="cell" data-execution_count="27">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb42"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> binary_cross_entropy(inputs, targets):</span>
-<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a>    inputs <span class="op">=</span> inputs.sigmoid()</span>
-<span id="cb42-3"><a href="#cb42-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="op">-</span>torch.where(targets<span class="op">==</span><span class="dv">1</span>, <span class="dv">1</span><span class="op">-</span>inputs, inputs).log().mean()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb42"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb42-1"><a href="#cb42-1"></a><span class="kw">def</span> binary_cross_entropy(inputs, targets):</span>
+<span id="cb42-2"><a href="#cb42-2"></a>    inputs <span class="op">=</span> inputs.sigmoid()</span>
+<span id="cb42-3"><a href="#cb42-3"></a>    <span class="cf">return</span> <span class="op">-</span>torch.where(targets<span class="op">==</span><span class="dv">1</span>, <span class="dv">1</span><span class="op">-</span>inputs, inputs).log().mean()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <ul>
 <li>Because we have a one-hot-encoded dependent variable, we can’t use <code>nll_loss</code> or <code>softmax</code>.</li>
@@ -731,9 +731,9 @@ Downloading: "https://download.pytorch.org/models/resnet18-f37072fd.pth" to /roo
 <li>So the equivalent built-in function to our <code>binary_cross_entropy</code> is <strong><code>nn.BCEWithLogitsLoss</code></strong></li>
 </ul>
 <div id="cell-54" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}}" data-outputid="f29c4682-dde0-4511-c953-a6759142796e" data-execution_count="28">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb43"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a>loss_func <span class="op">=</span> nn.BCEWithLogitsLoss()</span>
-<span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a>loss <span class="op">=</span> loss_func(activs, y)</span>
-<span id="cb43-3"><a href="#cb43-3" aria-hidden="true" tabindex="-1"></a>loss</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb43"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb43-1"><a href="#cb43-1"></a>loss_func <span class="op">=</span> nn.BCEWithLogitsLoss()</span>
+<span id="cb43-2"><a href="#cb43-2"></a>loss <span class="op">=</span> loss_func(activs, y)</span>
+<span id="cb43-3"><a href="#cb43-3"></a>loss</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="28">
 <pre><code>TensorMultiCategory(1.0342, grad_fn=&lt;AliasBackward0&gt;)</code></pre>
 </div>
@@ -745,26 +745,26 @@ Downloading: "https://download.pytorch.org/models/resnet18-f37072fd.pth" to /roo
 <li><p>After we apply sigmoid to our activations, we need decide which are 1 and which are 0, the best way is to create some threshold, all values above it are 1’s, else == 0.</p></li>
 </ul>
 <div id="cell-56" class="cell" data-execution_count="29">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb45"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> accuracy_multi(inp, trg, thresh<span class="op">=</span><span class="fl">0.5</span>, sigmoid<span class="op">=</span><span class="va">True</span>):</span>
-<span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> sigmoid: inp <span class="op">=</span> inp.sigmoid()</span>
-<span id="cb45-3"><a href="#cb45-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> ((inp<span class="op">&gt;</span>thresh)<span class="op">==</span>trg.<span class="bu">bool</span>()).<span class="bu">float</span>().mean()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb45"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb45-1"><a href="#cb45-1"></a><span class="kw">def</span> accuracy_multi(inp, trg, thresh<span class="op">=</span><span class="fl">0.5</span>, sigmoid<span class="op">=</span><span class="va">True</span>):</span>
+<span id="cb45-2"><a href="#cb45-2"></a>    <span class="cf">if</span> sigmoid: inp <span class="op">=</span> inp.sigmoid()</span>
+<span id="cb45-3"><a href="#cb45-3"></a>    <span class="cf">return</span> ((inp<span class="op">&gt;</span>thresh)<span class="op">==</span>trg.<span class="bu">bool</span>()).<span class="bu">float</span>().mean()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <ul>
 <li>This function use the default threshold value, if we want to adjust this value within the same function, we will use a function in Python called <code>partial</code></li>
 <li>It allows us to <em>bind</em> a function with some arguments or keyword arguments, making a new version of that function that, whenever it is called, always includes those arguments</li>
 </ul>
 <div id="cell-58" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}}" data-outputid="de3ffb4f-4877-4cce-e3c1-1b8f4e55ca12" data-execution_count="30">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb46"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="co"># partial function</span></span>
-<span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> say_hello(name, say_what<span class="op">=</span><span class="st">'hello'</span>): <span class="cf">return</span> <span class="ss">f'</span><span class="sc">{</span>say_what<span class="sc">}</span><span class="ss"> </span><span class="sc">{</span>name<span class="sc">}</span><span class="ss">'</span></span>
-<span id="cb46-3"><a href="#cb46-3" aria-hidden="true" tabindex="-1"></a>say_hello(<span class="st">'Ismail'</span>), say_hello(<span class="st">'Ismail'</span>, <span class="st">'hola'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb46"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb46-1"><a href="#cb46-1"></a><span class="co"># partial function</span></span>
+<span id="cb46-2"><a href="#cb46-2"></a><span class="kw">def</span> say_hello(name, say_what<span class="op">=</span><span class="st">'hello'</span>): <span class="cf">return</span> <span class="ss">f'</span><span class="sc">{</span>say_what<span class="sc">}</span><span class="ss"> </span><span class="sc">{</span>name<span class="sc">}</span><span class="ss">'</span></span>
+<span id="cb46-3"><a href="#cb46-3"></a>say_hello(<span class="st">'Ismail'</span>), say_hello(<span class="st">'Ismail'</span>, <span class="st">'hola'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="30">
 <pre><code>('hello Ismail', 'hola Ismail')</code></pre>
 </div>
 </div>
 <div id="cell-59" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}}" data-outputid="a1bfe539-7fa1-46e9-bb94-c1eb7379b531" data-execution_count="31">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb48"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="co"># we can switch to another version of this function by calling partial</span></span>
-<span id="cb48-2"><a href="#cb48-2" aria-hidden="true" tabindex="-1"></a>f <span class="op">=</span> partial(say_hello, say_what<span class="op">=</span><span class="st">'Guten Tag'</span>)</span>
-<span id="cb48-3"><a href="#cb48-3" aria-hidden="true" tabindex="-1"></a>f(<span class="st">'Salim'</span>), f(<span class="st">'Karim!'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb48"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb48-1"><a href="#cb48-1"></a><span class="co"># we can switch to another version of this function by calling partial</span></span>
+<span id="cb48-2"><a href="#cb48-2"></a>f <span class="op">=</span> partial(say_hello, say_what<span class="op">=</span><span class="st">'Guten Tag'</span>)</span>
+<span id="cb48-3"><a href="#cb48-3"></a>f(<span class="st">'Salim'</span>), f(<span class="st">'Karim!'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="31">
 <pre><code>('Guten Tag Salim', 'Guten Tag Karim!')</code></pre>
 </div>
@@ -773,8 +773,8 @@ Downloading: "https://download.pytorch.org/models/resnet18-f37072fd.pth" to /roo
 <li>Now we can train our model as usual, we pick here <code>0.2</code> as threshold</li>
 </ul>
 <div id="cell-61" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:405,&quot;referenced_widgets&quot;:[&quot;11776f3cb9bb4a29ad84810253210584&quot;,&quot;05c5561ea1b8492991dc03e0d85a70f5&quot;,&quot;469976e705cd45059ad97eefd8665e2c&quot;,&quot;c88f5b42b6194da2b3a330a048278ded&quot;,&quot;59a5254a7e9d4014b182696ccb234009&quot;,&quot;cdc2d65407dd4489b9a0f7e994cfc70f&quot;,&quot;f693aa53c0074d1fbb67add5fa9933fb&quot;,&quot;30d5d8feb4144931a0fe47b077462af3&quot;,&quot;b6b83df0139d440f8302a3d0cc5030aa&quot;,&quot;b36e1d0b2056419796710b728c4fa6b9&quot;,&quot;d4eac0ed413942f99e41f7b9d0432002&quot;]}}" data-outputid="9e79b1c6-1c94-45d5-a429-9ca5fd8c13b8" data-execution_count="32">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb50"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a>learn <span class="op">=</span>  vision_learner(dls, resnet50, metrics<span class="op">=</span>partial(accuracy_multi, thresh<span class="op">=</span><span class="fl">0.2</span>))</span>
-<span id="cb50-2"><a href="#cb50-2" aria-hidden="true" tabindex="-1"></a>learn.fine_tune(<span class="dv">3</span>, base_lr<span class="op">=</span> <span class="fl">3e-3</span>, freeze_epochs<span class="op">=</span><span class="dv">4</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb50"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb50-1"><a href="#cb50-1"></a>learn <span class="op">=</span>  vision_learner(dls, resnet50, metrics<span class="op">=</span>partial(accuracy_multi, thresh<span class="op">=</span><span class="fl">0.2</span>))</span>
+<span id="cb50-2"><a href="#cb50-2"></a>learn.fine_tune(<span class="dv">3</span>, base_lr<span class="op">=</span> <span class="fl">3e-3</span>, freeze_epochs<span class="op">=</span><span class="dv">4</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>/usr/local/lib/python3.7/dist-packages/torchvision/models/_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and will be removed in 0.15. The current behavior is equivalent to passing `weights=ResNet50_Weights.IMAGENET1K_V1`. You can also use `weights=ResNet50_Weights.DEFAULT` to get the most up-to-date weights.
   warnings.warn(msg)
@@ -906,7 +906,7 @@ Downloading: "https://download.pytorch.org/models/resnet50-0676ba61.pth" to /roo
 <li>We will grab all predictions and target using <code>get_preds</code>, then we will try few values for the <code>thresh</code> and see what get us the highest value.</li>
 </ul>
 <div id="cell-63" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:17}}" data-outputid="ef472756-a0cd-4aa5-d7a0-2170b8b218de" data-execution_count="33">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb52"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a>preds, targs<span class="op">=</span> learn.get_preds()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb52"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb52-1"><a href="#cb52-1"></a>preds, targs<span class="op">=</span> learn.get_preds()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 
 <style>
@@ -933,9 +933,9 @@ Downloading: "https://download.pytorch.org/models/resnet50-0676ba61.pth" to /roo
 <li>The we can call the metrics directly, we just need to deactivate the sigmoid since it already apllied by default by <code>get_preds</code> on activations.</li>
 </ul>
 <div id="cell-65" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:285}}" data-outputid="f02decf4-ad64-4a94-93e3-9642efdac565" data-execution_count="34">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb53"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a>xs <span class="op">=</span> torch.linspace(<span class="fl">0.05</span>, <span class="fl">0.95</span>, <span class="dv">29</span>)</span>
-<span id="cb53-2"><a href="#cb53-2" aria-hidden="true" tabindex="-1"></a>accs <span class="op">=</span> [accuracy_multi(preds, targs, thresh<span class="op">=</span>i, sigmoid<span class="op">=</span><span class="va">False</span>) <span class="cf">for</span> i <span class="kw">in</span> xs]</span>
-<span id="cb53-3"><a href="#cb53-3" aria-hidden="true" tabindex="-1"></a>plt.plot(xs, accs)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb53"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb53-1"><a href="#cb53-1"></a>xs <span class="op">=</span> torch.linspace(<span class="fl">0.05</span>, <span class="fl">0.95</span>, <span class="dv">29</span>)</span>
+<span id="cb53-2"><a href="#cb53-2"></a>accs <span class="op">=</span> [accuracy_multi(preds, targs, thresh<span class="op">=</span>i, sigmoid<span class="op">=</span><span class="va">False</span>) <span class="cf">for</span> i <span class="kw">in</span> xs]</span>
+<span id="cb53-3"><a href="#cb53-3"></a>plt.plot(xs, accs)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
@@ -969,7 +969,7 @@ Downloading: "https://download.pytorch.org/models/resnet50-0676ba61.pth" to /roo
 <li>We will use the <a href="https://icu.ee.ethz.ch/research/datsets.html">Biwi Kinect Head Pose dataset</a> for this section. We’ll begin by downloading the dataset as usual:</li>
 </ul>
 <div id="cell-71" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:37}}" data-outputid="fbb93fae-abf9-4d21-dcae-d0e71f15bb38" data-execution_count="35">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb54"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a>path <span class="op">=</span> untar_data(URLs.BIWI_HEAD_POSE)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb54"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb54-1"><a href="#cb54-1"></a>path <span class="op">=</span> untar_data(URLs.BIWI_HEAD_POSE)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 
 <style>
@@ -998,10 +998,10 @@ Downloading: "https://download.pytorch.org/models/resnet50-0676ba61.pth" to /roo
 </div>
 </div>
 <div id="cell-72" class="cell" data-execution_count="36">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb55"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb55-1"><a href="#cb55-1" aria-hidden="true" tabindex="-1"></a>Path.BASE_PATH <span class="op">=</span> path</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb55"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb55-1"><a href="#cb55-1"></a>Path.BASE_PATH <span class="op">=</span> path</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div id="cell-73" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}}" data-outputid="d8069ff6-ce94-44ba-e9d5-a1414e51bd4c" data-execution_count="37">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb56"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb56-1"><a href="#cb56-1" aria-hidden="true" tabindex="-1"></a>path.ls().<span class="bu">sorted</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb56"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb56-1"><a href="#cb56-1"></a>path.ls().<span class="bu">sorted</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="37">
 <pre><code>(#50) [Path('01'),Path('01.obj'),Path('02'),Path('02.obj'),Path('03'),Path('03.obj'),Path('04'),Path('04.obj'),Path('05'),Path('05.obj')...]</code></pre>
 </div>
@@ -1010,7 +1010,7 @@ Downloading: "https://download.pytorch.org/models/resnet50-0676ba61.pth" to /roo
 <li>There are 24 directories numbered from 01 to 24 (they correspond to the different people photographed), and a corresponding <em>.obj</em> file for each (we won’t need them here). Let’s take a look inside one of these directories:</li>
 </ul>
 <div id="cell-75" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}}" data-outputid="fa1b7706-39f1-4b8c-97e4-8dcd90892a9a" data-execution_count="38">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb58"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a>(path<span class="op">/</span><span class="st">'01'</span>).ls().<span class="bu">sorted</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb58"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb58-1"><a href="#cb58-1"></a>(path<span class="op">/</span><span class="st">'01'</span>).ls().<span class="bu">sorted</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="38">
 <pre><code>(#1000) [Path('01/depth.cal'),Path('01/frame_00003_pose.txt'),Path('01/frame_00003_rgb.jpg'),Path('01/frame_00004_pose.txt'),Path('01/frame_00004_rgb.jpg'),Path('01/frame_00005_pose.txt'),Path('01/frame_00005_rgb.jpg'),Path('01/frame_00006_pose.txt'),Path('01/frame_00006_rgb.jpg'),Path('01/frame_00007_pose.txt')...]</code></pre>
 </div>
@@ -1019,22 +1019,22 @@ Downloading: "https://download.pytorch.org/models/resnet50-0676ba61.pth" to /roo
 <li>Inside the subdirectories, we have different frames, each of them come with an image (<em>_rgb.jpg</em>) and a pose file (<em>_pose.txt</em>). We can easily get all the image files recursively with <code>get_image_files</code>, then write a function that converts an image filename to its associated pose file:</li>
 </ul>
 <div id="cell-77" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}}" data-outputid="2cb78499-e254-4b17-ebcc-06805f92665b" data-execution_count="39">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb60"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb60-1"><a href="#cb60-1" aria-hidden="true" tabindex="-1"></a>img_files <span class="op">=</span> get_image_files(path)</span>
-<span id="cb60-2"><a href="#cb60-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> img2pose(x): <span class="cf">return</span> Path(<span class="ss">f'</span><span class="sc">{</span><span class="bu">str</span>(x)[:<span class="op">-</span><span class="dv">7</span>]<span class="sc">}</span><span class="ss">pose.txt'</span>)</span>
-<span id="cb60-3"><a href="#cb60-3" aria-hidden="true" tabindex="-1"></a>img2pose(img_files[<span class="dv">0</span>])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb60"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb60-1"><a href="#cb60-1"></a>img_files <span class="op">=</span> get_image_files(path)</span>
+<span id="cb60-2"><a href="#cb60-2"></a><span class="kw">def</span> img2pose(x): <span class="cf">return</span> Path(<span class="ss">f'</span><span class="sc">{</span><span class="bu">str</span>(x)[:<span class="op">-</span><span class="dv">7</span>]<span class="sc">}</span><span class="ss">pose.txt'</span>)</span>
+<span id="cb60-3"><a href="#cb60-3"></a>img2pose(img_files[<span class="dv">0</span>])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="39">
 <pre><code>Path('20/frame_00388_pose.txt')</code></pre>
 </div>
 </div>
 <div id="cell-78" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}}" data-outputid="68f8832a-12bc-4970-a79a-fc7fbd7bb30f" data-execution_count="40">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb62"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb62-1"><a href="#cb62-1" aria-hidden="true" tabindex="-1"></a>im <span class="op">=</span> PILImage.create(img_files[<span class="dv">0</span>])</span>
-<span id="cb62-2"><a href="#cb62-2" aria-hidden="true" tabindex="-1"></a>im.shape</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb62"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb62-1"><a href="#cb62-1"></a>im <span class="op">=</span> PILImage.create(img_files[<span class="dv">0</span>])</span>
+<span id="cb62-2"><a href="#cb62-2"></a>im.shape</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="40">
 <pre><code>(480, 640)</code></pre>
 </div>
 </div>
 <div id="cell-79" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:205}}" data-outputid="cf5fde6b-8357-481f-fe3f-7f736dfb46cd" data-execution_count="41">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb64"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb64-1"><a href="#cb64-1" aria-hidden="true" tabindex="-1"></a>im.to_thumb(<span class="dv">250</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb64"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb64-1"><a href="#cb64-1"></a>im.to_thumb(<span class="dv">250</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="41">
 <div>
 <figure class="figure">
@@ -1047,18 +1047,18 @@ Downloading: "https://download.pytorch.org/models/resnet50-0676ba61.pth" to /roo
 <li>The Biwi dataset website used to explain the format of the pose text file associated with each image, which shows the location of the center of the head. The details of this aren’t important for our purposes, so we’ll just show the function we use to extract the head center point:</li>
 </ul>
 <div id="cell-81" class="cell" data-execution_count="42">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb65"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb65-1"><a href="#cb65-1" aria-hidden="true" tabindex="-1"></a>cal <span class="op">=</span> np.genfromtxt(path<span class="op">/</span><span class="st">'01'</span><span class="op">/</span><span class="st">'rgb.cal'</span>, skip_footer<span class="op">=</span><span class="dv">6</span>)</span>
-<span id="cb65-2"><a href="#cb65-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> get_ctr(f):</span>
-<span id="cb65-3"><a href="#cb65-3" aria-hidden="true" tabindex="-1"></a>    ctr <span class="op">=</span> np.genfromtxt(img2pose(f), skip_header<span class="op">=</span><span class="dv">3</span>)</span>
-<span id="cb65-4"><a href="#cb65-4" aria-hidden="true" tabindex="-1"></a>    c1 <span class="op">=</span> ctr[<span class="dv">0</span>] <span class="op">*</span> cal[<span class="dv">0</span>][<span class="dv">0</span>]<span class="op">/</span>ctr[<span class="dv">2</span>] <span class="op">+</span> cal[<span class="dv">0</span>][<span class="dv">2</span>]</span>
-<span id="cb65-5"><a href="#cb65-5" aria-hidden="true" tabindex="-1"></a>    c2 <span class="op">=</span> ctr[<span class="dv">1</span>] <span class="op">*</span> cal[<span class="dv">1</span>][<span class="dv">1</span>]<span class="op">/</span>ctr[<span class="dv">2</span>] <span class="op">+</span> cal[<span class="dv">1</span>][<span class="dv">2</span>]</span>
-<span id="cb65-6"><a href="#cb65-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> tensor([c1,c2])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb65"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb65-1"><a href="#cb65-1"></a>cal <span class="op">=</span> np.genfromtxt(path<span class="op">/</span><span class="st">'01'</span><span class="op">/</span><span class="st">'rgb.cal'</span>, skip_footer<span class="op">=</span><span class="dv">6</span>)</span>
+<span id="cb65-2"><a href="#cb65-2"></a><span class="kw">def</span> get_ctr(f):</span>
+<span id="cb65-3"><a href="#cb65-3"></a>    ctr <span class="op">=</span> np.genfromtxt(img2pose(f), skip_header<span class="op">=</span><span class="dv">3</span>)</span>
+<span id="cb65-4"><a href="#cb65-4"></a>    c1 <span class="op">=</span> ctr[<span class="dv">0</span>] <span class="op">*</span> cal[<span class="dv">0</span>][<span class="dv">0</span>]<span class="op">/</span>ctr[<span class="dv">2</span>] <span class="op">+</span> cal[<span class="dv">0</span>][<span class="dv">2</span>]</span>
+<span id="cb65-5"><a href="#cb65-5"></a>    c2 <span class="op">=</span> ctr[<span class="dv">1</span>] <span class="op">*</span> cal[<span class="dv">1</span>][<span class="dv">1</span>]<span class="op">/</span>ctr[<span class="dv">2</span>] <span class="op">+</span> cal[<span class="dv">1</span>][<span class="dv">2</span>]</span>
+<span id="cb65-6"><a href="#cb65-6"></a>    <span class="cf">return</span> tensor([c1,c2])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <ul>
 <li>This function return the coordinate of the center of the head of each image, so we can pass it as the <code>get_y</code> to DataBlock since it represent the independent variable for each image</li>
 </ul>
 <div id="cell-83" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}}" data-outputid="f46eec1d-add9-4b9e-e8ef-9315c02a2f10" data-execution_count="43">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb66"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb66-1"><a href="#cb66-1" aria-hidden="true" tabindex="-1"></a>get_ctr(img_files[<span class="dv">0</span>])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb66"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb66-1"><a href="#cb66-1"></a>get_ctr(img_files[<span class="dv">0</span>])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="43">
 <pre><code>tensor([343.6303, 276.7759])</code></pre>
 </div>
@@ -1068,12 +1068,12 @@ Downloading: "https://download.pytorch.org/models/resnet50-0676ba61.pth" to /roo
 <li>Instead what we do in this case, is to take all images that belong to one person, and define them as validation set.</li>
 </ul>
 <div id="cell-85" class="cell" data-execution_count="44">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb68"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb68-1"><a href="#cb68-1" aria-hidden="true" tabindex="-1"></a>biwi <span class="op">=</span> DataBlock(</span>
-<span id="cb68-2"><a href="#cb68-2" aria-hidden="true" tabindex="-1"></a>    blocks<span class="op">=</span>(ImageBlock, PointBlock),</span>
-<span id="cb68-3"><a href="#cb68-3" aria-hidden="true" tabindex="-1"></a>    get_items<span class="op">=</span>get_image_files,</span>
-<span id="cb68-4"><a href="#cb68-4" aria-hidden="true" tabindex="-1"></a>    get_y<span class="op">=</span>get_ctr,</span>
-<span id="cb68-5"><a href="#cb68-5" aria-hidden="true" tabindex="-1"></a>    splitter<span class="op">=</span>FuncSplitter(<span class="kw">lambda</span> o: o.parent.name<span class="op">==</span><span class="st">'13'</span>),</span>
-<span id="cb68-6"><a href="#cb68-6" aria-hidden="true" tabindex="-1"></a>    batch_tfms<span class="op">=</span>aug_transforms(size<span class="op">=</span>(<span class="dv">240</span>,<span class="dv">320</span>)))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb68"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb68-1"><a href="#cb68-1"></a>biwi <span class="op">=</span> DataBlock(</span>
+<span id="cb68-2"><a href="#cb68-2"></a>    blocks<span class="op">=</span>(ImageBlock, PointBlock),</span>
+<span id="cb68-3"><a href="#cb68-3"></a>    get_items<span class="op">=</span>get_image_files,</span>
+<span id="cb68-4"><a href="#cb68-4"></a>    get_y<span class="op">=</span>get_ctr,</span>
+<span id="cb68-5"><a href="#cb68-5"></a>    splitter<span class="op">=</span>FuncSplitter(<span class="kw">lambda</span> o: o.parent.name<span class="op">==</span><span class="st">'13'</span>),</span>
+<span id="cb68-6"><a href="#cb68-6"></a>    batch_tfms<span class="op">=</span>aug_transforms(size<span class="op">=</span>(<span class="dv">240</span>,<span class="dv">320</span>)))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <ul>
 <li><p>As we see here we use <code>PointBlock</code>, this is what fastai use to coordinate data (tensor with 2 values)</p></li>
@@ -1082,8 +1082,8 @@ Downloading: "https://download.pytorch.org/models/resnet50-0676ba61.pth" to /roo
 <li><p>Before doing any modeling, we should look at our data to confirm it seems okay:</p></li>
 </ul>
 <div id="cell-88" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:357}}" data-outputid="775949fe-9d18-4abb-bcb4-d64d6faaf025" data-execution_count="45">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb69"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb69-1"><a href="#cb69-1" aria-hidden="true" tabindex="-1"></a>dls <span class="op">=</span> biwi.dataloaders(path)</span>
-<span id="cb69-2"><a href="#cb69-2" aria-hidden="true" tabindex="-1"></a>dls.show_batch(max_n<span class="op">=</span><span class="dv">9</span>, figsize<span class="op">=</span>(<span class="dv">8</span>,<span class="dv">6</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb69"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb69-1"><a href="#cb69-1"></a>dls <span class="op">=</span> biwi.dataloaders(path)</span>
+<span id="cb69-2"><a href="#cb69-2"></a>dls.show_batch(max_n<span class="op">=</span><span class="dv">9</span>, figsize<span class="op">=</span>(<span class="dv">8</span>,<span class="dv">6</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
@@ -1093,8 +1093,8 @@ Downloading: "https://download.pytorch.org/models/resnet50-0676ba61.pth" to /roo
 </div>
 </div>
 <div id="cell-89" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}}" data-outputid="8ea41137-d8f1-4e32-fdc5-ae7bef6d49e0" data-execution_count="46">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb70"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb70-1"><a href="#cb70-1" aria-hidden="true" tabindex="-1"></a>xb, yb<span class="op">=</span> dls.one_batch()</span>
-<span id="cb70-2"><a href="#cb70-2" aria-hidden="true" tabindex="-1"></a>xb.shape, yb.shape</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb70"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb70-1"><a href="#cb70-1"></a>xb, yb<span class="op">=</span> dls.one_batch()</span>
+<span id="cb70-2"><a href="#cb70-2"></a>xb.shape, yb.shape</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="46">
 <pre><code>(torch.Size([64, 3, 240, 320]), torch.Size([64, 1, 2]))</code></pre>
 </div>
@@ -1119,10 +1119,10 @@ Downloading: "https://download.pytorch.org/models/resnet50-0676ba61.pth" to /roo
 </ul></li>
 </ul>
 <div id="cell-93" class="cell" data-execution_count="47">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb72"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb72-1"><a href="#cb72-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> sigmoid_range(x, lo, hi): <span class="cf">return</span> torch.sigmoid(x) <span class="op">*</span> (hi<span class="op">-</span>lo) <span class="op">+</span> lo</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb72"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb72-1"><a href="#cb72-1"></a><span class="kw">def</span> sigmoid_range(x, lo, hi): <span class="cf">return</span> torch.sigmoid(x) <span class="op">*</span> (hi<span class="op">-</span>lo) <span class="op">+</span> lo</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div id="cell-94" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}}" data-outputid="cc302932-a594-4916-f291-5bae5b6a1d40" data-execution_count="48">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb73"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb73-1"><a href="#cb73-1" aria-hidden="true" tabindex="-1"></a>learn <span class="op">=</span> vision_learner(dls, resnet18, y_range<span class="op">=</span>(<span class="op">-</span><span class="dv">1</span>,<span class="dv">1</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb73"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb73-1"><a href="#cb73-1"></a>learn <span class="op">=</span> vision_learner(dls, resnet18, y_range<span class="op">=</span>(<span class="op">-</span><span class="dv">1</span>,<span class="dv">1</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>/usr/local/lib/python3.7/dist-packages/torchvision/models/_utils.py:209: UserWarning: The parameter 'pretrained' is deprecated since 0.13 and will be removed in 0.15, please use 'weights' instead.
   f"The parameter '{pretrained_param}' is deprecated since 0.13 and will be removed in 0.15, "
@@ -1135,7 +1135,7 @@ Downloading: "https://download.pytorch.org/models/resnet50-0676ba61.pth" to /roo
 <li><p>Note that we didn’t define the loss function, but we already know that fastai will pick the right loss function for us depend on the type of data/model</p></li>
 </ul>
 <div id="cell-97" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}}" data-outputid="ce69f566-c068-4780-879d-2bafff1b18ae" data-execution_count="49">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb75"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb75-1"><a href="#cb75-1" aria-hidden="true" tabindex="-1"></a>dls.loss_func</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb75"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb75-1"><a href="#cb75-1"></a>dls.loss_func</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="49">
 <pre><code>FlattenedLoss of MSELoss()</code></pre>
 </div>
@@ -1147,7 +1147,7 @@ Downloading: "https://download.pytorch.org/models/resnet50-0676ba61.pth" to /roo
 <li>Now we need to pick a <code>learning rate</code></li>
 </ul>
 <div id="cell-99" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:306}}" data-outputid="462ad42e-ea40-4137-dadb-4860c6da5ae4" data-execution_count="50">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb77"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb77-1"><a href="#cb77-1" aria-hidden="true" tabindex="-1"></a>learn.lr_find()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb77"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb77-1"><a href="#cb77-1"></a>learn.lr_find()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 
 <style>
@@ -1184,8 +1184,8 @@ Downloading: "https://download.pytorch.org/models/resnet50-0676ba61.pth" to /roo
 <li>Then we will try <code>0.002</code> as learning rate</li>
 </ul>
 <div id="cell-101" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:207}}" data-outputid="e4918d2d-47fa-4c41-be69-35b3280fe4b8" data-execution_count="51">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb79"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb79-1"><a href="#cb79-1" aria-hidden="true" tabindex="-1"></a>lr <span class="op">=</span> <span class="fl">0.002</span></span>
-<span id="cb79-2"><a href="#cb79-2" aria-hidden="true" tabindex="-1"></a>learn.fine_tune(<span class="dv">3</span>, lr)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb79"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb79-1"><a href="#cb79-1"></a>lr <span class="op">=</span> <span class="fl">0.002</span></span>
+<span id="cb79-2"><a href="#cb79-2"></a>learn.fine_tune(<span class="dv">3</span>, lr)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 
 <style>
@@ -1276,15 +1276,15 @@ Downloading: "https://download.pytorch.org/models/resnet50-0676ba61.pth" to /roo
 </div>
 </div>
 <div id="cell-102" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}}" data-outputid="5f7d8fb9-ddf9-48f6-8262-b9fef443acbc" data-execution_count="52">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb80"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb80-1"><a href="#cb80-1" aria-hidden="true" tabindex="-1"></a>loss <span class="op">=</span> (<span class="fl">0.005764</span><span class="op">+</span><span class="fl">0.001309</span><span class="op">+</span><span class="fl">0.000556</span><span class="op">+</span><span class="fl">0.000316</span>)<span class="op">/</span><span class="dv">4</span></span>
-<span id="cb80-2"><a href="#cb80-2" aria-hidden="true" tabindex="-1"></a>loss</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb80"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb80-1"><a href="#cb80-1"></a>loss <span class="op">=</span> (<span class="fl">0.005764</span><span class="op">+</span><span class="fl">0.001309</span><span class="op">+</span><span class="fl">0.000556</span><span class="op">+</span><span class="fl">0.000316</span>)<span class="op">/</span><span class="dv">4</span></span>
+<span id="cb80-2"><a href="#cb80-2"></a>loss</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="52">
 <pre><code>0.00198625</code></pre>
 </div>
 </div>
 <div id="cell-103" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}}" data-outputid="af31b9c0-d171-419d-e10c-7a96d415215d" data-execution_count="53">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb82"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb82-1"><a href="#cb82-1" aria-hidden="true" tabindex="-1"></a>metric_err_rate <span class="op">=</span> <span class="bu">round</span>(math.sqrt(<span class="fl">0.002</span>), <span class="dv">4</span>)</span>
-<span id="cb82-2"><a href="#cb82-2" aria-hidden="true" tabindex="-1"></a>metric_err_rate</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb82"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb82-1"><a href="#cb82-1"></a>metric_err_rate <span class="op">=</span> <span class="bu">round</span>(math.sqrt(<span class="fl">0.002</span>), <span class="dv">4</span>)</span>
+<span id="cb82-2"><a href="#cb82-2"></a>metric_err_rate</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="53">
 <pre><code>0.0447</code></pre>
 </div>
@@ -1293,7 +1293,7 @@ Downloading: "https://download.pytorch.org/models/resnet50-0676ba61.pth" to /roo
 <li>The accuracy of the model <code>96%</code> which is good. So by using a computer vision model and with transfer learning technics we manage to solve a regression problem with accuracy of 96%.</li>
 </ul>
 <div id="cell-105" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:516}}" data-outputid="bb71a4de-57c1-4dda-d435-2d87cf37e885" data-execution_count="54">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb84"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb84-1"><a href="#cb84-1" aria-hidden="true" tabindex="-1"></a>learn.show_results(ds_idx<span class="op">=</span><span class="dv">1</span>, nrows<span class="op">=</span><span class="dv">3</span>, figsize<span class="op">=</span>(<span class="dv">6</span>,<span class="dv">8</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb84"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb84-1"><a href="#cb84-1"></a>learn.show_results(ds_idx<span class="op">=</span><span class="dv">1</span>, nrows<span class="op">=</span><span class="dv">3</span>, figsize<span class="op">=</span>(<span class="dv">6</span>,<span class="dv">8</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 
 <style>
@@ -1403,6 +1403,57 @@ Downloading: "https://download.pytorch.org/models/resnet50-0676ba61.pth" to /roo
         container: window.document.getElementById('quarto-embedded-source-code-modal')
       });
       clipboardModal.on('success', onCopySuccess);
+    }
+    const viewSource = window.document.getElementById('quarto-view-source') ||
+                       window.document.getElementById('quarto-code-tools-source');
+    if (viewSource) {
+      const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
+      viewSource.addEventListener("click", function(e) {
+        if (sourceUrl) {
+          // rstudio viewer pane
+          if (/\bcapabilities=\b/.test(window.location)) {
+            window.open(sourceUrl);
+          } else {
+            window.location.href = sourceUrl;
+          }
+        } else {
+          const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
+          modal.show();
+        }
+        return false;
+      });
+    }
+    function toggleCodeHandler(show) {
+      return function(e) {
+        const detailsSrc = window.document.querySelectorAll(".cell > details > .sourceCode");
+        for (let i=0; i<detailsSrc.length; i++) {
+          const details = detailsSrc[i].parentElement;
+          if (show) {
+            details.open = true;
+          } else {
+            details.removeAttribute("open");
+          }
+        }
+        const cellCodeDivs = window.document.querySelectorAll(".cell > .sourceCode");
+        const fromCls = show ? "hidden" : "unhidden";
+        const toCls = show ? "unhidden" : "hidden";
+        for (let i=0; i<cellCodeDivs.length; i++) {
+          const codeDiv = cellCodeDivs[i];
+          if (codeDiv.classList.contains(fromCls)) {
+            codeDiv.classList.remove(fromCls);
+            codeDiv.classList.add(toCls);
+          } 
+        }
+        return false;
+      }
+    }
+    const hideAllCode = window.document.getElementById("quarto-hide-all-code");
+    if (hideAllCode) {
+      hideAllCode.addEventListener("click", toggleCodeHandler(false));
+    }
+    const showAllCode = window.document.getElementById("quarto-show-all-code");
+    if (showAllCode) {
+      showAllCode.addEventListener("click", toggleCodeHandler(true));
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);

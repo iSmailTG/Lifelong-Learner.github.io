@@ -74,10 +74,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-065a5179aebd64318d7ea99d77b64a9e.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-3a12b51ff0d0fb9893750dacdd7c721b.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-e784d42915133a20e7488e0f44bfbe89.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -224,8 +224,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>As we saw before <code>InMemoryDocumentStore</code> is an easy way for creating <code>DocumentStore</code> for simple prototyping.</li>
 </ul>
 <div id="cell-3" class="cell" data-execution_count="2">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> haystack.document_stores <span class="im">import</span> InMemoryDocumentStore</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>document_store <span class="op">=</span> InMemoryDocumentStore()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1"></a><span class="im">from</span> haystack.document_stores <span class="im">import</span> InMemoryDocumentStore</span>
+<span id="cb1-2"><a href="#cb1-2"></a>document_store <span class="op">=</span> InMemoryDocumentStore()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="create-a-retriever-using-embeddings" class="level1">
@@ -237,22 +237,22 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Then apply the same embeddings on the FAQs we will use as dataset</li>
 </ul>
 <div id="cell-5" class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> haystack.nodes <span class="im">import</span> EmbeddingRetriever</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>retriever <span class="op">=</span> EmbeddingRetriever(document_store <span class="op">=</span> document_store,</span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>                               embedding_model <span class="op">=</span> <span class="st">"sentence-transformers/all-MiniLM-L6-v2"</span>,</span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>                               use_gpu <span class="op">=</span> <span class="va">True</span>,</span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>                               scale_score <span class="op">=</span> <span class="va">False</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1"></a><span class="im">from</span> haystack.nodes <span class="im">import</span> EmbeddingRetriever</span>
+<span id="cb2-2"><a href="#cb2-2"></a></span>
+<span id="cb2-3"><a href="#cb2-3"></a>retriever <span class="op">=</span> EmbeddingRetriever(document_store <span class="op">=</span> document_store,</span>
+<span id="cb2-4"><a href="#cb2-4"></a>                               embedding_model <span class="op">=</span> <span class="st">"sentence-transformers/all-MiniLM-L6-v2"</span>,</span>
+<span id="cb2-5"><a href="#cb2-5"></a>                               use_gpu <span class="op">=</span> <span class="va">True</span>,</span>
+<span id="cb2-6"><a href="#cb2-6"></a>                               scale_score <span class="op">=</span> <span class="va">False</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <ul>
 <li>Download FAQs dataset</li>
 </ul>
 <div id="cell-7" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}}" data-outputid="7a34a8bf-982c-417f-eb0c-d1c5fc5c5998" data-execution_count="4">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># download</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> haystack.utils <span class="im">import</span> fetch_archive_from_http</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>doc_dir <span class="op">=</span> <span class="st">'data/tutorial'</span></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>urls <span class="op">=</span> <span class="st">'https://s3.eu-central-1.amazonaws.com/deepset.ai-farm-qa/datasets/documents/small_faq_covid.csv.zip'</span></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>fetch_archive_from_http(url <span class="op">=</span> urls, output_dir <span class="op">=</span> doc_dir)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1"></a><span class="co"># download</span></span>
+<span id="cb3-2"><a href="#cb3-2"></a><span class="im">from</span> haystack.utils <span class="im">import</span> fetch_archive_from_http</span>
+<span id="cb3-3"><a href="#cb3-3"></a>doc_dir <span class="op">=</span> <span class="st">'data/tutorial'</span></span>
+<span id="cb3-4"><a href="#cb3-4"></a>urls <span class="op">=</span> <span class="st">'https://s3.eu-central-1.amazonaws.com/deepset.ai-farm-qa/datasets/documents/small_faq_covid.csv.zip'</span></span>
+<span id="cb3-5"><a href="#cb3-5"></a>fetch_archive_from_http(url <span class="op">=</span> urls, output_dir <span class="op">=</span> doc_dir)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="4">
 <pre><code>True</code></pre>
 </div>
@@ -262,9 +262,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>First create the dataframe</li>
 </ul>
 <div id="cell-9" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:660}}" data-outputid="475e9cf3-c227-4789-db07-68d2f8a8ab56" data-execution_count="5">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_csv(<span class="ss">f'</span><span class="sc">{</span>doc_dir<span class="sc">}</span><span class="ss">/small_faq_covid.csv'</span>)</span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>df.head()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb5-2"><a href="#cb5-2"></a>df <span class="op">=</span> pd.read_csv(<span class="ss">f'</span><span class="sc">{</span>doc_dir<span class="sc">}</span><span class="ss">/small_faq_covid.csv'</span>)</span>
+<span id="cb5-3"><a href="#cb5-3"></a>df.head()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="5">
 <div id="df-7c46bc16-ddd5-43b6-b331-bbc2cc7a2a7a" class="colab-df-container">
     <div>
@@ -577,16 +577,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Since we download the data from internet we should clean it properly before use in kind of data processing</li>
 </ul>
 <div id="cell-11" class="cell" data-execution_count="6">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>df.fillna(value<span class="op">=</span><span class="st">''</span>, inplace<span class="op">=</span> <span class="va">True</span>)</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>df[<span class="st">"question"</span>] <span class="op">=</span> df[<span class="st">"question"</span>].<span class="bu">apply</span>(<span class="kw">lambda</span> x: x.strip())</span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>questions <span class="op">=</span> <span class="bu">list</span>(df.question.values)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1"></a>df.fillna(value<span class="op">=</span><span class="st">''</span>, inplace<span class="op">=</span> <span class="va">True</span>)</span>
+<span id="cb6-2"><a href="#cb6-2"></a>df[<span class="st">"question"</span>] <span class="op">=</span> df[<span class="st">"question"</span>].<span class="bu">apply</span>(<span class="kw">lambda</span> x: x.strip())</span>
+<span id="cb6-3"><a href="#cb6-3"></a>questions <span class="op">=</span> <span class="bu">list</span>(df.question.values)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <ul>
 <li>Create Embeddings on the questions</li>
 </ul>
 <div id="cell-13" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:121,&quot;referenced_widgets&quot;:[&quot;4c53cd9e9f0f4f98bae1d86cb2a4b166&quot;,&quot;227d20b994434ad1a4a4c937dfc80d5f&quot;,&quot;99c3103b299d4e52a86e8ef7d6a3a69c&quot;,&quot;934fa525fbea47a38734013cfe7b3677&quot;,&quot;c374dfc09bc44ca48c639c48063424d8&quot;,&quot;e3b6efd698f841db87d0026f91e3a46f&quot;,&quot;c425ee9630d240f5829e300a24f2af1a&quot;,&quot;362adfef2b024879a6bf1347d685f8e6&quot;,&quot;8beb12e7e9b34fe1b6d9adb93ba6d2f7&quot;,&quot;786f6e42087e44519a324710175f1daf&quot;,&quot;4546f44418a949dd8d964b05739a60a9&quot;]}}" data-outputid="1b9bbd8d-8fd2-4fe0-e3d5-851a77ae258c" data-execution_count="7">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>df.embedding <span class="op">=</span> retriever.embed_queries(queries<span class="op">=</span>questions).tolist()</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="bu">len</span>(df.embedding)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1"></a>df.embedding <span class="op">=</span> retriever.embed_queries(queries<span class="op">=</span>questions).tolist()</span>
+<span id="cb7-2"><a href="#cb7-2"></a><span class="bu">len</span>(df.embedding)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <script type="application/vnd.jupyter.widget-view+json">
 {"model_id":"4c53cd9e9f0f4f98bae1d86cb2a4b166","version_major":2,"version_minor":0,"quarto_mimetype":"application/vnd.jupyter.widget-view+json"}
@@ -604,14 +604,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Rename the <code>question</code> series with content</li>
 </ul>
 <div id="cell-15" class="cell" data-execution_count="8">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> df.rename(columns<span class="op">=</span>{<span class="st">'question'</span>:<span class="st">'content'</span>})</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1"></a>df <span class="op">=</span> df.rename(columns<span class="op">=</span>{<span class="st">'question'</span>:<span class="st">'content'</span>})</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <ul>
 <li>Convert te dataframe into a list of dics and index them in our DocumentStore</li>
 </ul>
 <div id="cell-17" class="cell" data-execution_count="9">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>docs_to_index <span class="op">=</span> df.to_dict(orient<span class="op">=</span><span class="st">'records'</span>)</span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>document_store.write_documents(docs_to_index)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1"></a>docs_to_index <span class="op">=</span> df.to_dict(orient<span class="op">=</span><span class="st">'records'</span>)</span>
+<span id="cb11-2"><a href="#cb11-2"></a>document_store.write_documents(docs_to_index)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="ask-questions" class="level1">
@@ -620,16 +620,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>We first need to initialize the pipeline:</li>
 </ul>
 <div id="cell-19" class="cell" data-execution_count="10">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> haystack.pipelines <span class="im">import</span> FAQPipeline</span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>pipe <span class="op">=</span> FAQPipeline(retriever<span class="op">=</span>retriever)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1"></a><span class="im">from</span> haystack.pipelines <span class="im">import</span> FAQPipeline</span>
+<span id="cb12-2"><a href="#cb12-2"></a>pipe <span class="op">=</span> FAQPipeline(retriever<span class="op">=</span>retriever)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div id="cell-20" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:138,&quot;referenced_widgets&quot;:[&quot;19f2dbc821aa4db89c56747c7bfa0d4b&quot;,&quot;dd12b71e4be94cdda693b4c9aca28014&quot;,&quot;4c646028aba549e4b115962483322288&quot;,&quot;31f47c1e9aa64697824ef9e24e093446&quot;,&quot;058e775e1ea84d298e2eed2555318e7d&quot;,&quot;cbc03e61fd334570bef89815f883f66e&quot;,&quot;7cceb34781ba45758a1980a6e2b625f0&quot;,&quot;30ef78745a494b61aaa12531dd3553d6&quot;,&quot;6aad51b5887b424fa0a93499aea7fd43&quot;,&quot;513d1d7a0aa4480dbab9714ca0834fb2&quot;,&quot;b06f2c3e0fdf4cab8e00a8d39c244d82&quot;]}}" data-outputid="7c3d4fa4-80f3-4411-c905-d45daffc4b39" data-execution_count="11">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> haystack.utils <span class="im">import</span> print_answers</span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Run any question and change top_k to see more or less answers</span></span>
-<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>prediction <span class="op">=</span> pipe.run(query<span class="op">=</span><span class="st">"How is the virus spreading?"</span>, params<span class="op">=</span>{<span class="st">"Retriever"</span>: {<span class="st">"top_k"</span>: <span class="dv">1</span>}})</span>
-<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>print_answers(prediction, details<span class="op">=</span><span class="st">"medium"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1"></a><span class="im">from</span> haystack.utils <span class="im">import</span> print_answers</span>
+<span id="cb13-2"><a href="#cb13-2"></a></span>
+<span id="cb13-3"><a href="#cb13-3"></a><span class="co"># Run any question and change top_k to see more or less answers</span></span>
+<span id="cb13-4"><a href="#cb13-4"></a>prediction <span class="op">=</span> pipe.run(query<span class="op">=</span><span class="st">"How is the virus spreading?"</span>, params<span class="op">=</span>{<span class="st">"Retriever"</span>: {<span class="st">"top_k"</span>: <span class="dv">1</span>}})</span>
+<span id="cb13-5"><a href="#cb13-5"></a></span>
+<span id="cb13-6"><a href="#cb13-6"></a>print_answers(prediction, details<span class="op">=</span><span class="st">"medium"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <script type="application/vnd.jupyter.widget-view+json">
 {"model_id":"19f2dbc821aa4db89c56747c7bfa0d4b","version_major":2,"version_minor":0,"quarto_mimetype":"application/vnd.jupyter.widget-view+json"}
@@ -722,6 +722,57 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         container: window.document.getElementById('quarto-embedded-source-code-modal')
       });
       clipboardModal.on('success', onCopySuccess);
+    }
+    const viewSource = window.document.getElementById('quarto-view-source') ||
+                       window.document.getElementById('quarto-code-tools-source');
+    if (viewSource) {
+      const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
+      viewSource.addEventListener("click", function(e) {
+        if (sourceUrl) {
+          // rstudio viewer pane
+          if (/\bcapabilities=\b/.test(window.location)) {
+            window.open(sourceUrl);
+          } else {
+            window.location.href = sourceUrl;
+          }
+        } else {
+          const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
+          modal.show();
+        }
+        return false;
+      });
+    }
+    function toggleCodeHandler(show) {
+      return function(e) {
+        const detailsSrc = window.document.querySelectorAll(".cell > details > .sourceCode");
+        for (let i=0; i<detailsSrc.length; i++) {
+          const details = detailsSrc[i].parentElement;
+          if (show) {
+            details.open = true;
+          } else {
+            details.removeAttribute("open");
+          }
+        }
+        const cellCodeDivs = window.document.querySelectorAll(".cell > .sourceCode");
+        const fromCls = show ? "hidden" : "unhidden";
+        const toCls = show ? "unhidden" : "hidden";
+        for (let i=0; i<cellCodeDivs.length; i++) {
+          const codeDiv = cellCodeDivs[i];
+          if (codeDiv.classList.contains(fromCls)) {
+            codeDiv.classList.remove(fromCls);
+            codeDiv.classList.add(toCls);
+          } 
+        }
+        return false;
+      }
+    }
+    const hideAllCode = window.document.getElementById("quarto-hide-all-code");
+    if (hideAllCode) {
+      hideAllCode.addEventListener("click", toggleCodeHandler(false));
+    }
+    const showAllCode = window.document.getElementById("quarto-show-all-code");
+    if (showAllCode) {
+      showAllCode.addEventListener("click", toggleCodeHandler(true));
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);

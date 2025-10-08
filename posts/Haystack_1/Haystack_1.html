@@ -74,10 +74,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-065a5179aebd64318d7ea99d77b64a9e.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-3a12b51ff0d0fb9893750dacdd7c721b.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-e784d42915133a20e7488e0f44bfbe89.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -234,8 +234,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>In this tutorial we will use the basic type of the <code>DocumentStore</code> class, which is <strong><code>InMemoryDocumentStore</code></strong></li>
 </ul>
 <div id="cell-5" class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> haystack.document_stores <span class="im">import</span> InMemoryDocumentStore</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>document_store<span class="op">=</span> InMemoryDocumentStore(use_bm25<span class="op">=</span><span class="va">True</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1"></a><span class="im">from</span> haystack.document_stores <span class="im">import</span> InMemoryDocumentStore</span>
+<span id="cb1-2"><a href="#cb1-2"></a>document_store<span class="op">=</span> InMemoryDocumentStore(use_bm25<span class="op">=</span><span class="va">True</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <ul>
 <li>DocumentStore is a like a database or a warehouse that need to be filled with data/documents.</li>
@@ -243,9 +243,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>The downloaded docements needed to be prepared and organized to be processed in the next step:</li>
 </ul>
 <div id="cell-7" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}}" data-outputid="39352b3c-c3a7-4ab8-fa1e-e94f08be1e8d">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> haystack.utils <span class="im">import</span> fetch_archive_from_http</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>doc_dir<span class="op">=</span><span class="st">'data/directory_project'</span></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>fetch_archive_from_http(url<span class="op">=</span><span class="st">'https://s3.eu-central-1.amazonaws.com/deepset.ai-farm-qa/datasets/documents/wiki_gameofthrones_txt1.zip'</span>, output_dir<span class="op">=</span> doc_dir)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1"></a><span class="im">from</span> haystack.utils <span class="im">import</span> fetch_archive_from_http</span>
+<span id="cb2-2"><a href="#cb2-2"></a>doc_dir<span class="op">=</span><span class="st">'data/directory_project'</span></span>
+<span id="cb2-3"><a href="#cb2-3"></a>fetch_archive_from_http(url<span class="op">=</span><span class="st">'https://s3.eu-central-1.amazonaws.com/deepset.ai-farm-qa/datasets/documents/wiki_gameofthrones_txt1.zip'</span>, output_dir<span class="op">=</span> doc_dir)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="3">
 <pre><code>True</code></pre>
 </div>
@@ -255,12 +255,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>At this momment our data is raw and should be converted in Document objects according the <code>HayStack</code> standars. In order to do that we will use <code>TextIndexingPipeline</code> and write them into <code>DocumentStore</code></li>
 </ul>
 <div id="cell-9" class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> os</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> haystack.pipelines.standard_pipelines <span class="im">import</span> TextIndexingPipeline</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>files_to_index <span class="op">=</span> [doc_dir <span class="op">+</span> <span class="st">'/'</span> <span class="op">+</span> f <span class="cf">for</span> f <span class="kw">in</span> os.listdir(doc_dir)]</span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>indexing_pipeline <span class="op">=</span> TextIndexingPipeline(document_store)</span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>indexing_pipeline.run_batch(file_paths<span class="op">=</span>files_to_index)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1"></a><span class="im">import</span> os</span>
+<span id="cb4-2"><a href="#cb4-2"></a><span class="im">from</span> haystack.pipelines.standard_pipelines <span class="im">import</span> TextIndexingPipeline</span>
+<span id="cb4-3"><a href="#cb4-3"></a></span>
+<span id="cb4-4"><a href="#cb4-4"></a>files_to_index <span class="op">=</span> [doc_dir <span class="op">+</span> <span class="st">'/'</span> <span class="op">+</span> f <span class="cf">for</span> f <span class="kw">in</span> os.listdir(doc_dir)]</span>
+<span id="cb4-5"><a href="#cb4-5"></a>indexing_pipeline <span class="op">=</span> TextIndexingPipeline(document_store)</span>
+<span id="cb4-6"><a href="#cb4-6"></a>indexing_pipeline.run_batch(file_paths<span class="op">=</span>files_to_index)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="initializing-a-retriever" class="level2">
@@ -270,8 +270,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Here we initialize the <strong>BM25Retriever</strong> algorithm and make it access the InMemoryDocumentStore</li>
 </ul>
 <div id="cell-11" class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> haystack.nodes <span class="im">import</span> BM25Retriever</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>retriever<span class="op">=</span> BM25Retriever(document_store<span class="op">=</span>document_store)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1"></a><span class="im">from</span> haystack.nodes <span class="im">import</span> BM25Retriever</span>
+<span id="cb5-2"><a href="#cb5-2"></a>retriever<span class="op">=</span> BM25Retriever(document_store<span class="op">=</span>document_store)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="initializing-the-reader" class="level2">
@@ -282,8 +282,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>In this turorial we used the <code>roberta-base-squad2</code> model</li>
 </ul>
 <div id="cell-13" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:209,&quot;referenced_widgets&quot;:[&quot;691d1dd3b92642598120cb1d49a075b9&quot;,&quot;c484d26c41204b27b8eddf95b56efa58&quot;,&quot;a5831b3bfd46485e899b7dea668f3f69&quot;,&quot;0b180785bd5043dc94735b3960352a10&quot;,&quot;152ef510a8aa40d8af9692cbb3333026&quot;,&quot;dbc6d0fa4f224d49a775d89e0825de6d&quot;,&quot;48252b94dd9243e08d8881d02dec10b1&quot;,&quot;98ad078b87444dba8424d727e1dab559&quot;,&quot;2cfeb696f20c46cd934658e66027e6fa&quot;,&quot;e4d5ac4a822c484e8493ee3c1f9302b9&quot;,&quot;1ff76a2a4e404e4eba17ad9199998169&quot;,&quot;8aa945da97164878ae71c6905b1e7d9c&quot;,&quot;1b1ae85f0c0842aebd99395e1056c124&quot;,&quot;e215317651454ef19f64a8d6f487b586&quot;,&quot;8a488828c954445987e476f55e4d9150&quot;,&quot;1bd5a68dc66f4392ad7bac97ee405136&quot;,&quot;95c810e92ca948b991f01e36982875e6&quot;,&quot;e68aca7862b34784a26e15d4a51be4c2&quot;,&quot;d2360d78b0f746b2a8107e4339d6a49c&quot;,&quot;42594251bef4451bbebadda917b6399c&quot;,&quot;dcbb5c4fe9dc4e428471a661e97835b3&quot;,&quot;5037e3e1cf814708817c2b65409abb02&quot;,&quot;02170cb7ec194dd4a4cccaf7e4ccde2e&quot;,&quot;2cda224d226a44fab16ed3fef7a975d6&quot;,&quot;9faa15f96d124b4d90cb70d34d863922&quot;,&quot;c796625d3f9c4f09bdc78812f345eea1&quot;,&quot;d91a417e3ed2498dbdbd9138cc2cdf91&quot;,&quot;cd6fa408995c4177a7617368a7c26117&quot;,&quot;667c6cb7da86417ea4f3bdfb09b4a552&quot;,&quot;9428ddcd480543068f5b005e7cd99607&quot;,&quot;2968cf0f7b9645db8e3bd6776d779d19&quot;,&quot;9c0b1e0f87b54490a2d16adcbc069fbf&quot;,&quot;275b8ad6a45042c29ee6aae67d2403d5&quot;,&quot;a162cc6d3a004415b7987e086e06ed9c&quot;,&quot;8159738ac3a94125a0df48996f66aebb&quot;,&quot;d05d7bbff49d4d56b2b2f9e6f51e8aa0&quot;,&quot;4371865e98a4450391ad21f431e4348a&quot;,&quot;5984532b51b14a6d9b9069b193020b54&quot;,&quot;55331cc02b574e50b1d4b4e085ead15f&quot;,&quot;de25eb720b7f405c9a9d8353e5c91e0c&quot;,&quot;dbbb470187104bbfbbd34f207f6fa7f2&quot;,&quot;30d8f45877b746b78e4f0cb4573d699c&quot;,&quot;fc2a9e59a3d74856b9ac89d27db1db7e&quot;,&quot;2974ebe29be740158e82af47d81b5918&quot;,&quot;28b6786ef9ae4811af0e1ecd8f1f4a78&quot;,&quot;188b96c88e9f4bde9d0c612258743cb6&quot;,&quot;f51be85df67a453992c3137e59501dcf&quot;,&quot;58a160bf7e7f436e80532d4f3f027499&quot;,&quot;c8a354ddc1d24eff9da4e71a8a9e2127&quot;,&quot;0bf8021c81124febabd4e4ce395cd4a1&quot;,&quot;c14da191555f4a49835a6f7071860e31&quot;,&quot;75c9a46c204348309b6f18b02a10e378&quot;,&quot;702ac255a4914def993961cb0bccd8ba&quot;,&quot;1f785caa87e44e4381988285530f07f9&quot;,&quot;460ebd2b0ad141e388a4c5abe91994f1&quot;,&quot;1a3b0d2bedee42bbb12a561c2d2c0e23&quot;,&quot;ea43103fe30b4082af48ca89311c7f0c&quot;,&quot;fb739bbbdc9a4a4eb8f164e3e7acf54d&quot;,&quot;48181d72e5674f9585fff8283118ff91&quot;,&quot;7dba68e67769464983b7d529a2b38302&quot;,&quot;9750244535a447348948fbb2a34391b4&quot;,&quot;960395a899d841cd8250e38cfd82ca54&quot;,&quot;40eaf2c72940456ba0c5b48553f2d569&quot;,&quot;00945c07759b44c99f53658e0c572e8e&quot;,&quot;3af2ec0e7d63451db9ee5a6484899947&quot;,&quot;46bed05006c641299dd28c2f091f2345&quot;]}}" data-outputid="f25b671d-7636-4ba5-b1ab-334644f778cc">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> haystack.nodes <span class="im">import</span> FARMReader</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>reader <span class="op">=</span> FARMReader(model_name_or_path<span class="op">=</span><span class="st">'deepset/roberta-base-squad2'</span>, use_gpu<span class="op">=</span><span class="va">True</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1"></a><span class="im">from</span> haystack.nodes <span class="im">import</span> FARMReader</span>
+<span id="cb6-2"><a href="#cb6-2"></a>reader <span class="op">=</span> FARMReader(model_name_or_path<span class="op">=</span><span class="st">'deepset/roberta-base-squad2'</span>, use_gpu<span class="op">=</span><span class="va">True</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <script type="application/vnd.jupyter.widget-view+json">
 {"model_id":"691d1dd3b92642598120cb1d49a075b9","version_major":2,"version_minor":0,"quarto_mimetype":"application/vnd.jupyter.widget-view+json"}
@@ -322,21 +322,21 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Since we have everything we need to build this Q/A system nom, all we have to do is put every piece together in one <code>Pipeline</code></li>
 </ul>
 <div id="cell-15" class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> haystack.pipelines <span class="im">import</span> ExtractiveQAPipeline</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>pipe <span class="op">=</span> ExtractiveQAPipeline(reader, retriever)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1"></a><span class="im">from</span> haystack.pipelines <span class="im">import</span> ExtractiveQAPipeline</span>
+<span id="cb7-2"><a href="#cb7-2"></a>pipe <span class="op">=</span> ExtractiveQAPipeline(reader, retriever)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="asking-questions" class="level2">
 <h2 class="anchored" data-anchor-id="asking-questions">Asking Questions:</h2>
 <div id="cell-17" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}}" data-outputid="0d830aed-2fed-4536-fc09-7fd14f505b1f">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>predictions <span class="op">=</span> pipe.run(query<span class="op">=</span><span class="st">'who is the most powerful creature?'</span>, params<span class="op">=</span>{<span class="st">"Retriever"</span>: {<span class="st">"top_k"</span>: <span class="dv">10</span>}, <span class="st">"Reader"</span>: {<span class="st">"top_k"</span>: <span class="dv">5</span>}})</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1"></a>predictions <span class="op">=</span> pipe.run(query<span class="op">=</span><span class="st">'who is the most powerful creature?'</span>, params<span class="op">=</span>{<span class="st">"Retriever"</span>: {<span class="st">"top_k"</span>: <span class="dv">10</span>}, <span class="st">"Reader"</span>: {<span class="st">"top_k"</span>: <span class="dv">5</span>}})</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>Inferencing Samples: 100%|██████████| 1/1 [00:03&lt;00:00,  3.66s/ Batches]</code></pre>
 </div>
 </div>
 <div id="cell-18" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}}" data-outputid="04256ebd-e122-4a19-97ea-187c8e28319a">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> haystack.utils <span class="im">import</span> print_answers</span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>print_answers(predictions, details<span class="op">=</span><span class="st">'minimum'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1"></a><span class="im">from</span> haystack.utils <span class="im">import</span> print_answers</span>
+<span id="cb10-2"><a href="#cb10-2"></a>print_answers(predictions, details<span class="op">=</span><span class="st">'minimum'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>'Query: who is the most powerful creature?'
 'Answers:'
@@ -451,6 +451,57 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         container: window.document.getElementById('quarto-embedded-source-code-modal')
       });
       clipboardModal.on('success', onCopySuccess);
+    }
+    const viewSource = window.document.getElementById('quarto-view-source') ||
+                       window.document.getElementById('quarto-code-tools-source');
+    if (viewSource) {
+      const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
+      viewSource.addEventListener("click", function(e) {
+        if (sourceUrl) {
+          // rstudio viewer pane
+          if (/\bcapabilities=\b/.test(window.location)) {
+            window.open(sourceUrl);
+          } else {
+            window.location.href = sourceUrl;
+          }
+        } else {
+          const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
+          modal.show();
+        }
+        return false;
+      });
+    }
+    function toggleCodeHandler(show) {
+      return function(e) {
+        const detailsSrc = window.document.querySelectorAll(".cell > details > .sourceCode");
+        for (let i=0; i<detailsSrc.length; i++) {
+          const details = detailsSrc[i].parentElement;
+          if (show) {
+            details.open = true;
+          } else {
+            details.removeAttribute("open");
+          }
+        }
+        const cellCodeDivs = window.document.querySelectorAll(".cell > .sourceCode");
+        const fromCls = show ? "hidden" : "unhidden";
+        const toCls = show ? "unhidden" : "hidden";
+        for (let i=0; i<cellCodeDivs.length; i++) {
+          const codeDiv = cellCodeDivs[i];
+          if (codeDiv.classList.contains(fromCls)) {
+            codeDiv.classList.remove(fromCls);
+            codeDiv.classList.add(toCls);
+          } 
+        }
+        return false;
+      }
+    }
+    const hideAllCode = window.document.getElementById("quarto-hide-all-code");
+    if (hideAllCode) {
+      hideAllCode.addEventListener("click", toggleCodeHandler(false));
+    }
+    const showAllCode = window.document.getElementById("quarto-show-all-code");
+    if (showAllCode) {
+      showAllCode.addEventListener("click", toggleCodeHandler(true));
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);

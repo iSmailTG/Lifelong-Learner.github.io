@@ -74,10 +74,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-065a5179aebd64318d7ea99d77b64a9e.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-3a12b51ff0d0fb9893750dacdd7c721b.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-e784d42915133a20e7488e0f44bfbe89.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -288,12 +288,12 @@ After analyzing each field’s potential value for fine-tuning I think not all f
 </ul>
 <p>This will reduce the size of the dataset but we will have only data-points where the code is executable.</p>
 <div id="cell-5" class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>dataset <span class="op">=</span> dataset.<span class="bu">filter</span>(</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">lambda</span> example: example[<span class="st">'error'</span>] <span class="kw">is</span> <span class="va">None</span> <span class="kw">and</span> example[<span class="st">'video'</span>] <span class="kw">is</span> <span class="kw">not</span> <span class="va">None</span></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1"></a>dataset <span class="op">=</span> dataset.<span class="bu">filter</span>(</span>
+<span id="cb2-2"><a href="#cb2-2"></a>    <span class="kw">lambda</span> example: example[<span class="st">'error'</span>] <span class="kw">is</span> <span class="va">None</span> <span class="kw">and</span> example[<span class="st">'video'</span>] <span class="kw">is</span> <span class="kw">not</span> <span class="va">None</span></span>
+<span id="cb2-3"><a href="#cb2-3"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div id="cell-6" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}}" data-outputid="3740758a-fa96-4b7a-e559-9187b06551df">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>dataset</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1"></a>dataset</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>As expected now we only have <code>252</code> which is not bad, since we are now sure that the dataset is high quality.</p>
 </section>
@@ -302,38 +302,38 @@ After analyzing each field’s potential value for fine-tuning I think not all f
 <p>At this point we need to create training examples by combining the essential fields into well-structured prompts paired with the working code. This will give our model the most relevant information while removing noise from the training data.<br>
 Let’s implement this data transformation using the Hugging Face <code>datasets</code> library.</p>
 <div id="cell-9" class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> create_prompt(example):</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    prompt <span class="op">=</span> <span class="ss">f"Subject: </span><span class="sc">{</span>example[<span class="st">'subject'</span>]<span class="sc">}</span><span class="ch">\n</span><span class="ss">"</span></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>    prompt <span class="op">+=</span> <span class="ss">f"Topic: </span><span class="sc">{</span>example[<span class="st">'topic'</span>]<span class="sc">}</span><span class="ch">\n\n</span><span class="ss">"</span></span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>    prompt <span class="op">+=</span> <span class="ss">f"Question: </span><span class="sc">{</span>example[<span class="st">'question'</span>]<span class="sc">}</span><span class="ch">\n\n</span><span class="ss">"</span></span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>    prompt <span class="op">+=</span> <span class="ss">f"Title: </span><span class="sc">{</span>example[<span class="st">'title'</span>]<span class="sc">}</span><span class="ch">\n\n</span><span class="ss">"</span></span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>    prompt <span class="op">+=</span> <span class="ss">f"Narration:</span><span class="ch">\n</span><span class="sc">{</span>example[<span class="st">'narration'</span>]<span class="sc">}</span><span class="ch">\n\n</span><span class="ss">"</span></span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> example[<span class="st">'visual_elements'</span>] <span class="kw">and</span> <span class="bu">len</span>(example[<span class="st">'visual_elements'</span>]) <span class="op">&gt;</span> <span class="dv">0</span>:</span>
-<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>        prompt <span class="op">+=</span> <span class="st">"Visual Elements:</span><span class="ch">\n</span><span class="st">"</span></span>
-<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> i, elem <span class="kw">in</span> <span class="bu">enumerate</span>(example[<span class="st">'visual_elements'</span>]):</span>
-<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>            prompt <span class="op">+=</span> <span class="ss">f"- </span><span class="sc">{</span>elem[<span class="st">'description'</span>]<span class="sc">}</span><span class="ss"> (Timestamp: </span><span class="sc">{</span>elem[<span class="st">'timestamp'</span>]<span class="sc">}</span><span class="ss">)</span><span class="ch">\n</span><span class="ss">"</span></span>
-<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>        prompt <span class="op">+=</span> <span class="st">"</span><span class="ch">\n</span><span class="st">"</span></span>
-<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> example[<span class="st">'equations'</span>] <span class="kw">and</span> <span class="bu">len</span>(example[<span class="st">'equations'</span>]) <span class="op">&gt;</span> <span class="dv">0</span>:</span>
-<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>        prompt <span class="op">+=</span> <span class="st">"Equations:</span><span class="ch">\n</span><span class="st">"</span></span>
-<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> i, eq <span class="kw">in</span> <span class="bu">enumerate</span>(example[<span class="st">'equations'</span>]):</span>
-<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>            prompt <span class="op">+=</span> <span class="ss">f"- </span><span class="sc">{</span>eq<span class="sc">}</span><span class="ch">\n</span><span class="ss">"</span></span>
-<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a>        prompt <span class="op">+=</span> <span class="st">"</span><span class="ch">\n</span><span class="st">"</span></span>
-<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> example[<span class="st">'visual_style'</span>]:</span>
-<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a>        prompt <span class="op">+=</span> <span class="ss">f"Visual Style:</span><span class="ch">\n</span><span class="sc">{</span>example[<span class="st">'visual_style'</span>]<span class="sc">}</span><span class="ch">\n\n</span><span class="ss">"</span></span>
-<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a>    prompt <span class="op">+=</span> <span class="st">"Generate manim code to create this animation:"</span></span>
-<span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-25"><a href="#cb4-25" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> prompt</span>
-<span id="cb4-26"><a href="#cb4-26" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-27"><a href="#cb4-27" aria-hidden="true" tabindex="-1"></a><span class="co"># Create the training dataset with input-output pairs</span></span>
-<span id="cb4-28"><a href="#cb4-28" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> process_example(example):</span>
-<span id="cb4-29"><a href="#cb4-29" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> {</span>
-<span id="cb4-30"><a href="#cb4-30" aria-hidden="true" tabindex="-1"></a>        <span class="st">"instruction"</span>: create_prompt(example),</span>
-<span id="cb4-31"><a href="#cb4-31" aria-hidden="true" tabindex="-1"></a>        <span class="st">"output"</span>: example[<span class="st">'python_code'</span>]</span>
-<span id="cb4-32"><a href="#cb4-32" aria-hidden="true" tabindex="-1"></a>    }</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1"></a><span class="kw">def</span> create_prompt(example):</span>
+<span id="cb4-2"><a href="#cb4-2"></a>    prompt <span class="op">=</span> <span class="ss">f"Subject: </span><span class="sc">{</span>example[<span class="st">'subject'</span>]<span class="sc">}</span><span class="ch">\n</span><span class="ss">"</span></span>
+<span id="cb4-3"><a href="#cb4-3"></a>    prompt <span class="op">+=</span> <span class="ss">f"Topic: </span><span class="sc">{</span>example[<span class="st">'topic'</span>]<span class="sc">}</span><span class="ch">\n\n</span><span class="ss">"</span></span>
+<span id="cb4-4"><a href="#cb4-4"></a>    prompt <span class="op">+=</span> <span class="ss">f"Question: </span><span class="sc">{</span>example[<span class="st">'question'</span>]<span class="sc">}</span><span class="ch">\n\n</span><span class="ss">"</span></span>
+<span id="cb4-5"><a href="#cb4-5"></a>    prompt <span class="op">+=</span> <span class="ss">f"Title: </span><span class="sc">{</span>example[<span class="st">'title'</span>]<span class="sc">}</span><span class="ch">\n\n</span><span class="ss">"</span></span>
+<span id="cb4-6"><a href="#cb4-6"></a>    prompt <span class="op">+=</span> <span class="ss">f"Narration:</span><span class="ch">\n</span><span class="sc">{</span>example[<span class="st">'narration'</span>]<span class="sc">}</span><span class="ch">\n\n</span><span class="ss">"</span></span>
+<span id="cb4-7"><a href="#cb4-7"></a></span>
+<span id="cb4-8"><a href="#cb4-8"></a>    <span class="cf">if</span> example[<span class="st">'visual_elements'</span>] <span class="kw">and</span> <span class="bu">len</span>(example[<span class="st">'visual_elements'</span>]) <span class="op">&gt;</span> <span class="dv">0</span>:</span>
+<span id="cb4-9"><a href="#cb4-9"></a>        prompt <span class="op">+=</span> <span class="st">"Visual Elements:</span><span class="ch">\n</span><span class="st">"</span></span>
+<span id="cb4-10"><a href="#cb4-10"></a>        <span class="cf">for</span> i, elem <span class="kw">in</span> <span class="bu">enumerate</span>(example[<span class="st">'visual_elements'</span>]):</span>
+<span id="cb4-11"><a href="#cb4-11"></a>            prompt <span class="op">+=</span> <span class="ss">f"- </span><span class="sc">{</span>elem[<span class="st">'description'</span>]<span class="sc">}</span><span class="ss"> (Timestamp: </span><span class="sc">{</span>elem[<span class="st">'timestamp'</span>]<span class="sc">}</span><span class="ss">)</span><span class="ch">\n</span><span class="ss">"</span></span>
+<span id="cb4-12"><a href="#cb4-12"></a>        prompt <span class="op">+=</span> <span class="st">"</span><span class="ch">\n</span><span class="st">"</span></span>
+<span id="cb4-13"><a href="#cb4-13"></a></span>
+<span id="cb4-14"><a href="#cb4-14"></a>    <span class="cf">if</span> example[<span class="st">'equations'</span>] <span class="kw">and</span> <span class="bu">len</span>(example[<span class="st">'equations'</span>]) <span class="op">&gt;</span> <span class="dv">0</span>:</span>
+<span id="cb4-15"><a href="#cb4-15"></a>        prompt <span class="op">+=</span> <span class="st">"Equations:</span><span class="ch">\n</span><span class="st">"</span></span>
+<span id="cb4-16"><a href="#cb4-16"></a>        <span class="cf">for</span> i, eq <span class="kw">in</span> <span class="bu">enumerate</span>(example[<span class="st">'equations'</span>]):</span>
+<span id="cb4-17"><a href="#cb4-17"></a>            prompt <span class="op">+=</span> <span class="ss">f"- </span><span class="sc">{</span>eq<span class="sc">}</span><span class="ch">\n</span><span class="ss">"</span></span>
+<span id="cb4-18"><a href="#cb4-18"></a>        prompt <span class="op">+=</span> <span class="st">"</span><span class="ch">\n</span><span class="st">"</span></span>
+<span id="cb4-19"><a href="#cb4-19"></a></span>
+<span id="cb4-20"><a href="#cb4-20"></a>    <span class="cf">if</span> example[<span class="st">'visual_style'</span>]:</span>
+<span id="cb4-21"><a href="#cb4-21"></a>        prompt <span class="op">+=</span> <span class="ss">f"Visual Style:</span><span class="ch">\n</span><span class="sc">{</span>example[<span class="st">'visual_style'</span>]<span class="sc">}</span><span class="ch">\n\n</span><span class="ss">"</span></span>
+<span id="cb4-22"><a href="#cb4-22"></a></span>
+<span id="cb4-23"><a href="#cb4-23"></a>    prompt <span class="op">+=</span> <span class="st">"Generate manim code to create this animation:"</span></span>
+<span id="cb4-24"><a href="#cb4-24"></a></span>
+<span id="cb4-25"><a href="#cb4-25"></a>    <span class="cf">return</span> prompt</span>
+<span id="cb4-26"><a href="#cb4-26"></a></span>
+<span id="cb4-27"><a href="#cb4-27"></a><span class="co"># Create the training dataset with input-output pairs</span></span>
+<span id="cb4-28"><a href="#cb4-28"></a><span class="kw">def</span> process_example(example):</span>
+<span id="cb4-29"><a href="#cb4-29"></a>    <span class="cf">return</span> {</span>
+<span id="cb4-30"><a href="#cb4-30"></a>        <span class="st">"instruction"</span>: create_prompt(example),</span>
+<span id="cb4-31"><a href="#cb4-31"></a>        <span class="st">"output"</span>: example[<span class="st">'python_code'</span>]</span>
+<span id="cb4-32"><a href="#cb4-32"></a>    }</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>This resulted in a rich, semantically meaningful prompt — not just a raw dump of metadata, but something that reads like a real instruction.</p>
 </section>
@@ -341,14 +341,14 @@ Let’s implement this data transformation using the Hugging Face <code>datasets
 <h2 class="anchored" data-anchor-id="mapping-instruction-output-pairs">Mapping Instruction → Output Pairs</h2>
 <p>Once I had a clear structure for the prompt, I turned each example into an input-output pair for fine-tuning:</p>
 <div id="cell-12" class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Map the function over the filtered dataset</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>training_dataset <span class="op">=</span> dataset.<span class="bu">map</span>(process_example)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1"></a><span class="co"># Map the function over the filtered dataset</span></span>
+<span id="cb5-2"><a href="#cb5-2"></a></span>
+<span id="cb5-3"><a href="#cb5-3"></a>training_dataset <span class="op">=</span> dataset.<span class="bu">map</span>(process_example)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div id="cell-13" class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Select only the columns we need for fine-tuning</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>training_dataset <span class="op">=</span> training_dataset.select_columns([<span class="st">"instruction"</span>, <span class="st">"output"</span>])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1"></a><span class="co"># Select only the columns we need for fine-tuning</span></span>
+<span id="cb6-2"><a href="#cb6-2"></a></span>
+<span id="cb6-3"><a href="#cb6-3"></a>training_dataset <span class="op">=</span> training_dataset.select_columns([<span class="st">"instruction"</span>, <span class="st">"output"</span>])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Now I had exactly what I needed: a list of instructions describing an animation, and the Manim Python code that generates it.</p>
 </section>
@@ -356,15 +356,15 @@ Let’s implement this data transformation using the Hugging Face <code>datasets
 <h2 class="anchored" data-anchor-id="train-validation-split-and-saving">Train-Validation Split and Saving</h2>
 <p>To prepare for fine-tuning, I split the dataset into a training and validation set:</p>
 <div id="cell-16" class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> datasets <span class="im">import</span> Dataset</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>dataset_split <span class="op">=</span> training_dataset[<span class="st">'train'</span>].train_test_split(test_size<span class="op">=</span><span class="fl">0.1</span>)</span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>train_dataset <span class="op">=</span> dataset_split[<span class="st">'train'</span>]</span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>validation_dataset <span class="op">=</span> dataset_split[<span class="st">'test'</span>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1"></a><span class="im">from</span> datasets <span class="im">import</span> Dataset</span>
+<span id="cb7-2"><a href="#cb7-2"></a>dataset_split <span class="op">=</span> training_dataset[<span class="st">'train'</span>].train_test_split(test_size<span class="op">=</span><span class="fl">0.1</span>)</span>
+<span id="cb7-3"><a href="#cb7-3"></a>train_dataset <span class="op">=</span> dataset_split[<span class="st">'train'</span>]</span>
+<span id="cb7-4"><a href="#cb7-4"></a>validation_dataset <span class="op">=</span> dataset_split[<span class="st">'test'</span>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>I also saved each split to disk and pushed the final version to the Hugging Face Hub:</p>
 <div id="cell-18" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:81,&quot;referenced_widgets&quot;:[&quot;f3599eb862f44f27a4afb61ad56ca976&quot;,&quot;e95f275568784d9d8b1bddd2c3609ce5&quot;,&quot;05d136628a5a49deb85ef176313eacdb&quot;,&quot;0dc179b9f19548e694d6f049d90b2d06&quot;,&quot;cd982e7f9b344023a3abadcf43236419&quot;,&quot;fa351e15efef42d097a09080508956bc&quot;,&quot;e999413679de4836952435127b9078fe&quot;,&quot;85fb46af4ed34eeea53c89ebce7e21bb&quot;,&quot;26e182e982d9468b8440deb5aad6f9cb&quot;,&quot;0056ba6d7ab041e6aeafc61c06ba4ab5&quot;,&quot;f32e5e2cc7194159a4963f5852ccd0f2&quot;,&quot;161f382c181941c4b1916fb48e98e6ea&quot;,&quot;8865184851094e5280183143bd14529f&quot;,&quot;bb6df7a2bcbc4bbe8ebe2cbdd7b12ceb&quot;,&quot;8c2f26167e614535acd7c250434b1040&quot;,&quot;aea3be37a3304441b87c5447b1e47749&quot;,&quot;948dc3352c1744aea3faeb37dece9533&quot;,&quot;a868907df3b9418a82c2459dcc4ae028&quot;,&quot;16431fe25a07450db462ecb6f268ae67&quot;,&quot;5bc6dcb729364d8b85b8abf8973fa56f&quot;,&quot;802ea25a90834101beccb7bb0b66e770&quot;,&quot;8f1fb65c46e145268524c4916e58dba4&quot;]}}" data-outputid="ea62a3c0-37f8-498f-e395-5503ad8b9e33">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>train_dataset.save_to_disk(<span class="st">"manim_train_dataset"</span>)</span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>validation_dataset.save_to_disk(<span class="st">"manim_validation_dataset"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1"></a>train_dataset.save_to_disk(<span class="st">"manim_train_dataset"</span>)</span>
+<span id="cb8-2"><a href="#cb8-2"></a>validation_dataset.save_to_disk(<span class="st">"manim_validation_dataset"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="whats-next" class="level2">
@@ -448,6 +448,57 @@ Let’s implement this data transformation using the Hugging Face <code>datasets
         container: window.document.getElementById('quarto-embedded-source-code-modal')
       });
       clipboardModal.on('success', onCopySuccess);
+    }
+    const viewSource = window.document.getElementById('quarto-view-source') ||
+                       window.document.getElementById('quarto-code-tools-source');
+    if (viewSource) {
+      const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
+      viewSource.addEventListener("click", function(e) {
+        if (sourceUrl) {
+          // rstudio viewer pane
+          if (/\bcapabilities=\b/.test(window.location)) {
+            window.open(sourceUrl);
+          } else {
+            window.location.href = sourceUrl;
+          }
+        } else {
+          const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
+          modal.show();
+        }
+        return false;
+      });
+    }
+    function toggleCodeHandler(show) {
+      return function(e) {
+        const detailsSrc = window.document.querySelectorAll(".cell > details > .sourceCode");
+        for (let i=0; i<detailsSrc.length; i++) {
+          const details = detailsSrc[i].parentElement;
+          if (show) {
+            details.open = true;
+          } else {
+            details.removeAttribute("open");
+          }
+        }
+        const cellCodeDivs = window.document.querySelectorAll(".cell > .sourceCode");
+        const fromCls = show ? "hidden" : "unhidden";
+        const toCls = show ? "unhidden" : "hidden";
+        for (let i=0; i<cellCodeDivs.length; i++) {
+          const codeDiv = cellCodeDivs[i];
+          if (codeDiv.classList.contains(fromCls)) {
+            codeDiv.classList.remove(fromCls);
+            codeDiv.classList.add(toCls);
+          } 
+        }
+        return false;
+      }
+    }
+    const hideAllCode = window.document.getElementById("quarto-hide-all-code");
+    if (hideAllCode) {
+      hideAllCode.addEventListener("click", toggleCodeHandler(false));
+    }
+    const showAllCode = window.document.getElementById("quarto-show-all-code");
+    if (showAllCode) {
+      showAllCode.addEventListener("click", toggleCodeHandler(true));
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);

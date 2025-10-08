@@ -74,10 +74,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-065a5179aebd64318d7ea99d77b64a9e.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-3a12b51ff0d0fb9893750dacdd7c721b.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-e784d42915133a20e7488e0f44bfbe89.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -207,7 +207,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <div id="cell-1" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}}" data-outputid="9699ff8f-8a26-41e1-cd19-d6c442548617">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="op">!</span>pip install datasets</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1"></a><span class="op">!</span>pip install datasets</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <div class="ansi-escaped-output">
 <pre>Collecting datasets
@@ -290,7 +290,7 @@ Successfully installed datasets-2.17.1 dill-0.3.8 multiprocess-0.70.16
 </div>
 </div>
 <div id="cell-2" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}}" data-outputid="afe46f37-ea07-4f99-cc92-8a65c48e7e7f">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="op">!</span>pip install transformers</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1"></a><span class="op">!</span>pip install transformers</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Requirement already satisfied: transformers in /usr/local/lib/python3.10/dist-packages (4.37.2)
 Requirement already satisfied: filelock in /usr/local/lib/python3.10/dist-packages (from transformers) (3.13.1)
@@ -312,10 +312,10 @@ Requirement already satisfied: certifi&gt;=2017.4.17 in /usr/local/lib/python3.1
 </div>
 </div>
 <div id="cell-3" class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> datasets <span class="im">import</span> load_dataset</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1"></a><span class="im">from</span> datasets <span class="im">import</span> load_dataset</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div id="cell-4" class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> transformers <span class="im">import</span> AutoTokenizer</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1"></a><span class="im">from</span> transformers <span class="im">import</span> AutoTokenizer</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <section id="intrudoction" class="level2">
 <h2 class="anchored" data-anchor-id="intrudoction">Intrudoction:</h2>
@@ -403,20 +403,20 @@ SQuAD_it-test.json. 100%[===================&gt;]   1.00M  --.-KB/s    in 0.07s
 <li>We need decompress them frist:</li>
 </ul>
 <div id="cell-11" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}}" data-outputid="7fc8b0ff-4815-428a-85f8-61955b3199b0">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="op">!</span>gzip <span class="op">-</span>dkv SQuAD_it<span class="op">-*</span>.json.gz</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1"></a><span class="op">!</span>gzip <span class="op">-</span>dkv SQuAD_it<span class="op">-*</span>.json.gz</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>SQuAD_it-test.json.gz:   87.5% -- created SQuAD_it-test.json
 SQuAD_it-train.json.gz:  82.3% -- created SQuAD_it-train.json</code></pre>
 </div>
 </div>
 <div id="cell-12" class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="op">!</span>rm <span class="op">-</span>rf SQuAD_it<span class="op">-*</span>.json.gz</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1"></a><span class="op">!</span>rm <span class="op">-</span>rf SQuAD_it<span class="op">-*</span>.json.gz</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <ul>
 <li>Now we can download our dataset from local file as if it from the hub:</li>
 </ul>
 <div id="cell-14" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:49,&quot;referenced_widgets&quot;:[&quot;02c4de3e6d494ada9814411dbb0d9493&quot;,&quot;0e41df6027ce489592589eafe1a67645&quot;,&quot;1b7228e7207d4e139dae95df35db7d46&quot;,&quot;4c3dda52c38e4352b2172a421304e13b&quot;,&quot;903c01b33c9d4c76a6d945ed04abc863&quot;,&quot;6dfd63eb86a84d64b1846b579cf2020a&quot;,&quot;cc4cea6ef4894521a22ad3d0984bb66a&quot;,&quot;e8abc1e34ea649b3827f020bd4af2037&quot;,&quot;c74863db21764c8bb348c02fb4284a01&quot;,&quot;5abc52dc8e4a4cb9ba4a68eb6d4b2a1f&quot;,&quot;fef8c62aec954330a5a2d34fc10dbd8c&quot;]}}" data-outputid="576ffe7d-f40d-4d9a-8723-40e6e33dd076">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>dataset <span class="op">=</span> load_dataset(<span class="st">'json'</span>, data_files<span class="op">=</span> <span class="st">"SQuAD_it-train.json"</span>, field<span class="op">=</span> <span class="st">"data"</span> )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1"></a>dataset <span class="op">=</span> load_dataset(<span class="st">'json'</span>, data_files<span class="op">=</span> <span class="st">"SQuAD_it-train.json"</span>, field<span class="op">=</span> <span class="st">"data"</span> )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <script type="application/vnd.jupyter.widget-view+json">
 {"model_id":"02c4de3e6d494ada9814411dbb0d9493","version_major":2,"version_minor":0,"quarto_mimetype":"application/vnd.jupyter.widget-view+json"}
@@ -427,7 +427,7 @@ SQuAD_it-train.json.gz:  82.3% -- created SQuAD_it-train.json</code></pre>
 <li>Be default downloading local file creates a DatasetDict with train split:</li>
 </ul>
 <div id="cell-16" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}}" data-outputid="6ea839b5-9566-4272-e147-a39a0dddb4a9">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>dataset</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1"></a>dataset</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="7">
 <pre><code>DatasetDict({
     train: Dataset({
@@ -441,17 +441,17 @@ SQuAD_it-train.json.gz:  82.3% -- created SQuAD_it-train.json</code></pre>
 <li>We can view that we have <code>442</code> rows, let’s see one of them:</li>
 </ul>
 <div id="cell-18" class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>dataset[<span class="st">'train'</span>][<span class="dv">0</span>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1"></a>dataset[<span class="st">'train'</span>][<span class="dv">0</span>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <ul>
 <li>Great, we’ve loaded our first local dataset! But while this worked for the training set, what we really want is to include both the train and test splits in a single DatasetDict object so we can apply Dataset.map() functions across both splits at once.</li>
 <li>To do this, we can provide a dictionary to the <code>data_files</code> argument that maps each split name to a file associated with that split:</li>
 </ul>
 <div id="cell-20" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:255,&quot;referenced_widgets&quot;:[&quot;4f7eef42c00e454e9c029dfb28712593&quot;,&quot;5126d68f0ed64b22832722af19a373bf&quot;,&quot;97b2e233b38a4b739e7a9b94f8515859&quot;,&quot;9734ad3215f34ce48464a10e19bc3764&quot;,&quot;561149884421418bbb59db3398846b41&quot;,&quot;f7a07d6543ce4c6591fa4066f983af69&quot;,&quot;ac55b5af07574274b4470e63ff768724&quot;,&quot;b25880948c3e4c308b273e87b3e95a8a&quot;,&quot;13c094d7148f472aae712bf37a2ef2e4&quot;,&quot;52b806e7b21c4a7c8058f36234138242&quot;,&quot;7844346b2e11456995f8826a1883e7c9&quot;,&quot;27bc1aeae8fe4f32b7d85c78cd0d8e9b&quot;,&quot;69a2715a74484956a263978c9fd0b56a&quot;,&quot;efc9119d28004546bd3eaadf5db2bac0&quot;,&quot;7a6f36bed79b47379d1db4dfc8f5489f&quot;,&quot;b83b59fcb06f46c48a3ac74621572188&quot;,&quot;218e34a152664dccaa4022acebd1c68c&quot;,&quot;fb6b3f7b69f648519036ec00f146e423&quot;,&quot;853293be1bd24bd3b7ef501a4b9e68d6&quot;,&quot;f6a6abcd1cb84f41bb6445920f56d665&quot;,&quot;00b3d2b7cc34443dbe37b5b9155bc6d4&quot;,&quot;f1fe8a9b52f44fa8b230a2a998072a04&quot;]}}" data-outputid="7db6a711-9b2c-4fa9-92c4-26595f759626">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># the proper way to load dataset from local file:</span></span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>data_files <span class="op">=</span> {<span class="st">"train"</span>: <span class="st">"SQuAD_it-train.json"</span>, <span class="st">"test"</span>: <span class="st">"SQuAD_it-test.json"</span>}</span>
-<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>squad_it_dataset <span class="op">=</span> load_dataset(<span class="st">"json"</span>, data_files<span class="op">=</span>data_files, field<span class="op">=</span><span class="st">"data"</span>)</span>
-<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>squad_it_dataset</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1"></a><span class="co"># the proper way to load dataset from local file:</span></span>
+<span id="cb15-2"><a href="#cb15-2"></a>data_files <span class="op">=</span> {<span class="st">"train"</span>: <span class="st">"SQuAD_it-train.json"</span>, <span class="st">"test"</span>: <span class="st">"SQuAD_it-test.json"</span>}</span>
+<span id="cb15-3"><a href="#cb15-3"></a>squad_it_dataset <span class="op">=</span> load_dataset(<span class="st">"json"</span>, data_files<span class="op">=</span>data_files, field<span class="op">=</span><span class="st">"data"</span>)</span>
+<span id="cb15-4"><a href="#cb15-4"></a>squad_it_dataset</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <script type="application/vnd.jupyter.widget-view+json">
 {"model_id":"4f7eef42c00e454e9c029dfb28712593","version_major":2,"version_minor":0,"quarto_mimetype":"application/vnd.jupyter.widget-view+json"}
@@ -480,9 +480,9 @@ SQuAD_it-train.json.gz:  82.3% -- created SQuAD_it-train.json</code></pre>
 <li><p>The loading scripts in Datasets acually support the automatic decompression of the input files, we could have skipped the use of gzip by pointing the data_files argument directly to the compressed files:</p></li>
 </ul>
 <div id="cell-23" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:255,&quot;referenced_widgets&quot;:[&quot;e375acaaa4db4ef7a62a2c26e1125eec&quot;,&quot;d24d33ca1fd949df89a086efebcaf2f3&quot;,&quot;e84aca0c230f403098ee9a956651768d&quot;,&quot;60e1b74653544cd6ac0a652538490700&quot;,&quot;a785953f390b4d8f8efd719a6103f5e9&quot;,&quot;8b5484e37f4c486b9d0f5140f09b085a&quot;,&quot;059de4fdd1294dce8fa9998bdb6ced17&quot;,&quot;e4b793b2b4c44466a8ef157eae7e8b9e&quot;,&quot;6220cd3f71af431a89aad55540682c00&quot;,&quot;cce78e05a7f74e139192ece8d2996a6f&quot;,&quot;0fd676644c354c98aae582bd951b0b5a&quot;,&quot;48c60e819f694fcab2fa8b52e9238a59&quot;,&quot;0a0fac48840446d1b1c939f60bf7a0db&quot;,&quot;8e657f31c9ca4321af9ef24db25cf03c&quot;,&quot;f5235e51c4b64d4e9aae3afccfad7c61&quot;,&quot;de5d843a4ab64fc49ffa66afa9639bdc&quot;,&quot;909a08400099465a872f3400e5d41bd0&quot;,&quot;373b2ac0353146bdb2e5cba677be6a54&quot;,&quot;453c7b19a9f84cbc9593b2294a257d9c&quot;,&quot;c5a761ffdb5644a482b5c9e28e27d96f&quot;,&quot;61a7184b239d4ff79e9d38463e8be3a9&quot;,&quot;b989ef199f784006b60ed8f9704f03ad&quot;]}}" data-outputid="216f1526-f2c4-41fa-8576-734496f4c181">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>data_files <span class="op">=</span> {<span class="st">'train'</span>: <span class="st">'SQuAD_it-train.json.gz'</span>, <span class="st">'test'</span>: <span class="st">'SQuAD_it-test.json.gz'</span>}</span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>dataset <span class="op">=</span> load_dataset(<span class="st">'json'</span>, data_files<span class="op">=</span>data_files, field<span class="op">=</span> <span class="st">'data'</span>)</span>
-<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>dataset</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1"></a>data_files <span class="op">=</span> {<span class="st">'train'</span>: <span class="st">'SQuAD_it-train.json.gz'</span>, <span class="st">'test'</span>: <span class="st">'SQuAD_it-test.json.gz'</span>}</span>
+<span id="cb17-2"><a href="#cb17-2"></a>dataset <span class="op">=</span> load_dataset(<span class="st">'json'</span>, data_files<span class="op">=</span>data_files, field<span class="op">=</span> <span class="st">'data'</span>)</span>
+<span id="cb17-3"><a href="#cb17-3"></a>dataset</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <script type="application/vnd.jupyter.widget-view+json">
 {"model_id":"e375acaaa4db4ef7a62a2c26e1125eec","version_major":2,"version_minor":0,"quarto_mimetype":"application/vnd.jupyter.widget-view+json"}
@@ -517,9 +517,9 @@ SQuAD_it-train.json.gz:  82.3% -- created SQuAD_it-train.json</code></pre>
 <li>For example the <code>SQuAD_it</code> dataset is stored on <code>github</code> so we could build our dataset from that <code>url</code> directly:</li>
 </ul>
 <div id="cell-26" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:145,&quot;referenced_widgets&quot;:[&quot;58cb0dd39c784500999b2afb463bf290&quot;,&quot;393f77ddd4b7431ea7c88a0c71434442&quot;,&quot;a15b3f773417481e8052264f0396d283&quot;,&quot;2b90592acc664d1b991919ff939836a6&quot;,&quot;1d7be5a1a3eb4e8e9f217ee2d229f5d5&quot;,&quot;29fe3ed0ae894227b36eb8af20415794&quot;,&quot;6e6f223ac30a4ea89cf3c5238e0432b9&quot;,&quot;74c05d2a92c3444dac00e291b0064464&quot;,&quot;f3ebaec296f24d36aaf49b4a0a1b8fd9&quot;,&quot;e2aded15b9c0494b8a8852b752d5d8a0&quot;,&quot;0d34c3d3087647e68628d67346ad1beb&quot;,&quot;72b6a65d83f44ec3b9a91268aafc901d&quot;,&quot;4a1e047f5a9b40f3b9867864f5ec7ecd&quot;,&quot;dd24bd2c069146d38886b144b0196c48&quot;,&quot;21586e2b53344308add0ed8296f8bd02&quot;,&quot;2c8ea3d3f30646189b424250e007a326&quot;,&quot;7188a61bd83749a5a9edb2c0477ffc37&quot;,&quot;9487d8d5b2774cca8bd57efcdfe47aa9&quot;,&quot;b905baf0f09c438c8f05d923f7213fa1&quot;,&quot;2458878c0ae543ef85c1b4b69cb6f697&quot;,&quot;5c60f4ff8cce4d81a6815d6e687a0f33&quot;,&quot;e2d5432da27f40dd9c86be206669f488&quot;,&quot;1e7889d4df984efd9d7dabb219700cff&quot;,&quot;1f53bbc9c8a44b579ad669fca7f0cfd4&quot;,&quot;f66db4d647ee436dac9ee93bba5d5358&quot;,&quot;49a79629a7aa48e99897398111369c4d&quot;,&quot;fe9cb706c50d4b28837788de7cc206cc&quot;,&quot;581caed7ff944f2aa509ff66095791be&quot;,&quot;b7721d07397b497599ca33bce152b560&quot;,&quot;fa9d6e5336f24618941fc3e11b6fc597&quot;,&quot;bfb62e953c3c41dbb2fabe05cbfbfc8d&quot;,&quot;3a5c38fc3990468dbb702ceb7dc90e15&quot;,&quot;19a1a0dc5063462294d725f8c109d78a&quot;,&quot;9b0b038085184ca2ac7be2f65dbeb85d&quot;,&quot;14d206e269ed4ec3a76d83c15ce4621f&quot;,&quot;ba0e29ba5cae46a8a88ef506836ec30b&quot;,&quot;dadcca126cf54c868bde7d13f017af3d&quot;,&quot;bf8b7c7b62f144d2ad5032fe7c5081b0&quot;,&quot;cee77665480245f4a52c9d99de17800d&quot;,&quot;0a105fbbfdfd4fa29070ddfc24fc59b7&quot;,&quot;61a0b81cd4cd4f4da0028fe276d884ae&quot;,&quot;2120beb71e0042bd83643a1cb39d1910&quot;,&quot;1fb6cc20f59e4b5495aca4c25e7872ff&quot;,&quot;1258cc0c35ce45e8b9efd3e5b8ab921f&quot;]}}" data-outputid="02a3aea5-6693-4dab-bd21-3931092917f5">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>data_files <span class="op">=</span> {<span class="st">'train'</span>:<span class="st">'https://github.com/crux82/squad-it/raw/master/SQuAD_it-train.json.gz'</span>,</span>
-<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>              <span class="st">'test'</span>: <span class="st">'https://github.com/crux82/squad-it/raw/master/SQuAD_it-test.json.gz'</span>}</span>
-<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>dataset <span class="op">=</span> load_dataset(<span class="st">'json'</span>, data_files<span class="op">=</span>data_files, field<span class="op">=</span><span class="st">'data'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1"></a>data_files <span class="op">=</span> {<span class="st">'train'</span>:<span class="st">'https://github.com/crux82/squad-it/raw/master/SQuAD_it-train.json.gz'</span>,</span>
+<span id="cb19-2"><a href="#cb19-2"></a>              <span class="st">'test'</span>: <span class="st">'https://github.com/crux82/squad-it/raw/master/SQuAD_it-test.json.gz'</span>}</span>
+<span id="cb19-3"><a href="#cb19-3"></a>dataset <span class="op">=</span> load_dataset(<span class="st">'json'</span>, data_files<span class="op">=</span>data_files, field<span class="op">=</span><span class="st">'data'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <script type="application/vnd.jupyter.widget-view+json">
 {"model_id":"58cb0dd39c784500999b2afb463bf290","version_major":2,"version_minor":0,"quarto_mimetype":"application/vnd.jupyter.widget-view+json"}
@@ -556,7 +556,7 @@ SQuAD_it-train.json.gz:  82.3% -- created SQuAD_it-train.json</code></pre>
 <li><p>First we need to download it and unzip it:</p></li>
 </ul>
 <div id="cell-29" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}}" data-outputid="85e0488b-52a4-4ddb-a650-de546a731018">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="op">!</span>wget https:<span class="op">//</span>archive.ics.uci.edu<span class="op">/</span>static<span class="op">/</span>public<span class="op">/</span><span class="dv">462</span><span class="op">/</span>drug<span class="op">+</span>review<span class="op">+</span>dataset<span class="op">+</span>drugs<span class="op">+</span>com.<span class="bu">zip</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1"></a><span class="op">!</span>wget https:<span class="op">//</span>archive.ics.uci.edu<span class="op">/</span>static<span class="op">/</span>public<span class="op">/</span><span class="dv">462</span><span class="op">/</span>drug<span class="op">+</span>review<span class="op">+</span>dataset<span class="op">+</span>drugs<span class="op">+</span>com.<span class="bu">zip</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>--2024-02-27 14:22:46--  https://archive.ics.uci.edu/static/public/462/drug+review+dataset+drugs+com.zip
 Resolving archive.ics.uci.edu (archive.ics.uci.edu)... 128.195.10.252
@@ -572,7 +572,7 @@ drug+review+dataset     [       &lt;=&gt;          ]  41.00M  30.7MB/s    in 1.3
 </div>
 </div>
 <div id="cell-30" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}}" data-outputid="0b94e920-9624-47a4-b5b8-5ca00a096159">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="op">!</span>unzip drug<span class="op">+</span>review<span class="op">+</span>dataset<span class="op">+</span>drugs<span class="op">+</span>com.<span class="bu">zip</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1"></a><span class="op">!</span>unzip drug<span class="op">+</span>review<span class="op">+</span>dataset<span class="op">+</span>drugs<span class="op">+</span>com.<span class="bu">zip</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Archive:  drug+review+dataset+drugs+com.zip
   inflating: drugsComTest_raw.tsv    
@@ -583,9 +583,9 @@ drug+review+dataset     [       &lt;=&gt;          ]  41.00M  30.7MB/s    in 1.3
 <li>We will use <code>csv</code> arguments here even though we have <code>tsv</code> files, we just need to specifying the delimiter argument in the load_dataset() function as follows:</li>
 </ul>
 <div id="cell-32" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:81,&quot;referenced_widgets&quot;:[&quot;d77328af1969417babf4b6f61d5bc64f&quot;,&quot;825033d315a942c79ae38d7784872db0&quot;,&quot;92eef319f17e495094980336a3d91a60&quot;,&quot;7b37ba65ba084a928f8064a2bca742e7&quot;,&quot;7c52aebab239468faee6bcabd53c1868&quot;,&quot;b410170a11cb4854b71dafd717f714bb&quot;,&quot;268b2fea738d415383598f5d544fb4ff&quot;,&quot;fd95ebe7a8dd41dba04055bf49bd0cbe&quot;,&quot;f297ee14f4a046c8a7d4d088d54200f1&quot;,&quot;2bce7ccadb13414884dee6e7a97db76c&quot;,&quot;c137758800e64fa18e9d865e40eb7293&quot;,&quot;6c244b993ac044ac88a3d7b30062fd96&quot;,&quot;5e5f66dbc2d84582afa8a70ff8ad307a&quot;,&quot;1d0feb25b8be4678b65efb44ff038f20&quot;,&quot;2106109b93a44b0f87b353aa019aefe6&quot;,&quot;f74be4a998b7496ab739be307e085c89&quot;,&quot;2c78fbcd1a4b42e694228fca01b9bb0b&quot;,&quot;dcf87080aec1428a8fe5718f85376e08&quot;,&quot;76c0a42f93714fad96015b9a0d48c464&quot;,&quot;865585b3c4044f63a0cce7650301fe97&quot;,&quot;1d018106d07a4dd5b5e7d07e1c611cfe&quot;,&quot;998d3da530d64a7999ddd7f5261d6484&quot;]}}" data-outputid="3fd11f48-f251-4b99-c9a0-7df8224402ca">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>data_files <span class="op">=</span> {<span class="st">'train'</span>: <span class="st">'drugsComTrain_raw.tsv'</span>,</span>
-<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>              <span class="st">'test'</span>: <span class="st">'drugsComTest_raw.tsv'</span>}</span>
-<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>dataset <span class="op">=</span> load_dataset(<span class="st">'csv'</span>, data_files<span class="op">=</span>data_files, delimiter<span class="op">=</span> <span class="st">'</span><span class="ch">\t</span><span class="st">'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1"></a>data_files <span class="op">=</span> {<span class="st">'train'</span>: <span class="st">'drugsComTrain_raw.tsv'</span>,</span>
+<span id="cb24-2"><a href="#cb24-2"></a>              <span class="st">'test'</span>: <span class="st">'drugsComTest_raw.tsv'</span>}</span>
+<span id="cb24-3"><a href="#cb24-3"></a>dataset <span class="op">=</span> load_dataset(<span class="st">'csv'</span>, data_files<span class="op">=</span>data_files, delimiter<span class="op">=</span> <span class="st">'</span><span class="ch">\t</span><span class="st">'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <script type="application/vnd.jupyter.widget-view+json">
 {"model_id":"d77328af1969417babf4b6f61d5bc64f","version_major":2,"version_minor":0,"quarto_mimetype":"application/vnd.jupyter.widget-view+json"}
@@ -601,8 +601,8 @@ drug+review+dataset     [       &lt;=&gt;          ]  41.00M  30.7MB/s    in 1.3
 <li>A good practice when doing any sort of data analysis is to grab a small random sample to get a quick feel for the type of data you’re working with. In Datasets, we can create a random sample by chaining the Dataset.shuffle() and Dataset.select() functions together:</li>
 </ul>
 <div id="cell-34" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}}" data-outputid="275bc99e-643d-4bd4-9a51-6600d8ae1ac2">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>drug_sample <span class="op">=</span> dataset[<span class="st">'train'</span>].shuffle(seed<span class="op">=</span> <span class="dv">42</span>).select(<span class="bu">range</span>(<span class="dv">1000</span>))</span>
-<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>drug_sample[:<span class="dv">2</span>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1"></a>drug_sample <span class="op">=</span> dataset[<span class="st">'train'</span>].shuffle(seed<span class="op">=</span> <span class="dv">42</span>).select(<span class="bu">range</span>(<span class="dv">1000</span>))</span>
+<span id="cb25-2"><a href="#cb25-2"></a>drug_sample[:<span class="dv">2</span>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="20">
 <pre><code>{'Unnamed: 0': [87571, 178045],
  'drugName': ['Naproxen', 'Duloxetine'],
@@ -628,15 +628,15 @@ drug+review+dataset     [       &lt;=&gt;          ]  41.00M  30.7MB/s    in 1.3
 <li><p>First the <code>unnamed</code> column may be just Id fro each patient, so we check if each one of those IDs is unique or not:</p></li>
 </ul>
 <div id="cell-37" class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> split <span class="kw">in</span> dataset.keys():</span>
-<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">assert</span> <span class="bu">len</span>(dataset[split]) <span class="op">==</span> <span class="bu">len</span>(dataset[split].unique(<span class="st">"Unnamed: 0"</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1"></a><span class="cf">for</span> split <span class="kw">in</span> dataset.keys():</span>
+<span id="cb27-2"><a href="#cb27-2"></a>    <span class="cf">assert</span> <span class="bu">len</span>(dataset[split]) <span class="op">==</span> <span class="bu">len</span>(dataset[split].unique(<span class="st">"Unnamed: 0"</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <ul>
 <li>It’s better to rename that column to something more meaningfull:</li>
 </ul>
 <div id="cell-39" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}}" data-outputid="a0d1350a-efff-4aea-a40e-e5ade5881053">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>dataset <span class="op">=</span> dataset.rename_column(<span class="st">'Unnamed: 0'</span>, <span class="st">'patient_id'</span>)</span>
-<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>dataset</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb28"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1"></a>dataset <span class="op">=</span> dataset.rename_column(<span class="st">'Unnamed: 0'</span>, <span class="st">'patient_id'</span>)</span>
+<span id="cb28-2"><a href="#cb28-2"></a>dataset</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="25">
 <pre><code>DatasetDict({
     train: Dataset({
@@ -654,11 +654,11 @@ drug+review+dataset     [       &lt;=&gt;          ]  41.00M  30.7MB/s    in 1.3
 <li>Now we have to lower case all the <code>condition</code> values. This can be easily achieved by <code>.map()</code> method:</li>
 </ul>
 <div id="cell-41" class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> lower_case(example):</span>
-<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> {<span class="st">'condition'</span>: example[<span class="st">'condition'</span>].lower()}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb30"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1"></a><span class="kw">def</span> lower_case(example):</span>
+<span id="cb30-2"><a href="#cb30-2"></a>  <span class="cf">return</span> {<span class="st">'condition'</span>: example[<span class="st">'condition'</span>].lower()}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div id="cell-42" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:267,&quot;referenced_widgets&quot;:[&quot;961847dbf5784af7911886e78bc0fd97&quot;,&quot;f47e03b5ec4a4105b8798e0d217405f3&quot;,&quot;41f765544ceb4b618f9e616f46668474&quot;,&quot;8ac69ea4703740adb565243dbc19a120&quot;,&quot;3da4d8c99f274642b007073a96f83aa1&quot;,&quot;160e618eadaf46be9b2f3202e7ed3d80&quot;,&quot;bba9fe9ca1d546b4b982d954221fe5f1&quot;,&quot;55a7eca489c24b91840e562dfd064f13&quot;,&quot;4fa4b4790daa4c7e89accef366147c2f&quot;,&quot;b7e32d0ce04a47deb8e1ec5057acae56&quot;,&quot;c262120f069d49cba2795e20af8fb627&quot;]}}" data-outputid="3df6da34-3171-4161-b0f0-91abe41d27b2">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>dataset.<span class="bu">map</span>(lower_case)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb31"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1"></a>dataset.<span class="bu">map</span>(lower_case)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <script type="application/vnd.jupyter.widget-view+json">
 {"model_id":"961847dbf5784af7911886e78bc0fd97","version_major":2,"version_minor":0,"quarto_mimetype":"application/vnd.jupyter.widget-view+json"}
@@ -734,7 +734,7 @@ drug+review+dataset     [       &lt;=&gt;          ]  41.00M  30.7MB/s    in 1.3
 <li>We will use the <code>lambda</code> function:</li>
 </ul>
 <div id="cell-44" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:81,&quot;referenced_widgets&quot;:[&quot;4297e5fcf44d4cf281a2d73b49774173&quot;,&quot;1b51675d20dd4ae88705c33d4c734dbd&quot;,&quot;59b9c52cd6d041f1873df50a03cad7d4&quot;,&quot;af43d07afe5a43e58d1a410a18d39e7e&quot;,&quot;07fb4e67bac94b0ebdd2fb37610ee035&quot;,&quot;e9e81394c0224e8181f1020d4a29794c&quot;,&quot;93c874563a2e48298e2d1e5e5489ae09&quot;,&quot;af41ba2da4714a5eb0af78f0e08aff98&quot;,&quot;ab949339aff14b2b9b08875abaa9f2e4&quot;,&quot;37d4ef3f619a4c63a72b60c9ef1896a9&quot;,&quot;970c640829c842fb8dff22a9edb6e744&quot;,&quot;26a5f61c499347aab7ae3fc498c2a7e7&quot;,&quot;dc15198a1f384b7e9bb3aa01a47c8e36&quot;,&quot;4b2783ff83714bc0a212a863a52dabf2&quot;,&quot;427735239a0d433d9214a8c055769584&quot;,&quot;5f4d18ba50af48a39e8a82a731049b63&quot;,&quot;ad38788bcbd247739b1fb6785ce39d2f&quot;,&quot;daeafc7d0df849d49dc69e8e4ea93623&quot;,&quot;26df9a3bed4c4004af225524f05417fd&quot;,&quot;2050c0cd1e9a4a78aa729b392506e226&quot;,&quot;030dbf6613024c3ea052ef4b2ae47cfb&quot;,&quot;85bd67b357484ede8e5b08ddd61c3c43&quot;]}}" data-outputid="f4d5e75d-7817-4c89-b4c7-96b0a1cfee91">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb32"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>dataset <span class="op">=</span> dataset.<span class="bu">filter</span>(<span class="kw">lambda</span> x: x[<span class="st">'condition'</span>] <span class="kw">is</span> <span class="kw">not</span> <span class="va">None</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb32"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1"></a>dataset <span class="op">=</span> dataset.<span class="bu">filter</span>(<span class="kw">lambda</span> x: x[<span class="st">'condition'</span>] <span class="kw">is</span> <span class="kw">not</span> <span class="va">None</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <script type="application/vnd.jupyter.widget-view+json">
 {"model_id":"4297e5fcf44d4cf281a2d73b49774173","version_major":2,"version_minor":0,"quarto_mimetype":"application/vnd.jupyter.widget-view+json"}
@@ -750,7 +750,7 @@ drug+review+dataset     [       &lt;=&gt;          ]  41.00M  30.7MB/s    in 1.3
 <li>Now lets aplly <code>.map()</code> method on lower_case() funtion:</li>
 </ul>
 <div id="cell-46" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:81,&quot;referenced_widgets&quot;:[&quot;ef234f70d12a4a398d4caa545290315e&quot;,&quot;98245feb0ea14250a77ab20e312d3c27&quot;,&quot;9ceb1da4338046989cfb2cbbb8878f74&quot;,&quot;83a12f14d21d4c988b8172195039c429&quot;,&quot;4bd7c7e3b91c4bc0a54263f446551c7b&quot;,&quot;3300835d1c8740e9b6d9b08c84eb092d&quot;,&quot;db92ba4cbd0f44e892392542abcb9b92&quot;,&quot;c275403f5f2145498a25246b51da79be&quot;,&quot;effa27666ad0481b9abda154824e3496&quot;,&quot;50776fba6aa741589b58378c38433b72&quot;,&quot;5549bcc1b8794c9fb60db6c2efe2c45e&quot;,&quot;296e03fd8ce84548b59a2b71b4e9addf&quot;,&quot;634f40a9c4be403f97349563ec192bde&quot;,&quot;8cd5767878c34fa78c054489593ee47c&quot;,&quot;28df15c7ee5f47cf98580b2fe779c3b4&quot;,&quot;48102c46664549a5858a1384c3858e06&quot;,&quot;9821c95f061946fcb1a9a11b9c8d08fa&quot;,&quot;b045543e33b34957986c2127d3cba5ee&quot;,&quot;1bc10320889248f096e905d36e904a70&quot;,&quot;1b7cb68b406a40618ea7a0fa72884b10&quot;,&quot;257e997735844af89827138b673958f1&quot;,&quot;0486e43c123b412db440846cdf18e0ff&quot;]}}" data-outputid="ab590615-8528-4382-9ec9-13cd6bb8ab79">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb33"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>dataset <span class="op">=</span> dataset.<span class="bu">map</span>(lower_case)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb33"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1"></a>dataset <span class="op">=</span> dataset.<span class="bu">map</span>(lower_case)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <script type="application/vnd.jupyter.widget-view+json">
 {"model_id":"ef234f70d12a4a398d4caa545290315e","version_major":2,"version_minor":0,"quarto_mimetype":"application/vnd.jupyter.widget-view+json"}
@@ -769,14 +769,14 @@ drug+review+dataset     [       &lt;=&gt;          ]  41.00M  30.7MB/s    in 1.3
 <li>When dealing with reviews datasets, its good practice to count the number of words in each review, so lets create a function that achieve that goal:</li>
 </ul>
 <div id="cell-48" class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb34"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> compute_review_length(example):</span>
-<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> {<span class="st">'review_length'</span>: <span class="bu">len</span>(example[<span class="st">'review'</span>].split())}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb34"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1"></a><span class="kw">def</span> compute_review_length(example):</span>
+<span id="cb34-2"><a href="#cb34-2"></a>  <span class="cf">return</span> {<span class="st">'review_length'</span>: <span class="bu">len</span>(example[<span class="st">'review'</span>].split())}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <ul>
 <li><code>compute_review_length()</code> returns a dictionary whose key does not correspond to one of the column names in the dataset. In this case, when <code>compute_review_length()</code> is passed to <code>Dataset.map()</code>, it will be applied to all the rows in the dataset to create a new review_length column:</li>
 </ul>
 <div id="cell-50" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:81,&quot;referenced_widgets&quot;:[&quot;b2078fe3572c46d786beb6f5b2320455&quot;,&quot;82dee8b7ca9d48899ebd5e3a04f8b35e&quot;,&quot;1223bbc9bbe046d89280072d55a7f092&quot;,&quot;c556ead5e2f243de8919182f2516dba5&quot;,&quot;7c4d22494d5244e0926495473f8691de&quot;,&quot;a42e5c72d70a450a85b57b493af0acb7&quot;,&quot;a2a0f4c2516e4e8593d8f8ffa2b66613&quot;,&quot;13ba9a9d919544e9a7a45852d94c6c8b&quot;,&quot;122a0bbb951e4ca598fdc9be599e678b&quot;,&quot;7cdea81d4b7645ca9519c67c6e844036&quot;,&quot;b0ea4dc36bd1479d99026516aa1dc80c&quot;,&quot;f67361c705c744a19cb6e5e350691d26&quot;,&quot;6cd63adacc8b46e9ad3e06b9f6b20c90&quot;,&quot;3d405f0e3f304b2287e4672f270f8122&quot;,&quot;66f26512636f4538be566117e4780ff0&quot;,&quot;39d0afe7f2344d9f8ead1e688b9403e4&quot;,&quot;8656880351a546a18932165b8ad08a3a&quot;,&quot;35a2df7989f5489abc745a73272c0145&quot;,&quot;2f845a98923d447ebb50801a5b2a568e&quot;,&quot;6a005d61ab2d43fe8641a7d5f677df43&quot;,&quot;43d70cb202ac4c7f8cc913f3649a5093&quot;,&quot;c284fb8dd4b24c74b9fff7901edfe84e&quot;]}}" data-outputid="caf32fed-4de9-47c4-ad94-2685a73f1e53">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb35"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>dataset <span class="op">=</span> dataset.<span class="bu">map</span>(compute_review_length)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb35"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1"></a>dataset <span class="op">=</span> dataset.<span class="bu">map</span>(compute_review_length)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <script type="application/vnd.jupyter.widget-view+json">
 {"model_id":"b2078fe3572c46d786beb6f5b2320455","version_major":2,"version_minor":0,"quarto_mimetype":"application/vnd.jupyter.widget-view+json"}
@@ -789,7 +789,7 @@ drug+review+dataset     [       &lt;=&gt;          ]  41.00M  30.7MB/s    in 1.3
 </div>
 </div>
 <div id="cell-51" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}}" data-outputid="4007e8c1-20be-4b22-e91c-48d05099a39f">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb36"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>dataset[<span class="st">'train'</span>][<span class="dv">2</span>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb36"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1"></a>dataset[<span class="st">'train'</span>][<span class="dv">2</span>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="33">
 <pre><code>{'patient_id': 92703,
  'drugName': 'Lybrel',
@@ -805,7 +805,7 @@ drug+review+dataset     [       &lt;=&gt;          ]  41.00M  30.7MB/s    in 1.3
 <li>As expected, we can see a review_length column has been added to our training set. We can sort this new column with Dataset.sort() to see what the extreme values look like:</li>
 </ul>
 <div id="cell-53" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}}" data-outputid="2f5fb303-bee8-493a-c186-e13857902957">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb38"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>dataset[<span class="st">'train'</span>].sort(<span class="st">'review_length'</span>)[:<span class="dv">3</span>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb38"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1"></a>dataset[<span class="st">'train'</span>].sort(<span class="st">'review_length'</span>)[:<span class="dv">3</span>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="35">
 <pre><code>{'patient_id': [111469, 13653, 53602],
  'drugName': ['Ledipasvir / sofosbuvir',
@@ -823,7 +823,7 @@ drug+review+dataset     [       &lt;=&gt;          ]  41.00M  30.7MB/s    in 1.3
 <li>We could delete rows that countains review with less than 30 words, by using the combination of lambda function + <code>.filter()</code>:</li>
 </ul>
 <div id="cell-55" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:81,&quot;referenced_widgets&quot;:[&quot;8eab9c1cb8044bda9f2a8502d96ee90e&quot;,&quot;da6fc08094384e019c2e3688d6c4049d&quot;,&quot;e239e784d8af4957ad38d4a170a4fccd&quot;,&quot;f2ea211645484200a6a7ed4a9f1e73d4&quot;,&quot;ae71a6af628b4564bafe46136da3611f&quot;,&quot;840d481e54834ce4b8f9870dfb7194b2&quot;,&quot;de88583621a5455b86825cf5e9cbb724&quot;,&quot;fe73785ad0d441ce8bca2b99a6952b0f&quot;,&quot;010fe39658384f0f98548fa9f4ad3b16&quot;,&quot;fc52011221c9490aa82d5393cf7b39e4&quot;,&quot;47a7cc5b90164485b28f746c602439f5&quot;,&quot;f0e32c8ea2b64418b56da89ea505f094&quot;,&quot;7dc1e53fdf8f47eb9bc363451c0320d2&quot;,&quot;3ca94586e05e488eaa1f0415ce977617&quot;,&quot;a099f1d3f07b496d8921ec863dd65485&quot;,&quot;56f1852924744c24b0d119b911336033&quot;,&quot;850496a08a6f4a47bee8314c334b7adb&quot;,&quot;ecb80b5327d849ccb6319afd59f09886&quot;,&quot;f944f1f780804c34b2b9a545df64a2a4&quot;,&quot;e25676ed0ae2493c9e64baf09c2ae196&quot;,&quot;5197e5a2634d404188c87326a5904334&quot;,&quot;beeefe13a9b3435c9e60dd7492233db0&quot;]}}" data-outputid="ede8bb80-3560-4b0b-e967-e616bb18f952">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb40"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a>dataset <span class="op">=</span> dataset.<span class="bu">filter</span>(<span class="kw">lambda</span> x: x[<span class="st">'review_length'</span>] <span class="op">&gt;</span> <span class="dv">30</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb40"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb40-1"><a href="#cb40-1"></a>dataset <span class="op">=</span> dataset.<span class="bu">filter</span>(<span class="kw">lambda</span> x: x[<span class="st">'review_length'</span>] <span class="op">&gt;</span> <span class="dv">30</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <script type="application/vnd.jupyter.widget-view+json">
 {"model_id":"8eab9c1cb8044bda9f2a8502d96ee90e","version_major":2,"version_minor":0,"quarto_mimetype":"application/vnd.jupyter.widget-view+json"}
@@ -839,13 +839,13 @@ drug+review+dataset     [       &lt;=&gt;          ]  41.00M  30.7MB/s    in 1.3
 <li>The last problemm we have to deal with is <code>html</code> characters, We can use Python’s html module to unescape these characters, like so:</li>
 </ul>
 <div id="cell-57" class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb41"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> html</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb41"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb41-1"><a href="#cb41-1"></a><span class="im">import</span> html</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <ul>
 <li>We’ll use Dataset.map() to unescape all the HTML characters in our corpus:</li>
 </ul>
 <div id="cell-59" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:81,&quot;referenced_widgets&quot;:[&quot;c8884dd4f31a49a09ddbae750a63c28b&quot;,&quot;2278d8f30ee24e12b1dc30804abd6870&quot;,&quot;8ca1927fdf144f43a91ed15a00246192&quot;,&quot;d5c7b4591a8f4f93a17082f6714e770c&quot;,&quot;a4f2363665714a5bb26baceaf050517b&quot;,&quot;63da45c2cc544161a46359ee451df0b9&quot;,&quot;5af9d6d4687f4b6a89f3d7e27a99c03b&quot;,&quot;29d696abdc714d6f8111e83d98167432&quot;,&quot;2e82e08f36dc4022a30dd15b27de064f&quot;,&quot;94b6138ecd704d18b230c00824e971cd&quot;,&quot;ca5132fc219e4c8786355abb02ba47a5&quot;,&quot;dcfb816b9d844a5b8355444c44298ecd&quot;,&quot;0ffbbd11a7e243189d47a452a5f17acf&quot;,&quot;d8dd56df16044d8f9c708d85941bcab4&quot;,&quot;88aa4b63dc294e8aa172ba33e71e908b&quot;,&quot;e20c8c1fe12548ab943b2946ed29cdc2&quot;,&quot;e9b17f026c9c4cffb11e7603eb2b40c4&quot;,&quot;c23530936b7b4a6fa8fcfde8171327fa&quot;,&quot;0764566452ce485eacd25e60cc1c34e6&quot;,&quot;64955aec3c3145fb866baa4f3a1c6d2f&quot;,&quot;c1d8d9ce337e43e6b3457119fc67925b&quot;,&quot;3c2c9e96a08b44348071b98611492afd&quot;]}}" data-outputid="a81f824c-17ea-41e3-8565-233da6fe59fa">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb42"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a>dataset <span class="op">=</span> dataset.<span class="bu">map</span>(<span class="kw">lambda</span> x: {<span class="st">'review'</span>: html.unescape(x[<span class="st">'review'</span>])})</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb42"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb42-1"><a href="#cb42-1"></a>dataset <span class="op">=</span> dataset.<span class="bu">map</span>(<span class="kw">lambda</span> x: {<span class="st">'review'</span>: html.unescape(x[<span class="st">'review'</span>])})</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <script type="application/vnd.jupyter.widget-view+json">
 {"model_id":"c8884dd4f31a49a09ddbae750a63c28b","version_major":2,"version_minor":0,"quarto_mimetype":"application/vnd.jupyter.widget-view+json"}
@@ -864,7 +864,7 @@ drug+review+dataset     [       &lt;=&gt;          ]  41.00M  30.7MB/s    in 1.3
 <li>The last mapping we apply on dataset takes almost <code>40s</code> to execute, this duration can be reduced if we pass an argument to the <code>.map()</code> method: <code>batched=True</code>, this will create batches and lets the code applied in many elements at once, we could also construct the code in list comprehension instead of regular for loop, which also add preformance the operation:</li>
 </ul>
 <div id="cell-61" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:81,&quot;referenced_widgets&quot;:[&quot;4a68222379b8436d8d8911593bbc7997&quot;,&quot;d9bbb05d1d104b399e98c99b74a6b9a7&quot;,&quot;cd4307f3b37a4e4a90a4a88e49bf93d4&quot;,&quot;2c14fa893bdd402bb88f80cc2ac8612a&quot;,&quot;965b825af8bb4bdf89a908475b39c071&quot;,&quot;e23fb7a6f5794639af19d8da3b0b08ba&quot;,&quot;2063b2f9bf7c4f85a6b847869d14dffd&quot;,&quot;43db877358e94076b5214bbb23ddd986&quot;,&quot;fa0262b149bd49e99706374b98639458&quot;,&quot;04507f6618564e638db64fdb4537260e&quot;,&quot;8dd26d4296834b32a11fef8c87f61425&quot;,&quot;a6a1fcb4267f49b995eacb04c675e235&quot;,&quot;2dc4dca21ed34c29b3f8137738b0e81c&quot;,&quot;82db304f474a4894a0d000a9870e20d4&quot;,&quot;00968d58e414499eb6502558744ca449&quot;,&quot;223052d90b28493babadcebdea2f376e&quot;,&quot;64300166ad2f4048a8e4c2545ce5215b&quot;,&quot;40dfd31d8df5418691b429d880e5cb35&quot;,&quot;d4469f4a4b2b4e47badabead2a26d24c&quot;,&quot;0619b8f742854e21840990c46868ee7d&quot;,&quot;81abf3e69b97418fa30a9e6a15f477de&quot;,&quot;bfcc4c8d26b343e683e3b6854e952e6a&quot;]}}" data-outputid="3aff5cdb-692b-497e-c811-8657a5c832b3">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb43"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a>new_dataset <span class="op">=</span> dataset.<span class="bu">map</span>(<span class="kw">lambda</span> x: {<span class="st">'review'</span>: [html.unescape(o) <span class="cf">for</span> o <span class="kw">in</span> x[<span class="st">'review'</span>]]}, batched<span class="op">=</span> <span class="va">True</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb43"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb43-1"><a href="#cb43-1"></a>new_dataset <span class="op">=</span> dataset.<span class="bu">map</span>(<span class="kw">lambda</span> x: {<span class="st">'review'</span>: [html.unescape(o) <span class="cf">for</span> o <span class="kw">in</span> x[<span class="st">'review'</span>]]}, batched<span class="op">=</span> <span class="va">True</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <script type="application/vnd.jupyter.widget-view+json">
 {"model_id":"4a68222379b8436d8d8911593bbc7997","version_major":2,"version_minor":0,"quarto_mimetype":"application/vnd.jupyter.widget-view+json"}
@@ -882,10 +882,10 @@ drug+review+dataset     [       &lt;=&gt;          ]  41.00M  30.7MB/s    in 1.3
 <li><p>Now lets tokenize our dataset since we are done EDA part:</p></li>
 </ul>
 <div id="cell-64" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:145,&quot;referenced_widgets&quot;:[&quot;ae784e9f53a645d89f5bef2fdd5cf4b4&quot;,&quot;fd7f4824c3254813afe21b0ca2fa5c15&quot;,&quot;88c164596eed441098016ae6af629d02&quot;,&quot;b97cf108f35342c39a36eb9e1317068b&quot;,&quot;037062c9e54447b9b86606694881cca1&quot;,&quot;d5a05ac8fbc540dd8438bfd338891d35&quot;,&quot;534b3684c4d84a9fbde6047a992c4f03&quot;,&quot;3361d71b990a49868ff9911869eee7ca&quot;,&quot;fed442bef09b455fa4a94442270fa4cd&quot;,&quot;6679769377d44425afa517ede0f3d548&quot;,&quot;7a8451f22d03416db2545ad0e05f20fd&quot;,&quot;fdea4c5aecf841589de33129e138cc43&quot;,&quot;b9917a91d4cf4ffa9ae68a2f4419088c&quot;,&quot;bd4a22c5651d47c9843a805fa6d0ee00&quot;,&quot;2f7a07aea1cf4428ab3e285fba1d7f68&quot;,&quot;7e592652f1824930a37e4eeec53921d0&quot;,&quot;91a98aafa63f4ac6b90799637535b28b&quot;,&quot;1d4429eee1c144e6a5aa63d4f74426c0&quot;,&quot;ecdbcc5eab8d464199b8ed3fffc17a9e&quot;,&quot;d62ff9cee9634d2b9d675026ee0c3be8&quot;,&quot;2035139010074b48bc12f3ccc53da148&quot;,&quot;fc8c209d0c764fcd8b25abd3466d73c7&quot;,&quot;5b5a93115fcc4c4884100ed3cfdbc375&quot;,&quot;078d77fa98124ceba66135ed5541d472&quot;,&quot;051d437f8d0f405f80dc6f25ae45bb80&quot;,&quot;59a953b6fbf44872bba912d9dcaecc98&quot;,&quot;b9857477e81d4fd2b62f4078689b04be&quot;,&quot;a8a3e84034e44e9da40cf67c24169075&quot;,&quot;bdfd3a47fea443e788ae8283b344f5e7&quot;,&quot;1590042d9b1f4f0783ef8737b7986067&quot;,&quot;12cc571e80b841b8a4cf4073dbde4321&quot;,&quot;434df546c89542aa86b1c2d37169ac27&quot;,&quot;2056ad36a2534af48fd8630081a75672&quot;,&quot;f7d1d1df4a09437a8fa733e8c5f3112d&quot;,&quot;07943aabb52b4a9c854a948ece51c38e&quot;,&quot;9bd16d76a24d4f58a4ac0c6709472cfa&quot;,&quot;159ef30204194cd2885e9f1d866701fb&quot;,&quot;830f591da13e440cbf3ee9e67f6e6131&quot;,&quot;48ebf0619ec44730bfcaff703b5f0da1&quot;,&quot;f04a4365b4b447c38bfe42cc2d4f52e1&quot;,&quot;a4ddc2ea53cf4a7b95740826a1bed596&quot;,&quot;f41a754717d04e1381438e7f22c95e13&quot;,&quot;cb7cda4021a64cc8a9232280e1070eff&quot;,&quot;49d9603c371044518a4c25f7fa1138de&quot;]}}" data-outputid="be79062e-42a7-4d06-b3c6-dc5fd695bb16">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb44"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a>mdl <span class="op">=</span> <span class="st">'bert-base-uncased'</span></span>
-<span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a>tokenizer <span class="op">=</span> AutoTokenizer.from_pretrained(mdl)</span>
-<span id="cb44-3"><a href="#cb44-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> tokenizer_function(example):</span>
-<span id="cb44-4"><a href="#cb44-4" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> tokenizer(example[<span class="st">'review'</span>], truncation<span class="op">=</span> <span class="va">True</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb44"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb44-1"><a href="#cb44-1"></a>mdl <span class="op">=</span> <span class="st">'bert-base-uncased'</span></span>
+<span id="cb44-2"><a href="#cb44-2"></a>tokenizer <span class="op">=</span> AutoTokenizer.from_pretrained(mdl)</span>
+<span id="cb44-3"><a href="#cb44-3"></a><span class="kw">def</span> tokenizer_function(example):</span>
+<span id="cb44-4"><a href="#cb44-4"></a>  <span class="cf">return</span> tokenizer(example[<span class="st">'review'</span>], truncation<span class="op">=</span> <span class="va">True</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <script type="application/vnd.jupyter.widget-view+json">
 {"model_id":"ae784e9f53a645d89f5bef2fdd5cf4b4","version_major":2,"version_minor":0,"quarto_mimetype":"application/vnd.jupyter.widget-view+json"}
@@ -908,7 +908,7 @@ drug+review+dataset     [       &lt;=&gt;          ]  41.00M  30.7MB/s    in 1.3
 </div>
 </div>
 <div id="cell-65" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:81,&quot;referenced_widgets&quot;:[&quot;1b0ec9bfea7945698e8dcb8aa84baa25&quot;,&quot;c865ecfedded448e95b158975327aff6&quot;,&quot;fc2bdd8b19e642448fb1d9036774c548&quot;,&quot;07448e73de4347158c70bfa32161895f&quot;,&quot;0e528a2c54c34c0b8e935e022c4fff17&quot;,&quot;2ce41edd76874bdf9bd3d92f00cedd26&quot;,&quot;0aff75a020d6432cbee22be88c438870&quot;,&quot;85c9c06e4eb246a8afe06f021b09903e&quot;,&quot;4b5b61f69f6c4694b0f496b1b85e8304&quot;,&quot;a039b23bf75d44079ff5e832b006c043&quot;,&quot;bdf57260c68145819a89aa85a15927da&quot;,&quot;fd2b5f4b7db54cf3a553f83489415f0f&quot;,&quot;d99d62a38ca04eb29ff88dd9b822c7dd&quot;,&quot;84e0ff703ab1439599ad59d67497bcd6&quot;,&quot;4ce94108b4af47328d91ea668f5bdc48&quot;,&quot;1f520e04c85c44018a5b3660a9bb7366&quot;,&quot;a541e90b10964053ac419dc9f7c3bf2f&quot;,&quot;0b01629e272441f0b612901080b258b7&quot;,&quot;d005f23948f14f1e8a4026ae1f6aa896&quot;,&quot;4b3d602645b348b896f67f37cdae7273&quot;,&quot;023093be041f4d3999a5f3bbc5a3c5e0&quot;,&quot;6582a8de4a944fe998c871f695d5cc14&quot;]}}" data-outputid="0a7ae41b-df1b-4425-e6f8-9dc09ca69c0b">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb45"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a>tokenized_ds <span class="op">=</span> dataset.<span class="bu">map</span>(tokenizer_function, batched<span class="op">=</span><span class="va">True</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb45"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb45-1"><a href="#cb45-1"></a>tokenized_ds <span class="op">=</span> dataset.<span class="bu">map</span>(tokenizer_function, batched<span class="op">=</span><span class="va">True</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <script type="application/vnd.jupyter.widget-view+json">
 {"model_id":"1b0ec9bfea7945698e8dcb8aa84baa25","version_major":2,"version_minor":0,"quarto_mimetype":"application/vnd.jupyter.widget-view+json"}
@@ -926,20 +926,20 @@ drug+review+dataset     [       &lt;=&gt;          ]  41.00M  30.7MB/s    in 1.3
 <li><p>Let’s have a look at how it works! Here we will tokenize our examples and truncate them to a maximum length of 128, but we will ask the tokenizer to return all the chunks of the texts instead of just the first one. This can be done with return_overflowing_tokens=True:</p></li>
 </ul>
 <div id="cell-69" class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb46"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> tokenize_split(example):</span>
-<span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> tokenizer(</span>
-<span id="cb46-3"><a href="#cb46-3" aria-hidden="true" tabindex="-1"></a>      example[<span class="st">'review'</span>],</span>
-<span id="cb46-4"><a href="#cb46-4" aria-hidden="true" tabindex="-1"></a>      truncation<span class="op">=</span> <span class="va">True</span>,</span>
-<span id="cb46-5"><a href="#cb46-5" aria-hidden="true" tabindex="-1"></a>      max_length<span class="op">=</span> <span class="dv">128</span>,</span>
-<span id="cb46-6"><a href="#cb46-6" aria-hidden="true" tabindex="-1"></a>      return_overflowing_tokens<span class="op">=</span> <span class="va">True</span></span>
-<span id="cb46-7"><a href="#cb46-7" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb46"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb46-1"><a href="#cb46-1"></a><span class="kw">def</span> tokenize_split(example):</span>
+<span id="cb46-2"><a href="#cb46-2"></a>  <span class="cf">return</span> tokenizer(</span>
+<span id="cb46-3"><a href="#cb46-3"></a>      example[<span class="st">'review'</span>],</span>
+<span id="cb46-4"><a href="#cb46-4"></a>      truncation<span class="op">=</span> <span class="va">True</span>,</span>
+<span id="cb46-5"><a href="#cb46-5"></a>      max_length<span class="op">=</span> <span class="dv">128</span>,</span>
+<span id="cb46-6"><a href="#cb46-6"></a>      return_overflowing_tokens<span class="op">=</span> <span class="va">True</span></span>
+<span id="cb46-7"><a href="#cb46-7"></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <ul>
 <li>Let’s test this before we pass it to the map() function:</li>
 </ul>
 <div id="cell-71" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}}" data-outputid="a999f89e-8f4a-41b3-8684-1df9bda2a740">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb47"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a>res <span class="op">=</span> tokenize_split(dataset[<span class="st">'train'</span>][<span class="dv">0</span>])</span>
-<span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a>[<span class="bu">len</span>(inp) <span class="cf">for</span> inp <span class="kw">in</span> res[<span class="st">'input_ids'</span>]]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb47"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb47-1"><a href="#cb47-1"></a>res <span class="op">=</span> tokenize_split(dataset[<span class="st">'train'</span>][<span class="dv">0</span>])</span>
+<span id="cb47-2"><a href="#cb47-2"></a>[<span class="bu">len</span>(inp) <span class="cf">for</span> inp <span class="kw">in</span> res[<span class="st">'input_ids'</span>]]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="46">
 <pre><code>[128, 45]</code></pre>
 </div>
@@ -948,7 +948,7 @@ drug+review+dataset     [       &lt;=&gt;          ]  41.00M  30.7MB/s    in 1.3
 <li>So, our first example in the training set became two features because it was tokenized to more than the maximum number of tokens we specified: the first one of length 128 and the second one of length 45. Now let’s do this for all elements of the dataset!</li>
 </ul>
 <div id="cell-73" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:232,&quot;referenced_widgets&quot;:[&quot;6a7342307efd43e6a23f48e092f03694&quot;,&quot;a3755a8220f740df808da8ea12a7e45e&quot;,&quot;21b505fa9a6849b8815de8e4d8ef2a9e&quot;,&quot;5015584141f04721af1178015531a702&quot;,&quot;e7a0096b038044f38713103aae2779c6&quot;,&quot;88bc7ce3f60f464697c3da662e47e3db&quot;,&quot;9c854ace437246a9824a63182cf5c384&quot;,&quot;1a4b1b5c46fc428b86b881ad36ac54e0&quot;,&quot;cec3ffd7789c4c7c9e35290a5099a718&quot;,&quot;e232c2d95e514fb6b408045f1417505b&quot;,&quot;291dfd282da6491699a9c9696d95245c&quot;]}}" data-outputid="f5dd5c78-f9ab-460f-f051-489e479d09b6">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb49"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a>tokenized_ds <span class="op">=</span> dataset.<span class="bu">map</span>(tokenize_split, batched<span class="op">=</span> <span class="va">True</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb49"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb49-1"><a href="#cb49-1"></a>tokenized_ds <span class="op">=</span> dataset.<span class="bu">map</span>(tokenize_split, batched<span class="op">=</span> <span class="va">True</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <script type="application/vnd.jupyter.widget-view+json">
 {"model_id":"6a7342307efd43e6a23f48e092f03694","version_major":2,"version_minor":0,"quarto_mimetype":"application/vnd.jupyter.widget-view+json"}
@@ -1025,7 +1025,7 @@ drug+review+dataset     [       &lt;=&gt;          ]  41.00M  30.7MB/s    in 1.3
 <li>The problem is that we’re trying to mix two different datasets of different sizes: the drug_dataset columns will have a certain number of examples (the 1,000 in our error), but the tokenized_dataset we are building will have more (the 1,463 in the error message; it is more than 1,000 because we are tokenizing long reviews into more than one example by using return_overflowing_tokens=True). That doesn’t work for a Dataset, so we need to either remove the columns from the old dataset or make them the same size as they are in the new dataset. We can do the former with the remove_columns argument:</li>
 </ul>
 <div id="cell-75" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:81,&quot;referenced_widgets&quot;:[&quot;37991ca076564c268f72becdd2c2bba2&quot;,&quot;d9abe7afaafc441eba30bf5ed542c072&quot;,&quot;6e8f42d769de4e89b0972e2ddc6b174d&quot;,&quot;ac3d6fa9920944d8ae54e15c2c19ac4c&quot;,&quot;696e5c3b32dc4c41a6caf377e6940716&quot;,&quot;204e0d6bc35f4250a33334fcba22a458&quot;,&quot;4d11334bac4640da95c5a4f1caaab5a3&quot;,&quot;afb4cb6ea8a144a6a3139bb596d22e47&quot;,&quot;383ec8248d64465a8d4550054416cd9b&quot;,&quot;85b86e78db554c2b9669ec0ff8305d61&quot;,&quot;a516a0b86ed043af9792fe2f0b6045e8&quot;,&quot;2152fb7c58154c3394e8f25201c53dfc&quot;,&quot;e7f9cb1952764e1492ab9a99ae641214&quot;,&quot;7e9d53c5eca84ea3bf79f2445d5e5592&quot;,&quot;786b016758a24ad79424c3ee0831c340&quot;,&quot;d5cf970baf88496d96e4521ea9bc471d&quot;,&quot;853af04df9c449fe9a8ae22d6dafeef6&quot;,&quot;9ef7a9ef16b2429bb5fd71ca9b315c47&quot;,&quot;e3c5d58e8ea74d15bd0dbf01c7dbf4a3&quot;,&quot;823060b2dc6f46418793f6c8c9b33271&quot;,&quot;6c3c0ee6da334c0bac3d4b47e7e26d68&quot;,&quot;7111a1e9413347b9a6ee55739f9733a4&quot;]}}" data-outputid="d2c45dbf-8298-4335-c12b-6204b11e2e74">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb50"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a>tokenized_ds <span class="op">=</span> dataset.<span class="bu">map</span>(tokenize_split, batched<span class="op">=</span> <span class="va">True</span>, remove_columns<span class="op">=</span> dataset[<span class="st">'train'</span>].column_names)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb50"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb50-1"><a href="#cb50-1"></a>tokenized_ds <span class="op">=</span> dataset.<span class="bu">map</span>(tokenize_split, batched<span class="op">=</span> <span class="va">True</span>, remove_columns<span class="op">=</span> dataset[<span class="st">'train'</span>].column_names)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <script type="application/vnd.jupyter.widget-view+json">
 {"model_id":"37991ca076564c268f72becdd2c2bba2","version_major":2,"version_minor":0,"quarto_mimetype":"application/vnd.jupyter.widget-view+json"}
@@ -1038,13 +1038,13 @@ drug+review+dataset     [       &lt;=&gt;          ]  41.00M  30.7MB/s    in 1.3
 </div>
 </div>
 <div id="cell-76" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}}" data-outputid="eb21c298-694a-49d4-a5c6-e7e6110f344f">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb51"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a><span class="bu">len</span>(tokenized_ds[<span class="st">'train'</span>])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb51"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb51-1"><a href="#cb51-1"></a><span class="bu">len</span>(tokenized_ds[<span class="st">'train'</span>])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="57">
 <pre><code>204198</code></pre>
 </div>
 </div>
 <div id="cell-77" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}}" data-outputid="a953c111-db36-4f4d-fd51-e904696a48d3">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb53"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a><span class="bu">len</span>(dataset[<span class="st">'train'</span>])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb53"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb53-1"><a href="#cb53-1"></a><span class="bu">len</span>(dataset[<span class="st">'train'</span>])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="58">
 <pre><code>138514</code></pre>
 </div>
@@ -1128,6 +1128,57 @@ drug+review+dataset     [       &lt;=&gt;          ]  41.00M  30.7MB/s    in 1.3
         container: window.document.getElementById('quarto-embedded-source-code-modal')
       });
       clipboardModal.on('success', onCopySuccess);
+    }
+    const viewSource = window.document.getElementById('quarto-view-source') ||
+                       window.document.getElementById('quarto-code-tools-source');
+    if (viewSource) {
+      const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
+      viewSource.addEventListener("click", function(e) {
+        if (sourceUrl) {
+          // rstudio viewer pane
+          if (/\bcapabilities=\b/.test(window.location)) {
+            window.open(sourceUrl);
+          } else {
+            window.location.href = sourceUrl;
+          }
+        } else {
+          const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
+          modal.show();
+        }
+        return false;
+      });
+    }
+    function toggleCodeHandler(show) {
+      return function(e) {
+        const detailsSrc = window.document.querySelectorAll(".cell > details > .sourceCode");
+        for (let i=0; i<detailsSrc.length; i++) {
+          const details = detailsSrc[i].parentElement;
+          if (show) {
+            details.open = true;
+          } else {
+            details.removeAttribute("open");
+          }
+        }
+        const cellCodeDivs = window.document.querySelectorAll(".cell > .sourceCode");
+        const fromCls = show ? "hidden" : "unhidden";
+        const toCls = show ? "unhidden" : "hidden";
+        for (let i=0; i<cellCodeDivs.length; i++) {
+          const codeDiv = cellCodeDivs[i];
+          if (codeDiv.classList.contains(fromCls)) {
+            codeDiv.classList.remove(fromCls);
+            codeDiv.classList.add(toCls);
+          } 
+        }
+        return false;
+      }
+    }
+    const hideAllCode = window.document.getElementById("quarto-hide-all-code");
+    if (hideAllCode) {
+      hideAllCode.addEventListener("click", toggleCodeHandler(false));
+    }
+    const showAllCode = window.document.getElementById("quarto-show-all-code");
+    if (showAllCode) {
+      showAllCode.addEventListener("click", toggleCodeHandler(true));
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
