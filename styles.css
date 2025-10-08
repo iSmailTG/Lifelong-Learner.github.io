@@ -1,1 +1,25 @@
 /* css styles */
+
+pre code {
+  display: block;
+  padding: 1rem;
+  border-radius: 0.75rem;
+  background-color: #1e1e1e; /* Dark VSCode-like background */
+  color: #e0e0e0;
+  font-family: "JetBrains Mono", "Fira Code", monospace;
+  font-size: 0.9rem;
+  overflow-x: auto;
+}
+
+/* Optional: Add a nice glow to keywords (works even without syntax theme) */
+code span.kw { color: #569cd6; font-weight: 500; }
+code span.dt { color: #4ec9b0; }
+code span.dv { color: #b5cea8; }
+code span.st { color: #ce9178; }
+code span.co { color: #6a9955; font-style: italic; }
+
+/* Optional: Add subtle shadow and spacing */
+pre {
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  margin-bottom: 1.5rem;
+}
