@@ -7,9 +7,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Ismail TG">
-<meta name="dcterms.date" content="2023-10-18">
+<meta name="dcterms.date" content="2025-09-19">
 
-<title>Kaggling Tutorial #0: Download A Dataset from Kaggle Using API-Key – Ismail’s Personal Blog</title>
+<title>Learning CPP As Pythonista: Day-1 – Ismail's Personal Blog</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -21,41 +21,6 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
-}
-/* CSS for syntax highlighting */
-html { -webkit-text-size-adjust: 100%; }
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -158,10 +123,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">Kaggling Tutorial #0: Download A Dataset from Kaggle Using API-Key</h1>
+      <h1 class="title">Learning CPP As Pythonista: Day-1</h1>
                                 <div class="quarto-categories">
-                <div class="quarto-category">Kaggle</div>
-                <div class="quarto-category">Colab</div>
+                <div class="quarto-category">Kernel Engineering</div>
+                <div class="quarto-category">Cuda</div>
+                <div class="quarto-category">Pytorch</div>
+                <div class="quarto-category">CPP</div>
               </div>
                   </div>
   </div>
@@ -179,7 +146,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">October 18, 2023</p>
+        <p class="date">September 19, 2025</p>
       </div>
     </div>
     
@@ -198,84 +165,36 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 
-<section id="how-to-download-dataset-from-kaggle-into-colab-notebook" class="level1">
-<h1>How To Download Dataset From Kaggle into Colab NoteBook:</h1>
+<section id="motivation" class="level2">
+<h2 class="anchored" data-anchor-id="motivation">Motivation:</h2>
 <ul>
-<li>In this mini tutorial we will create a <strong>colab notebook</strong> and download a <strong>Kaggle dataset</strong> using Kaggle API-key.</li>
-<li>Having the possibility to work on different Free computing platform, gives us a wide choices to do multiple prototyping in parallel.</li>
+<li>In this series of lessons, I will track my learning through the universe of C++ as someone who mainly programm in Python.</li>
+<li>The motivation behind learning C++ in 2025 can be resumed into one word: <strong>Cuda</strong>.</li>
+<li>CUDA kernels are still C++ first, Python second. Learning the bare-metal steps so I can stop guessing and start writing fast GPU code. One small page a day until the compiler feels normal.</li>
+<li>This idea of learning C++ for CUDA make it less intimidating, since C++ isn’t the goal here rather just a tool for something else.</li>
+<li>But still I need to learn some basics of C++ in order to navigate its world that already after one studying session looks very strange and outlandish for a Python programmer.</li>
 </ul>
 </section>
-<section id="getting-the-api-key" class="level1">
-<h1>Getting the API-Key:</h1>
+<section id="c-world" class="level2">
+<h2 class="anchored" data-anchor-id="c-world">C++ World:</h2>
 <ul>
-<li>First we need to get <strong>API-Key</strong> form Kaggle website: <code>settings</code>:
+<li>C++ is a <strong>Compiled language</strong>, which means the code goes through a transformation process before it can run.</li>
+<li>In C++, we write codem then a special program called <strong>Compiler</strong> translates our <em>Human-readable</em> code into machine code (1s &amp; 0s) that computer can executes.</li>
+<li>This process of compiling works in <strong>4 stages</strong>:
 <ul>
-<li><a href="https://www.kaggle.com/settings">Link</a></li>
+<li>Stage1: Pre-processing before the compiler even looks at our code, it’s a text manipulation step where the preprocessor check code that starts with <code>#</code> and copy-past, find-replace it automatically, so the next step include only pure C++ code.</li>
+<li>Stage2: The compiler reads the C++ code and converts it to <strong>Assembly Language</strong>, which is a human readable instructions that are very close to machine code.</li>
+<li>Stage3: An <strong>Assembler</strong> converts assembly into actual <code>1s</code> &amp; <code>0s</code> that the CPU understands.</li>
+<li>Stage4: A <strong>Linker</strong> connects everything together (code, libraries, other file..) and creates the final executable file that can run.</li>
 </ul></li>
-<li>Click on <strong><code>Create New Token</code></strong>, it will download a <strong>json</strong> file: <code>kaggle.json</code><br>
-<img src="pic0.png" class="img-fluid" alt="API_Key"></li>
-<li>Then we need to upload this file into colab notebook where we will work with the dataset</li>
-<li>Here we create a new directory <code>kaggle</code> and copy the <code>kaggle.json</code> inside:</li>
 </ul>
-<div id="cell-3" class="cell" data-execution_count="1">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="op">!</span>mkdir <span class="op">~/</span>.kaggle</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-<div id="cell-4" class="cell" data-execution_count="2">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="op">!</span>cp kaggle.json <span class="op">~/</span>.kaggle</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-<ul>
-<li>Now we need to modify the permissions and access mode of <code>kaggle.json</code>:</li>
-</ul>
-<div id="cell-6" class="cell" data-execution_count="3">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="op">!</span>chmod <span class="dv">600</span> <span class="op">~/</span>.kaggle<span class="op">/</span>kaggle.json</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-</section>
-<section id="downloading-the-dataset" class="level1">
-<h1>Downloading the Dataset:</h1>
-<ul>
-<li>Since we have all ingredients, we can now download our dataset from kaggle:</li>
-</ul>
-<div id="cell-8" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}}" data-outputid="8bdfc3bf-8361-4a2f-a243-dee78efe7300" data-execution_count="4">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="op">!</span> kaggle competitions download linking<span class="op">-</span>writing<span class="op">-</span>processes<span class="op">-</span>to<span class="op">-</span>writing<span class="op">-</span>quality</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="2180e4ef-19bf-4ad4-8609-78a15fafe0a7" class="cell" data-execution_count="3">
+<pre class="cpp17 cell-code"><code>#include &lt;iostream&gt;
+std::cout &lt;&lt; "It worked!" &lt;&lt; std::endl;</code></pre>
 <div class="cell-output cell-output-stdout">
-<pre><code>Downloading linking-writing-processes-to-writing-quality.zip to /content
- 90% 97.0M/108M [00:00&lt;00:00, 137MB/s]
-100% 108M/108M [00:00&lt;00:00, 135MB/s] </code></pre>
+<pre><code>It worked!</code></pre>
 </div>
 </div>
-<ul>
-<li>The file we get after this command is <code>.zip</code> file, which contains all files and datasets we will work with</li>
-<li>In order to unzip this file we will use <code>zipfile</code>:</li>
-</ul>
-<div id="cell-10" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}}" data-outputid="706ef04a-0b58-40b9-aefe-1c01cd4b7a9a" data-execution_count="5">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> zipfile <span class="im">import</span> ZipFile</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="bu">file</span> <span class="op">=</span> <span class="st">'linking-writing-processes-to-writing-quality.zip'</span></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> ZipFile(<span class="bu">file</span>, <span class="st">'r'</span>) <span class="im">as</span> <span class="bu">zip</span>:</span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>    <span class="co"># list all the contents of the zip file</span></span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>    <span class="bu">zip</span>.printdir()</span>
-<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>    <span class="co"># extract all files</span></span>
-<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">'extraction...'</span>)</span>
-<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>    <span class="bu">zip</span>.extractall()</span>
-<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">'Done!'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>File Name                                             Modified             Size
-sample_submission.csv                          2023-10-02 17:22:24           48
-test_logs.csv                                  2023-10-02 17:22:24          398
-train_logs.csv                                 2023-10-02 17:22:30    485679766
-train_scores.csv                               2023-10-02 17:23:10        32132
-extraction...
-Done!</code></pre>
-</div>
-</div>
-</section>
-<section id="conclusion" class="level1">
-<h1>Conclusion:</h1>
-<ul>
-<li>We succefully download a dataset from Kaggle using API-Key</li>
-<li>We can take it from here and apply all kind of data manipulation, EDA, training model on it …</li>
-</ul>
 
 
 </section>
