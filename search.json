@@ -1,28 +1,28 @@
 [
   {
-    "objectID": "project.html",
-    "href": "project.html",
+    "objectID": "projects.html",
+    "href": "projects.html",
     "title": "Projects",
     "section": "",
     "text": "Description: Fine-tuned a small language model on the Manim dataset using instruction tuning methodology. The model generates executable Manim code that produces mathematical animations from natural language descriptions.\nTechnologies: - LLM Fine-tuning - Instruction Tuning - Code Generation - Manim\nStatus: Completed\nView Project"
   },
   {
-    "objectID": "project.html#featured-project",
-    "href": "project.html#featured-project",
+    "objectID": "projects.html#featured-project",
+    "href": "projects.html#featured-project",
     "title": "Projects",
     "section": "",
     "text": "Description: Fine-tuned a small language model on the Manim dataset using instruction tuning methodology. The model generates executable Manim code that produces mathematical animations from natural language descriptions.\nTechnologies: - LLM Fine-tuning - Instruction Tuning - Code Generation - Manim\nStatus: Completed\nView Project"
   },
   {
-    "objectID": "project.html#learning-journey",
-    "href": "project.html#learning-journey",
+    "objectID": "projects.html#learning-journey",
+    "href": "projects.html#learning-journey",
     "title": "Projects",
     "section": "Learning Journey",
     "text": "Learning Journey\nMy learning process and experiments are documented in the Blog section, covering topics like:\n\nDeep Learning fundamentals (fast.ai course)\nTransformers and NLP (Hugging Face course)\nBuilding LLMs from scratch\nGPU Programming and CUDA\nPyTorch internals"
   },
   {
-    "objectID": "project.html#coming-soon",
-    "href": "project.html#coming-soon",
+    "objectID": "projects.html#coming-soon",
+    "href": "projects.html#coming-soon",
     "title": "Projects",
     "section": "Coming Soon",
     "text": "Coming Soon\nMore projects are in development as I dive deeper into CUDA kernel engineering and low-level ML optimization. Check back soon or follow my progress in the blog!\n\nWant to collaborate or discuss ML/CUDA? Feel free to reach out."

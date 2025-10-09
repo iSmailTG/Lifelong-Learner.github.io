@@ -6,10 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Ismail TG">
-<meta name="dcterms.date" content="2024-11-14">
 
-<title>Chapter 1: Build a Large Language Model – Ismail's Learning Journey</title>
+<title>Projects – Ismail’s Learning Journey</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -22,27 +20,62 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
-<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../../../">
-<script src="../../../site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="../../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="../../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
-<script src="../../../site_libs/quarto-html/popper.min.js"></script>
-<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-065a5179aebd64318d7ea99d77b64a9e.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../../site_libs/bootstrap/bootstrap-7aec330bd7e81af58b36d374cce8c0c9.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-065a5179aebd64318d7ea99d77b64a9e.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-7aec330bd7e81af58b36d374cce8c0c9.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -73,19 +106,19 @@ ul.task-list li input[type="checkbox"] {
 <style>html{ scroll-behavior: smooth; }</style>
 
 
-<link rel="stylesheet" href="../../../styles.css">
+<link rel="stylesheet" href="styles.css">
 </head>
 
-<body class="floating nav-fixed quarto-light">
+<body class="nav-fixed quarto-light">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top quarto-banner">
+  <header id="quarto-header" class="headroom fixed-top">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a href="../../../index.html" class="navbar-brand navbar-brand-logo">
+    <a href="./index.html" class="navbar-brand navbar-brand-logo">
     </a>
-    <a class="navbar-brand" href="../../../index.html">
+    <a class="navbar-brand" href="./index.html">
     <span class="navbar-title">Ismail’s Learning Journey</span>
     </a>
   </div>
@@ -96,19 +129,19 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../../../index.html"> 
+    <a class="nav-link" href="./index.html"> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../../projects.html"> 
+    <a class="nav-link active" href="./projects.html" aria-current="page"> 
 <span class="menu-text">Projects</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../../blog.html"> 
+    <a class="nav-link" href="./blog.html"> 
 <span class="menu-text">Blog</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../../about.html"> 
+    <a class="nav-link" href="./about.html"> 
 <span class="menu-text">About</span></a>
   </li>  
 </ul>
@@ -131,201 +164,78 @@ ul.task-list li input[type="checkbox"] {
     </nav>
 </header>
 <!-- content -->
-<header id="title-block-header" class="quarto-title-block default page-columns page-full">
-  <div class="quarto-title-banner page-columns page-full">
-    <div class="quarto-title column-body">
-      <h1 class="title">Chapter 1: Build a Large Language Model</h1>
-                                <div class="quarto-categories">
-                <div class="quarto-category">LLM</div>
-                <div class="quarto-category">Deep Learning</div>
-              </div>
-                  </div>
-  </div>
-    
-  
-  <div class="quarto-title-meta">
-
-      <div>
-      <div class="quarto-title-meta-heading">Author</div>
-      <div class="quarto-title-meta-contents">
-               <p>Ismail TG </p>
-            </div>
-    </div>
-      
-      <div>
-      <div class="quarto-title-meta-heading">Published</div>
-      <div class="quarto-title-meta-contents">
-        <p class="date">November 14, 2024</p>
-      </div>
-    </div>
-    
-      
-    </div>
-    
-  
-  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
-    <nav id="TOC" role="doc-toc" class="toc-active" data-toc-expanded="2">
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction:</a>
+  <li><a href="#featured-project" id="toc-featured-project" class="nav-link active" data-scroll-target="#featured-project">Featured Project</a>
   <ul class="collapse">
-  <li><a href="#structure-of-the-book" id="toc-structure-of-the-book" class="nav-link" data-scroll-target="#structure-of-the-book">Structure of the Book:</a>
-  <ul class="collapse">
-  <li><a href="#whats-an-llm" id="toc-whats-an-llm" class="nav-link" data-scroll-target="#whats-an-llm">What’s an LLM:</a></li>
-  <li><a href="#stages-of-building-and-using-llms" id="toc-stages-of-building-and-using-llms" class="nav-link" data-scroll-target="#stages-of-building-and-using-llms">Stages of building and using LLMs:</a></li>
-  <li><a href="#introducing-the-transformer-architecture" id="toc-introducing-the-transformer-architecture" class="nav-link" data-scroll-target="#introducing-the-transformer-architecture">Introducing the Transformer architecture:</a></li>
-  <li><a href="#utilizing-large-datasets" id="toc-utilizing-large-datasets" class="nav-link" data-scroll-target="#utilizing-large-datasets">Utilizing large datasets:</a></li>
-  <li><a href="#a-closer-look-at-the-gpt-architecture" id="toc-a-closer-look-at-the-gpt-architecture" class="nav-link" data-scroll-target="#a-closer-look-at-the-gpt-architecture">A closer look at the GPT architecture:</a></li>
-  <li><a href="#building-a-large-language-model" id="toc-building-a-large-language-model" class="nav-link" data-scroll-target="#building-a-large-language-model">Building a large language model:</a></li>
+  <li><a href="#manim-code-generation-with-llm-fine-tuning" id="toc-manim-code-generation-with-llm-fine-tuning" class="nav-link" data-scroll-target="#manim-code-generation-with-llm-fine-tuning">Manim Code Generation with LLM Fine-tuning</a></li>
   </ul></li>
-  </ul></li>
+  <li><a href="#learning-journey" id="toc-learning-journey" class="nav-link" data-scroll-target="#learning-journey">Learning Journey</a></li>
+  <li><a href="#coming-soon" id="toc-coming-soon" class="nav-link" data-scroll-target="#coming-soon">Coming Soon</a></li>
   </ul>
 </nav>
-</nav>
-<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
-<!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
     </div>
 <!-- main -->
-<main class="content quarto-banner-title-block" id="quarto-document-content">
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<div class="quarto-title-block"><div><h1 class="title">Projects</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
+<p class="subtitle lead">Machine Learning and Deep Learning Projects</p>
+</div>
 
 
 
+<div class="quarto-title-meta">
 
-<nav id="TOC-body" role="doc-toc">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#introduction" id="toc-introduction">Introduction:</a>
-  <ul>
-  <li><a href="#structure-of-the-book" id="toc-structure-of-the-book">Structure of the Book:</a>
-  <ul>
-  <li><a href="#whats-an-llm" id="toc-whats-an-llm">What’s an LLM:</a></li>
-  <li><a href="#stages-of-building-and-using-llms" id="toc-stages-of-building-and-using-llms">Stages of building and using LLMs:</a></li>
-  <li><a href="#introducing-the-transformer-architecture" id="toc-introducing-the-transformer-architecture">Introducing the Transformer architecture:</a></li>
-  <li><a href="#utilizing-large-datasets" id="toc-utilizing-large-datasets">Utilizing large datasets:</a></li>
-  <li><a href="#a-closer-look-at-the-gpt-architecture" id="toc-a-closer-look-at-the-gpt-architecture">A closer look at the GPT architecture:</a></li>
-  <li><a href="#building-a-large-language-model" id="toc-building-a-large-language-model">Building a large language model:</a></li>
-  </ul></li>
-  </ul></li>
-  </ul>
-</nav>
-<section id="introduction" class="level1">
-<h1>Introduction:</h1>
-<p>In this series on notebooks I will share my learning/note-taking of the book <a href="https://www.amazon.com/Build-Large-Language-Model-Scratch/dp/1633437167"><strong>Build a Large Lunguage Model(From Scratch)</strong></a> by the Author <a href="https://x.com/rasbt"><strong>Sebastian Raschka</strong></a>.</p>
-<section id="structure-of-the-book" class="level2">
-<h2 class="anchored" data-anchor-id="structure-of-the-book">Structure of the Book:</h2>
-<pre><code>
-
-├── chapters  
-│   ├── chapter1_understanding_LLMs: high-level introduction to the fundamental concepts behind LLMs.  
-│   ├── chapter2_text_data: It covers the process ofpreparing text for LLM training, including splitting text into word and subword tokens.  
-│   ├── chapter3_attention_mechanisms:  It introduces a basicself-attention framework and progresses to an enhanced self-attention mechanism.  
-│   ├── chapter4_GPT_model: focuses on coding a GPT-like LLM that can be trained to generatehuman-like text.  
-│   ├── chapter5_pretraining: implements the pretraining process of LLMs.  
-│   ├── chapter6_text_classification:  introduces different LLM fine-tuning approaches.  
-│   ├── chapter7_instruction_following:  explores the instruction fine-tuning process of LLMs.  
-└──  </code></pre>
-<ul>
-<li><p>The aim of this chapter is to introduce the foundational concepts of large language models (LLMs) and the advancements in deep learning that made them possible</p>
-<ul>
-<li>this chapter doesn’t contain any code.</li>
-</ul></li>
-<li><p>Large language models (LLMs), like OpenAI’s ChatGPT, are deep neural networks that revolutionized natural language processing (NLP) in recent years.</p></li>
-<li><p>Traditional NLP methods excelled in tasks like spam classification and simple pattern recognition but struggled with complex tasks requiring advanced understanding and generation abilities.</p></li>
-<li><p>Contemporary LLMs can handle sophisticated language tasks, such as writing an email from keywords, which was challenging for earlier models.</p></li>
-<li><p>When we say language models “understand,” we mean they can produce text that seems coherent and contextually appropriate, not that they have human-like awareness or true comprehension.</p></li>
-<li><p>The transformer architecture and large datasets have driven the shift in NLP, enabling more advanced language understanding and interaction.</p></li>
-</ul>
-<section id="whats-an-llm" class="level3">
-<h3 class="anchored" data-anchor-id="whats-an-llm">What’s an LLM:</h3>
-<ul>
-<li>LLM’s are neural network designed to understand and produce huma-like text.</li>
-<li>Large in LLM refer to the size of the datasets those model trained on, but also on the size of parameters ( 100’s of billions)
-<ul>
-<li>Parameters are adjusted weights during training to predict next word in sentence.</li>
-</ul></li>
-<li>The architecture of an LLM is called <code>transformers</code> which apply the <code>attention mechanism</code> to different parts of the input while performing the next word prediction. ### Applications of LLM’s:</li>
-<li>LLM’s can be used in many contexts to perform different tasks:
-<ul>
-<li>machine translation</li>
-<li>sentiments analysis</li>
-<li>text generation<br>
-..</li>
-</ul></li>
-</ul>
-</section>
-<section id="stages-of-building-and-using-llms" class="level3">
-<h3 class="anchored" data-anchor-id="stages-of-building-and-using-llms">Stages of building and using LLMs:</h3>
-<ul>
-<li>Building LLM form scratch allow us to understand the <strong>mechanics</strong> and <strong>limitations</strong> of language models, and provide us with skills set required for pretraining or fine-tuning phase.</li>
-<li>Custom-built LLM outperform general purpose one.
-<ul>
-<li>Many companies prefer to build their own domain-specific llm to keep their private data in-home and not share it with third party.</li>
-<li>developing small lm open the door for deployment on devices like laptops or even mobiles rather than huge servers.</li>
-</ul></li>
-<li>creating LLM is a process where pre-training and fine-tuning takes place.
-<ul>
-<li><code>pre</code> indicates that it is the first phase, model is trained on huge chunk of data where it learns basic knowledge and broad pattern of the language.</li>
-<li>the <code>fine-tuning</code> phase is where the model get further training but on very specific task and get its knowledge narrowed.</li>
-</ul></li>
-<li>Fine-tuning can be devised in 2 category:
-<ul>
-<li><strong>Instruction fine-tuning</strong>: where the model get trained one pair of <strong>instruction =&gt; output</strong> dataset.</li>
-<li>Where <strong>classification tuning</strong> the data consist of text and associated class label.</li>
-</ul></li>
-</ul>
-</section>
-<section id="introducing-the-transformer-architecture" class="level3">
-<h3 class="anchored" data-anchor-id="introducing-the-transformer-architecture">Introducing the Transformer architecture:</h3>
-<ul>
-<li><p>All modern LLM rely on <strong>Transformer</strong> architecture which was presented for the first time in <a href="https://arxiv.org/abs/1706.03762">this</a> famous paper: <strong>Attention is all you need</strong>.</p></li>
-<li><p>Transformer consist of two submodal: 1-encoder and 2-decoder. - encoder module process the input text into some numerical representation that capture meaning.<br>
-- decoder uses the numerical values and generate text<br>
-</p></li>
-<li><p>the key component of the transformer architecture is attention mechanism, we will talk about it later.</p></li>
-<li><p><strong>Transformer Variants</strong>:<br>
-- Models like BERT and GPT are based on the original transformer architecture but adapt it for different tasks.<br>
-- <strong>BERT’s Training Strategy</strong>: BERT uses a masked word prediction approach, where it predicts missing words in a sentence, making it suitable for tasks like text classification and sentiment analysis.<br>
-- <strong>GPT vs.&nbsp;BERT</strong>: GPT is designed for generative tasks, whereas BERT excels in tasks requiring understanding of context, like sentiment prediction and document categorization.<br>
-- <strong>BERT’s Real-world Application</strong>: Platforms like X (formerly Twitter) use BERT for tasks such as detecting toxic content.</p></li>
-<li><p><strong>GPT Focus</strong>: GPT utilizes the <em>Decoder</em> portion of the transformer architecture and is designed for text generation tasks.</p></li>
-<li><p><strong>Zero-shot and Few-shot Learning</strong>: GPT models excel in zero-shot learning, meaning they can handle tasks without specific prior examples. They also perform well in few-shot learning, where they learn from a small number of provided examples.</p></li>
-<li><p><strong>Versatility</strong>: While GPT models are optimized for text completion, they exhibit broad adaptability and can tackle a wide range of tasks, showcasing their flexibility in natural language processing.</p></li>
-</ul>
-</section>
-<section id="utilizing-large-datasets" class="level3">
-<h3 class="anchored" data-anchor-id="utilizing-large-datasets">Utilizing large datasets:</h3>
-<ul>
-<li><p>Diverse Training Data: Large datasets used for training GPT- and BERT-like models contain billions of words, covering a broad range of topics and languages (both natural and programming).</p></li>
-<li><p>Comprehensive Corpus: These datasets are designed to ensure comprehensive exposure to diverse linguistic and contextual patterns.</p></li>
-</ul>
-</section>
-<section id="a-closer-look-at-the-gpt-architecture" class="level3">
-<h3 class="anchored" data-anchor-id="a-closer-look-at-the-gpt-architecture">A closer look at the GPT architecture:</h3>
-<ul>
-<li><p>GPT Origin: GPT was introduced in the paper <a href="https://mng.bz/x2qg">Improving Language Understanding</a> by Generative Pre-Training by Radford et al.&nbsp;from OpenAI.</p></li>
-<li><p>GPT-3: A scaled-up version of the original GPT with more parameters and a larger training dataset.</p></li>
-<li><p>ChatGPT’s Base Model: The initial ChatGPT model was derived by fine-tuning GPT-3 on a large instruction dataset, using methods from OpenAI’s InstructGPT paper.</p></li>
-<li><p>Model Versatility: Despite being trained on a simple next-word prediction task, GPT models excel in various tasks like text completion, spelling correction, classification, and language translation.</p></li>
-<li><p>Self-Supervised Learning: The next-word prediction task is a type of self-supervised learning, where the model uses the structure of the data itself for training.</p></li>
-<li><p>Label Creation: Labels are generated dynamically, with the next word in a sentence or document serving as the prediction target.</p></li>
-<li><p>Training on Massive Datasets: This approach enables the use of large, unlabeled text datasets for training, as explicit labeling of data is unnecessary.</p></li>
-</ul>
-</section>
-<section id="building-a-large-language-model" class="level3">
-<h3 class="anchored" data-anchor-id="building-a-large-language-model">Building a large language model:</h3>
-<ul>
-<li>Now we understand the basic theory behind LLM and how they were introduced, its time to build them from scratch.</li>
-</ul>
-<p><img src="pic-1.png" class="img-fluid" alt="Three main phases of coding an LLM"> &gt;Source: Book: Build A Large Language Model by <em>Sebastian Raschka</em></p>
+    
+  
+    
+  </div>
+  
 
 
+</header>
+
+
+<section id="featured-project" class="level2">
+<h2 class="anchored" data-anchor-id="featured-project">Featured Project</h2>
+<section id="manim-code-generation-with-llm-fine-tuning" class="level3">
+<h3 class="anchored" data-anchor-id="manim-code-generation-with-llm-fine-tuning">Manim Code Generation with LLM Fine-tuning</h3>
+<p><strong>Description</strong>: Fine-tuned a small language model on the Manim dataset using instruction tuning methodology. The model generates executable Manim code that produces mathematical animations from natural language descriptions.</p>
+<p><strong>Technologies</strong>: - LLM Fine-tuning - Instruction Tuning - Code Generation - Manim</p>
+<p><strong>Status</strong>: Completed</p>
+<p><a href="./posts/Manim-Project/Blog_0.html">View Project</a></p>
+<hr>
 </section>
 </section>
+<section id="learning-journey" class="level2">
+<h2 class="anchored" data-anchor-id="learning-journey">Learning Journey</h2>
+<p>My learning process and experiments are documented in the <a href="./blog.html">Blog</a> section, covering topics like:</p>
+<ul>
+<li>Deep Learning fundamentals (fast.ai course)</li>
+<li>Transformers and NLP (Hugging Face course)</li>
+<li>Building LLMs from scratch</li>
+<li>GPU Programming and CUDA</li>
+<li>PyTorch internals</li>
+</ul>
+<hr>
+</section>
+<section id="coming-soon" class="level2">
+<h2 class="anchored" data-anchor-id="coming-soon">Coming Soon</h2>
+<p>More projects are in development as I dive deeper into CUDA kernel engineering and low-level ML optimization. Check back soon or follow my progress in the blog!</p>
+<hr>
+<p><em>Want to collaborate or discuss ML/CUDA? Feel free to <a href="./about.html">reach out</a>.</em></p>
+
+
+<!-- -->
+
 </section>
 
 </main> <!-- /main -->
@@ -784,7 +694,50 @@ ul.task-list li input[type="checkbox"] {
       }
     }
   });
-  </script>
+  </script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1" data-shortcodes="false"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1"></a><span class="co">---</span></span>
+<span id="cb1-2"><a href="#cb1-2"></a><span class="an">title:</span><span class="co"> "Projects"</span></span>
+<span id="cb1-3"><a href="#cb1-3"></a><span class="an">subtitle:</span><span class="co"> "Machine Learning and Deep Learning Projects"</span></span>
+<span id="cb1-4"><a href="#cb1-4"></a><span class="co">---</span></span>
+<span id="cb1-5"><a href="#cb1-5"></a></span>
+<span id="cb1-6"><a href="#cb1-6"></a><span class="fu">## Featured Project</span></span>
+<span id="cb1-7"><a href="#cb1-7"></a></span>
+<span id="cb1-8"><a href="#cb1-8"></a><span class="fu">### Manim Code Generation with LLM Fine-tuning</span></span>
+<span id="cb1-9"><a href="#cb1-9"></a></span>
+<span id="cb1-10"><a href="#cb1-10"></a>**Description**: Fine-tuned a small language model on the Manim dataset using instruction tuning methodology. The model generates executable Manim code that produces mathematical animations from natural language descriptions.</span>
+<span id="cb1-11"><a href="#cb1-11"></a></span>
+<span id="cb1-12"><a href="#cb1-12"></a>**Technologies**: </span>
+<span id="cb1-13"><a href="#cb1-13"></a><span class="ss">- </span>LLM Fine-tuning</span>
+<span id="cb1-14"><a href="#cb1-14"></a><span class="ss">- </span>Instruction Tuning</span>
+<span id="cb1-15"><a href="#cb1-15"></a><span class="ss">- </span>Code Generation</span>
+<span id="cb1-16"><a href="#cb1-16"></a><span class="ss">- </span>Manim</span>
+<span id="cb1-17"><a href="#cb1-17"></a></span>
+<span id="cb1-18"><a href="#cb1-18"></a>**Status**: Completed</span>
+<span id="cb1-19"><a href="#cb1-19"></a></span>
+<span id="cb1-20"><a href="#cb1-20"></a><span class="co">[</span><span class="ot">View Project</span><span class="co">](posts/Manim-Project/Blog_0.ipynb)</span></span>
+<span id="cb1-21"><a href="#cb1-21"></a></span>
+<span id="cb1-22"><a href="#cb1-22"></a>---</span>
+<span id="cb1-23"><a href="#cb1-23"></a></span>
+<span id="cb1-24"><a href="#cb1-24"></a><span class="fu">## Learning Journey</span></span>
+<span id="cb1-25"><a href="#cb1-25"></a></span>
+<span id="cb1-26"><a href="#cb1-26"></a>My learning process and experiments are documented in the <span class="co">[</span><span class="ot">Blog</span><span class="co">](blog.qmd)</span> section, covering topics like:</span>
+<span id="cb1-27"><a href="#cb1-27"></a></span>
+<span id="cb1-28"><a href="#cb1-28"></a><span class="ss">- </span>Deep Learning fundamentals (fast.ai course)</span>
+<span id="cb1-29"><a href="#cb1-29"></a><span class="ss">- </span>Transformers and NLP (Hugging Face course)</span>
+<span id="cb1-30"><a href="#cb1-30"></a><span class="ss">- </span>Building LLMs from scratch</span>
+<span id="cb1-31"><a href="#cb1-31"></a><span class="ss">- </span>GPU Programming and CUDA</span>
+<span id="cb1-32"><a href="#cb1-32"></a><span class="ss">- </span>PyTorch internals</span>
+<span id="cb1-33"><a href="#cb1-33"></a></span>
+<span id="cb1-34"><a href="#cb1-34"></a>---</span>
+<span id="cb1-35"><a href="#cb1-35"></a></span>
+<span id="cb1-36"><a href="#cb1-36"></a><span class="fu">## Coming Soon</span></span>
+<span id="cb1-37"><a href="#cb1-37"></a></span>
+<span id="cb1-38"><a href="#cb1-38"></a>More projects are in development as I dive deeper into CUDA kernel engineering and low-level ML optimization. Check back soon or follow my progress in the blog!</span>
+<span id="cb1-39"><a href="#cb1-39"></a></span>
+<span id="cb1-40"><a href="#cb1-40"></a>---</span>
+<span id="cb1-41"><a href="#cb1-41"></a></span>
+<span id="cb1-42"><a href="#cb1-42"></a>*Want to collaborate or discuss ML/CUDA? Feel free to [reach out](about.qmd).*</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
+</div></div></div></div></div>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
@@ -797,7 +750,7 @@ ul.task-list li input[type="checkbox"] {
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
     <li class="nav-item">
-    <a class="nav-link" href="../../../index.xml">
+    <a class="nav-link" href="./index.xml">
 <p>RSS</p>
 </a>
   </li>  
@@ -809,5 +762,5 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<script src="../../../site_libs/quarto-html/zenscroll-min.js"></script>
+<script src="site_libs/quarto-html/zenscroll-min.js"></script>
 </body></html>
