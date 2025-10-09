@@ -9,7 +9,7 @@
 <meta name="author" content="Ismail TG">
 <meta name="dcterms.date" content="2022-10-25">
 
-<title>Chapter 2: Deep learning for coders with fastai and pytorch – Ismail's Personal Blog</title>
+<title>Chapter 2: Deep learning for coders with fastai and pytorch – Ismail's Learning Journey</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -77,7 +77,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../../site_libs/quarto-html/quarto-syntax-highlighting-065a5179aebd64318d7ea99d77b64a9e.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-e784d42915133a20e7488e0f44bfbe89.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-7aec330bd7e81af58b36d374cce8c0c9.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -105,6 +105,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Search"
   }
 }</script>
+<style>html{ scroll-behavior: smooth; }</style>
 <script src="https://cdn.jsdelivr.net/npm/requirejs@2.3.6/require.min.js" integrity="sha384-c9c+LnTbwQ3aujuU7ULEPVvgLs+Fn6fJUvIGTsuu1ZcCf11fiEubah0ttpca4ntM sha384-6V1/AdqZRWk1KAlWbKBlGhN7VG4iE/yAZcO6NZPMF8od0vukrvr0tg4qY6NSrItx" crossorigin="anonymous"></script>
 
 <script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
@@ -114,7 +115,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link rel="stylesheet" href="../../styles.css">
 </head>
 
-<body class="nav-fixed fullcontent quarto-light">
+<body class="nav-fixed quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top quarto-banner">
@@ -124,7 +125,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <a href="../../index.html" class="navbar-brand navbar-brand-logo">
     </a>
     <a class="navbar-brand" href="../../index.html">
-    <span class="navbar-title">Ismail’s Personal Blog</span>
+    <span class="navbar-title">Ismail’s Learning Journey</span>
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
@@ -132,7 +133,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
-            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../projects.qmd"> 
+<span class="menu-text">Projects</span></a>
+  </li>  
   <li class="nav-item">
     <a class="nav-link" href="../../blog.html"> 
 <span class="menu-text">Blog</span></a>
@@ -141,6 +150,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <a class="nav-link" href="../../about.html"> 
 <span class="menu-text">About</span></a>
   </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item compact">
     <a class="nav-link" href="https://github.com/ismaai008l"> <i class="bi bi-github" role="img">
 </i> 
@@ -197,7 +208,29 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#practice-of-deep-learning" id="toc-practice-of-deep-learning" class="nav-link active" data-scroll-target="#practice-of-deep-learning">Practice of Deep Learning</a></li>
+  <li><a href="#the-mindset-of-deep-learning-practitioner" id="toc-the-mindset-of-deep-learning-practitioner" class="nav-link" data-scroll-target="#the-mindset-of-deep-learning-practitioner">The mindset Of Deep Learning Practitioner</a></li>
+  <li><a href="#the-drivetrain-approach" id="toc-the-drivetrain-approach" class="nav-link" data-scroll-target="#the-drivetrain-approach">The Drivetrain Approach</a></li>
+  <li><a href="#data-gathering" id="toc-data-gathering" class="nav-link" data-scroll-target="#data-gathering">Data Gathering</a></li>
+  <li><a href="#from-data-to-dataloaders" id="toc-from-data-to-dataloaders" class="nav-link" data-scroll-target="#from-data-to-dataloaders">From Data to DataLoaders</a></li>
+  <li><a href="#dataloaders" id="toc-dataloaders" class="nav-link" data-scroll-target="#dataloaders">Dataloaders</a></li>
+  <li><a href="#dataloder" id="toc-dataloder" class="nav-link" data-scroll-target="#dataloder">Dataloder</a></li>
+  <li><a href="#data-block-api" id="toc-data-block-api" class="nav-link" data-scroll-target="#data-block-api">Data block API</a></li>
+  <li><a href="#data-augmentation" id="toc-data-augmentation" class="nav-link" data-scroll-target="#data-augmentation">Data augmentation</a></li>
+  <li><a href="#training-your-model-and-using-it-to-clean-your-data" id="toc-training-your-model-and-using-it-to-clean-your-data" class="nav-link" data-scroll-target="#training-your-model-and-using-it-to-clean-your-data">Training Your Model, and Using It to Clean Your Data</a></li>
+  <li><a href="#deep-learning-in-production" id="toc-deep-learning-in-production" class="nav-link" data-scroll-target="#deep-learning-in-production">Deep Learning In Production</a>
+  <ul class="collapse">
+  <li><a href="#from-model-to-inference" id="toc-from-model-to-inference" class="nav-link" data-scroll-target="#from-model-to-inference">From Model to Inference</a></li>
+  <li><a href="#gradio-hugginface-spaces" id="toc-gradio-hugginface-spaces" class="nav-link" data-scroll-target="#gradio-hugginface-spaces">Gradio + HugginFace Spaces</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
 <!-- main -->
 <main class="content quarto-banner-title-block" id="quarto-document-content">
 
@@ -1207,6 +1240,11 @@ This share link expires in 72 hours. For free permanent hosting and GPU upgrades
           if (link.dataset.originalHref !== undefined) {
             link.href = link.dataset.originalHref;
           }
+            // target, if specified
+            link.setAttribute("target", "_blank");
+            if (link.getAttribute("rel") === null) {
+              link.setAttribute("rel", "noopener");
+            }
         }
       }
     function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
@@ -1521,8 +1559,28 @@ This share link expires in 72 hours. For free permanent hosting and GPU upgrades
   });
   </script>
 </div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>© 2025 Ismail TG. Learning in public.</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item">
+    <a class="nav-link" href="../../index.xml">
+<p>RSS</p>
+</a>
+  </li>  
+</ul>
+    </div>
+  </div>
+</footer>
 
 
 
 
+<script src="../../site_libs/quarto-html/zenscroll-min.js"></script>
 </body></html>

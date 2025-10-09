@@ -5,12 +5,12 @@
       xmlns:dc="http://purl.org/dc/elements/1.1/" 
       version="2.0">
 <channel>
-<title>Ismail&#39;s Personal Blog</title>
+<title>Ismail&#39;s Learning Journey</title>
 <link>https://iSmailTG.github.io/Lifelong-Learner.github.io/blog.html</link>
 <atom:link href="https://iSmailTG.github.io/Lifelong-Learner.github.io/blog.xml" rel="self" type="application/rss+xml"/>
 <description></description>
 <generator>quarto-1.8.25</generator>
-<lastBuildDate>Thu, 09 Oct 2025 00:42:20 GMT</lastBuildDate>
+<lastBuildDate>Thu, 09 Oct 2025 00:49:24 GMT</lastBuildDate>
 <item>
   <title></title>
   <link>https://iSmailTG.github.io/Lifelong-Learner.github.io/posts/junk/untitled.html</link>
@@ -133,7 +133,7 @@
 
  ]]></description>
   <guid>https://iSmailTG.github.io/Lifelong-Learner.github.io/posts/junk/untitled.html</guid>
-  <pubDate>Thu, 09 Oct 2025 00:42:20 GMT</pubDate>
+  <pubDate>Thu, 09 Oct 2025 00:49:24 GMT</pubDate>
 </item>
 </channel>
 </rss>

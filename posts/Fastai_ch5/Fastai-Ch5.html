@@ -9,7 +9,7 @@
 <meta name="author" content="Ismail TG">
 <meta name="dcterms.date" content="2022-10-26">
 
-<title>Chapter 5: Deep learning for coders with fastai and pytorch – Ismail's Personal Blog</title>
+<title>Chapter 5: Deep learning for coders with fastai and pytorch – Ismail's Learning Journey</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -77,7 +77,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../../site_libs/quarto-html/quarto-syntax-highlighting-065a5179aebd64318d7ea99d77b64a9e.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-e784d42915133a20e7488e0f44bfbe89.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-7aec330bd7e81af58b36d374cce8c0c9.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -105,6 +105,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Search"
   }
 }</script>
+<style>html{ scroll-behavior: smooth; }</style>
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
@@ -139,7 +140,7 @@ window.Quarto = {
 <link rel="stylesheet" href="../../styles.css">
 </head>
 
-<body class="nav-fixed fullcontent quarto-light">
+<body class="nav-fixed quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top quarto-banner">
@@ -149,7 +150,7 @@ window.Quarto = {
     <a href="../../index.html" class="navbar-brand navbar-brand-logo">
     </a>
     <a class="navbar-brand" href="../../index.html">
-    <span class="navbar-title">Ismail’s Personal Blog</span>
+    <span class="navbar-title">Ismail’s Learning Journey</span>
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
@@ -157,7 +158,15 @@ window.Quarto = {
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
-            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../projects.qmd"> 
+<span class="menu-text">Projects</span></a>
+  </li>  
   <li class="nav-item">
     <a class="nav-link" href="../../blog.html"> 
 <span class="menu-text">Blog</span></a>
@@ -166,6 +175,8 @@ window.Quarto = {
     <a class="nav-link" href="../../about.html"> 
 <span class="menu-text">About</span></a>
   </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item compact">
     <a class="nav-link" href="https://github.com/ismaai008l"> <i class="bi bi-github" role="img">
 </i> 
@@ -222,7 +233,40 @@ window.Quarto = {
   </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#image-classification" id="toc-image-classification" class="nav-link active" data-scroll-target="#image-classification">Image Classification</a>
+  <ul class="collapse">
+  <li><a href="#from-dogs-and-cats-to-pet-breeds" id="toc-from-dogs-and-cats-to-pet-breeds" class="nav-link" data-scroll-target="#from-dogs-and-cats-to-pet-breeds">From Dogs and Cats to Pet Breeds</a></li>
+  <li><a href="#presizing" id="toc-presizing" class="nav-link" data-scroll-target="#presizing">Presizing</a>
+  <ul class="collapse">
+  <li><a href="#clean-the-data-with-the-model" id="toc-clean-the-data-with-the-model" class="nav-link" data-scroll-target="#clean-the-data-with-the-model">Clean the data with the model!!</a></li>
+  <li><a href="#use-the-model-to-clean-the-data" id="toc-use-the-model-to-clean-the-data" class="nav-link" data-scroll-target="#use-the-model-to-clean-the-data">Use the model to clean the data</a></li>
+  </ul></li>
+  <li><a href="#cross-entropy-loss" id="toc-cross-entropy-loss" class="nav-link" data-scroll-target="#cross-entropy-loss">Cross-Entropy Loss</a>
+  <ul class="collapse">
+  <li><a href="#viewing-activations-and-labels" id="toc-viewing-activations-and-labels" class="nav-link" data-scroll-target="#viewing-activations-and-labels">Viewing activations and labels</a></li>
+  <li><a href="#softmax" id="toc-softmax" class="nav-link" data-scroll-target="#softmax">SoftMax</a></li>
+  <li><a href="#log-likelihood" id="toc-log-likelihood" class="nav-link" data-scroll-target="#log-likelihood">Log Likelihood</a></li>
+  <li><a href="#taking-the-log" id="toc-taking-the-log" class="nav-link" data-scroll-target="#taking-the-log">Taking the Log</a></li>
+  <li><a href="#negative-log-likelihood" id="toc-negative-log-likelihood" class="nav-link" data-scroll-target="#negative-log-likelihood">Negative Log Likelihood</a></li>
+  </ul></li>
+  <li><a href="#model-interpretation" id="toc-model-interpretation" class="nav-link" data-scroll-target="#model-interpretation">Model Interpretation</a></li>
+  <li><a href="#improving-our-model" id="toc-improving-our-model" class="nav-link" data-scroll-target="#improving-our-model">Improving Our Model</a>
+  <ul class="collapse">
+  <li><a href="#the-learning-rate-finder" id="toc-the-learning-rate-finder" class="nav-link" data-scroll-target="#the-learning-rate-finder">The Learning Rate Finder</a></li>
+  <li><a href="#unfreezing-and-transfer-learning" id="toc-unfreezing-and-transfer-learning" class="nav-link" data-scroll-target="#unfreezing-and-transfer-learning">Unfreezing and Transfer Learning</a></li>
+  <li><a href="#discriminative-learning-rates" id="toc-discriminative-learning-rates" class="nav-link" data-scroll-target="#discriminative-learning-rates">Discriminative Learning Rates</a></li>
+  <li><a href="#selecting-the-number-of-epochs" id="toc-selecting-the-number-of-epochs" class="nav-link" data-scroll-target="#selecting-the-number-of-epochs">Selecting the Number of Epochs</a></li>
+  <li><a href="#deeper-architectures" id="toc-deeper-architectures" class="nav-link" data-scroll-target="#deeper-architectures">Deeper Architectures</a></li>
+  </ul></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
 <!-- main -->
 <main class="content quarto-banner-title-block" id="quarto-document-content">
 
@@ -973,6 +1017,11 @@ dls.show_batch(nrows=1, ncols=4 ,unique= True)</code></pre>
           if (link.dataset.originalHref !== undefined) {
             link.href = link.dataset.originalHref;
           }
+            // target, if specified
+            link.setAttribute("target", "_blank");
+            if (link.getAttribute("rel") === null) {
+              link.setAttribute("rel", "noopener");
+            }
         }
       }
     function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
@@ -1287,8 +1336,28 @@ dls.show_batch(nrows=1, ncols=4 ,unique= True)</code></pre>
   });
   </script>
 </div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>© 2025 Ismail TG. Learning in public.</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item">
+    <a class="nav-link" href="../../index.xml">
+<p>RSS</p>
+</a>
+  </li>  
+</ul>
+    </div>
+  </div>
+</footer>
 
 
 
 
+<script src="../../site_libs/quarto-html/zenscroll-min.js"></script>
 </body></html>

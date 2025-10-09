@@ -9,7 +9,7 @@
 <meta name="author" content="Ismail TG">
 <meta name="dcterms.date" content="2024-02-26">
 
-<title>Hugging Face Course Notes: Chapter4 – Ismail's Personal Blog</title>
+<title>Hugging Face Course Notes: Chapter4 – Ismail's Learning Journey</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -77,7 +77,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../../site_libs/quarto-html/quarto-syntax-highlighting-065a5179aebd64318d7ea99d77b64a9e.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-e784d42915133a20e7488e0f44bfbe89.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-7aec330bd7e81af58b36d374cce8c0c9.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -105,6 +105,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Search"
   }
 }</script>
+<style>html{ scroll-behavior: smooth; }</style>
 <script src="https://cdn.jsdelivr.net/npm/requirejs@2.3.6/require.min.js" integrity="sha384-c9c+LnTbwQ3aujuU7ULEPVvgLs+Fn6fJUvIGTsuu1ZcCf11fiEubah0ttpca4ntM sha384-6V1/AdqZRWk1KAlWbKBlGhN7VG4iE/yAZcO6NZPMF8od0vukrvr0tg4qY6NSrItx" crossorigin="anonymous"></script>
 
 <script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
@@ -114,7 +115,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link rel="stylesheet" href="../../styles.css">
 </head>
 
-<body class="nav-fixed fullcontent quarto-light">
+<body class="nav-fixed quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top quarto-banner">
@@ -124,7 +125,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <a href="../../index.html" class="navbar-brand navbar-brand-logo">
     </a>
     <a class="navbar-brand" href="../../index.html">
-    <span class="navbar-title">Ismail’s Personal Blog</span>
+    <span class="navbar-title">Ismail’s Learning Journey</span>
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
@@ -132,7 +133,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
-            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../projects.qmd"> 
+<span class="menu-text">Projects</span></a>
+  </li>  
   <li class="nav-item">
     <a class="nav-link" href="../../blog.html"> 
 <span class="menu-text">Blog</span></a>
@@ -141,6 +150,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <a class="nav-link" href="../../about.html"> 
 <span class="menu-text">About</span></a>
   </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item compact">
     <a class="nav-link" href="https://github.com/ismaai008l"> <i class="bi bi-github" role="img">
 </i> 
@@ -198,7 +209,38 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#the-hugging-face-hub" id="toc-the-hugging-face-hub" class="nav-link active" data-scroll-target="#the-hugging-face-hub">The Hugging Face Hub:</a>
+  <ul class="collapse">
+  <li><a href="#introduction" id="toc-introduction" class="nav-link" data-scroll-target="#introduction">Introduction:</a></li>
+  <li><a href="#using-pretrained-models" id="toc-using-pretrained-models" class="nav-link" data-scroll-target="#using-pretrained-models">Using pretrained models</a></li>
+  <li><a href="#sharing-a-pretrained-model" id="toc-sharing-a-pretrained-model" class="nav-link" data-scroll-target="#sharing-a-pretrained-model">Sharing a pretrained model:</a>
+  <ul class="collapse">
+  <li><a href="#using-the-push_to_hub-api" id="toc-using-the-push_to_hub-api" class="nav-link" data-scroll-target="#using-the-push_to_hub-api">Using the push_to_hub API:</a></li>
+  <li><a href="#using-the-huggingface_hub-python-library" id="toc-using-the-huggingface_hub-python-library" class="nav-link" data-scroll-target="#using-the-huggingface_hub-python-library">Using the huggingface_hub Python library</a></li>
+  <li><a href="#uploading-files" id="toc-uploading-files" class="nav-link" data-scroll-target="#uploading-files">Uploading Files:</a></li>
+  <li><a href="#the-upload-file-approach" id="toc-the-upload-file-approach" class="nav-link" data-scroll-target="#the-upload-file-approach">The upload file approach</a></li>
+  <li><a href="#the-repository-class" id="toc-the-repository-class" class="nav-link" data-scroll-target="#the-repository-class">The Repository Class:</a></li>
+  <li><a href="#the-git-based-approach" id="toc-the-git-based-approach" class="nav-link" data-scroll-target="#the-git-based-approach">The git-based approach</a></li>
+  </ul></li>
+  <li><a href="#building-model-card" id="toc-building-model-card" class="nav-link" data-scroll-target="#building-model-card">Building Model Card:</a>
+  <ul class="collapse">
+  <li><a href="#model-description" id="toc-model-description" class="nav-link" data-scroll-target="#model-description">Model Description:</a></li>
+  <li><a href="#intended-uses-limitations" id="toc-intended-uses-limitations" class="nav-link" data-scroll-target="#intended-uses-limitations">Intended uses &amp; limitations</a></li>
+  <li><a href="#how-to-use" id="toc-how-to-use" class="nav-link" data-scroll-target="#how-to-use">How to use</a></li>
+  <li><a href="#training-data" id="toc-training-data" class="nav-link" data-scroll-target="#training-data">Training data</a></li>
+  <li><a href="#training-procedure" id="toc-training-procedure" class="nav-link" data-scroll-target="#training-procedure">Training procedure</a></li>
+  <li><a href="#variable-and-metrics" id="toc-variable-and-metrics" class="nav-link" data-scroll-target="#variable-and-metrics">Variable and metrics</a></li>
+  <li><a href="#evaluation-results" id="toc-evaluation-results" class="nav-link" data-scroll-target="#evaluation-results">Evaluation results</a></li>
+  </ul></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
 <!-- main -->
 <main class="content quarto-banner-title-block" id="quarto-document-content">
 
@@ -1014,6 +1056,11 @@ To https://huggingface.co/Smail/test-model-2
           if (link.dataset.originalHref !== undefined) {
             link.href = link.dataset.originalHref;
           }
+            // target, if specified
+            link.setAttribute("target", "_blank");
+            if (link.getAttribute("rel") === null) {
+              link.setAttribute("rel", "noopener");
+            }
         }
       }
     function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
@@ -1328,8 +1375,28 @@ To https://huggingface.co/Smail/test-model-2
   });
   </script>
 </div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>© 2025 Ismail TG. Learning in public.</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item">
+    <a class="nav-link" href="../../index.xml">
+<p>RSS</p>
+</a>
+  </li>  
+</ul>
+    </div>
+  </div>
+</footer>
 
 
 
 
+<script src="../../site_libs/quarto-html/zenscroll-min.js"></script>
 </body></html>

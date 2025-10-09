@@ -9,7 +9,7 @@
 <meta name="author" content="Ismail TG">
 <meta name="dcterms.date" content="2022-10-26">
 
-<title>Chapter 4: Deep learning for coders with fastai and pytorch – Ismail's Personal Blog</title>
+<title>Chapter 4: Deep learning for coders with fastai and pytorch – Ismail's Learning Journey</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -77,7 +77,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../../site_libs/quarto-html/quarto-syntax-highlighting-065a5179aebd64318d7ea99d77b64a9e.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-e784d42915133a20e7488e0f44bfbe89.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-7aec330bd7e81af58b36d374cce8c0c9.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -105,6 +105,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Search"
   }
 }</script>
+<style>html{ scroll-behavior: smooth; }</style>
 <script src="https://cdn.jsdelivr.net/npm/requirejs@2.3.6/require.min.js" integrity="sha384-c9c+LnTbwQ3aujuU7ULEPVvgLs+Fn6fJUvIGTsuu1ZcCf11fiEubah0ttpca4ntM sha384-6V1/AdqZRWk1KAlWbKBlGhN7VG4iE/yAZcO6NZPMF8od0vukrvr0tg4qY6NSrItx" crossorigin="anonymous"></script>
 
 <script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
@@ -113,7 +114,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link rel="stylesheet" href="../../styles.css">
 </head>
 
-<body class="nav-fixed fullcontent quarto-light">
+<body class="nav-fixed quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top quarto-banner">
@@ -123,7 +124,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <a href="../../index.html" class="navbar-brand navbar-brand-logo">
     </a>
     <a class="navbar-brand" href="../../index.html">
-    <span class="navbar-title">Ismail’s Personal Blog</span>
+    <span class="navbar-title">Ismail’s Learning Journey</span>
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
@@ -131,7 +132,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
-            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../projects.qmd"> 
+<span class="menu-text">Projects</span></a>
+  </li>  
   <li class="nav-item">
     <a class="nav-link" href="../../blog.html"> 
 <span class="menu-text">Blog</span></a>
@@ -140,6 +149,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <a class="nav-link" href="../../about.html"> 
 <span class="menu-text">About</span></a>
   </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item compact">
     <a class="nav-link" href="https://github.com/ismaai008l"> <i class="bi bi-github" role="img">
 </i> 
@@ -196,7 +207,46 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#under-the-hood-training-a-digit-classifier" id="toc-under-the-hood-training-a-digit-classifier" class="nav-link active" data-scroll-target="#under-the-hood-training-a-digit-classifier">Under the Hood: Training a Digit Classifier</a>
+  <ul class="collapse">
+  <li><a href="#pixels-the-foundations-of-computer-vision" id="toc-pixels-the-foundations-of-computer-vision" class="nav-link" data-scroll-target="#pixels-the-foundations-of-computer-vision">Pixels: The Foundations of Computer Vision</a></li>
+  <li><a href="#base-line-model" id="toc-base-line-model" class="nav-link" data-scroll-target="#base-line-model">Base-Line Model</a>
+  <ul class="collapse">
+  <li><a href="#pixel-similarity" id="toc-pixel-similarity" class="nav-link" data-scroll-target="#pixel-similarity">Pixel Similarity</a></li>
+  <li><a href="#computing-metrics-using-broadcasting" id="toc-computing-metrics-using-broadcasting" class="nav-link" data-scroll-target="#computing-metrics-using-broadcasting">Computing metrics using Broadcasting</a></li>
+  </ul></li>
+  <li><a href="#stochastic-gradient-descent" id="toc-stochastic-gradient-descent" class="nav-link" data-scroll-target="#stochastic-gradient-descent">Stochastic Gradient Descent</a>
+  <ul class="collapse">
+  <li><a href="#apllying-sgd-on-a-simple-case" id="toc-apllying-sgd-on-a-simple-case" class="nav-link" data-scroll-target="#apllying-sgd-on-a-simple-case">Apllying SGD on a simple case</a></li>
+  <li><a href="#calculating-gradients" id="toc-calculating-gradients" class="nav-link" data-scroll-target="#calculating-gradients">Calculating Gradients</a></li>
+  <li><a href="#calculating-derivative-on-pytorch" id="toc-calculating-derivative-on-pytorch" class="nav-link" data-scroll-target="#calculating-derivative-on-pytorch">Calculating derivative on Pytorch</a></li>
+  <li><a href="#an-end-to-end-sgd-example" id="toc-an-end-to-end-sgd-example" class="nav-link" data-scroll-target="#an-end-to-end-sgd-example">An End-to-End SGD Example</a></li>
+  <li><a href="#step-1-initialize-the-parameters" id="toc-step-1-initialize-the-parameters" class="nav-link" data-scroll-target="#step-1-initialize-the-parameters">Step 1: Initialize the parameters</a></li>
+  <li><a href="#step-2-calculate-the-predictions" id="toc-step-2-calculate-the-predictions" class="nav-link" data-scroll-target="#step-2-calculate-the-predictions">Step 2: Calculate the predictions</a></li>
+  <li><a href="#step-3-calculate-the-loss" id="toc-step-3-calculate-the-loss" class="nav-link" data-scroll-target="#step-3-calculate-the-loss">Step 3: Calculate the loss</a></li>
+  <li><a href="#step-4-calculate-the-gradients" id="toc-step-4-calculate-the-gradients" class="nav-link" data-scroll-target="#step-4-calculate-the-gradients">Step 4: Calculate the gradients</a></li>
+  <li><a href="#step-5-step-the-weights" id="toc-step-5-step-the-weights" class="nav-link" data-scroll-target="#step-5-step-the-weights">Step 5: Step the weights</a></li>
+  <li><a href="#step-7-stop" id="toc-step-7-stop" class="nav-link" data-scroll-target="#step-7-stop">Step 7: stop</a></li>
+  <li><a href="#summarizing-gradient-descent" id="toc-summarizing-gradient-descent" class="nav-link" data-scroll-target="#summarizing-gradient-descent">Summarizing Gradient Descent</a></li>
+  </ul></li>
+  <li><a href="#the-mnist-loss-function" id="toc-the-mnist-loss-function" class="nav-link" data-scroll-target="#the-mnist-loss-function">The MNIST Loss Function</a>
+  <ul class="collapse">
+  <li><a href="#prediction-calculation" id="toc-prediction-calculation" class="nav-link" data-scroll-target="#prediction-calculation">2-Prediction calculation</a></li>
+  <li><a href="#sigmoid-function" id="toc-sigmoid-function" class="nav-link" data-scroll-target="#sigmoid-function">Sigmoid Function</a></li>
+  <li><a href="#sgd-and-mini-batches" id="toc-sgd-and-mini-batches" class="nav-link" data-scroll-target="#sgd-and-mini-batches">SGD and Mini-Batches</a></li>
+  <li><a href="#putting-it-all-together" id="toc-putting-it-all-together" class="nav-link" data-scroll-target="#putting-it-all-together">Putting It All Together</a></li>
+  <li><a href="#creating-an-optimizer" id="toc-creating-an-optimizer" class="nav-link" data-scroll-target="#creating-an-optimizer">Creating an Optimizer</a></li>
+  <li><a href="#adding-a-nonlinearity" id="toc-adding-a-nonlinearity" class="nav-link" data-scroll-target="#adding-a-nonlinearity">Adding a Nonlinearity</a></li>
+  </ul></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
 <!-- main -->
 <main class="content quarto-banner-title-block" id="quarto-document-content">
 
@@ -4442,6 +4492,11 @@ d(y)/bx=  tensor(1.)</code></pre>
           if (link.dataset.originalHref !== undefined) {
             link.href = link.dataset.originalHref;
           }
+            // target, if specified
+            link.setAttribute("target", "_blank");
+            if (link.getAttribute("rel") === null) {
+              link.setAttribute("rel", "noopener");
+            }
         }
       }
     function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
@@ -4756,8 +4811,28 @@ d(y)/bx=  tensor(1.)</code></pre>
   });
   </script>
 </div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>© 2025 Ismail TG. Learning in public.</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item">
+    <a class="nav-link" href="../../index.xml">
+<p>RSS</p>
+</a>
+  </li>  
+</ul>
+    </div>
+  </div>
+</footer>
 
 
 
 
+<script src="../../site_libs/quarto-html/zenscroll-min.js"></script>
 </body></html>
