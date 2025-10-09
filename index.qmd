@@ -1,15 +1,59 @@
 ---
-title: "Latest Blogs"
-listing:
-  contents: posts
-  sort: "date desc"
-  type: default
-  categories: true
-  sort-ui: false
-  filter-ui: false
+title: "Ismail TG"
+subtitle: "Learning Deep Learning, CUDA, and Systems Programming"
 page-layout: full
-title-block-banner: true
+toc: false
+---
+
+## Welcome
+
+I'm a former philosophy teacher turned machine learning engineer, learning in public and documenting my journey into deep learning, CUDA programming, and AI systems.
+
+Currently focusing on: **CUDA kernel engineering** and low-level ML optimization.
 
 ---
 
+## Featured Project
 
+### 🎬 Manim Code Generation with LLMs
+
+Fine-tuned a small language model on the Manim dataset using instruction tuning to generate executable mathematical animation code from natural language prompts.
+
+**Tech**: LLM Fine-tuning, Instruction Tuning, Code Generation
+
+[View Project →](posts/Manim-Project/Blog_0.ipynb)
+
+---
+
+## Learning Journey
+
+I'm documenting my learning process as I dive deep into:
+
+- **CUDA C++** - Writing efficient GPU kernels from scratch
+- **Deep Learning Fundamentals** - fast.ai course and PyTorch internals
+- **Transformers & NLP** - Hugging Face ecosystem
+- **Building LLMs** - Following Sebastian Raschka's book
+
+You can follow along in my [Blog](blog.qmd) where I share notes, experiments, and insights.
+
+---
+
+## Background
+
+- ✅ Completed **fast.ai** Deep Learning course
+- ✅ Completed **Hugging Face** Transformers course  
+- ✅ Read **"Build a Large Language Model from Scratch"** by Sebastian Raschka
+- 🔄 Currently learning **CUDA kernel engineering**
+
+I previously taught philosophy but lost my job during the pandemic. Now I'm carving out a niche in low-level ML systems programming - a less crowded space where deep understanding matters more than quick fine-tuning.
+
+---
+
+## Connect
+
+- 🐦 [Twitter/X](https://twitter.com/ismailTG3)
+- 💻 [GitHub](https://github.com/ismaai008l)
+
+---
+
+*Learning in public. One kernel at a time.*
