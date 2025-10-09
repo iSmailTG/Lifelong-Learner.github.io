@@ -3,7 +3,7 @@ title: "Projects"
 subtitle: "Machine Learning and Deep Learning Projects"
 ---
 
-## Featured Projects
+## Featured Project
 
 ### Manim Code Generation with LLM Fine-tuning
 
@@ -17,66 +17,26 @@ subtitle: "Machine Learning and Deep Learning Projects"
 
 **Status**: Completed
 
-[View Post](posts/your-manim-post-link.qmd) | [GitHub](#)
+[View Project](posts/Manim-Project/Blog_0.ipynb)
 
 ---
 
-### Direct Preference Optimization (DPO) Study
+## Learning Journey
 
-**Description**: Deep dive into Direct Preference Optimization and its application in aligning language models with human preferences without reinforcement learning.
+My learning process and experiments are documented in the [Blog](blog.qmd) section, covering topics like:
 
-**Technologies**:
-- RLHF alternatives
-- Preference learning
-- LLM alignment
-
-[View Post](posts/your-dpo-post-link.qmd)
-
----
-
-### LoRA Implementation and Fine-tuning
-
-**Description**: Implementation and experimentation with Low-Rank Adaptation (LoRA) for parameter-efficient fine-tuning of large language models.
-
-**Technologies**:
-- LoRA
-- PEFT (Parameter Efficient Fine-Tuning)
-- Transformers
-
-[View Post](posts/your-lora-post-link.qmd)
+- Deep Learning fundamentals (fast.ai course)
+- Transformers and NLP (Hugging Face course)
+- Building LLMs from scratch
+- GPU Programming and CUDA
+- PyTorch internals
 
 ---
 
-## Learning Projects
+## Coming Soon
 
-### CUDA C++ Journey
-
-**Description**: Learning CUDA programming from scratch to understand GPU computing and write efficient kernels for machine learning operations.
-
-**Technologies**:
-- CUDA C++
-- GPU Programming
-- Parallel Computing
-
-**Status**: In Progress
-
-[View Learning Notes](posts/Learning_CPP/)
+More projects are in development as I dive deeper into CUDA kernel engineering and low-level ML optimization. Check back soon or follow my progress in the blog!
 
 ---
 
-### NLP Data Preprocessing
-
-**Description**: Exploring data preprocessing techniques for NLP tasks, including work with the SWAG dataset for multiple-choice questions.
-
-**Technologies**:
-- NLP
-- Data Preprocessing
-- Hugging Face Datasets
-
-[View Post](posts/Data%20PreProcessing%20For%20NLP%20Problem/)
-
----
-
-## Mini Projects
-
-Additional smaller projects and experiments are documented in the [Blog](blog.qmd) section.
+*Want to collaborate or discuss ML/CUDA? Feel free to [reach out](about.qmd).*
