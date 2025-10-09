@@ -1,0 +1,1550 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.25">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Ismail TG">
+<meta name="dcterms.date" content="2023-10-19">
+
+<title>Hugging Face Course Notes: Chapter2 – Ismail's Learning Journey</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-065a5179aebd64318d7ea99d77b64a9e.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-7aec330bd7e81af58b36d374cce8c0c9.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<style>html{ scroll-behavior: smooth; }</style>
+
+
+<link rel="stylesheet" href="../../styles.css">
+</head>
+
+<body class="nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a href="../../index.html" class="navbar-brand navbar-brand-logo">
+    </a>
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">Ismail’s Learning Journey</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../projects.qmd"> 
+<span class="menu-text">Projects</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../blog.html"> 
+<span class="menu-text">Blog</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../about.html"> 
+<span class="menu-text">About</span></a>
+  </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/ismaai008l"> <i class="bi bi-github" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://twitter.com/ismailTG3"> <i class="bi bi-twitter" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">Hugging Face Course Notes: Chapter2</h1>
+                                <div class="quarto-categories">
+                <div class="quarto-category">Hugging-Face</div>
+                <div class="quarto-category">NLP</div>
+                <div class="quarto-category">LLMs</div>
+                <div class="quarto-category">Pytorch</div>
+              </div>
+                  </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      <div>
+      <div class="quarto-title-meta-heading">Author</div>
+      <div class="quarto-title-meta-contents">
+               <p>Ismail TG </p>
+            </div>
+    </div>
+      
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">October 19, 2023</p>
+      </div>
+    </div>
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction:</a></li>
+  <li><a href="#behind-the-pipeline" id="toc-behind-the-pipeline" class="nav-link" data-scroll-target="#behind-the-pipeline">Behind the PipeLine:</a>
+  <ul class="collapse">
+  <li><a href="#preprocessing-with-a-tokenizer" id="toc-preprocessing-with-a-tokenizer" class="nav-link" data-scroll-target="#preprocessing-with-a-tokenizer">Preprocessing with a Tokenizer:</a></li>
+  <li><a href="#going-through-the-model" id="toc-going-through-the-model" class="nav-link" data-scroll-target="#going-through-the-model">Going through the model:</a></li>
+  <li><a href="#a-high-dimensional-vector" id="toc-a-high-dimensional-vector" class="nav-link" data-scroll-target="#a-high-dimensional-vector">A high-dimensional vector?</a></li>
+  <li><a href="#model-heads-making-sense-out-of-numbers" id="toc-model-heads-making-sense-out-of-numbers" class="nav-link" data-scroll-target="#model-heads-making-sense-out-of-numbers">Model heads: Making sense out of numbers:</a>
+  <ul class="collapse">
+  <li><a href="#post-processing" id="toc-post-processing" class="nav-link" data-scroll-target="#post-processing">Post processing:</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#models" id="toc-models" class="nav-link" data-scroll-target="#models">Models</a>
+  <ul class="collapse">
+  <li><a href="#building-the-transformer" id="toc-building-the-transformer" class="nav-link" data-scroll-target="#building-the-transformer">Building the transformer:</a></li>
+  <li><a href="#saving-the-model" id="toc-saving-the-model" class="nav-link" data-scroll-target="#saving-the-model">Saving the model:</a></li>
+  <li><a href="#using-a-transformer-model-for-inference" id="toc-using-a-transformer-model-for-inference" class="nav-link" data-scroll-target="#using-a-transformer-model-for-inference">Using a Transformer model for inference:</a>
+  <ul class="collapse">
+  <li><a href="#using-the-tensors-as-inputs-to-the-model" id="toc-using-the-tensors-as-inputs-to-the-model" class="nav-link" data-scroll-target="#using-the-tensors-as-inputs-to-the-model">Using the tensors as inputs to the model</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#tokenization" id="toc-tokenization" class="nav-link" data-scroll-target="#tokenization">Tokenization:</a>
+  <ul class="collapse">
+  <li><a href="#loading-and-saving" id="toc-loading-and-saving" class="nav-link" data-scroll-target="#loading-and-saving">Loading and Saving:</a></li>
+  <li><a href="#encoding" id="toc-encoding" class="nav-link" data-scroll-target="#encoding">Encoding:</a></li>
+  <li><a href="#decoding" id="toc-decoding" class="nav-link" data-scroll-target="#decoding">Decoding:</a></li>
+  </ul></li>
+  <li><a href="#handling-multiple-sequences" id="toc-handling-multiple-sequences" class="nav-link" data-scroll-target="#handling-multiple-sequences">Handling multiple sequences:</a>
+  <ul class="collapse">
+  <li><a href="#padding" id="toc-padding" class="nav-link" data-scroll-target="#padding">Padding:</a>
+  <ul class="collapse">
+  <li><a href="#attention-mask" id="toc-attention-mask" class="nav-link" data-scroll-target="#attention-mask">Attention mask:</a></li>
+  </ul></li>
+  <li><a href="#longer-sequences" id="toc-longer-sequences" class="nav-link" data-scroll-target="#longer-sequences">Longer sequences:</a></li>
+  </ul></li>
+  <li><a href="#putting-all-together" id="toc-putting-all-together" class="nav-link" data-scroll-target="#putting-all-together">Putting All Together:</a>
+  <ul class="collapse">
+  <li><a href="#special-tokens" id="toc-special-tokens" class="nav-link" data-scroll-target="#special-tokens">Special Tokens</a></li>
+  </ul></li>
+  <li><a href="#wrapping-up-from-tokenizer-to-model" id="toc-wrapping-up-from-tokenizer-to-model" class="nav-link" data-scroll-target="#wrapping-up-from-tokenizer-to-model">Wrapping Up: From Tokenizer to Model:</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content quarto-banner-title-block" id="quarto-document-content">
+
+
+
+
+
+<section id="introduction" class="level1">
+<h1>Introduction:</h1>
+<ul>
+<li>Transformer models are very large with Ms to 10s of Billions of parameters, which make the process of training and fine-tuning and deploying them very hard.</li>
+<li>Here comes the <strong>Hugging Face</strong> library which adress that problem, the goal is to provide a single <code>API</code> through which any transformer model can be loaded, trained and saved.</li>
+<li>With <strong><code>Transformer</code></strong> library we can: - Download, load and use models for inference or fine-tuning with just couple lines of code - all models in the library are stored like any other model, at their core they are just a simple pytorch <code>nn.Module</code> class. - All components of the models are stored in one file, so no abstarctions or shared modules across files</li>
+</ul>
+</section>
+<section id="behind-the-pipeline" class="level1">
+<h1>Behind the PipeLine:</h1>
+<ul>
+<li>To understand what’s happenening behind the scene we must first start with what already know: <strong>Pipeline</strong></li>
+</ul>
+<div id="cell-3" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}}" data-outputid="476937af-1205-4b9b-8163-f668cfd56158">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1"></a><span class="im">from</span> transformers <span class="im">import</span> pipeline</span>
+<span id="cb1-2"><a href="#cb1-2"></a>classifier <span class="op">=</span> pipeline(<span class="st">'sentiment-analysis'</span>)</span>
+<span id="cb1-3"><a href="#cb1-3"></a>classifier([<span class="st">'My birthday is today!'</span>])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>No model was supplied, defaulted to distilbert-base-uncased-finetuned-sst-2-english and revision af0f99b (https://huggingface.co/distilbert-base-uncased-finetuned-sst-2-english).
+Using a pipeline without specifying a model name and revision in production is not recommended.</code></pre>
+</div>
+<div class="cell-output cell-output-display" data-execution_count="41">
+<pre><code>[{'label': 'POSITIVE', 'score': 0.9996117949485779}]</code></pre>
+</div>
+</div>
+<ul>
+<li>As we saw in the previous chapter the <code>pipeline</code> goups 3 steps in order to perform such a task:<br>
+<img src="pic1.png" class="img-fluid" alt="pipeline"></li>
+</ul>
+<section id="preprocessing-with-a-tokenizer" class="level2">
+<h2 class="anchored" data-anchor-id="preprocessing-with-a-tokenizer">Preprocessing with a Tokenizer:</h2>
+<ul>
+<li>In order to convert raw text to its numerical form before we feed it to the model, we use <strong>Tokenizer</strong>.</li>
+<li>Here is how we tokenize any input words:</li>
+</ul>
+<div id="cell-6" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}}" data-outputid="9ac39f1a-423f-42d7-f716-275325e4afb9">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1"></a><span class="im">from</span> transformers <span class="im">import</span> AutoTokenizer</span>
+<span id="cb4-2"><a href="#cb4-2"></a>mdl_ckpt <span class="op">=</span> <span class="st">"distilbert-base-uncased-finetuned-sst-2-english"</span></span>
+<span id="cb4-3"><a href="#cb4-3"></a>tokenizer <span class="op">=</span> AutoTokenizer.from_pretrained(mdl_ckpt)</span>
+<span id="cb4-4"><a href="#cb4-4"></a>inputs <span class="op">=</span> <span class="st">'My birthday is today!'</span></span>
+<span id="cb4-5"><a href="#cb4-5"></a>outputs <span class="op">=</span> tokenizer(inputs, padding<span class="op">=</span><span class="va">True</span>, truncation<span class="op">=</span><span class="va">True</span>, return_tensors<span class="op">=</span><span class="st">'pt'</span>)</span>
+<span id="cb4-6"><a href="#cb4-6"></a>outputs</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="42">
+<pre><code>{'input_ids': tensor([[ 101, 2026, 5798, 2003, 2651,  999,  102]]), 'attention_mask': tensor([[1, 1, 1, 1, 1, 1, 1]])}</code></pre>
+</div>
+</div>
+<ul>
+<li>First we pick a model <code>distilbert-base-uncased-finetuned-sst-2-english</code> which is basically the same model our pipeline used to classify the sentence.</li>
+<li>We use <code>AutoTokenizer</code> to get to tokenization method according to that model, because each model has its own method of tokenizing words.</li>
+<li>Then we feed the text to the tokenizer, and we pick which type of tensors we want to get returned
+<ul>
+<li><code>pt</code> stands for pytorch</li>
+<li>other parameters will be covered later</li>
+</ul></li>
+<li>We get a dictionary with 2 keys: <code>input_ids</code> and <code>attention_mask</code></li>
+<li><code>attention_mask</code> will be covered later, <code>input_ids</code> contains one list of integers.</li>
+</ul>
+</section>
+<section id="going-through-the-model" class="level2">
+<h2 class="anchored" data-anchor-id="going-through-the-model">Going through the model:</h2>
+<ul>
+<li>We can download the pretraind model same we did with tokenizer, by usin <code>AutoModel</code> class which also has <code>from_pretrained</code> method.</li>
+<li>We just need to download the same model as used in tokenization process.</li>
+</ul>
+<div id="cell-9" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1"></a><span class="im">from</span> transformers <span class="im">import</span> AutoModel</span>
+<span id="cb6-2"><a href="#cb6-2"></a>model <span class="op">=</span> AutoModel.from_pretrained(mdl_ckpt)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<ul>
+<li>This architecture we just downloaded conatins onlly the base transformer module: given some inputs, it outputs what we call <strong>Hidden_state</strong>.</li>
+<li>For each model inputs we will retrieve a high-dimensional vector representing the contextual understanding of that input by the model</li>
+<li>These Hidden_states can be used as it is, but usually it will be feeded as input to another part of the model called the <strong>Head</strong>.</li>
+<li>Each Head is a task_specific head.</li>
+</ul>
+</section>
+<section id="a-high-dimensional-vector" class="level2">
+<h2 class="anchored" data-anchor-id="a-high-dimensional-vector">A high-dimensional vector?</h2>
+<ul>
+<li>Usually the model outputs a large vector with 3 dimensions:
+<ul>
+<li><strong>Batch-size</strong>: the number of sequence processed (in our case we pass only one sentence)</li>
+<li><strong>Sequence-length</strong>: The length of the numerical representation of the sequence (8 in our example)</li>
+<li><strong>Hidden size</strong>: The vector dimension of each model input.</li>
+</ul></li>
+<li>The high-dimentionality of this vector comes from the last dimension, the hidden-size is very large dimension: usually ~700:</li>
+</ul>
+<div id="cell-12" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}}" data-outputid="52133427-783f-492d-dc91-be3f3effc848">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1"></a>outs <span class="op">=</span> model(<span class="op">**</span>outputs)</span>
+<span id="cb7-2"><a href="#cb7-2"></a>outs.last_hidden_state.shape</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="44">
+<pre><code>torch.Size([1, 7, 768])</code></pre>
+</div>
+</div>
+</section>
+<section id="model-heads-making-sense-out-of-numbers" class="level2">
+<h2 class="anchored" data-anchor-id="model-heads-making-sense-out-of-numbers">Model heads: Making sense out of numbers:</h2>
+<ul>
+<li>So to wrap-up the whole process: First get inputs converted input ID then the embedding layer convert them into tokenized vectors.</li>
+<li>The subsequent layers manipulate thes vectors using attention mechanism to produce a contextual understanding of that input in form of <strong>High-dimensional-vector</strong>.</li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="pic2.png" class="img-fluid figure-img"></p>
+<figcaption>model</figcaption>
+</figure>
+</div>
+<ul>
+<li>There rae many architecture available in the Transformers library, each is designed to tackle specific task.</li>
+<li>For example if we want a model for a sequence classification head, we will use <code>AutoModelForSequenceClassification</code> instead of <code>AutoModel</code>.</li>
+</ul>
+<div id="cell-14" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1"></a>text <span class="op">=</span> [<span class="st">'do you feel any better today?'</span>, <span class="st">'I feel warm and cosy in my house'</span>]</span>
+<span id="cb9-2"><a href="#cb9-2"></a>tokenizer <span class="op">=</span> AutoTokenizer.from_pretrained(mdl_ckpt)</span>
+<span id="cb9-3"><a href="#cb9-3"></a>inps <span class="op">=</span> tokenizer(text, padding<span class="op">=</span><span class="va">True</span>, truncation<span class="op">=</span><span class="va">True</span>, return_tensors<span class="op">=</span><span class="st">'pt'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div id="cell-15" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}}" data-outputid="f93f33f0-574e-4f79-bcdf-b4a029249453">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1"></a><span class="im">from</span> transformers <span class="im">import</span> AutoModelForSequenceClassification</span>
+<span id="cb10-2"><a href="#cb10-2"></a>mdl_ckpt <span class="op">=</span> <span class="st">"distilbert-base-uncased-finetuned-sst-2-english"</span></span>
+<span id="cb10-3"><a href="#cb10-3"></a>model <span class="op">=</span> AutoModelForSequenceClassification.from_pretrained(mdl_ckpt)</span>
+<span id="cb10-4"><a href="#cb10-4"></a>outs <span class="op">=</span> model(<span class="op">**</span>inps)</span>
+<span id="cb10-5"><a href="#cb10-5"></a>outs</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="46">
+<pre><code>SequenceClassifierOutput(loss=None, logits=tensor([[-0.2121,  0.4987],
+        [-3.9382,  4.1996]], grad_fn=&lt;AddmmBackward0&gt;), hidden_states=None, attentions=None)</code></pre>
+</div>
+</div>
+<div id="cell-16" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}}" data-outputid="7ade4d11-0861-4cb0-f0aa-578a9d200f9f">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1"></a>outs.logits.shape</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="47">
+<pre><code>torch.Size([2, 2])</code></pre>
+</div>
+</div>
+<ul>
+<li>In this case we have 2 sentences and 2 labels <code>negative</code> <code>positive</code>.</li>
+<li>The model will take the high dimensional vector as input and outputs a vector that match our task.</li>
+</ul>
+<section id="post-processing" class="level3">
+<h3 class="anchored" data-anchor-id="post-processing">Post processing:</h3>
+<ul>
+<li>The vector we get doesn’t make any sense as it is, so we need to make it meaningful for our task.</li>
+</ul>
+<div id="cell-19" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}}" data-outputid="08a9531b-a0dc-4bda-997e-675b202e6a99">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1"></a>outs.logits</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="48">
+<pre><code>tensor([[-0.2121,  0.4987],
+        [-3.9382,  4.1996]], grad_fn=&lt;AddmmBackward0&gt;)</code></pre>
+</div>
+</div>
+<ul>
+<li>those are prediction for each sentence, and each prediction can be mapped to a label, so we need to know each label which, then convert those logits into some meaningful values.</li>
+<li>To convert the logits into probabilies we will pass them through a softmax layer.</li>
+</ul>
+<div id="cell-21" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}}" data-outputid="0701368e-574a-4f60-d80f-230fef87d929">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1"></a><span class="im">import</span> torch</span>
+<span id="cb16-2"><a href="#cb16-2"></a>preds <span class="op">=</span> torch.nn.functional.softmax(outs.logits, dim<span class="op">=-</span><span class="dv">1</span>)</span>
+<span id="cb16-3"><a href="#cb16-3"></a>preds</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="49">
+<pre><code>tensor([[3.2942e-01, 6.7058e-01],
+        [2.9218e-04, 9.9971e-01]], grad_fn=&lt;SoftmaxBackward0&gt;)</code></pre>
+</div>
+</div>
+<ul>
+<li>Now we need to know the label of each colomn:</li>
+</ul>
+<div id="cell-23" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}}" data-outputid="66c82ec7-af43-4636-996b-ca51bc3185bf">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1"></a>model.config.id2label</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="50">
+<pre><code>{0: 'NEGATIVE', 1: 'POSITIVE'}</code></pre>
+</div>
+</div>
+<ul>
+<li>So the position [0] is negative where the position [1] positive</li>
+</ul>
+</section>
+</section>
+</section>
+<section id="models" class="level1">
+<h1>Models</h1>
+<ul>
+<li>As we saw before the <code>AutoModel()</code> class is handy tool to instantiate a model from a <code>chekcpoint(weights)</code></li>
+<li>It can guess the correspondent architecture for the checkpoint.</li>
+</ul>
+<section id="building-the-transformer" class="level3">
+<h3 class="anchored" data-anchor-id="building-the-transformer">Building the transformer:</h3>
+<ul>
+<li>We also could call the class of the model precisely if we know exactly the model we want to use.</li>
+</ul>
+<div id="cell-26" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1"></a><span class="im">from</span> transformers <span class="im">import</span> BertConfig, BertModel</span>
+<span id="cb20-2"><a href="#cb20-2"></a>cnfg <span class="op">=</span> BertConfig()</span>
+<span id="cb20-3"><a href="#cb20-3"></a>mdl <span class="op">=</span> BertModel(cnfg)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<ul>
+<li>The configurations contains many attributes related the architecture:</li>
+</ul>
+<div id="cell-28" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}}" data-outputid="d3a4e181-a8a3-4222-b93b-15b092f2a89c">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1"></a>cnfg</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="52">
+<pre><code>BertConfig {
+  "attention_probs_dropout_prob": 0.1,
+  "classifier_dropout": null,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 768,
+  "initializer_range": 0.02,
+  "intermediate_size": 3072,
+  "layer_norm_eps": 1e-12,
+  "max_position_embeddings": 512,
+  "model_type": "bert",
+  "num_attention_heads": 12,
+  "num_hidden_layers": 12,
+  "pad_token_id": 0,
+  "position_embedding_type": "absolute",
+  "transformers_version": "4.34.1",
+  "type_vocab_size": 2,
+  "use_cache": true,
+  "vocab_size": 30522
+}</code></pre>
+</div>
+</div>
+<ul>
+<li>We can understand many of these attributes like:
+<ul>
+<li><code>hidden_act</code>: activation function : <code>gelu</code></li>
+<li><code>hidden_size</code>: vector dimensions of each input word</li>
+<li><code>attention_head</code>, <code>num_hidden_layer</code>, <code>model_type</code> …</li>
+</ul></li>
+<li>While it is possible to build model like this way and using it, but it will produce very low predictions beacause its weights are set randomly.</li>
+<li>This forces us to train it from scratch, which is a very daunting and time, noney, energy consuming process.</li>
+<li>This is way its very preferably to use to other way of loading the model by starting with a pretrained one:</li>
+</ul>
+<div id="cell-31" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1"></a><span class="im">from</span> transformers <span class="im">import</span> BertModel</span>
+<span id="cb23-2"><a href="#cb23-2"></a>mdl <span class="op">=</span> BertModel.from_pretrained(<span class="st">'bert-base-cased'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<ul>
+<li><p>we even could use <code>AutoModel</code> instead of <code>BertModel</code> since it will produce agnostic code that fits all situations</p></li>
+<li><p>At this point the model is initialized with all the weights of the checkpoint, it can be used for inference directly on the tasks it was trained on, and also it can be fine-tuned on new tasks or more data.</p></li>
+</ul>
+</section>
+<section id="saving-the-model" class="level2">
+<h2 class="anchored" data-anchor-id="saving-the-model">Saving the model:</h2>
+<ul>
+<li>To save a model we are satisfied with its prformance:</li>
+</ul>
+<div id="cell-35" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1"></a>mdl.save_pretrained(<span class="st">'path'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div id="cell-36" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}}" data-outputid="8a585ae9-7d44-42ec-d74a-53ded3889ca6">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1"></a><span class="op">!</span>ls <span class="st">'path'</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>config.json  pytorch_model.bin  special_tokens_map.json  tokenizer_config.json  vocab.txt</code></pre>
+</div>
+</div>
+<ul>
+<li>This saves 2 files:
+<ul>
+<li><code>config.json</code>: contains all attributes necessary to build the model architecture, and also it contains some metadata</li>
+<li><code>pytorch_model.bin</code>: contains the learnable weights.</li>
+</ul></li>
+</ul>
+</section>
+<section id="using-a-transformer-model-for-inference" class="level2">
+<h2 class="anchored" data-anchor-id="using-a-transformer-model-for-inference">Using a Transformer model for inference:</h2>
+<ul>
+<li>Tokenizer convert input words into input ID:</li>
+</ul>
+<div id="cell-39" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}}" data-outputid="713c92f0-19f0-446a-dbec-cd7d02a34d2d">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1"></a>sequences <span class="op">=</span> [<span class="st">"Hello!"</span>, <span class="st">"Cool."</span>, <span class="st">"Nice!"</span>]</span>
+<span id="cb27-2"><a href="#cb27-2"></a>inps <span class="op">=</span> tokenizer(sequences)</span>
+<span id="cb27-3"><a href="#cb27-3"></a>encoded_sequences <span class="op">=</span> inps.input_ids</span>
+<span id="cb27-4"><a href="#cb27-4"></a>encoded_sequences</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="56">
+<pre><code>[[101, 7592, 999, 102], [101, 4658, 1012, 102], [101, 3835, 999, 102]]</code></pre>
+</div>
+</div>
+<ul>
+<li>The output we get here is a list of list, the problem is that tensors accept only rectangular shapes.</li>
+<li>So we nee to cenvert it into the targeted shape:</li>
+</ul>
+<div id="cell-41" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}}" data-outputid="2064b705-e417-4a0c-d2fc-48159dd921bf">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1"></a><span class="bu">input</span> <span class="op">=</span> torch.tensor(encoded_sequences)</span>
+<span id="cb29-2"><a href="#cb29-2"></a><span class="bu">input</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="57">
+<pre><code>tensor([[ 101, 7592,  999,  102],
+        [ 101, 4658, 1012,  102],
+        [ 101, 3835,  999,  102]])</code></pre>
+</div>
+</div>
+<section id="using-the-tensors-as-inputs-to-the-model" class="level3">
+<h3 class="anchored" data-anchor-id="using-the-tensors-as-inputs-to-the-model">Using the tensors as inputs to the model</h3>
+<ul>
+<li>Making use of this returned tensor is easy as pass it through the model:</li>
+</ul>
+<div id="cell-43" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}}" data-outputid="70f5b950-e5a1-46cd-e68f-d9152c8e7d84">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb31"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1"></a>outputs<span class="op">=</span> mdl(<span class="bu">input</span>)</span>
+<span id="cb31-2"><a href="#cb31-2"></a>outputs</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="58">
+<pre><code>BaseModelOutputWithPoolingAndCrossAttentions(last_hidden_state=tensor([[[ 4.4496e-01,  4.8276e-01,  2.7797e-01,  ..., -5.4032e-02,
+           3.9394e-01, -9.4770e-02],
+         [ 2.4943e-01, -4.4093e-01,  8.1772e-01,  ..., -3.1917e-01,
+           2.2992e-01, -4.1172e-02],
+         [ 1.3668e-01,  2.2518e-01,  1.4502e-01,  ..., -4.6915e-02,
+           2.8224e-01,  7.5566e-02],
+         [ 1.1789e+00,  1.6738e-01, -1.8187e-01,  ...,  2.4671e-01,
+           1.0441e+00, -6.1970e-03]],
+
+        [[ 3.6436e-01,  3.2464e-02,  2.0258e-01,  ...,  6.0111e-02,
+           3.2451e-01, -2.0995e-02],
+         [ 7.1866e-01, -4.8725e-01,  5.1740e-01,  ..., -4.4012e-01,
+           1.4553e-01, -3.7545e-02],
+         [ 3.3223e-01, -2.3271e-01,  9.4877e-02,  ..., -2.5268e-01,
+           3.2172e-01,  8.1079e-04],
+         [ 1.2523e+00,  3.5754e-01, -5.1320e-02,  ..., -3.7840e-01,
+           1.0526e+00, -5.6255e-01]],
+
+        [[ 2.4042e-01,  1.4718e-01,  1.2110e-01,  ...,  7.6062e-02,
+           3.3564e-01,  2.8262e-01],
+         [ 6.5701e-01, -3.2787e-01,  2.4968e-01,  ..., -2.5920e-01,
+           2.0175e-01,  3.3275e-01],
+         [ 2.0160e-01,  1.5783e-01,  9.8974e-03,  ..., -3.8850e-01,
+           4.1308e-01,  3.9732e-01],
+         [ 1.0175e+00,  6.4387e-01, -7.8147e-01,  ..., -4.2109e-01,
+           1.0925e+00, -4.8456e-02]]], grad_fn=&lt;NativeLayerNormBackward0&gt;), pooler_output=tensor([[-0.6856,  0.5262,  1.0000,  ...,  1.0000, -0.6112,  0.9971],
+        [-0.6055,  0.4997,  0.9998,  ...,  0.9999, -0.6753,  0.9769],
+        [-0.7702,  0.5447,  0.9999,  ...,  1.0000, -0.4655,  0.9894]],
+       grad_fn=&lt;TanhBackward0&gt;), hidden_states=None, past_key_values=None, attentions=None, cross_attentions=None)</code></pre>
+</div>
+</div>
+</section>
+</section>
+</section>
+<section id="tokenization" class="level1">
+<h1>Tokenization:</h1>
+<ul>
+<li>One of the core component of the NLP Pipeline is the idea of <strong>Tokenezation</strong></li>
+<li>It serve the purpose of translating raw text to its numerical form, so the model can process</li>
+<li>In general there’s 3 approches to tokenize raw text, we won’t get in much details:
+<ul>
+<li><strong>Word-based</strong>: each word has its own token</li>
+<li><strong>Character-Based</strong>: split text into charchters and gives each one of them a unique token</li>
+<li><strong>Sub-Words Tokenization</strong>: basically gives frequent words unique tokenm while split rare words into sub parts and tokenize them.</li>
+</ul></li>
+</ul>
+<section id="loading-and-saving" class="level2">
+<h2 class="anchored" data-anchor-id="loading-and-saving">Loading and Saving:</h2>
+<ul>
+<li>Loading and saving tokenizer is simple and very similar to how we load and save Models.</li>
+<li>By using the same two methods: <code>from_pretrained</code> and <code>save_pretrained</code>.</li>
+<li>Also we can load the tokenizer either by calling tokenizer class <code>BertTokenizer</code> or by just using <code>AutoTokenizer</code>, same as how we load models: <code>AutoModel</code> or <code>BertModel</code>:</li>
+</ul>
+<div id="cell-46" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb33"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1"></a><span class="im">from</span> transformers <span class="im">import</span> BertTokenizer</span>
+<span id="cb33-2"><a href="#cb33-2"></a>tokenizer <span class="op">=</span> BertTokenizer.from_pretrained(<span class="st">'bert-base-cased'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div id="cell-47" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb34"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1"></a><span class="co"># or the easy way</span></span>
+<span id="cb34-2"><a href="#cb34-2"></a>tokenizer1 <span class="op">=</span> AutoTokenizer.from_pretrained(<span class="st">'bert-base-cased'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div id="cell-48" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb35"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1"></a>text <span class="op">=</span> <span class="st">'try to tokenize this text so I can see the difference between them!'</span></span>
+<span id="cb35-2"><a href="#cb35-2"></a>inp <span class="op">=</span> tokenizer(text, return_tensors<span class="op">=</span><span class="st">'pt'</span>)</span>
+<span id="cb35-3"><a href="#cb35-3"></a>inp1 <span class="op">=</span> tokenizer1(text, return_tensors<span class="op">=</span><span class="st">'pt'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div id="cell-49" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}}" data-outputid="d471224c-0590-4906-de8f-f7b5d7d4a219">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb36"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1"></a>inp.input_ids, inp1.input_ids</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="62">
+<pre><code>(tensor([[  101,  2222,  1106, 22559,  3708,  1142,  3087,  1177,   146,  1169,
+           1267,  1103,  3719,  1206,  1172,   106,   102]]),
+ tensor([[  101,  2222,  1106, 22559,  3708,  1142,  3087,  1177,   146,  1169,
+           1267,  1103,  3719,  1206,  1172,   106,   102]]))</code></pre>
+</div>
+</div>
+<ul>
+<li><p>So both methods yield same results, but as we said before we prefer using the second method since its code agnostinc and can be applied with all model.</p></li>
+<li><p>Saving tokenizer is also similar to how we save models:</p></li>
+</ul>
+<div id="cell-52" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}}" data-outputid="250ea12e-922c-4451-e107-d14835f413a9">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb38"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1"></a>tokenizer.save_pretrained(<span class="st">'path'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="63">
+<pre><code>('path/tokenizer_config.json',
+ 'path/special_tokens_map.json',
+ 'path/vocab.txt',
+ 'path/added_tokens.json')</code></pre>
+</div>
+</div>
+</section>
+<section id="encoding" class="level2">
+<h2 class="anchored" data-anchor-id="encoding">Encoding:</h2>
+<ul>
+<li>The process of translating words to numbers is called <code>encoding</code>.</li>
+<li>The encoding is done through 2 steps:
+<ul>
+<li>Tokenization</li>
+<li>conversion to input IDs</li>
+</ul></li>
+</ul>
+<p><img src="tok_pipe.png" class="img-fluid" alt="Tokenizer"> * The first we create token-word, ,ostly complete words, but in some cases the one word will be splited to 2 or more parts. - this sub parts can be dentified by the <code>##</code> preffix. * Then we need to convert those tokens into input IDs in order to feed them to the model. * To do that the tokenizer pass this tokens through a <code>Vocabulary</code>. - When we instentiate the tokenizer with <code>from_pretrained()</code> we already download that vocabulary the we can match ewach token against an ID. - we need to use the same checkpoint during the training. * Here we will explore these 2 steps seperatly:</p>
+<div id="cell-54" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}}" data-outputid="46c8e19b-da85-4446-a58a-28900784bbf6">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb40"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb40-1"><a href="#cb40-1"></a>text  <span class="op">=</span> <span class="st">'Using a transformer network is simple'</span></span>
+<span id="cb40-2"><a href="#cb40-2"></a>tokenizer <span class="op">=</span> AutoTokenizer.from_pretrained(<span class="st">'bert-base-cased'</span>)</span>
+<span id="cb40-3"><a href="#cb40-3"></a>tokens <span class="op">=</span> tokenizer.tokenize(text)</span>
+<span id="cb40-4"><a href="#cb40-4"></a>tokens</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="64">
+<pre><code>['Using', 'a', 'transform', '##er', 'network', 'is', 'simple']</code></pre>
+</div>
+</div>
+<ul>
+<li>As we see the word <code>transformer</code> get splited to 2 parts, the second one is represented with <code>##</code> prefix</li>
+</ul>
+<div id="cell-56" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}}" data-outputid="e52e4445-946b-4a4d-a83f-ac30a3c0d076">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb42"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb42-1"><a href="#cb42-1"></a>ids <span class="op">=</span> tokenizer.convert_tokens_to_ids(tokens)</span>
+<span id="cb42-2"><a href="#cb42-2"></a>ids</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="65">
+<pre><code>[7993, 170, 11303, 1200, 2443, 1110, 3014]</code></pre>
+</div>
+</div>
+</section>
+<section id="decoding" class="level2">
+<h2 class="anchored" data-anchor-id="decoding">Decoding:</h2>
+<ul>
+<li>The idea of decoding is the exact opsite of encoding, its the process of converting ids to their text/word form</li>
+</ul>
+<div id="cell-58" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:35}}" data-outputid="21489804-1c4c-45f6-a901-e7edac57d1ff">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb44"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb44-1"><a href="#cb44-1"></a>decoded_ids <span class="op">=</span> tokenizer.decode(ids)</span>
+<span id="cb44-2"><a href="#cb44-2"></a>decoded_ids</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="66">
+<pre><code>'Using a transformer network is simple'</code></pre>
+</div>
+</div>
+<ul>
+<li>We get the text we begin with back by using the <code>decode()</code> method.</li>
+</ul>
+</section>
+</section>
+<section id="handling-multiple-sequences" class="level1">
+<h1>Handling multiple sequences:</h1>
+<ul>
+<li>Performing inference on a single sequence is a simple task, but what if we want to process multiple sequence wuth different lengths?</li>
+</ul>
+<div id="cell-61" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb46"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb46-1"><a href="#cb46-1"></a><span class="im">import</span> torch</span>
+<span id="cb46-2"><a href="#cb46-2"></a><span class="im">from</span> transformers <span class="im">import</span> AutoTokenizer, AutoModelForSequenceClassification</span>
+<span id="cb46-3"><a href="#cb46-3"></a><span class="co"># model checkpoint</span></span>
+<span id="cb46-4"><a href="#cb46-4"></a>mdl_chkpt <span class="op">=</span> <span class="st">'distilbert-base-uncased-finetuned-sst-2-english'</span></span>
+<span id="cb46-5"><a href="#cb46-5"></a><span class="co"># tokenizer</span></span>
+<span id="cb46-6"><a href="#cb46-6"></a>tokenizer <span class="op">=</span> AutoTokenizer.from_pretrained(mdl_ckpt)</span>
+<span id="cb46-7"><a href="#cb46-7"></a><span class="co"># model</span></span>
+<span id="cb46-8"><a href="#cb46-8"></a>model <span class="op">=</span> AutoModelForSequenceClassification.from_pretrained(mdl_ckpt)</span>
+<span id="cb46-9"><a href="#cb46-9"></a><span class="co"># sequence</span></span>
+<span id="cb46-10"><a href="#cb46-10"></a>text <span class="op">=</span> <span class="st">"I've been waiting for a HuggingFace course my whole life."</span></span>
+<span id="cb46-11"><a href="#cb46-11"></a><span class="co">#tokens</span></span>
+<span id="cb46-12"><a href="#cb46-12"></a>tokens <span class="op">=</span> tokenizer.tokenize(text)</span>
+<span id="cb46-13"><a href="#cb46-13"></a><span class="co"># ids</span></span>
+<span id="cb46-14"><a href="#cb46-14"></a>ids <span class="op">=</span> tokenizer.convert_tokens_to_ids(tokens)</span>
+<span id="cb46-15"><a href="#cb46-15"></a><span class="co"># convert them into tensor</span></span>
+<span id="cb46-16"><a href="#cb46-16"></a>input_ids <span class="op">=</span> torch.tensor(ids)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<ul>
+<li>Now we can pass the tensor into the model to perform some prediction:</li>
+</ul>
+<div id="cell-63" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:340}}" data-outputid="6126b963-4ca6-4b62-89de-58e5f274be7d">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb47"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb47-1"><a href="#cb47-1"></a>preds <span class="op">=</span> model(input_ids)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-error">
+<div class="ansi-escaped-output">
+<pre><span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">IndexError</span>                                Traceback (most recent call last)
+<span class="ansi-green-fg">&lt;ipython-input-68-9aae2e9c06e9&gt;</span> in <span class="ansi-cyan-fg">&lt;cell line: 1&gt;</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-fg">----&gt; 1</span><span class="ansi-red-fg"> </span>preds <span class="ansi-blue-fg">=</span> model<span class="ansi-blue-fg">(</span>input_ids<span class="ansi-blue-fg">)</span>
+
+<span class="ansi-green-fg">/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py</span> in <span class="ansi-cyan-fg">_wrapped_call_impl</span><span class="ansi-blue-fg">(self, *args, **kwargs)</span>
+<span class="ansi-green-fg ansi-bold">   1516</span>             <span class="ansi-green-fg">return</span> self<span class="ansi-blue-fg">.</span>_compiled_call_impl<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">*</span>args<span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">**</span>kwargs<span class="ansi-blue-fg">)</span>  <span class="ansi-red-fg"># type: ignore[misc]</span>
+<span class="ansi-green-fg ansi-bold">   1517</span>         <span class="ansi-green-fg">else</span><span class="ansi-blue-fg">:</span>
+<span class="ansi-green-fg">-&gt; 1518</span><span class="ansi-red-fg">             </span><span class="ansi-green-fg">return</span> self<span class="ansi-blue-fg">.</span>_call_impl<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">*</span>args<span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">**</span>kwargs<span class="ansi-blue-fg">)</span>
+<span class="ansi-green-fg ansi-bold">   1519</span> 
+<span class="ansi-green-fg ansi-bold">   1520</span>     <span class="ansi-green-fg">def</span> _call_impl<span class="ansi-blue-fg">(</span>self<span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">*</span>args<span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">**</span>kwargs<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
+
+<span class="ansi-green-fg">/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py</span> in <span class="ansi-cyan-fg">_call_impl</span><span class="ansi-blue-fg">(self, *args, **kwargs)</span>
+<span class="ansi-green-fg ansi-bold">   1525</span>                 <span class="ansi-green-fg">or</span> _global_backward_pre_hooks <span class="ansi-green-fg">or</span> _global_backward_hooks
+<span class="ansi-green-fg ansi-bold">   1526</span>                 or _global_forward_hooks or _global_forward_pre_hooks):
+<span class="ansi-green-fg">-&gt; 1527</span><span class="ansi-red-fg">             </span><span class="ansi-green-fg">return</span> forward_call<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">*</span>args<span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">**</span>kwargs<span class="ansi-blue-fg">)</span>
+<span class="ansi-green-fg ansi-bold">   1528</span> 
+<span class="ansi-green-fg ansi-bold">   1529</span>         <span class="ansi-green-fg">try</span><span class="ansi-blue-fg">:</span>
+
+<span class="ansi-green-fg">/usr/local/lib/python3.10/dist-packages/transformers/models/distilbert/modeling_distilbert.py</span> in <span class="ansi-cyan-fg">forward</span><span class="ansi-blue-fg">(self, input_ids, attention_mask, head_mask, inputs_embeds, labels, output_attentions, output_hidden_states, return_dict)</span>
+<span class="ansi-green-fg ansi-bold">    787</span>         return_dict <span class="ansi-blue-fg">=</span> return_dict <span class="ansi-green-fg">if</span> return_dict <span class="ansi-green-fg">is</span> <span class="ansi-green-fg">not</span> <span class="ansi-green-fg">None</span> <span class="ansi-green-fg">else</span> self<span class="ansi-blue-fg">.</span>config<span class="ansi-blue-fg">.</span>use_return_dict
+<span class="ansi-green-fg ansi-bold">    788</span> 
+<span class="ansi-green-fg">--&gt; 789</span><span class="ansi-red-fg">         distilbert_output = self.distilbert(
+</span><span class="ansi-green-fg ansi-bold">    790</span>             input_ids<span class="ansi-blue-fg">=</span>input_ids<span class="ansi-blue-fg">,</span>
+<span class="ansi-green-fg ansi-bold">    791</span>             attention_mask<span class="ansi-blue-fg">=</span>attention_mask<span class="ansi-blue-fg">,</span>
+
+<span class="ansi-green-fg">/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py</span> in <span class="ansi-cyan-fg">_wrapped_call_impl</span><span class="ansi-blue-fg">(self, *args, **kwargs)</span>
+<span class="ansi-green-fg ansi-bold">   1516</span>             <span class="ansi-green-fg">return</span> self<span class="ansi-blue-fg">.</span>_compiled_call_impl<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">*</span>args<span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">**</span>kwargs<span class="ansi-blue-fg">)</span>  <span class="ansi-red-fg"># type: ignore[misc]</span>
+<span class="ansi-green-fg ansi-bold">   1517</span>         <span class="ansi-green-fg">else</span><span class="ansi-blue-fg">:</span>
+<span class="ansi-green-fg">-&gt; 1518</span><span class="ansi-red-fg">             </span><span class="ansi-green-fg">return</span> self<span class="ansi-blue-fg">.</span>_call_impl<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">*</span>args<span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">**</span>kwargs<span class="ansi-blue-fg">)</span>
+<span class="ansi-green-fg ansi-bold">   1519</span> 
+<span class="ansi-green-fg ansi-bold">   1520</span>     <span class="ansi-green-fg">def</span> _call_impl<span class="ansi-blue-fg">(</span>self<span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">*</span>args<span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">**</span>kwargs<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
+
+<span class="ansi-green-fg">/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py</span> in <span class="ansi-cyan-fg">_call_impl</span><span class="ansi-blue-fg">(self, *args, **kwargs)</span>
+<span class="ansi-green-fg ansi-bold">   1525</span>                 <span class="ansi-green-fg">or</span> _global_backward_pre_hooks <span class="ansi-green-fg">or</span> _global_backward_hooks
+<span class="ansi-green-fg ansi-bold">   1526</span>                 or _global_forward_hooks or _global_forward_pre_hooks):
+<span class="ansi-green-fg">-&gt; 1527</span><span class="ansi-red-fg">             </span><span class="ansi-green-fg">return</span> forward_call<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">*</span>args<span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">**</span>kwargs<span class="ansi-blue-fg">)</span>
+<span class="ansi-green-fg ansi-bold">   1528</span> 
+<span class="ansi-green-fg ansi-bold">   1529</span>         <span class="ansi-green-fg">try</span><span class="ansi-blue-fg">:</span>
+
+<span class="ansi-green-fg">/usr/local/lib/python3.10/dist-packages/transformers/models/distilbert/modeling_distilbert.py</span> in <span class="ansi-cyan-fg">forward</span><span class="ansi-blue-fg">(self, input_ids, attention_mask, head_mask, inputs_embeds, output_attentions, output_hidden_states, return_dict)</span>
+<span class="ansi-green-fg ansi-bold">    590</span>             <span class="ansi-green-fg">raise</span> ValueError<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">"You cannot specify both input_ids and inputs_embeds at the same time"</span><span class="ansi-blue-fg">)</span>
+<span class="ansi-green-fg ansi-bold">    591</span>         <span class="ansi-green-fg">elif</span> input_ids <span class="ansi-green-fg">is</span> <span class="ansi-green-fg">not</span> <span class="ansi-green-fg">None</span><span class="ansi-blue-fg">:</span>
+<span class="ansi-green-fg">--&gt; 592</span><span class="ansi-red-fg">             </span>self<span class="ansi-blue-fg">.</span>warn_if_padding_and_no_attention_mask<span class="ansi-blue-fg">(</span>input_ids<span class="ansi-blue-fg">,</span> attention_mask<span class="ansi-blue-fg">)</span>
+<span class="ansi-green-fg ansi-bold">    593</span>             input_shape <span class="ansi-blue-fg">=</span> input_ids<span class="ansi-blue-fg">.</span>size<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span>
+<span class="ansi-green-fg ansi-bold">    594</span>         <span class="ansi-green-fg">elif</span> inputs_embeds <span class="ansi-green-fg">is</span> <span class="ansi-green-fg">not</span> <span class="ansi-green-fg">None</span><span class="ansi-blue-fg">:</span>
+
+<span class="ansi-green-fg">/usr/local/lib/python3.10/dist-packages/transformers/modeling_utils.py</span> in <span class="ansi-cyan-fg">warn_if_padding_and_no_attention_mask</span><span class="ansi-blue-fg">(self, input_ids, attention_mask)</span>
+<span class="ansi-green-fg ansi-bold">   3939</span> 
+<span class="ansi-green-fg ansi-bold">   3940</span>         <span class="ansi-red-fg"># Check only the first and last input IDs to reduce overhead.</span>
+<span class="ansi-green-fg">-&gt; 3941</span><span class="ansi-red-fg">         </span><span class="ansi-green-fg">if</span> self<span class="ansi-blue-fg">.</span>config<span class="ansi-blue-fg">.</span>pad_token_id <span class="ansi-green-fg">in</span> input_ids<span class="ansi-blue-fg">[</span><span class="ansi-blue-fg">:</span><span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">[</span><span class="ansi-blue-fg">-</span><span class="ansi-cyan-fg">1</span><span class="ansi-blue-fg">,</span> <span class="ansi-cyan-fg">0</span><span class="ansi-blue-fg">]</span><span class="ansi-blue-fg">]</span><span class="ansi-blue-fg">:</span>
+<span class="ansi-green-fg ansi-bold">   3942</span>             warn_string = (
+<span class="ansi-green-fg ansi-bold">   3943</span>                 <span class="ansi-blue-fg">"We strongly recommend passing in an `attention_mask` since your input_ids may be padded. See "</span>
+
+<span class="ansi-red-fg">IndexError</span>: too many indices for tensor of dimension 1</pre>
+</div>
+</div>
+</div>
+<ul>
+<li>We did same steps as before but we get an error?</li>
+<li>If we look again to what the tokenizer output we see that it didn’t just return a tensor, but it added a dimension of top of it:</li>
+</ul>
+<div id="cell-65" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}}" data-outputid="63f83cde-371d-4071-f580-2002dc933800">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb48"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb48-1"><a href="#cb48-1"></a>seq <span class="op">=</span> <span class="st">'this is just a simple example to see the difference between the 2!'</span></span>
+<span id="cb48-2"><a href="#cb48-2"></a>normal_input <span class="op">=</span> tokenizer(seq, return_tensors<span class="op">=</span><span class="st">'pt'</span>)</span>
+<span id="cb48-3"><a href="#cb48-3"></a>the_tokens <span class="op">=</span> tokenizer.tokenize(seq)</span>
+<span id="cb48-4"><a href="#cb48-4"></a>ids_1 <span class="op">=</span> tokenizer.convert_tokens_to_ids(the_tokens)</span>
+<span id="cb48-5"><a href="#cb48-5"></a>inp_ids <span class="op">=</span> torch.tensor(ids_1)</span>
+<span id="cb48-6"><a href="#cb48-6"></a><span class="bu">print</span>(<span class="ss">f'this is normal way: </span><span class="sc">{</span>normal_input<span class="sc">.</span>input_ids<span class="sc">}</span><span class="ss">'</span>)</span>
+<span id="cb48-7"><a href="#cb48-7"></a><span class="bu">print</span>(<span class="ss">f'this is the manual way: </span><span class="sc">{</span>inp_ids<span class="sc">}</span><span class="ss">'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>this is normal way: tensor([[ 101, 2023, 2003, 2074, 1037, 3722, 2742, 2000, 2156, 1996, 4489, 2090,
+         1996, 1016,  999,  102]])
+this is the manual way: tensor([2023, 2003, 2074, 1037, 3722, 2742, 2000, 2156, 1996, 4489, 2090, 1996,
+        1016,  999])</code></pre>
+</div>
+</div>
+<ul>
+<li>The normal way has one more dimension that the manual way, so we need to add this dimension while converting to tensor in order to feed it to the model</li>
+</ul>
+<div id="cell-67" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}}" data-outputid="a57bf0f6-a36b-4b55-b6a3-38f9ebd33764">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb50"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb50-1"><a href="#cb50-1"></a>input_ids<span class="op">=</span> torch.tensor([ids])</span>
+<span id="cb50-2"><a href="#cb50-2"></a>input_ids</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="70">
+<pre><code>tensor([[ 1045,  1005,  2310,  2042,  3403,  2005,  1037, 17662, 12172,  2607,
+          2026,  2878,  2166,  1012]])</code></pre>
+</div>
+</div>
+<ul>
+<li>Now let’s try again with the model:</li>
+</ul>
+<div id="cell-69" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}}" data-outputid="ec3e75ca-8751-4045-e7d5-9061721ccc3f">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb52"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb52-1"><a href="#cb52-1"></a>preds <span class="op">=</span> model(input_ids)</span>
+<span id="cb52-2"><a href="#cb52-2"></a>preds.logits</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="71">
+<pre><code>tensor([[-2.7276,  2.8789]], grad_fn=&lt;AddmmBackward0&gt;)</code></pre>
+</div>
+</div>
+<ul>
+<li>The thing we need to consider here the importance to <strong><code>Batching</code></strong> when feeding input sentences to tthe model even if we have one single sentence:</li>
+</ul>
+<div id="cell-71" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}}" data-outputid="fb041258-9ea7-44f3-8360-97b2076462c1">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb54"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb54-1"><a href="#cb54-1"></a>batched_ids <span class="op">=</span> [ids, ids]</span>
+<span id="cb54-2"><a href="#cb54-2"></a>batched_inp_ids <span class="op">=</span> torch.tensor(batched_ids)</span>
+<span id="cb54-3"><a href="#cb54-3"></a>outs <span class="op">=</span> model(batched_inp_ids).logits</span>
+<span id="cb54-4"><a href="#cb54-4"></a>outs</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="72">
+<pre><code>tensor([[-2.7276,  2.8789],
+        [-2.7276,  2.8789]], grad_fn=&lt;AddmmBackward0&gt;)</code></pre>
+</div>
+</div>
+<ul>
+<li>batching allows the model to process multiple sentences.</li>
+<li>What about if these sentences has different length? which is always the case.</li>
+<li>As we know the tensors needs to be rectangular in order to conver list of IDs to tensor.</li>
+<li>to solve this kind of problems and more we will go through some techninques to work around them:</li>
+</ul>
+<section id="padding" class="level2">
+<h2 class="anchored" data-anchor-id="padding">Padding:</h2>
+<ul>
+<li>Suppose we have this list of list as ids:</li>
+</ul>
+<div id="cell-74" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb56"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb56-1"><a href="#cb56-1"></a>batched_ids <span class="op">=</span> [[<span class="dv">200</span>, <span class="dv">200</span>], [<span class="dv">200</span>, <span class="dv">200</span>, <span class="dv">100</span>]]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<ul>
+<li>We need to get this list of list in rectangular shape before we convert it into tensor.</li>
+<li>This is where we use <code>padding</code></li>
+</ul>
+<div id="cell-76" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb57"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb57-1"><a href="#cb57-1"></a>padding_id <span class="op">=</span> <span class="dv">100</span></span>
+<span id="cb57-2"><a href="#cb57-2"></a>batched_ids <span class="op">=</span> [[<span class="dv">200</span>, <span class="dv">200</span>, padding_id], [<span class="dv">200</span>, <span class="dv">200</span>, <span class="dv">100</span>]]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<ul>
+<li>The padding token ID can be found in <code>tokenizer.pad_token_id</code>.</li>
+<li>Now let’s do a simple experience to see differences between 3 batches after going through a model: - first list - second list - both lists batched and padding applied</li>
+</ul>
+<div id="cell-78" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb58"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb58-1"><a href="#cb58-1"></a>model <span class="op">=</span> AutoModelForSequenceClassification.from_pretrained(mdl_chkpt)</span>
+<span id="cb58-2"><a href="#cb58-2"></a>sequence1_ids <span class="op">=</span> [[<span class="dv">200</span>, <span class="dv">200</span>]]</span>
+<span id="cb58-3"><a href="#cb58-3"></a>sequence2_ids <span class="op">=</span> [[<span class="dv">200</span>, <span class="dv">200</span>, <span class="dv">200</span>]]</span>
+<span id="cb58-4"><a href="#cb58-4"></a>batched_ids <span class="op">=</span> [[<span class="dv">200</span>, <span class="dv">200</span>,tokenizer.pad_token_id ], [<span class="dv">200</span>, <span class="dv">200</span>, <span class="dv">200</span>]]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div id="cell-79" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}}" data-outputid="ca82dadf-c757-4a78-c44c-f8937948c86c">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb59"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb59-1"><a href="#cb59-1"></a><span class="bu">print</span>(model(torch.tensor(sequence1_ids)).logits)</span>
+<span id="cb59-2"><a href="#cb59-2"></a><span class="bu">print</span>(model(torch.tensor(sequence2_ids)).logits)</span>
+<span id="cb59-3"><a href="#cb59-3"></a><span class="bu">print</span>(model(torch.tensor(batched_ids)).logits)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>tensor([[ 0.5803, -0.4125]], grad_fn=&lt;AddmmBackward0&gt;)
+tensor([[ 1.5694, -1.3895]], grad_fn=&lt;AddmmBackward0&gt;)
+tensor([[ 1.3374, -1.2163],
+        [ 1.5694, -1.3895]], grad_fn=&lt;AddmmBackward0&gt;)</code></pre>
+</div>
+</div>
+<ul>
+<li>The thing we could observe here is that we get same logits for the second sequence ID compared with batched_ids but not the first one?</li>
+<li>The first sequence id is where we applied padding, and as we know transformer models are very sensetive to any context of the words (in this case context of the ids) so the element that we added in order to get a rectangular shape, is also get computed by the transformer model, which influence the final prediction.</li>
+<li>We need to tell the model to ignore these padding values during the computation</li>
+</ul>
+<section id="attention-mask" class="level3">
+<h3 class="anchored" data-anchor-id="attention-mask">Attention mask:</h3>
+<ul>
+<li>Attention mask is what tell the model during the predecting phase to ignore padding values and not including them while computing the attention mechanism</li>
+</ul>
+<div id="cell-82" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}}" data-outputid="d0cf5086-a090-4570-f33c-ecf056a951cc">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb61"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb61-1"><a href="#cb61-1"></a>batched_ids <span class="op">=</span> [</span>
+<span id="cb61-2"><a href="#cb61-2"></a>    [<span class="dv">200</span>, <span class="dv">200</span>, <span class="dv">200</span>],</span>
+<span id="cb61-3"><a href="#cb61-3"></a>    [<span class="dv">200</span>, <span class="dv">200</span>, tokenizer.pad_token_id],</span>
+<span id="cb61-4"><a href="#cb61-4"></a>]</span>
+<span id="cb61-5"><a href="#cb61-5"></a></span>
+<span id="cb61-6"><a href="#cb61-6"></a>attention_mask <span class="op">=</span> [</span>
+<span id="cb61-7"><a href="#cb61-7"></a>    [<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>],</span>
+<span id="cb61-8"><a href="#cb61-8"></a>    [<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">0</span>],</span>
+<span id="cb61-9"><a href="#cb61-9"></a>]</span>
+<span id="cb61-10"><a href="#cb61-10"></a></span>
+<span id="cb61-11"><a href="#cb61-11"></a>outputs <span class="op">=</span> model(torch.tensor(batched_ids), attention_mask<span class="op">=</span>torch.tensor(attention_mask))</span>
+<span id="cb61-12"><a href="#cb61-12"></a><span class="bu">print</span>(outputs.logits)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>tensor([[ 1.5694, -1.3895],
+        [ 0.5803, -0.4125]], grad_fn=&lt;AddmmBackward0&gt;)</code></pre>
+</div>
+</div>
+<ul>
+<li>Now we get the same logits</li>
+</ul>
+</section>
+</section>
+<section id="longer-sequences" class="level2">
+<h2 class="anchored" data-anchor-id="longer-sequences">Longer sequences:</h2>
+<ul>
+<li>Transformer model cannot handle very long sentences, usually they have between 512 and 1024 tokens as maximum length for a sentence.</li>
+<li>I we have a situation where we need to deal with very large sequence we either:
+<ul>
+<li>use models that can handle long sentences</li>
+<li>use <code>truncation</code> method</li>
+</ul></li>
+<li><code>Truncation</code> is a way of making sequences of the same batch the same length, either by picking the length of the longest sequence or the short one</li>
+</ul>
+</section>
+</section>
+<section id="putting-all-together" class="level1">
+<h1>Putting All Together:</h1>
+<ul>
+<li>What we have done till now is hard-coding each step of the tokenization process without full help from the <code>Tokenizer</code>.</li>
+<li>However as we saw before the Transformer API can handle all this kind of work with a high-level functions.</li>
+</ul>
+<div id="cell-86" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb63"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb63-1"><a href="#cb63-1"></a>mdl_ckpt <span class="op">=</span> <span class="st">"distilbert-base-uncased-finetuned-sst-2-english"</span></span>
+<span id="cb63-2"><a href="#cb63-2"></a>tokenizer <span class="op">=</span> AutoTokenizer.from_pretrained(mdl_ckpt)</span>
+<span id="cb63-3"><a href="#cb63-3"></a>seq <span class="op">=</span> <span class="st">"I've been waiting for a HuggingFace course my whole life."</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<ul>
+<li>We can call the tokenizer function directly on a sequence and get:</li>
+</ul>
+<div id="cell-88" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}}" data-outputid="4a27a216-8725-4db4-dfa3-8e79ba0c8275">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb64"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb64-1"><a href="#cb64-1"></a>inputs <span class="op">=</span> tokenizer(seq)</span>
+<span id="cb64-2"><a href="#cb64-2"></a>inputs</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="80">
+<pre><code>{'input_ids': [101, 1045, 1005, 2310, 2042, 3403, 2005, 1037, 17662, 12172, 2607, 2026, 2878, 2166, 1012, 102], 'attention_mask': [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]}</code></pre>
+</div>
+</div>
+<ul>
+<li>We get input IDs and even the <code>attention_mask</code> is applied.</li>
+<li>We can also define more feature we want our tokenizer to apply:</li>
+</ul>
+<div id="cell-90" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}}" data-outputid="a2f1aedd-6115-448a-c51c-955d60d04aaa">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb66"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb66-1"><a href="#cb66-1"></a><span class="co"># pass multiple sentences:</span></span>
+<span id="cb66-2"><a href="#cb66-2"></a>seqs <span class="op">=</span> [<span class="st">'this is sentence number one'</span>, <span class="st">'this is the second'</span>]</span>
+<span id="cb66-3"><a href="#cb66-3"></a>inps <span class="op">=</span> tokenizer(seqs)</span>
+<span id="cb66-4"><a href="#cb66-4"></a>inps</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="87">
+<pre><code>{'input_ids': [[101, 2023, 2003, 6251, 2193, 2028, 102], [101, 2023, 2003, 1996, 2117, 102]], 'attention_mask': [[1, 1, 1, 1, 1, 1, 1], [1, 1, 1, 1, 1, 1]]}</code></pre>
+</div>
+</div>
+<ul>
+<li>Padd on different parameters:</li>
+</ul>
+<div id="cell-92" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb68"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb68-1"><a href="#cb68-1"></a><span class="co"># padd based on the longest sequence</span></span>
+<span id="cb68-2"><a href="#cb68-2"></a>inps <span class="op">=</span> tokenizer(seqs, padding<span class="op">=</span><span class="st">'longest'</span>)</span>
+<span id="cb68-3"><a href="#cb68-3"></a></span>
+<span id="cb68-4"><a href="#cb68-4"></a><span class="co"># padd based on the model max length</span></span>
+<span id="cb68-5"><a href="#cb68-5"></a>inps <span class="op">=</span> tokenizer(seqs, padding<span class="op">=</span><span class="st">'max_length'</span>)</span>
+<span id="cb68-6"><a href="#cb68-6"></a></span>
+<span id="cb68-7"><a href="#cb68-7"></a><span class="co"># padd on specified length</span></span>
+<span id="cb68-8"><a href="#cb68-8"></a></span>
+<span id="cb68-9"><a href="#cb68-9"></a>inps <span class="op">=</span> tokenizer(seqs, padding<span class="op">=</span><span class="st">'max_length'</span>, max_length <span class="op">=</span> <span class="dv">8</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div id="cell-93" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}}" data-outputid="f529a1e5-35a8-4e04-cd58-33a6731a4821">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb69"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb69-1"><a href="#cb69-1"></a><span class="co"># Will truncate the sequences that are longer than the model max length</span></span>
+<span id="cb69-2"><a href="#cb69-2"></a><span class="co"># (512 for BERT or DistilBERT)</span></span>
+<span id="cb69-3"><a href="#cb69-3"></a>inps <span class="op">=</span> tokenizer(seqs, truncation<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb69-4"><a href="#cb69-4"></a>inps</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="90">
+<pre><code>{'input_ids': [[101, 2023, 2003, 6251, 2193, 2028, 102], [101, 2023, 2003, 1996, 2117, 102]], 'attention_mask': [[1, 1, 1, 1, 1, 1, 1], [1, 1, 1, 1, 1, 1]]}</code></pre>
+</div>
+</div>
+<div id="cell-94" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}}" data-outputid="8ba739b7-dce3-4d85-a3b1-3b0cb1873a32">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb71"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb71-1"><a href="#cb71-1"></a><span class="co"># Will truncate the sequences that are longer than the specified max length</span></span>
+<span id="cb71-2"><a href="#cb71-2"></a>inps <span class="op">=</span> tokenizer(seqs, max_length<span class="op">=</span><span class="dv">7</span>, truncation<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb71-3"><a href="#cb71-3"></a>inps</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="91">
+<pre><code>{'input_ids': [[101, 2023, 2003, 6251, 2193, 2028, 102], [101, 2023, 2003, 1996, 2117, 102]], 'attention_mask': [[1, 1, 1, 1, 1, 1, 1], [1, 1, 1, 1, 1, 1]]}</code></pre>
+</div>
+</div>
+<ul>
+<li>The tokenizer object can handle the conversion to specific framework tensors, which can then be directly sent to the model==&gt;<code>pt for pytorch</code></li>
+<li>The padding in this case should be always set as <code>True</code></li>
+</ul>
+<div id="cell-96" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}}" data-outputid="eb516512-452a-451e-ea57-eef8b6317f26">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb73"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb73-1"><a href="#cb73-1"></a><span class="im">from</span> transformers.models.instructblip.modeling_instructblip <span class="im">import</span> InstructBlipQFormerSelfOutput</span>
+<span id="cb73-2"><a href="#cb73-2"></a>inps <span class="op">=</span> tokenizer(seqs, return_tensors<span class="op">=</span><span class="st">'pt'</span>, padding<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb73-3"><a href="#cb73-3"></a>inps</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="92">
+<pre><code>{'input_ids': tensor([[ 101, 2023, 2003, 6251, 2193, 2028,  102],
+        [ 101, 2023, 2003, 1996, 2117,  102,    0]]), 'attention_mask': tensor([[1, 1, 1, 1, 1, 1, 1],
+        [1, 1, 1, 1, 1, 1, 0]])}</code></pre>
+</div>
+</div>
+<section id="special-tokens" class="level2">
+<h2 class="anchored" data-anchor-id="special-tokens">Special Tokens</h2>
+<ul>
+<li>If we look closely to the input ID’s we get, we can spot a small difference from what we got earlier</li>
+<li>The tokenizer added 2 ID’s to the list, one in the begining and another at the end.
+<ul>
+<li>they alwayas have the same value: <code>101</code> and <code>102</code></li>
+</ul></li>
+</ul>
+<div id="cell-98" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}}" data-outputid="0525d7c6-3313-46e8-fd2a-3193609b6b03">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb75"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb75-1"><a href="#cb75-1"></a>seq <span class="op">=</span> <span class="st">"I've been waiting for a HuggingFace course my whole life."</span></span>
+<span id="cb75-2"><a href="#cb75-2"></a>toks1 <span class="op">=</span> tokenizer(seq)</span>
+<span id="cb75-3"><a href="#cb75-3"></a>toks2 <span class="op">=</span> tokenizer.tokenize(seq)</span>
+<span id="cb75-4"><a href="#cb75-4"></a>ids1<span class="op">=</span> toks1.input_ids</span>
+<span id="cb75-5"><a href="#cb75-5"></a>ids2 <span class="op">=</span> tokenizer.convert_tokens_to_ids(toks2)</span>
+<span id="cb75-6"><a href="#cb75-6"></a><span class="bu">print</span>(<span class="ss">f'normal: </span><span class="sc">{</span>ids1<span class="sc">}</span><span class="ss">'</span>)</span>
+<span id="cb75-7"><a href="#cb75-7"></a><span class="bu">print</span>(<span class="ss">f'hard_coded: </span><span class="sc">{</span>ids2<span class="sc">}</span><span class="ss">'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>normal: [101, 1045, 1005, 2310, 2042, 3403, 2005, 1037, 17662, 12172, 2607, 2026, 2878, 2166, 1012, 102]
+hard_coded: [1045, 1005, 2310, 2042, 3403, 2005, 1037, 17662, 12172, 2607, 2026, 2878, 2166, 1012]</code></pre>
+</div>
+</div>
+<ul>
+<li>Now we will decode the different types of ID’s we will get different decoded sentences:</li>
+</ul>
+<div id="cell-100" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}}" data-outputid="fd470fe7-f9f6-483f-bfa2-5f4d719731e7">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb77"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb77-1"><a href="#cb77-1"></a><span class="bu">print</span>(<span class="ss">f'normal: </span><span class="sc">{</span>tokenizer<span class="sc">.</span>decode(ids1)<span class="sc">}</span><span class="ss">'</span>)</span>
+<span id="cb77-2"><a href="#cb77-2"></a><span class="bu">print</span>(<span class="ss">f'hard-coded: </span><span class="sc">{</span>tokenizer<span class="sc">.</span>decode(ids2)<span class="sc">}</span><span class="ss">'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>normal: [CLS] i've been waiting for a huggingface course my whole life. [SEP]
+hard-coded: i've been waiting for a huggingface course my whole life.</code></pre>
+</div>
+</div>
+<ul>
+<li>Tokenizer added special tokens to the sentence <code>[CLS]</code> and <code>[SEP]</code>, because the model was trained with this kind of architecture</li>
+</ul>
+</section>
+</section>
+<section id="wrapping-up-from-tokenizer-to-model" class="level1">
+<h1>Wrapping Up: From Tokenizer to Model:</h1>
+<div id="cell-103" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb79"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb79-1"><a href="#cb79-1"></a><span class="im">import</span> torch</span>
+<span id="cb79-2"><a href="#cb79-2"></a><span class="im">from</span> transformers <span class="im">import</span> AutoTokenizer, AutoModelForSequenceClassification</span>
+<span id="cb79-3"><a href="#cb79-3"></a></span>
+<span id="cb79-4"><a href="#cb79-4"></a>checkpoint <span class="op">=</span> <span class="st">"distilbert-base-uncased-finetuned-sst-2-english"</span></span>
+<span id="cb79-5"><a href="#cb79-5"></a>tokenizer <span class="op">=</span> AutoTokenizer.from_pretrained(checkpoint)</span>
+<span id="cb79-6"><a href="#cb79-6"></a>model <span class="op">=</span> AutoModelForSequenceClassification.from_pretrained(checkpoint)</span>
+<span id="cb79-7"><a href="#cb79-7"></a>sequences <span class="op">=</span> [<span class="st">"I've been waiting for a HuggingFace course my whole life."</span>, <span class="st">"So have I!"</span>]</span>
+<span id="cb79-8"><a href="#cb79-8"></a></span>
+<span id="cb79-9"><a href="#cb79-9"></a>tokens <span class="op">=</span> tokenizer(sequences, padding<span class="op">=</span><span class="va">True</span>, truncation<span class="op">=</span><span class="va">True</span>, return_tensors<span class="op">=</span><span class="st">"pt"</span>)</span>
+<span id="cb79-10"><a href="#cb79-10"></a>output <span class="op">=</span> model(<span class="op">**</span>tokens)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div id="cell-104" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}}" data-outputid="d521f49f-7d5c-459b-92b5-f66b49b0e04f">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb80"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb80-1"><a href="#cb80-1"></a>outs <span class="op">=</span> output.logits</span>
+<span id="cb80-2"><a href="#cb80-2"></a>outs</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="96">
+<pre><code>tensor([[-1.5607,  1.6123],
+        [-3.6183,  3.9137]], grad_fn=&lt;AddmmBackward0&gt;)</code></pre>
+</div>
+</div>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+    const viewSource = window.document.getElementById('quarto-view-source') ||
+                       window.document.getElementById('quarto-code-tools-source');
+    if (viewSource) {
+      const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
+      viewSource.addEventListener("click", function(e) {
+        if (sourceUrl) {
+          // rstudio viewer pane
+          if (/\bcapabilities=\b/.test(window.location)) {
+            window.open(sourceUrl);
+          } else {
+            window.location.href = sourceUrl;
+          }
+        } else {
+          const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
+          modal.show();
+        }
+        return false;
+      });
+    }
+    function toggleCodeHandler(show) {
+      return function(e) {
+        const detailsSrc = window.document.querySelectorAll(".cell > details > .sourceCode");
+        for (let i=0; i<detailsSrc.length; i++) {
+          const details = detailsSrc[i].parentElement;
+          if (show) {
+            details.open = true;
+          } else {
+            details.removeAttribute("open");
+          }
+        }
+        const cellCodeDivs = window.document.querySelectorAll(".cell > .sourceCode");
+        const fromCls = show ? "hidden" : "unhidden";
+        const toCls = show ? "unhidden" : "hidden";
+        for (let i=0; i<cellCodeDivs.length; i++) {
+          const codeDiv = cellCodeDivs[i];
+          if (codeDiv.classList.contains(fromCls)) {
+            codeDiv.classList.remove(fromCls);
+            codeDiv.classList.add(toCls);
+          } 
+        }
+        return false;
+      }
+    }
+    const hideAllCode = window.document.getElementById("quarto-hide-all-code");
+    if (hideAllCode) {
+      hideAllCode.addEventListener("click", toggleCodeHandler(false));
+    }
+    const showAllCode = window.document.getElementById("quarto-show-all-code");
+    if (showAllCode) {
+      showAllCode.addEventListener("click", toggleCodeHandler(true));
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/iSmailTG\.github\.io\/Lifelong-Learner\.github\.io\/");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+            // target, if specified
+            link.setAttribute("target", "_blank");
+            if (link.getAttribute("rel") === null) {
+              link.setAttribute("rel", "noopener");
+            }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>© 2025 Ismail TG. Learning in public.</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item">
+    <a class="nav-link" href="../../index.xml">
+<p>RSS</p>
+</a>
+  </li>  
+</ul>
+    </div>
+  </div>
+</footer>
+
+
+
+
+<script src="../../site_libs/quarto-html/zenscroll-min.js"></script>
+</body></html>

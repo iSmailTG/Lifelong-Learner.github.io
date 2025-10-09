@@ -1,0 +1,82 @@
+---
+title: "Projects"
+subtitle: "Machine Learning and Deep Learning Projects"
+---
+
+## Featured Projects
+
+### Manim Code Generation with LLM Fine-tuning
+
+**Description**: Fine-tuned a small language model on the Manim dataset using instruction tuning methodology. The model generates executable Manim code that produces mathematical animations from natural language descriptions.
+
+**Technologies**: 
+- LLM Fine-tuning
+- Instruction Tuning
+- Code Generation
+- Manim
+
+**Status**: Completed
+
+[View Post](posts/your-manim-post-link.qmd) | [GitHub](#)
+
+---
+
+### Direct Preference Optimization (DPO) Study
+
+**Description**: Deep dive into Direct Preference Optimization and its application in aligning language models with human preferences without reinforcement learning.
+
+**Technologies**:
+- RLHF alternatives
+- Preference learning
+- LLM alignment
+
+[View Post](posts/your-dpo-post-link.qmd)
+
+---
+
+### LoRA Implementation and Fine-tuning
+
+**Description**: Implementation and experimentation with Low-Rank Adaptation (LoRA) for parameter-efficient fine-tuning of large language models.
+
+**Technologies**:
+- LoRA
+- PEFT (Parameter Efficient Fine-Tuning)
+- Transformers
+
+[View Post](posts/your-lora-post-link.qmd)
+
+---
+
+## Learning Projects
+
+### CUDA C++ Journey
+
+**Description**: Learning CUDA programming from scratch to understand GPU computing and write efficient kernels for machine learning operations.
+
+**Technologies**:
+- CUDA C++
+- GPU Programming
+- Parallel Computing
+
+**Status**: In Progress
+
+[View Learning Notes](posts/Learning_CPP/)
+
+---
+
+### NLP Data Preprocessing
+
+**Description**: Exploring data preprocessing techniques for NLP tasks, including work with the SWAG dataset for multiple-choice questions.
+
+**Technologies**:
+- NLP
+- Data Preprocessing
+- Hugging Face Datasets
+
+[View Post](posts/Data%20PreProcessing%20For%20NLP%20Problem/)
+
+---
+
+## Mini Projects
+
+Additional smaller projects and experiments are documented in the [Blog](blog.qmd) section.
