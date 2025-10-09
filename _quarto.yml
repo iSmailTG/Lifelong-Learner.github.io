@@ -9,6 +9,8 @@ website:
         href: index.qmd
       - text: "Projects"
         href: projects.qmd
+      - text: "Courses"
+        href: courses.qmd
       - text: "Blog"
         href: blog.qmd
       - text: "About"

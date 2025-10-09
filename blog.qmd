@@ -1,24 +1,49 @@
 ---
-#title: "Blog"
+title: "Blog"
+subtitle: "Experiments, insights, and deep dives"
 listing:
-  contents: posts/**/*.md
-  sort: 
-    - "date desc"
-    - "title desc"
+  contents: posts
+  sort: "date desc"
   type: default
-  categories: numbered
-  sort-ui: true
-  filter-ui: true
-  fields: [
-    #image, 
-    date, 
-    title, 
-    categories, 
-    reading-time, 
-    description
-    ]
-  # image-placeholder: images/logo.png
+  categories: false
+  sort-ui: false
+  filter-ui: false
   feed: true
 page-layout: full
-title-block-banner: false
 ---
+
+## Featured Posts
+
+### 🔍 Understanding PyTorch Internals
+
+Deep dive into PyTorch's autograd system and torch.fx - understanding how automatic differentiation works under the hood.
+
+**Topics**: Autograd, torch.fx, PyTorch internals
+
+[Read More →](posts/Understanding%20Pytorch/pytorch-1.ipynb)
+
+---
+
+### ⚡ GPU Programming & Tensor Fundamentals
+
+Exploring tensors from a systems perspective: blobs, views, broadcasting, and how to think about tensor operations efficiently.
+
+**Topics**: Tensors, GPU Programming, Vectorization, Broadcasting
+
+[Read More →](posts/GPU%20engineering/Tensors.ipynb)
+
+---
+
+### 🎯 Preference Optimization Explained (Draft)
+
+Understanding Preference Optimization and its applications in aligning language models.
+
+**Status**: Work in Progress 🔄
+
+[Read Draft →](posts/junk/untitled.md)
+
+---
+
+## All Posts
+
+The posts below include learning notes, experiments, and technical write-ups from my journey.

@@ -1,0 +1,71 @@
+---
+title: "Courses & Learning Notes"
+subtitle: "Structured learning from courses and books"
+---
+
+This section contains my notes, exercises, and insights from various courses and books I've worked through. These are organized sequentially to follow the learning path.
+
+---
+
+## 🎓 fast.ai Deep Learning Course
+
+Practical deep learning course by Jeremy Howard. Focused on top-down learning approach.
+
+- [Chapter 1](posts/Fastai_ch1/Chapter1.ipynb) - Getting Started | [Questionnaire](posts/Fastai_ch1/Ch1_Questionnaire.ipynb)
+- [Chapter 2](posts/Fastai_ch2/2022_09_09_Fastai_Lesson2.ipynb) - Production Models | [Questionnaire](posts/Fastai_ch2/Questionnaire.ipynb)
+- [Chapter 4](posts/Fastai_ch4/Ch4.ipynb) - Under the Hood | [Questionnaire](posts/Fastai_ch4/Questionnaire.ipynb)
+- [Chapter 5](posts/Fastai_ch5/Fastai-Ch5.ipynb) - Image Classification | [Questionnaire](posts/Fastai_ch5/Questionnaire.ipynb)
+- [Chapter 6](posts/Fastai_ch6/Ch6.ipynb) - Other Computer Vision Problems | [Questionnaire](posts/Fastai_ch6/Questionnaire.ipynb)
+- [Chapter 7](posts/Fastai_ch7/Ch7.ipynb) - Training a State-of-the-Art Model | [Questionnaire](posts/Fastai_ch7/Questionnaire.ipynb)
+
+
+**Status**: Completed ✅
+
+---
+
+## 🤗 Hugging Face Transformers Course
+
+Deep dive into the Transformers library and modern NLP architectures.
+
+- [Course 1](posts/HuggingFace_1/HuggingFace_NLP_course_Notes.ipynb) - Introduction
+- [Course 2](posts/HuggingFace_2/HuggingFace_NLP_course_Notes_2.ipynb) - Using Transformers
+- [Course 3](posts/HuggingFace_3/HuggungFace_NLP_course_Notes_3.ipynb) - Fine-tuning Models
+- [Course 4](posts/HuggingFace_4/Hugging_Face_course_Notes_Chapter4.ipynb) - Sharing Models and Tokenizers
+- [Course 5](posts/HuggingFace_5/Hugging_Face_Cource_Ch5.ipynb) - Advanced Topics
+
+**Status**: Completed ✅
+
+---
+
+## 📚 Build a Large Language Model from Scratch
+
+Following Sebastian Raschka's book on building LLMs from first principles.
+
+- [Chapter 1](posts/Build%20a%20Large%20Language%20Model/Chapter-1/Build_A_Large_Language_Model_Chapter_1_.ipynb) - Understanding Large Language Models
+- [Chapter 2](posts/Build%20a%20Large%20Language%20Model/Chapter-2/Untitled.ipynb) - Working with Text Data
+- [Chapter 3](posts/Build%20a%20Large%20Language%20Model/Chapter-3/Chapter_3.ipynb) - Coding Attention Mechanisms
+
+**Status**: In Progress 🔄
+
+---
+
+## ⚡ Learning C++ and CUDA
+
+Learning C++ fundamentals and CUDA programming for GPU kernel development.
+
+[View Learning Notes](posts/Learning_CPP/1_Learning_CPP_Basics.ipynb)
+
+**Status**: Currently Learning 🔄
+
+---
+
+## What's Next?
+
+After completing the CUDA fundamentals, I plan to dive deeper into:
+- cuBLAS and cuDNN internals
+- Custom CUDA kernels for ML operations
+- PyTorch autograd and operator implementation
+
+---
+
+*These notes represent my learning journey. They may contain errors or incomplete understanding as I progress. Feel free to point out mistakes or suggest improvements!*
