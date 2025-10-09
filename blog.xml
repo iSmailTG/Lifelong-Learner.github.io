@@ -12,6 +12,38 @@
 <generator>quarto-1.8.25</generator>
 <lastBuildDate>Wed, 08 Oct 2025 23:00:00 GMT</lastBuildDate>
 <item>
+  <title>testing</title>
+  <dc:creator>Ismail TG</dc:creator>
+  <link>https://iSmailTG.github.io/Lifelong-Learner.github.io/posts/Learning_CPP/test_1.html</link>
+  <description><![CDATA[ 
+
+
+
+
+
+<div id="13d11903-e893-4742-8746-06572a3960dc" class="cell" data-editable="true" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;&quot;}}" data-tags="[]" data-execution_count="3">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode numberSource cpp17 number-lines code-with-copy"><code class="sourceCode"><span id="cb1-1">#include &lt;iostream&gt;</span>
+<span id="cb1-2">std::cout &lt;&lt; "try this" &lt;&lt; std::endl;</span></code></pre></div></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>try this</code></pre>
+</div>
+</div>
+
+
+
+ ]]></description>
+  <category>Kernel Engineering</category>
+  <category>Cuda</category>
+  <category>Pytorch</category>
+  <category>CPP</category>
+  <guid>https://iSmailTG.github.io/Lifelong-Learner.github.io/posts/Learning_CPP/test_1.html</guid>
+  <pubDate>Wed, 08 Oct 2025 23:00:00 GMT</pubDate>
+  <media:content url="https://iSmailTG.github.io/Lifelong-Learner.github.io/posts/Learning_CPP/PythonVsCPP.png" medium="image" type="image/png" height="65" width="144"/>
+</item>
+<item>
   <title>My First C++ Quarto Post</title>
   <link>https://iSmailTG.github.io/Lifelong-Learner.github.io/posts/Learning_CPP/test_cpp.html</link>
   <description><![CDATA[ 
@@ -57,8 +89,7 @@ background-color: null;
 font-style: inherit;">;</span></span>
 <span id="cb1-5"><span class="op" style="color: #5E5E5E;
 background-color: null;
-font-style: inherit;">}</span></span>
-<span id="cb1-6">Copy code</span></code></pre></div></div>
+font-style: inherit;">}</span></span></code></pre></div></div>
 
 
 <!-- -->
@@ -70,6 +101,50 @@ font-style: inherit;">}</span></span>
   <category>learning</category>
   <guid>https://iSmailTG.github.io/Lifelong-Learner.github.io/posts/Learning_CPP/test_cpp.html</guid>
   <pubDate>Wed, 08 Oct 2025 23:00:00 GMT</pubDate>
+</item>
+<item>
+  <title>testing</title>
+  <dc:creator>Ismail TG</dc:creator>
+  <link>https://iSmailTG.github.io/Lifelong-Learner.github.io/posts/Learning_CPP/test1.html</link>
+  <description><![CDATA[ 
+
+
+
+
+
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode numberSource cpp number-lines code-with-copy"><code class="sourceCode cpp"><span id="cb1-1"><span class="pp" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">#include </span><span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">&lt;iostream&gt;</span></span>
+<span id="cb1-2"><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">std::</span>cout <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;&lt;</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"try this"</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;&lt;</span> <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">std::</span>endl<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span></span></code></pre></div></div>
+<pre><code>try this</code></pre>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3" style="background: #f1f3f5;"><pre class="sourceCode numberSource cpp number-lines code-with-copy"><code class="sourceCode cpp"></code></pre></div></div>
+
+
+<!-- -->
+
+
+ ]]></description>
+  <category>Kernel Engineering</category>
+  <category>Cuda</category>
+  <category>Pytorch</category>
+  <category>CPP</category>
+  <guid>https://iSmailTG.github.io/Lifelong-Learner.github.io/posts/Learning_CPP/test1.html</guid>
+  <pubDate>Wed, 08 Oct 2025 23:00:00 GMT</pubDate>
+  <media:content url="https://iSmailTG.github.io/Lifelong-Learner.github.io/posts/Learning_CPP/PythonVsCPP.png" medium="image" type="image/png" height="65" width="144"/>
 </item>
 <item>
   <title>Learning CPP As Pythonista: Day-1</title>
@@ -10867,836 +10942,6 @@ font-style: inherit;">"medium"</span>)</span></code></pre></div></div>
   <pubDate>Mon, 16 Oct 2023 23:00:00 GMT</pubDate>
   <media:content url="https://iSmailTG.github.io/Lifelong-Learner.github.io/posts/Haystack_2/Haystack.png" medium="image" type="image/png" height="70" width="144"/>
 </item>
-<item>
-  <title>Chapter 7: Questionnaire</title>
-  <dc:creator>Ismail TG</dc:creator>
-  <link>https://iSmailTG.github.io/Lifelong-Learner.github.io/posts/Fastai_ch7/Questionnaire.html</link>
-  <description><![CDATA[ 
-
-
-
-
-
-<p>Q1:<br>
-<strong>What is the difference between ImageNet and Imagenette? When is it better to experiment on one versus the other?</strong><br>
-* ImageNet is dataset with 1.3 million images and 1000 gategories, while <code>Imagenette</code> is a dataset that represent a small portion of <code>ImageNet</code> with 10 classes. * For studying/devloping ideas/ prototyping we better use a small dataset.</p>
-<p>Q2:<br>
-<strong>What is normalization?</strong><br>
-* Normalization is a method that get the mean close to 0, and the standar diviation clos to 1 (ideally mean==0, std==1)</p>
-<p>Q3:<br>
-<strong>Why didn’t we have to care about normalization when using a pretrained model?</strong><br>
-* Using pretrained models through <code>vision_learner</code> set the Normalization method automatically.</p>
-<p>Q4:<br>
-<strong>What is progressive resizing?</strong><br>
-* <code>Progressive resizing</code> is the idea of using small images in the earlier epochs of training phase, then changing the size of the images by a bit and fine tune the model for more epochs, repeat this process till we reach the original size of the image from the dataset.</p>
-<p>Q5:<br>
-<strong>What is test time augmentation? How do you use it in fastai?</strong><br>
-* Validation set by default uses centre crop for images, which will leads to information lost, <code>TTA</code> addresses this problem by cropping from multiple areas of the image and calculate the predictions of all this crops, then take the average(or the max). <code>preds,targs = learn.tta()</code><br>
-<code>accuracy(preds, targs).item()</code></p>
-<p>Q6:<br>
-<strong>Is using TTA at inference slower or faster than regular inference? Why?</strong><br>
-* It will take more time than regular inference, because the model calculate the prediction of an image more than once.</p>
-<p>Q7:<br>
-<strong>What is Mixup? How do you use it in fastai?</strong><br>
-* It’s a data augmenatation method that takes 2 images and mix them together. In fastai mixup used as callback : <code>cbs=Mixup()</code></p>
-<p>Q10:<br>
-<strong>What is the idea behind label smoothing?</strong><br>
-* It’s a technique that change the one-hot-encodings value from 0 and 1 to float values, this reduce the overfitting and produce better performance.</p>
-<p>Q11:<br>
-<strong>When using label smoothing with five categories, what is the target associated with the index 1?</strong></p>
-<div id="0b4f8269-a2b4-4086-b50f-866b2fbc3d8b" class="cell" data-execution_count="1">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1">labels <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> [<span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">0</span>, <span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">1</span>, <span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">0</span>, <span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">0</span>, <span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">0</span>]</span>
-<span id="cb1-2">param <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> <span class="fl" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">0.1</span></span>
-<span id="cb1-3"></span>
-<span id="cb1-4"><span class="kw" style="color: #003B4F;
-background-color: null;
-font-weight: bold;
-font-style: inherit;">def</span> label_smoothing(labels, param):</span>
-<span id="cb1-5">    new_labels <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> []</span>
-<span id="cb1-6">    <span class="cf" style="color: #003B4F;
-background-color: null;
-font-weight: bold;
-font-style: inherit;">for</span> label <span class="kw" style="color: #003B4F;
-background-color: null;
-font-weight: bold;
-font-style: inherit;">in</span> labels:</span>
-<span id="cb1-7">        <span class="cf" style="color: #003B4F;
-background-color: null;
-font-weight: bold;
-font-style: inherit;">if</span> label <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">==</span> <span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">1</span>:</span>
-<span id="cb1-8">            new_label <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> <span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">1</span> <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">-</span> param <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">+</span> param <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">/</span> <span class="bu" style="color: null;
-background-color: null;
-font-style: inherit;">len</span>(labels)</span>
-<span id="cb1-9">            new_labels.append(new_label)</span>
-<span id="cb1-10">        <span class="cf" style="color: #003B4F;
-background-color: null;
-font-weight: bold;
-font-style: inherit;">else</span>:</span>
-<span id="cb1-11">            new_label <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> param <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">/</span> <span class="bu" style="color: null;
-background-color: null;
-font-style: inherit;">len</span>(labels)</span>
-<span id="cb1-12">            new_labels.append(new_label)</span>
-<span id="cb1-13">    <span class="cf" style="color: #003B4F;
-background-color: null;
-font-weight: bold;
-font-style: inherit;">return</span> new_labels</span>
-<span id="cb1-14"></span>
-<span id="cb1-15">label_smoothing(labels, param)</span></code></pre></div></div>
-<div class="cell-output cell-output-display" data-execution_count="1">
-<pre><code>[0.02, 0.92, 0.02, 0.02, 0.02]</code></pre>
-</div>
-</div>
-<p>Q12:<br>
-<strong>What is the first step to take when you want to prototype quick experiments on a new dataset?</strong><br>
-* First do the protoype and experiments, if it takes more than couple of minutes, then we need to consider new subset of that dataset.</p>
-
-
-
- ]]></description>
-  <category>Fastai</category>
-  <category>Pytorch</category>
-  <category>Deep Learning</category>
-  <guid>https://iSmailTG.github.io/Lifelong-Learner.github.io/posts/Fastai_ch7/Questionnaire.html</guid>
-  <pubDate>Sun, 30 Oct 2022 23:00:00 GMT</pubDate>
-  <media:content url="https://iSmailTG.github.io/Lifelong-Learner.github.io/posts/Fastai_ch7/fastai-book-2.jpg" medium="image" type="image/jpeg"/>
-</item>
-<item>
-  <title>Chapter 7: Deep learning for coders with fastai and pytorch</title>
-  <dc:creator>Ismail TG</dc:creator>
-  <link>https://iSmailTG.github.io/Lifelong-Learner.github.io/posts/Fastai_ch7/Ch7.html</link>
-  <description><![CDATA[ 
-
-
-
-
-
-<section id="training-a-state-of-the-art-model" class="level1">
-<h1>Training a State-of-the-Art Model</h1>
-<ul>
-<li>In this chapter we will discuss more advanced technics for training image classifier models and getting better results.</li>
-<li>In this chapter we will see:
-<ul>
-<li>What is <strong>Normalization</strong>?</li>
-<li>Data augmentation with <strong>Mixup</strong></li>
-<li><strong>Progressive Risizing</strong></li>
-<li><strong>Test Time Augmentation</strong></li>
-</ul></li>
-<li>To implement all those technics, we will build model from scartch an train it on a subset of <strong>ImageNet</strong> called <a href="https://github.com/fastai/imagenette">Imagenette</a></li>
-</ul>
-<section id="imagenette" class="level2">
-<h2 class="anchored" data-anchor-id="imagenette">Imagenette</h2>
-<ul>
-<li>This dataset is created by Fastai community, the goal of it is to have a dataset that can train models that generelize well on the larger version (ImageNet), which will help Machine learning practitioners to build and experiment many ideas and projects with less computation power.</li>
-<li>Imagenette has 10 classes, which are very different from one another.</li>
-<li>Let’s download the dataset</li>
-</ul>
-<div id="cell-5" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}}" data-outputid="083a9d7b-5e03-474d-f6c8-67af5824513f">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">!</span> [ <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">-</span>e <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">/</span>content ] <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">&amp;&amp;</span> pip install <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">-</span>Uqq fastbook</span>
-<span id="cb1-2"><span class="im" style="color: #00769E;
-background-color: null;
-font-style: inherit;">import</span> fastbook</span>
-<span id="cb1-3">fastbook.setup_book()</span></code></pre></div></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>     |████████████████████████████████| 719 kB 5.1 MB/s 
-     |████████████████████████████████| 5.3 MB 26.5 MB/s 
-     |████████████████████████████████| 1.3 MB 49.1 MB/s 
-     |████████████████████████████████| 441 kB 16.3 MB/s 
-     |████████████████████████████████| 163 kB 50.3 MB/s 
-     |████████████████████████████████| 212 kB 56.5 MB/s 
-     |████████████████████████████████| 115 kB 39.6 MB/s 
-     |████████████████████████████████| 127 kB 50.6 MB/s 
-     |████████████████████████████████| 7.6 MB 72.8 MB/s 
-Mounted at /content/gdrive</code></pre>
-</div>
-</div>
-<div id="cell-6" class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><span class="im" style="color: #00769E;
-background-color: null;
-font-style: inherit;">from</span> fastbook <span class="im" style="color: #00769E;
-background-color: null;
-font-style: inherit;">import</span> <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">*</span></span></code></pre></div></div>
-</div>
-<div id="cell-7" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:37}}" data-outputid="2fd0ea83-ed5c-41ae-dc26-f3e3307dda19">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><span class="im" style="color: #00769E;
-background-color: null;
-font-style: inherit;">from</span> fastai.vision.<span class="bu" style="color: null;
-background-color: null;
-font-style: inherit;">all</span> <span class="im" style="color: #00769E;
-background-color: null;
-font-style: inherit;">import</span> <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">*</span></span>
-<span id="cb4-2">path <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> untar_data(URLs.IMAGENETTE)</span></code></pre></div></div>
-<div class="cell-output cell-output-display">
-
-<style>
-    /* Turns off some styling */
-    progress {
-        /* gets rid of default border in Firefox and Opera. */
-        border: none;
-        /* Needs to be in here for Safari polyfill so background images work as expected. */
-        background-size: auto;
-    }
-    progress:not([value]), progress:not([value])::-webkit-progress-bar {
-        background: repeating-linear-gradient(45deg, #7e7e7e, #7e7e7e 10px, #5c5c5c 10px, #5c5c5c 20px);
-    }
-    .progress-bar-interrupted, .progress-bar-interrupted::-webkit-progress-bar {
-        background: #F44336;
-    }
-</style>
-</div>
-<div class="cell-output cell-output-display">
-
-    <div>
-      <progress value="1557168128" class="" max="1557161267" style="width:300px; height:20px; vertical-align: middle;"></progress>
-      100.00% [1557168128/1557161267 00:38&lt;00:00]
-    </div>
-    
-</div>
-</div>
-<ul>
-<li>Here we create <code>DataLoaders</code> using the <code>Resize</code> technic we saw in CH5</li>
-</ul>
-<div id="cell-9" class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1">dblock <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> DataBlock(blocks<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span>(ImageBlock(), CategoryBlock()),</span>
-<span id="cb5-2">                   get_items<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span>get_image_files,</span>
-<span id="cb5-3">                   get_y<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span>parent_label,</span>
-<span id="cb5-4">                   item_tfms<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span>Resize(<span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">460</span>),</span>
-<span id="cb5-5">                   batch_tfms<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span>aug_transforms(size<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span><span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">224</span>, min_scale<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span><span class="fl" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">0.75</span>))</span>
-<span id="cb5-6">dls <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> dblock.dataloaders(path, bs<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span><span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">64</span>)</span></code></pre></div></div>
-</div>
-<ul>
-<li>Now we do the training just to have something to begin with</li>
-</ul>
-<div id="cell-11" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:206}}" data-outputid="b4e28afe-a0bd-4527-cf13-7e0ac1d9653d">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1">model <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> xresnet50(n_out<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span>dls.c)</span>
-<span id="cb6-2">learn <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> Learner(dls, model, loss_func<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span>CrossEntropyLossFlat(), metrics<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span>accuracy)</span>
-<span id="cb6-3">learn.fit_one_cycle(<span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">5</span>, <span class="fl" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">3e-3</span>)</span></code></pre></div></div>
-<div class="cell-output cell-output-display">
-
-<style>
-    /* Turns off some styling */
-    progress {
-        /* gets rid of default border in Firefox and Opera. */
-        border: none;
-        /* Needs to be in here for Safari polyfill so background images work as expected. */
-        background-size: auto;
-    }
-    progress:not([value]), progress:not([value])::-webkit-progress-bar {
-        background: repeating-linear-gradient(45deg, #7e7e7e, #7e7e7e 10px, #5c5c5c 10px, #5c5c5c 20px);
-    }
-    .progress-bar-interrupted, .progress-bar-interrupted::-webkit-progress-bar {
-        background: #F44336;
-    }
-</style>
-</div>
-<div class="cell-output cell-output-display">
-<table class="dataframe caption-top table table-sm table-striped small" data-border="1">
-<thead>
-<tr class="header">
-<th data-quarto-table-cell-role="th">epoch</th>
-<th data-quarto-table-cell-role="th">train_loss</th>
-<th data-quarto-table-cell-role="th">valid_loss</th>
-<th data-quarto-table-cell-role="th">accuracy</th>
-<th data-quarto-table-cell-role="th">time</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>0</td>
-<td>1.615762</td>
-<td>1.960073</td>
-<td>0.446229</td>
-<td>02:59</td>
-</tr>
-<tr class="even">
-<td>1</td>
-<td>1.231709</td>
-<td>1.436732</td>
-<td>0.542943</td>
-<td>03:01</td>
-</tr>
-<tr class="odd">
-<td>2</td>
-<td>0.946307</td>
-<td>0.957584</td>
-<td>0.703883</td>
-<td>03:01</td>
-</tr>
-<tr class="even">
-<td>3</td>
-<td>0.710163</td>
-<td>0.686722</td>
-<td>0.788648</td>
-<td>02:59</td>
-</tr>
-<tr class="odd">
-<td>4</td>
-<td>0.581876</td>
-<td>0.551411</td>
-<td>0.833831</td>
-<td>02:57</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<ul>
-<li>Not bad result considering that we didn’t use a pretrained model.</li>
-<li>The aim of this chapter is to increase the peformance of this base-line model by implementing different technics</li>
-</ul>
-</section>
-<section id="normalization" class="level2">
-<h2 class="anchored" data-anchor-id="normalization">Normalization</h2>
-<ul>
-<li>Normalization means having a dataset with mean of 0 and standard diviation of 1.</li>
-<li>Most images and computer vision libraries use values between 0 and 255 for pixels, or between 0 and 1; in either case, your data is not going to have a mean of 0 and a standard deviation of 1.</li>
-<li>Let’s grab a batch of data and take the average of each axis except the channels axis (indx==1)</li>
-</ul>
-<div id="cell-15" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}}" data-outputid="71ccc725-e59b-45e5-95ba-568420522712">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1">x,y <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> dls.one_batch()</span>
-<span id="cb7-2">x.mean(dim<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span>[<span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">0</span>,<span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">2</span>,<span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">3</span>]),x.std(dim<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span>[<span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">0</span>,<span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">2</span>,<span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">3</span>])</span></code></pre></div></div>
-<div class="cell-output cell-output-display" data-execution_count="6">
-<pre><code>(TensorImage([0.4573, 0.4509, 0.4188], device='cuda:0'),
- TensorImage([0.2730, 0.2652, 0.2803], device='cuda:0'))</code></pre>
-</div>
-</div>
-<ul>
-<li>As expected, the <code>mean</code> and <code>std</code> is different than what we desire.</li>
-<li>Fastai provide the method <code>Normalize</code> which can be applied on the whole batch, so we could add it to <code>batch_tfms</code> section of the datablock, we just need to tell fastai which are the mean and the standard deviation we want to use (in this case we will use ImageNet stats) but even without giving these stats fastai will calculate them from one batch and use them.</li>
-<li>Notice here we build the datablock withing a function that take <code>batch_size</code> and <code>size</code> as parameters, we will see way later</li>
-</ul>
-<div id="cell-17" class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb9-1"><span class="kw" style="color: #003B4F;
-background-color: null;
-font-weight: bold;
-font-style: inherit;">def</span> get_dls(bs, size):</span>
-<span id="cb9-2">    dblock <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> DataBlock(blocks<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span>(ImageBlock, CategoryBlock),</span>
-<span id="cb9-3">                   get_items<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span>get_image_files,</span>
-<span id="cb9-4">                   get_y<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span>parent_label,</span>
-<span id="cb9-5">                   item_tfms<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span>Resize(<span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">460</span>),</span>
-<span id="cb9-6">                   batch_tfms<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span>[<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">*</span>aug_transforms(size<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span>size, min_scale<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span><span class="fl" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">0.75</span>),</span>
-<span id="cb9-7">                               Normalize.from_stats(<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">*</span>imagenet_stats)])</span>
-<span id="cb9-8">    <span class="cf" style="color: #003B4F;
-background-color: null;
-font-weight: bold;
-font-style: inherit;">return</span> dblock.dataloaders(path, bs<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span>bs)</span></code></pre></div></div>
-</div>
-<div id="cell-18" class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb10-1">dls <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> get_dls(<span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">64</span>, <span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">224</span>)</span></code></pre></div></div>
-</div>
-<div id="cell-19" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}}" data-outputid="3b6401f9-4438-4937-a1f6-c1156d87713d">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb11-1">x,y <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> dls.one_batch()</span>
-<span id="cb11-2">x.mean(dim<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span>[<span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">0</span>,<span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">2</span>,<span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">3</span>]),x.std(dim<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span>[<span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">0</span>,<span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">2</span>,<span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">3</span>])</span></code></pre></div></div>
-<div class="cell-output cell-output-display" data-execution_count="12">
-<pre><code>(TensorImage([-0.0920, -0.0490,  0.0548], device='cuda:0'),
- TensorImage([1.1969, 1.1888, 1.2855], device='cuda:0'))</code></pre>
-</div>
-</div>
-<ul>
-<li>This <code>Normalize</code> method help us to get close to the desired values for <code>mean</code> and <code>std</code></li>
-<li>Let’s how this effect the performance of the model:</li>
-</ul>
-<div id="cell-21" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:206}}" data-outputid="4131da38-1d8e-4bcb-ef54-c5541e9a92c9">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb13-1">model <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> xresnet50(n_out<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span>dls.c)</span>
-<span id="cb13-2">learn <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> Learner(dls, model, loss_func<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span>CrossEntropyLossFlat(), metrics<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span>accuracy)</span>
-<span id="cb13-3">learn.fit_one_cycle(<span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">5</span>, <span class="fl" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">3e-3</span>)</span></code></pre></div></div>
-<div class="cell-output cell-output-display">
-
-<style>
-    /* Turns off some styling */
-    progress {
-        /* gets rid of default border in Firefox and Opera. */
-        border: none;
-        /* Needs to be in here for Safari polyfill so background images work as expected. */
-        background-size: auto;
-    }
-    progress:not([value]), progress:not([value])::-webkit-progress-bar {
-        background: repeating-linear-gradient(45deg, #7e7e7e, #7e7e7e 10px, #5c5c5c 10px, #5c5c5c 20px);
-    }
-    .progress-bar-interrupted, .progress-bar-interrupted::-webkit-progress-bar {
-        background: #F44336;
-    }
-</style>
-</div>
-<div class="cell-output cell-output-display">
-<table class="dataframe caption-top table table-sm table-striped small" data-border="1">
-<thead>
-<tr class="header">
-<th data-quarto-table-cell-role="th">epoch</th>
-<th data-quarto-table-cell-role="th">train_loss</th>
-<th data-quarto-table-cell-role="th">valid_loss</th>
-<th data-quarto-table-cell-role="th">accuracy</th>
-<th data-quarto-table-cell-role="th">time</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>0</td>
-<td>1.617465</td>
-<td>1.945767</td>
-<td>0.462285</td>
-<td>02:58</td>
-</tr>
-<tr class="even">
-<td>1</td>
-<td>1.272744</td>
-<td>2.252786</td>
-<td>0.462659</td>
-<td>02:58</td>
-</tr>
-<tr class="odd">
-<td>2</td>
-<td>0.947452</td>
-<td>1.084139</td>
-<td>0.643017</td>
-<td>02:58</td>
-</tr>
-<tr class="even">
-<td>3</td>
-<td>0.722699</td>
-<td>0.795408</td>
-<td>0.765123</td>
-<td>03:00</td>
-</tr>
-<tr class="odd">
-<td>4</td>
-<td>0.610676</td>
-<td>0.577560</td>
-<td>0.819642</td>
-<td>02:58</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<ul>
-<li>Implementing the normalization didn’t help the model get better results, because this technic works better when using a pretrained model.</li>
-</ul>
-</section>
-<section id="progressive-resizing" class="level2">
-<h2 class="anchored" data-anchor-id="progressive-resizing">Progressive Resizing</h2>
-<ul>
-<li><p>The idea behind Progressive Resizing is to start training the model with small images, and end the training fase with large images.</p></li>
-<li><p>As we have seen, the image size doesn’t play a role in the learning process.</p></li>
-<li><p>Although changing the image size in the middel of training will effect how the model behave in a way or another.</p></li>
-<li><p>The best way is to deal with the transition from small image to larger images as if we do transfer learning. After changing the images size we should <code>fine_tune</code> method.</p></li>
-<li><p>We can look to Progressive Resizing as a form of data augmentation, which mean the model will generalize well.</p></li>
-<li><p>To implement progressive resizing it is most convenient if you first create a <code>get_dls</code> function which takes an image size and a batch size as we did in the section before, and returns your <code>DataLoaders</code>:</p></li>
-<li><p>Now you can create your <code>DataLoaders</code> with a small size and use <code>fit_one_cycle</code> in the usual way, training for a few less epochs than you might otherwise do:</p></li>
-</ul>
-<div id="cell-25" class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb14-1">dls <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> get_dls(<span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">128</span>, <span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">128</span>)</span>
-<span id="cb14-2">learn <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> Learner(dls, xresnet50(n_out<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span>dls.c), loss_func<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span>CrossEntropyLossFlat(), </span>
-<span id="cb14-3">                metrics<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span>accuracy)</span>
-<span id="cb14-4">learn.fit_one_cycle(<span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">4</span>, <span class="fl" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">3e-3</span>)</span></code></pre></div></div>
-</div>
-<ul>
-<li>Then you can replace the <code>DataLoaders</code> inside the <code>Learner</code>, and fine-tune:</li>
-</ul>
-<div id="cell-27" class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb15-1">learn.dls <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> get_dls(<span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">64</span>, <span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">224</span>)</span>
-<span id="cb15-2">learn.fine_tune(<span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">5</span>, <span class="fl" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">1e-3</span>)</span></code></pre></div></div>
-</div>
-<ul>
-<li>We can increase the image size by a bit, untill we reach the normal size of the actual image in dataset.</li>
-<li>Progressive resizing can be good or bad depending many factors:
-<ul>
-<li>For transfer learning, if the model is already trained on similar task we will use it for, and on similar size of images, normally re-training it on smaller images will damage the performance.</li>
-<li>In other hand if the model is trained on dataset with different size of images, and on dfferent task, using progressive resizing may help the model performance.</li>
-</ul></li>
-<li>There’s no right answear for every situation, we just need to try and experiment different things.</li>
-</ul>
-</section>
-<section id="test-time-augmentation" class="level2">
-<h2 class="anchored" data-anchor-id="test-time-augmentation">Test Time Augmentation</h2>
-<ul>
-<li><p>Till now all kind of data augmentations we implement are done on training set, while the validation set is taking the same images.</p></li>
-<li><p>The idea behind Test Time Augmentation <code>tta</code> is to use some augmented images for the validation set to get predictions (for the same image) and average (or take the maximun) them.</p></li>
-<li><p>Usually fastai do center cropping for validation.</p></li>
-<li><p>This method may cause the model to miss valuable lessons from edges of the cropped images.</p></li>
-<li><p>We could avoid center cropping but instead to select a number of areas to crop from the original rectangular image, pass each of them through our model, then take the average of predictions or the maximum</p></li>
-<li><p>By default, fastai will use the unaugmented center crop image plus four randomly augmented images.</p></li>
-<li><p>You can pass any <code>DataLoader</code> to fastai’s <code>tta</code> method; by default, it will use your validation set:</p></li>
-</ul>
-<div id="cell-32" class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb16-1">preds,targs <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> learn.tta()</span>
-<span id="cb16-2">accuracy(preds, targs).item()</span></code></pre></div></div>
-</div>
-</section>
-<section id="mixup" class="level2">
-<h2 class="anchored" data-anchor-id="mixup">Mixup</h2>
-<ul>
-<li>The idea of mixup is to take two data points (images) and mix them together with some percentage, then do the ine-hot encodings where the new image represented with the new values (percentages) instead of <code>0</code> or <code>1</code>. The model here have to predict not only the right label, but also the percentage by which the label is represented in that image.</li>
-<li>We can express this idea with code as:</li>
-</ul>
-<div id="cell-35" class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb17-1">church <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> PILImage.create(get_image_files_sorted(path<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">/</span><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">'train'</span><span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">/</span><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">'n03028079'</span>)[<span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">0</span>])</span>
-<span id="cb17-2">gas <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> PILImage.create(get_image_files_sorted(path<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">/</span><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">'train'</span><span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">/</span><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">'n03425413'</span>)[<span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">0</span>])</span>
-<span id="cb17-3">church <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> church.resize((<span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">256</span>,<span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">256</span>))</span>
-<span id="cb17-4">gas <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> gas.resize((<span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">256</span>,<span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">256</span>))</span>
-<span id="cb17-5">tchurch <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> tensor(church).<span class="bu" style="color: null;
-background-color: null;
-font-style: inherit;">float</span>() <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">/</span> <span class="fl" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">255.</span></span>
-<span id="cb17-6">tgas <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> tensor(gas).<span class="bu" style="color: null;
-background-color: null;
-font-style: inherit;">float</span>() <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">/</span> <span class="fl" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">255.</span></span>
-<span id="cb17-7"></span>
-<span id="cb17-8">_,axs <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> plt.subplots(<span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">1</span>, <span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">3</span>, figsize<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span>(<span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">12</span>,<span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">4</span>))</span>
-<span id="cb17-9">show_image(tchurch, ax<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span>axs[<span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">0</span>])<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">;</span></span>
-<span id="cb17-10">show_image(tgas, ax<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span>axs[<span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">1</span>])<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">;</span></span>
-<span id="cb17-11">show_image((<span class="fl" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">0.3</span><span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">*</span>tchurch <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">+</span> <span class="fl" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">0.7</span><span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">*</span>tgas), ax<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span>axs[<span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">2</span>])<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">;</span></span></code></pre></div></div>
-</div>
-<div id="cell-36" class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb18-1">model <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> xresnet50(n_out<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span>dls.c)</span>
-<span id="cb18-2">learn <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> Learner(dls, model, loss_func<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span>CrossEntropyLossFlat(), </span>
-<span id="cb18-3">                metrics<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span>accuracy, cbs<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span>MixUp())</span>
-<span id="cb18-4">learn.fit_one_cycle(<span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">5</span>, <span class="fl" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">3e-3</span>)</span></code></pre></div></div>
-</div>
-<ul>
-<li>Training a model with mixup techninx make it way hareder for the model to learn, because the model need to predict 2 labels for each image instead of one, plus predicting the righ percentage of each label.</li>
-<li>Overfitting seems less likely to be a problem when mixup is used.</li>
-<li>Mixup tend to produce good results with 80 epochs of training or more.</li>
-<li>One other benefit of using Mixup is when we have labels == 0, 1, because of using <code>softmax</code> and <code>sigmoid</code> the output can never be 0 or 1, thus our loss can never be perfect. With mixup labels cannot be 0 or 1 unless we mix 2 images with the same label, the rest of the time our labels will be linear combinations like 0.4, 0.6 ..</li>
-</ul>
-</section>
-<section id="label-smoothing" class="level2">
-<h2 class="anchored" data-anchor-id="label-smoothing">Label Smoothing</h2>
-<ul>
-<li>In classfication problems we usually have labels like <code>0</code> and <code>1</code>, so the model job is to return them accuaratly, even 0.999 is not good enough where the label is 1!. this cuase the model to update the weights in order to get closer and closer to the right and unique answear, what will lead to overfitting.</li>
-<li>The solution to this problem is to smooth the labels, by replacing 1 with a bit smaller number, and 0 with a bit bigger number. this will encourage the model to be less confident, which will help to better generalization.</li>
-<li><strong>Label Smoothing</strong> can be expressed mathematically:
-<ul>
-<li><p><code>0</code>: <img src="https://latex.codecogs.com/png.latex?%5Cfrac%7B%5Cepsilon%7D%7BN%7D"> where N is number of classes we have and epsilon represent a parameter usually 0.1(it’s like saying we’re 10% less confident about the label)</p></li>
-<li><p><code>1</code>: <img src="https://latex.codecogs.com/png.latex?1-%5Cepsilon%20+%20%5Cfrac%7B%5Cepsilon%7D%7BN%7D"></p></li>
-</ul></li>
-<li>In our Imagenette example where we have 10 classes, the targets become something like (here for a target that corresponds to the index 3):</li>
-</ul>
-<pre><code>[0.01, 0.01, 0.01, 0.91, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01]</code></pre>
-<ul>
-<li>To use this in practice, we just have to change the loss function in our call to <code>Learner</code>:</li>
-</ul>
-<p>```python model = xresnet50(n_out=dls.c) learn = Learner(dls, model, loss_func=LabelSmoothingCrossEntropy(), metrics=accuracy) learn.fit_one_cycle(5, 3e-3)</p>
-
-
-</section>
-</section>
-
- ]]></description>
-  <category>Fastai</category>
-  <category>Pytorch</category>
-  <category>Deep Learning</category>
-  <guid>https://iSmailTG.github.io/Lifelong-Learner.github.io/posts/Fastai_ch7/Ch7.html</guid>
-  <pubDate>Sat, 29 Oct 2022 23:00:00 GMT</pubDate>
-  <media:content url="https://iSmailTG.github.io/Lifelong-Learner.github.io/posts/Fastai_ch7/fastbook.jpg" medium="image" type="image/jpeg"/>
-</item>
 </channel>
 </rss>
+ss>

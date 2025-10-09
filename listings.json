@@ -3,7 +3,9 @@
     "listing": "/blog.html",
     "items": [
       "/posts/junk/untitled.html",
+      "/posts/Learning_CPP/test_1.html",
       "/posts/Learning_CPP/test_cpp.html",
+      "/posts/Learning_CPP/test1.html",
       "/posts/Learning_CPP/1_Learning_CPP_Basics.html",
       "/posts/GPU engineering/Tensors.html",
       "/docs/posts/GPU engineering/Tensors.html",
