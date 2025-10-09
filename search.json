@@ -749,36 +749,36 @@
     "text": "What is a GPU? What make it different from CPU? and Why do we need it to do Deep Learning tasks:\n\nGPU stands for Graphic Processing Unit, is a specialized processor with dedicated memory that conventionally perform floating point operations required for rendering graphics.\nIn other words, it’s a single-chip processor used for extensive graphical and mathematical computations which help the CPU to achieve other tasks.\nWhile CPU is designed to handel the complex logic in code once at a time, GPU can do many small operations at the same time, which make it very convenient to deep learning where we need to do many milions of calculations in order to train a model\n\n\nWhy do Deep Learning needs GPU?\n\nGPUs are optimized for training neural networks models as they can process multiple computations simultaneously.\nFor example the model we’ve fine-tuned in chapter one resnet18 which the smaller version of resnet models with only 18 hidden layers,though it has more than 11 millions parameters, in order to do one epoch and calculate all these parameter (wights + biases) and multiply them by the input variables (images) then do the Back-probagation and update them after calculating the loss … all this multiplications will take a large amount of time if we did it on CPU."
   },
   {
-    "objectID": "posts/Understanding Pytorch/Untitled Folder/pytorch-1.html",
-    "href": "posts/Understanding Pytorch/Untitled Folder/pytorch-1.html",
+    "objectID": "posts/Understanding Pytorch/pytorch-1.html",
+    "href": "posts/Understanding Pytorch/pytorch-1.html",
     "title": "Deep Dive into PyTorch Internals: Autograd and torch.fx",
     "section": "",
     "text": "As I continue to deepen my understanding of machine learning systems, I’ve realized that knowing how models run is just as important as knowing how to build them. This post kicks off a series where I explore PyTorch internals, starting with two powerful components: Autograd and torch.fx.\n\n\n\n\n\nPyTorch’s autograd is a dynamic automatic differentiation engine. It records operations on tensors to build a computation graph during the forward pass, and then traverses that graph in reverse to compute gradients during the backward pass.\n\n\n\nWhen you perform operations on torch.Tensor objects with requires_grad=True, PyTorch:\n\nCreates a computation graph on the fly.\nEach operation produces a Function object (e.g., AddBackward, MulBackward).\nWhen .backward() is called, the engine performs reverse-mode automatic differentiation.\n\n\n\n\n\nimport torch\nx = torch.tensor(2.0, requires_grad=True)\ny = x * x + 3 * x\nz = y.mean()\nz.backward()\nprint(x.grad)  # 7.0 = d(x^2 + 3x)/dx at x=2\n\ntensor(7.)\n\n\n\n\n\n\nTensor.grad_fn: Points to the function that created the tensor.\nTensor.grad: Stores the computed gradient.\ntorch.autograd.Function: Base class for custom differentiable operations.\n\n\n\n\n\n\n\ntorch.fx allows you to capture and transform PyTorch programs as Python-level graphs. This is useful for: - Programmatic model transformations - Debugging and visualization - Building custom compiler backends\n\n\n\n\nGraphModule: A traced model with a modifiable structure.\nTracer: Walks through the model and builds a Graph.\nGraph: Contains Node objects that represent operations.\n\n\n\nimport torch\nimport torch.nn as nn\nimport torch.fx as fx\n\nclass MyModel(nn.Module):\n    def forward(self, x):\n        return x * 2 + 3\n\nmodel = MyModel()\ntraced = fx.symbolic_trace(model)\nprint(traced.graph)\n\ngraph():\n    %x : [num_users=1] = placeholder[target=x]\n    %mul : [num_users=1] = call_function[target=operator.mul](args = (%x, 2), kwargs = {})\n    %add : [num_users=1] = call_function[target=operator.add](args = (%mul, 3), kwargs = {})\n    return add\n\n\n\n\n\n\nTorchDynamo and TorchInductor use FX graphs as part of the compilation pipeline.\nFX enables quantization and pruning workflows by allowing insertion or transformation of operations.\n\n\n\n\n\nBoth Autograd and torch.fx are essential for understanding what happens under the hood in PyTorch. Whether you’re debugging models, optimizing inference, or building custom backends, mastering these tools opens the door to deeper systems-level work in AI.\nIn future posts, I plan to explore: - Implementing custom autograd functions - Writing your own FX passes for transformations - Diving into TorchDynamo and TorchInductor"
   },
   {
-    "objectID": "posts/Understanding Pytorch/Untitled Folder/pytorch-1.html#introduction",
-    "href": "posts/Understanding Pytorch/Untitled Folder/pytorch-1.html#introduction",
+    "objectID": "posts/Understanding Pytorch/pytorch-1.html#introduction",
+    "href": "posts/Understanding Pytorch/pytorch-1.html#introduction",
     "title": "Deep Dive into PyTorch Internals: Autograd and torch.fx",
     "section": "",
     "text": "As I continue to deepen my understanding of machine learning systems, I’ve realized that knowing how models run is just as important as knowing how to build them. This post kicks off a series where I explore PyTorch internals, starting with two powerful components: Autograd and torch.fx."
   },
   {
-    "objectID": "posts/Understanding Pytorch/Untitled Folder/pytorch-1.html#pytorch-autograd-the-engine-behind-gradient-descent",
-    "href": "posts/Understanding Pytorch/Untitled Folder/pytorch-1.html#pytorch-autograd-the-engine-behind-gradient-descent",
+    "objectID": "posts/Understanding Pytorch/pytorch-1.html#pytorch-autograd-the-engine-behind-gradient-descent",
+    "href": "posts/Understanding Pytorch/pytorch-1.html#pytorch-autograd-the-engine-behind-gradient-descent",
     "title": "Deep Dive into PyTorch Internals: Autograd and torch.fx",
     "section": "",
     "text": "PyTorch’s autograd is a dynamic automatic differentiation engine. It records operations on tensors to build a computation graph during the forward pass, and then traverses that graph in reverse to compute gradients during the backward pass.\n\n\n\nWhen you perform operations on torch.Tensor objects with requires_grad=True, PyTorch:\n\nCreates a computation graph on the fly.\nEach operation produces a Function object (e.g., AddBackward, MulBackward).\nWhen .backward() is called, the engine performs reverse-mode automatic differentiation.\n\n\n\n\n\nimport torch\nx = torch.tensor(2.0, requires_grad=True)\ny = x * x + 3 * x\nz = y.mean()\nz.backward()\nprint(x.grad)  # 7.0 = d(x^2 + 3x)/dx at x=2\n\ntensor(7.)\n\n\n\n\n\n\nTensor.grad_fn: Points to the function that created the tensor.\nTensor.grad: Stores the computed gradient.\ntorch.autograd.Function: Base class for custom differentiable operations."
   },
   {
-    "objectID": "posts/Understanding Pytorch/Untitled Folder/pytorch-1.html#torch.fx-pytorchs-intermediate-representation",
-    "href": "posts/Understanding Pytorch/Untitled Folder/pytorch-1.html#torch.fx-pytorchs-intermediate-representation",
+    "objectID": "posts/Understanding Pytorch/pytorch-1.html#torch.fx-pytorchs-intermediate-representation",
+    "href": "posts/Understanding Pytorch/pytorch-1.html#torch.fx-pytorchs-intermediate-representation",
     "title": "Deep Dive into PyTorch Internals: Autograd and torch.fx",
     "section": "",
     "text": "torch.fx allows you to capture and transform PyTorch programs as Python-level graphs. This is useful for: - Programmatic model transformations - Debugging and visualization - Building custom compiler backends\n\n\n\n\nGraphModule: A traced model with a modifiable structure.\nTracer: Walks through the model and builds a Graph.\nGraph: Contains Node objects that represent operations.\n\n\n\nimport torch\nimport torch.nn as nn\nimport torch.fx as fx\n\nclass MyModel(nn.Module):\n    def forward(self, x):\n        return x * 2 + 3\n\nmodel = MyModel()\ntraced = fx.symbolic_trace(model)\nprint(traced.graph)\n\ngraph():\n    %x : [num_users=1] = placeholder[target=x]\n    %mul : [num_users=1] = call_function[target=operator.mul](args = (%x, 2), kwargs = {})\n    %add : [num_users=1] = call_function[target=operator.add](args = (%mul, 3), kwargs = {})\n    return add\n\n\n\n\n\n\nTorchDynamo and TorchInductor use FX graphs as part of the compilation pipeline.\nFX enables quantization and pruning workflows by allowing insertion or transformation of operations."
   },
   {
-    "objectID": "posts/Understanding Pytorch/Untitled Folder/pytorch-1.html#conclusion",
-    "href": "posts/Understanding Pytorch/Untitled Folder/pytorch-1.html#conclusion",
+    "objectID": "posts/Understanding Pytorch/pytorch-1.html#conclusion",
+    "href": "posts/Understanding Pytorch/pytorch-1.html#conclusion",
     "title": "Deep Dive into PyTorch Internals: Autograd and torch.fx",
     "section": "",
     "text": "Both Autograd and torch.fx are essential for understanding what happens under the hood in PyTorch. Whether you’re debugging models, optimizing inference, or building custom backends, mastering these tools opens the door to deeper systems-level work in AI.\nIn future posts, I plan to explore: - Implementing custom autograd functions - Writing your own FX passes for transformations - Diving into TorchDynamo and TorchInductor"
@@ -856,9 +856,23 @@
   {
     "objectID": "blog.html",
     "href": "blog.html",
-    "title": "",
+    "title": "Blog",
     "section": "",
-    "text": "Code\n\n\n\n\n\n\n\n\n\n\n\n\n   \n    \n    \n      Order By\n      Default\n      \n        Title\n      \n      \n        Date - Oldest\n      \n      \n        Date - Newest\n      \n    \n  \n    \n      \n      \n    \n\n\n\n\n\nPositional Embeddings Implementation\n\n\n\n\n\n\n\n3 min\n\n\n\n\nNo matching items"
+    "text": "Deep dive into PyTorch’s autograd system and torch.fx - understanding how automatic differentiation works under the hood.\nTopics: Autograd, torch.fx, PyTorch internals\nRead More →\n\n\n\n\nExploring tensors from a systems perspective: blobs, views, broadcasting, and how to think about tensor operations efficiently.\nTopics: Tensors, GPU Programming, Vectorization, Broadcasting\nRead More →\n\n\n\n\nUnderstanding Preference Optimization and its applications in aligning language models.\nStatus: Work in Progress 🔄\nRead Draft →"
+  },
+  {
+    "objectID": "blog.html#featured-posts",
+    "href": "blog.html#featured-posts",
+    "title": "Blog",
+    "section": "",
+    "text": "Deep dive into PyTorch’s autograd system and torch.fx - understanding how automatic differentiation works under the hood.\nTopics: Autograd, torch.fx, PyTorch internals\nRead More →\n\n\n\n\nExploring tensors from a systems perspective: blobs, views, broadcasting, and how to think about tensor operations efficiently.\nTopics: Tensors, GPU Programming, Vectorization, Broadcasting\nRead More →\n\n\n\n\nUnderstanding Preference Optimization and its applications in aligning language models.\nStatus: Work in Progress 🔄\nRead Draft →"
+  },
+  {
+    "objectID": "blog.html#all-posts",
+    "href": "blog.html#all-posts",
+    "title": "Blog",
+    "section": "All Posts",
+    "text": "All Posts\nThe posts below include learning notes, experiments, and technical write-ups from my journey."
   },
   {
     "objectID": "courses.html",
