@@ -366,9 +366,44 @@
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "Latest Blogs",
+    "title": "Ismail TG",
     "section": "",
-    "text": "Positional Embeddings Implementation\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLearning CPP As Pythonista: Day-1\n\n\n\nKernel Engineering\n\nCuda\n\nPytorch\n\nCPP\n\n\n\n\n\n\n\n\n\nSep 19, 2025\n\n\nIsmail TG\n\n\n\n\n\n\n\n\n\n\n\n\nLearning Basics of Tensors\n\n\n\nPytorch\n\nDeep Learning\n\nLinear Algebra\n\nGPU Programming\n\n\n\n\n\n\n\n\n\nJul 27, 2025\n\n\nIsmail TG\n\n\n\n\n\n\n\n\n\n\n\n\nLearning Basics of Tensors\n\n\n\nPytorch\n\nDeep Learning\n\nLinear Algebra\n\nGPU Programming\n\n\n\n\n\n\n\n\n\nJul 27, 2025\n\n\nIsmail TG\n\n\n\n\n\n\n\n\n\n\n\n\nManim Project Part 1: Prepare The Dataset\n\n\n\nLLM\n\nInstruction Tuning\n\nManimCE\n\n\n\n\n\n\n\n\n\nApr 10, 2025\n\n\nIsmail TG\n\n\n\n\n\n\n\n\n\n\n\n\nDeep Dive into PyTorch Internals: Autograd and torch.fx\n\n\n\nPytorch\n\nDeep Learning\n\n\n\n\n\n\n\n\n\nApr 5, 2025\n\n\nIsmail TG\n\n\n\n\n\n\n\n\n\n\n\n\nChapter 3: Build a Large Language Model\n\n\n\nLLM\n\nDeep Learning\n\n\n\n\n\n\n\n\n\nDec 5, 2024\n\n\nIsmail TG\n\n\n\n\n\n\n\n\n\n\n\n\nChapter 2: Build a Large Language Model\n\n\n\nLLM\n\nDeep Learning\n\n\n\n\n\n\n\n\n\nNov 16, 2024\n\n\nIsmail TG\n\n\n\n\n\n\n\n\n\n\n\n\nChapter 1: Build a Large Language Model\n\n\n\nLLM\n\nDeep Learning\n\n\n\n\n\n\n\n\n\nNov 14, 2024\n\n\nIsmail TG\n\n\n\n\n\n\n\n\n\n\n\n\nHugging Face Course Notes: Chapter5\n\n\n\nHugging Face\n\nPytorch\n\nDeep Learning\n\nNLP\n\nLLM\n\nHuggingFaceHub\n\n\n\n\n\n\n\n\n\nFeb 27, 2024\n\n\nIsmail TG\n\n\n\n\n\n\n\n\n\n\n\n\nHugging Face Course Notes: Chapter4\n\n\n\nHugging Face\n\nPytorch\n\nDeep Learning\n\nNLP\n\nLLM\n\nHuggingFaceHub\n\n\n\n\n\n\n\n\n\nFeb 26, 2024\n\n\nIsmail TG\n\n\n\n\n\n\n\n\n\n\n\n\nMulti Choice with Swag Dataset\n\n\n\nHuggingFace\n\nPytorch\n\nNLP\n\nDatasets\n\n\n\n\n\n\n\n\n\nNov 28, 2023\n\n\nIsmail TG\n\n\n\n\n\n\n\n\n\n\n\n\nHugging Face Course Notes: Chapter2\n\n\n\nHugging-Face\n\nNLP\n\nLLMs\n\nPytorch\n\n\n\n\n\n\n\n\n\nOct 19, 2023\n\n\nIsmail TG\n\n\n\n\n\n\n\n\n\n\n\n\nHugging Face Course Notes: Chapter3\n\n\n\nHugging-Face\n\nNLP\n\nLLMs\n\nPytorch\n\nDatasets\n\nSwag\n\n\n\n\n\n\n\n\n\nOct 19, 2023\n\n\nIsmail TG\n\n\n\n\n\n\n\n\n\n\n\n\nHugging Face Course Notes: Chapter1\n\n\n\nHugging-Face\n\nNLP\n\nLLMs\n\n\n\n\n\n\n\n\n\nOct 18, 2023\n\n\nIsmail TG\n\n\n\n\n\n\n\n\n\n\n\n\nKaggling Tutorial #0: Download A Dataset from Kaggle Using API-Key\n\n\n\nKaggle\n\nColab\n\n\n\n\n\n\n\n\n\nOct 18, 2023\n\n\nIsmail TG\n\n\n\n\n\n\n\n\n\n\n\n\nBuilding QAs System Using Haystack\n\n\n\nHaystack\n\nLLMs\n\nQAs\n\nNLP\n\n\n\n\n\n\n\n\n\nOct 17, 2023\n\n\nIsmail TG\n\n\n\n\n\n\n\n\n\n\n\n\nUtilizing Existing FAQs for Question Answering\n\n\n\nHaystack\n\nLLMs\n\nQAs\n\nNLP\n\nPandas\n\n\n\n\n\n\n\n\n\nOct 17, 2023\n\n\nIsmail TG\n\n\n\n\n\n\n\n\n\n\n\n\nChapter 7: Questionnaire\n\n\n\nFastai\n\nPytorch\n\nDeep Learning\n\n\n\n\n\n\n\n\n\nOct 31, 2022\n\n\nIsmail TG\n\n\n\n\n\n\n\n\n\n\n\n\nChapter 7: Deep learning for coders with fastai and pytorch\n\n\n\nFastai\n\nPytorch\n\nDeep Learning\n\n\n\n\n\n\n\n\n\nOct 30, 2022\n\n\nIsmail TG\n\n\n\n\n\n\n\n\n\n\n\n\nChapter 6: Questionnaire\n\n\n\nFastai\n\nPytorch\n\nPandas\n\nDeep Learning\n\n\n\n\n\n\n\n\n\nOct 29, 2022\n\n\nIsmail TG\n\n\n\n\n\n\n\n\n\n\n\n\nChapter 6: Deep learning for coders with fastai and pytorch\n\n\n\nFastai\n\nPytorch\n\nNumpy\n\nDeep Learning\n\n\n\n\n\n\n\n\n\nOct 29, 2022\n\n\nIsmail TG\n\n\n\n\n\n\n\n\n\n\n\n\nChapter 5: Questionnaire\n\n\n\nFastai\n\nPytorch\n\nDeep Learning\n\n\n\n\n\n\n\n\n\nOct 29, 2022\n\n\nIsmail TG\n\n\n\n\n\n\n\n\n\n\n\n\nChapter 4: Questionnaire\n\n\n\nFastai\n\nPytorch\n\nDeep Learning\n\n\n\n\n\n\n\n\n\nOct 26, 2022\n\n\nIsmail TG\n\n\n\n\n\n\n\n\n\n\n\n\nChapter 4: Deep learning for coders with fastai and pytorch\n\n\n\nFastai\n\nPytorch\n\nNumpy\n\nPandas\n\nDeep Learning\n\n\n\n\n\n\n\n\n\nOct 26, 2022\n\n\nIsmail TG\n\n\n\n\n\n\n\n\n\n\n\n\nChapter 5: Deep learning for coders with fastai and pytorch\n\n\n\nFastai\n\nPytorch\n\nNumpy\n\nPandas\n\nDeep Learning\n\n\n\n\n\n\n\n\n\nOct 26, 2022\n\n\nIsmail TG\n\n\n\n\n\n\n\n\n\n\n\n\nChapter 1: Deep learning for coders with fastai and pytorch\n\n\n\nFastai\n\nPytorch\n\nDeep Learning\n\n\n\n\n\n\n\n\n\nOct 25, 2022\n\n\nIsmail TG\n\n\n\n\n\n\n\n\n\n\n\n\nChapter 1: Questionnaire and Further Research\n\n\n\nFastai\n\nPytorch\n\nDeep Learning\n\n\n\n\n\n\n\n\n\nOct 25, 2022\n\n\nIsmail TG\n\n\n\n\n\n\n\n\n\n\n\n\nChapter 2: Questionnaire\n\n\n\nFastai\n\nPytorch\n\nHugginFace\n\nGradio\n\nDeep Learning\n\n\n\n\n\n\n\n\n\nOct 25, 2022\n\n\nIsmail TG\n\n\n\n\n\n\n\n\n\n\n\n\nChapter 2: Deep learning for coders with fastai and pytorch\n\n\n\nFastai\n\nPytorch\n\nHugginFace\n\nGradio\n\nDeep Learning\n\n\n\n\n\n\n\n\n\nOct 25, 2022\n\n\nIsmail TG\n\n\n\n\n\nNo matching items"
+    "text": "I’m a former philosophy teacher turned machine learning engineer, learning in public and documenting my journey into deep learning, CUDA programming, and AI systems.\nCurrently focusing on: CUDA kernel engineering and low-level ML optimization."
+  },
+  {
+    "objectID": "index.html#welcome",
+    "href": "index.html#welcome",
+    "title": "Ismail TG",
+    "section": "",
+    "text": "I’m a former philosophy teacher turned machine learning engineer, learning in public and documenting my journey into deep learning, CUDA programming, and AI systems.\nCurrently focusing on: CUDA kernel engineering and low-level ML optimization."
+  },
+  {
+    "objectID": "index.html#featured-project",
+    "href": "index.html#featured-project",
+    "title": "Ismail TG",
+    "section": "Featured Project",
+    "text": "Featured Project\n\n🎬 Manim Code Generation with LLMs\nFine-tuned a small language model on the Manim dataset using instruction tuning to generate executable mathematical animation code from natural language prompts.\nTech: LLM Fine-tuning, Instruction Tuning, Code Generation\nView Project →"
+  },
+  {
+    "objectID": "index.html#learning-journey",
+    "href": "index.html#learning-journey",
+    "title": "Ismail TG",
+    "section": "Learning Journey",
+    "text": "Learning Journey\nI’m documenting my learning process as I dive deep into:\n\nCUDA C++ - Writing efficient GPU kernels from scratch\nDeep Learning Fundamentals - fast.ai course and PyTorch internals\nTransformers & NLP - Hugging Face ecosystem\nBuilding LLMs - Following Sebastian Raschka’s book\n\nYou can follow along in my Blog where I share notes, experiments, and insights."
+  },
+  {
+    "objectID": "index.html#background",
+    "href": "index.html#background",
+    "title": "Ismail TG",
+    "section": "Background",
+    "text": "Background\n\n✅ Completed fast.ai Deep Learning course\n✅ Completed Hugging Face Transformers course\n\n✅ Read “Build a Large Language Model from Scratch” by Sebastian Raschka\n🔄 Currently learning CUDA kernel engineering\n\nI previously taught philosophy but lost my job during the pandemic. Now I’m carving out a niche in low-level ML systems programming - a less crowded space where deep understanding matters more than quick fine-tuning."
+  },
+  {
+    "objectID": "index.html#connect",
+    "href": "index.html#connect",
+    "title": "Ismail TG",
+    "section": "Connect",
+    "text": "Connect\n\n🐦 Twitter/X\n💻 GitHub\n\n\nLearning in public. One kernel at a time."
   },
   {
     "objectID": "posts/Fastai_ch6/Questionnaire.html",
