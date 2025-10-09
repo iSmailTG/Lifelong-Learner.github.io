@@ -1,30 +1,52 @@
 project:
   type: website
+  output-dir: docs
 
 website:
-  title: "Ismail's Personal Blog"
+  title: "Ismail's Learning Journey"
   navbar:
-    right:
+    left:
+      - text: "Home"
+        href: index.qmd
+      - text: "Projects"
+        href: projects.qmd
       - text: "Blog"
-        file: blog.qmd
-      - about.qmd
+        href: blog.qmd
+      - text: "About"
+        href: about.qmd
+    right:
       - icon: github
         href: https://github.com/ismaai008l
       - icon: twitter
         href: https://twitter.com/ismailTG3
+  
+  page-footer:
+    left: "© 2025 Ismail TG. Learning in public."
+    right: 
+      - text: "RSS"
+        href: index.xml
+
 format:
   html:
     theme: cosmo
     css: styles.css
-    highlight-style: github
-    code-line-numbers: true
+    toc: true
+    toc-depth: 3
+    code-fold: false
     code-tools: true
-    code-block-bg: true
-    code-overflow: scroll
+    code-line-numbers: true
+    code-copy: true
+    highlight-style: github
+    smooth-scroll: true
+    link-external-newwindow: true
 
+# Language aliases for C++ code blocks
+filters:
+  - quarto
+
+# This helps with C++ syntax highlighting
 language-aliases:
   c++17: cpp
   c++: cpp
   cpp17: cpp
-
-
+  c: cpp
