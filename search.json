@@ -872,7 +872,7 @@
     "href": "courses.html#fast.ai-deep-learning-course",
     "title": "Courses & Learning Notes",
     "section": "🎓 fast.ai Deep Learning Course",
-    "text": "🎓 fast.ai Deep Learning Course\nPractical deep learning course by Jeremy Howard. Focused on top-down learning approach.\n\nChapter 1 - Getting Started\nChapter 2 - Production Models\nChapter 4 - Under the Hood\nChapter 5 - Image Classification\nChapter 6 - Other Computer Vision Problems\nChapter 7 - Training a State-of-the-Art Model\nNLP Module - Natural Language Processing\n\nStatus: Completed ✅"
+    "text": "🎓 fast.ai Deep Learning Course\nPractical deep learning course by Jeremy Howard. Focused on top-down learning approach.\n\nChapter 1 - Getting Started | Questionnaire\nChapter 2 - Production Models | Questionnaire\nChapter 4 - Under the Hood | Questionnaire\nChapter 5 - Image Classification | Questionnaire\nChapter 6 - Other Computer Vision Problems | Questionnaire\nChapter 7 - Training a State-of-the-Art Model | Questionnaire\nNLP Module - Natural Language Processing\n\nStatus: Completed ✅"
   },
   {
     "objectID": "courses.html#hugging-face-transformers-course",
@@ -900,6 +900,6 @@
     "href": "courses.html#whats-next",
     "title": "Courses & Learning Notes",
     "section": "What’s Next?",
-    "text": "What’s Next?\nAfter completing the CUDA fundamentals, I plan to dive deeper into: - cuBLAS and cuDNN internals - Custom CUDA kernels for ML operations - PyTorch autograd and operator implementation\n\n*These notes represent my learning journey. They may contain errors or incomplete understanding as I progress. Feel free to point out mistakes or suggest improvements!"
+    "text": "What’s Next?\nAfter completing the CUDA fundamentals, I plan to dive deeper into: - cuBLAS and cuDNN internals - Custom CUDA kernels for ML operations - PyTorch autograd and operator implementation\n\nThese notes represent my learning journey. They may contain errors or incomplete understanding as I progress. Feel free to point out mistakes or suggest improvements!"
   }
 ]
