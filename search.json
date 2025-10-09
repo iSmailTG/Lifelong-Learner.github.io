@@ -935,7 +935,7 @@
     "href": "courses.html#learning-c-and-cuda",
     "title": "Courses & Learning Notes",
     "section": "⚡ Learning C++ and CUDA",
-    "text": "⚡ Learning C++ and CUDA\nLearning C++ fundamentals and CUDA programming for GPU kernel development.\nView Learning Notes Testing\nStatus: Currently Learning 🔄"
+    "text": "⚡ Learning C++ and CUDA\nLearning C++ fundamentals and CUDA programming for GPU kernel development.\n\nView Learning Notes - this\nTesting - test1\nTesting rendering - test2\n\nStatus: Currently Learning 🔄"
   },
   {
     "objectID": "courses.html#whats-next",
