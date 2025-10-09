@@ -7,25 +7,25 @@
     "text": "Description: Fine-tuned a small language model on the Manim dataset using instruction tuning methodology. The model generates executable Manim code that produces mathematical animations from natural language descriptions.\nTechnologies: - LLM Fine-tuning - Instruction Tuning - Code Generation - Manim\nStatus: Completed\nView Project"
   },
   {
-    "objectID": "project.html#featured-projects",
-    "href": "project.html#featured-projects",
+    "objectID": "project.html#featured-project",
+    "href": "project.html#featured-project",
     "title": "Projects",
     "section": "",
-    "text": "Description: Fine-tuned a small language model on the Manim dataset using instruction tuning methodology. The model generates executable Manim code that produces mathematical animations from natural language descriptions.\nTechnologies: - LLM Fine-tuning - Instruction Tuning - Code Generation - Manim\nStatus: Completed\nView Post | GitHub\n\n\n\n\nDescription: Deep dive into Direct Preference Optimization and its application in aligning language models with human preferences without reinforcement learning.\nTechnologies: - RLHF alternatives - Preference learning - LLM alignment\nView Post\n\n\n\n\nDescription: Implementation and experimentation with Low-Rank Adaptation (LoRA) for parameter-efficient fine-tuning of large language models.\nTechnologies: - LoRA - PEFT (Parameter Efficient Fine-Tuning) - Transformers\nView Post"
+    "text": "Description: Fine-tuned a small language model on the Manim dataset using instruction tuning methodology. The model generates executable Manim code that produces mathematical animations from natural language descriptions.\nTechnologies: - LLM Fine-tuning - Instruction Tuning - Code Generation - Manim\nStatus: Completed\nView Project"
   },
   {
-    "objectID": "project.html#learning-projects",
-    "href": "project.html#learning-projects",
+    "objectID": "project.html#learning-journey",
+    "href": "project.html#learning-journey",
     "title": "Projects",
-    "section": "Learning Projects",
-    "text": "Learning Projects\n\nCUDA C++ Journey\nDescription: Learning CUDA programming from scratch to understand GPU computing and write efficient kernels for machine learning operations.\nTechnologies: - CUDA C++ - GPU Programming - Parallel Computing\nStatus: In Progress\nView Learning Notes\n\n\n\nNLP Data Preprocessing\nDescription: Exploring data preprocessing techniques for NLP tasks, including work with the SWAG dataset for multiple-choice questions.\nTechnologies: - NLP - Data Preprocessing - Hugging Face Datasets\nView Post"
+    "section": "Learning Journey",
+    "text": "Learning Journey\nMy learning process and experiments are documented in the Blog section, covering topics like:\n\nDeep Learning fundamentals (fast.ai course)\nTransformers and NLP (Hugging Face course)\nBuilding LLMs from scratch\nGPU Programming and CUDA\nPyTorch internals"
   },
   {
-    "objectID": "project.html#mini-projects",
-    "href": "project.html#mini-projects",
+    "objectID": "project.html#coming-soon",
+    "href": "project.html#coming-soon",
     "title": "Projects",
-    "section": "Mini Projects",
-    "text": "Mini Projects\nAdditional smaller projects and experiments are documented in the Blog section."
+    "section": "Coming Soon",
+    "text": "Coming Soon\nMore projects are in development as I dive deeper into CUDA kernel engineering and low-level ML optimization. Check back soon or follow my progress in the blog!\n\nWant to collaborate or discuss ML/CUDA? Feel free to reach out."
   },
   {
     "objectID": "about.html",
@@ -796,26 +796,5 @@
     "title": "",
     "section": "",
     "text": "Code\n\n\n\n\n\n\n\n\n\n\n\n\n   \n    \n    \n      Order By\n      Default\n      \n        Title\n      \n      \n        Date - Oldest\n      \n      \n        Date - Newest\n      \n    \n  \n    \n      \n      \n    \n\n\n\n\n\nPositional Embeddings Implementation\n\n\n\n\n\n\n\n3 min\n\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "project.html#featured-project",
-    "href": "project.html#featured-project",
-    "title": "Projects",
-    "section": "",
-    "text": "Description: Fine-tuned a small language model on the Manim dataset using instruction tuning methodology. The model generates executable Manim code that produces mathematical animations from natural language descriptions.\nTechnologies: - LLM Fine-tuning - Instruction Tuning - Code Generation - Manim\nStatus: Completed\nView Project"
-  },
-  {
-    "objectID": "project.html#learning-journey",
-    "href": "project.html#learning-journey",
-    "title": "Projects",
-    "section": "Learning Journey",
-    "text": "Learning Journey\nMy learning process and experiments are documented in the Blog section, covering topics like:\n\nDeep Learning fundamentals (fast.ai course)\nTransformers and NLP (Hugging Face course)\nBuilding LLMs from scratch\nGPU Programming and CUDA\nPyTorch internals"
-  },
-  {
-    "objectID": "project.html#coming-soon",
-    "href": "project.html#coming-soon",
-    "title": "Projects",
-    "section": "Coming Soon",
-    "text": "Coming Soon\nMore projects are in development as I dive deeper into CUDA kernel engineering and low-level ML optimization. Check back soon or follow my progress in the blog!\n\nWant to collaborate or discuss ML/CUDA? Feel free to reach out."
   }
 ]
