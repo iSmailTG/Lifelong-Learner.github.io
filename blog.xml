@@ -10,7 +10,67 @@
 <atom:link href="https://iSmailTG.github.io/Lifelong-Learner.github.io/blog.xml" rel="self" type="application/rss+xml"/>
 <description></description>
 <generator>quarto-1.8.25</generator>
-<lastBuildDate>Thu, 18 Sep 2025 23:00:00 GMT</lastBuildDate>
+<lastBuildDate>Wed, 08 Oct 2025 23:00:00 GMT</lastBuildDate>
+<item>
+  <title>My First C++ Quarto Post</title>
+  <link>https://iSmailTG.github.io/Lifelong-Learner.github.io/posts/Learning_CPP/test_cpp.html</link>
+  <description><![CDATA[ 
+
+
+
+
+
+<section id="hellp-c" class="level2">
+
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode numberSource cpp number-lines code-with-copy"><code class="sourceCode cpp"><span id="cb1-1"><span class="pp" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">#include </span><span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">&lt;iostream&gt;</span></span>
+<span id="cb1-2"><span class="dt" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">int</span> main<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">()</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">{</span></span>
+<span id="cb1-3">    <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">std::</span>cout <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;&lt;</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Hello from Quarto!"</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;&lt;</span> <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">std::</span>endl<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span></span>
+<span id="cb1-4">    <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">return</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span></span>
+<span id="cb1-5"><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">}</span></span>
+<span id="cb1-6">Copy code</span></code></pre></div></div>
+
+
+<!-- -->
+
+</section>
+
+ ]]></description>
+  <category>cpp</category>
+  <category>learning</category>
+  <guid>https://iSmailTG.github.io/Lifelong-Learner.github.io/posts/Learning_CPP/test_cpp.html</guid>
+  <pubDate>Wed, 08 Oct 2025 23:00:00 GMT</pubDate>
+</item>
 <item>
   <title>Learning CPP As Pythonista: Day-1</title>
   <dc:creator>Ismail TG</dc:creator>
@@ -44,7 +104,7 @@
 <li>Stage4: A <strong>Linker</strong> connects everything together (code, libraries, other file..) and creates the final executable file that can run.</li>
 </ul></li>
 </ul>
-<div id="2180e4ef-19bf-4ad4-8609-78a15fafe0a7" class="cell" data-execution_count="3">
+<div id="732ae3ad-c366-45b7-8f63-14b182cd7a8a" class="cell" data-editable="true" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;&quot;}}" data-tags="[]" data-execution_count="1">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode numberSource cpp17 number-lines code-with-copy"><code class="sourceCode"><span id="cb1-1">#include &lt;iostream&gt;</span>
@@ -11637,167 +11697,6 @@ font-style: inherit;">3e-3</span>)</span></code></pre></div></div>
   <guid>https://iSmailTG.github.io/Lifelong-Learner.github.io/posts/Fastai_ch7/Ch7.html</guid>
   <pubDate>Sat, 29 Oct 2022 23:00:00 GMT</pubDate>
   <media:content url="https://iSmailTG.github.io/Lifelong-Learner.github.io/posts/Fastai_ch7/fastbook.jpg" medium="image" type="image/jpeg"/>
-</item>
-<item>
-  <title>Chapter 6: Questionnaire</title>
-  <dc:creator>Ismail TG</dc:creator>
-  <link>https://iSmailTG.github.io/Lifelong-Learner.github.io/posts/Fastai_ch6/Questionnaire.html</link>
-  <description><![CDATA[ 
-
-
-
-
-
-<p>Q1:<br>
-<strong>How could multi-label classification improve the usability of the bear classifier?</strong></p>
-<pre><code>Multi-label classfication gives the models in production the ability to return 0 prediction if the user inputs an image that doesn't contains any of the classes we trained the model to predict. In the case of bear classification inference, if we upload an image that doesn't contains any bear, our model still predict  a class.</code></pre>
-<p>Q2:<br>
-<strong>How do we encode the dependent variable in a multi-label classification problem?</strong></p>
-<pre><code>In multi-label classification we use One-Hot encoders, which is represented as an list with zeros and ones, where one(s) represent the label of that particular image.</code></pre>
-<p>Q3:<br>
-<strong>How do you access the rows and columns of a DataFrame as if it was a matrix?</strong></p>
-<pre><code>We could use .iloc or loc to access any row or colum of a DataFrame</code></pre>
-<p>Q4:<br>
-<strong>How do you get a column by name from a DataFrame?</strong></p>
-<div id="982269ce-0020-4bed-8130-215776789781" class="cell" data-execution_count="1">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><span class="im" style="color: #00769E;
-background-color: null;
-font-style: inherit;">import</span> pandas <span class="im" style="color: #00769E;
-background-color: null;
-font-style: inherit;">as</span> pd</span></code></pre></div></div>
-</div>
-<div id="fb437160-6ce4-4749-a7f0-26454d94b8ba" class="cell" data-execution_count="2">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1">dic <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> {<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">'col1'</span>:[<span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">1</span>, <span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">2</span>, <span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">3</span>], <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">'col2'</span>:[<span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">4</span>, <span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">5</span>, <span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">6</span>]}</span></code></pre></div></div>
-</div>
-<div id="a5124a6f-a9f1-4a9b-b26a-3e7453698901" class="cell" data-execution_count="5">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1">df <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span>  pd.DataFrame(dic)</span>
-<span id="cb6-2">df</span></code></pre></div></div>
-<div class="cell-output cell-output-display" data-execution_count="5">
-<div>
-
-
-<table class="dataframe caption-top table table-sm table-striped small" data-border="1">
-<thead>
-<tr class="header">
-<th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th">col1</th>
-<th data-quarto-table-cell-role="th">col2</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<th data-quarto-table-cell-role="th">0</th>
-<td>1</td>
-<td>4</td>
-</tr>
-<tr class="even">
-<th data-quarto-table-cell-role="th">1</th>
-<td>2</td>
-<td>5</td>
-</tr>
-<tr class="odd">
-<th data-quarto-table-cell-role="th">2</th>
-<td>3</td>
-<td>6</td>
-</tr>
-</tbody>
-</table>
-
-</div>
-</div>
-</div>
-<div id="7e32ddb6-9d8d-4cc7-a89e-36a19147b25f" class="cell" data-execution_count="8">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;"># access column by name:</span></span>
-<span id="cb7-2">df.col1</span></code></pre></div></div>
-<div class="cell-output cell-output-display" data-execution_count="8">
-<pre><code>0    1
-1    2
-2    3
-Name: col1, dtype: int64</code></pre>
-</div>
-</div>
-<div id="9d8aa85b-fab8-4932-a6f5-7e3c28198f47" class="cell" data-execution_count="10">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb9-1"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;"># or this way</span></span>
-<span id="cb9-2">df[<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">'col2'</span>]</span></code></pre></div></div>
-<div class="cell-output cell-output-display" data-execution_count="10">
-<pre><code>0    4
-1    5
-2    6
-Name: col2, dtype: int64</code></pre>
-</div>
-</div>
-<p>Q5:<br>
-<strong>What is the difference between a <code>Dataset</code> and <code>DataLoader</code>?</strong></p>
-<pre><code>Dataset could be any collection the return a tuple with dependent and independent variables when we index to it (DataFrame in our case)
-DataLoader is an iterator that provide the stream of mini batch, shuffling the datapoints..</code></pre>
-<p>Q6:<br>
-<strong>What does a <code>Datasets</code> object normally contain?</strong></p>
-<pre><code>Datasets objects contains Training Dataset and Validation Dataset</code></pre>
-<p>Q7:<br>
-<strong>What does a <code>DataLoaders</code> object normally contain?</strong></p>
-<pre><code>Dataloaders contains training DataLoader and Validation DataLoader</code></pre>
-<p>Q8:<br>
-<strong>What does <code>lambda</code> do in Python?</strong></p>
-<pre><code>It provides a shortcut for declaring small anonymous functions</code></pre>
-<p>Q9:<br>
-<strong>What are the methods to customize how the independent and dependent variables are created with the data block API?</strong></p>
-<pre><code>We could use functions to customize how to define the independent and dependent variable, then assign these functions to get_x and get_y </code></pre>
-<p>Q10:<br>
-<strong>Why is softmax not an appropriate output activation function when using a one hot encoded target?</strong></p>
-<pre><code>Softmax pushes the model to pick one class among others, while when using one-hot encoding with multi-label classification we have more the one class per image.</code></pre>
-<p>Q12:<br>
-<strong>What is the difference between <code>nn.BCELoss</code> and <code>nn.BCEWithLogitsLoss</code>?</strong></p>
-<pre><code>nn.BCELoss has no sigmoid while nn.BCEWithLogitsLoss includes sigmoid in it.</code></pre>
-<p>Q13:<br>
-<strong>When is it okay to tune a hyperparameter on the validation set?</strong></p>
-<pre><code>When the results seems to have a smooth curve, what indicates the results change  based on changes to the hyper-parameters.</code></pre>
-<p>Q14:<br>
-<strong>How is <code>y_range</code> implemented in fastai?</strong></p>
-<pre><code>function define the range of our targets. In fastai this function is implemented using the `sigmoid_range`</code></pre>
-<p>Q16:<br>
-<strong>What is a regression problem? What loss function should you use for such a problem?</strong></p>
-<pre><code>Regression problem is where we have to predict a continous value.
-Usually in this kind of problem the mean squared error is used</code></pre>
-<p>Q17:<br>
-<strong>What do you need to do to make sure the fastai library applies the same data augmentation to your input images and your target point coordinates?</strong></p>
-<pre><code>The PointBlock class needs to be passed to the blocks parameter.</code></pre>
-
-
-
- ]]></description>
-  <category>Fastai</category>
-  <category>Pytorch</category>
-  <category>Pandas</category>
-  <category>Deep Learning</category>
-  <guid>https://iSmailTG.github.io/Lifelong-Learner.github.io/posts/Fastai_ch6/Questionnaire.html</guid>
-  <pubDate>Fri, 28 Oct 2022 23:00:00 GMT</pubDate>
-  <media:content url="https://iSmailTG.github.io/Lifelong-Learner.github.io/posts/Fastai_ch6/fastai-book-2.jpg" medium="image" type="image/jpeg"/>
 </item>
 </channel>
 </rss>

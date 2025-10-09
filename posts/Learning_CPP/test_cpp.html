@@ -6,10 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Ismail TG">
-<meta name="dcterms.date" content="2025-04-05">
+<meta name="dcterms.date" content="2025-10-09">
 
-<title>Deep Dive into PyTorch Internals: Autograd and torch.fx – Ismail's Learning Journey</title>
+<title>My First C++ Quarto Post – Ismail’s Learning Journey</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -60,24 +59,24 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </style>
 
 
-<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../../../">
-<script src="../../../site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="../../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="../../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
-<script src="../../../site_libs/quarto-html/popper.min.js"></script>
-<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-065a5179aebd64318d7ea99d77b64a9e.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../../site_libs/bootstrap/bootstrap-7aec330bd7e81af58b36d374cce8c0c9.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-065a5179aebd64318d7ea99d77b64a9e.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-7aec330bd7e81af58b36d374cce8c0c9.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -108,7 +107,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <style>html{ scroll-behavior: smooth; }</style>
 
 
-<link rel="stylesheet" href="../../../styles.css">
+<link rel="stylesheet" href="../../styles.css">
 </head>
 
 <body class="nav-fixed quarto-light">
@@ -118,9 +117,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a href="../../../index.html" class="navbar-brand navbar-brand-logo">
+    <a href="../../index.html" class="navbar-brand navbar-brand-logo">
     </a>
-    <a class="navbar-brand" href="../../../index.html">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">Ismail’s Learning Journey</span>
     </a>
   </div>
@@ -131,23 +130,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../../../index.html"> 
+    <a class="nav-link" href="../../index.html"> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../../projects.html"> 
+    <a class="nav-link" href="../../projects.html"> 
 <span class="menu-text">Projects</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../../courses.html"> 
+    <a class="nav-link" href="../../courses.html"> 
 <span class="menu-text">Courses</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../../blog.html"> 
+    <a class="nav-link" href="../../blog.html"> 
 <span class="menu-text">Blog</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../../about.html"> 
+    <a class="nav-link" href="../../about.html"> 
 <span class="menu-text">About</span></a>
   </li>  
 </ul>
@@ -173,10 +172,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">Deep Dive into PyTorch Internals: Autograd and torch.fx</h1>
+      <div class="quarto-title-block"><div><h1 class="title">My First C++ Quarto Post</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
                                 <div class="quarto-categories">
-                <div class="quarto-category">Pytorch</div>
-                <div class="quarto-category">Deep Learning</div>
+                <div class="quarto-category">cpp</div>
+                <div class="quarto-category">learning</div>
               </div>
                   </div>
   </div>
@@ -184,17 +183,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   
   <div class="quarto-title-meta">
 
-      <div>
-      <div class="quarto-title-meta-heading">Author</div>
-      <div class="quarto-title-meta-contents">
-               <p>Ismail TG </p>
-            </div>
-    </div>
       
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">April 5, 2025</p>
+        <p class="date">October 9, 2025</p>
       </div>
     </div>
     
@@ -210,24 +203,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#deep-dive-into-pytorch-internals-autograd-and-torch.fx" id="toc-deep-dive-into-pytorch-internals-autograd-and-torch.fx" class="nav-link active" data-scroll-target="#deep-dive-into-pytorch-internals-autograd-and-torch.fx">Deep Dive into PyTorch Internals: Autograd and torch.fx</a>
-  <ul class="collapse">
-  <li><a href="#introduction" id="toc-introduction" class="nav-link" data-scroll-target="#introduction">Introduction</a></li>
-  <li><a href="#pytorch-autograd-the-engine-behind-gradient-descent" id="toc-pytorch-autograd-the-engine-behind-gradient-descent" class="nav-link" data-scroll-target="#pytorch-autograd-the-engine-behind-gradient-descent">PyTorch Autograd – The Engine Behind Gradient Descent</a>
-  <ul class="collapse">
-  <li><a href="#what-is-autograd" id="toc-what-is-autograd" class="nav-link" data-scroll-target="#what-is-autograd">What Is Autograd?</a></li>
-  <li><a href="#how-it-works-internally" id="toc-how-it-works-internally" class="nav-link" data-scroll-target="#how-it-works-internally">How It Works Internally</a></li>
-  <li><a href="#example-simple-chain-rule" id="toc-example-simple-chain-rule" class="nav-link" data-scroll-target="#example-simple-chain-rule">Example: Simple Chain Rule</a></li>
-  <li><a href="#key-internals" id="toc-key-internals" class="nav-link" data-scroll-target="#key-internals">Key Internals</a></li>
-  </ul></li>
-  <li><a href="#torch.fx-pytorchs-intermediate-representation" id="toc-torch.fx-pytorchs-intermediate-representation" class="nav-link" data-scroll-target="#torch.fx-pytorchs-intermediate-representation">torch.fx – PyTorch’s Intermediate Representation</a>
-  <ul class="collapse">
-  <li><a href="#why-use-torch.fx" id="toc-why-use-torch.fx" class="nav-link" data-scroll-target="#why-use-torch.fx">Why Use torch.fx?</a></li>
-  <li><a href="#core-components" id="toc-core-components" class="nav-link" data-scroll-target="#core-components">Core Components</a></li>
-  <li><a href="#real-world-use-cases" id="toc-real-world-use-cases" class="nav-link" data-scroll-target="#real-world-use-cases">Real-World Use Cases</a></li>
-  </ul></li>
-  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a></li>
-  </ul></li>
+  <li><a href="#hellp-c" id="toc-hellp-c" class="nav-link active" data-scroll-target="#hellp-c">Hellp C++</a></li>
   </ul>
 </nav>
     </div>
@@ -238,100 +214,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 
-<section id="deep-dive-into-pytorch-internals-autograd-and-torch.fx" class="level1">
-<h1>Deep Dive into PyTorch Internals: Autograd and torch.fx</h1>
-<section id="introduction" class="level2">
-<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
-<p>As I continue to deepen my understanding of machine learning systems, I’ve realized that knowing how models <em>run</em> is just as important as knowing how to <em>build</em> them. This post kicks off a series where I explore PyTorch internals, starting with two powerful components: <strong>Autograd</strong> and <strong>torch.fx</strong>.</p>
-</section>
-<section id="pytorch-autograd-the-engine-behind-gradient-descent" class="level2">
-<h2 class="anchored" data-anchor-id="pytorch-autograd-the-engine-behind-gradient-descent">PyTorch Autograd – The Engine Behind Gradient Descent</h2>
-<section id="what-is-autograd" class="level3">
-<h3 class="anchored" data-anchor-id="what-is-autograd">What Is Autograd?</h3>
-<p>PyTorch’s <code>autograd</code> is a dynamic automatic differentiation engine. It records operations on tensors to build a computation graph during the forward pass, and then traverses that graph in reverse to compute gradients during the backward pass.</p>
-</section>
-<section id="how-it-works-internally" class="level3">
-<h3 class="anchored" data-anchor-id="how-it-works-internally">How It Works Internally</h3>
-<p>When you perform operations on <code>torch.Tensor</code> objects with <code>requires_grad=True</code>, PyTorch:</p>
-<ol type="1">
-<li>Creates a <strong>computation graph</strong> on the fly.</li>
-<li>Each operation produces a <code>Function</code> object (e.g., <code>AddBackward</code>, <code>MulBackward</code>).</li>
-<li>When <code>.backward()</code> is called, the engine performs <strong>reverse-mode automatic differentiation</strong>.</li>
-</ol>
-</section>
-<section id="example-simple-chain-rule" class="level3">
-<h3 class="anchored" data-anchor-id="example-simple-chain-rule">Example: Simple Chain Rule</h3>
-<div id="b7a95e24-cedb-4ebc-a101-eaec289600f5" class="cell" data-execution_count="2">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1"></a><span class="im">import</span> torch</span>
-<span id="cb1-2"><a href="#cb1-2"></a>x <span class="op">=</span> torch.tensor(<span class="fl">2.0</span>, requires_grad<span class="op">=</span><span class="va">True</span>)</span>
-<span id="cb1-3"><a href="#cb1-3"></a>y <span class="op">=</span> x <span class="op">*</span> x <span class="op">+</span> <span class="dv">3</span> <span class="op">*</span> x</span>
-<span id="cb1-4"><a href="#cb1-4"></a>z <span class="op">=</span> y.mean()</span>
-<span id="cb1-5"><a href="#cb1-5"></a>z.backward()</span>
-<span id="cb1-6"><a href="#cb1-6"></a><span class="bu">print</span>(x.grad)  <span class="co"># 7.0 = d(x^2 + 3x)/dx at x=2</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>tensor(7.)</code></pre>
-</div>
-</div>
-</section>
-<section id="key-internals" class="level3">
-<h3 class="anchored" data-anchor-id="key-internals">Key Internals</h3>
-<ul>
-<li><code>Tensor.grad_fn</code>: Points to the function that created the tensor.</li>
-<li><code>Tensor.grad</code>: Stores the computed gradient.</li>
-<li><code>torch.autograd.Function</code>: Base class for custom differentiable operations.</li>
-</ul>
-</section>
-</section>
-<section id="torch.fx-pytorchs-intermediate-representation" class="level2">
-<h2 class="anchored" data-anchor-id="torch.fx-pytorchs-intermediate-representation">torch.fx – PyTorch’s Intermediate Representation</h2>
-<section id="why-use-torch.fx" class="level3">
-<h3 class="anchored" data-anchor-id="why-use-torch.fx">Why Use torch.fx?</h3>
-<p><code>torch.fx</code> allows you to <strong>capture and transform</strong> PyTorch programs as Python-level graphs. This is useful for: - Programmatic model transformations - Debugging and visualization - Building custom compiler backends</p>
-</section>
-<section id="core-components" class="level3">
-<h3 class="anchored" data-anchor-id="core-components">Core Components</h3>
-<ul>
-<li><code>GraphModule</code>: A traced model with a modifiable structure.</li>
-<li><code>Tracer</code>: Walks through the model and builds a <code>Graph</code>.</li>
-<li><code>Graph</code>: Contains <code>Node</code> objects that represent operations.</li>
-</ul>
-<div id="48abeadb-bf61-4399-812e-af9cf37c9186" class="cell" data-execution_count="1">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1"></a></span>
-<span id="cb3-2"><a href="#cb3-2"></a><span class="im">import</span> torch</span>
-<span id="cb3-3"><a href="#cb3-3"></a><span class="im">import</span> torch.nn <span class="im">as</span> nn</span>
-<span id="cb3-4"><a href="#cb3-4"></a><span class="im">import</span> torch.fx <span class="im">as</span> fx</span>
-<span id="cb3-5"><a href="#cb3-5"></a></span>
-<span id="cb3-6"><a href="#cb3-6"></a><span class="kw">class</span> MyModel(nn.Module):</span>
-<span id="cb3-7"><a href="#cb3-7"></a>    <span class="kw">def</span> forward(<span class="va">self</span>, x):</span>
-<span id="cb3-8"><a href="#cb3-8"></a>        <span class="cf">return</span> x <span class="op">*</span> <span class="dv">2</span> <span class="op">+</span> <span class="dv">3</span></span>
-<span id="cb3-9"><a href="#cb3-9"></a></span>
-<span id="cb3-10"><a href="#cb3-10"></a>model <span class="op">=</span> MyModel()</span>
-<span id="cb3-11"><a href="#cb3-11"></a>traced <span class="op">=</span> fx.symbolic_trace(model)</span>
-<span id="cb3-12"><a href="#cb3-12"></a><span class="bu">print</span>(traced.graph)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>graph():
-    %x : [num_users=1] = placeholder[target=x]
-    %mul : [num_users=1] = call_function[target=operator.mul](args = (%x, 2), kwargs = {})
-    %add : [num_users=1] = call_function[target=operator.add](args = (%mul, 3), kwargs = {})
-    return add</code></pre>
-</div>
-</div>
-</section>
-<section id="real-world-use-cases" class="level3">
-<h3 class="anchored" data-anchor-id="real-world-use-cases">Real-World Use Cases</h3>
-<ul>
-<li><strong>TorchDynamo</strong> and <strong>TorchInductor</strong> use FX graphs as part of the compilation pipeline.</li>
-<li>FX enables <strong>quantization</strong> and <strong>pruning</strong> workflows by allowing insertion or transformation of operations.</li>
-</ul>
-</section>
-</section>
-<section id="conclusion" class="level2">
-<h2 class="anchored" data-anchor-id="conclusion">Conclusion</h2>
-<p>Both Autograd and <code>torch.fx</code> are essential for understanding what happens <em>under the hood</em> in PyTorch. Whether you’re debugging models, optimizing inference, or building custom backends, mastering these tools opens the door to deeper systems-level work in AI.</p>
-<p>In future posts, I plan to explore: - Implementing custom autograd functions - Writing your own FX passes for transformations - Diving into TorchDynamo and TorchInductor</p>
+<section id="hellp-c" class="level2">
+<h2 class="anchored" data-anchor-id="hellp-c">Hellp C++</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode numberSource cpp number-lines code-with-copy"><code class="sourceCode cpp"><span id="cb1-1"><a href="#cb1-1"></a><span class="pp">#include </span><span class="im">&lt;iostream&gt;</span></span>
+<span id="cb1-2"><a href="#cb1-2"></a><span class="dt">int</span> main<span class="op">()</span> <span class="op">{</span></span>
+<span id="cb1-3"><a href="#cb1-3"></a>    <span class="bu">std::</span>cout <span class="op">&lt;&lt;</span> <span class="st">"Hello from Quarto!"</span> <span class="op">&lt;&lt;</span> <span class="bu">std::</span>endl<span class="op">;</span></span>
+<span id="cb1-4"><a href="#cb1-4"></a>    <span class="cf">return</span> <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb1-5"><a href="#cb1-5"></a><span class="op">}</span></span>
+<span id="cb1-6"><a href="#cb1-6"></a>Copy code</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 
 
-</section>
+<!-- -->
+
 </section>
 
 </main> <!-- /main -->
@@ -790,7 +684,25 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       }
     }
   });
-  </script>
+  </script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2" data-shortcodes="false"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1"></a><span class="co">---</span></span>
+<span id="cb2-2"><a href="#cb2-2"></a><span class="an">title:</span><span class="co"> "My First C++ Quarto Post"</span></span>
+<span id="cb2-3"><a href="#cb2-3"></a><span class="an">date:</span><span class="co"> 2025-10-09</span></span>
+<span id="cb2-4"><a href="#cb2-4"></a><span class="an">categories:</span><span class="co"> [cpp, learning]</span></span>
+<span id="cb2-5"><a href="#cb2-5"></a><span class="an">format:</span><span class="co"> html</span></span>
+<span id="cb2-6"><a href="#cb2-6"></a><span class="co">---</span></span>
+<span id="cb2-7"><a href="#cb2-7"></a></span>
+<span id="cb2-8"><a href="#cb2-8"></a><span class="fu">## Hellp C++</span></span>
+<span id="cb2-9"><a href="#cb2-9"></a></span>
+<span id="cb2-10"><a href="#cb2-10"></a><span class="in">```c++</span></span>
+<span id="cb2-11"><a href="#cb2-11"></a><span class="pp">#include </span><span class="im">&lt;iostream&gt;</span></span>
+<span id="cb2-12"><a href="#cb2-12"></a><span class="dt">int</span> main<span class="op">()</span> <span class="op">{</span></span>
+<span id="cb2-13"><a href="#cb2-13"></a>    <span class="bu">std::</span>cout <span class="op">&lt;&lt;</span> <span class="st">"Hello from Quarto!"</span> <span class="op">&lt;&lt;</span> <span class="bu">std::</span>endl<span class="op">;</span></span>
+<span id="cb2-14"><a href="#cb2-14"></a>    <span class="cf">return</span> <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb2-15"><a href="#cb2-15"></a><span class="op">}</span></span>
+<span id="cb2-16"><a href="#cb2-16"></a>Copy code</span>
+<span id="cb2-17"><a href="#cb2-17"></a><span class="in">```</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
+</div></div></div></div></div>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
@@ -803,7 +715,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
     <li class="nav-item">
-    <a class="nav-link" href="../../../index.xml">
+    <a class="nav-link" href="../../index.xml">
 <p>RSS</p>
 </a>
   </li>  
@@ -815,5 +727,5 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 
-<script src="../../../site_libs/quarto-html/zenscroll-min.js"></script>
+<script src="../../site_libs/quarto-html/zenscroll-min.js"></script>
 </body></html>
