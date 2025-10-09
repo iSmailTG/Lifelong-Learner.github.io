@@ -16,6 +16,15 @@ format:
   html:
     theme: cosmo
     css: styles.css
+    highlight-style: github
+    code-line-numbers: true
+    code-tools: true
+    code-block-bg: true
+    code-overflow: scroll
 
+language-aliases:
+  c++17: cpp
+  c++: cpp
+  cpp17: cpp
 
 
