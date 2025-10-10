@@ -43,6 +43,7 @@ Following Sebastian Raschka's book on building LLMs from first principles.
 
 - [Chapter 1](posts/Build%20a%20Large%20Language%20Model/Chapter-1/Build_A_Large_Language_Model_Chapter_1_.ipynb) - Understanding Large Language Models
 - [Chapter 2](posts/Build%20a%20Large%20Language%20Model/Chapter-2/Untitled.ipynb) - Working with Text Data
+
 - [Chapter 3](posts/Build%20a%20Large%20Language%20Model/Chapter-3/Chapter_3.ipynb) - Coding Attention Mechanisms
 
 **Status**: In Progress 🔄
@@ -53,7 +54,8 @@ Following Sebastian Raschka's book on building LLMs from first principles.
 
 Learning C++ fundamentals and CUDA programming for GPU kernel development.
 
-[View Learning Notes](posts/Learning_CPP/1_Learning_CPP_Basics.ipynb)
+- [View Learning Notes](posts/Learning_CPP/basicsLesson1.md) -Lesson - 1 :  Understanding the Compiler system of C++ and basic Synatax.
+
 
 **Status**: Currently Learning 🔄
 
