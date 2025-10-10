@@ -22,9 +22,9 @@
 
 
 <section id="motivation" class="level2">
-
+<h2 class="anchored" data-anchor-id="motivation">Motivation:</h2>
 <ul>
-<li>In this series of lessons, I will track my learning through the universe of C++ as someone who mainly programm in Python.</li>
+<li>In this series of lessons, I will track my learning through the universe of C++ as someone who mainly program in Python.</li>
 <li>The motivation behind learning C++ in 2025 can be resumed into one word: <strong>Cuda</strong>.</li>
 <li>CUDA kernels are still C++ first, Python second. Learning the bare-metal steps so I can stop guessing and start writing fast GPU code. One small page a day until the compiler feels normal.</li>
 <li>This idea of learning C++ for CUDA make it less intimidating, since C++ isn’t the goal here rather just a tool for something else.</li>
@@ -35,7 +35,7 @@
 <h2 class="anchored" data-anchor-id="c-world">C++ World:</h2>
 <ul>
 <li>C++ is a <strong>Compiled language</strong>, which means the code goes through a transformation process before it can run.</li>
-<li>In C++, we write codem then a special program called <strong>Compiler</strong> translates our <em>Human-readable</em> code into machine code (1s &amp; 0s) that computer can executes.</li>
+<li>In C++, we write code then a special program called <strong>Compiler</strong> translates our <em>Human-readable</em> code into machine code (1s &amp; 0s) that computer can executes.</li>
 <li>This process of compiling works in <strong>4 stages</strong>:
 <ul>
 <li>Stage1: Pre-processing before the compiler even looks at our code, it’s a text manipulation step where the preprocessor check code that starts with <code>#</code> and copy-past, find-replace it automatically, so the next step include only pure C++ code.</li>
@@ -44,18 +44,374 @@
 <li>Stage4: A <strong>Linker</strong> connects everything together (code, libraries, other file..) and creates the final executable file that can run.</li>
 </ul></li>
 </ul>
-<div id="732ae3ad-c366-45b7-8f63-14b182cd7a8a" class="cell" data-editable="true" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;&quot;}}" data-tags="[]" data-execution_count="1">
+<div id="732ae3ad-c366-45b7-8f63-14b182cd7a8a" class="cell" data-editable="true" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;&quot;}}" data-tags="[]" data-execution_count="2">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode numberSource cpp17 number-lines code-with-copy"><code class="sourceCode"><span id="cb1-1">#include &lt;iostream&gt;</span>
-<span id="cb1-2">std::cout &lt;&lt; "It worked!" &lt;&lt; std::endl;</span></code></pre></div></div>
+<span id="cb1-2">int main()</span>
+<span id="cb1-3">{</span>
+<span id="cb1-4">    // print my name in three lines</span>
+<span id="cb1-5">    std::cout &lt;&lt; "Hi, My" &lt;&lt; std::endl;</span>
+<span id="cb1-6">    std::cout &lt;&lt; "name is" &lt;&lt; std::endl;</span>
+<span id="cb1-7">    std::cout &lt;&lt; "Ismail." &lt;&lt; std::endl;</span>
+<span id="cb1-8">    // in one line with three string</span>
+<span id="cb1-9">    std::cout &lt;&lt; "Hi, my " &lt;&lt; "name is " &lt;&lt; "Ismail." &lt;&lt;std::endl;</span>
+<span id="cb1-10">    // print the whole expression in one string</span>
+<span id="cb1-11">    std::cout &lt;&lt; "Hi, my name is Ismail.";</span>
+<span id="cb1-12">    </span>
+<span id="cb1-13">    return 0;</span>
+<span id="cb1-14">}</span></code></pre></div></div>
+</details>
+</div>
+<div id="ac1b6dac-0b79-4814-81f7-2e7f50d86b52" class="cell" data-execution_count="3">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2" style="background: #f1f3f5;"><pre class="sourceCode numberSource cpp17 number-lines code-with-copy"><code class="sourceCode"><span id="cb2-1">main()</span></code></pre></div></div>
 </details>
 <div class="cell-output cell-output-stdout">
-<pre><code>It worked!</code></pre>
+<pre><code>Hi, My
+name is
+Ismail.
+Hi, my name is Ismail.
+Hi, my name is Ismail.</code></pre>
+</div>
+<div class="cell-output cell-output-display" data-execution_count="3">
+<pre><code>0</code></pre>
 </div>
 </div>
+<section id="importing-in-cpp" class="level3">
+<h3 class="anchored" data-anchor-id="importing-in-cpp">Importing in CPP:</h3>
+<ul>
+<li>In order to use libraries and tools in C++ we use the keyword <strong><code>#include</code></strong>, it’s equivalent to <code>import</code> in Python.</li>
+<li>Library we used here is <code>iostream</code> which allows us to print in the screen and many more things.</li>
+</ul>
+</section>
+<section id="main-function" class="level3">
+<h3 class="anchored" data-anchor-id="main-function">Main() function:</h3>
+<ul>
+<li><strong>All C++ programs</strong> has one <code>main()</code> function, it’s the starting point of every program, The <code>main</code> function is called automatically when a C++ program begins.</li>
+</ul>
+<section id="printing" class="level4">
+<h4 class="anchored" data-anchor-id="printing">Printing:</h4>
+<ul>
+<li>By using <code>cout</code> we can print text on the screen.</li>
+<li>More than one piece of data can be printed at a time.</li>
+<li><code>endl</code> is used after <code>cout</code> to end the line, so the next <code>cout</code> could starts printing next line.</li>
+<li>We can print multiple pieces of data if we seperate them with <code>&lt;&lt;</code>.</li>
+</ul>
+</section>
+<section id="statements" class="level4">
+<h4 class="anchored" data-anchor-id="statements">Statements:</h4>
+<ul>
+<li><p>The lines of code inside <code>main</code> function are called <code>statements</code>.</p></li>
+<li><p>All statements in C++ must end with semi-colon <strong>;</strong>.</p></li>
+<li><p><strong>The compiler</strong> reads our code and turns it into instructions that a computer can understand (machine instructions).</p></li>
+<li><p>Then the compiler will generate an executable program which is just a file filled with machine instructions.</p>
+<ul>
+<li>The compiler uses the semi-colons to know where each statement ends. If you do not include a semi-colon at the end of every statement then you will get a <code>syntax error</code>. A program with syntax errors will not compile and run. #### String:</li>
+</ul></li>
+<li><p>The thing printed to the screen is called string, which refers to a groupr of characters inside <code>""</code>. #### Comments:</p></li>
+<li><p>As in python comments are non executable code that we put beside the code in order to explain for us or others ideas or concepts in the code.</p></li>
+<li><p>In C++ the comment starts with //.</p></li>
+<li><p>There are two types of comments- single line comments and multi-line comments. All code in between a /* and a */ are called multi-line comments. They will also be ignored by the compiler. When you have a lot to say in a comment you will use these</p></li>
+</ul>
+</section>
+</section>
+<section id="variables" class="level3">
+<h3 class="anchored" data-anchor-id="variables">Variables:</h3>
+<ul>
+<li><p>We will write a program that will find the distance between two points on a graph. It will need variables to hold the points (an X and a Y value for each point) and a variable to hold the length of the line that connects the points.</p></li>
+<li><p>Since C++ is a static typing language, we need to <strong>declare</strong> the type of the variable while creating it, and this variable will only accept the type is assigned to.</p></li>
+<li><p>Here we declare a variable <code>var</code> with type <code>int</code> which refers to integer or whole number.</p></li>
+</ul>
+<div id="0307dbfd-ac8f-4133-95e3-e5aa189354f5" class="cell" data-execution_count="4">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5" style="background: #f1f3f5;"><pre class="sourceCode numberSource cpp17 number-lines code-with-copy"><code class="sourceCode"><span id="cb5-1">int var = 5;</span>
+<span id="cb5-2">std::cout &lt;&lt; "variable of type integer: " &lt;&lt; var &lt;&lt; std::endl;</span></code></pre></div></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>variable of type integer: 5</code></pre>
+</div>
+</div>
+<ul>
+<li>A variable is place where we store data in the memory that can be read or written to in a program.</li>
+<li>We think of variables as boxes that hold data, and each box is distinct in the memory. So every variable lives in a location in memory, and we can retrieve it by name without carrying about it’s location in memory.</li>
+</ul>
+<div id="9d1787ad-94d3-45f9-b41d-546bb4b56c5b" class="cell" data-execution_count="5">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7" style="background: #f1f3f5;"><pre class="sourceCode numberSource cpp17 number-lines code-with-copy"><code class="sourceCode"><span id="cb7-1">void func()</span>
+<span id="cb7-2">{</span>
+<span id="cb7-3">    int var0;</span>
+<span id="cb7-4">    int var1;</span>
+<span id="cb7-5"></span>
+<span id="cb7-6">    int var2;</span>
+<span id="cb7-7">    int var3;</span>
+<span id="cb7-8"></span>
+<span id="cb7-9">    var0 = 1;</span>
+<span id="cb7-10">    var1 = 1;</span>
+<span id="cb7-11">    var2 = 2;</span>
+<span id="cb7-12">    var3 = 2;</span>
+<span id="cb7-13"></span>
+<span id="cb7-14">    std::cout &lt;&lt;"variable 1: " &lt;&lt;var0&lt;&lt; std::endl;</span>
+<span id="cb7-15">    std::cout &lt;&lt;"variable 2: " &lt;&lt;var1&lt;&lt; std::endl;</span>
+<span id="cb7-16">    std::cout &lt;&lt;"variable 3: " &lt;&lt;var2&lt;&lt; std::endl;</span>
+<span id="cb7-17">    std::cout &lt;&lt;"variable 4: " &lt;&lt;var3&lt;&lt; std::endl;</span>
+<span id="cb7-18">}</span>
+<span id="cb7-19">func();</span></code></pre></div></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>variable 1: 1
+variable 2: 1
+variable 3: 2
+variable 4: 2</code></pre>
+</div>
+</div>
+<ul>
+<li>Here I declared 4 variables of type int, at this point the program requires a box in the memory for each variable.</li>
+<li>Then when I assign each variable to a value, the program will put those values in their correspondent box.</li>
+<li>Now we have what represents the points in a graph: <code>var0</code> and <code>var1</code> for point 1 &amp; <code>var2</code> and <code>var3</code> for point 2, now we need variable that will hold the value of the distance. The type of that variable must be float number, since it can be decimal.</li>
+</ul>
+<div id="3a5cf6ba-3160-44aa-82bb-2c5ceefb5f15" class="cell" data-execution_count="6">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9" style="background: #f1f3f5;"><pre class="sourceCode numberSource cpp17 number-lines code-with-copy"><code class="sourceCode"><span id="cb9-1">void func2()</span>
+<span id="cb9-2">{</span>
+<span id="cb9-3">    int var0;</span>
+<span id="cb9-4">    int var1;</span>
+<span id="cb9-5">    int var2;</span>
+<span id="cb9-6">    int var3;</span>
+<span id="cb9-7">    var0 = 1;</span>
+<span id="cb9-8">    var1 = 1;</span>
+<span id="cb9-9">    var2 = 2;</span>
+<span id="cb9-10">    var3 = 2;</span>
+<span id="cb9-11"></span>
+<span id="cb9-12">    float lengthOfline;</span>
+<span id="cb9-13">}</span></code></pre></div></div>
+</details>
+</div>
+<ul>
+<li>the variable <code>lengthOfline</code> doesn’t have value yet, so need to calculate the distance: <img src="https://latex.codecogs.com/png.latex?d%20=%20%5Csqrt%7B(x_2%20-%20x_1)%5E2%20+%20(y_2%20-%20y_1)%5E2%7D"></li>
+<li>So we need power and square root. we could multiply the number by itself to obtain the power but the square root need to be hard coded, but luckily we can just import it from <strong>math</strong> module in C++, which we need to import in order to use the built in function <strong>sqrt</strong>.</li>
+</ul>
+<div id="47c7a194-96bc-4649-94e3-f46d4b8c3530" class="cell" data-execution_count="7">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10" style="background: #f1f3f5;"><pre class="sourceCode numberSource cpp17 number-lines code-with-copy"><code class="sourceCode"><span id="cb10-1">#include &lt;cmath&gt;</span>
+<span id="cb10-2">void func3()</span>
+<span id="cb10-3">{ </span>
+<span id="cb10-4">    //declare the variables to hold points </span>
+<span id="cb10-5">    int x1; </span>
+<span id="cb10-6">    int y1; </span>
+<span id="cb10-7"> </span>
+<span id="cb10-8">    int x2; </span>
+<span id="cb10-9">    int y2; </span>
+<span id="cb10-10"> </span>
+<span id="cb10-11">    //fill the point variables with data </span>
+<span id="cb10-12">    x1 = 2; </span>
+<span id="cb10-13">    y1 = 2; </span>
+<span id="cb10-14"> </span>
+<span id="cb10-15">    x2 = 2; </span>
+<span id="cb10-16">    y2 = 4; </span>
+<span id="cb10-17"> </span>
+<span id="cb10-18">    //declare a variable to hold the length of a line between two points </span>
+<span id="cb10-19">    float lengthOfLine; </span>
+<span id="cb10-20"> </span>
+<span id="cb10-21">    //use the distance formula to find the distance </span>
+<span id="cb10-22">    lengthOfLine = sqrt(((x2 - x1) * (x2 - x1)) + ((y2 - y1) * (y2 - y1))); </span>
+<span id="cb10-23"> </span>
+<span id="cb10-24">    //print the length of the line </span>
+<span id="cb10-25">    std::cout&lt;&lt;"The length of the line is: "&lt;&lt;lengthOfLine&lt;&lt;std::endl; </span>
+<span id="cb10-26">  </span>
+<span id="cb10-27">}</span>
+<span id="cb10-28">func3();</span></code></pre></div></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>The length of the line is: 2</code></pre>
+</div>
+</div>
+</section>
+<section id="data-types" class="level3">
+<h3 class="anchored" data-anchor-id="data-types">Data types:</h3>
+<ul>
+<li>In C++ data types are defined once and cannot be changed. If a variable is decalared with a specific data type, it can only hold values that suits that data type.</li>
+<li>We already used <code>int</code> which is a whole number, <code>float</code> a decimal. There are many other types:</li>
+</ul>
+<div id="9bbe186a-5363-493e-8dfa-c3535a9b9d46" class="cell" data-execution_count="8">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12" style="background: #f1f3f5;"><pre class="sourceCode numberSource cpp17 number-lines code-with-copy"><code class="sourceCode"><span id="cb12-1">#include &lt;string&gt;</span>
+<span id="cb12-2">using namespace std;</span></code></pre></div></div>
+</details>
+</div>
+<div id="0f9b773c-f91c-4b18-8612-e953cb6ba898" class="cell" data-execution_count="9">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13" style="background: #f1f3f5;"><pre class="sourceCode numberSource cpp17 number-lines code-with-copy"><code class="sourceCode"><span id="cb13-1">void basicdtypes()</span>
+<span id="cb13-2">{</span>
+<span id="cb13-3">    int num = 5;</span>
+<span id="cb13-4">    float dec = 5.22;</span>
+<span id="cb13-5">    char oneChar = 'K';</span>
+<span id="cb13-6">    string name = "Ismail";</span>
+<span id="cb13-7"></span>
+<span id="cb13-8">    cout &lt;&lt;"this is a whole number: " &lt;&lt; num &lt;&lt; endl;</span>
+<span id="cb13-9">    cout &lt;&lt;"this is a decimal number: " &lt;&lt;dec&lt;&lt; endl;</span>
+<span id="cb13-10">    cout &lt;&lt; "this is single character: " &lt;&lt;oneChar&lt;&lt; endl;</span>
+<span id="cb13-11">    cout &lt;&lt; "This is a string of charaters: " &lt;&lt;name&lt;&lt; endl;</span>
+<span id="cb13-12">}</span>
+<span id="cb13-13">basicdtypes();</span></code></pre></div></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>this is a whole number: 5
+this is a decimal number: 5.22
+this is single character: K
+This is a string of charaters: Ismail</code></pre>
+</div>
+</div>
+<ul>
+<li><code>char</code> is a single character between single quotes.</li>
+<li><code>string</code> is couple of characters between double quotes, and it’s not primitive type, it must be imported <code>#include &lt;string&gt;</code></li>
+</ul>
+</section>
+<section id="numbers-types" class="level3">
+<h3 class="anchored" data-anchor-id="numbers-types">Numbers types:</h3>
+<ul>
+<li>Till now we saw 2 numerical data types: <code>int</code> and <code>float</code>.</li>
+<li>A data type defines a few things:
+<ul>
+<li>the operations that can be performed on variables of that type</li>
+<li>the values that can be stored inside a variable of that type (there is usually a range of acceptable values)</li>
+<li>the amount of space a variable takes up in memory</li>
+</ul></li>
+<li>The operations performed on <code>int</code> are: <strong><code>- + / *</code></strong>, the division is the only operation that requires some explanation.</li>
+<li>Here is a division between to integers:</li>
+</ul>
+<div id="47845e69-0263-40e9-8551-a13fd40b1266" class="cell" data-execution_count="10">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15" style="background: #f1f3f5;"><pre class="sourceCode numberSource cpp17 number-lines code-with-copy"><code class="sourceCode"><span id="cb15-1">void divint()</span>
+<span id="cb15-2">{</span>
+<span id="cb15-3">    int a = 10;</span>
+<span id="cb15-4">    int b = 5;</span>
+<span id="cb15-5">    int res = a / b;</span>
+<span id="cb15-6">    cout &lt;&lt;"result a / b=&gt; " &lt;&lt;res&lt;&lt; endl;</span>
+<span id="cb15-7">}    </span>
+<span id="cb15-8">divint();</span></code></pre></div></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>result a / b=&gt; 2</code></pre>
+</div>
+</div>
+<ul>
+<li>What if we want to divide 2 integers that will causes not a whole number:</li>
+</ul>
+<div id="408c63b1-f54c-462e-9252-1ac3e964900c" class="cell" data-execution_count="11">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17" style="background: #f1f3f5;"><pre class="sourceCode numberSource cpp17 number-lines code-with-copy"><code class="sourceCode"><span id="cb17-1">void dvd()</span>
+<span id="cb17-2">{</span>
+<span id="cb17-3">    int num = 12;</span>
+<span id="cb17-4">    int num1 = 2;</span>
+<span id="cb17-5">    int res = num / num1;</span>
+<span id="cb17-6">    cout &lt;&lt;"result as num = 12: " &lt;&lt;res&lt;&lt; endl;</span>
+<span id="cb17-7">    num = 13;</span>
+<span id="cb17-8">    res = num / num1;</span>
+<span id="cb17-9">    cout &lt;&lt;"result as num = 13: " &lt;&lt;res&lt;&lt; endl;</span>
+<span id="cb17-10">}</span>
+<span id="cb17-11">dvd();</span></code></pre></div></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>result as num = 12: 6
+result as num = 13: 6</code></pre>
+</div>
+</div>
+<ul>
+<li><p>At first, the result was 6 which is the obvious answer, but when we predicted <code>6.5</code> we still get <code>6</code>?</p></li>
+<li><p>The reason is that integer division returns the quotient which is always an integer. This is true of all integer divides using the / operator</p></li>
+<li><p>There is another integer division operator called the <strong>modulus operator</strong> that returns the remainder. The mod operator is the <strong><code>%</code></strong> symbol.</p></li>
+</ul>
+<div id="181dd807-7a3b-47d9-9735-0417aca6722e" class="cell" data-execution_count="12">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19" style="background: #f1f3f5;"><pre class="sourceCode numberSource cpp17 number-lines code-with-copy"><code class="sourceCode"><span id="cb19-1">void divmod()</span>
+<span id="cb19-2">{</span>
+<span id="cb19-3">     </span>
+<span id="cb19-4">    int num1 = 12; </span>
+<span id="cb19-5">    int num2 = 2; </span>
+<span id="cb19-6">    int result; </span>
+<span id="cb19-7"> </span>
+<span id="cb19-8">    result = num1 / num2; </span>
+<span id="cb19-9">    cout &lt;&lt; "result with num1 = 12: " &lt;&lt; result &lt;&lt; endl;     </span>
+<span id="cb19-10">    num1 = 13; </span>
+<span id="cb19-11"> </span>
+<span id="cb19-12">    result = num1 / num2; </span>
+<span id="cb19-13">    result = num1 % num2; </span>
+<span id="cb19-14">    cout &lt;&lt; " result with num1 = 13: " &lt;&lt; result &lt;&lt; endl;</span>
+<span id="cb19-15">    </span>
+<span id="cb19-16">}</span>
+<span id="cb19-17"></span>
+<span id="cb19-18">divmod();</span></code></pre></div></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>result with num1 = 12: 6
+ result with num1 = 13: 1</code></pre>
+</div>
+</div>
+<ul>
+<li><p>A data type also specifies an acceptable range of values.</p></li>
+<li><p>An int variable cannot hold an infinite sized number, there is a limit.</p></li>
+<li><p>There is a built in constant called <strong><code>INT_MAX</code></strong> that holds the largest value that can be stored in any int variable (there is an <strong><code>INT_MIN</code></strong> too).</p></li>
+</ul>
+<div id="fc4532eb-64cd-40ed-88b5-1f144354e96e" class="cell" data-execution_count="13">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21" style="background: #f1f3f5;"><pre class="sourceCode numberSource cpp17 number-lines code-with-copy"><code class="sourceCode"><span id="cb21-1">#include &lt;climits&gt;</span></code></pre></div></div>
+</details>
+</div>
+<div id="ce5e6a39-3dc9-481e-8b7c-ff931c4ed885" class="cell" data-execution_count="14">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22" style="background: #f1f3f5;"><pre class="sourceCode numberSource cpp17 number-lines code-with-copy"><code class="sourceCode"><span id="cb22-1">int largeNumber;</span>
+<span id="cb22-2">largeNumber = INT_MAX;</span>
+<span id="cb22-3">cout&lt;&lt;"largest number can be stored: " &lt;&lt;largeNumber&lt;&lt; endl;</span></code></pre></div></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>largest number can be stored: 2147483647</code></pre>
+</div>
+</div>
+<ul>
+<li>Adding one number to that value will causes an out of range error</li>
+<li>The arithmetic operators for floats are the same as ints except there is no mod operator. float division results in numbers with fractional parts.</li>
+<li>In case we want to declare a float data type but the value is a whole number we need to explicitly tell the compiler it’s a float number by adding <code>.0</code>:</li>
+</ul>
+<div id="7a8d0205-2dab-4d87-8391-e5fb3e117b0c" class="cell" data-execution_count="19">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb24" style="background: #f1f3f5;"><pre class="sourceCode numberSource cpp17 number-lines code-with-copy"><code class="sourceCode"><span id="cb24-1">#include &lt;typeinfo&gt;</span>
+<span id="cb24-2">void wholeFloat()</span>
+<span id="cb24-3">{</span>
+<span id="cb24-4">    int num1 = 15;</span>
+<span id="cb24-5">    float num2 = 15.0;</span>
+<span id="cb24-6">    cout &lt;&lt; "the type of num1 = 15 :  " &lt;&lt; typeid(num1).name() &lt;&lt; endl;</span>
+<span id="cb24-7">    cout &lt;&lt; "the type of num2 = 15.0 :  " &lt;&lt; typeid(num2).name() &lt;&lt; endl;</span>
+<span id="cb24-8">    </span>
+<span id="cb24-9">    </span>
+<span id="cb24-10">}</span>
+<span id="cb24-11"></span>
+<span id="cb24-12">wholeFloat();</span></code></pre></div></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>the type of num1 = 15 :  i
+the type of num2 = 15.0 :  f</code></pre>
+</div>
+</div>
+<ul>
+<li>We get <code>i</code> for integer for <code>15</code> and <code>f</code> float for <code>15.0</code>.</li>
+</ul>
 
 
+</section>
 </section>
 
  ]]></description>
@@ -78,9 +434,9 @@
 
 
 <section id="motivation" class="level2">
-
+<h2 class="anchored" data-anchor-id="motivation">Motivation:</h2>
 <ul>
-<li>In this series of lessons, I will track my learning through the universe of C++ as someone who mainly programm in Python.</li>
+<li>In this series of lessons, I will track my learning through the universe of C++ as someone who mainly program in Python.</li>
 <li>The motivation behind learning C++ in 2025 can be resumed into one word: <strong>Cuda</strong>.</li>
 <li>CUDA kernels are still C++ first, Python second. Learning the bare-metal steps so I can stop guessing and start writing fast GPU code. One small page a day until the compiler feels normal.</li>
 <li>This idea of learning C++ for CUDA make it less intimidating, since C++ isn’t the goal here rather just a tool for something else.</li>
@@ -91,7 +447,7 @@
 <h2 class="anchored" data-anchor-id="c-world">C++ World:</h2>
 <ul>
 <li>C++ is a <strong>Compiled language</strong>, which means the code goes through a transformation process before it can run.</li>
-<li>In C++, we write codem then a special program called <strong>Compiler</strong> translates our <em>Human-readable</em> code into machine code (1s &amp; 0s) that computer can executes.</li>
+<li>In C++, we write code then a special program called <strong>Compiler</strong> translates our <em>Human-readable</em> code into machine code (1s &amp; 0s) that computer can executes.</li>
 <li>This process of compiling works in <strong>4 stages</strong>:
 <ul>
 <li>Stage1: Pre-processing before the compiler even looks at our code, it’s a text manipulation step where the preprocessor check code that starts with <code>#</code> and copy-past, find-replace it automatically, so the next step include only pure C++ code.</li>
@@ -105,25 +461,1035 @@ background-color: null;
 font-style: inherit;">#include </span><span class="im" style="color: #00769E;
 background-color: null;
 font-style: inherit;">&lt;iostream&gt;</span></span>
-<span id="cb1-2"><span class="bu" style="color: null;
+<span id="cb1-2"><span class="dt" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">int</span> main<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">()</span></span>
+<span id="cb1-3"><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">{</span></span>
+<span id="cb1-4">    <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">// print my name in three lines</span></span>
+<span id="cb1-5">    <span class="bu" style="color: null;
 background-color: null;
 font-style: inherit;">std::</span>cout <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">&lt;&lt;</span> <span class="st" style="color: #20794D;
 background-color: null;
-font-style: inherit;">"It worked!"</span> <span class="op" style="color: #5E5E5E;
+font-style: inherit;">"Hi, My"</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;&lt;</span> <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">std::</span>endl<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span></span>
+<span id="cb1-6">    <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">std::</span>cout <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;&lt;</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"name is"</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;&lt;</span> <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">std::</span>endl<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span></span>
+<span id="cb1-7">    <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">std::</span>cout <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;&lt;</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Ismail."</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;&lt;</span> <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">std::</span>endl<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span></span>
+<span id="cb1-8">    <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">// in one line with three string</span></span>
+<span id="cb1-9">    <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">std::</span>cout <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;&lt;</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Hi, my "</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;&lt;</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"name is "</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;&lt;</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Ismail."</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;&lt;</span><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">std::</span>endl<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span></span>
+<span id="cb1-10">    <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">// print the whole expression in one string</span></span>
+<span id="cb1-11">    <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">std::</span>cout <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;&lt;</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Hi, my name is Ismail."</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span></span>
+<span id="cb1-12">    </span>
+<span id="cb1-13">    <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">return</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span></span>
+<span id="cb1-14"><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">}</span></span></code></pre></div></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2" style="background: #f1f3f5;"><pre class="sourceCode numberSource cpp number-lines code-with-copy"><code class="sourceCode cpp"><span id="cb2-1">main<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">()</span></span></code></pre></div></div>
+<pre><code>Hi, My
+name is
+Ismail.
+Hi, my name is Ismail.
+Hi, my name is Ismail.
+
+
+
+
+0</code></pre>
+<section id="importing-in-cpp" class="level3">
+<h3 class="anchored" data-anchor-id="importing-in-cpp">Importing in CPP:</h3>
+<ul>
+<li>In order to use libraries and tools in C++ we use the keyword <strong><code>#include</code></strong>, it’s equivalent to <code>import</code> in Python.</li>
+<li>Library we used here is <code>iostream</code> which allows us to print in the screen and many more things.</li>
+</ul>
+</section>
+<section id="main-function" class="level3">
+<h3 class="anchored" data-anchor-id="main-function">Main() function:</h3>
+<ul>
+<li><strong>All C++ programs</strong> has one <code>main()</code> function, it’s the starting point of every program, The <code>main</code> function is called automatically when a C++ program begins.</li>
+</ul>
+<section id="printing" class="level4">
+<h4 class="anchored" data-anchor-id="printing">Printing:</h4>
+<ul>
+<li>By using <code>cout</code> we can print text on the screen.</li>
+<li>More than one piece of data can be printed at a time.</li>
+<li><code>endl</code> is used after <code>cout</code> to end the line, so the next <code>cout</code> could starts printing next line.</li>
+<li>We can print multiple pieces of data if we seperate them with <code>&lt;&lt;</code>.</li>
+</ul>
+</section>
+<section id="statements" class="level4">
+<h4 class="anchored" data-anchor-id="statements">Statements:</h4>
+<ul>
+<li><p>The lines of code inside <code>main</code> function are called <code>statements</code>.</p></li>
+<li><p>All statements in C++ must end with semi-colon <strong>;</strong>.</p></li>
+<li><p><strong>The compiler</strong> reads our code and turns it into instructions that a computer can understand (machine instructions).</p></li>
+<li><p>Then the compiler will generate an executable program which is just a file filled with machine instructions.</p>
+<ul>
+<li>The compiler uses the semi-colons to know where each statement ends. If you do not include a semi-colon at the end of every statement then you will get a <code>syntax error</code>. A program with syntax errors will not compile and run. #### String:</li>
+</ul></li>
+<li><p>The thing printed to the screen is called string, which refers to a groupr of characters inside <code>""</code>. #### Comments:</p></li>
+<li><p>As in python comments are non executable code that we put beside the code in order to explain for us or others ideas or concepts in the code.</p></li>
+<li><p>In C++ the comment starts with //.</p></li>
+<li><p>There are two types of comments- single line comments and multi-line comments. All code in between a /* and a */ are called multi-line comments. They will also be ignored by the compiler. When you have a lot to say in a comment you will use these</p></li>
+</ul>
+</section>
+</section>
+<section id="variables" class="level3">
+<h3 class="anchored" data-anchor-id="variables">Variables:</h3>
+<ul>
+<li><p>We will write a program that will find the distance between two points on a graph. It will need variables to hold the points (an X and a Y value for each point) and a variable to hold the length of the line that connects the points.</p></li>
+<li><p>Since C++ is a static typing language, we need to <strong>declare</strong> the type of the variable while creating it, and this variable will only accept the type is assigned to.</p></li>
+<li><p>Here we declare a variable <code>var</code> with type <code>int</code> which refers to integer or whole number.</p></li>
+</ul>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4" style="background: #f1f3f5;"><pre class="sourceCode numberSource cpp number-lines code-with-copy"><code class="sourceCode cpp"><span id="cb4-1"><span class="dt" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">int</span> var <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">5</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span></span>
+<span id="cb4-2"><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">std::</span>cout <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;&lt;</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"variable of type integer: "</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;&lt;</span> var <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">&lt;&lt;</span> <span class="bu" style="color: null;
 background-color: null;
 font-style: inherit;">std::</span>endl<span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">;</span></span></code></pre></div></div>
-<pre><code>It worked!</code></pre>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3" style="background: #f1f3f5;"><pre class="sourceCode numberSource cpp number-lines code-with-copy"><code class="sourceCode cpp"></code></pre></div></div>
+<pre><code>variable of type integer: 5</code></pre>
+<ul>
+<li>A variable is place where we store data in the memory that can be read or written to in a program.</li>
+<li>We think of variables as boxes that hold data, and each box is distinct in the memory. So every variable lives in a location in memory, and we can retrieve it by name without carrying about it’s location in memory.</li>
+</ul>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6" style="background: #f1f3f5;"><pre class="sourceCode numberSource cpp number-lines code-with-copy"><code class="sourceCode cpp"><span id="cb6-1"><span class="dt" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">void</span> func<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">()</span></span>
+<span id="cb6-2"><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">{</span></span>
+<span id="cb6-3">    <span class="dt" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">int</span> var0<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span></span>
+<span id="cb6-4">    <span class="dt" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">int</span> var1<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span></span>
+<span id="cb6-5"></span>
+<span id="cb6-6">    <span class="dt" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">int</span> var2<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span></span>
+<span id="cb6-7">    <span class="dt" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">int</span> var3<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span></span>
+<span id="cb6-8"></span>
+<span id="cb6-9">    var0 <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span></span>
+<span id="cb6-10">    var1 <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span></span>
+<span id="cb6-11">    var2 <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span></span>
+<span id="cb6-12">    var3 <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span></span>
+<span id="cb6-13"></span>
+<span id="cb6-14">    <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">std::</span>cout <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;&lt;</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"variable 1: "</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;&lt;</span>var0<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;&lt;</span> <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">std::</span>endl<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span></span>
+<span id="cb6-15">    <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">std::</span>cout <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;&lt;</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"variable 2: "</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;&lt;</span>var1<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;&lt;</span> <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">std::</span>endl<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span></span>
+<span id="cb6-16">    <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">std::</span>cout <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;&lt;</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"variable 3: "</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;&lt;</span>var2<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;&lt;</span> <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">std::</span>endl<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span></span>
+<span id="cb6-17">    <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">std::</span>cout <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;&lt;</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"variable 4: "</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;&lt;</span>var3<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;&lt;</span> <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">std::</span>endl<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span></span>
+<span id="cb6-18"><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">}</span></span>
+<span id="cb6-19">func<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">();</span></span></code></pre></div></div>
+<pre><code>variable 1: 1
+variable 2: 1
+variable 3: 2
+variable 4: 2</code></pre>
+<ul>
+<li>Here I declared 4 variables of type int, at this point the program requires a box in the memory for each variable.</li>
+<li>Then when I assign each variable to a value, the program will put those values in their correspondent box.</li>
+<li>Now we have what represents the points in a graph: <code>var0</code> and <code>var1</code> for point 1 &amp; <code>var2</code> and <code>var3</code> for point 2, now we need variable that will hold the value of the distance. The type of that variable must be float number, since it can be decimal.</li>
+</ul>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8" style="background: #f1f3f5;"><pre class="sourceCode numberSource cpp number-lines code-with-copy"><code class="sourceCode cpp"><span id="cb8-1"><span class="dt" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">void</span> func2<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">()</span></span>
+<span id="cb8-2"><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">{</span></span>
+<span id="cb8-3">    <span class="dt" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">int</span> var0<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span></span>
+<span id="cb8-4">    <span class="dt" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">int</span> var1<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span></span>
+<span id="cb8-5">    <span class="dt" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">int</span> var2<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span></span>
+<span id="cb8-6">    <span class="dt" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">int</span> var3<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span></span>
+<span id="cb8-7">    var0 <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span></span>
+<span id="cb8-8">    var1 <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span></span>
+<span id="cb8-9">    var2 <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span></span>
+<span id="cb8-10">    var3 <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span></span>
+<span id="cb8-11"></span>
+<span id="cb8-12">    <span class="dt" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">float</span> lengthOfline<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span></span>
+<span id="cb8-13"><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">}</span></span></code></pre></div></div>
+<ul>
+<li>the variable <code>lengthOfline</code> doesn’t have value yet, so need to calculate the distance: <img src="https://latex.codecogs.com/png.latex?d%20=%20%5Csqrt%7B(x_2%20-%20x_1)%5E2%20+%20(y_2%20-%20y_1)%5E2%7D"></li>
+<li>So we need power and square root. we could multiply the number by itself to obtain the power but the square root need to be hard coded, but luckily we can just import it from <strong>math</strong> module in C++, which we need to import in order to use the built in function <strong>sqrt</strong>.</li>
+</ul>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9" style="background: #f1f3f5;"><pre class="sourceCode numberSource cpp number-lines code-with-copy"><code class="sourceCode cpp"><span id="cb9-1"><span class="pp" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">#include </span><span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">&lt;cmath&gt;</span></span>
+<span id="cb9-2"><span class="dt" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">void</span> func3<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">()</span></span>
+<span id="cb9-3"><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">{</span> </span>
+<span id="cb9-4">    <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">//declare the variables to hold points </span></span>
+<span id="cb9-5">    <span class="dt" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">int</span> x1<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span> </span>
+<span id="cb9-6">    <span class="dt" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">int</span> y1<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span> </span>
+<span id="cb9-7"> </span>
+<span id="cb9-8">    <span class="dt" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">int</span> x2<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span> </span>
+<span id="cb9-9">    <span class="dt" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">int</span> y2<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span> </span>
+<span id="cb9-10"> </span>
+<span id="cb9-11">    <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">//fill the point variables with data </span></span>
+<span id="cb9-12">    x1 <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span> </span>
+<span id="cb9-13">    y1 <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span> </span>
+<span id="cb9-14"> </span>
+<span id="cb9-15">    x2 <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span> </span>
+<span id="cb9-16">    y2 <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">4</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span> </span>
+<span id="cb9-17"> </span>
+<span id="cb9-18">    <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">//declare a variable to hold the length of a line between two points </span></span>
+<span id="cb9-19">    <span class="dt" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">float</span> lengthOfLine<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span> </span>
+<span id="cb9-20"> </span>
+<span id="cb9-21">    <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">//use the distance formula to find the distance </span></span>
+<span id="cb9-22">    lengthOfLine <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> sqrt<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">(((</span>x2 <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">-</span> x1<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">)</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">*</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">(</span>x2 <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">-</span> x1<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">))</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">((</span>y2 <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">-</span> y1<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">)</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">*</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">(</span>y2 <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">-</span> y1<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">)));</span> </span>
+<span id="cb9-23"> </span>
+<span id="cb9-24">    <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">//print the length of the line </span></span>
+<span id="cb9-25">    <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">std::</span>cout<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;&lt;</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"The length of the line is: "</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;&lt;</span>lengthOfLine<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;&lt;</span><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">std::</span>endl<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span> </span>
+<span id="cb9-26">  </span>
+<span id="cb9-27"><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">}</span></span>
+<span id="cb9-28">func3<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">();</span></span></code></pre></div></div>
+<pre><code>The length of the line is: 2</code></pre>
+</section>
+<section id="data-types" class="level3">
+<h3 class="anchored" data-anchor-id="data-types">Data types:</h3>
+<ul>
+<li>In C++ data types are defined once and cannot be changed. If a variable is decalared with a specific data type, it can only hold values that suits that data type.</li>
+<li>We already used <code>int</code> which is a whole number, <code>float</code> a decimal. There are many other types:</li>
+</ul>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11" style="background: #f1f3f5;"><pre class="sourceCode numberSource cpp number-lines code-with-copy"><code class="sourceCode cpp"><span id="cb11-1"><span class="pp" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">#include </span><span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">&lt;string&gt;</span></span>
+<span id="cb11-2"><span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">using</span> <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">namespace</span> std<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span></span></code></pre></div></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12" style="background: #f1f3f5;"><pre class="sourceCode numberSource cpp number-lines code-with-copy"><code class="sourceCode cpp"><span id="cb12-1"><span class="dt" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">void</span> basicdtypes<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">()</span></span>
+<span id="cb12-2"><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">{</span></span>
+<span id="cb12-3">    <span class="dt" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">int</span> num <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">5</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span></span>
+<span id="cb12-4">    <span class="dt" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">float</span> dec <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">5.22</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span></span>
+<span id="cb12-5">    <span class="dt" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">char</span> oneChar <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="ch" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'K'</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span></span>
+<span id="cb12-6">    string name <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Ismail"</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span></span>
+<span id="cb12-7"></span>
+<span id="cb12-8">    cout <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;&lt;</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"this is a whole number: "</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;&lt;</span> num <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;&lt;</span> endl<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span></span>
+<span id="cb12-9">    cout <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;&lt;</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"this is a decimal number: "</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;&lt;</span>dec<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;&lt;</span> endl<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span></span>
+<span id="cb12-10">    cout <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;&lt;</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"this is single character: "</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;&lt;</span>oneChar<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;&lt;</span> endl<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span></span>
+<span id="cb12-11">    cout <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;&lt;</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"This is a string of charaters: "</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;&lt;</span>name<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;&lt;</span> endl<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span></span>
+<span id="cb12-12"><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">}</span></span>
+<span id="cb12-13">basicdtypes<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">();</span></span></code></pre></div></div>
+<pre><code>this is a whole number: 5
+this is a decimal number: 5.22
+this is single character: K
+This is a string of charaters: Ismail</code></pre>
+<ul>
+<li><code>char</code> is a single character between single quotes.</li>
+<li><code>string</code> is couple of characters between double quotes, and it’s not primitive type, it must be imported <code>#include &lt;string&gt;</code></li>
+</ul>
+</section>
+<section id="numbers-types" class="level3">
+<h3 class="anchored" data-anchor-id="numbers-types">Numbers types:</h3>
+<ul>
+<li>Till now we saw 2 numerical data types: <code>int</code> and <code>float</code>.</li>
+<li>A data type defines a few things:
+<ul>
+<li>the operations that can be performed on variables of that type</li>
+<li>the values that can be stored inside a variable of that type (there is usually a range of acceptable values)</li>
+<li>the amount of space a variable takes up in memory</li>
+</ul></li>
+<li>The operations performed on <code>int</code> are: <strong><code>- + / *</code></strong>, the division is the only operation that requires some explanation.</li>
+<li>Here is a division between to integers:</li>
+</ul>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb14" style="background: #f1f3f5;"><pre class="sourceCode numberSource cpp number-lines code-with-copy"><code class="sourceCode cpp"><span id="cb14-1"><span class="dt" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">void</span> divint<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">()</span></span>
+<span id="cb14-2"><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">{</span></span>
+<span id="cb14-3">    <span class="dt" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">int</span> a <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">10</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span></span>
+<span id="cb14-4">    <span class="dt" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">int</span> b <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">5</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span></span>
+<span id="cb14-5">    <span class="dt" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">int</span> res <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> a <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">/</span> b<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span></span>
+<span id="cb14-6">    cout <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;&lt;</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"result a / b=&gt; "</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;&lt;</span>res<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;&lt;</span> endl<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span></span>
+<span id="cb14-7"><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">}</span>    </span>
+<span id="cb14-8">divint<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">();</span></span></code></pre></div></div>
+<pre><code>result a / b=&gt; 2</code></pre>
+<ul>
+<li>What if we want to divide 2 integers that will causes not a whole number:</li>
+</ul>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb16" style="background: #f1f3f5;"><pre class="sourceCode numberSource cpp number-lines code-with-copy"><code class="sourceCode cpp"><span id="cb16-1"><span class="dt" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">void</span> dvd<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">()</span></span>
+<span id="cb16-2"><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">{</span></span>
+<span id="cb16-3">    <span class="dt" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">int</span> num <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">12</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span></span>
+<span id="cb16-4">    <span class="dt" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">int</span> num1 <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span></span>
+<span id="cb16-5">    <span class="dt" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">int</span> res <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> num <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">/</span> num1<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span></span>
+<span id="cb16-6">    cout <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;&lt;</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"result as num = 12: "</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;&lt;</span>res<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;&lt;</span> endl<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span></span>
+<span id="cb16-7">    num <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">13</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span></span>
+<span id="cb16-8">    res <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> num <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">/</span> num1<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span></span>
+<span id="cb16-9">    cout <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;&lt;</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"result as num = 13: "</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;&lt;</span>res<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;&lt;</span> endl<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span></span>
+<span id="cb16-10"><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">}</span></span>
+<span id="cb16-11">dvd<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">();</span></span></code></pre></div></div>
+<pre><code>result as num = 12: 6
+result as num = 13: 6</code></pre>
+<ul>
+<li><p>At first, the result was 6 which is the obvious answer, but when we predicted <code>6.5</code> we still get <code>6</code>?</p></li>
+<li><p>The reason is that integer division returns the quotient which is always an integer. This is true of all integer divides using the / operator</p></li>
+<li><p>There is another integer division operator called the <strong>modulus operator</strong> that returns the remainder. The mod operator is the <strong><code>%</code></strong> symbol.</p></li>
+</ul>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb18" style="background: #f1f3f5;"><pre class="sourceCode numberSource cpp number-lines code-with-copy"><code class="sourceCode cpp"><span id="cb18-1"><span class="dt" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">void</span> divmod<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">()</span></span>
+<span id="cb18-2"><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">{</span></span>
+<span id="cb18-3">     </span>
+<span id="cb18-4">    <span class="dt" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">int</span> num1 <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">12</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span> </span>
+<span id="cb18-5">    <span class="dt" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">int</span> num2 <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span> </span>
+<span id="cb18-6">    <span class="dt" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">int</span> result<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span> </span>
+<span id="cb18-7"> </span>
+<span id="cb18-8">    result <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> num1 <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">/</span> num2<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span> </span>
+<span id="cb18-9">    cout <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;&lt;</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"result with num1 = 12: "</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;&lt;</span> result <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;&lt;</span> endl<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span>     </span>
+<span id="cb18-10">    num1 <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">13</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span> </span>
+<span id="cb18-11"> </span>
+<span id="cb18-12">    result <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> num1 <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">/</span> num2<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span> </span>
+<span id="cb18-13">    result <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> num1 <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">%</span> num2<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span> </span>
+<span id="cb18-14">    cout <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;&lt;</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">" result with num1 = 13: "</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;&lt;</span> result <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;&lt;</span> endl<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span></span>
+<span id="cb18-15">    </span>
+<span id="cb18-16"><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">}</span></span>
+<span id="cb18-17"></span>
+<span id="cb18-18">divmod<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">();</span></span></code></pre></div></div>
+<pre><code>result with num1 = 12: 6
+ result with num1 = 13: 1</code></pre>
+<ul>
+<li><p>A data type also specifies an acceptable range of values.</p></li>
+<li><p>An int variable cannot hold an infinite sized number, there is a limit.</p></li>
+<li><p>There is a built in constant called <strong><code>INT_MAX</code></strong> that holds the largest value that can be stored in any int variable (there is an <strong><code>INT_MIN</code></strong> too).</p></li>
+</ul>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb20" style="background: #f1f3f5;"><pre class="sourceCode numberSource cpp number-lines code-with-copy"><code class="sourceCode cpp"><span id="cb20-1"><span class="pp" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">#include </span><span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">&lt;climits&gt;</span></span></code></pre></div></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb21" style="background: #f1f3f5;"><pre class="sourceCode numberSource cpp number-lines code-with-copy"><code class="sourceCode cpp"><span id="cb21-1"><span class="dt" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">int</span> largeNumber<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span></span>
+<span id="cb21-2">largeNumber <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> INT_MAX<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span></span>
+<span id="cb21-3">cout<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;&lt;</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"largest number can be stored: "</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;&lt;</span>largeNumber<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;&lt;</span> endl<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span></span></code></pre></div></div>
+<pre><code>largest number can be stored: 2147483647</code></pre>
+<ul>
+<li>Adding one number to that value will causes an out of range error</li>
+<li>The arithmetic operators for floats are the same as ints except there is no mod operator. float division results in numbers with fractional parts.</li>
+<li>In case we want to declare a float data type but the value is a whole number we need to explicitly tell the compiler it’s a float number by adding <code>.0</code>:</li>
+</ul>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb23" style="background: #f1f3f5;"><pre class="sourceCode numberSource cpp number-lines code-with-copy"><code class="sourceCode cpp"><span id="cb23-1"><span class="pp" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">#include </span><span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">&lt;typeinfo&gt;</span></span>
+<span id="cb23-2"><span class="dt" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">void</span> wholeFloat<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">()</span></span>
+<span id="cb23-3"><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">{</span></span>
+<span id="cb23-4">    <span class="dt" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">int</span> num1 <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">15</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span></span>
+<span id="cb23-5">    <span class="dt" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">float</span> num2 <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">15.0</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span></span>
+<span id="cb23-6">    cout <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;&lt;</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"the type of num1 = 15 :  "</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;&lt;</span> <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">typeid</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">(</span>num1<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">).</span>name<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">()</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;&lt;</span> endl<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span></span>
+<span id="cb23-7">    cout <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;&lt;</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"the type of num2 = 15.0 :  "</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;&lt;</span> <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">typeid</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">(</span>num2<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">).</span>name<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">()</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;&lt;</span> endl<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span></span>
+<span id="cb23-8">    </span>
+<span id="cb23-9">    </span>
+<span id="cb23-10"><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">}</span></span>
+<span id="cb23-11"></span>
+<span id="cb23-12">wholeFloat<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">();</span></span></code></pre></div></div>
+<pre><code>the type of num1 = 15 :  i
+the type of num2 = 15.0 :  f</code></pre>
+<ul>
+<li>We get <code>i</code> for integer for <code>15</code> and <code>f</code> float for <code>15.0</code>.</li>
+</ul>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb25" style="background: #f1f3f5;"><pre class="sourceCode numberSource cpp number-lines code-with-copy"><code class="sourceCode cpp"></code></pre></div></div>
 
 
 <!-- -->
 
+</section>
 </section>
 
  ]]></description>
