@@ -44,7 +44,7 @@
 <li>Stage4: A <strong>Linker</strong> connects everything together (code, libraries, other file..) and creates the final executable file that can run.</li>
 </ul></li>
 </ul>
-<div id="732ae3ad-c366-45b7-8f63-14b182cd7a8a" class="cell" data-editable="true" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;&quot;}}" data-tags="[]" data-execution_count="2">
+<div id="732ae3ad-c366-45b7-8f63-14b182cd7a8a" class="cell" data-editable="true" data-quarto-private-1="{&quot;key&quot;:&quot;slideshow&quot;,&quot;value&quot;:{&quot;slide_type&quot;:&quot;&quot;}}" data-tags="[]" data-execution_count="1">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode numberSource cpp17 number-lines code-with-copy"><code class="sourceCode"><span id="cb1-1">#include &lt;iostream&gt;</span>
@@ -63,7 +63,7 @@
 <span id="cb1-14">}</span></code></pre></div></div>
 </details>
 </div>
-<div id="ac1b6dac-0b79-4814-81f7-2e7f50d86b52" class="cell" data-execution_count="3">
+<div id="ac1b6dac-0b79-4814-81f7-2e7f50d86b52" class="cell" data-execution_count="2">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2" style="background: #f1f3f5;"><pre class="sourceCode numberSource cpp17 number-lines code-with-copy"><code class="sourceCode"><span id="cb2-1">main()</span></code></pre></div></div>
@@ -75,7 +75,7 @@ Ismail.
 Hi, my name is Ismail.
 Hi, my name is Ismail.</code></pre>
 </div>
-<div class="cell-output cell-output-display" data-execution_count="3">
+<div class="cell-output cell-output-display" data-execution_count="2">
 <pre><code>0</code></pre>
 </div>
 </div>
@@ -124,7 +124,7 @@ Hi, my name is Ismail.</code></pre>
 <li><p>Since C++ is a static typing language, we need to <strong>declare</strong> the type of the variable while creating it, and this variable will only accept the type is assigned to.</p></li>
 <li><p>Here we declare a variable <code>var</code> with type <code>int</code> which refers to integer or whole number.</p></li>
 </ul>
-<div id="0307dbfd-ac8f-4133-95e3-e5aa189354f5" class="cell" data-execution_count="4">
+<div id="0307dbfd-ac8f-4133-95e3-e5aa189354f5" class="cell" data-execution_count="3">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5" style="background: #f1f3f5;"><pre class="sourceCode numberSource cpp17 number-lines code-with-copy"><code class="sourceCode"><span id="cb5-1">int var = 5;</span>
@@ -138,7 +138,7 @@ Hi, my name is Ismail.</code></pre>
 <li>A variable is place where we store data in the memory that can be read or written to in a program.</li>
 <li>We think of variables as boxes that hold data, and each box is distinct in the memory. So every variable lives in a location in memory, and we can retrieve it by name without carrying about it’s location in memory.</li>
 </ul>
-<div id="9d1787ad-94d3-45f9-b41d-546bb4b56c5b" class="cell" data-execution_count="5">
+<div id="9d1787ad-94d3-45f9-b41d-546bb4b56c5b" class="cell" data-execution_count="4">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7" style="background: #f1f3f5;"><pre class="sourceCode numberSource cpp17 number-lines code-with-copy"><code class="sourceCode"><span id="cb7-1">void func()</span>
@@ -173,7 +173,7 @@ variable 4: 2</code></pre>
 <li>Then when I assign each variable to a value, the program will put those values in their correspondent box.</li>
 <li>Now we have what represents the points in a graph: <code>var0</code> and <code>var1</code> for point 1 &amp; <code>var2</code> and <code>var3</code> for point 2, now we need variable that will hold the value of the distance. The type of that variable must be float number, since it can be decimal.</li>
 </ul>
-<div id="3a5cf6ba-3160-44aa-82bb-2c5ceefb5f15" class="cell" data-execution_count="6">
+<div id="3a5cf6ba-3160-44aa-82bb-2c5ceefb5f15" class="cell" data-execution_count="5">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9" style="background: #f1f3f5;"><pre class="sourceCode numberSource cpp17 number-lines code-with-copy"><code class="sourceCode"><span id="cb9-1">void func2()</span>
@@ -195,7 +195,7 @@ variable 4: 2</code></pre>
 <li>the variable <code>lengthOfline</code> doesn’t have value yet, so need to calculate the distance: <img src="https://latex.codecogs.com/png.latex?d%20=%20%5Csqrt%7B(x_2%20-%20x_1)%5E2%20+%20(y_2%20-%20y_1)%5E2%7D"></li>
 <li>So we need power and square root. we could multiply the number by itself to obtain the power but the square root need to be hard coded, but luckily we can just import it from <strong>math</strong> module in C++, which we need to import in order to use the built in function <strong>sqrt</strong>.</li>
 </ul>
-<div id="47c7a194-96bc-4649-94e3-f46d4b8c3530" class="cell" data-execution_count="7">
+<div id="47c7a194-96bc-4649-94e3-f46d4b8c3530" class="cell" data-execution_count="6">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10" style="background: #f1f3f5;"><pre class="sourceCode numberSource cpp17 number-lines code-with-copy"><code class="sourceCode"><span id="cb10-1">#include &lt;cmath&gt;</span>
@@ -238,14 +238,14 @@ variable 4: 2</code></pre>
 <li>In C++ data types are defined once and cannot be changed. If a variable is decalared with a specific data type, it can only hold values that suits that data type.</li>
 <li>We already used <code>int</code> which is a whole number, <code>float</code> a decimal. There are many other types:</li>
 </ul>
-<div id="9bbe186a-5363-493e-8dfa-c3535a9b9d46" class="cell" data-execution_count="8">
+<div id="9bbe186a-5363-493e-8dfa-c3535a9b9d46" class="cell" data-execution_count="7">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12" style="background: #f1f3f5;"><pre class="sourceCode numberSource cpp17 number-lines code-with-copy"><code class="sourceCode"><span id="cb12-1">#include &lt;string&gt;</span>
 <span id="cb12-2">using namespace std;</span></code></pre></div></div>
 </details>
 </div>
-<div id="0f9b773c-f91c-4b18-8612-e953cb6ba898" class="cell" data-execution_count="9">
+<div id="0f9b773c-f91c-4b18-8612-e953cb6ba898" class="cell" data-execution_count="8">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13" style="background: #f1f3f5;"><pre class="sourceCode numberSource cpp17 number-lines code-with-copy"><code class="sourceCode"><span id="cb13-1">void basicdtypes()</span>
@@ -287,7 +287,7 @@ This is a string of charaters: Ismail</code></pre>
 <li>The operations performed on <code>int</code> are: <strong><code>- + / *</code></strong>, the division is the only operation that requires some explanation.</li>
 <li>Here is a division between to integers:</li>
 </ul>
-<div id="47845e69-0263-40e9-8551-a13fd40b1266" class="cell" data-execution_count="10">
+<div id="47845e69-0263-40e9-8551-a13fd40b1266" class="cell" data-execution_count="9">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15" style="background: #f1f3f5;"><pre class="sourceCode numberSource cpp17 number-lines code-with-copy"><code class="sourceCode"><span id="cb15-1">void divint()</span>
@@ -306,7 +306,7 @@ This is a string of charaters: Ismail</code></pre>
 <ul>
 <li>What if we want to divide 2 integers that will causes not a whole number:</li>
 </ul>
-<div id="408c63b1-f54c-462e-9252-1ac3e964900c" class="cell" data-execution_count="11">
+<div id="408c63b1-f54c-462e-9252-1ac3e964900c" class="cell" data-execution_count="10">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17" style="background: #f1f3f5;"><pre class="sourceCode numberSource cpp17 number-lines code-with-copy"><code class="sourceCode"><span id="cb17-1">void dvd()</span>
@@ -331,7 +331,7 @@ result as num = 13: 6</code></pre>
 <li><p>The reason is that integer division returns the quotient which is always an integer. This is true of all integer divides using the / operator</p></li>
 <li><p>There is another integer division operator called the <strong>modulus operator</strong> that returns the remainder. The mod operator is the <strong><code>%</code></strong> symbol.</p></li>
 </ul>
-<div id="181dd807-7a3b-47d9-9735-0417aca6722e" class="cell" data-execution_count="12">
+<div id="181dd807-7a3b-47d9-9735-0417aca6722e" class="cell" data-execution_count="11">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19" style="background: #f1f3f5;"><pre class="sourceCode numberSource cpp17 number-lines code-with-copy"><code class="sourceCode"><span id="cb19-1">void divmod()</span>
@@ -363,13 +363,13 @@ result as num = 13: 6</code></pre>
 <li><p>An int variable cannot hold an infinite sized number, there is a limit.</p></li>
 <li><p>There is a built in constant called <strong><code>INT_MAX</code></strong> that holds the largest value that can be stored in any int variable (there is an <strong><code>INT_MIN</code></strong> too).</p></li>
 </ul>
-<div id="fc4532eb-64cd-40ed-88b5-1f144354e96e" class="cell" data-execution_count="13">
+<div id="fc4532eb-64cd-40ed-88b5-1f144354e96e" class="cell" data-execution_count="12">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21" style="background: #f1f3f5;"><pre class="sourceCode numberSource cpp17 number-lines code-with-copy"><code class="sourceCode"><span id="cb21-1">#include &lt;climits&gt;</span></code></pre></div></div>
 </details>
 </div>
-<div id="ce5e6a39-3dc9-481e-8b7c-ff931c4ed885" class="cell" data-execution_count="14">
+<div id="ce5e6a39-3dc9-481e-8b7c-ff931c4ed885" class="cell" data-execution_count="13">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22" style="background: #f1f3f5;"><pre class="sourceCode numberSource cpp17 number-lines code-with-copy"><code class="sourceCode"><span id="cb22-1">int largeNumber;</span>
@@ -385,7 +385,7 @@ result as num = 13: 6</code></pre>
 <li>The arithmetic operators for floats are the same as ints except there is no mod operator. float division results in numbers with fractional parts.</li>
 <li>In case we want to declare a float data type but the value is a whole number we need to explicitly tell the compiler it’s a float number by adding <code>.0</code>:</li>
 </ul>
-<div id="7a8d0205-2dab-4d87-8391-e5fb3e117b0c" class="cell" data-execution_count="19">
+<div id="7a8d0205-2dab-4d87-8391-e5fb3e117b0c" class="cell" data-execution_count="14">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb24" style="background: #f1f3f5;"><pre class="sourceCode numberSource cpp17 number-lines code-with-copy"><code class="sourceCode"><span id="cb24-1">#include &lt;typeinfo&gt;</span>
@@ -408,6 +408,12 @@ the type of num2 = 15.0 :  f</code></pre>
 </div>
 <ul>
 <li>We get <code>i</code> for integer for <code>15</code> and <code>f</code> float for <code>15.0</code>.</li>
+</ul>
+</section>
+<section id="characters-and-strings" class="level3">
+<h3 class="anchored" data-anchor-id="characters-and-strings">Characters and strings</h3>
+<ul>
+<li></li>
 </ul>
 
 
