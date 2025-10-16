@@ -334,10 +334,10 @@ Hi, my name is Ismail.</code></pre>
 <section id="printing" class="level4">
 <h4 class="anchored" data-anchor-id="printing">Printing:</h4>
 <ul>
-<li>By using <code>cout</code> we can print text on the screen.</li>
+<li>By using <strong><code>cout</code></strong> we can print text on the screen.</li>
 <li>More than one piece of data can be printed at a time.</li>
-<li><code>endl</code> is used after <code>cout</code> to end the line, so the next <code>cout</code> could starts printing next line.</li>
-<li>We can print multiple pieces of data if we seperate them with <code>&lt;&lt;</code>.</li>
+<li><strong><code>endl</code></strong> is used after <strong><code>cout</code></strong> to end the line, so the next <strong><code>cout</code></strong> could starts printing next line.</li>
+<li>We can print multiple pieces of data if we <strong>seperate</strong> them with <strong><code>&lt;&lt;</code></strong>.</li>
 </ul>
 </section>
 <section id="statements" class="level4">
@@ -353,7 +353,8 @@ Hi, my name is Ismail.</code></pre>
 <li><p>The thing printed to the screen is called string, which refers to a groupr of characters inside <code>""</code>. #### Comments:</p></li>
 <li><p>As in python comments are non executable code that we put beside the code in order to explain for us or others ideas or concepts in the code.</p></li>
 <li><p>In C++ the comment starts with //.</p></li>
-<li><p>There are two types of comments- single line comments and multi-line comments. All code in between a /* and a */ are called multi-line comments. They will also be ignored by the compiler. When you have a lot to say in a comment you will use these</p></li>
+<li><p>There are two types of comments:<br>
+- single line comments and multi-line comments. All code in between a /* and a */ are called multi-line comments. They will also be ignored by the compiler. When you have a lot to say in a comment you will use these</p></li>
 </ul>
 </section>
 </section>
@@ -383,23 +384,26 @@ Hi, my name is Ismail.</code></pre>
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource cpp17 number-lines code-with-copy"><code class="sourceCode"><span id="cb7-1"><a href="#cb7-1"></a>void func()</span>
 <span id="cb7-2"><a href="#cb7-2"></a>{</span>
-<span id="cb7-3"><a href="#cb7-3"></a>    int var0;</span>
-<span id="cb7-4"><a href="#cb7-4"></a>    int var1;</span>
-<span id="cb7-5"><a href="#cb7-5"></a></span>
-<span id="cb7-6"><a href="#cb7-6"></a>    int var2;</span>
-<span id="cb7-7"><a href="#cb7-7"></a>    int var3;</span>
-<span id="cb7-8"><a href="#cb7-8"></a></span>
-<span id="cb7-9"><a href="#cb7-9"></a>    var0 = 1;</span>
-<span id="cb7-10"><a href="#cb7-10"></a>    var1 = 1;</span>
-<span id="cb7-11"><a href="#cb7-11"></a>    var2 = 2;</span>
-<span id="cb7-12"><a href="#cb7-12"></a>    var3 = 2;</span>
-<span id="cb7-13"><a href="#cb7-13"></a></span>
-<span id="cb7-14"><a href="#cb7-14"></a>    std::cout &lt;&lt;"variable 1: " &lt;&lt;var0&lt;&lt; std::endl;</span>
-<span id="cb7-15"><a href="#cb7-15"></a>    std::cout &lt;&lt;"variable 2: " &lt;&lt;var1&lt;&lt; std::endl;</span>
-<span id="cb7-16"><a href="#cb7-16"></a>    std::cout &lt;&lt;"variable 3: " &lt;&lt;var2&lt;&lt; std::endl;</span>
-<span id="cb7-17"><a href="#cb7-17"></a>    std::cout &lt;&lt;"variable 4: " &lt;&lt;var3&lt;&lt; std::endl;</span>
-<span id="cb7-18"><a href="#cb7-18"></a>}</span>
-<span id="cb7-19"><a href="#cb7-19"></a>func();</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb7-3"><a href="#cb7-3"></a>    // declare variables</span>
+<span id="cb7-4"><a href="#cb7-4"></a>    int var0;</span>
+<span id="cb7-5"><a href="#cb7-5"></a>    int var1;</span>
+<span id="cb7-6"><a href="#cb7-6"></a></span>
+<span id="cb7-7"><a href="#cb7-7"></a>    int var2;</span>
+<span id="cb7-8"><a href="#cb7-8"></a>    int var3;</span>
+<span id="cb7-9"><a href="#cb7-9"></a></span>
+<span id="cb7-10"><a href="#cb7-10"></a>    // assign values to each variable</span>
+<span id="cb7-11"><a href="#cb7-11"></a>    var0 = 1;</span>
+<span id="cb7-12"><a href="#cb7-12"></a>    var1 = 1;</span>
+<span id="cb7-13"><a href="#cb7-13"></a>    var2 = 2;</span>
+<span id="cb7-14"><a href="#cb7-14"></a>    var3 = 2;</span>
+<span id="cb7-15"><a href="#cb7-15"></a></span>
+<span id="cb7-16"><a href="#cb7-16"></a>    // print the variables value with a message on the screen</span>
+<span id="cb7-17"><a href="#cb7-17"></a>    std::cout &lt;&lt;"variable 1: " &lt;&lt;var0&lt;&lt; std::endl;</span>
+<span id="cb7-18"><a href="#cb7-18"></a>    std::cout &lt;&lt;"variable 2: " &lt;&lt;var1&lt;&lt; std::endl;</span>
+<span id="cb7-19"><a href="#cb7-19"></a>    std::cout &lt;&lt;"variable 3: " &lt;&lt;var2&lt;&lt; std::endl;</span>
+<span id="cb7-20"><a href="#cb7-20"></a>    std::cout &lt;&lt;"variable 4: " &lt;&lt;var3&lt;&lt; std::endl;</span>
+<span id="cb7-21"><a href="#cb7-21"></a>}</span>
+<span id="cb7-22"><a href="#cb7-22"></a>func();</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>variable 1: 1
@@ -427,8 +431,10 @@ variable 4: 2</code></pre>
 <span id="cb9-9"><a href="#cb9-9"></a>    var2 = 2;</span>
 <span id="cb9-10"><a href="#cb9-10"></a>    var3 = 2;</span>
 <span id="cb9-11"><a href="#cb9-11"></a></span>
-<span id="cb9-12"><a href="#cb9-12"></a>    float lengthOfline;</span>
-<span id="cb9-13"><a href="#cb9-13"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb9-12"><a href="#cb9-12"></a>    // declare a float type variable</span>
+<span id="cb9-13"><a href="#cb9-13"></a></span>
+<span id="cb9-14"><a href="#cb9-14"></a>    float lengthOfline;</span>
+<span id="cb9-15"><a href="#cb9-15"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 </div>
 <ul>
@@ -475,8 +481,8 @@ variable 4: 2</code></pre>
 <section id="data-types" class="level3">
 <h3 class="anchored" data-anchor-id="data-types">Data types:</h3>
 <ul>
-<li>In C++ data types are defined once and cannot be changed. If a variable is decalared with a specific data type, it can only hold values that suits that data type.</li>
-<li>We already used <code>int</code> which is a whole number, <code>float</code> a decimal. There are many other types:</li>
+<li>In C++ data types are defined once and cannot be changed. If a variable is declared with a specific data type, it can only hold values that suits that data type.</li>
+<li>We already used <strong><code>int</code></strong> which is a whole number, <strong><code>float</code></strong> a decimal. There are many other types:</li>
 </ul>
 <div id="9bbe186a-5363-493e-8dfa-c3535a9b9d46" class="cell" data-execution_count="7">
 <details class="code-fold">
@@ -535,12 +541,12 @@ This is a string of charaters: Ismail</code></pre>
 <span id="cb15-3"><a href="#cb15-3"></a>    int a = 10;</span>
 <span id="cb15-4"><a href="#cb15-4"></a>    int b = 5;</span>
 <span id="cb15-5"><a href="#cb15-5"></a>    int res = a / b;</span>
-<span id="cb15-6"><a href="#cb15-6"></a>    cout &lt;&lt;"result a / b=&gt; " &lt;&lt;res&lt;&lt; endl;</span>
+<span id="cb15-6"><a href="#cb15-6"></a>    cout &lt;&lt;"result a / b =&gt; " &lt;&lt;res&lt;&lt; endl;</span>
 <span id="cb15-7"><a href="#cb15-7"></a>}    </span>
 <span id="cb15-8"><a href="#cb15-8"></a>divint();</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-stdout">
-<pre><code>result a / b=&gt; 2</code></pre>
+<pre><code>result a / b =&gt; 2</code></pre>
 </div>
 </div>
 <ul>
@@ -582,20 +588,18 @@ result as num = 13: 6</code></pre>
 <span id="cb19-6"><a href="#cb19-6"></a>    int result; </span>
 <span id="cb19-7"><a href="#cb19-7"></a> </span>
 <span id="cb19-8"><a href="#cb19-8"></a>    result = num1 / num2; </span>
-<span id="cb19-9"><a href="#cb19-9"></a>    cout &lt;&lt; "result with num1 = 12: " &lt;&lt; result &lt;&lt; endl;     </span>
-<span id="cb19-10"><a href="#cb19-10"></a>    num1 = 13; </span>
-<span id="cb19-11"><a href="#cb19-11"></a> </span>
-<span id="cb19-12"><a href="#cb19-12"></a>    result = num1 / num2; </span>
-<span id="cb19-13"><a href="#cb19-13"></a>    result = num1 % num2; </span>
-<span id="cb19-14"><a href="#cb19-14"></a>    cout &lt;&lt; " result with num1 = 13: " &lt;&lt; result &lt;&lt; endl;</span>
-<span id="cb19-15"><a href="#cb19-15"></a>    </span>
-<span id="cb19-16"><a href="#cb19-16"></a>}</span>
-<span id="cb19-17"><a href="#cb19-17"></a></span>
-<span id="cb19-18"><a href="#cb19-18"></a>divmod();</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb19-9"><a href="#cb19-9"></a>    cout &lt;&lt; "result with / operator: " &lt;&lt; result &lt;&lt; endl;     </span>
+<span id="cb19-10"><a href="#cb19-10"></a> </span>
+<span id="cb19-11"><a href="#cb19-11"></a>    result = num1 % num2; </span>
+<span id="cb19-12"><a href="#cb19-12"></a>    cout &lt;&lt; " result with % operator: " &lt;&lt; result &lt;&lt; endl;</span>
+<span id="cb19-13"><a href="#cb19-13"></a>    </span>
+<span id="cb19-14"><a href="#cb19-14"></a>}</span>
+<span id="cb19-15"><a href="#cb19-15"></a></span>
+<span id="cb19-16"><a href="#cb19-16"></a>divmod();</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-stdout">
-<pre><code>result with num1 = 12: 6
- result with num1 = 13: 1</code></pre>
+<pre><code>result with / operator: 6
+ result with % operator: 0</code></pre>
 </div>
 </div>
 <ul>
@@ -653,10 +657,142 @@ the type of num2 = 15.0 :  f</code></pre>
 <section id="characters-and-strings" class="level3">
 <h3 class="anchored" data-anchor-id="characters-and-strings">Characters and strings</h3>
 <ul>
-<li></li>
+<li><strong><code>string</code></strong> is very strong type which allows us to make many different things and manipulates data in many ways.</li>
+<li>While **<code>char</code>* is a bit hard to work with, since it’s limited and not as versatile as <code>string</code>.</li>
 </ul>
+<div id="a523250e-ec0f-43be-a560-f68a8778f9db" class="cell" data-execution_count="15">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource cpp17 number-lines code-with-copy"><code class="sourceCode"><span id="cb26-1"><a href="#cb26-1"></a>void chars()</span>
+<span id="cb26-2"><a href="#cb26-2"></a>{</span>
+<span id="cb26-3"><a href="#cb26-3"></a>    </span>
+<span id="cb26-4"><a href="#cb26-4"></a>    char first = 'c';</span>
+<span id="cb26-5"><a href="#cb26-5"></a>    char second = 'h';</span>
+<span id="cb26-6"><a href="#cb26-6"></a>    char third = 'a';</span>
+<span id="cb26-7"><a href="#cb26-7"></a>    char fourth = 'r';</span>
+<span id="cb26-8"><a href="#cb26-8"></a></span>
+<span id="cb26-9"><a href="#cb26-9"></a>    string word = "String";</span>
+<span id="cb26-10"><a href="#cb26-10"></a>    </span>
+<span id="cb26-11"><a href="#cb26-11"></a>    cout &lt;&lt; first &lt;&lt; second &lt;&lt; third &lt;&lt; fourth &lt;&lt; endl;</span>
+<span id="cb26-12"><a href="#cb26-12"></a>    cout &lt;&lt; word &lt;&lt; endl;</span>
+<span id="cb26-13"><a href="#cb26-13"></a></span>
+<span id="cb26-14"><a href="#cb26-14"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+</div>
+<div id="6d46e63c-2b05-4b98-83db-0b5878bcb9c1" class="cell" data-execution_count="16">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource cpp17 number-lines code-with-copy"><code class="sourceCode"><span id="cb27-1"><a href="#cb27-1"></a>chars();</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>char
+String</code></pre>
+</div>
+</div>
+<section id="string-operations" class="level4">
+<h4 class="anchored" data-anchor-id="string-operations">String Operations:</h4>
+<ul>
+<li>String tyoe has many operation that we could use to manipulate data, like <strong>length()</strong> which as the name suggests tells us the length of string:</li>
+</ul>
+<div id="9ae0c064-5512-4f90-ab7f-0c42b76565e0" class="cell" data-execution_count="17">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource cpp17 number-lines code-with-copy"><code class="sourceCode"><span id="cb29-1"><a href="#cb29-1"></a>string name = "Ismail";</span>
+<span id="cb29-2"><a href="#cb29-2"></a>cout &lt;&lt; "Number of characters in Ismail is: " &lt;&lt; name.length() &lt;&lt; endl;</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>Number of characters in Ismail is: 6</code></pre>
+</div>
+</div>
+<ul>
+<li>The square brackets is another operator that will return an individual character in the string:</li>
+</ul>
+<div id="f22b1c9e-2433-4238-9597-abdb650e2173" class="cell" data-execution_count="18">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb31"><pre class="sourceCode numberSource cpp17 number-lines code-with-copy"><code class="sourceCode"><span id="cb31-1"><a href="#cb31-1"></a>string word = "word";</span>
+<span id="cb31-2"><a href="#cb31-2"></a>char letter  = word[0];</span>
+<span id="cb31-3"><a href="#cb31-3"></a>cout &lt;&lt; "this is a string: " &lt;&lt; word &lt;&lt; endl;</span>
+<span id="cb31-4"><a href="#cb31-4"></a>// the index is 0 based</span>
+<span id="cb31-5"><a href="#cb31-5"></a>cout &lt;&lt; "this is the first character of that word: " &lt;&lt; letter &lt;&lt; endl;</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>this is a string: word
+this is the first character of that word: w</code></pre>
+</div>
+</div>
+<ul>
+<li>The <strong>+</strong> operator concatenates strings together.</li>
+</ul>
+<div id="db165490-4f20-458c-92c6-f4100493c46d" class="cell" data-execution_count="19">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb33"><pre class="sourceCode numberSource cpp17 number-lines code-with-copy"><code class="sourceCode"><span id="cb33-1"><a href="#cb33-1"></a>string sentence = "word1";</span>
+<span id="cb33-2"><a href="#cb33-2"></a>sentence = sentence + " word2" + " word3" + " ...";</span>
+<span id="cb33-3"><a href="#cb33-3"></a>cout &lt;&lt; sentence &lt;&lt; endl;</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>word1 word2 word3 ...</code></pre>
+</div>
+</div>
+<ul>
+<li><p><strong>substr</strong> is a string function that will create a new string from the innards of another.</p></li>
+<li><p>This function takes a starting position and the number of character to use after that position and copies the characters into a new string.</p></li>
+<li><p><strong><code>find</code></strong> will return the position where the first occurrence of a word is found (and -1 if it is not found).</p></li>
+</ul>
+<div id="4a018f5f-767b-45e2-afdd-243e34d794a0" class="cell" data-execution_count="20">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb35"><pre class="sourceCode numberSource cpp17 number-lines code-with-copy"><code class="sourceCode"><span id="cb35-1"><a href="#cb35-1"></a>string sentence = "where is Aldo ?";</span>
+<span id="cb35-2"><a href="#cb35-2"></a>int findAldo = sentence.find("Aldo");</span>
+<span id="cb35-3"><a href="#cb35-3"></a>cout &lt;&lt; "Aldo can be found at this position: " &lt;&lt; findAldo &lt;&lt; endl;</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>Aldo can be found at this position: 9</code></pre>
+</div>
+</div>
+<ul>
+<li><strong><code>erase</code></strong> will remove characters from a string. It takes the starting position of where I want to start removing characters and he total number of characters to get rid of.</li>
+</ul>
+<div id="9e6642a0-3c13-4572-be53-f10630ef6e60" class="cell" data-execution_count="21">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb37"><pre class="sourceCode numberSource cpp17 number-lines code-with-copy"><code class="sourceCode"><span id="cb37-1"><a href="#cb37-1"></a>void func()</span>
+<span id="cb37-2"><a href="#cb37-2"></a>{</span>
+<span id="cb37-3"><a href="#cb37-3"></a>    string sentence = "In this sentence sentence, it must be no repeated word!";</span>
+<span id="cb37-4"><a href="#cb37-4"></a>    int repeatedWord = sentence.find("sentence");</span>
+<span id="cb37-5"><a href="#cb37-5"></a>    sentence.erase(repeatedWord, 9);</span>
+<span id="cb37-6"><a href="#cb37-6"></a>    cout &lt;&lt; sentence &lt;&lt; endl;</span>
+<span id="cb37-7"><a href="#cb37-7"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+</div>
+<div id="70bfb979-8495-4a1d-9525-efb473c54498" class="cell" data-execution_count="22">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb38"><pre class="sourceCode numberSource cpp17 number-lines code-with-copy"><code class="sourceCode"><span id="cb38-1"><a href="#cb38-1"></a>func();</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>In this sentence, it must be no repeated word!</code></pre>
+</div>
+</div>
+<ul>
+<li><strong><code>insert</code></strong> adds a new string after the position specified in the string.</li>
+</ul>
+<div id="253aab3a-d8d7-4b40-82e1-93905c8bd7af" class="cell" data-execution_count="23">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb40"><pre class="sourceCode numberSource cpp17 number-lines code-with-copy"><code class="sourceCode"><span id="cb40-1"><a href="#cb40-1"></a>string sentence = ", my name is Ismail.";</span>
+<span id="cb40-2"><a href="#cb40-2"></a>string greeting = "Hi";</span>
+<span id="cb40-3"><a href="#cb40-3"></a>sentence = sentence.insert(0, greeting);</span>
+<span id="cb40-4"><a href="#cb40-4"></a>cout &lt;&lt; sentence &lt;&lt; endl;</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>Hi, my name is Ismail.</code></pre>
+</div>
+</div>
 
 
+</section>
 </section>
 </section>
 

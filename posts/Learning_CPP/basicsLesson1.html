@@ -249,6 +249,7 @@ window.Quarto = {
   <li><a href="#variables" id="toc-variables" class="nav-link" data-scroll-target="#variables">Variables:</a></li>
   <li><a href="#data-types" id="toc-data-types" class="nav-link" data-scroll-target="#data-types">Data types:</a></li>
   <li><a href="#numbers-types" id="toc-numbers-types" class="nav-link" data-scroll-target="#numbers-types">Numbers types:</a></li>
+  <li><a href="#characters-and-strings" id="toc-characters-and-strings" class="nav-link" data-scroll-target="#characters-and-strings">Characters and strings</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -323,10 +324,10 @@ Hi, my name is Ismail.
 <section id="printing" class="level4">
 <h4 class="anchored" data-anchor-id="printing">Printing:</h4>
 <ul>
-<li>By using <code>cout</code> we can print text on the screen.</li>
+<li>By using <strong><code>cout</code></strong> we can print text on the screen.</li>
 <li>More than one piece of data can be printed at a time.</li>
-<li><code>endl</code> is used after <code>cout</code> to end the line, so the next <code>cout</code> could starts printing next line.</li>
-<li>We can print multiple pieces of data if we seperate them with <code>&lt;&lt;</code>.</li>
+<li><strong><code>endl</code></strong> is used after <strong><code>cout</code></strong> to end the line, so the next <strong><code>cout</code></strong> could starts printing next line.</li>
+<li>We can print multiple pieces of data if we <strong>seperate</strong> them with <strong><code>&lt;&lt;</code></strong>.</li>
 </ul>
 </section>
 <section id="statements" class="level4">
@@ -342,7 +343,8 @@ Hi, my name is Ismail.
 <li><p>The thing printed to the screen is called string, which refers to a groupr of characters inside <code>""</code>. #### Comments:</p></li>
 <li><p>As in python comments are non executable code that we put beside the code in order to explain for us or others ideas or concepts in the code.</p></li>
 <li><p>In C++ the comment starts with //.</p></li>
-<li><p>There are two types of comments- single line comments and multi-line comments. All code in between a /* and a */ are called multi-line comments. They will also be ignored by the compiler. When you have a lot to say in a comment you will use these</p></li>
+<li><p>There are two types of comments:<br>
+- single line comments and multi-line comments. All code in between a /* and a */ are called multi-line comments. They will also be ignored by the compiler. When you have a lot to say in a comment you will use these</p></li>
 </ul>
 </section>
 </section>
@@ -362,23 +364,26 @@ Hi, my name is Ismail.
 </ul>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode numberSource cpp number-lines code-with-copy"><code class="sourceCode cpp"><span id="cb6-1"><a href="#cb6-1"></a><span class="dt">void</span> func<span class="op">()</span></span>
 <span id="cb6-2"><a href="#cb6-2"></a><span class="op">{</span></span>
-<span id="cb6-3"><a href="#cb6-3"></a>    <span class="dt">int</span> var0<span class="op">;</span></span>
-<span id="cb6-4"><a href="#cb6-4"></a>    <span class="dt">int</span> var1<span class="op">;</span></span>
-<span id="cb6-5"><a href="#cb6-5"></a></span>
-<span id="cb6-6"><a href="#cb6-6"></a>    <span class="dt">int</span> var2<span class="op">;</span></span>
-<span id="cb6-7"><a href="#cb6-7"></a>    <span class="dt">int</span> var3<span class="op">;</span></span>
-<span id="cb6-8"><a href="#cb6-8"></a></span>
-<span id="cb6-9"><a href="#cb6-9"></a>    var0 <span class="op">=</span> <span class="dv">1</span><span class="op">;</span></span>
-<span id="cb6-10"><a href="#cb6-10"></a>    var1 <span class="op">=</span> <span class="dv">1</span><span class="op">;</span></span>
-<span id="cb6-11"><a href="#cb6-11"></a>    var2 <span class="op">=</span> <span class="dv">2</span><span class="op">;</span></span>
-<span id="cb6-12"><a href="#cb6-12"></a>    var3 <span class="op">=</span> <span class="dv">2</span><span class="op">;</span></span>
-<span id="cb6-13"><a href="#cb6-13"></a></span>
-<span id="cb6-14"><a href="#cb6-14"></a>    <span class="bu">std::</span>cout <span class="op">&lt;&lt;</span><span class="st">"variable 1: "</span> <span class="op">&lt;&lt;</span>var0<span class="op">&lt;&lt;</span> <span class="bu">std::</span>endl<span class="op">;</span></span>
-<span id="cb6-15"><a href="#cb6-15"></a>    <span class="bu">std::</span>cout <span class="op">&lt;&lt;</span><span class="st">"variable 2: "</span> <span class="op">&lt;&lt;</span>var1<span class="op">&lt;&lt;</span> <span class="bu">std::</span>endl<span class="op">;</span></span>
-<span id="cb6-16"><a href="#cb6-16"></a>    <span class="bu">std::</span>cout <span class="op">&lt;&lt;</span><span class="st">"variable 3: "</span> <span class="op">&lt;&lt;</span>var2<span class="op">&lt;&lt;</span> <span class="bu">std::</span>endl<span class="op">;</span></span>
-<span id="cb6-17"><a href="#cb6-17"></a>    <span class="bu">std::</span>cout <span class="op">&lt;&lt;</span><span class="st">"variable 4: "</span> <span class="op">&lt;&lt;</span>var3<span class="op">&lt;&lt;</span> <span class="bu">std::</span>endl<span class="op">;</span></span>
-<span id="cb6-18"><a href="#cb6-18"></a><span class="op">}</span></span>
-<span id="cb6-19"><a href="#cb6-19"></a>func<span class="op">();</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb6-3"><a href="#cb6-3"></a>    <span class="co">// declare variables</span></span>
+<span id="cb6-4"><a href="#cb6-4"></a>    <span class="dt">int</span> var0<span class="op">;</span></span>
+<span id="cb6-5"><a href="#cb6-5"></a>    <span class="dt">int</span> var1<span class="op">;</span></span>
+<span id="cb6-6"><a href="#cb6-6"></a></span>
+<span id="cb6-7"><a href="#cb6-7"></a>    <span class="dt">int</span> var2<span class="op">;</span></span>
+<span id="cb6-8"><a href="#cb6-8"></a>    <span class="dt">int</span> var3<span class="op">;</span></span>
+<span id="cb6-9"><a href="#cb6-9"></a></span>
+<span id="cb6-10"><a href="#cb6-10"></a>    <span class="co">// assign values to each variable</span></span>
+<span id="cb6-11"><a href="#cb6-11"></a>    var0 <span class="op">=</span> <span class="dv">1</span><span class="op">;</span></span>
+<span id="cb6-12"><a href="#cb6-12"></a>    var1 <span class="op">=</span> <span class="dv">1</span><span class="op">;</span></span>
+<span id="cb6-13"><a href="#cb6-13"></a>    var2 <span class="op">=</span> <span class="dv">2</span><span class="op">;</span></span>
+<span id="cb6-14"><a href="#cb6-14"></a>    var3 <span class="op">=</span> <span class="dv">2</span><span class="op">;</span></span>
+<span id="cb6-15"><a href="#cb6-15"></a></span>
+<span id="cb6-16"><a href="#cb6-16"></a>    <span class="co">// print the variables value with a message on the screen</span></span>
+<span id="cb6-17"><a href="#cb6-17"></a>    <span class="bu">std::</span>cout <span class="op">&lt;&lt;</span><span class="st">"variable 1: "</span> <span class="op">&lt;&lt;</span>var0<span class="op">&lt;&lt;</span> <span class="bu">std::</span>endl<span class="op">;</span></span>
+<span id="cb6-18"><a href="#cb6-18"></a>    <span class="bu">std::</span>cout <span class="op">&lt;&lt;</span><span class="st">"variable 2: "</span> <span class="op">&lt;&lt;</span>var1<span class="op">&lt;&lt;</span> <span class="bu">std::</span>endl<span class="op">;</span></span>
+<span id="cb6-19"><a href="#cb6-19"></a>    <span class="bu">std::</span>cout <span class="op">&lt;&lt;</span><span class="st">"variable 3: "</span> <span class="op">&lt;&lt;</span>var2<span class="op">&lt;&lt;</span> <span class="bu">std::</span>endl<span class="op">;</span></span>
+<span id="cb6-20"><a href="#cb6-20"></a>    <span class="bu">std::</span>cout <span class="op">&lt;&lt;</span><span class="st">"variable 4: "</span> <span class="op">&lt;&lt;</span>var3<span class="op">&lt;&lt;</span> <span class="bu">std::</span>endl<span class="op">;</span></span>
+<span id="cb6-21"><a href="#cb6-21"></a><span class="op">}</span></span>
+<span id="cb6-22"><a href="#cb6-22"></a>func<span class="op">();</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <pre><code>variable 1: 1
 variable 2: 1
 variable 3: 2
@@ -399,8 +404,10 @@ variable 4: 2</code></pre>
 <span id="cb8-9"><a href="#cb8-9"></a>    var2 <span class="op">=</span> <span class="dv">2</span><span class="op">;</span></span>
 <span id="cb8-10"><a href="#cb8-10"></a>    var3 <span class="op">=</span> <span class="dv">2</span><span class="op">;</span></span>
 <span id="cb8-11"><a href="#cb8-11"></a></span>
-<span id="cb8-12"><a href="#cb8-12"></a>    <span class="dt">float</span> lengthOfline<span class="op">;</span></span>
-<span id="cb8-13"><a href="#cb8-13"></a><span class="op">}</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb8-12"><a href="#cb8-12"></a>    <span class="co">// declare a float type variable</span></span>
+<span id="cb8-13"><a href="#cb8-13"></a></span>
+<span id="cb8-14"><a href="#cb8-14"></a>    <span class="dt">float</span> lengthOfline<span class="op">;</span></span>
+<span id="cb8-15"><a href="#cb8-15"></a><span class="op">}</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <ul>
 <li>the variable <code>lengthOfline</code> doesn’t have value yet, so need to calculate the distance: <span class="math inline">\(d = \sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2}\)</span></li>
 <li>So we need power and square root. we could multiply the number by itself to obtain the power but the square root need to be hard coded, but luckily we can just import it from <strong>math</strong> module in C++, which we need to import in order to use the built in function <strong>sqrt</strong>.</li>
@@ -438,8 +445,8 @@ variable 4: 2</code></pre>
 <section id="data-types" class="level3">
 <h3 class="anchored" data-anchor-id="data-types">Data types:</h3>
 <ul>
-<li>In C++ data types are defined once and cannot be changed. If a variable is decalared with a specific data type, it can only hold values that suits that data type.</li>
-<li>We already used <code>int</code> which is a whole number, <code>float</code> a decimal. There are many other types:</li>
+<li>In C++ data types are defined once and cannot be changed. If a variable is declared with a specific data type, it can only hold values that suits that data type.</li>
+<li>We already used <strong><code>int</code></strong> which is a whole number, <strong><code>float</code></strong> a decimal. There are many other types:</li>
 </ul>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode numberSource cpp number-lines code-with-copy"><code class="sourceCode cpp"><span id="cb11-1"><a href="#cb11-1"></a><span class="pp">#include </span><span class="im">&lt;string&gt;</span></span>
 <span id="cb11-2"><a href="#cb11-2"></a><span class="kw">using</span> <span class="kw">namespace</span> std<span class="op">;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -483,10 +490,10 @@ This is a string of charaters: Ismail</code></pre>
 <span id="cb14-3"><a href="#cb14-3"></a>    <span class="dt">int</span> a <span class="op">=</span> <span class="dv">10</span><span class="op">;</span></span>
 <span id="cb14-4"><a href="#cb14-4"></a>    <span class="dt">int</span> b <span class="op">=</span> <span class="dv">5</span><span class="op">;</span></span>
 <span id="cb14-5"><a href="#cb14-5"></a>    <span class="dt">int</span> res <span class="op">=</span> a <span class="op">/</span> b<span class="op">;</span></span>
-<span id="cb14-6"><a href="#cb14-6"></a>    cout <span class="op">&lt;&lt;</span><span class="st">"result a / b=&gt; "</span> <span class="op">&lt;&lt;</span>res<span class="op">&lt;&lt;</span> endl<span class="op">;</span></span>
+<span id="cb14-6"><a href="#cb14-6"></a>    cout <span class="op">&lt;&lt;</span><span class="st">"result a / b =&gt; "</span> <span class="op">&lt;&lt;</span>res<span class="op">&lt;&lt;</span> endl<span class="op">;</span></span>
 <span id="cb14-7"><a href="#cb14-7"></a><span class="op">}</span>    </span>
 <span id="cb14-8"><a href="#cb14-8"></a>divint<span class="op">();</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<pre><code>result a / b=&gt; 2</code></pre>
+<pre><code>result a / b =&gt; 2</code></pre>
 <ul>
 <li>What if we want to divide 2 integers that will causes not a whole number:</li>
 </ul>
@@ -516,18 +523,16 @@ result as num = 13: 6</code></pre>
 <span id="cb18-6"><a href="#cb18-6"></a>    <span class="dt">int</span> result<span class="op">;</span> </span>
 <span id="cb18-7"><a href="#cb18-7"></a> </span>
 <span id="cb18-8"><a href="#cb18-8"></a>    result <span class="op">=</span> num1 <span class="op">/</span> num2<span class="op">;</span> </span>
-<span id="cb18-9"><a href="#cb18-9"></a>    cout <span class="op">&lt;&lt;</span> <span class="st">"result with num1 = 12: "</span> <span class="op">&lt;&lt;</span> result <span class="op">&lt;&lt;</span> endl<span class="op">;</span>     </span>
-<span id="cb18-10"><a href="#cb18-10"></a>    num1 <span class="op">=</span> <span class="dv">13</span><span class="op">;</span> </span>
-<span id="cb18-11"><a href="#cb18-11"></a> </span>
-<span id="cb18-12"><a href="#cb18-12"></a>    result <span class="op">=</span> num1 <span class="op">/</span> num2<span class="op">;</span> </span>
-<span id="cb18-13"><a href="#cb18-13"></a>    result <span class="op">=</span> num1 <span class="op">%</span> num2<span class="op">;</span> </span>
-<span id="cb18-14"><a href="#cb18-14"></a>    cout <span class="op">&lt;&lt;</span> <span class="st">" result with num1 = 13: "</span> <span class="op">&lt;&lt;</span> result <span class="op">&lt;&lt;</span> endl<span class="op">;</span></span>
-<span id="cb18-15"><a href="#cb18-15"></a>    </span>
-<span id="cb18-16"><a href="#cb18-16"></a><span class="op">}</span></span>
-<span id="cb18-17"><a href="#cb18-17"></a></span>
-<span id="cb18-18"><a href="#cb18-18"></a>divmod<span class="op">();</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<pre><code>result with num1 = 12: 6
- result with num1 = 13: 1</code></pre>
+<span id="cb18-9"><a href="#cb18-9"></a>    cout <span class="op">&lt;&lt;</span> <span class="st">"result with / operator: "</span> <span class="op">&lt;&lt;</span> result <span class="op">&lt;&lt;</span> endl<span class="op">;</span>     </span>
+<span id="cb18-10"><a href="#cb18-10"></a> </span>
+<span id="cb18-11"><a href="#cb18-11"></a>    result <span class="op">=</span> num1 <span class="op">%</span> num2<span class="op">;</span> </span>
+<span id="cb18-12"><a href="#cb18-12"></a>    cout <span class="op">&lt;&lt;</span> <span class="st">" result with </span><span class="sc">% o</span><span class="st">perator: "</span> <span class="op">&lt;&lt;</span> result <span class="op">&lt;&lt;</span> endl<span class="op">;</span></span>
+<span id="cb18-13"><a href="#cb18-13"></a>    </span>
+<span id="cb18-14"><a href="#cb18-14"></a><span class="op">}</span></span>
+<span id="cb18-15"><a href="#cb18-15"></a></span>
+<span id="cb18-16"><a href="#cb18-16"></a>divmod<span class="op">();</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<pre><code>result with / operator: 6
+ result with % operator: 0</code></pre>
 <ul>
 <li><p>A data type also specifies an acceptable range of values.</p></li>
 <li><p>An int variable cannot hold an infinite sized number, there is a limit.</p></li>
@@ -560,11 +565,90 @@ the type of num2 = 15.0 :  f</code></pre>
 <ul>
 <li>We get <code>i</code> for integer for <code>15</code> and <code>f</code> float for <code>15.0</code>.</li>
 </ul>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb25"><pre class="sourceCode numberSource cpp number-lines code-with-copy"><code class="sourceCode cpp"></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="characters-and-strings" class="level3">
+<h3 class="anchored" data-anchor-id="characters-and-strings">Characters and strings</h3>
+<ul>
+<li><strong><code>string</code></strong> is very strong type which allows us to make many different things and manipulates data in many ways.</li>
+<li>While **<code>char</code>* is a bit hard to work with, since it’s limited and not as versatile as <code>string</code>.</li>
+</ul>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb25"><pre class="sourceCode numberSource cpp number-lines code-with-copy"><code class="sourceCode cpp"><span id="cb25-1"><a href="#cb25-1"></a><span class="dt">void</span> chars<span class="op">()</span></span>
+<span id="cb25-2"><a href="#cb25-2"></a><span class="op">{</span></span>
+<span id="cb25-3"><a href="#cb25-3"></a>    </span>
+<span id="cb25-4"><a href="#cb25-4"></a>    <span class="dt">char</span> first <span class="op">=</span> <span class="ch">'c'</span><span class="op">;</span></span>
+<span id="cb25-5"><a href="#cb25-5"></a>    <span class="dt">char</span> second <span class="op">=</span> <span class="ch">'h'</span><span class="op">;</span></span>
+<span id="cb25-6"><a href="#cb25-6"></a>    <span class="dt">char</span> third <span class="op">=</span> <span class="ch">'a'</span><span class="op">;</span></span>
+<span id="cb25-7"><a href="#cb25-7"></a>    <span class="dt">char</span> fourth <span class="op">=</span> <span class="ch">'r'</span><span class="op">;</span></span>
+<span id="cb25-8"><a href="#cb25-8"></a></span>
+<span id="cb25-9"><a href="#cb25-9"></a>    string word <span class="op">=</span> <span class="st">"String"</span><span class="op">;</span></span>
+<span id="cb25-10"><a href="#cb25-10"></a>    </span>
+<span id="cb25-11"><a href="#cb25-11"></a>    cout <span class="op">&lt;&lt;</span> first <span class="op">&lt;&lt;</span> second <span class="op">&lt;&lt;</span> third <span class="op">&lt;&lt;</span> fourth <span class="op">&lt;&lt;</span> endl<span class="op">;</span></span>
+<span id="cb25-12"><a href="#cb25-12"></a>    cout <span class="op">&lt;&lt;</span> word <span class="op">&lt;&lt;</span> endl<span class="op">;</span></span>
+<span id="cb25-13"><a href="#cb25-13"></a></span>
+<span id="cb25-14"><a href="#cb25-14"></a><span class="op">}</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb26"><pre class="sourceCode numberSource cpp number-lines code-with-copy"><code class="sourceCode cpp"><span id="cb26-1"><a href="#cb26-1"></a>chars<span class="op">();</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<pre><code>char
+String</code></pre>
+<section id="string-operations" class="level4">
+<h4 class="anchored" data-anchor-id="string-operations">String Operations:</h4>
+<ul>
+<li>String tyoe has many operation that we could use to manipulate data, like <strong>length()</strong> which as the name suggests tells us the length of string:</li>
+</ul>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb28"><pre class="sourceCode numberSource cpp number-lines code-with-copy"><code class="sourceCode cpp"><span id="cb28-1"><a href="#cb28-1"></a>string name <span class="op">=</span> <span class="st">"Ismail"</span><span class="op">;</span></span>
+<span id="cb28-2"><a href="#cb28-2"></a>cout <span class="op">&lt;&lt;</span> <span class="st">"Number of characters in Ismail is: "</span> <span class="op">&lt;&lt;</span> name<span class="op">.</span>length<span class="op">()</span> <span class="op">&lt;&lt;</span> endl<span class="op">;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<pre><code>Number of characters in Ismail is: 6</code></pre>
+<ul>
+<li>The square brackets is another operator that will return an individual character in the string:</li>
+</ul>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb30"><pre class="sourceCode numberSource cpp number-lines code-with-copy"><code class="sourceCode cpp"><span id="cb30-1"><a href="#cb30-1"></a>string word <span class="op">=</span> <span class="st">"word"</span><span class="op">;</span></span>
+<span id="cb30-2"><a href="#cb30-2"></a><span class="dt">char</span> letter  <span class="op">=</span> word<span class="op">[</span><span class="dv">0</span><span class="op">];</span></span>
+<span id="cb30-3"><a href="#cb30-3"></a>cout <span class="op">&lt;&lt;</span> <span class="st">"this is a string: "</span> <span class="op">&lt;&lt;</span> word <span class="op">&lt;&lt;</span> endl<span class="op">;</span></span>
+<span id="cb30-4"><a href="#cb30-4"></a><span class="co">// the index is 0 based</span></span>
+<span id="cb30-5"><a href="#cb30-5"></a>cout <span class="op">&lt;&lt;</span> <span class="st">"this is the first character of that word: "</span> <span class="op">&lt;&lt;</span> letter <span class="op">&lt;&lt;</span> endl<span class="op">;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<pre><code>this is a string: word
+this is the first character of that word: w</code></pre>
+<ul>
+<li>The <strong>+</strong> operator concatenates strings together.</li>
+</ul>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb32"><pre class="sourceCode numberSource cpp number-lines code-with-copy"><code class="sourceCode cpp"><span id="cb32-1"><a href="#cb32-1"></a>string sentence <span class="op">=</span> <span class="st">"word1"</span><span class="op">;</span></span>
+<span id="cb32-2"><a href="#cb32-2"></a>sentence <span class="op">=</span> sentence <span class="op">+</span> <span class="st">" word2"</span> <span class="op">+</span> <span class="st">" word3"</span> <span class="op">+</span> <span class="st">" ..."</span><span class="op">;</span></span>
+<span id="cb32-3"><a href="#cb32-3"></a>cout <span class="op">&lt;&lt;</span> sentence <span class="op">&lt;&lt;</span> endl<span class="op">;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<pre><code>word1 word2 word3 ...</code></pre>
+<ul>
+<li><p><strong>substr</strong> is a string function that will create a new string from the innards of another.</p></li>
+<li><p>This function takes a starting position and the number of character to use after that position and copies the characters into a new string.</p></li>
+<li><p><strong><code>find</code></strong> will return the position where the first occurrence of a word is found (and -1 if it is not found).</p></li>
+</ul>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb34"><pre class="sourceCode numberSource cpp number-lines code-with-copy"><code class="sourceCode cpp"><span id="cb34-1"><a href="#cb34-1"></a>string sentence <span class="op">=</span> <span class="st">"where is Aldo ?"</span><span class="op">;</span></span>
+<span id="cb34-2"><a href="#cb34-2"></a><span class="dt">int</span> findAldo <span class="op">=</span> sentence<span class="op">.</span>find<span class="op">(</span><span class="st">"Aldo"</span><span class="op">);</span></span>
+<span id="cb34-3"><a href="#cb34-3"></a>cout <span class="op">&lt;&lt;</span> <span class="st">"Aldo can be found at this position: "</span> <span class="op">&lt;&lt;</span> findAldo <span class="op">&lt;&lt;</span> endl<span class="op">;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<pre><code>Aldo can be found at this position: 9</code></pre>
+<ul>
+<li><strong><code>erase</code></strong> will remove characters from a string. It takes the starting position of where I want to start removing characters and he total number of characters to get rid of.</li>
+</ul>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb36"><pre class="sourceCode numberSource cpp number-lines code-with-copy"><code class="sourceCode cpp"><span id="cb36-1"><a href="#cb36-1"></a><span class="dt">void</span> func<span class="op">()</span></span>
+<span id="cb36-2"><a href="#cb36-2"></a><span class="op">{</span></span>
+<span id="cb36-3"><a href="#cb36-3"></a>    string sentence <span class="op">=</span> <span class="st">"In this sentence sentence, it must be no repeated word!"</span><span class="op">;</span></span>
+<span id="cb36-4"><a href="#cb36-4"></a>    <span class="dt">int</span> repeatedWord <span class="op">=</span> sentence<span class="op">.</span>find<span class="op">(</span><span class="st">"sentence"</span><span class="op">);</span></span>
+<span id="cb36-5"><a href="#cb36-5"></a>    sentence<span class="op">.</span>erase<span class="op">(</span>repeatedWord<span class="op">,</span> <span class="dv">9</span><span class="op">);</span></span>
+<span id="cb36-6"><a href="#cb36-6"></a>    cout <span class="op">&lt;&lt;</span> sentence <span class="op">&lt;&lt;</span> endl<span class="op">;</span></span>
+<span id="cb36-7"><a href="#cb36-7"></a><span class="op">}</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb37"><pre class="sourceCode numberSource cpp number-lines code-with-copy"><code class="sourceCode cpp"><span id="cb37-1"><a href="#cb37-1"></a>func<span class="op">();</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<pre><code>In this sentence, it must be no repeated word!</code></pre>
+<ul>
+<li><strong><code>insert</code></strong> adds a new string after the position specified in the string.</li>
+</ul>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb39"><pre class="sourceCode numberSource cpp number-lines code-with-copy"><code class="sourceCode cpp"><span id="cb39-1"><a href="#cb39-1"></a>string sentence <span class="op">=</span> <span class="st">", my name is Ismail."</span><span class="op">;</span></span>
+<span id="cb39-2"><a href="#cb39-2"></a>string greeting <span class="op">=</span> <span class="st">"Hi"</span><span class="op">;</span></span>
+<span id="cb39-3"><a href="#cb39-3"></a>sentence <span class="op">=</span> sentence<span class="op">.</span>insert<span class="op">(</span><span class="dv">0</span><span class="op">,</span> greeting<span class="op">);</span></span>
+<span id="cb39-4"><a href="#cb39-4"></a>cout <span class="op">&lt;&lt;</span> sentence <span class="op">&lt;&lt;</span> endl<span class="op">;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<pre><code>Hi, my name is Ismail.</code></pre>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb41"><pre class="sourceCode numberSource cpp number-lines code-with-copy"><code class="sourceCode cpp"></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 
 
 <!-- -->
 
+</section>
 </section>
 </section>
 
@@ -1025,376 +1109,503 @@ the type of num2 = 15.0 :  f</code></pre>
     }
   });
   </script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb26" data-shortcodes="false"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb26-1"><a href="#cb26-1"></a><span class="co">---</span></span>
-<span id="cb26-2"><a href="#cb26-2"></a><span class="an">title:</span><span class="co"> "Learning CPP As Pythonista: Day-1 "</span></span>
-<span id="cb26-3"><a href="#cb26-3"></a><span class="an">author:</span><span class="co"> "Ismail TG"</span></span>
-<span id="cb26-4"><a href="#cb26-4"></a><span class="an">date:</span><span class="co"> "09/19/2025"</span></span>
-<span id="cb26-5"><a href="#cb26-5"></a><span class="an">format:</span></span>
-<span id="cb26-6"><a href="#cb26-6"></a><span class="co">  html:</span></span>
-<span id="cb26-7"><a href="#cb26-7"></a><span class="co">    code-fold: true</span></span>
-<span id="cb26-8"><a href="#cb26-8"></a><span class="co">    code-line-numbers: true</span></span>
-<span id="cb26-9"><a href="#cb26-9"></a><span class="co">    code-tools: true</span></span>
-<span id="cb26-10"><a href="#cb26-10"></a><span class="co">    highlight-style: github</span></span>
-<span id="cb26-11"><a href="#cb26-11"></a><span class="co">    theme: cosmo</span></span>
-<span id="cb26-12"><a href="#cb26-12"></a><span class="an">categories:</span><span class="co"> [Kernel Engineering, Cuda, Pytorch, CPP]</span></span>
-<span id="cb26-13"><a href="#cb26-13"></a><span class="an">image:</span><span class="co"> "PythonVsCPP.png"</span></span>
-<span id="cb26-14"><a href="#cb26-14"></a><span class="co">---</span></span>
-<span id="cb26-15"><a href="#cb26-15"></a><span class="fu">## Motivation:</span></span>
-<span id="cb26-16"><a href="#cb26-16"></a><span class="ss">- </span>In this series of lessons, I will track my learning through the universe of C++ as someone who mainly program in Python.</span>
-<span id="cb26-17"><a href="#cb26-17"></a><span class="ss">- </span>The motivation behind learning C++ in 2025 can be resumed into one word: **Cuda**.</span>
-<span id="cb26-18"><a href="#cb26-18"></a><span class="ss">- </span>CUDA kernels are still C++ first, Python second. Learning the bare-metal steps so I can stop guessing and start writing fast GPU code. One small page a day until the compiler feels normal.</span>
-<span id="cb26-19"><a href="#cb26-19"></a><span class="ss">- </span>This idea of learning C++ for CUDA make it less intimidating, since C++ isn't the goal here  rather just a tool for something else.</span>
-<span id="cb26-20"><a href="#cb26-20"></a><span class="ss">- </span>But still I need to learn some basics of C++ in order to navigate its world that already after one studying session looks very strange and outlandish for a Python programmer.</span>
-<span id="cb26-21"><a href="#cb26-21"></a></span>
-<span id="cb26-22"><a href="#cb26-22"></a><span class="fu">## C++ World:</span></span>
-<span id="cb26-23"><a href="#cb26-23"></a><span class="ss">- </span>C++ is a **Compiled language**, which means the code goes through a transformation process before it can run.</span>
-<span id="cb26-24"><a href="#cb26-24"></a><span class="ss">- </span>In C++, we write code then a special program called **Compiler** translates our *Human-readable* code into machine code (1s &amp; 0s) that computer can executes.</span>
-<span id="cb26-25"><a href="#cb26-25"></a><span class="ss">- </span>This process of compiling works in **4 stages**:</span>
-<span id="cb26-26"><a href="#cb26-26"></a><span class="ss">  * </span>Stage1: Pre-processing before the compiler even looks at our code, it's a text manipulation step where the preprocessor check code that starts with <span class="in">`#`</span> and  copy-past, find-replace it automatically, so the next step include only pure C++ code.</span>
-<span id="cb26-27"><a href="#cb26-27"></a><span class="ss">  * </span>Stage2: The compiler reads the C++ code and converts it to **Assembly Language**, which is a human readable instructions that are very close to machine code.</span>
-<span id="cb26-28"><a href="#cb26-28"></a><span class="ss">  * </span>Stage3: An **Assembler** converts assembly into actual <span class="in">`1s`</span> &amp; <span class="in">`0s`</span> that the CPU understands.</span>
-<span id="cb26-29"><a href="#cb26-29"></a><span class="ss">  * </span>Stage4: A **Linker** connects everything together (code, libraries, other file..) and creates the final executable file that can run.</span>
-<span id="cb26-30"><a href="#cb26-30"></a></span>
-<span id="cb26-31"><a href="#cb26-31"></a></span>
-<span id="cb26-32"><a href="#cb26-32"></a><span class="in">```cpp</span></span>
-<span id="cb26-33"><a href="#cb26-33"></a><span class="pp">#include </span><span class="im">&lt;iostream&gt;</span></span>
-<span id="cb26-34"><a href="#cb26-34"></a><span class="dt">int</span> main<span class="op">()</span></span>
-<span id="cb26-35"><a href="#cb26-35"></a><span class="op">{</span></span>
-<span id="cb26-36"><a href="#cb26-36"></a>    <span class="co">// print my name in three lines</span></span>
-<span id="cb26-37"><a href="#cb26-37"></a>    <span class="bu">std::</span>cout <span class="op">&lt;&lt;</span> <span class="st">"Hi, My"</span> <span class="op">&lt;&lt;</span> <span class="bu">std::</span>endl<span class="op">;</span></span>
-<span id="cb26-38"><a href="#cb26-38"></a>    <span class="bu">std::</span>cout <span class="op">&lt;&lt;</span> <span class="st">"name is"</span> <span class="op">&lt;&lt;</span> <span class="bu">std::</span>endl<span class="op">;</span></span>
-<span id="cb26-39"><a href="#cb26-39"></a>    <span class="bu">std::</span>cout <span class="op">&lt;&lt;</span> <span class="st">"Ismail."</span> <span class="op">&lt;&lt;</span> <span class="bu">std::</span>endl<span class="op">;</span></span>
-<span id="cb26-40"><a href="#cb26-40"></a>    <span class="co">// in one line with three string</span></span>
-<span id="cb26-41"><a href="#cb26-41"></a>    <span class="bu">std::</span>cout <span class="op">&lt;&lt;</span> <span class="st">"Hi, my "</span> <span class="op">&lt;&lt;</span> <span class="st">"name is "</span> <span class="op">&lt;&lt;</span> <span class="st">"Ismail."</span> <span class="op">&lt;&lt;</span><span class="bu">std::</span>endl<span class="op">;</span></span>
-<span id="cb26-42"><a href="#cb26-42"></a>    <span class="co">// print the whole expression in one string</span></span>
-<span id="cb26-43"><a href="#cb26-43"></a>    <span class="bu">std::</span>cout <span class="op">&lt;&lt;</span> <span class="st">"Hi, my name is Ismail."</span><span class="op">;</span></span>
-<span id="cb26-44"><a href="#cb26-44"></a>    </span>
-<span id="cb26-45"><a href="#cb26-45"></a>    <span class="cf">return</span> <span class="dv">0</span><span class="op">;</span></span>
-<span id="cb26-46"><a href="#cb26-46"></a><span class="op">}</span></span>
-<span id="cb26-47"><a href="#cb26-47"></a><span class="in">```</span></span>
-<span id="cb26-48"><a href="#cb26-48"></a></span>
-<span id="cb26-49"><a href="#cb26-49"></a></span>
-<span id="cb26-50"><a href="#cb26-50"></a><span class="in">```cpp</span></span>
-<span id="cb26-51"><a href="#cb26-51"></a>main<span class="op">()</span></span>
-<span id="cb26-52"><a href="#cb26-52"></a><span class="in">```</span></span>
-<span id="cb26-53"><a href="#cb26-53"></a></span>
-<span id="cb26-54"><a href="#cb26-54"></a><span class="in">    Hi, My</span></span>
-<span id="cb26-55"><a href="#cb26-55"></a><span class="in">    name is</span></span>
-<span id="cb26-56"><a href="#cb26-56"></a><span class="in">    Ismail.</span></span>
-<span id="cb26-57"><a href="#cb26-57"></a><span class="in">    Hi, my name is Ismail.</span></span>
-<span id="cb26-58"><a href="#cb26-58"></a><span class="in">    Hi, my name is Ismail.</span></span>
-<span id="cb26-59"><a href="#cb26-59"></a></span>
-<span id="cb26-60"><a href="#cb26-60"></a></span>
-<span id="cb26-61"><a href="#cb26-61"></a></span>
-<span id="cb26-62"><a href="#cb26-62"></a></span>
-<span id="cb26-63"><a href="#cb26-63"></a><span class="in">    0</span></span>
-<span id="cb26-64"><a href="#cb26-64"></a></span>
-<span id="cb26-65"><a href="#cb26-65"></a></span>
-<span id="cb26-66"><a href="#cb26-66"></a></span>
-<span id="cb26-67"><a href="#cb26-67"></a><span class="fu">### Importing in CPP:</span></span>
-<span id="cb26-68"><a href="#cb26-68"></a></span>
-<span id="cb26-69"><a href="#cb26-69"></a><span class="ss">* </span>In order to use libraries and tools in C++ we use the keyword **`#include`**, it's equivalent to <span class="in">`import`</span> in Python.</span>
-<span id="cb26-70"><a href="#cb26-70"></a><span class="ss">* </span>Library we used here is <span class="in">`iostream`</span> which allows us to print in the screen and many more things.</span>
-<span id="cb26-71"><a href="#cb26-71"></a></span>
-<span id="cb26-72"><a href="#cb26-72"></a><span class="fu">### Main() function:</span></span>
-<span id="cb26-73"><a href="#cb26-73"></a></span>
-<span id="cb26-74"><a href="#cb26-74"></a><span class="ss">* </span>**All C++ programs** has one <span class="in">`main()`</span> function, it's the starting point of every program, The <span class="in">`main`</span> function is called automatically when a C++ program begins.</span>
-<span id="cb26-75"><a href="#cb26-75"></a></span>
-<span id="cb26-76"><a href="#cb26-76"></a><span class="fu">#### Printing:</span></span>
-<span id="cb26-77"><a href="#cb26-77"></a></span>
-<span id="cb26-78"><a href="#cb26-78"></a><span class="ss">* </span>By using <span class="in">`cout`</span> we can print text on the screen.</span>
-<span id="cb26-79"><a href="#cb26-79"></a><span class="ss">* </span>More than one piece of data can be printed at a time.</span>
-<span id="cb26-80"><a href="#cb26-80"></a><span class="ss">* </span><span class="in">`endl`</span> is used after <span class="in">`cout`</span> to end the line, so the next <span class="in">`cout`</span> could starts printing next line.</span>
-<span id="cb26-81"><a href="#cb26-81"></a><span class="ss">* </span>We can print multiple pieces of data if we seperate them with <span class="in">`&lt;&lt;`</span>.</span>
-<span id="cb26-82"><a href="#cb26-82"></a></span>
-<span id="cb26-83"><a href="#cb26-83"></a><span class="fu">#### Statements:</span></span>
-<span id="cb26-84"><a href="#cb26-84"></a><span class="ss">* </span>The lines of code inside <span class="in">`main`</span> function are called <span class="in">`statements`</span>.</span>
-<span id="cb26-85"><a href="#cb26-85"></a><span class="ss">* </span>All statements in C++ must end with semi-colon **;**.</span>
-<span id="cb26-86"><a href="#cb26-86"></a><span class="ss">* </span>**The compiler** reads our code and turns it into instructions that a computer can understand (machine instructions).</span>
-<span id="cb26-87"><a href="#cb26-87"></a><span class="ss">* </span>Then the compiler will generate an executable program which is just a file filled with machine instructions.</span>
-<span id="cb26-88"><a href="#cb26-88"></a></span>
-<span id="cb26-89"><a href="#cb26-89"></a><span class="ss">    - </span>The compiler uses the semi-colons to know where each statement ends. If you do not include a semi-colon at the end of every statement then you will get a <span class="in">`syntax error`</span>. A program with syntax errors will not compile and run.</span>
-<span id="cb26-90"><a href="#cb26-90"></a><span class="fu">#### String:</span></span>
-<span id="cb26-91"><a href="#cb26-91"></a><span class="ss">* </span>The thing printed to the screen is called string, which refers to a groupr of characters inside <span class="in">`""`</span>.</span>
-<span id="cb26-92"><a href="#cb26-92"></a><span class="fu">#### Comments:</span></span>
-<span id="cb26-93"><a href="#cb26-93"></a><span class="ss">* </span>As in python comments are non executable code that we put beside the code in order to explain for us or others ideas or concepts in the code.</span>
-<span id="cb26-94"><a href="#cb26-94"></a><span class="ss">* </span>In C++ the comment starts with //.</span>
-<span id="cb26-95"><a href="#cb26-95"></a><span class="ss">* </span>There are two types of comments- single line comments and multi-line comments. All code in between a /* and  a */ are called multi-line comments. They will also be ignored by the compiler. When you have a lot to say in a comment you will use these</span>
-<span id="cb26-96"><a href="#cb26-96"></a></span>
-<span id="cb26-97"><a href="#cb26-97"></a><span class="fu">### Variables:</span></span>
-<span id="cb26-98"><a href="#cb26-98"></a><span class="ss">* </span>We will write a program that will find the distance between two points on a graph. It will need variables to hold the points (an X and a Y value for each point) and a variable to hold the length of the line that connects  the points.</span>
-<span id="cb26-99"><a href="#cb26-99"></a></span>
-<span id="cb26-100"><a href="#cb26-100"></a></span>
-<span id="cb26-101"><a href="#cb26-101"></a><span class="ss">* </span>Since C++ is a static typing language, we need to **declare** the type of the variable while creating it, and this variable will only accept the type is assigned to.</span>
-<span id="cb26-102"><a href="#cb26-102"></a><span class="ss">* </span>Here we declare a variable <span class="in">`var`</span> with type <span class="in">`int`</span> which refers to integer or whole number.</span>
-<span id="cb26-103"><a href="#cb26-103"></a></span>
-<span id="cb26-104"><a href="#cb26-104"></a></span>
-<span id="cb26-105"><a href="#cb26-105"></a></span>
-<span id="cb26-106"><a href="#cb26-106"></a><span class="in">```cpp</span></span>
-<span id="cb26-107"><a href="#cb26-107"></a><span class="dt">int</span> var <span class="op">=</span> <span class="dv">5</span><span class="op">;</span></span>
-<span id="cb26-108"><a href="#cb26-108"></a><span class="bu">std::</span>cout <span class="op">&lt;&lt;</span> <span class="st">"variable of type integer: "</span> <span class="op">&lt;&lt;</span> var <span class="op">&lt;&lt;</span> <span class="bu">std::</span>endl<span class="op">;</span></span>
-<span id="cb26-109"><a href="#cb26-109"></a></span>
-<span id="cb26-110"><a href="#cb26-110"></a><span class="in">```</span></span>
-<span id="cb26-111"><a href="#cb26-111"></a></span>
-<span id="cb26-112"><a href="#cb26-112"></a><span class="in">    variable of type integer: 5</span></span>
-<span id="cb26-113"><a href="#cb26-113"></a></span>
-<span id="cb26-114"><a href="#cb26-114"></a></span>
-<span id="cb26-115"><a href="#cb26-115"></a><span class="ss">* </span>A variable is place where we store data in the memory that can be read or written to in a program.</span>
-<span id="cb26-116"><a href="#cb26-116"></a><span class="ss">* </span>We think of variables as boxes that hold data, and each box is distinct in the memory. So every variable lives in a location in memory, and we can retrieve it by name without carrying about it's location in memory.</span>
-<span id="cb26-117"><a href="#cb26-117"></a></span>
-<span id="cb26-118"><a href="#cb26-118"></a></span>
-<span id="cb26-119"><a href="#cb26-119"></a></span>
-<span id="cb26-120"><a href="#cb26-120"></a><span class="in">```cpp</span></span>
-<span id="cb26-121"><a href="#cb26-121"></a><span class="dt">void</span> func<span class="op">()</span></span>
-<span id="cb26-122"><a href="#cb26-122"></a><span class="op">{</span></span>
-<span id="cb26-123"><a href="#cb26-123"></a>    <span class="dt">int</span> var0<span class="op">;</span></span>
-<span id="cb26-124"><a href="#cb26-124"></a>    <span class="dt">int</span> var1<span class="op">;</span></span>
-<span id="cb26-125"><a href="#cb26-125"></a></span>
-<span id="cb26-126"><a href="#cb26-126"></a>    <span class="dt">int</span> var2<span class="op">;</span></span>
-<span id="cb26-127"><a href="#cb26-127"></a>    <span class="dt">int</span> var3<span class="op">;</span></span>
-<span id="cb26-128"><a href="#cb26-128"></a></span>
-<span id="cb26-129"><a href="#cb26-129"></a>    var0 <span class="op">=</span> <span class="dv">1</span><span class="op">;</span></span>
-<span id="cb26-130"><a href="#cb26-130"></a>    var1 <span class="op">=</span> <span class="dv">1</span><span class="op">;</span></span>
-<span id="cb26-131"><a href="#cb26-131"></a>    var2 <span class="op">=</span> <span class="dv">2</span><span class="op">;</span></span>
-<span id="cb26-132"><a href="#cb26-132"></a>    var3 <span class="op">=</span> <span class="dv">2</span><span class="op">;</span></span>
-<span id="cb26-133"><a href="#cb26-133"></a></span>
-<span id="cb26-134"><a href="#cb26-134"></a>    <span class="bu">std::</span>cout <span class="op">&lt;&lt;</span><span class="st">"variable 1: "</span> <span class="op">&lt;&lt;</span>var0<span class="op">&lt;&lt;</span> <span class="bu">std::</span>endl<span class="op">;</span></span>
-<span id="cb26-135"><a href="#cb26-135"></a>    <span class="bu">std::</span>cout <span class="op">&lt;&lt;</span><span class="st">"variable 2: "</span> <span class="op">&lt;&lt;</span>var1<span class="op">&lt;&lt;</span> <span class="bu">std::</span>endl<span class="op">;</span></span>
-<span id="cb26-136"><a href="#cb26-136"></a>    <span class="bu">std::</span>cout <span class="op">&lt;&lt;</span><span class="st">"variable 3: "</span> <span class="op">&lt;&lt;</span>var2<span class="op">&lt;&lt;</span> <span class="bu">std::</span>endl<span class="op">;</span></span>
-<span id="cb26-137"><a href="#cb26-137"></a>    <span class="bu">std::</span>cout <span class="op">&lt;&lt;</span><span class="st">"variable 4: "</span> <span class="op">&lt;&lt;</span>var3<span class="op">&lt;&lt;</span> <span class="bu">std::</span>endl<span class="op">;</span></span>
-<span id="cb26-138"><a href="#cb26-138"></a><span class="op">}</span></span>
-<span id="cb26-139"><a href="#cb26-139"></a>func<span class="op">();</span></span>
-<span id="cb26-140"><a href="#cb26-140"></a><span class="in">```</span></span>
-<span id="cb26-141"><a href="#cb26-141"></a></span>
-<span id="cb26-142"><a href="#cb26-142"></a><span class="in">    variable 1: 1</span></span>
-<span id="cb26-143"><a href="#cb26-143"></a><span class="in">    variable 2: 1</span></span>
-<span id="cb26-144"><a href="#cb26-144"></a><span class="in">    variable 3: 2</span></span>
-<span id="cb26-145"><a href="#cb26-145"></a><span class="in">    variable 4: 2</span></span>
-<span id="cb26-146"><a href="#cb26-146"></a></span>
-<span id="cb26-147"><a href="#cb26-147"></a></span>
-<span id="cb26-148"><a href="#cb26-148"></a><span class="ss">* </span>Here I declared 4 variables of type int, at this point the program requires a box in the memory for each variable.</span>
-<span id="cb26-149"><a href="#cb26-149"></a><span class="ss">* </span>Then when I assign each variable to a value, the program will put those values in their correspondent box.</span>
-<span id="cb26-150"><a href="#cb26-150"></a><span class="ss">* </span>Now we have what represents the points in a graph: <span class="in">`var0`</span> and <span class="in">`var1`</span> for point 1 &amp; <span class="in">`var2`</span> and <span class="in">`var3`</span> for point 2, now we need variable that will hold the value of the distance. The type of that variable must be float number, since it can be decimal.</span>
-<span id="cb26-151"><a href="#cb26-151"></a></span>
-<span id="cb26-152"><a href="#cb26-152"></a></span>
-<span id="cb26-153"><a href="#cb26-153"></a><span class="in">```cpp</span></span>
-<span id="cb26-154"><a href="#cb26-154"></a><span class="dt">void</span> func2<span class="op">()</span></span>
-<span id="cb26-155"><a href="#cb26-155"></a><span class="op">{</span></span>
-<span id="cb26-156"><a href="#cb26-156"></a>    <span class="dt">int</span> var0<span class="op">;</span></span>
-<span id="cb26-157"><a href="#cb26-157"></a>    <span class="dt">int</span> var1<span class="op">;</span></span>
-<span id="cb26-158"><a href="#cb26-158"></a>    <span class="dt">int</span> var2<span class="op">;</span></span>
-<span id="cb26-159"><a href="#cb26-159"></a>    <span class="dt">int</span> var3<span class="op">;</span></span>
-<span id="cb26-160"><a href="#cb26-160"></a>    var0 <span class="op">=</span> <span class="dv">1</span><span class="op">;</span></span>
-<span id="cb26-161"><a href="#cb26-161"></a>    var1 <span class="op">=</span> <span class="dv">1</span><span class="op">;</span></span>
-<span id="cb26-162"><a href="#cb26-162"></a>    var2 <span class="op">=</span> <span class="dv">2</span><span class="op">;</span></span>
-<span id="cb26-163"><a href="#cb26-163"></a>    var3 <span class="op">=</span> <span class="dv">2</span><span class="op">;</span></span>
-<span id="cb26-164"><a href="#cb26-164"></a></span>
-<span id="cb26-165"><a href="#cb26-165"></a>    <span class="dt">float</span> lengthOfline<span class="op">;</span></span>
-<span id="cb26-166"><a href="#cb26-166"></a><span class="op">}</span></span>
-<span id="cb26-167"><a href="#cb26-167"></a><span class="in">```</span></span>
-<span id="cb26-168"><a href="#cb26-168"></a></span>
-<span id="cb26-169"><a href="#cb26-169"></a><span class="ss">* </span>the variable <span class="in">`lengthOfline`</span> doesn't have value yet, so need to calculate the distance:</span>
-<span id="cb26-170"><a href="#cb26-170"></a>  $d = \sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2}$</span>
-<span id="cb26-171"><a href="#cb26-171"></a><span class="ss">* </span>So we need power and square root. we could multiply the number by itself to obtain the power but the square root need to be hard coded, but luckily we can just import it from **math** module in C++, which we need to import in order to use the built in function **sqrt**.</span>
-<span id="cb26-172"><a href="#cb26-172"></a></span>
-<span id="cb26-173"><a href="#cb26-173"></a></span>
-<span id="cb26-174"><a href="#cb26-174"></a><span class="in">```cpp</span></span>
-<span id="cb26-175"><a href="#cb26-175"></a><span class="pp">#include </span><span class="im">&lt;cmath&gt;</span></span>
-<span id="cb26-176"><a href="#cb26-176"></a><span class="dt">void</span> func3<span class="op">()</span></span>
-<span id="cb26-177"><a href="#cb26-177"></a><span class="op">{</span> </span>
-<span id="cb26-178"><a href="#cb26-178"></a>    <span class="co">//declare the variables to hold points </span></span>
-<span id="cb26-179"><a href="#cb26-179"></a>    <span class="dt">int</span> x1<span class="op">;</span> </span>
-<span id="cb26-180"><a href="#cb26-180"></a>    <span class="dt">int</span> y1<span class="op">;</span> </span>
-<span id="cb26-181"><a href="#cb26-181"></a> </span>
-<span id="cb26-182"><a href="#cb26-182"></a>    <span class="dt">int</span> x2<span class="op">;</span> </span>
-<span id="cb26-183"><a href="#cb26-183"></a>    <span class="dt">int</span> y2<span class="op">;</span> </span>
-<span id="cb26-184"><a href="#cb26-184"></a> </span>
-<span id="cb26-185"><a href="#cb26-185"></a>    <span class="co">//fill the point variables with data </span></span>
-<span id="cb26-186"><a href="#cb26-186"></a>    x1 <span class="op">=</span> <span class="dv">2</span><span class="op">;</span> </span>
-<span id="cb26-187"><a href="#cb26-187"></a>    y1 <span class="op">=</span> <span class="dv">2</span><span class="op">;</span> </span>
-<span id="cb26-188"><a href="#cb26-188"></a> </span>
-<span id="cb26-189"><a href="#cb26-189"></a>    x2 <span class="op">=</span> <span class="dv">2</span><span class="op">;</span> </span>
-<span id="cb26-190"><a href="#cb26-190"></a>    y2 <span class="op">=</span> <span class="dv">4</span><span class="op">;</span> </span>
-<span id="cb26-191"><a href="#cb26-191"></a> </span>
-<span id="cb26-192"><a href="#cb26-192"></a>    <span class="co">//declare a variable to hold the length of a line between two points </span></span>
-<span id="cb26-193"><a href="#cb26-193"></a>    <span class="dt">float</span> lengthOfLine<span class="op">;</span> </span>
-<span id="cb26-194"><a href="#cb26-194"></a> </span>
-<span id="cb26-195"><a href="#cb26-195"></a>    <span class="co">//use the distance formula to find the distance </span></span>
-<span id="cb26-196"><a href="#cb26-196"></a>    lengthOfLine <span class="op">=</span> sqrt<span class="op">(((</span>x2 <span class="op">-</span> x1<span class="op">)</span> <span class="op">*</span> <span class="op">(</span>x2 <span class="op">-</span> x1<span class="op">))</span> <span class="op">+</span> <span class="op">((</span>y2 <span class="op">-</span> y1<span class="op">)</span> <span class="op">*</span> <span class="op">(</span>y2 <span class="op">-</span> y1<span class="op">)));</span> </span>
-<span id="cb26-197"><a href="#cb26-197"></a> </span>
-<span id="cb26-198"><a href="#cb26-198"></a>    <span class="co">//print the length of the line </span></span>
-<span id="cb26-199"><a href="#cb26-199"></a>    <span class="bu">std::</span>cout<span class="op">&lt;&lt;</span><span class="st">"The length of the line is: "</span><span class="op">&lt;&lt;</span>lengthOfLine<span class="op">&lt;&lt;</span><span class="bu">std::</span>endl<span class="op">;</span> </span>
-<span id="cb26-200"><a href="#cb26-200"></a>  </span>
-<span id="cb26-201"><a href="#cb26-201"></a><span class="op">}</span></span>
-<span id="cb26-202"><a href="#cb26-202"></a>func3<span class="op">();</span></span>
-<span id="cb26-203"><a href="#cb26-203"></a><span class="in">```</span></span>
-<span id="cb26-204"><a href="#cb26-204"></a></span>
-<span id="cb26-205"><a href="#cb26-205"></a><span class="in">    The length of the line is: 2</span></span>
-<span id="cb26-206"><a href="#cb26-206"></a></span>
-<span id="cb26-207"><a href="#cb26-207"></a></span>
-<span id="cb26-208"><a href="#cb26-208"></a><span class="fu">### Data types:</span></span>
-<span id="cb26-209"><a href="#cb26-209"></a><span class="ss">* </span>In C++ data types are defined once and cannot be changed. If a variable is decalared with a specific data type, it can only hold values that suits that data type.</span>
-<span id="cb26-210"><a href="#cb26-210"></a><span class="ss">* </span>We already used <span class="in">`int`</span> which is a whole number, <span class="in">`float`</span> a decimal. There are many other types:</span>
-<span id="cb26-211"><a href="#cb26-211"></a></span>
-<span id="cb26-212"><a href="#cb26-212"></a></span>
-<span id="cb26-213"><a href="#cb26-213"></a><span class="in">```cpp</span></span>
-<span id="cb26-214"><a href="#cb26-214"></a><span class="pp">#include </span><span class="im">&lt;string&gt;</span></span>
-<span id="cb26-215"><a href="#cb26-215"></a><span class="kw">using</span> <span class="kw">namespace</span> std<span class="op">;</span></span>
-<span id="cb26-216"><a href="#cb26-216"></a></span>
-<span id="cb26-217"><a href="#cb26-217"></a><span class="in">```</span></span>
-<span id="cb26-218"><a href="#cb26-218"></a></span>
-<span id="cb26-219"><a href="#cb26-219"></a></span>
-<span id="cb26-220"><a href="#cb26-220"></a><span class="in">```cpp</span></span>
-<span id="cb26-221"><a href="#cb26-221"></a><span class="dt">void</span> basicdtypes<span class="op">()</span></span>
-<span id="cb26-222"><a href="#cb26-222"></a><span class="op">{</span></span>
-<span id="cb26-223"><a href="#cb26-223"></a>    <span class="dt">int</span> num <span class="op">=</span> <span class="dv">5</span><span class="op">;</span></span>
-<span id="cb26-224"><a href="#cb26-224"></a>    <span class="dt">float</span> dec <span class="op">=</span> <span class="fl">5.22</span><span class="op">;</span></span>
-<span id="cb26-225"><a href="#cb26-225"></a>    <span class="dt">char</span> oneChar <span class="op">=</span> <span class="ch">'K'</span><span class="op">;</span></span>
-<span id="cb26-226"><a href="#cb26-226"></a>    string name <span class="op">=</span> <span class="st">"Ismail"</span><span class="op">;</span></span>
-<span id="cb26-227"><a href="#cb26-227"></a></span>
-<span id="cb26-228"><a href="#cb26-228"></a>    cout <span class="op">&lt;&lt;</span><span class="st">"this is a whole number: "</span> <span class="op">&lt;&lt;</span> num <span class="op">&lt;&lt;</span> endl<span class="op">;</span></span>
-<span id="cb26-229"><a href="#cb26-229"></a>    cout <span class="op">&lt;&lt;</span><span class="st">"this is a decimal number: "</span> <span class="op">&lt;&lt;</span>dec<span class="op">&lt;&lt;</span> endl<span class="op">;</span></span>
-<span id="cb26-230"><a href="#cb26-230"></a>    cout <span class="op">&lt;&lt;</span> <span class="st">"this is single character: "</span> <span class="op">&lt;&lt;</span>oneChar<span class="op">&lt;&lt;</span> endl<span class="op">;</span></span>
-<span id="cb26-231"><a href="#cb26-231"></a>    cout <span class="op">&lt;&lt;</span> <span class="st">"This is a string of charaters: "</span> <span class="op">&lt;&lt;</span>name<span class="op">&lt;&lt;</span> endl<span class="op">;</span></span>
-<span id="cb26-232"><a href="#cb26-232"></a><span class="op">}</span></span>
-<span id="cb26-233"><a href="#cb26-233"></a>basicdtypes<span class="op">();</span></span>
-<span id="cb26-234"><a href="#cb26-234"></a><span class="in">```</span></span>
-<span id="cb26-235"><a href="#cb26-235"></a></span>
-<span id="cb26-236"><a href="#cb26-236"></a><span class="in">    this is a whole number: 5</span></span>
-<span id="cb26-237"><a href="#cb26-237"></a><span class="in">    this is a decimal number: 5.22</span></span>
-<span id="cb26-238"><a href="#cb26-238"></a><span class="in">    this is single character: K</span></span>
-<span id="cb26-239"><a href="#cb26-239"></a><span class="in">    This is a string of charaters: Ismail</span></span>
-<span id="cb26-240"><a href="#cb26-240"></a></span>
-<span id="cb26-241"><a href="#cb26-241"></a></span>
-<span id="cb26-242"><a href="#cb26-242"></a><span class="ss">* </span><span class="in">`char`</span> is a single character between single quotes.</span>
-<span id="cb26-243"><a href="#cb26-243"></a><span class="ss">* </span><span class="in">`string`</span> is couple of characters between double quotes, and it's not primitive type, it must be imported <span class="in">`#include &lt;string&gt;`</span></span>
-<span id="cb26-244"><a href="#cb26-244"></a></span>
-<span id="cb26-245"><a href="#cb26-245"></a><span class="fu">### Numbers types:</span></span>
-<span id="cb26-246"><a href="#cb26-246"></a><span class="ss">* </span>Till now we saw 2 numerical data types: <span class="in">`int`</span> and <span class="in">`float`</span>.</span>
-<span id="cb26-247"><a href="#cb26-247"></a><span class="ss">* </span>A data type defines a few things:</span>
-<span id="cb26-248"><a href="#cb26-248"></a><span class="ss">    - </span>the operations that can be performed on variables of that type</span>
-<span id="cb26-249"><a href="#cb26-249"></a><span class="ss">    - </span>the values that can be stored inside a variable of that type (there is usually a range of acceptable values)</span>
-<span id="cb26-250"><a href="#cb26-250"></a><span class="ss">    - </span>the amount of space a variable takes up in memory</span>
-<span id="cb26-251"><a href="#cb26-251"></a><span class="ss">* </span>The operations performed on <span class="in">`int`</span> are: **` - + / * `**, the division is the only operation that requires some explanation.</span>
-<span id="cb26-252"><a href="#cb26-252"></a><span class="ss">* </span>Here is a division between to integers: </span>
-<span id="cb26-253"><a href="#cb26-253"></a></span>
-<span id="cb26-254"><a href="#cb26-254"></a></span>
-<span id="cb26-255"><a href="#cb26-255"></a><span class="in">```cpp</span></span>
-<span id="cb26-256"><a href="#cb26-256"></a><span class="dt">void</span> divint<span class="op">()</span></span>
-<span id="cb26-257"><a href="#cb26-257"></a><span class="op">{</span></span>
-<span id="cb26-258"><a href="#cb26-258"></a>    <span class="dt">int</span> a <span class="op">=</span> <span class="dv">10</span><span class="op">;</span></span>
-<span id="cb26-259"><a href="#cb26-259"></a>    <span class="dt">int</span> b <span class="op">=</span> <span class="dv">5</span><span class="op">;</span></span>
-<span id="cb26-260"><a href="#cb26-260"></a>    <span class="dt">int</span> res <span class="op">=</span> a <span class="op">/</span> b<span class="op">;</span></span>
-<span id="cb26-261"><a href="#cb26-261"></a>    cout <span class="op">&lt;&lt;</span><span class="st">"result a / b=&gt; "</span> <span class="op">&lt;&lt;</span>res<span class="op">&lt;&lt;</span> endl<span class="op">;</span></span>
-<span id="cb26-262"><a href="#cb26-262"></a><span class="op">}</span>    </span>
-<span id="cb26-263"><a href="#cb26-263"></a>divint<span class="op">();</span></span>
-<span id="cb26-264"><a href="#cb26-264"></a><span class="in">```</span></span>
-<span id="cb26-265"><a href="#cb26-265"></a></span>
-<span id="cb26-266"><a href="#cb26-266"></a><span class="in">    result a / b=&gt; 2</span></span>
-<span id="cb26-267"><a href="#cb26-267"></a></span>
-<span id="cb26-268"><a href="#cb26-268"></a></span>
-<span id="cb26-269"><a href="#cb26-269"></a><span class="ss">* </span>What if we want to divide 2 integers that will causes not a whole number:</span>
-<span id="cb26-270"><a href="#cb26-270"></a></span>
-<span id="cb26-271"><a href="#cb26-271"></a></span>
-<span id="cb26-272"><a href="#cb26-272"></a><span class="in">```cpp</span></span>
-<span id="cb26-273"><a href="#cb26-273"></a><span class="dt">void</span> dvd<span class="op">()</span></span>
-<span id="cb26-274"><a href="#cb26-274"></a><span class="op">{</span></span>
-<span id="cb26-275"><a href="#cb26-275"></a>    <span class="dt">int</span> num <span class="op">=</span> <span class="dv">12</span><span class="op">;</span></span>
-<span id="cb26-276"><a href="#cb26-276"></a>    <span class="dt">int</span> num1 <span class="op">=</span> <span class="dv">2</span><span class="op">;</span></span>
-<span id="cb26-277"><a href="#cb26-277"></a>    <span class="dt">int</span> res <span class="op">=</span> num <span class="op">/</span> num1<span class="op">;</span></span>
-<span id="cb26-278"><a href="#cb26-278"></a>    cout <span class="op">&lt;&lt;</span><span class="st">"result as num = 12: "</span> <span class="op">&lt;&lt;</span>res<span class="op">&lt;&lt;</span> endl<span class="op">;</span></span>
-<span id="cb26-279"><a href="#cb26-279"></a>    num <span class="op">=</span> <span class="dv">13</span><span class="op">;</span></span>
-<span id="cb26-280"><a href="#cb26-280"></a>    res <span class="op">=</span> num <span class="op">/</span> num1<span class="op">;</span></span>
-<span id="cb26-281"><a href="#cb26-281"></a>    cout <span class="op">&lt;&lt;</span><span class="st">"result as num = 13: "</span> <span class="op">&lt;&lt;</span>res<span class="op">&lt;&lt;</span> endl<span class="op">;</span></span>
-<span id="cb26-282"><a href="#cb26-282"></a><span class="op">}</span></span>
-<span id="cb26-283"><a href="#cb26-283"></a>dvd<span class="op">();</span></span>
-<span id="cb26-284"><a href="#cb26-284"></a><span class="in">```</span></span>
-<span id="cb26-285"><a href="#cb26-285"></a></span>
-<span id="cb26-286"><a href="#cb26-286"></a><span class="in">    result as num = 12: 6</span></span>
-<span id="cb26-287"><a href="#cb26-287"></a><span class="in">    result as num = 13: 6</span></span>
-<span id="cb26-288"><a href="#cb26-288"></a></span>
-<span id="cb26-289"><a href="#cb26-289"></a></span>
-<span id="cb26-290"><a href="#cb26-290"></a><span class="ss">* </span>At first, the result was 6 which is the obvious answer, but when we predicted <span class="in">`6.5`</span> we still get <span class="in">`6`</span>?</span>
-<span id="cb26-291"><a href="#cb26-291"></a><span class="ss">* </span>The reason is that integer division returns the quotient which is always an integer. This is true of all integer divides using the / operator</span>
-<span id="cb26-292"><a href="#cb26-292"></a></span>
-<span id="cb26-293"><a href="#cb26-293"></a><span class="ss">* </span>There is another integer division operator called the **modulus operator** that returns the remainder. The mod operator is the **`%`** symbol.</span>
-<span id="cb26-294"><a href="#cb26-294"></a></span>
-<span id="cb26-295"><a href="#cb26-295"></a></span>
-<span id="cb26-296"><a href="#cb26-296"></a><span class="in">```cpp</span></span>
-<span id="cb26-297"><a href="#cb26-297"></a><span class="dt">void</span> divmod<span class="op">()</span></span>
-<span id="cb26-298"><a href="#cb26-298"></a><span class="op">{</span></span>
-<span id="cb26-299"><a href="#cb26-299"></a>     </span>
-<span id="cb26-300"><a href="#cb26-300"></a>    <span class="dt">int</span> num1 <span class="op">=</span> <span class="dv">12</span><span class="op">;</span> </span>
-<span id="cb26-301"><a href="#cb26-301"></a>    <span class="dt">int</span> num2 <span class="op">=</span> <span class="dv">2</span><span class="op">;</span> </span>
-<span id="cb26-302"><a href="#cb26-302"></a>    <span class="dt">int</span> result<span class="op">;</span> </span>
-<span id="cb26-303"><a href="#cb26-303"></a> </span>
-<span id="cb26-304"><a href="#cb26-304"></a>    result <span class="op">=</span> num1 <span class="op">/</span> num2<span class="op">;</span> </span>
-<span id="cb26-305"><a href="#cb26-305"></a>    cout <span class="op">&lt;&lt;</span> <span class="st">"result with num1 = 12: "</span> <span class="op">&lt;&lt;</span> result <span class="op">&lt;&lt;</span> endl<span class="op">;</span>     </span>
-<span id="cb26-306"><a href="#cb26-306"></a>    num1 <span class="op">=</span> <span class="dv">13</span><span class="op">;</span> </span>
-<span id="cb26-307"><a href="#cb26-307"></a> </span>
-<span id="cb26-308"><a href="#cb26-308"></a>    result <span class="op">=</span> num1 <span class="op">/</span> num2<span class="op">;</span> </span>
-<span id="cb26-309"><a href="#cb26-309"></a>    result <span class="op">=</span> num1 <span class="op">%</span> num2<span class="op">;</span> </span>
-<span id="cb26-310"><a href="#cb26-310"></a>    cout <span class="op">&lt;&lt;</span> <span class="st">" result with num1 = 13: "</span> <span class="op">&lt;&lt;</span> result <span class="op">&lt;&lt;</span> endl<span class="op">;</span></span>
-<span id="cb26-311"><a href="#cb26-311"></a>    </span>
-<span id="cb26-312"><a href="#cb26-312"></a><span class="op">}</span></span>
-<span id="cb26-313"><a href="#cb26-313"></a></span>
-<span id="cb26-314"><a href="#cb26-314"></a>divmod<span class="op">();</span></span>
-<span id="cb26-315"><a href="#cb26-315"></a><span class="in">```</span></span>
-<span id="cb26-316"><a href="#cb26-316"></a></span>
-<span id="cb26-317"><a href="#cb26-317"></a><span class="in">    result with num1 = 12: 6</span></span>
-<span id="cb26-318"><a href="#cb26-318"></a><span class="in">     result with num1 = 13: 1</span></span>
-<span id="cb26-319"><a href="#cb26-319"></a></span>
-<span id="cb26-320"><a href="#cb26-320"></a></span>
-<span id="cb26-321"><a href="#cb26-321"></a><span class="ss">* </span>A data type also specifies an acceptable range of values.</span>
-<span id="cb26-322"><a href="#cb26-322"></a><span class="ss">* </span>An int variable cannot hold an infinite sized number, there is a limit.</span>
-<span id="cb26-323"><a href="#cb26-323"></a></span>
-<span id="cb26-324"><a href="#cb26-324"></a><span class="ss">* </span>There is a built in constant called **`INT_MAX`** that holds the largest value that can be stored in any int variable (there is an **`INT_MIN`** too).</span>
-<span id="cb26-325"><a href="#cb26-325"></a></span>
-<span id="cb26-326"><a href="#cb26-326"></a></span>
-<span id="cb26-327"><a href="#cb26-327"></a><span class="in">```cpp</span></span>
-<span id="cb26-328"><a href="#cb26-328"></a><span class="pp">#include </span><span class="im">&lt;climits&gt;</span></span>
-<span id="cb26-329"><a href="#cb26-329"></a><span class="in">```</span></span>
-<span id="cb26-330"><a href="#cb26-330"></a></span>
-<span id="cb26-331"><a href="#cb26-331"></a></span>
-<span id="cb26-332"><a href="#cb26-332"></a><span class="in">```cpp</span></span>
-<span id="cb26-333"><a href="#cb26-333"></a><span class="dt">int</span> largeNumber<span class="op">;</span></span>
-<span id="cb26-334"><a href="#cb26-334"></a>largeNumber <span class="op">=</span> INT_MAX<span class="op">;</span></span>
-<span id="cb26-335"><a href="#cb26-335"></a>cout<span class="op">&lt;&lt;</span><span class="st">"largest number can be stored: "</span> <span class="op">&lt;&lt;</span>largeNumber<span class="op">&lt;&lt;</span> endl<span class="op">;</span></span>
-<span id="cb26-336"><a href="#cb26-336"></a><span class="in">```</span></span>
-<span id="cb26-337"><a href="#cb26-337"></a></span>
-<span id="cb26-338"><a href="#cb26-338"></a><span class="in">    largest number can be stored: 2147483647</span></span>
-<span id="cb26-339"><a href="#cb26-339"></a></span>
-<span id="cb26-340"><a href="#cb26-340"></a></span>
-<span id="cb26-341"><a href="#cb26-341"></a><span class="ss">* </span>Adding one number to that value will causes an out of range error</span>
-<span id="cb26-342"><a href="#cb26-342"></a><span class="ss">* </span>The arithmetic operators for floats are the same as ints except there is no mod operator. float division results in numbers with fractional parts.</span>
-<span id="cb26-343"><a href="#cb26-343"></a><span class="ss">* </span>In case we want to declare a float data type but the value is a whole number we need to explicitly tell the compiler it's a float number by adding <span class="in">`.0`</span>:</span>
-<span id="cb26-344"><a href="#cb26-344"></a></span>
-<span id="cb26-345"><a href="#cb26-345"></a></span>
-<span id="cb26-346"><a href="#cb26-346"></a><span class="in">```cpp</span></span>
-<span id="cb26-347"><a href="#cb26-347"></a><span class="pp">#include </span><span class="im">&lt;typeinfo&gt;</span></span>
-<span id="cb26-348"><a href="#cb26-348"></a><span class="dt">void</span> wholeFloat<span class="op">()</span></span>
-<span id="cb26-349"><a href="#cb26-349"></a><span class="op">{</span></span>
-<span id="cb26-350"><a href="#cb26-350"></a>    <span class="dt">int</span> num1 <span class="op">=</span> <span class="dv">15</span><span class="op">;</span></span>
-<span id="cb26-351"><a href="#cb26-351"></a>    <span class="dt">float</span> num2 <span class="op">=</span> <span class="fl">15.0</span><span class="op">;</span></span>
-<span id="cb26-352"><a href="#cb26-352"></a>    cout <span class="op">&lt;&lt;</span> <span class="st">"the type of num1 = 15 :  "</span> <span class="op">&lt;&lt;</span> <span class="kw">typeid</span><span class="op">(</span>num1<span class="op">).</span>name<span class="op">()</span> <span class="op">&lt;&lt;</span> endl<span class="op">;</span></span>
-<span id="cb26-353"><a href="#cb26-353"></a>    cout <span class="op">&lt;&lt;</span> <span class="st">"the type of num2 = 15.0 :  "</span> <span class="op">&lt;&lt;</span> <span class="kw">typeid</span><span class="op">(</span>num2<span class="op">).</span>name<span class="op">()</span> <span class="op">&lt;&lt;</span> endl<span class="op">;</span></span>
-<span id="cb26-354"><a href="#cb26-354"></a>    </span>
-<span id="cb26-355"><a href="#cb26-355"></a>    </span>
-<span id="cb26-356"><a href="#cb26-356"></a><span class="op">}</span></span>
-<span id="cb26-357"><a href="#cb26-357"></a></span>
-<span id="cb26-358"><a href="#cb26-358"></a>wholeFloat<span class="op">();</span></span>
-<span id="cb26-359"><a href="#cb26-359"></a><span class="in">```</span></span>
-<span id="cb26-360"><a href="#cb26-360"></a></span>
-<span id="cb26-361"><a href="#cb26-361"></a><span class="in">    the type of num1 = 15 :  i</span></span>
-<span id="cb26-362"><a href="#cb26-362"></a><span class="in">    the type of num2 = 15.0 :  f</span></span>
-<span id="cb26-363"><a href="#cb26-363"></a></span>
-<span id="cb26-364"><a href="#cb26-364"></a></span>
-<span id="cb26-365"><a href="#cb26-365"></a><span class="ss">* </span>We get <span class="in">`i`</span> for integer for <span class="in">`15`</span> and <span class="in">`f`</span> float for <span class="in">`15.0`</span>.</span>
-<span id="cb26-366"><a href="#cb26-366"></a></span>
-<span id="cb26-367"><a href="#cb26-367"></a></span>
-<span id="cb26-368"><a href="#cb26-368"></a><span class="in">```cpp</span></span>
-<span id="cb26-369"><a href="#cb26-369"></a></span>
-<span id="cb26-370"><a href="#cb26-370"></a><span class="in">```</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb42" data-shortcodes="false"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb42-1"><a href="#cb42-1"></a><span class="co">---</span></span>
+<span id="cb42-2"><a href="#cb42-2"></a><span class="an">title:</span><span class="co"> "Learning CPP As Pythonista: Day-1 "</span></span>
+<span id="cb42-3"><a href="#cb42-3"></a><span class="an">author:</span><span class="co"> "Ismail TG"</span></span>
+<span id="cb42-4"><a href="#cb42-4"></a><span class="an">date:</span><span class="co"> "09/19/2025"</span></span>
+<span id="cb42-5"><a href="#cb42-5"></a><span class="an">format:</span></span>
+<span id="cb42-6"><a href="#cb42-6"></a><span class="co">  html:</span></span>
+<span id="cb42-7"><a href="#cb42-7"></a><span class="co">    code-fold: true</span></span>
+<span id="cb42-8"><a href="#cb42-8"></a><span class="co">    code-line-numbers: true</span></span>
+<span id="cb42-9"><a href="#cb42-9"></a><span class="co">    code-tools: true</span></span>
+<span id="cb42-10"><a href="#cb42-10"></a><span class="co">    highlight-style: github</span></span>
+<span id="cb42-11"><a href="#cb42-11"></a><span class="co">    theme: cosmo</span></span>
+<span id="cb42-12"><a href="#cb42-12"></a><span class="an">categories:</span><span class="co"> [Kernel Engineering, Cuda, Pytorch, CPP]</span></span>
+<span id="cb42-13"><a href="#cb42-13"></a><span class="an">image:</span><span class="co"> "PythonVsCPP.png"</span></span>
+<span id="cb42-14"><a href="#cb42-14"></a><span class="co">---</span></span>
+<span id="cb42-15"><a href="#cb42-15"></a><span class="fu">## Motivation:</span></span>
+<span id="cb42-16"><a href="#cb42-16"></a><span class="ss">- </span>In this series of lessons, I will track my learning through the universe of C++ as someone who mainly program in Python.</span>
+<span id="cb42-17"><a href="#cb42-17"></a><span class="ss">- </span>The motivation behind learning C++ in 2025 can be resumed into one word: **Cuda**.</span>
+<span id="cb42-18"><a href="#cb42-18"></a><span class="ss">- </span>CUDA kernels are still C++ first, Python second. Learning the bare-metal steps so I can stop guessing and start writing fast GPU code. One small page a day until the compiler feels normal.</span>
+<span id="cb42-19"><a href="#cb42-19"></a><span class="ss">- </span>This idea of learning C++ for CUDA make it less intimidating, since C++ isn't the goal here  rather just a tool for something else.</span>
+<span id="cb42-20"><a href="#cb42-20"></a><span class="ss">- </span>But still I need to learn some basics of C++ in order to navigate its world that already after one studying session looks very strange and outlandish for a Python programmer.</span>
+<span id="cb42-21"><a href="#cb42-21"></a></span>
+<span id="cb42-22"><a href="#cb42-22"></a><span class="fu">## C++ World:</span></span>
+<span id="cb42-23"><a href="#cb42-23"></a><span class="ss">- </span>C++ is a **Compiled language**, which means the code goes through a transformation process before it can run.</span>
+<span id="cb42-24"><a href="#cb42-24"></a><span class="ss">- </span>In C++, we write code then a special program called **Compiler** translates our *Human-readable* code into machine code (1s &amp; 0s) that computer can executes.</span>
+<span id="cb42-25"><a href="#cb42-25"></a><span class="ss">- </span>This process of compiling works in **4 stages**:</span>
+<span id="cb42-26"><a href="#cb42-26"></a><span class="ss">  * </span>Stage1: Pre-processing before the compiler even looks at our code, it's a text manipulation step where the preprocessor check code that starts with <span class="in">`#`</span> and  copy-past, find-replace it automatically, so the next step include only pure C++ code.</span>
+<span id="cb42-27"><a href="#cb42-27"></a><span class="ss">  * </span>Stage2: The compiler reads the C++ code and converts it to **Assembly Language**, which is a human readable instructions that are very close to machine code.</span>
+<span id="cb42-28"><a href="#cb42-28"></a><span class="ss">  * </span>Stage3: An **Assembler** converts assembly into actual <span class="in">`1s`</span> &amp; <span class="in">`0s`</span> that the CPU understands.</span>
+<span id="cb42-29"><a href="#cb42-29"></a><span class="ss">  * </span>Stage4: A **Linker** connects everything together (code, libraries, other file..) and creates the final executable file that can run.</span>
+<span id="cb42-30"><a href="#cb42-30"></a></span>
+<span id="cb42-31"><a href="#cb42-31"></a></span>
+<span id="cb42-32"><a href="#cb42-32"></a><span class="in">```cpp</span></span>
+<span id="cb42-33"><a href="#cb42-33"></a><span class="pp">#include </span><span class="im">&lt;iostream&gt;</span></span>
+<span id="cb42-34"><a href="#cb42-34"></a><span class="dt">int</span> main<span class="op">()</span></span>
+<span id="cb42-35"><a href="#cb42-35"></a><span class="op">{</span></span>
+<span id="cb42-36"><a href="#cb42-36"></a>    <span class="co">// print my name in three lines</span></span>
+<span id="cb42-37"><a href="#cb42-37"></a>    <span class="bu">std::</span>cout <span class="op">&lt;&lt;</span> <span class="st">"Hi, My"</span> <span class="op">&lt;&lt;</span> <span class="bu">std::</span>endl<span class="op">;</span></span>
+<span id="cb42-38"><a href="#cb42-38"></a>    <span class="bu">std::</span>cout <span class="op">&lt;&lt;</span> <span class="st">"name is"</span> <span class="op">&lt;&lt;</span> <span class="bu">std::</span>endl<span class="op">;</span></span>
+<span id="cb42-39"><a href="#cb42-39"></a>    <span class="bu">std::</span>cout <span class="op">&lt;&lt;</span> <span class="st">"Ismail."</span> <span class="op">&lt;&lt;</span> <span class="bu">std::</span>endl<span class="op">;</span></span>
+<span id="cb42-40"><a href="#cb42-40"></a>    <span class="co">// in one line with three string</span></span>
+<span id="cb42-41"><a href="#cb42-41"></a>    <span class="bu">std::</span>cout <span class="op">&lt;&lt;</span> <span class="st">"Hi, my "</span> <span class="op">&lt;&lt;</span> <span class="st">"name is "</span> <span class="op">&lt;&lt;</span> <span class="st">"Ismail."</span> <span class="op">&lt;&lt;</span><span class="bu">std::</span>endl<span class="op">;</span></span>
+<span id="cb42-42"><a href="#cb42-42"></a>    <span class="co">// print the whole expression in one string</span></span>
+<span id="cb42-43"><a href="#cb42-43"></a>    <span class="bu">std::</span>cout <span class="op">&lt;&lt;</span> <span class="st">"Hi, my name is Ismail."</span><span class="op">;</span></span>
+<span id="cb42-44"><a href="#cb42-44"></a>    </span>
+<span id="cb42-45"><a href="#cb42-45"></a>    <span class="cf">return</span> <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb42-46"><a href="#cb42-46"></a><span class="op">}</span></span>
+<span id="cb42-47"><a href="#cb42-47"></a><span class="in">```</span></span>
+<span id="cb42-48"><a href="#cb42-48"></a></span>
+<span id="cb42-49"><a href="#cb42-49"></a></span>
+<span id="cb42-50"><a href="#cb42-50"></a><span class="in">```cpp</span></span>
+<span id="cb42-51"><a href="#cb42-51"></a>main<span class="op">()</span></span>
+<span id="cb42-52"><a href="#cb42-52"></a><span class="in">```</span></span>
+<span id="cb42-53"><a href="#cb42-53"></a></span>
+<span id="cb42-54"><a href="#cb42-54"></a><span class="in">    Hi, My</span></span>
+<span id="cb42-55"><a href="#cb42-55"></a><span class="in">    name is</span></span>
+<span id="cb42-56"><a href="#cb42-56"></a><span class="in">    Ismail.</span></span>
+<span id="cb42-57"><a href="#cb42-57"></a><span class="in">    Hi, my name is Ismail.</span></span>
+<span id="cb42-58"><a href="#cb42-58"></a><span class="in">    Hi, my name is Ismail.</span></span>
+<span id="cb42-59"><a href="#cb42-59"></a></span>
+<span id="cb42-60"><a href="#cb42-60"></a></span>
+<span id="cb42-61"><a href="#cb42-61"></a></span>
+<span id="cb42-62"><a href="#cb42-62"></a></span>
+<span id="cb42-63"><a href="#cb42-63"></a><span class="in">    0</span></span>
+<span id="cb42-64"><a href="#cb42-64"></a></span>
+<span id="cb42-65"><a href="#cb42-65"></a></span>
+<span id="cb42-66"><a href="#cb42-66"></a></span>
+<span id="cb42-67"><a href="#cb42-67"></a><span class="fu">### Importing in CPP:</span></span>
+<span id="cb42-68"><a href="#cb42-68"></a></span>
+<span id="cb42-69"><a href="#cb42-69"></a><span class="ss">* </span>In order to use libraries and tools in C++ we use the keyword **`#include`**, it's equivalent to <span class="in">`import`</span> in Python.</span>
+<span id="cb42-70"><a href="#cb42-70"></a><span class="ss">* </span>Library we used here is <span class="in">`iostream`</span> which allows us to print in the screen and many more things.</span>
+<span id="cb42-71"><a href="#cb42-71"></a></span>
+<span id="cb42-72"><a href="#cb42-72"></a><span class="fu">### Main() function:</span></span>
+<span id="cb42-73"><a href="#cb42-73"></a></span>
+<span id="cb42-74"><a href="#cb42-74"></a><span class="ss">* </span>**All C++ programs** has one <span class="in">`main()`</span> function, it's the starting point of every program, The <span class="in">`main`</span> function is called automatically when a C++ program begins.</span>
+<span id="cb42-75"><a href="#cb42-75"></a></span>
+<span id="cb42-76"><a href="#cb42-76"></a><span class="fu">#### Printing:</span></span>
+<span id="cb42-77"><a href="#cb42-77"></a></span>
+<span id="cb42-78"><a href="#cb42-78"></a><span class="ss">* </span>By using **`cout`** we can print text on the screen.</span>
+<span id="cb42-79"><a href="#cb42-79"></a><span class="ss">* </span>More than one piece of data can be printed at a time.</span>
+<span id="cb42-80"><a href="#cb42-80"></a><span class="ss">* </span>**`endl`** is used after **`cout`** to end the line, so the next **`cout`** could starts printing next line.</span>
+<span id="cb42-81"><a href="#cb42-81"></a><span class="ss">* </span>We can print multiple pieces of data if we **seperate** them with **`&lt;&lt;`**.</span>
+<span id="cb42-82"><a href="#cb42-82"></a></span>
+<span id="cb42-83"><a href="#cb42-83"></a><span class="fu">#### Statements:</span></span>
+<span id="cb42-84"><a href="#cb42-84"></a><span class="ss">* </span>The lines of code inside <span class="in">`main`</span> function are called <span class="in">`statements`</span>.</span>
+<span id="cb42-85"><a href="#cb42-85"></a><span class="ss">* </span>All statements in C++ must end with semi-colon **;**.</span>
+<span id="cb42-86"><a href="#cb42-86"></a><span class="ss">* </span>**The compiler** reads our code and turns it into instructions that a computer can understand (machine instructions).</span>
+<span id="cb42-87"><a href="#cb42-87"></a><span class="ss">* </span>Then the compiler will generate an executable program which is just a file filled with machine instructions.</span>
+<span id="cb42-88"><a href="#cb42-88"></a></span>
+<span id="cb42-89"><a href="#cb42-89"></a><span class="ss">    - </span>The compiler uses the semi-colons to know where each statement ends. If you do not include a semi-colon at the end of every statement then you will get a <span class="in">`syntax error`</span>. A program with syntax errors will not compile and run.</span>
+<span id="cb42-90"><a href="#cb42-90"></a><span class="fu">#### String:</span></span>
+<span id="cb42-91"><a href="#cb42-91"></a><span class="ss">* </span>The thing printed to the screen is called string, which refers to a groupr of characters inside <span class="in">`""`</span>.</span>
+<span id="cb42-92"><a href="#cb42-92"></a><span class="fu">#### Comments:</span></span>
+<span id="cb42-93"><a href="#cb42-93"></a><span class="ss">* </span>As in python comments are non executable code that we put beside the code in order to explain for us or others ideas or concepts in the code.</span>
+<span id="cb42-94"><a href="#cb42-94"></a><span class="ss">* </span>In C++ the comment starts with //.</span>
+<span id="cb42-95"><a href="#cb42-95"></a><span class="ss">* </span>There are two types of comments:  </span>
+<span id="cb42-96"><a href="#cb42-96"></a><span class="ss">       - </span>single line comments and multi-line comments. All code in between a /* and  a */ are called multi-line comments. They will also be ignored by the compiler. When you have a lot to say in a comment you will use these</span>
+<span id="cb42-97"><a href="#cb42-97"></a></span>
+<span id="cb42-98"><a href="#cb42-98"></a><span class="fu">### Variables:</span></span>
+<span id="cb42-99"><a href="#cb42-99"></a><span class="ss">* </span>We will write a program that will find the distance between two points on a graph. It will need variables to hold the points (an X and a Y value for each point) and a variable to hold the length of the line that connects  the points.</span>
+<span id="cb42-100"><a href="#cb42-100"></a></span>
+<span id="cb42-101"><a href="#cb42-101"></a></span>
+<span id="cb42-102"><a href="#cb42-102"></a><span class="ss">* </span>Since C++ is a static typing language, we need to **declare** the type of the variable while creating it, and this variable will only accept the type is assigned to.</span>
+<span id="cb42-103"><a href="#cb42-103"></a><span class="ss">* </span>Here we declare a variable <span class="in">`var`</span> with type <span class="in">`int`</span> which refers to integer or whole number.</span>
+<span id="cb42-104"><a href="#cb42-104"></a></span>
+<span id="cb42-105"><a href="#cb42-105"></a></span>
+<span id="cb42-106"><a href="#cb42-106"></a></span>
+<span id="cb42-107"><a href="#cb42-107"></a><span class="in">```cpp</span></span>
+<span id="cb42-108"><a href="#cb42-108"></a><span class="dt">int</span> var <span class="op">=</span> <span class="dv">5</span><span class="op">;</span></span>
+<span id="cb42-109"><a href="#cb42-109"></a><span class="bu">std::</span>cout <span class="op">&lt;&lt;</span> <span class="st">"variable of type integer: "</span> <span class="op">&lt;&lt;</span> var <span class="op">&lt;&lt;</span> <span class="bu">std::</span>endl<span class="op">;</span></span>
+<span id="cb42-110"><a href="#cb42-110"></a></span>
+<span id="cb42-111"><a href="#cb42-111"></a><span class="in">```</span></span>
+<span id="cb42-112"><a href="#cb42-112"></a></span>
+<span id="cb42-113"><a href="#cb42-113"></a><span class="in">    variable of type integer: 5</span></span>
+<span id="cb42-114"><a href="#cb42-114"></a></span>
+<span id="cb42-115"><a href="#cb42-115"></a></span>
+<span id="cb42-116"><a href="#cb42-116"></a><span class="ss">* </span>A variable is place where we store data in the memory that can be read or written to in a program.</span>
+<span id="cb42-117"><a href="#cb42-117"></a><span class="ss">* </span>We think of variables as boxes that hold data, and each box is distinct in the memory. So every variable lives in a location in memory, and we can retrieve it by name without carrying about it's location in memory.</span>
+<span id="cb42-118"><a href="#cb42-118"></a></span>
+<span id="cb42-119"><a href="#cb42-119"></a></span>
+<span id="cb42-120"><a href="#cb42-120"></a></span>
+<span id="cb42-121"><a href="#cb42-121"></a><span class="in">```cpp</span></span>
+<span id="cb42-122"><a href="#cb42-122"></a><span class="dt">void</span> func<span class="op">()</span></span>
+<span id="cb42-123"><a href="#cb42-123"></a><span class="op">{</span></span>
+<span id="cb42-124"><a href="#cb42-124"></a>    <span class="co">// declare variables</span></span>
+<span id="cb42-125"><a href="#cb42-125"></a>    <span class="dt">int</span> var0<span class="op">;</span></span>
+<span id="cb42-126"><a href="#cb42-126"></a>    <span class="dt">int</span> var1<span class="op">;</span></span>
+<span id="cb42-127"><a href="#cb42-127"></a></span>
+<span id="cb42-128"><a href="#cb42-128"></a>    <span class="dt">int</span> var2<span class="op">;</span></span>
+<span id="cb42-129"><a href="#cb42-129"></a>    <span class="dt">int</span> var3<span class="op">;</span></span>
+<span id="cb42-130"><a href="#cb42-130"></a></span>
+<span id="cb42-131"><a href="#cb42-131"></a>    <span class="co">// assign values to each variable</span></span>
+<span id="cb42-132"><a href="#cb42-132"></a>    var0 <span class="op">=</span> <span class="dv">1</span><span class="op">;</span></span>
+<span id="cb42-133"><a href="#cb42-133"></a>    var1 <span class="op">=</span> <span class="dv">1</span><span class="op">;</span></span>
+<span id="cb42-134"><a href="#cb42-134"></a>    var2 <span class="op">=</span> <span class="dv">2</span><span class="op">;</span></span>
+<span id="cb42-135"><a href="#cb42-135"></a>    var3 <span class="op">=</span> <span class="dv">2</span><span class="op">;</span></span>
+<span id="cb42-136"><a href="#cb42-136"></a></span>
+<span id="cb42-137"><a href="#cb42-137"></a>    <span class="co">// print the variables value with a message on the screen</span></span>
+<span id="cb42-138"><a href="#cb42-138"></a>    <span class="bu">std::</span>cout <span class="op">&lt;&lt;</span><span class="st">"variable 1: "</span> <span class="op">&lt;&lt;</span>var0<span class="op">&lt;&lt;</span> <span class="bu">std::</span>endl<span class="op">;</span></span>
+<span id="cb42-139"><a href="#cb42-139"></a>    <span class="bu">std::</span>cout <span class="op">&lt;&lt;</span><span class="st">"variable 2: "</span> <span class="op">&lt;&lt;</span>var1<span class="op">&lt;&lt;</span> <span class="bu">std::</span>endl<span class="op">;</span></span>
+<span id="cb42-140"><a href="#cb42-140"></a>    <span class="bu">std::</span>cout <span class="op">&lt;&lt;</span><span class="st">"variable 3: "</span> <span class="op">&lt;&lt;</span>var2<span class="op">&lt;&lt;</span> <span class="bu">std::</span>endl<span class="op">;</span></span>
+<span id="cb42-141"><a href="#cb42-141"></a>    <span class="bu">std::</span>cout <span class="op">&lt;&lt;</span><span class="st">"variable 4: "</span> <span class="op">&lt;&lt;</span>var3<span class="op">&lt;&lt;</span> <span class="bu">std::</span>endl<span class="op">;</span></span>
+<span id="cb42-142"><a href="#cb42-142"></a><span class="op">}</span></span>
+<span id="cb42-143"><a href="#cb42-143"></a>func<span class="op">();</span></span>
+<span id="cb42-144"><a href="#cb42-144"></a><span class="in">```</span></span>
+<span id="cb42-145"><a href="#cb42-145"></a></span>
+<span id="cb42-146"><a href="#cb42-146"></a><span class="in">    variable 1: 1</span></span>
+<span id="cb42-147"><a href="#cb42-147"></a><span class="in">    variable 2: 1</span></span>
+<span id="cb42-148"><a href="#cb42-148"></a><span class="in">    variable 3: 2</span></span>
+<span id="cb42-149"><a href="#cb42-149"></a><span class="in">    variable 4: 2</span></span>
+<span id="cb42-150"><a href="#cb42-150"></a></span>
+<span id="cb42-151"><a href="#cb42-151"></a></span>
+<span id="cb42-152"><a href="#cb42-152"></a><span class="ss">* </span>Here I declared 4 variables of type int, at this point the program requires a box in the memory for each variable.</span>
+<span id="cb42-153"><a href="#cb42-153"></a><span class="ss">* </span>Then when I assign each variable to a value, the program will put those values in their correspondent box.</span>
+<span id="cb42-154"><a href="#cb42-154"></a><span class="ss">* </span>Now we have what represents the points in a graph: <span class="in">`var0`</span> and <span class="in">`var1`</span> for point 1 &amp; <span class="in">`var2`</span> and <span class="in">`var3`</span> for point 2, now we need variable that will hold the value of the distance. The type of that variable must be float number, since it can be decimal.</span>
+<span id="cb42-155"><a href="#cb42-155"></a></span>
+<span id="cb42-156"><a href="#cb42-156"></a></span>
+<span id="cb42-157"><a href="#cb42-157"></a><span class="in">```cpp</span></span>
+<span id="cb42-158"><a href="#cb42-158"></a><span class="dt">void</span> func2<span class="op">()</span></span>
+<span id="cb42-159"><a href="#cb42-159"></a><span class="op">{</span></span>
+<span id="cb42-160"><a href="#cb42-160"></a>    <span class="dt">int</span> var0<span class="op">;</span></span>
+<span id="cb42-161"><a href="#cb42-161"></a>    <span class="dt">int</span> var1<span class="op">;</span></span>
+<span id="cb42-162"><a href="#cb42-162"></a>    <span class="dt">int</span> var2<span class="op">;</span></span>
+<span id="cb42-163"><a href="#cb42-163"></a>    <span class="dt">int</span> var3<span class="op">;</span></span>
+<span id="cb42-164"><a href="#cb42-164"></a>    var0 <span class="op">=</span> <span class="dv">1</span><span class="op">;</span></span>
+<span id="cb42-165"><a href="#cb42-165"></a>    var1 <span class="op">=</span> <span class="dv">1</span><span class="op">;</span></span>
+<span id="cb42-166"><a href="#cb42-166"></a>    var2 <span class="op">=</span> <span class="dv">2</span><span class="op">;</span></span>
+<span id="cb42-167"><a href="#cb42-167"></a>    var3 <span class="op">=</span> <span class="dv">2</span><span class="op">;</span></span>
+<span id="cb42-168"><a href="#cb42-168"></a></span>
+<span id="cb42-169"><a href="#cb42-169"></a>    <span class="co">// declare a float type variable</span></span>
+<span id="cb42-170"><a href="#cb42-170"></a></span>
+<span id="cb42-171"><a href="#cb42-171"></a>    <span class="dt">float</span> lengthOfline<span class="op">;</span></span>
+<span id="cb42-172"><a href="#cb42-172"></a><span class="op">}</span></span>
+<span id="cb42-173"><a href="#cb42-173"></a><span class="in">```</span></span>
+<span id="cb42-174"><a href="#cb42-174"></a></span>
+<span id="cb42-175"><a href="#cb42-175"></a><span class="ss">* </span>the variable <span class="in">`lengthOfline`</span> doesn't have value yet, so need to calculate the distance:</span>
+<span id="cb42-176"><a href="#cb42-176"></a>  $d = \sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2}$</span>
+<span id="cb42-177"><a href="#cb42-177"></a><span class="ss">* </span>So we need power and square root. we could multiply the number by itself to obtain the power but the square root need to be hard coded, but luckily we can just import it from **math** module in C++, which we need to import in order to use the built in function **sqrt**.</span>
+<span id="cb42-178"><a href="#cb42-178"></a></span>
+<span id="cb42-179"><a href="#cb42-179"></a></span>
+<span id="cb42-180"><a href="#cb42-180"></a><span class="in">```cpp</span></span>
+<span id="cb42-181"><a href="#cb42-181"></a><span class="pp">#include </span><span class="im">&lt;cmath&gt;</span></span>
+<span id="cb42-182"><a href="#cb42-182"></a><span class="dt">void</span> func3<span class="op">()</span></span>
+<span id="cb42-183"><a href="#cb42-183"></a><span class="op">{</span> </span>
+<span id="cb42-184"><a href="#cb42-184"></a>    <span class="co">//declare the variables to hold points </span></span>
+<span id="cb42-185"><a href="#cb42-185"></a>    <span class="dt">int</span> x1<span class="op">;</span> </span>
+<span id="cb42-186"><a href="#cb42-186"></a>    <span class="dt">int</span> y1<span class="op">;</span> </span>
+<span id="cb42-187"><a href="#cb42-187"></a> </span>
+<span id="cb42-188"><a href="#cb42-188"></a>    <span class="dt">int</span> x2<span class="op">;</span> </span>
+<span id="cb42-189"><a href="#cb42-189"></a>    <span class="dt">int</span> y2<span class="op">;</span> </span>
+<span id="cb42-190"><a href="#cb42-190"></a> </span>
+<span id="cb42-191"><a href="#cb42-191"></a>    <span class="co">//fill the point variables with data </span></span>
+<span id="cb42-192"><a href="#cb42-192"></a>    x1 <span class="op">=</span> <span class="dv">2</span><span class="op">;</span> </span>
+<span id="cb42-193"><a href="#cb42-193"></a>    y1 <span class="op">=</span> <span class="dv">2</span><span class="op">;</span> </span>
+<span id="cb42-194"><a href="#cb42-194"></a> </span>
+<span id="cb42-195"><a href="#cb42-195"></a>    x2 <span class="op">=</span> <span class="dv">2</span><span class="op">;</span> </span>
+<span id="cb42-196"><a href="#cb42-196"></a>    y2 <span class="op">=</span> <span class="dv">4</span><span class="op">;</span> </span>
+<span id="cb42-197"><a href="#cb42-197"></a> </span>
+<span id="cb42-198"><a href="#cb42-198"></a>    <span class="co">//declare a variable to hold the length of a line between two points </span></span>
+<span id="cb42-199"><a href="#cb42-199"></a>    <span class="dt">float</span> lengthOfLine<span class="op">;</span> </span>
+<span id="cb42-200"><a href="#cb42-200"></a> </span>
+<span id="cb42-201"><a href="#cb42-201"></a>    <span class="co">//use the distance formula to find the distance </span></span>
+<span id="cb42-202"><a href="#cb42-202"></a>    lengthOfLine <span class="op">=</span> sqrt<span class="op">(((</span>x2 <span class="op">-</span> x1<span class="op">)</span> <span class="op">*</span> <span class="op">(</span>x2 <span class="op">-</span> x1<span class="op">))</span> <span class="op">+</span> <span class="op">((</span>y2 <span class="op">-</span> y1<span class="op">)</span> <span class="op">*</span> <span class="op">(</span>y2 <span class="op">-</span> y1<span class="op">)));</span> </span>
+<span id="cb42-203"><a href="#cb42-203"></a> </span>
+<span id="cb42-204"><a href="#cb42-204"></a>    <span class="co">//print the length of the line </span></span>
+<span id="cb42-205"><a href="#cb42-205"></a>    <span class="bu">std::</span>cout<span class="op">&lt;&lt;</span><span class="st">"The length of the line is: "</span><span class="op">&lt;&lt;</span>lengthOfLine<span class="op">&lt;&lt;</span><span class="bu">std::</span>endl<span class="op">;</span> </span>
+<span id="cb42-206"><a href="#cb42-206"></a>  </span>
+<span id="cb42-207"><a href="#cb42-207"></a><span class="op">}</span></span>
+<span id="cb42-208"><a href="#cb42-208"></a>func3<span class="op">();</span></span>
+<span id="cb42-209"><a href="#cb42-209"></a><span class="in">```</span></span>
+<span id="cb42-210"><a href="#cb42-210"></a></span>
+<span id="cb42-211"><a href="#cb42-211"></a><span class="in">    The length of the line is: 2</span></span>
+<span id="cb42-212"><a href="#cb42-212"></a></span>
+<span id="cb42-213"><a href="#cb42-213"></a></span>
+<span id="cb42-214"><a href="#cb42-214"></a><span class="fu">### Data types:</span></span>
+<span id="cb42-215"><a href="#cb42-215"></a><span class="ss">* </span>In C++ data types are defined once and cannot be changed. If a variable is declared with a specific data type, it can only hold values that suits that data type.</span>
+<span id="cb42-216"><a href="#cb42-216"></a><span class="ss">* </span>We already used **`int`** which is a whole number, **`float`** a decimal. There are many other types:</span>
+<span id="cb42-217"><a href="#cb42-217"></a></span>
+<span id="cb42-218"><a href="#cb42-218"></a></span>
+<span id="cb42-219"><a href="#cb42-219"></a><span class="in">```cpp</span></span>
+<span id="cb42-220"><a href="#cb42-220"></a><span class="pp">#include </span><span class="im">&lt;string&gt;</span></span>
+<span id="cb42-221"><a href="#cb42-221"></a><span class="kw">using</span> <span class="kw">namespace</span> std<span class="op">;</span></span>
+<span id="cb42-222"><a href="#cb42-222"></a></span>
+<span id="cb42-223"><a href="#cb42-223"></a><span class="in">```</span></span>
+<span id="cb42-224"><a href="#cb42-224"></a></span>
+<span id="cb42-225"><a href="#cb42-225"></a></span>
+<span id="cb42-226"><a href="#cb42-226"></a><span class="in">```cpp</span></span>
+<span id="cb42-227"><a href="#cb42-227"></a><span class="dt">void</span> basicdtypes<span class="op">()</span></span>
+<span id="cb42-228"><a href="#cb42-228"></a><span class="op">{</span></span>
+<span id="cb42-229"><a href="#cb42-229"></a>    <span class="dt">int</span> num <span class="op">=</span> <span class="dv">5</span><span class="op">;</span></span>
+<span id="cb42-230"><a href="#cb42-230"></a>    <span class="dt">float</span> dec <span class="op">=</span> <span class="fl">5.22</span><span class="op">;</span></span>
+<span id="cb42-231"><a href="#cb42-231"></a>    <span class="dt">char</span> oneChar <span class="op">=</span> <span class="ch">'K'</span><span class="op">;</span></span>
+<span id="cb42-232"><a href="#cb42-232"></a>    string name <span class="op">=</span> <span class="st">"Ismail"</span><span class="op">;</span></span>
+<span id="cb42-233"><a href="#cb42-233"></a></span>
+<span id="cb42-234"><a href="#cb42-234"></a>    cout <span class="op">&lt;&lt;</span><span class="st">"this is a whole number: "</span> <span class="op">&lt;&lt;</span> num <span class="op">&lt;&lt;</span> endl<span class="op">;</span></span>
+<span id="cb42-235"><a href="#cb42-235"></a>    cout <span class="op">&lt;&lt;</span><span class="st">"this is a decimal number: "</span> <span class="op">&lt;&lt;</span>dec<span class="op">&lt;&lt;</span> endl<span class="op">;</span></span>
+<span id="cb42-236"><a href="#cb42-236"></a>    cout <span class="op">&lt;&lt;</span> <span class="st">"this is single character: "</span> <span class="op">&lt;&lt;</span>oneChar<span class="op">&lt;&lt;</span> endl<span class="op">;</span></span>
+<span id="cb42-237"><a href="#cb42-237"></a>    cout <span class="op">&lt;&lt;</span> <span class="st">"This is a string of charaters: "</span> <span class="op">&lt;&lt;</span>name<span class="op">&lt;&lt;</span> endl<span class="op">;</span></span>
+<span id="cb42-238"><a href="#cb42-238"></a><span class="op">}</span></span>
+<span id="cb42-239"><a href="#cb42-239"></a>basicdtypes<span class="op">();</span></span>
+<span id="cb42-240"><a href="#cb42-240"></a><span class="in">```</span></span>
+<span id="cb42-241"><a href="#cb42-241"></a></span>
+<span id="cb42-242"><a href="#cb42-242"></a><span class="in">    this is a whole number: 5</span></span>
+<span id="cb42-243"><a href="#cb42-243"></a><span class="in">    this is a decimal number: 5.22</span></span>
+<span id="cb42-244"><a href="#cb42-244"></a><span class="in">    this is single character: K</span></span>
+<span id="cb42-245"><a href="#cb42-245"></a><span class="in">    This is a string of charaters: Ismail</span></span>
+<span id="cb42-246"><a href="#cb42-246"></a></span>
+<span id="cb42-247"><a href="#cb42-247"></a></span>
+<span id="cb42-248"><a href="#cb42-248"></a><span class="ss">* </span><span class="in">`char`</span> is a single character between single quotes.</span>
+<span id="cb42-249"><a href="#cb42-249"></a><span class="ss">* </span><span class="in">`string`</span> is couple of characters between double quotes, and it's not primitive type, it must be imported <span class="in">`#include &lt;string&gt;`</span></span>
+<span id="cb42-250"><a href="#cb42-250"></a></span>
+<span id="cb42-251"><a href="#cb42-251"></a><span class="fu">### Numbers types:</span></span>
+<span id="cb42-252"><a href="#cb42-252"></a><span class="ss">* </span>Till now we saw 2 numerical data types: <span class="in">`int`</span> and <span class="in">`float`</span>.</span>
+<span id="cb42-253"><a href="#cb42-253"></a><span class="ss">* </span>A data type defines a few things:</span>
+<span id="cb42-254"><a href="#cb42-254"></a><span class="ss">    - </span>the operations that can be performed on variables of that type</span>
+<span id="cb42-255"><a href="#cb42-255"></a><span class="ss">    - </span>the values that can be stored inside a variable of that type (there is usually a range of acceptable values)</span>
+<span id="cb42-256"><a href="#cb42-256"></a><span class="ss">    - </span>the amount of space a variable takes up in memory</span>
+<span id="cb42-257"><a href="#cb42-257"></a><span class="ss">* </span>The operations performed on <span class="in">`int`</span> are: **` - + / * `**, the division is the only operation that requires some explanation.</span>
+<span id="cb42-258"><a href="#cb42-258"></a><span class="ss">* </span>Here is a division between to integers: </span>
+<span id="cb42-259"><a href="#cb42-259"></a></span>
+<span id="cb42-260"><a href="#cb42-260"></a></span>
+<span id="cb42-261"><a href="#cb42-261"></a><span class="in">```cpp</span></span>
+<span id="cb42-262"><a href="#cb42-262"></a><span class="dt">void</span> divint<span class="op">()</span></span>
+<span id="cb42-263"><a href="#cb42-263"></a><span class="op">{</span></span>
+<span id="cb42-264"><a href="#cb42-264"></a>    <span class="dt">int</span> a <span class="op">=</span> <span class="dv">10</span><span class="op">;</span></span>
+<span id="cb42-265"><a href="#cb42-265"></a>    <span class="dt">int</span> b <span class="op">=</span> <span class="dv">5</span><span class="op">;</span></span>
+<span id="cb42-266"><a href="#cb42-266"></a>    <span class="dt">int</span> res <span class="op">=</span> a <span class="op">/</span> b<span class="op">;</span></span>
+<span id="cb42-267"><a href="#cb42-267"></a>    cout <span class="op">&lt;&lt;</span><span class="st">"result a / b =&gt; "</span> <span class="op">&lt;&lt;</span>res<span class="op">&lt;&lt;</span> endl<span class="op">;</span></span>
+<span id="cb42-268"><a href="#cb42-268"></a><span class="op">}</span>    </span>
+<span id="cb42-269"><a href="#cb42-269"></a>divint<span class="op">();</span></span>
+<span id="cb42-270"><a href="#cb42-270"></a><span class="in">```</span></span>
+<span id="cb42-271"><a href="#cb42-271"></a></span>
+<span id="cb42-272"><a href="#cb42-272"></a><span class="in">    result a / b =&gt; 2</span></span>
+<span id="cb42-273"><a href="#cb42-273"></a></span>
+<span id="cb42-274"><a href="#cb42-274"></a></span>
+<span id="cb42-275"><a href="#cb42-275"></a><span class="ss">* </span>What if we want to divide 2 integers that will causes not a whole number:</span>
+<span id="cb42-276"><a href="#cb42-276"></a></span>
+<span id="cb42-277"><a href="#cb42-277"></a></span>
+<span id="cb42-278"><a href="#cb42-278"></a><span class="in">```cpp</span></span>
+<span id="cb42-279"><a href="#cb42-279"></a><span class="dt">void</span> dvd<span class="op">()</span></span>
+<span id="cb42-280"><a href="#cb42-280"></a><span class="op">{</span></span>
+<span id="cb42-281"><a href="#cb42-281"></a>    <span class="dt">int</span> num <span class="op">=</span> <span class="dv">12</span><span class="op">;</span></span>
+<span id="cb42-282"><a href="#cb42-282"></a>    <span class="dt">int</span> num1 <span class="op">=</span> <span class="dv">2</span><span class="op">;</span></span>
+<span id="cb42-283"><a href="#cb42-283"></a>    <span class="dt">int</span> res <span class="op">=</span> num <span class="op">/</span> num1<span class="op">;</span></span>
+<span id="cb42-284"><a href="#cb42-284"></a>    cout <span class="op">&lt;&lt;</span><span class="st">"result as num = 12: "</span> <span class="op">&lt;&lt;</span>res<span class="op">&lt;&lt;</span> endl<span class="op">;</span></span>
+<span id="cb42-285"><a href="#cb42-285"></a>    num <span class="op">=</span> <span class="dv">13</span><span class="op">;</span></span>
+<span id="cb42-286"><a href="#cb42-286"></a>    res <span class="op">=</span> num <span class="op">/</span> num1<span class="op">;</span></span>
+<span id="cb42-287"><a href="#cb42-287"></a>    cout <span class="op">&lt;&lt;</span><span class="st">"result as num = 13: "</span> <span class="op">&lt;&lt;</span>res<span class="op">&lt;&lt;</span> endl<span class="op">;</span></span>
+<span id="cb42-288"><a href="#cb42-288"></a><span class="op">}</span></span>
+<span id="cb42-289"><a href="#cb42-289"></a>dvd<span class="op">();</span></span>
+<span id="cb42-290"><a href="#cb42-290"></a><span class="in">```</span></span>
+<span id="cb42-291"><a href="#cb42-291"></a></span>
+<span id="cb42-292"><a href="#cb42-292"></a><span class="in">    result as num = 12: 6</span></span>
+<span id="cb42-293"><a href="#cb42-293"></a><span class="in">    result as num = 13: 6</span></span>
+<span id="cb42-294"><a href="#cb42-294"></a></span>
+<span id="cb42-295"><a href="#cb42-295"></a></span>
+<span id="cb42-296"><a href="#cb42-296"></a><span class="ss">* </span>At first, the result was 6 which is the obvious answer, but when we predicted <span class="in">`6.5`</span> we still get <span class="in">`6`</span>?</span>
+<span id="cb42-297"><a href="#cb42-297"></a><span class="ss">* </span>The reason is that integer division returns the quotient which is always an integer. This is true of all integer divides using the / operator</span>
+<span id="cb42-298"><a href="#cb42-298"></a></span>
+<span id="cb42-299"><a href="#cb42-299"></a><span class="ss">* </span>There is another integer division operator called the **modulus operator** that returns the remainder. The mod operator is the **`%`** symbol.</span>
+<span id="cb42-300"><a href="#cb42-300"></a></span>
+<span id="cb42-301"><a href="#cb42-301"></a></span>
+<span id="cb42-302"><a href="#cb42-302"></a><span class="in">```cpp</span></span>
+<span id="cb42-303"><a href="#cb42-303"></a><span class="dt">void</span> divmod<span class="op">()</span></span>
+<span id="cb42-304"><a href="#cb42-304"></a><span class="op">{</span></span>
+<span id="cb42-305"><a href="#cb42-305"></a>     </span>
+<span id="cb42-306"><a href="#cb42-306"></a>    <span class="dt">int</span> num1 <span class="op">=</span> <span class="dv">12</span><span class="op">;</span> </span>
+<span id="cb42-307"><a href="#cb42-307"></a>    <span class="dt">int</span> num2 <span class="op">=</span> <span class="dv">2</span><span class="op">;</span> </span>
+<span id="cb42-308"><a href="#cb42-308"></a>    <span class="dt">int</span> result<span class="op">;</span> </span>
+<span id="cb42-309"><a href="#cb42-309"></a> </span>
+<span id="cb42-310"><a href="#cb42-310"></a>    result <span class="op">=</span> num1 <span class="op">/</span> num2<span class="op">;</span> </span>
+<span id="cb42-311"><a href="#cb42-311"></a>    cout <span class="op">&lt;&lt;</span> <span class="st">"result with / operator: "</span> <span class="op">&lt;&lt;</span> result <span class="op">&lt;&lt;</span> endl<span class="op">;</span>     </span>
+<span id="cb42-312"><a href="#cb42-312"></a> </span>
+<span id="cb42-313"><a href="#cb42-313"></a>    result <span class="op">=</span> num1 <span class="op">%</span> num2<span class="op">;</span> </span>
+<span id="cb42-314"><a href="#cb42-314"></a>    cout <span class="op">&lt;&lt;</span> <span class="st">" result with </span><span class="sc">% o</span><span class="st">perator: "</span> <span class="op">&lt;&lt;</span> result <span class="op">&lt;&lt;</span> endl<span class="op">;</span></span>
+<span id="cb42-315"><a href="#cb42-315"></a>    </span>
+<span id="cb42-316"><a href="#cb42-316"></a><span class="op">}</span></span>
+<span id="cb42-317"><a href="#cb42-317"></a></span>
+<span id="cb42-318"><a href="#cb42-318"></a>divmod<span class="op">();</span></span>
+<span id="cb42-319"><a href="#cb42-319"></a><span class="in">```</span></span>
+<span id="cb42-320"><a href="#cb42-320"></a></span>
+<span id="cb42-321"><a href="#cb42-321"></a><span class="in">    result with / operator: 6</span></span>
+<span id="cb42-322"><a href="#cb42-322"></a><span class="in">     result with % operator: 0</span></span>
+<span id="cb42-323"><a href="#cb42-323"></a></span>
+<span id="cb42-324"><a href="#cb42-324"></a></span>
+<span id="cb42-325"><a href="#cb42-325"></a><span class="ss">* </span>A data type also specifies an acceptable range of values.</span>
+<span id="cb42-326"><a href="#cb42-326"></a><span class="ss">* </span>An int variable cannot hold an infinite sized number, there is a limit.</span>
+<span id="cb42-327"><a href="#cb42-327"></a></span>
+<span id="cb42-328"><a href="#cb42-328"></a><span class="ss">* </span>There is a built in constant called **`INT_MAX`** that holds the largest value that can be stored in any int variable (there is an **`INT_MIN`** too).</span>
+<span id="cb42-329"><a href="#cb42-329"></a></span>
+<span id="cb42-330"><a href="#cb42-330"></a></span>
+<span id="cb42-331"><a href="#cb42-331"></a><span class="in">```cpp</span></span>
+<span id="cb42-332"><a href="#cb42-332"></a><span class="pp">#include </span><span class="im">&lt;climits&gt;</span></span>
+<span id="cb42-333"><a href="#cb42-333"></a><span class="in">```</span></span>
+<span id="cb42-334"><a href="#cb42-334"></a></span>
+<span id="cb42-335"><a href="#cb42-335"></a></span>
+<span id="cb42-336"><a href="#cb42-336"></a><span class="in">```cpp</span></span>
+<span id="cb42-337"><a href="#cb42-337"></a><span class="dt">int</span> largeNumber<span class="op">;</span></span>
+<span id="cb42-338"><a href="#cb42-338"></a>largeNumber <span class="op">=</span> INT_MAX<span class="op">;</span></span>
+<span id="cb42-339"><a href="#cb42-339"></a>cout<span class="op">&lt;&lt;</span><span class="st">"largest number can be stored: "</span> <span class="op">&lt;&lt;</span>largeNumber<span class="op">&lt;&lt;</span> endl<span class="op">;</span></span>
+<span id="cb42-340"><a href="#cb42-340"></a><span class="in">```</span></span>
+<span id="cb42-341"><a href="#cb42-341"></a></span>
+<span id="cb42-342"><a href="#cb42-342"></a><span class="in">    largest number can be stored: 2147483647</span></span>
+<span id="cb42-343"><a href="#cb42-343"></a></span>
+<span id="cb42-344"><a href="#cb42-344"></a></span>
+<span id="cb42-345"><a href="#cb42-345"></a><span class="ss">* </span>Adding one number to that value will causes an out of range error</span>
+<span id="cb42-346"><a href="#cb42-346"></a><span class="ss">* </span>The arithmetic operators for floats are the same as ints except there is no mod operator. float division results in numbers with fractional parts.</span>
+<span id="cb42-347"><a href="#cb42-347"></a><span class="ss">* </span>In case we want to declare a float data type but the value is a whole number we need to explicitly tell the compiler it's a float number by adding <span class="in">`.0`</span>:</span>
+<span id="cb42-348"><a href="#cb42-348"></a></span>
+<span id="cb42-349"><a href="#cb42-349"></a></span>
+<span id="cb42-350"><a href="#cb42-350"></a><span class="in">```cpp</span></span>
+<span id="cb42-351"><a href="#cb42-351"></a><span class="pp">#include </span><span class="im">&lt;typeinfo&gt;</span></span>
+<span id="cb42-352"><a href="#cb42-352"></a><span class="dt">void</span> wholeFloat<span class="op">()</span></span>
+<span id="cb42-353"><a href="#cb42-353"></a><span class="op">{</span></span>
+<span id="cb42-354"><a href="#cb42-354"></a>    <span class="dt">int</span> num1 <span class="op">=</span> <span class="dv">15</span><span class="op">;</span></span>
+<span id="cb42-355"><a href="#cb42-355"></a>    <span class="dt">float</span> num2 <span class="op">=</span> <span class="fl">15.0</span><span class="op">;</span></span>
+<span id="cb42-356"><a href="#cb42-356"></a>    cout <span class="op">&lt;&lt;</span> <span class="st">"the type of num1 = 15 :  "</span> <span class="op">&lt;&lt;</span> <span class="kw">typeid</span><span class="op">(</span>num1<span class="op">).</span>name<span class="op">()</span> <span class="op">&lt;&lt;</span> endl<span class="op">;</span></span>
+<span id="cb42-357"><a href="#cb42-357"></a>    cout <span class="op">&lt;&lt;</span> <span class="st">"the type of num2 = 15.0 :  "</span> <span class="op">&lt;&lt;</span> <span class="kw">typeid</span><span class="op">(</span>num2<span class="op">).</span>name<span class="op">()</span> <span class="op">&lt;&lt;</span> endl<span class="op">;</span></span>
+<span id="cb42-358"><a href="#cb42-358"></a>    </span>
+<span id="cb42-359"><a href="#cb42-359"></a>    </span>
+<span id="cb42-360"><a href="#cb42-360"></a><span class="op">}</span></span>
+<span id="cb42-361"><a href="#cb42-361"></a></span>
+<span id="cb42-362"><a href="#cb42-362"></a>wholeFloat<span class="op">();</span></span>
+<span id="cb42-363"><a href="#cb42-363"></a><span class="in">```</span></span>
+<span id="cb42-364"><a href="#cb42-364"></a></span>
+<span id="cb42-365"><a href="#cb42-365"></a><span class="in">    the type of num1 = 15 :  i</span></span>
+<span id="cb42-366"><a href="#cb42-366"></a><span class="in">    the type of num2 = 15.0 :  f</span></span>
+<span id="cb42-367"><a href="#cb42-367"></a></span>
+<span id="cb42-368"><a href="#cb42-368"></a></span>
+<span id="cb42-369"><a href="#cb42-369"></a><span class="ss">* </span>We get <span class="in">`i`</span> for integer for <span class="in">`15`</span> and <span class="in">`f`</span> float for <span class="in">`15.0`</span>.</span>
+<span id="cb42-370"><a href="#cb42-370"></a></span>
+<span id="cb42-371"><a href="#cb42-371"></a><span class="fu">### Characters and strings</span></span>
+<span id="cb42-372"><a href="#cb42-372"></a><span class="ss">* </span>**`string`** is very strong type which allows us to make many different things and manipulates data in many ways.</span>
+<span id="cb42-373"><a href="#cb42-373"></a><span class="ss">* </span>While **`char`* is a bit hard to work with, since it's limited and not as versatile as <span class="in">`string`</span>.</span>
+<span id="cb42-374"><a href="#cb42-374"></a></span>
+<span id="cb42-375"><a href="#cb42-375"></a></span>
+<span id="cb42-376"><a href="#cb42-376"></a><span class="in">```cpp</span></span>
+<span id="cb42-377"><a href="#cb42-377"></a><span class="dt">void</span> chars<span class="op">()</span></span>
+<span id="cb42-378"><a href="#cb42-378"></a><span class="op">{</span></span>
+<span id="cb42-379"><a href="#cb42-379"></a>    </span>
+<span id="cb42-380"><a href="#cb42-380"></a>    <span class="dt">char</span> first <span class="op">=</span> <span class="ch">'c'</span><span class="op">;</span></span>
+<span id="cb42-381"><a href="#cb42-381"></a>    <span class="dt">char</span> second <span class="op">=</span> <span class="ch">'h'</span><span class="op">;</span></span>
+<span id="cb42-382"><a href="#cb42-382"></a>    <span class="dt">char</span> third <span class="op">=</span> <span class="ch">'a'</span><span class="op">;</span></span>
+<span id="cb42-383"><a href="#cb42-383"></a>    <span class="dt">char</span> fourth <span class="op">=</span> <span class="ch">'r'</span><span class="op">;</span></span>
+<span id="cb42-384"><a href="#cb42-384"></a></span>
+<span id="cb42-385"><a href="#cb42-385"></a>    string word <span class="op">=</span> <span class="st">"String"</span><span class="op">;</span></span>
+<span id="cb42-386"><a href="#cb42-386"></a>    </span>
+<span id="cb42-387"><a href="#cb42-387"></a>    cout <span class="op">&lt;&lt;</span> first <span class="op">&lt;&lt;</span> second <span class="op">&lt;&lt;</span> third <span class="op">&lt;&lt;</span> fourth <span class="op">&lt;&lt;</span> endl<span class="op">;</span></span>
+<span id="cb42-388"><a href="#cb42-388"></a>    cout <span class="op">&lt;&lt;</span> word <span class="op">&lt;&lt;</span> endl<span class="op">;</span></span>
+<span id="cb42-389"><a href="#cb42-389"></a></span>
+<span id="cb42-390"><a href="#cb42-390"></a><span class="op">}</span></span>
+<span id="cb42-391"><a href="#cb42-391"></a><span class="in">```</span></span>
+<span id="cb42-392"><a href="#cb42-392"></a></span>
+<span id="cb42-393"><a href="#cb42-393"></a></span>
+<span id="cb42-394"><a href="#cb42-394"></a><span class="in">```cpp</span></span>
+<span id="cb42-395"><a href="#cb42-395"></a>chars<span class="op">();</span></span>
+<span id="cb42-396"><a href="#cb42-396"></a><span class="in">```</span></span>
+<span id="cb42-397"><a href="#cb42-397"></a></span>
+<span id="cb42-398"><a href="#cb42-398"></a><span class="in">    char</span></span>
+<span id="cb42-399"><a href="#cb42-399"></a><span class="in">    String</span></span>
+<span id="cb42-400"><a href="#cb42-400"></a></span>
+<span id="cb42-401"><a href="#cb42-401"></a></span>
+<span id="cb42-402"><a href="#cb42-402"></a><span class="fu">#### String Operations:</span></span>
+<span id="cb42-403"><a href="#cb42-403"></a><span class="ss">* </span>String tyoe has many operation that we could use to manipulate data, like **length()** which as the name suggests tells us the length of string:</span>
+<span id="cb42-404"><a href="#cb42-404"></a></span>
+<span id="cb42-405"><a href="#cb42-405"></a></span>
+<span id="cb42-406"><a href="#cb42-406"></a><span class="in">```cpp</span></span>
+<span id="cb42-407"><a href="#cb42-407"></a>string name <span class="op">=</span> <span class="st">"Ismail"</span><span class="op">;</span></span>
+<span id="cb42-408"><a href="#cb42-408"></a>cout <span class="op">&lt;&lt;</span> <span class="st">"Number of characters in Ismail is: "</span> <span class="op">&lt;&lt;</span> name<span class="op">.</span>length<span class="op">()</span> <span class="op">&lt;&lt;</span> endl<span class="op">;</span></span>
+<span id="cb42-409"><a href="#cb42-409"></a><span class="in">```</span></span>
+<span id="cb42-410"><a href="#cb42-410"></a></span>
+<span id="cb42-411"><a href="#cb42-411"></a><span class="in">    Number of characters in Ismail is: 6</span></span>
+<span id="cb42-412"><a href="#cb42-412"></a></span>
+<span id="cb42-413"><a href="#cb42-413"></a></span>
+<span id="cb42-414"><a href="#cb42-414"></a><span class="ss">* </span>The square brackets is another operator that will return an individual character in the string:</span>
+<span id="cb42-415"><a href="#cb42-415"></a></span>
+<span id="cb42-416"><a href="#cb42-416"></a></span>
+<span id="cb42-417"><a href="#cb42-417"></a><span class="in">```cpp</span></span>
+<span id="cb42-418"><a href="#cb42-418"></a>string word <span class="op">=</span> <span class="st">"word"</span><span class="op">;</span></span>
+<span id="cb42-419"><a href="#cb42-419"></a><span class="dt">char</span> letter  <span class="op">=</span> word<span class="op">[</span><span class="dv">0</span><span class="op">];</span></span>
+<span id="cb42-420"><a href="#cb42-420"></a>cout <span class="op">&lt;&lt;</span> <span class="st">"this is a string: "</span> <span class="op">&lt;&lt;</span> word <span class="op">&lt;&lt;</span> endl<span class="op">;</span></span>
+<span id="cb42-421"><a href="#cb42-421"></a><span class="co">// the index is 0 based</span></span>
+<span id="cb42-422"><a href="#cb42-422"></a>cout <span class="op">&lt;&lt;</span> <span class="st">"this is the first character of that word: "</span> <span class="op">&lt;&lt;</span> letter <span class="op">&lt;&lt;</span> endl<span class="op">;</span></span>
+<span id="cb42-423"><a href="#cb42-423"></a><span class="in">```</span></span>
+<span id="cb42-424"><a href="#cb42-424"></a></span>
+<span id="cb42-425"><a href="#cb42-425"></a><span class="in">    this is a string: word</span></span>
+<span id="cb42-426"><a href="#cb42-426"></a><span class="in">    this is the first character of that word: w</span></span>
+<span id="cb42-427"><a href="#cb42-427"></a></span>
+<span id="cb42-428"><a href="#cb42-428"></a></span>
+<span id="cb42-429"><a href="#cb42-429"></a><span class="ss">* </span>The **+** operator concatenates strings together.</span>
+<span id="cb42-430"><a href="#cb42-430"></a></span>
+<span id="cb42-431"><a href="#cb42-431"></a></span>
+<span id="cb42-432"><a href="#cb42-432"></a><span class="in">```cpp</span></span>
+<span id="cb42-433"><a href="#cb42-433"></a>string sentence <span class="op">=</span> <span class="st">"word1"</span><span class="op">;</span></span>
+<span id="cb42-434"><a href="#cb42-434"></a>sentence <span class="op">=</span> sentence <span class="op">+</span> <span class="st">" word2"</span> <span class="op">+</span> <span class="st">" word3"</span> <span class="op">+</span> <span class="st">" ..."</span><span class="op">;</span></span>
+<span id="cb42-435"><a href="#cb42-435"></a>cout <span class="op">&lt;&lt;</span> sentence <span class="op">&lt;&lt;</span> endl<span class="op">;</span></span>
+<span id="cb42-436"><a href="#cb42-436"></a><span class="in">```</span></span>
+<span id="cb42-437"><a href="#cb42-437"></a></span>
+<span id="cb42-438"><a href="#cb42-438"></a><span class="in">    word1 word2 word3 ...</span></span>
+<span id="cb42-439"><a href="#cb42-439"></a></span>
+<span id="cb42-440"><a href="#cb42-440"></a></span>
+<span id="cb42-441"><a href="#cb42-441"></a><span class="ss">* </span>**substr** is a string function that will create a new string from the innards of another.</span>
+<span id="cb42-442"><a href="#cb42-442"></a><span class="ss">* </span>This function takes a starting position and the number of character to use after that position and copies the characters into a new string.</span>
+<span id="cb42-443"><a href="#cb42-443"></a></span>
+<span id="cb42-444"><a href="#cb42-444"></a></span>
+<span id="cb42-445"><a href="#cb42-445"></a><span class="ss">* </span>**`find`** will return the position where the first occurrence of a word is found (and -1 if it is not found).</span>
+<span id="cb42-446"><a href="#cb42-446"></a></span>
+<span id="cb42-447"><a href="#cb42-447"></a></span>
+<span id="cb42-448"><a href="#cb42-448"></a></span>
+<span id="cb42-449"><a href="#cb42-449"></a><span class="in">```cpp</span></span>
+<span id="cb42-450"><a href="#cb42-450"></a>string sentence <span class="op">=</span> <span class="st">"where is Aldo ?"</span><span class="op">;</span></span>
+<span id="cb42-451"><a href="#cb42-451"></a><span class="dt">int</span> findAldo <span class="op">=</span> sentence<span class="op">.</span>find<span class="op">(</span><span class="st">"Aldo"</span><span class="op">);</span></span>
+<span id="cb42-452"><a href="#cb42-452"></a>cout <span class="op">&lt;&lt;</span> <span class="st">"Aldo can be found at this position: "</span> <span class="op">&lt;&lt;</span> findAldo <span class="op">&lt;&lt;</span> endl<span class="op">;</span></span>
+<span id="cb42-453"><a href="#cb42-453"></a><span class="in">```</span></span>
+<span id="cb42-454"><a href="#cb42-454"></a></span>
+<span id="cb42-455"><a href="#cb42-455"></a><span class="in">    Aldo can be found at this position: 9</span></span>
+<span id="cb42-456"><a href="#cb42-456"></a></span>
+<span id="cb42-457"><a href="#cb42-457"></a></span>
+<span id="cb42-458"><a href="#cb42-458"></a><span class="ss">* </span>**`erase`** will remove characters from a string. It takes the starting position of where I want to start removing characters and he total number of characters to get rid of.</span>
+<span id="cb42-459"><a href="#cb42-459"></a></span>
+<span id="cb42-460"><a href="#cb42-460"></a></span>
+<span id="cb42-461"><a href="#cb42-461"></a></span>
+<span id="cb42-462"><a href="#cb42-462"></a><span class="in">```cpp</span></span>
+<span id="cb42-463"><a href="#cb42-463"></a><span class="dt">void</span> func<span class="op">()</span></span>
+<span id="cb42-464"><a href="#cb42-464"></a><span class="op">{</span></span>
+<span id="cb42-465"><a href="#cb42-465"></a>    string sentence <span class="op">=</span> <span class="st">"In this sentence sentence, it must be no repeated word!"</span><span class="op">;</span></span>
+<span id="cb42-466"><a href="#cb42-466"></a>    <span class="dt">int</span> repeatedWord <span class="op">=</span> sentence<span class="op">.</span>find<span class="op">(</span><span class="st">"sentence"</span><span class="op">);</span></span>
+<span id="cb42-467"><a href="#cb42-467"></a>    sentence<span class="op">.</span>erase<span class="op">(</span>repeatedWord<span class="op">,</span> <span class="dv">9</span><span class="op">);</span></span>
+<span id="cb42-468"><a href="#cb42-468"></a>    cout <span class="op">&lt;&lt;</span> sentence <span class="op">&lt;&lt;</span> endl<span class="op">;</span></span>
+<span id="cb42-469"><a href="#cb42-469"></a><span class="op">}</span></span>
+<span id="cb42-470"><a href="#cb42-470"></a><span class="in">```</span></span>
+<span id="cb42-471"><a href="#cb42-471"></a></span>
+<span id="cb42-472"><a href="#cb42-472"></a></span>
+<span id="cb42-473"><a href="#cb42-473"></a><span class="in">```cpp</span></span>
+<span id="cb42-474"><a href="#cb42-474"></a>func<span class="op">();</span></span>
+<span id="cb42-475"><a href="#cb42-475"></a><span class="in">```</span></span>
+<span id="cb42-476"><a href="#cb42-476"></a></span>
+<span id="cb42-477"><a href="#cb42-477"></a><span class="in">    In this sentence, it must be no repeated word!</span></span>
+<span id="cb42-478"><a href="#cb42-478"></a></span>
+<span id="cb42-479"><a href="#cb42-479"></a></span>
+<span id="cb42-480"><a href="#cb42-480"></a><span class="ss">* </span>**`insert`** adds a new string after the position specified in the string.</span>
+<span id="cb42-481"><a href="#cb42-481"></a></span>
+<span id="cb42-482"><a href="#cb42-482"></a></span>
+<span id="cb42-483"><a href="#cb42-483"></a></span>
+<span id="cb42-484"><a href="#cb42-484"></a><span class="in">```cpp</span></span>
+<span id="cb42-485"><a href="#cb42-485"></a>string sentence <span class="op">=</span> <span class="st">", my name is Ismail."</span><span class="op">;</span></span>
+<span id="cb42-486"><a href="#cb42-486"></a>string greeting <span class="op">=</span> <span class="st">"Hi"</span><span class="op">;</span></span>
+<span id="cb42-487"><a href="#cb42-487"></a>sentence <span class="op">=</span> sentence<span class="op">.</span>insert<span class="op">(</span><span class="dv">0</span><span class="op">,</span> greeting<span class="op">);</span></span>
+<span id="cb42-488"><a href="#cb42-488"></a>cout <span class="op">&lt;&lt;</span> sentence <span class="op">&lt;&lt;</span> endl<span class="op">;</span></span>
+<span id="cb42-489"><a href="#cb42-489"></a><span class="in">```</span></span>
+<span id="cb42-490"><a href="#cb42-490"></a></span>
+<span id="cb42-491"><a href="#cb42-491"></a><span class="in">    Hi, my name is Ismail.</span></span>
+<span id="cb42-492"><a href="#cb42-492"></a></span>
+<span id="cb42-493"><a href="#cb42-493"></a></span>
+<span id="cb42-494"><a href="#cb42-494"></a></span>
+<span id="cb42-495"><a href="#cb42-495"></a><span class="in">```cpp</span></span>
+<span id="cb42-496"><a href="#cb42-496"></a></span>
+<span id="cb42-497"><a href="#cb42-497"></a><span class="in">```</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 <footer class="footer">

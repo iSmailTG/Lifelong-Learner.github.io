@@ -94,10 +94,10 @@ Hi, my name is Ismail.</code></pre>
 <section id="printing" class="level4">
 <h4 class="anchored" data-anchor-id="printing">Printing:</h4>
 <ul>
-<li>By using <code>cout</code> we can print text on the screen.</li>
+<li>By using <strong><code>cout</code></strong> we can print text on the screen.</li>
 <li>More than one piece of data can be printed at a time.</li>
-<li><code>endl</code> is used after <code>cout</code> to end the line, so the next <code>cout</code> could starts printing next line.</li>
-<li>We can print multiple pieces of data if we seperate them with <code>&lt;&lt;</code>.</li>
+<li><strong><code>endl</code></strong> is used after <strong><code>cout</code></strong> to end the line, so the next <strong><code>cout</code></strong> could starts printing next line.</li>
+<li>We can print multiple pieces of data if we <strong>seperate</strong> them with <strong><code>&lt;&lt;</code></strong>.</li>
 </ul>
 </section>
 <section id="statements" class="level4">
@@ -113,7 +113,8 @@ Hi, my name is Ismail.</code></pre>
 <li><p>The thing printed to the screen is called string, which refers to a groupr of characters inside <code>""</code>. #### Comments:</p></li>
 <li><p>As in python comments are non executable code that we put beside the code in order to explain for us or others ideas or concepts in the code.</p></li>
 <li><p>In C++ the comment starts with //.</p></li>
-<li><p>There are two types of comments- single line comments and multi-line comments. All code in between a /* and a */ are called multi-line comments. They will also be ignored by the compiler. When you have a lot to say in a comment you will use these</p></li>
+<li><p>There are two types of comments:<br>
+- single line comments and multi-line comments. All code in between a /* and a */ are called multi-line comments. They will also be ignored by the compiler. When you have a lot to say in a comment you will use these</p></li>
 </ul>
 </section>
 </section>
@@ -143,23 +144,26 @@ Hi, my name is Ismail.</code></pre>
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7" style="background: #f1f3f5;"><pre class="sourceCode numberSource cpp17 number-lines code-with-copy"><code class="sourceCode"><span id="cb7-1">void func()</span>
 <span id="cb7-2">{</span>
-<span id="cb7-3">    int var0;</span>
-<span id="cb7-4">    int var1;</span>
-<span id="cb7-5"></span>
-<span id="cb7-6">    int var2;</span>
-<span id="cb7-7">    int var3;</span>
-<span id="cb7-8"></span>
-<span id="cb7-9">    var0 = 1;</span>
-<span id="cb7-10">    var1 = 1;</span>
-<span id="cb7-11">    var2 = 2;</span>
-<span id="cb7-12">    var3 = 2;</span>
-<span id="cb7-13"></span>
-<span id="cb7-14">    std::cout &lt;&lt;"variable 1: " &lt;&lt;var0&lt;&lt; std::endl;</span>
-<span id="cb7-15">    std::cout &lt;&lt;"variable 2: " &lt;&lt;var1&lt;&lt; std::endl;</span>
-<span id="cb7-16">    std::cout &lt;&lt;"variable 3: " &lt;&lt;var2&lt;&lt; std::endl;</span>
-<span id="cb7-17">    std::cout &lt;&lt;"variable 4: " &lt;&lt;var3&lt;&lt; std::endl;</span>
-<span id="cb7-18">}</span>
-<span id="cb7-19">func();</span></code></pre></div></div>
+<span id="cb7-3">    // declare variables</span>
+<span id="cb7-4">    int var0;</span>
+<span id="cb7-5">    int var1;</span>
+<span id="cb7-6"></span>
+<span id="cb7-7">    int var2;</span>
+<span id="cb7-8">    int var3;</span>
+<span id="cb7-9"></span>
+<span id="cb7-10">    // assign values to each variable</span>
+<span id="cb7-11">    var0 = 1;</span>
+<span id="cb7-12">    var1 = 1;</span>
+<span id="cb7-13">    var2 = 2;</span>
+<span id="cb7-14">    var3 = 2;</span>
+<span id="cb7-15"></span>
+<span id="cb7-16">    // print the variables value with a message on the screen</span>
+<span id="cb7-17">    std::cout &lt;&lt;"variable 1: " &lt;&lt;var0&lt;&lt; std::endl;</span>
+<span id="cb7-18">    std::cout &lt;&lt;"variable 2: " &lt;&lt;var1&lt;&lt; std::endl;</span>
+<span id="cb7-19">    std::cout &lt;&lt;"variable 3: " &lt;&lt;var2&lt;&lt; std::endl;</span>
+<span id="cb7-20">    std::cout &lt;&lt;"variable 4: " &lt;&lt;var3&lt;&lt; std::endl;</span>
+<span id="cb7-21">}</span>
+<span id="cb7-22">func();</span></code></pre></div></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>variable 1: 1
@@ -187,8 +191,10 @@ variable 4: 2</code></pre>
 <span id="cb9-9">    var2 = 2;</span>
 <span id="cb9-10">    var3 = 2;</span>
 <span id="cb9-11"></span>
-<span id="cb9-12">    float lengthOfline;</span>
-<span id="cb9-13">}</span></code></pre></div></div>
+<span id="cb9-12">    // declare a float type variable</span>
+<span id="cb9-13"></span>
+<span id="cb9-14">    float lengthOfline;</span>
+<span id="cb9-15">}</span></code></pre></div></div>
 </details>
 </div>
 <ul>
@@ -235,8 +241,8 @@ variable 4: 2</code></pre>
 <section id="data-types" class="level3">
 <h3 class="anchored" data-anchor-id="data-types">Data types:</h3>
 <ul>
-<li>In C++ data types are defined once and cannot be changed. If a variable is decalared with a specific data type, it can only hold values that suits that data type.</li>
-<li>We already used <code>int</code> which is a whole number, <code>float</code> a decimal. There are many other types:</li>
+<li>In C++ data types are defined once and cannot be changed. If a variable is declared with a specific data type, it can only hold values that suits that data type.</li>
+<li>We already used <strong><code>int</code></strong> which is a whole number, <strong><code>float</code></strong> a decimal. There are many other types:</li>
 </ul>
 <div id="9bbe186a-5363-493e-8dfa-c3535a9b9d46" class="cell" data-execution_count="7">
 <details class="code-fold">
@@ -295,12 +301,12 @@ This is a string of charaters: Ismail</code></pre>
 <span id="cb15-3">    int a = 10;</span>
 <span id="cb15-4">    int b = 5;</span>
 <span id="cb15-5">    int res = a / b;</span>
-<span id="cb15-6">    cout &lt;&lt;"result a / b=&gt; " &lt;&lt;res&lt;&lt; endl;</span>
+<span id="cb15-6">    cout &lt;&lt;"result a / b =&gt; " &lt;&lt;res&lt;&lt; endl;</span>
 <span id="cb15-7">}    </span>
 <span id="cb15-8">divint();</span></code></pre></div></div>
 </details>
 <div class="cell-output cell-output-stdout">
-<pre><code>result a / b=&gt; 2</code></pre>
+<pre><code>result a / b =&gt; 2</code></pre>
 </div>
 </div>
 <ul>
@@ -342,20 +348,18 @@ result as num = 13: 6</code></pre>
 <span id="cb19-6">    int result; </span>
 <span id="cb19-7"> </span>
 <span id="cb19-8">    result = num1 / num2; </span>
-<span id="cb19-9">    cout &lt;&lt; "result with num1 = 12: " &lt;&lt; result &lt;&lt; endl;     </span>
-<span id="cb19-10">    num1 = 13; </span>
-<span id="cb19-11"> </span>
-<span id="cb19-12">    result = num1 / num2; </span>
-<span id="cb19-13">    result = num1 % num2; </span>
-<span id="cb19-14">    cout &lt;&lt; " result with num1 = 13: " &lt;&lt; result &lt;&lt; endl;</span>
-<span id="cb19-15">    </span>
-<span id="cb19-16">}</span>
-<span id="cb19-17"></span>
-<span id="cb19-18">divmod();</span></code></pre></div></div>
+<span id="cb19-9">    cout &lt;&lt; "result with / operator: " &lt;&lt; result &lt;&lt; endl;     </span>
+<span id="cb19-10"> </span>
+<span id="cb19-11">    result = num1 % num2; </span>
+<span id="cb19-12">    cout &lt;&lt; " result with % operator: " &lt;&lt; result &lt;&lt; endl;</span>
+<span id="cb19-13">    </span>
+<span id="cb19-14">}</span>
+<span id="cb19-15"></span>
+<span id="cb19-16">divmod();</span></code></pre></div></div>
 </details>
 <div class="cell-output cell-output-stdout">
-<pre><code>result with num1 = 12: 6
- result with num1 = 13: 1</code></pre>
+<pre><code>result with / operator: 6
+ result with % operator: 0</code></pre>
 </div>
 </div>
 <ul>
@@ -413,10 +417,142 @@ the type of num2 = 15.0 :  f</code></pre>
 <section id="characters-and-strings" class="level3">
 <h3 class="anchored" data-anchor-id="characters-and-strings">Characters and strings</h3>
 <ul>
-<li></li>
+<li><strong><code>string</code></strong> is very strong type which allows us to make many different things and manipulates data in many ways.</li>
+<li>While **<code>char</code>* is a bit hard to work with, since it’s limited and not as versatile as <code>string</code>.</li>
 </ul>
+<div id="a523250e-ec0f-43be-a560-f68a8778f9db" class="cell" data-execution_count="15">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb26" style="background: #f1f3f5;"><pre class="sourceCode numberSource cpp17 number-lines code-with-copy"><code class="sourceCode"><span id="cb26-1">void chars()</span>
+<span id="cb26-2">{</span>
+<span id="cb26-3">    </span>
+<span id="cb26-4">    char first = 'c';</span>
+<span id="cb26-5">    char second = 'h';</span>
+<span id="cb26-6">    char third = 'a';</span>
+<span id="cb26-7">    char fourth = 'r';</span>
+<span id="cb26-8"></span>
+<span id="cb26-9">    string word = "String";</span>
+<span id="cb26-10">    </span>
+<span id="cb26-11">    cout &lt;&lt; first &lt;&lt; second &lt;&lt; third &lt;&lt; fourth &lt;&lt; endl;</span>
+<span id="cb26-12">    cout &lt;&lt; word &lt;&lt; endl;</span>
+<span id="cb26-13"></span>
+<span id="cb26-14">}</span></code></pre></div></div>
+</details>
+</div>
+<div id="6d46e63c-2b05-4b98-83db-0b5878bcb9c1" class="cell" data-execution_count="16">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb27" style="background: #f1f3f5;"><pre class="sourceCode numberSource cpp17 number-lines code-with-copy"><code class="sourceCode"><span id="cb27-1">chars();</span></code></pre></div></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>char
+String</code></pre>
+</div>
+</div>
+<section id="string-operations" class="level4">
+<h4 class="anchored" data-anchor-id="string-operations">String Operations:</h4>
+<ul>
+<li>String tyoe has many operation that we could use to manipulate data, like <strong>length()</strong> which as the name suggests tells us the length of string:</li>
+</ul>
+<div id="9ae0c064-5512-4f90-ab7f-0c42b76565e0" class="cell" data-execution_count="17">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb29" style="background: #f1f3f5;"><pre class="sourceCode numberSource cpp17 number-lines code-with-copy"><code class="sourceCode"><span id="cb29-1">string name = "Ismail";</span>
+<span id="cb29-2">cout &lt;&lt; "Number of characters in Ismail is: " &lt;&lt; name.length() &lt;&lt; endl;</span></code></pre></div></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>Number of characters in Ismail is: 6</code></pre>
+</div>
+</div>
+<ul>
+<li>The square brackets is another operator that will return an individual character in the string:</li>
+</ul>
+<div id="f22b1c9e-2433-4238-9597-abdb650e2173" class="cell" data-execution_count="18">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb31" style="background: #f1f3f5;"><pre class="sourceCode numberSource cpp17 number-lines code-with-copy"><code class="sourceCode"><span id="cb31-1">string word = "word";</span>
+<span id="cb31-2">char letter  = word[0];</span>
+<span id="cb31-3">cout &lt;&lt; "this is a string: " &lt;&lt; word &lt;&lt; endl;</span>
+<span id="cb31-4">// the index is 0 based</span>
+<span id="cb31-5">cout &lt;&lt; "this is the first character of that word: " &lt;&lt; letter &lt;&lt; endl;</span></code></pre></div></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>this is a string: word
+this is the first character of that word: w</code></pre>
+</div>
+</div>
+<ul>
+<li>The <strong>+</strong> operator concatenates strings together.</li>
+</ul>
+<div id="db165490-4f20-458c-92c6-f4100493c46d" class="cell" data-execution_count="19">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb33" style="background: #f1f3f5;"><pre class="sourceCode numberSource cpp17 number-lines code-with-copy"><code class="sourceCode"><span id="cb33-1">string sentence = "word1";</span>
+<span id="cb33-2">sentence = sentence + " word2" + " word3" + " ...";</span>
+<span id="cb33-3">cout &lt;&lt; sentence &lt;&lt; endl;</span></code></pre></div></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>word1 word2 word3 ...</code></pre>
+</div>
+</div>
+<ul>
+<li><p><strong>substr</strong> is a string function that will create a new string from the innards of another.</p></li>
+<li><p>This function takes a starting position and the number of character to use after that position and copies the characters into a new string.</p></li>
+<li><p><strong><code>find</code></strong> will return the position where the first occurrence of a word is found (and -1 if it is not found).</p></li>
+</ul>
+<div id="4a018f5f-767b-45e2-afdd-243e34d794a0" class="cell" data-execution_count="20">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb35" style="background: #f1f3f5;"><pre class="sourceCode numberSource cpp17 number-lines code-with-copy"><code class="sourceCode"><span id="cb35-1">string sentence = "where is Aldo ?";</span>
+<span id="cb35-2">int findAldo = sentence.find("Aldo");</span>
+<span id="cb35-3">cout &lt;&lt; "Aldo can be found at this position: " &lt;&lt; findAldo &lt;&lt; endl;</span></code></pre></div></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>Aldo can be found at this position: 9</code></pre>
+</div>
+</div>
+<ul>
+<li><strong><code>erase</code></strong> will remove characters from a string. It takes the starting position of where I want to start removing characters and he total number of characters to get rid of.</li>
+</ul>
+<div id="9e6642a0-3c13-4572-be53-f10630ef6e60" class="cell" data-execution_count="21">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb37" style="background: #f1f3f5;"><pre class="sourceCode numberSource cpp17 number-lines code-with-copy"><code class="sourceCode"><span id="cb37-1">void func()</span>
+<span id="cb37-2">{</span>
+<span id="cb37-3">    string sentence = "In this sentence sentence, it must be no repeated word!";</span>
+<span id="cb37-4">    int repeatedWord = sentence.find("sentence");</span>
+<span id="cb37-5">    sentence.erase(repeatedWord, 9);</span>
+<span id="cb37-6">    cout &lt;&lt; sentence &lt;&lt; endl;</span>
+<span id="cb37-7">}</span></code></pre></div></div>
+</details>
+</div>
+<div id="70bfb979-8495-4a1d-9525-efb473c54498" class="cell" data-execution_count="22">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb38" style="background: #f1f3f5;"><pre class="sourceCode numberSource cpp17 number-lines code-with-copy"><code class="sourceCode"><span id="cb38-1">func();</span></code></pre></div></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>In this sentence, it must be no repeated word!</code></pre>
+</div>
+</div>
+<ul>
+<li><strong><code>insert</code></strong> adds a new string after the position specified in the string.</li>
+</ul>
+<div id="253aab3a-d8d7-4b40-82e1-93905c8bd7af" class="cell" data-execution_count="23">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb40" style="background: #f1f3f5;"><pre class="sourceCode numberSource cpp17 number-lines code-with-copy"><code class="sourceCode"><span id="cb40-1">string sentence = ", my name is Ismail.";</span>
+<span id="cb40-2">string greeting = "Hi";</span>
+<span id="cb40-3">sentence = sentence.insert(0, greeting);</span>
+<span id="cb40-4">cout &lt;&lt; sentence &lt;&lt; endl;</span></code></pre></div></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>Hi, my name is Ismail.</code></pre>
+</div>
+</div>
 
 
+</section>
 </section>
 </section>
 
@@ -593,10 +729,10 @@ Hi, my name is Ismail.
 <section id="printing" class="level4">
 <h4 class="anchored" data-anchor-id="printing">Printing:</h4>
 <ul>
-<li>By using <code>cout</code> we can print text on the screen.</li>
+<li>By using <strong><code>cout</code></strong> we can print text on the screen.</li>
 <li>More than one piece of data can be printed at a time.</li>
-<li><code>endl</code> is used after <code>cout</code> to end the line, so the next <code>cout</code> could starts printing next line.</li>
-<li>We can print multiple pieces of data if we seperate them with <code>&lt;&lt;</code>.</li>
+<li><strong><code>endl</code></strong> is used after <strong><code>cout</code></strong> to end the line, so the next <strong><code>cout</code></strong> could starts printing next line.</li>
+<li>We can print multiple pieces of data if we <strong>seperate</strong> them with <strong><code>&lt;&lt;</code></strong>.</li>
 </ul>
 </section>
 <section id="statements" class="level4">
@@ -612,7 +748,8 @@ Hi, my name is Ismail.
 <li><p>The thing printed to the screen is called string, which refers to a groupr of characters inside <code>""</code>. #### Comments:</p></li>
 <li><p>As in python comments are non executable code that we put beside the code in order to explain for us or others ideas or concepts in the code.</p></li>
 <li><p>In C++ the comment starts with //.</p></li>
-<li><p>There are two types of comments- single line comments and multi-line comments. All code in between a /* and a */ are called multi-line comments. They will also be ignored by the compiler. When you have a lot to say in a comment you will use these</p></li>
+<li><p>There are two types of comments:<br>
+- single line comments and multi-line comments. All code in between a /* and a */ are called multi-line comments. They will also be ignored by the compiler. When you have a lot to say in a comment you will use these</p></li>
 </ul>
 </section>
 </section>
@@ -660,58 +797,67 @@ font-style: inherit;">()</span></span>
 <span id="cb6-2"><span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">{</span></span>
-<span id="cb6-3">    <span class="dt" style="color: #AD0000;
+<span id="cb6-3">    <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">// declare variables</span></span>
+<span id="cb6-4">    <span class="dt" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">int</span> var0<span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">;</span></span>
-<span id="cb6-4">    <span class="dt" style="color: #AD0000;
+<span id="cb6-5">    <span class="dt" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">int</span> var1<span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">;</span></span>
-<span id="cb6-5"></span>
-<span id="cb6-6">    <span class="dt" style="color: #AD0000;
+<span id="cb6-6"></span>
+<span id="cb6-7">    <span class="dt" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">int</span> var2<span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">;</span></span>
-<span id="cb6-7">    <span class="dt" style="color: #AD0000;
+<span id="cb6-8">    <span class="dt" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">int</span> var3<span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">;</span></span>
-<span id="cb6-8"></span>
-<span id="cb6-9">    var0 <span class="op" style="color: #5E5E5E;
+<span id="cb6-9"></span>
+<span id="cb6-10">    <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">// assign values to each variable</span></span>
+<span id="cb6-11">    var0 <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> <span class="dv" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">1</span><span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">;</span></span>
-<span id="cb6-10">    var1 <span class="op" style="color: #5E5E5E;
+<span id="cb6-12">    var1 <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> <span class="dv" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">1</span><span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">;</span></span>
-<span id="cb6-11">    var2 <span class="op" style="color: #5E5E5E;
+<span id="cb6-13">    var2 <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> <span class="dv" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">2</span><span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">;</span></span>
-<span id="cb6-12">    var3 <span class="op" style="color: #5E5E5E;
+<span id="cb6-14">    var3 <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> <span class="dv" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">2</span><span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">;</span></span>
-<span id="cb6-13"></span>
-<span id="cb6-14">    <span class="bu" style="color: null;
+<span id="cb6-15"></span>
+<span id="cb6-16">    <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">// print the variables value with a message on the screen</span></span>
+<span id="cb6-17">    <span class="bu" style="color: null;
 background-color: null;
 font-style: inherit;">std::</span>cout <span class="op" style="color: #5E5E5E;
 background-color: null;
@@ -726,7 +872,7 @@ background-color: null;
 font-style: inherit;">std::</span>endl<span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">;</span></span>
-<span id="cb6-15">    <span class="bu" style="color: null;
+<span id="cb6-18">    <span class="bu" style="color: null;
 background-color: null;
 font-style: inherit;">std::</span>cout <span class="op" style="color: #5E5E5E;
 background-color: null;
@@ -741,7 +887,7 @@ background-color: null;
 font-style: inherit;">std::</span>endl<span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">;</span></span>
-<span id="cb6-16">    <span class="bu" style="color: null;
+<span id="cb6-19">    <span class="bu" style="color: null;
 background-color: null;
 font-style: inherit;">std::</span>cout <span class="op" style="color: #5E5E5E;
 background-color: null;
@@ -756,7 +902,7 @@ background-color: null;
 font-style: inherit;">std::</span>endl<span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">;</span></span>
-<span id="cb6-17">    <span class="bu" style="color: null;
+<span id="cb6-20">    <span class="bu" style="color: null;
 background-color: null;
 font-style: inherit;">std::</span>cout <span class="op" style="color: #5E5E5E;
 background-color: null;
@@ -771,10 +917,10 @@ background-color: null;
 font-style: inherit;">std::</span>endl<span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">;</span></span>
-<span id="cb6-18"><span class="op" style="color: #5E5E5E;
+<span id="cb6-21"><span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">}</span></span>
-<span id="cb6-19">func<span class="op" style="color: #5E5E5E;
+<span id="cb6-22">func<span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">();</span></span></code></pre></div></div>
 <pre><code>variable 1: 1
@@ -843,12 +989,16 @@ font-style: inherit;">2</span><span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">;</span></span>
 <span id="cb8-11"></span>
-<span id="cb8-12">    <span class="dt" style="color: #AD0000;
+<span id="cb8-12">    <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">// declare a float type variable</span></span>
+<span id="cb8-13"></span>
+<span id="cb8-14">    <span class="dt" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">float</span> lengthOfline<span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">;</span></span>
-<span id="cb8-13"><span class="op" style="color: #5E5E5E;
+<span id="cb8-15"><span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">}</span></span></code></pre></div></div>
 <ul>
@@ -1002,8 +1152,8 @@ font-style: inherit;">();</span></span></code></pre></div></div>
 <section id="data-types" class="level3">
 <h3 class="anchored" data-anchor-id="data-types">Data types:</h3>
 <ul>
-<li>In C++ data types are defined once and cannot be changed. If a variable is decalared with a specific data type, it can only hold values that suits that data type.</li>
-<li>We already used <code>int</code> which is a whole number, <code>float</code> a decimal. There are many other types:</li>
+<li>In C++ data types are defined once and cannot be changed. If a variable is declared with a specific data type, it can only hold values that suits that data type.</li>
+<li>We already used <strong><code>int</code></strong> which is a whole number, <strong><code>float</code></strong> a decimal. There are many other types:</li>
 </ul>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11" style="background: #f1f3f5;"><pre class="sourceCode numberSource cpp number-lines code-with-copy"><code class="sourceCode cpp"><span id="cb11-1"><span class="pp" style="color: #AD0000;
 background-color: null;
@@ -1173,7 +1323,7 @@ font-style: inherit;">;</span></span>
 background-color: null;
 font-style: inherit;">&lt;&lt;</span><span class="st" style="color: #20794D;
 background-color: null;
-font-style: inherit;">"result a / b=&gt; "</span> <span class="op" style="color: #5E5E5E;
+font-style: inherit;">"result a / b =&gt; "</span> <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">&lt;&lt;</span>res<span class="op" style="color: #5E5E5E;
 background-color: null;
@@ -1186,7 +1336,7 @@ font-style: inherit;">}</span>    </span>
 <span id="cb14-8">divint<span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">();</span></span></code></pre></div></div>
-<pre><code>result a / b=&gt; 2</code></pre>
+<pre><code>result a / b =&gt; 2</code></pre>
 <ul>
 <li>What if we want to divide 2 integers that will causes not a whole number:</li>
 </ul>
@@ -1318,56 +1468,46 @@ font-style: inherit;">;</span> </span>
 background-color: null;
 font-style: inherit;">&lt;&lt;</span> <span class="st" style="color: #20794D;
 background-color: null;
-font-style: inherit;">"result with num1 = 12: "</span> <span class="op" style="color: #5E5E5E;
+font-style: inherit;">"result with / operator: "</span> <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">&lt;&lt;</span> result <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">&lt;&lt;</span> endl<span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">;</span>     </span>
-<span id="cb18-10">    num1 <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> <span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">13</span><span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">;</span> </span>
-<span id="cb18-11"> </span>
-<span id="cb18-12">    result <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> num1 <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">/</span> num2<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">;</span> </span>
-<span id="cb18-13">    result <span class="op" style="color: #5E5E5E;
+<span id="cb18-10"> </span>
+<span id="cb18-11">    result <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> num1 <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">%</span> num2<span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">;</span> </span>
-<span id="cb18-14">    cout <span class="op" style="color: #5E5E5E;
+<span id="cb18-12">    cout <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">&lt;&lt;</span> <span class="st" style="color: #20794D;
 background-color: null;
-font-style: inherit;">" result with num1 = 13: "</span> <span class="op" style="color: #5E5E5E;
+font-style: inherit;">" result with </span><span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">% o</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">perator: "</span> <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">&lt;&lt;</span> result <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">&lt;&lt;</span> endl<span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">;</span></span>
-<span id="cb18-15">    </span>
-<span id="cb18-16"><span class="op" style="color: #5E5E5E;
+<span id="cb18-13">    </span>
+<span id="cb18-14"><span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">}</span></span>
-<span id="cb18-17"></span>
-<span id="cb18-18">divmod<span class="op" style="color: #5E5E5E;
+<span id="cb18-15"></span>
+<span id="cb18-16">divmod<span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">();</span></span></code></pre></div></div>
-<pre><code>result with num1 = 12: 6
- result with num1 = 13: 1</code></pre>
+<pre><code>result with / operator: 6
+ result with % operator: 0</code></pre>
 <ul>
 <li><p>A data type also specifies an acceptable range of values.</p></li>
 <li><p>An int variable cannot hold an infinite sized number, there is a limit.</p></li>
@@ -1490,11 +1630,344 @@ the type of num2 = 15.0 :  f</code></pre>
 <ul>
 <li>We get <code>i</code> for integer for <code>15</code> and <code>f</code> float for <code>15.0</code>.</li>
 </ul>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb25" style="background: #f1f3f5;"><pre class="sourceCode numberSource cpp number-lines code-with-copy"><code class="sourceCode cpp"></code></pre></div></div>
+</section>
+<section id="characters-and-strings" class="level3">
+<h3 class="anchored" data-anchor-id="characters-and-strings">Characters and strings</h3>
+<ul>
+<li><strong><code>string</code></strong> is very strong type which allows us to make many different things and manipulates data in many ways.</li>
+<li>While **<code>char</code>* is a bit hard to work with, since it’s limited and not as versatile as <code>string</code>.</li>
+</ul>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb25" style="background: #f1f3f5;"><pre class="sourceCode numberSource cpp number-lines code-with-copy"><code class="sourceCode cpp"><span id="cb25-1"><span class="dt" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">void</span> chars<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">()</span></span>
+<span id="cb25-2"><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">{</span></span>
+<span id="cb25-3">    </span>
+<span id="cb25-4">    <span class="dt" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">char</span> first <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="ch" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'c'</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span></span>
+<span id="cb25-5">    <span class="dt" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">char</span> second <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="ch" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'h'</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span></span>
+<span id="cb25-6">    <span class="dt" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">char</span> third <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="ch" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'a'</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span></span>
+<span id="cb25-7">    <span class="dt" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">char</span> fourth <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="ch" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'r'</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span></span>
+<span id="cb25-8"></span>
+<span id="cb25-9">    string word <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"String"</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span></span>
+<span id="cb25-10">    </span>
+<span id="cb25-11">    cout <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;&lt;</span> first <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;&lt;</span> second <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;&lt;</span> third <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;&lt;</span> fourth <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;&lt;</span> endl<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span></span>
+<span id="cb25-12">    cout <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;&lt;</span> word <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;&lt;</span> endl<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span></span>
+<span id="cb25-13"></span>
+<span id="cb25-14"><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">}</span></span></code></pre></div></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb26" style="background: #f1f3f5;"><pre class="sourceCode numberSource cpp number-lines code-with-copy"><code class="sourceCode cpp"><span id="cb26-1">chars<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">();</span></span></code></pre></div></div>
+<pre><code>char
+String</code></pre>
+<section id="string-operations" class="level4">
+<h4 class="anchored" data-anchor-id="string-operations">String Operations:</h4>
+<ul>
+<li>String tyoe has many operation that we could use to manipulate data, like <strong>length()</strong> which as the name suggests tells us the length of string:</li>
+</ul>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb28" style="background: #f1f3f5;"><pre class="sourceCode numberSource cpp number-lines code-with-copy"><code class="sourceCode cpp"><span id="cb28-1">string name <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Ismail"</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span></span>
+<span id="cb28-2">cout <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;&lt;</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Number of characters in Ismail is: "</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;&lt;</span> name<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">.</span>length<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">()</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;&lt;</span> endl<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span></span></code></pre></div></div>
+<pre><code>Number of characters in Ismail is: 6</code></pre>
+<ul>
+<li>The square brackets is another operator that will return an individual character in the string:</li>
+</ul>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb30" style="background: #f1f3f5;"><pre class="sourceCode numberSource cpp number-lines code-with-copy"><code class="sourceCode cpp"><span id="cb30-1">string word <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"word"</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span></span>
+<span id="cb30-2"><span class="dt" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">char</span> letter  <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> word<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">[</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">];</span></span>
+<span id="cb30-3">cout <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;&lt;</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"this is a string: "</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;&lt;</span> word <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;&lt;</span> endl<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span></span>
+<span id="cb30-4"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">// the index is 0 based</span></span>
+<span id="cb30-5">cout <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;&lt;</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"this is the first character of that word: "</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;&lt;</span> letter <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;&lt;</span> endl<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span></span></code></pre></div></div>
+<pre><code>this is a string: word
+this is the first character of that word: w</code></pre>
+<ul>
+<li>The <strong>+</strong> operator concatenates strings together.</li>
+</ul>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb32" style="background: #f1f3f5;"><pre class="sourceCode numberSource cpp number-lines code-with-copy"><code class="sourceCode cpp"><span id="cb32-1">string sentence <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"word1"</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span></span>
+<span id="cb32-2">sentence <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> sentence <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">" word2"</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">" word3"</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">" ..."</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span></span>
+<span id="cb32-3">cout <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;&lt;</span> sentence <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;&lt;</span> endl<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span></span></code></pre></div></div>
+<pre><code>word1 word2 word3 ...</code></pre>
+<ul>
+<li><p><strong>substr</strong> is a string function that will create a new string from the innards of another.</p></li>
+<li><p>This function takes a starting position and the number of character to use after that position and copies the characters into a new string.</p></li>
+<li><p><strong><code>find</code></strong> will return the position where the first occurrence of a word is found (and -1 if it is not found).</p></li>
+</ul>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb34" style="background: #f1f3f5;"><pre class="sourceCode numberSource cpp number-lines code-with-copy"><code class="sourceCode cpp"><span id="cb34-1">string sentence <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"where is Aldo ?"</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span></span>
+<span id="cb34-2"><span class="dt" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">int</span> findAldo <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> sentence<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">.</span>find<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">(</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Aldo"</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">);</span></span>
+<span id="cb34-3">cout <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;&lt;</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Aldo can be found at this position: "</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;&lt;</span> findAldo <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;&lt;</span> endl<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span></span></code></pre></div></div>
+<pre><code>Aldo can be found at this position: 9</code></pre>
+<ul>
+<li><strong><code>erase</code></strong> will remove characters from a string. It takes the starting position of where I want to start removing characters and he total number of characters to get rid of.</li>
+</ul>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb36" style="background: #f1f3f5;"><pre class="sourceCode numberSource cpp number-lines code-with-copy"><code class="sourceCode cpp"><span id="cb36-1"><span class="dt" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">void</span> func<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">()</span></span>
+<span id="cb36-2"><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">{</span></span>
+<span id="cb36-3">    string sentence <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"In this sentence sentence, it must be no repeated word!"</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span></span>
+<span id="cb36-4">    <span class="dt" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">int</span> repeatedWord <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> sentence<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">.</span>find<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">(</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"sentence"</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">);</span></span>
+<span id="cb36-5">    sentence<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">.</span>erase<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">(</span>repeatedWord<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">,</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">9</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">);</span></span>
+<span id="cb36-6">    cout <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;&lt;</span> sentence <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;&lt;</span> endl<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span></span>
+<span id="cb36-7"><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">}</span></span></code></pre></div></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb37" style="background: #f1f3f5;"><pre class="sourceCode numberSource cpp number-lines code-with-copy"><code class="sourceCode cpp"><span id="cb37-1">func<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">();</span></span></code></pre></div></div>
+<pre><code>In this sentence, it must be no repeated word!</code></pre>
+<ul>
+<li><strong><code>insert</code></strong> adds a new string after the position specified in the string.</li>
+</ul>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb39" style="background: #f1f3f5;"><pre class="sourceCode numberSource cpp number-lines code-with-copy"><code class="sourceCode cpp"><span id="cb39-1">string sentence <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">", my name is Ismail."</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span></span>
+<span id="cb39-2">string greeting <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Hi"</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span></span>
+<span id="cb39-3">sentence <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> sentence<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">.</span>insert<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">(</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">,</span> greeting<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">);</span></span>
+<span id="cb39-4">cout <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;&lt;</span> sentence <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;&lt;</span> endl<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span></span></code></pre></div></div>
+<pre><code>Hi, my name is Ismail.</code></pre>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb41" style="background: #f1f3f5;"><pre class="sourceCode numberSource cpp number-lines code-with-copy"><code class="sourceCode cpp"></code></pre></div></div>
 
 
 <!-- -->
 
+</section>
 </section>
 </section>
 
