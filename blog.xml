@@ -550,9 +550,24 @@ this is the first character of that word: w</code></pre>
 <pre><code>Hi, my name is Ismail.</code></pre>
 </div>
 </div>
-
-
 </section>
+</section>
+<section id="weekly-pay-calculator" class="level3">
+<h3 class="anchored" data-anchor-id="weekly-pay-calculator">Weekly pay calculator</h3>
+<ul>
+<li><p>In this small program we will use the <strong><code>cin</code></strong> which takes input from users and use it in the program, displays it or further process it.</p></li>
+<li><p>In this program we will calculate the weekly pay from employers by taking inputs from them and use as arguments in a formula in order to calculate.</p></li>
+<li><p><strong><code>cin</code></strong> is part of <code>&lt;iostream&gt;</code> just like <strong>cout</strong>.</p></li>
+</ul>
+<div id="980da680-be7e-474c-b882-8f2c000e1247" class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb42" style="background: #f1f3f5;"><pre class="sourceCode numberSource cpp17 number-lines code-with-copy"><code class="sourceCode"><span id="cb42-1">string name;</span>
+<span id="cb42-2">name  = </span></code></pre></div></div>
+</details>
+</div>
+
+
 </section>
 </section>
 
