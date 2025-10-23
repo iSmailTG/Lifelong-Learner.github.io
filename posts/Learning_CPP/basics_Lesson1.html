@@ -534,7 +534,7 @@ This is a string of charaters: Ismail</code></pre>
 <li>The operations performed on <code>int</code> are: <strong><code>- + / *</code></strong>, the division is the only operation that requires some explanation.</li>
 <li>Here is a division between to integers:</li>
 </ul>
-<div id="47845e69-0263-40e9-8551-a13fd40b1266" class="cell" data-execution_count="9">
+<div id="fc04ea79-76f3-4d9f-bc61-4c70d259d86d" class="cell" data-execution_count="9">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource cpp17 number-lines code-with-copy"><code class="sourceCode"><span id="cb15-1"><a href="#cb15-1"></a>void divint()</span>
@@ -737,16 +737,29 @@ this is the first character of that word: w</code></pre>
 </div>
 </div>
 <ul>
-<li><p><strong>substr</strong> is a string function that will create a new string from the innards of another.</p></li>
-<li><p>This function takes a starting position and the number of character to use after that position and copies the characters into a new string.</p></li>
-<li><p><strong><code>find</code></strong> will return the position where the first occurrence of a word is found (and -1 if it is not found).</p></li>
+<li><strong>substr</strong> is a string function that will create a new string from the innards of another.</li>
+<li>This function takes a starting position and the number of character to use after that position and copies the characters into a new string.</li>
 </ul>
-<div id="4a018f5f-767b-45e2-afdd-243e34d794a0" class="cell" data-execution_count="20">
+<div id="8ee73499-8565-483e-aed6-ef62cfa6aa5b" class="cell" data-execution_count="20">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb35"><pre class="sourceCode numberSource cpp17 number-lines code-with-copy"><code class="sourceCode"><span id="cb35-1"><a href="#cb35-1"></a>string sentence = "where is Aldo ?";</span>
-<span id="cb35-2"><a href="#cb35-2"></a>int findAldo = sentence.find("Aldo");</span>
-<span id="cb35-3"><a href="#cb35-3"></a>cout &lt;&lt; "Aldo can be found at this position: " &lt;&lt; findAldo &lt;&lt; endl;</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb35"><pre class="sourceCode numberSource cpp17 number-lines code-with-copy"><code class="sourceCode"><span id="cb35-1"><a href="#cb35-1"></a>string sentence = "find the third word";</span>
+<span id="cb35-2"><a href="#cb35-2"></a>string aWord = sentence.substr(9, 5);</span>
+<span id="cb35-3"><a href="#cb35-3"></a>cout &lt;&lt; aWord &lt;&lt; endl;</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>third</code></pre>
+</div>
+</div>
+<ul>
+<li><strong><code>find</code></strong> will return the position where the first occurrence of a word is found (and -1 if it is not found).</li>
+</ul>
+<div id="4a018f5f-767b-45e2-afdd-243e34d794a0" class="cell" data-execution_count="21">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb37"><pre class="sourceCode numberSource cpp17 number-lines code-with-copy"><code class="sourceCode"><span id="cb37-1"><a href="#cb37-1"></a>string sentence = "where is Aldo ?";</span>
+<span id="cb37-2"><a href="#cb37-2"></a>int findAldo = sentence.find("Aldo");</span>
+<span id="cb37-3"><a href="#cb37-3"></a>cout &lt;&lt; "Aldo can be found at this position: " &lt;&lt; findAldo &lt;&lt; endl;</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>Aldo can be found at this position: 9</code></pre>
@@ -755,22 +768,22 @@ this is the first character of that word: w</code></pre>
 <ul>
 <li><strong><code>erase</code></strong> will remove characters from a string. It takes the starting position of where I want to start removing characters and he total number of characters to get rid of.</li>
 </ul>
-<div id="9e6642a0-3c13-4572-be53-f10630ef6e60" class="cell" data-execution_count="21">
+<div id="9e6642a0-3c13-4572-be53-f10630ef6e60" class="cell" data-execution_count="22">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb37"><pre class="sourceCode numberSource cpp17 number-lines code-with-copy"><code class="sourceCode"><span id="cb37-1"><a href="#cb37-1"></a>void func()</span>
-<span id="cb37-2"><a href="#cb37-2"></a>{</span>
-<span id="cb37-3"><a href="#cb37-3"></a>    string sentence = "In this sentence sentence, it must be no repeated word!";</span>
-<span id="cb37-4"><a href="#cb37-4"></a>    int repeatedWord = sentence.find("sentence");</span>
-<span id="cb37-5"><a href="#cb37-5"></a>    sentence.erase(repeatedWord, 9);</span>
-<span id="cb37-6"><a href="#cb37-6"></a>    cout &lt;&lt; sentence &lt;&lt; endl;</span>
-<span id="cb37-7"><a href="#cb37-7"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb39"><pre class="sourceCode numberSource cpp17 number-lines code-with-copy"><code class="sourceCode"><span id="cb39-1"><a href="#cb39-1"></a>void func()</span>
+<span id="cb39-2"><a href="#cb39-2"></a>{</span>
+<span id="cb39-3"><a href="#cb39-3"></a>    string sentence = "In this sentence sentence, it must be no repeated word!";</span>
+<span id="cb39-4"><a href="#cb39-4"></a>    int repeatedWord = sentence.find("sentence");</span>
+<span id="cb39-5"><a href="#cb39-5"></a>    sentence.erase(repeatedWord, 9);</span>
+<span id="cb39-6"><a href="#cb39-6"></a>    cout &lt;&lt; sentence &lt;&lt; endl;</span>
+<span id="cb39-7"><a href="#cb39-7"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 </div>
-<div id="70bfb979-8495-4a1d-9525-efb473c54498" class="cell" data-execution_count="22">
+<div id="70bfb979-8495-4a1d-9525-efb473c54498" class="cell" data-execution_count="23">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb38"><pre class="sourceCode numberSource cpp17 number-lines code-with-copy"><code class="sourceCode"><span id="cb38-1"><a href="#cb38-1"></a>func();</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb40"><pre class="sourceCode numberSource cpp17 number-lines code-with-copy"><code class="sourceCode"><span id="cb40-1"><a href="#cb40-1"></a>func();</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>In this sentence, it must be no repeated word!</code></pre>
@@ -779,13 +792,13 @@ this is the first character of that word: w</code></pre>
 <ul>
 <li><strong><code>insert</code></strong> adds a new string after the position specified in the string.</li>
 </ul>
-<div id="253aab3a-d8d7-4b40-82e1-93905c8bd7af" class="cell" data-execution_count="23">
+<div id="253aab3a-d8d7-4b40-82e1-93905c8bd7af" class="cell" data-execution_count="24">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb40"><pre class="sourceCode numberSource cpp17 number-lines code-with-copy"><code class="sourceCode"><span id="cb40-1"><a href="#cb40-1"></a>string sentence = ", my name is Ismail.";</span>
-<span id="cb40-2"><a href="#cb40-2"></a>string greeting = "Hi";</span>
-<span id="cb40-3"><a href="#cb40-3"></a>sentence = sentence.insert(0, greeting);</span>
-<span id="cb40-4"><a href="#cb40-4"></a>cout &lt;&lt; sentence &lt;&lt; endl;</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb42"><pre class="sourceCode numberSource cpp17 number-lines code-with-copy"><code class="sourceCode"><span id="cb42-1"><a href="#cb42-1"></a>string sentence = ", my name is Ismail.";</span>
+<span id="cb42-2"><a href="#cb42-2"></a>string greeting = "Hi";</span>
+<span id="cb42-3"><a href="#cb42-3"></a>sentence = sentence.insert(0, greeting);</span>
+<span id="cb42-4"><a href="#cb42-4"></a>cout &lt;&lt; sentence &lt;&lt; endl;</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>Hi, my name is Ismail.</code></pre>
@@ -800,11 +813,56 @@ this is the first character of that word: w</code></pre>
 <li><p>In this program we will calculate the weekly pay from employers by taking inputs from them and use as arguments in a formula in order to calculate.</p></li>
 <li><p><strong><code>cin</code></strong> is part of <code>&lt;iostream&gt;</code> just like <strong>cout</strong>.</p></li>
 </ul>
-<div id="980da680-be7e-474c-b882-8f2c000e1247" class="cell">
+<div id="980da680-be7e-474c-b882-8f2c000e1247" class="cell" data-execution_count="25">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb42"><pre class="sourceCode numberSource cpp17 number-lines code-with-copy"><code class="sourceCode"><span id="cb42-1"><a href="#cb42-1"></a>string name;</span>
-<span id="cb42-2"><a href="#cb42-2"></a>name  = </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb44"><pre class="sourceCode numberSource cpp17 number-lines code-with-copy"><code class="sourceCode"><span id="cb44-1"><a href="#cb44-1"></a>#include &lt;iostream&gt;</span>
+<span id="cb44-2"><a href="#cb44-2"></a>using namespace std;</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+</div>
+<div id="c3398578-2339-4c0f-b7aa-c6b20a449330" class="cell" data-execution_count="26">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb45"><pre class="sourceCode numberSource cpp17 number-lines code-with-copy"><code class="sourceCode"><span id="cb45-1"><a href="#cb45-1"></a>void calculatePay()</span>
+<span id="cb45-2"><a href="#cb45-2"></a>{</span>
+<span id="cb45-3"><a href="#cb45-3"></a>    float numHoursWorked;</span>
+<span id="cb45-4"><a href="#cb45-4"></a>    float hourlyPayRate;</span>
+<span id="cb45-5"><a href="#cb45-5"></a>    string employeeName;</span>
+<span id="cb45-6"><a href="#cb45-6"></a>    float weeklyPay;</span>
+<span id="cb45-7"><a href="#cb45-7"></a>    </span>
+<span id="cb45-8"><a href="#cb45-8"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+</div>
+<ul>
+<li>The rpoblem with this approach is that we need to add the numbers manually for each employee or ask them the modify the code for themselves, which is inconvenient.</li>
+<li>The idea is write code that asks them for their informations, stores it and calculates the weekly pay.</li>
+</ul>
+<div id="9d247784-b0e5-4be0-aece-0f6c98b45189" class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb46"><pre class="sourceCode numberSource cpp17 number-lines code-with-copy"><code class="sourceCode"><span id="cb46-1"><a href="#cb46-1"></a>#include &lt;iostream&gt;</span>
+<span id="cb46-2"><a href="#cb46-2"></a>#include &lt;string&gt;</span>
+<span id="cb46-3"><a href="#cb46-3"></a>using namespace std;</span>
+<span id="cb46-4"><a href="#cb46-4"></a></span>
+<span id="cb46-5"><a href="#cb46-5"></a>int main()</span>
+<span id="cb46-6"><a href="#cb46-6"></a>{</span>
+<span id="cb46-7"><a href="#cb46-7"></a>  float hoursPerWeek;</span>
+<span id="cb46-8"><a href="#cb46-8"></a>  float hourlyPayRate;</span>
+<span id="cb46-9"><a href="#cb46-9"></a>  string employeeName;</span>
+<span id="cb46-10"><a href="#cb46-10"></a>  float weeklyPay;</span>
+<span id="cb46-11"><a href="#cb46-11"></a>  cout &lt;&lt; "Enter hours worked per week: "&lt;&lt; endl;</span>
+<span id="cb46-12"><a href="#cb46-12"></a>  cin &gt;&gt; hoursPerWeek;</span>
+<span id="cb46-13"><a href="#cb46-13"></a>  cout &lt;&lt; "Enter hourly pay rate: " &lt;&lt; endl;</span>
+<span id="cb46-14"><a href="#cb46-14"></a>  cin &gt;&gt; hourlyPayRate;</span>
+<span id="cb46-15"><a href="#cb46-15"></a>  cout &lt;&lt; "Enter your Name: " &lt;&lt; endl;</span>
+<span id="cb46-16"><a href="#cb46-16"></a>  cin &gt;&gt; employeeName;</span>
+<span id="cb46-17"><a href="#cb46-17"></a></span>
+<span id="cb46-18"><a href="#cb46-18"></a>  weeklyPay = hoursPerWeek * hourlyPayRate;</span>
+<span id="cb46-19"><a href="#cb46-19"></a></span>
+<span id="cb46-20"><a href="#cb46-20"></a>  cout &lt;&lt; employeeName &lt;&lt; " Earned " &lt;&lt; weeklyPay &lt;&lt; "$ this week." &lt;&lt; endl;</span>
+<span id="cb46-21"><a href="#cb46-21"></a></span>
+<span id="cb46-22"><a href="#cb46-22"></a>  return 0;</span>
+<span id="cb46-23"><a href="#cb46-23"></a>  }</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 </div>
 

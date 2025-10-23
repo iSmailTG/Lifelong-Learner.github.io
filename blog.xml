@@ -293,7 +293,7 @@ This is a string of charaters: Ismail</code></pre>
 <li>The operations performed on <code>int</code> are: <strong><code>- + / *</code></strong>, the division is the only operation that requires some explanation.</li>
 <li>Here is a division between to integers:</li>
 </ul>
-<div id="47845e69-0263-40e9-8551-a13fd40b1266" class="cell" data-execution_count="9">
+<div id="fc04ea79-76f3-4d9f-bc61-4c70d259d86d" class="cell" data-execution_count="9">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15" style="background: #f1f3f5;"><pre class="sourceCode numberSource cpp17 number-lines code-with-copy"><code class="sourceCode"><span id="cb15-1">void divint()</span>
@@ -496,16 +496,29 @@ this is the first character of that word: w</code></pre>
 </div>
 </div>
 <ul>
-<li><p><strong>substr</strong> is a string function that will create a new string from the innards of another.</p></li>
-<li><p>This function takes a starting position and the number of character to use after that position and copies the characters into a new string.</p></li>
-<li><p><strong><code>find</code></strong> will return the position where the first occurrence of a word is found (and -1 if it is not found).</p></li>
+<li><strong>substr</strong> is a string function that will create a new string from the innards of another.</li>
+<li>This function takes a starting position and the number of character to use after that position and copies the characters into a new string.</li>
 </ul>
-<div id="4a018f5f-767b-45e2-afdd-243e34d794a0" class="cell" data-execution_count="20">
+<div id="8ee73499-8565-483e-aed6-ef62cfa6aa5b" class="cell" data-execution_count="20">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb35" style="background: #f1f3f5;"><pre class="sourceCode numberSource cpp17 number-lines code-with-copy"><code class="sourceCode"><span id="cb35-1">string sentence = "where is Aldo ?";</span>
-<span id="cb35-2">int findAldo = sentence.find("Aldo");</span>
-<span id="cb35-3">cout &lt;&lt; "Aldo can be found at this position: " &lt;&lt; findAldo &lt;&lt; endl;</span></code></pre></div></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb35" style="background: #f1f3f5;"><pre class="sourceCode numberSource cpp17 number-lines code-with-copy"><code class="sourceCode"><span id="cb35-1">string sentence = "find the third word";</span>
+<span id="cb35-2">string aWord = sentence.substr(9, 5);</span>
+<span id="cb35-3">cout &lt;&lt; aWord &lt;&lt; endl;</span></code></pre></div></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>third</code></pre>
+</div>
+</div>
+<ul>
+<li><strong><code>find</code></strong> will return the position where the first occurrence of a word is found (and -1 if it is not found).</li>
+</ul>
+<div id="4a018f5f-767b-45e2-afdd-243e34d794a0" class="cell" data-execution_count="21">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb37" style="background: #f1f3f5;"><pre class="sourceCode numberSource cpp17 number-lines code-with-copy"><code class="sourceCode"><span id="cb37-1">string sentence = "where is Aldo ?";</span>
+<span id="cb37-2">int findAldo = sentence.find("Aldo");</span>
+<span id="cb37-3">cout &lt;&lt; "Aldo can be found at this position: " &lt;&lt; findAldo &lt;&lt; endl;</span></code></pre></div></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>Aldo can be found at this position: 9</code></pre>
@@ -514,22 +527,22 @@ this is the first character of that word: w</code></pre>
 <ul>
 <li><strong><code>erase</code></strong> will remove characters from a string. It takes the starting position of where I want to start removing characters and he total number of characters to get rid of.</li>
 </ul>
-<div id="9e6642a0-3c13-4572-be53-f10630ef6e60" class="cell" data-execution_count="21">
+<div id="9e6642a0-3c13-4572-be53-f10630ef6e60" class="cell" data-execution_count="22">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb37" style="background: #f1f3f5;"><pre class="sourceCode numberSource cpp17 number-lines code-with-copy"><code class="sourceCode"><span id="cb37-1">void func()</span>
-<span id="cb37-2">{</span>
-<span id="cb37-3">    string sentence = "In this sentence sentence, it must be no repeated word!";</span>
-<span id="cb37-4">    int repeatedWord = sentence.find("sentence");</span>
-<span id="cb37-5">    sentence.erase(repeatedWord, 9);</span>
-<span id="cb37-6">    cout &lt;&lt; sentence &lt;&lt; endl;</span>
-<span id="cb37-7">}</span></code></pre></div></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb39" style="background: #f1f3f5;"><pre class="sourceCode numberSource cpp17 number-lines code-with-copy"><code class="sourceCode"><span id="cb39-1">void func()</span>
+<span id="cb39-2">{</span>
+<span id="cb39-3">    string sentence = "In this sentence sentence, it must be no repeated word!";</span>
+<span id="cb39-4">    int repeatedWord = sentence.find("sentence");</span>
+<span id="cb39-5">    sentence.erase(repeatedWord, 9);</span>
+<span id="cb39-6">    cout &lt;&lt; sentence &lt;&lt; endl;</span>
+<span id="cb39-7">}</span></code></pre></div></div>
 </details>
 </div>
-<div id="70bfb979-8495-4a1d-9525-efb473c54498" class="cell" data-execution_count="22">
+<div id="70bfb979-8495-4a1d-9525-efb473c54498" class="cell" data-execution_count="23">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb38" style="background: #f1f3f5;"><pre class="sourceCode numberSource cpp17 number-lines code-with-copy"><code class="sourceCode"><span id="cb38-1">func();</span></code></pre></div></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb40" style="background: #f1f3f5;"><pre class="sourceCode numberSource cpp17 number-lines code-with-copy"><code class="sourceCode"><span id="cb40-1">func();</span></code></pre></div></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>In this sentence, it must be no repeated word!</code></pre>
@@ -538,13 +551,13 @@ this is the first character of that word: w</code></pre>
 <ul>
 <li><strong><code>insert</code></strong> adds a new string after the position specified in the string.</li>
 </ul>
-<div id="253aab3a-d8d7-4b40-82e1-93905c8bd7af" class="cell" data-execution_count="23">
+<div id="253aab3a-d8d7-4b40-82e1-93905c8bd7af" class="cell" data-execution_count="24">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb40" style="background: #f1f3f5;"><pre class="sourceCode numberSource cpp17 number-lines code-with-copy"><code class="sourceCode"><span id="cb40-1">string sentence = ", my name is Ismail.";</span>
-<span id="cb40-2">string greeting = "Hi";</span>
-<span id="cb40-3">sentence = sentence.insert(0, greeting);</span>
-<span id="cb40-4">cout &lt;&lt; sentence &lt;&lt; endl;</span></code></pre></div></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb42" style="background: #f1f3f5;"><pre class="sourceCode numberSource cpp17 number-lines code-with-copy"><code class="sourceCode"><span id="cb42-1">string sentence = ", my name is Ismail.";</span>
+<span id="cb42-2">string greeting = "Hi";</span>
+<span id="cb42-3">sentence = sentence.insert(0, greeting);</span>
+<span id="cb42-4">cout &lt;&lt; sentence &lt;&lt; endl;</span></code></pre></div></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>Hi, my name is Ismail.</code></pre>
@@ -559,11 +572,56 @@ this is the first character of that word: w</code></pre>
 <li><p>In this program we will calculate the weekly pay from employers by taking inputs from them and use as arguments in a formula in order to calculate.</p></li>
 <li><p><strong><code>cin</code></strong> is part of <code>&lt;iostream&gt;</code> just like <strong>cout</strong>.</p></li>
 </ul>
-<div id="980da680-be7e-474c-b882-8f2c000e1247" class="cell">
+<div id="980da680-be7e-474c-b882-8f2c000e1247" class="cell" data-execution_count="25">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb42" style="background: #f1f3f5;"><pre class="sourceCode numberSource cpp17 number-lines code-with-copy"><code class="sourceCode"><span id="cb42-1">string name;</span>
-<span id="cb42-2">name  = </span></code></pre></div></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb44" style="background: #f1f3f5;"><pre class="sourceCode numberSource cpp17 number-lines code-with-copy"><code class="sourceCode"><span id="cb44-1">#include &lt;iostream&gt;</span>
+<span id="cb44-2">using namespace std;</span></code></pre></div></div>
+</details>
+</div>
+<div id="c3398578-2339-4c0f-b7aa-c6b20a449330" class="cell" data-execution_count="26">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb45" style="background: #f1f3f5;"><pre class="sourceCode numberSource cpp17 number-lines code-with-copy"><code class="sourceCode"><span id="cb45-1">void calculatePay()</span>
+<span id="cb45-2">{</span>
+<span id="cb45-3">    float numHoursWorked;</span>
+<span id="cb45-4">    float hourlyPayRate;</span>
+<span id="cb45-5">    string employeeName;</span>
+<span id="cb45-6">    float weeklyPay;</span>
+<span id="cb45-7">    </span>
+<span id="cb45-8">}</span></code></pre></div></div>
+</details>
+</div>
+<ul>
+<li>The rpoblem with this approach is that we need to add the numbers manually for each employee or ask them the modify the code for themselves, which is inconvenient.</li>
+<li>The idea is write code that asks them for their informations, stores it and calculates the weekly pay.</li>
+</ul>
+<div id="9d247784-b0e5-4be0-aece-0f6c98b45189" class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb46" style="background: #f1f3f5;"><pre class="sourceCode numberSource cpp17 number-lines code-with-copy"><code class="sourceCode"><span id="cb46-1">#include &lt;iostream&gt;</span>
+<span id="cb46-2">#include &lt;string&gt;</span>
+<span id="cb46-3">using namespace std;</span>
+<span id="cb46-4"></span>
+<span id="cb46-5">int main()</span>
+<span id="cb46-6">{</span>
+<span id="cb46-7">  float hoursPerWeek;</span>
+<span id="cb46-8">  float hourlyPayRate;</span>
+<span id="cb46-9">  string employeeName;</span>
+<span id="cb46-10">  float weeklyPay;</span>
+<span id="cb46-11">  cout &lt;&lt; "Enter hours worked per week: "&lt;&lt; endl;</span>
+<span id="cb46-12">  cin &gt;&gt; hoursPerWeek;</span>
+<span id="cb46-13">  cout &lt;&lt; "Enter hourly pay rate: " &lt;&lt; endl;</span>
+<span id="cb46-14">  cin &gt;&gt; hourlyPayRate;</span>
+<span id="cb46-15">  cout &lt;&lt; "Enter your Name: " &lt;&lt; endl;</span>
+<span id="cb46-16">  cin &gt;&gt; employeeName;</span>
+<span id="cb46-17"></span>
+<span id="cb46-18">  weeklyPay = hoursPerWeek * hourlyPayRate;</span>
+<span id="cb46-19"></span>
+<span id="cb46-20">  cout &lt;&lt; employeeName &lt;&lt; " Earned " &lt;&lt; weeklyPay &lt;&lt; "$ this week." &lt;&lt; endl;</span>
+<span id="cb46-21"></span>
+<span id="cb46-22">  return 0;</span>
+<span id="cb46-23">  }</span></code></pre></div></div>
 </details>
 </div>
 
@@ -1847,18 +1905,50 @@ background-color: null;
 font-style: inherit;">;</span></span></code></pre></div></div>
 <pre><code>word1 word2 word3 ...</code></pre>
 <ul>
-<li><p><strong>substr</strong> is a string function that will create a new string from the innards of another.</p></li>
-<li><p>This function takes a starting position and the number of character to use after that position and copies the characters into a new string.</p></li>
-<li><p><strong><code>find</code></strong> will return the position where the first occurrence of a word is found (and -1 if it is not found).</p></li>
+<li><strong>substr</strong> is a string function that will create a new string from the innards of another.</li>
+<li>This function takes a starting position and the number of character to use after that position and copies the characters into a new string.</li>
 </ul>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb34" style="background: #f1f3f5;"><pre class="sourceCode numberSource cpp number-lines code-with-copy"><code class="sourceCode cpp"><span id="cb34-1">string sentence <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"find the third word"</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span></span>
+<span id="cb34-2">string aWord <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> sentence<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">.</span>substr<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">(</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">9</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">,</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">5</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">);</span></span>
+<span id="cb34-3">cout <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;&lt;</span> aWord <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;&lt;</span> endl<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span></span></code></pre></div></div>
+<pre><code>third</code></pre>
+<ul>
+<li><strong><code>find</code></strong> will return the position where the first occurrence of a word is found (and -1 if it is not found).</li>
+</ul>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb36" style="background: #f1f3f5;"><pre class="sourceCode numberSource cpp number-lines code-with-copy"><code class="sourceCode cpp"><span id="cb36-1">string sentence <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> <span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"where is Aldo ?"</span><span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">;</span></span>
-<span id="cb34-2"><span class="dt" style="color: #AD0000;
+<span id="cb36-2"><span class="dt" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">int</span> findAldo <span class="op" style="color: #5E5E5E;
 background-color: null;
@@ -1871,7 +1961,7 @@ background-color: null;
 font-style: inherit;">"Aldo"</span><span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">);</span></span>
-<span id="cb34-3">cout <span class="op" style="color: #5E5E5E;
+<span id="cb36-3">cout <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">&lt;&lt;</span> <span class="st" style="color: #20794D;
 background-color: null;
@@ -1886,22 +1976,22 @@ font-style: inherit;">;</span></span></code></pre></div></div>
 <ul>
 <li><strong><code>erase</code></strong> will remove characters from a string. It takes the starting position of where I want to start removing characters and he total number of characters to get rid of.</li>
 </ul>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb36" style="background: #f1f3f5;"><pre class="sourceCode numberSource cpp number-lines code-with-copy"><code class="sourceCode cpp"><span id="cb36-1"><span class="dt" style="color: #AD0000;
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb38" style="background: #f1f3f5;"><pre class="sourceCode numberSource cpp number-lines code-with-copy"><code class="sourceCode cpp"><span id="cb38-1"><span class="dt" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">void</span> func<span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">()</span></span>
-<span id="cb36-2"><span class="op" style="color: #5E5E5E;
+<span id="cb38-2"><span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">{</span></span>
-<span id="cb36-3">    string sentence <span class="op" style="color: #5E5E5E;
+<span id="cb38-3">    string sentence <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> <span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"In this sentence sentence, it must be no repeated word!"</span><span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">;</span></span>
-<span id="cb36-4">    <span class="dt" style="color: #AD0000;
+<span id="cb38-4">    <span class="dt" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">int</span> repeatedWord <span class="op" style="color: #5E5E5E;
 background-color: null;
@@ -1914,7 +2004,7 @@ background-color: null;
 font-style: inherit;">"sentence"</span><span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">);</span></span>
-<span id="cb36-5">    sentence<span class="op" style="color: #5E5E5E;
+<span id="cb38-5">    sentence<span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">.</span>erase<span class="op" style="color: #5E5E5E;
 background-color: null;
@@ -1925,38 +2015,38 @@ background-color: null;
 font-style: inherit;">9</span><span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">);</span></span>
-<span id="cb36-6">    cout <span class="op" style="color: #5E5E5E;
+<span id="cb38-6">    cout <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">&lt;&lt;</span> sentence <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">&lt;&lt;</span> endl<span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">;</span></span>
-<span id="cb36-7"><span class="op" style="color: #5E5E5E;
+<span id="cb38-7"><span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">}</span></span></code></pre></div></div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb37" style="background: #f1f3f5;"><pre class="sourceCode numberSource cpp number-lines code-with-copy"><code class="sourceCode cpp"><span id="cb37-1">func<span class="op" style="color: #5E5E5E;
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb39" style="background: #f1f3f5;"><pre class="sourceCode numberSource cpp number-lines code-with-copy"><code class="sourceCode cpp"><span id="cb39-1">func<span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">();</span></span></code></pre></div></div>
 <pre><code>In this sentence, it must be no repeated word!</code></pre>
 <ul>
 <li><strong><code>insert</code></strong> adds a new string after the position specified in the string.</li>
 </ul>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb39" style="background: #f1f3f5;"><pre class="sourceCode numberSource cpp number-lines code-with-copy"><code class="sourceCode cpp"><span id="cb39-1">string sentence <span class="op" style="color: #5E5E5E;
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb41" style="background: #f1f3f5;"><pre class="sourceCode numberSource cpp number-lines code-with-copy"><code class="sourceCode cpp"><span id="cb41-1">string sentence <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> <span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">", my name is Ismail."</span><span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">;</span></span>
-<span id="cb39-2">string greeting <span class="op" style="color: #5E5E5E;
+<span id="cb41-2">string greeting <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> <span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"Hi"</span><span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">;</span></span>
-<span id="cb39-3">sentence <span class="op" style="color: #5E5E5E;
+<span id="cb41-3">sentence <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> sentence<span class="op" style="color: #5E5E5E;
 background-color: null;
@@ -1969,7 +2059,7 @@ background-color: null;
 font-style: inherit;">,</span> greeting<span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">);</span></span>
-<span id="cb39-4">cout <span class="op" style="color: #5E5E5E;
+<span id="cb41-4">cout <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">&lt;&lt;</span> sentence <span class="op" style="color: #5E5E5E;
 background-color: null;
@@ -1977,12 +2067,194 @@ font-style: inherit;">&lt;&lt;</span> endl<span class="op" style="color: #5E5E5E
 background-color: null;
 font-style: inherit;">;</span></span></code></pre></div></div>
 <pre><code>Hi, my name is Ismail.</code></pre>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb41" style="background: #f1f3f5;"><pre class="sourceCode numberSource cpp number-lines code-with-copy"><code class="sourceCode cpp"></code></pre></div></div>
+</section>
+</section>
+<section id="weekly-pay-calculator" class="level3">
+<h3 class="anchored" data-anchor-id="weekly-pay-calculator">Weekly pay calculator</h3>
+<ul>
+<li><p>In this small program we will use the <strong><code>cin</code></strong> which takes input from users and use it in the program, displays it or further process it.</p></li>
+<li><p>In this program we will calculate the weekly pay from employers by taking inputs from them and use as arguments in a formula in order to calculate.</p></li>
+<li><p><strong><code>cin</code></strong> is part of <code>&lt;iostream&gt;</code> just like <strong>cout</strong>.</p></li>
+</ul>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb43" style="background: #f1f3f5;"><pre class="sourceCode numberSource cpp number-lines code-with-copy"><code class="sourceCode cpp"><span id="cb43-1"><span class="pp" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">#include </span><span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">&lt;iostream&gt;</span></span>
+<span id="cb43-2"><span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">using</span> <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">namespace</span> std<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span></span></code></pre></div></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb44" style="background: #f1f3f5;"><pre class="sourceCode numberSource cpp number-lines code-with-copy"><code class="sourceCode cpp"><span id="cb44-1"><span class="dt" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">void</span> calculatePay<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">()</span></span>
+<span id="cb44-2"><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">{</span></span>
+<span id="cb44-3">    <span class="dt" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">float</span> numHoursWorked<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span></span>
+<span id="cb44-4">    <span class="dt" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">float</span> hourlyPayRate<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span></span>
+<span id="cb44-5">    string employeeName<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span></span>
+<span id="cb44-6">    <span class="dt" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">float</span> weeklyPay<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span></span>
+<span id="cb44-7">    </span>
+<span id="cb44-8"><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">}</span></span></code></pre></div></div>
+<ul>
+<li>The rpoblem with this approach is that we need to add the numbers manually for each employee or ask them the modify the code for themselves, which is inconvenient.</li>
+<li>The idea is write code that asks them for their informations, stores it and calculates the weekly pay.</li>
+</ul>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb45" style="background: #f1f3f5;"><pre class="sourceCode numberSource cpp number-lines code-with-copy"><code class="sourceCode cpp"><span id="cb45-1"><span class="pp" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">#include </span><span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">&lt;iostream&gt;</span></span>
+<span id="cb45-2"><span class="pp" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">#include </span><span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">&lt;string&gt;</span></span>
+<span id="cb45-3"><span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">using</span> <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">namespace</span> std<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span></span>
+<span id="cb45-4"></span>
+<span id="cb45-5"><span class="dt" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">int</span> main<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">()</span></span>
+<span id="cb45-6"><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">{</span></span>
+<span id="cb45-7">  <span class="dt" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">float</span> hoursPerWeek<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span></span>
+<span id="cb45-8">  <span class="dt" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">float</span> hourlyPayRate<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span></span>
+<span id="cb45-9">  string employeeName<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span></span>
+<span id="cb45-10">  <span class="dt" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">float</span> weeklyPay<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span></span>
+<span id="cb45-11">  cout <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;&lt;</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Enter hours worked per week: "</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;&lt;</span> endl<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span></span>
+<span id="cb45-12">  cin <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&gt;&gt;</span> hoursPerWeek<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span></span>
+<span id="cb45-13">  cout <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;&lt;</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Enter hourly pay rate: "</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;&lt;</span> endl<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span></span>
+<span id="cb45-14">  cin <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&gt;&gt;</span> hourlyPayRate<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span></span>
+<span id="cb45-15">  cout <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;&lt;</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Enter your Name: "</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;&lt;</span> endl<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span></span>
+<span id="cb45-16">  cin <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&gt;&gt;</span> employeeName<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span></span>
+<span id="cb45-17"></span>
+<span id="cb45-18">  weeklyPay <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> hoursPerWeek <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">*</span> hourlyPayRate<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span></span>
+<span id="cb45-19"></span>
+<span id="cb45-20">  cout <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;&lt;</span> employeeName <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;&lt;</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">" Earned "</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;&lt;</span> weeklyPay <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;&lt;</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"$ this week."</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;&lt;</span> endl<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span></span>
+<span id="cb45-21"></span>
+<span id="cb45-22">  <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">return</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span></span>
+<span id="cb45-23">  <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">}</span></span></code></pre></div></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb46" style="background: #f1f3f5;"><pre class="sourceCode numberSource cpp number-lines code-with-copy"><code class="sourceCode cpp"></code></pre></div></div>
 
 
 <!-- -->
 
-</section>
 </section>
 </section>
 
