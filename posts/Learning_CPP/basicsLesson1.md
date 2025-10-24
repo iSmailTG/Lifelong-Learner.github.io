@@ -442,6 +442,16 @@ cout << sentence << endl;
 * This function takes a starting position and the number of character to use after that position and copies the characters into a new string.
 
 
+
+```cpp
+string sentence = "find the third word";
+string aWord = sentence.substr(9, 5);
+cout << aWord << endl;
+```
+
+    third
+
+
 * **`find`** will return the position where the first occurrence of a word is found (and -1 if it is not found).
 
 
@@ -491,7 +501,186 @@ cout << sentence << endl;
     Hi, my name is Ismail.
 
 
+### Weekly pay calculator
+* In this small program we will use the **`cin`** which takes input from users and use it in the program, displays it or further process it.
+* In this program we will calculate the weekly pay from employers by taking inputs from them and use as arguments in a formula in order to calculate.
+
+* **`cin`** is part of `<iostream>` just like **cout**.
+
 
 ```cpp
-
+#include <iostream>
+using namespace std;
 ```
+
+
+```cpp
+void calculatePay()
+{
+    float numHoursWorked;
+    float hourlyPayRate;
+    string employeeName;
+    float weeklyPay;
+    
+}
+```
+
+*  The rpoblem with this approach is that we need to add the numbers manually for each employee or ask them the modify the code for themselves, which is inconvenient.
+*  The idea is write code that asks them for their informations, stores it and calculates the weekly pay.
+
+
+```cpp
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main()
+{
+  float hoursPerWeek;
+  float hourlyPayRate;
+  string employeeName;
+  float weeklyPay;
+  cout << "Enter hours worked per week: "<< endl;
+  cin >> hoursPerWeek;
+  cout << "Enter hourly pay rate: " << endl;
+  cin >> hourlyPayRate;
+  cout << "Enter your Name: " << endl;
+  cin >> employeeName;
+
+  weeklyPay = hoursPerWeek * hourlyPayRate;
+
+  cout << employeeName << " Earned " << weeklyPay << "$ this week." << endl;
+
+  return 0;
+  }
+```
+
+* I could revisit the **`distance formula`** I program earlier and apply the idea of **`cin`** values instead of hard coding them like in the first version.
+
+
+```cpp
+// old version
+int main()
+{
+  int x0;
+  int y0;
+  int x1;
+  int y1;
+
+  x0 = 2;
+  y0 = 3;
+  x1 = 3;
+  y1 = 4;
+
+  float distanceFormula;
+
+  distanceFormula = sqrt(((x1 - x0) * (x1 - x0)) - ((y1 - y0) * (y1 - y0))
+
+  return 0;
+  
+}
+```
+
+* In the new version the values `x0, x1, y0, y1` will be decided by the user through `cin`.
+
+
+```cpp
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main()
+{
+    float x0, x1, y0, y1;  // Changed to float for better precision
+
+    cout << "Please enter the values of the first point: " << endl;
+    cout << "X: ";
+    cin >> x0;
+    cout << "Y: ";
+    cin >> y0;
+
+    cout << "Please enter the values of the second point: " << endl;
+    cout << "X: ";
+    cin >> x1;
+    cout << "Y: ";
+    cin >> y1;
+    
+    // distance formula: sqrt((x1-x0)² + (y1-y0)²)
+    float distanceFormula = sqrt(pow(x1 - x0, 2) + pow(y1 - y0, 2));
+    
+    cout << "The length of the line is: " << distanceFormula << endl;
+
+    return 0;
+}
+```
+
+* Further using `cin >>` in a function where I have to calculate many values and manipulate them:
+
+
+```cpp
+%%writefile gasMileage.cpp
+
+#include <iostream>
+#include <string>
+#include <cmath>
+using namespace std;
+
+
+int main()
+{
+  float distance;
+  string carBrand;
+  string carModel;
+  float carCapacity;
+  float mpg;
+
+  cout << "Enter the Distance of the Trip: " << endl;
+  cin >> distance;
+
+  cout << "Enter the rand of the car: " << endl;
+  cin >> carBrand;
+
+  cout  << "Enter the car Model: " << endl;
+  cin >> carModel;
+
+  cout << "Enter the fuel Tank Capacity: " << endl;
+  cin >> carCapacity;
+  
+  cout << "Enter the MPG of the car: " << endl;
+  cin >> mpg;
+
+
+  float mileageOnFullTank;
+  mileageOnFullTank = mpg * carCapacity;
+  float numOfStops = int(distance / mileageOnFullTank);
+  float gasRequired = distance / mpg;
+  float galonsLeft = ((numOfStops+1) * carCapacity) - gasRequired;
+  
+  
+  cout << "For a trip of " << distance << " miles" << endl;
+  cout << " a " << carBrand << " model " << carModel << " requires " << gasRequired << " Gallons Of Gas " << endl;
+  cout << " will require " << numOfStops << " stop for gas " << endl;
+  cout << " and will have " << galonsLeft << " gallons of gas left in the tank" << endl;
+  return 0;
+}  
+```
+
+## Day 1 Recap:
+* Today I started exploring C++ as a Python programmer, motivated by my goal of writing CUDA kernels. I covered the following fundamentals:
+
+* The compilation process (pre-processor → compiler → assembler → linker) and how C++ differs from interpreted languages. 
+
+
+* How to **`include`** libraries using `#include`, and the special role of the **`main()`** function. 
+
+
+* Basic printing with **`std::cout`**, ending lines with **`<< std::endl`**, and formatting simple output. 
+
+
+* **Variables**: declaring types explicitly (e.g., `int`, `float`), how static typing enforces constraints, and understanding variables as named boxes in memory. 
+
+
+* Fundamental data types: integers, floats, characters, strings; string operations like length, indexing, concatenation, substrings. 
+
+
+* A simple user-input example: using **`std::cin`** to build a basic “weekly pay” calculator. 
