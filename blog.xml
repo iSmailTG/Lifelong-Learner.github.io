@@ -10,7 +10,327 @@
 <atom:link href="https://iSmailTG.github.io/Lifelong-Learner.github.io/blog.xml" rel="self" type="application/rss+xml"/>
 <description></description>
 <generator>quarto-1.8.25</generator>
-<lastBuildDate>Thu, 18 Sep 2025 23:00:00 GMT</lastBuildDate>
+<lastBuildDate>Thu, 23 Oct 2025 23:00:00 GMT</lastBuildDate>
+<item>
+  <title>Learning CPP As Pythonista: Day-2</title>
+  <dc:creator>Ismail TG</dc:creator>
+  <link>https://iSmailTG.github.io/Lifelong-Learner.github.io/posts/Learning_CPP/basics_Lesson2.html</link>
+  <description><![CDATA[ 
+
+
+
+
+
+<section id="even-odd" class="level2">
+<h2 class="anchored" data-anchor-id="even-odd">Even || Odd</h2>
+<ul>
+<li><code>%</code> gives the remainder of division, perfect for checking parity.</li>
+<li>A boolean variable like <code>iseven</code> stores true/false logic.</li>
+<li><code>if/else</code> chooses which message to display.</li>
+</ul>
+<div id="7b1b3490-3b90-4fe1-b174-e639933ba9f7" class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode numberSource cpp17 number-lines code-with-copy"><code class="sourceCode"><span id="cb1-1">#include &lt;iostream&gt;</span>
+<span id="cb1-2">#include &lt;string&gt;</span>
+<span id="cb1-3">#include &lt;cmath&gt;</span>
+<span id="cb1-4">using namespace std;</span>
+<span id="cb1-5"></span>
+<span id="cb1-6"></span>
+<span id="cb1-7">int main()</span>
+<span id="cb1-8">{</span>
+<span id="cb1-9">  int number;</span>
+<span id="cb1-10">  cout &lt;&lt; "Please enter a Number: " &lt;&lt; endl;</span>
+<span id="cb1-11">  cin &gt;&gt; number;</span>
+<span id="cb1-12"></span>
+<span id="cb1-13">  bool iseven = number % 2 == 0;</span>
+<span id="cb1-14">  if(iseven)</span>
+<span id="cb1-15">  {</span>
+<span id="cb1-16">    cout &lt;&lt; number &lt;&lt; " is an even number" &lt;&lt; endl;</span>
+<span id="cb1-17">  }</span>
+<span id="cb1-18">  else</span>
+<span id="cb1-19">  {</span>
+<span id="cb1-20">    cout &lt;&lt; number &lt;&lt; " is an odd number" &lt;&lt; endl;</span>
+<span id="cb1-21">  }</span>
+<span id="cb1-22"></span>
+<span id="cb1-23">  return 0;</span>
+<span id="cb1-24">}</span></code></pre></div></div>
+</details>
+</div>
+</section>
+<section id="weekly-payout" class="level2">
+<h2 class="anchored" data-anchor-id="weekly-payout">Weekly Payout:</h2>
+<ul>
+<li>Simple payroll logic with overtime calculation.</li>
+<li>Hours above 40 are paid at <em>1.5x</em> the regular rate.</li>
+<li>Read multiple inputs from the user and compute the result.</li>
+</ul>
+<div id="fc485557-457a-4272-ad7f-8f7918662f13" class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2" style="background: #f1f3f5;"><pre class="sourceCode numberSource cpp17 number-lines code-with-copy"><code class="sourceCode"><span id="cb2-1">#include &lt;iostream&gt;</span>
+<span id="cb2-2">#include &lt;string&gt;</span>
+<span id="cb2-3">#include &lt;cmath&gt;</span>
+<span id="cb2-4">using namespace std;</span>
+<span id="cb2-5"></span>
+<span id="cb2-6">int main()</span>
+<span id="cb2-7">{</span>
+<span id="cb2-8">  float hourPerWeek;</span>
+<span id="cb2-9">  float payPerHour;</span>
+<span id="cb2-10">  string name;</span>
+<span id="cb2-11">  float weekPayout;</span>
+<span id="cb2-12"></span>
+<span id="cb2-13">  cout &lt;&lt; "How many Hours did you work last week: " &lt;&lt; endl;</span>
+<span id="cb2-14">  cin &gt;&gt; hourPerWeek;</span>
+<span id="cb2-15">  cout &lt;&lt; "How much you earn per hour: " &lt;&lt; endl;</span>
+<span id="cb2-16">  cin &gt;&gt; payPerHour;</span>
+<span id="cb2-17">  cout &lt;&lt; "What's your name: " &lt;&lt; endl;</span>
+<span id="cb2-18">  cin &gt;&gt; name;</span>
+<span id="cb2-19"></span>
+<span id="cb2-20">  if(hourPerWeek &lt;= 40.0)</span>
+<span id="cb2-21">  {</span>
+<span id="cb2-22">    weekPayout = hourPerWeek * payPerHour;</span>
+<span id="cb2-23">    cout &lt;&lt; name &lt;&lt; " earned " &lt;&lt; weekPayout &lt;&lt; "$$." &lt;&lt; endl;</span>
+<span id="cb2-24">  }</span>
+<span id="cb2-25">  else:</span>
+<span id="cb2-26">  {</span>
+<span id="cb2-27">    weekPayout = ((payPerHour * 40.0) + ((hourPerWeek - 40) * (payPerHour * 1.5)));</span>
+<span id="cb2-28">    cout &lt;&lt; name &lt;&lt; "  earned " &lt;&lt; weekPayout &lt;&lt; "$$." &lt;&lt; endl;</span>
+<span id="cb2-29">  }</span>
+<span id="cb2-30">  return 0;</span>
+<span id="cb2-31">}</span></code></pre></div></div>
+</details>
+</div>
+</section>
+<section id="water-temperature" class="level2">
+<h2 class="anchored" data-anchor-id="water-temperature">Water Temperature:</h2>
+<ul>
+<li>Nested <code>if</code> statements help handle several rules inside one category.</li>
+<li>Logical OR <code>||</code> checks if the scale is either C or F.</li>
+<li>Different boiling/freezing points for Celsius vs Fahrenheit.</li>
+<li>Provide feedback for invalid input.</li>
+</ul>
+<div id="0cc4d279-d9e4-4ee0-bb27-387f4fb8ec05" class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3" style="background: #f1f3f5;"><pre class="sourceCode numberSource cpp17 number-lines code-with-copy"><code class="sourceCode"><span id="cb3-1">#include &lt;iostream&gt;</span>
+<span id="cb3-2">#include &lt;string&gt;</span>
+<span id="cb3-3">#include &lt;cmath&gt;</span>
+<span id="cb3-4">using namespace std;</span>
+<span id="cb3-5"></span>
+<span id="cb3-6">int main()</span>
+<span id="cb3-7">{</span>
+<span id="cb3-8">  float temp;</span>
+<span id="cb3-9">  char tempScale;</span>
+<span id="cb3-10">  cout &lt;&lt; "Enter in the temperature: " &lt;&lt; endl;</span>
+<span id="cb3-11">  cin &gt;&gt; temp;</span>
+<span id="cb3-12">  cout &lt;&lt; "Enter temperature scale ( C or F ): " &lt;&lt; endl;</span>
+<span id="cb3-13">  cin &gt;&gt; tempScale;</span>
+<span id="cb3-14"></span>
+<span id="cb3-15">  if( tempScale == 'C' || tempScale == 'F')</span>
+<span id="cb3-16">  {</span>
+<span id="cb3-17">    if(tempScale == 'F')</span>
+<span id="cb3-18">    {</span>
+<span id="cb3-19">      if(temp &lt;= 32.0)</span>
+<span id="cb3-20">      {</span>
+<span id="cb3-21">        cout &lt;&lt; "Water will turn to ice at "&lt;&lt;temp&lt;&lt; " F degrees." &lt;&lt; endl;</span>
+<span id="cb3-22">        </span>
+<span id="cb3-23">      }</span>
+<span id="cb3-24">      else if(temp &gt;= 212.0)</span>
+<span id="cb3-25">      {</span>
+<span id="cb3-26">        cout &lt;&lt; "Water will turn to steam at " &lt;&lt;temp&lt;&lt; " F degrees." &lt;&lt; endl;</span>
+<span id="cb3-27"></span>
+<span id="cb3-28">      }</span>
+<span id="cb3-29">      else</span>
+<span id="cb3-30">      {</span>
+<span id="cb3-31">        cout &lt;&lt; "Water will stay liquid at " &lt;&lt; temp&lt;&lt; " F degrees." &lt;&lt; endl;</span>
+<span id="cb3-32">      }</span>
+<span id="cb3-33">    </span>
+<span id="cb3-34">    }</span>
+<span id="cb3-35">    else</span>
+<span id="cb3-36">    {</span>
+<span id="cb3-37">      if(temp &lt;= 0.0)</span>
+<span id="cb3-38">      {</span>
+<span id="cb3-39">        cout &lt;&lt; "Water will turn to ice at " &lt;&lt; temp &lt;&lt; " C degrees." &lt;&lt; endl;</span>
+<span id="cb3-40">      }</span>
+<span id="cb3-41">      else if(temp &gt;= 100.0)</span>
+<span id="cb3-42">      {</span>
+<span id="cb3-43">        cout &lt;&lt; "Water will turn to steam at " &lt;&lt; temp &lt;&lt; "C degrees." &lt;&lt; endl;</span>
+<span id="cb3-44">      }</span>
+<span id="cb3-45">      else</span>
+<span id="cb3-46">      {</span>
+<span id="cb3-47">        cout &lt;&lt; "water will stay liquid at " &lt;&lt; temp &lt;&lt; "C degrees." &lt;&lt; endl;</span>
+<span id="cb3-48">      }</span>
+<span id="cb3-49">    }</span>
+<span id="cb3-50">  }</span>
+<span id="cb3-51">  else </span>
+<span id="cb3-52">  {</span>
+<span id="cb3-53">    cout &lt;&lt; "You entered an invalid temperature scale. Please run the program again." &lt;&lt;endl;</span>
+<span id="cb3-54">  }</span>
+<span id="cb3-55">  return 0;</span>
+<span id="cb3-56">}</span></code></pre></div></div>
+</details>
+</div>
+</section>
+<section id="number-of-the-day-if-else-if" class="level2">
+<h2 class="anchored" data-anchor-id="number-of-the-day-if-else-if">Number of the Day (If / else if):</h2>
+<ul>
+<li>Chain of <code>else if</code> to match a specific number with its weekday.</li>
+<li>Demonstrates grouping conditions like weekend vs weekday.</li>
+<li>A good example where many comparisons might get messy.</li>
+</ul>
+<div id="9454de7d-7fd7-428c-9ffc-60c6e24e8faa" class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4" style="background: #f1f3f5;"><pre class="sourceCode numberSource cpp17 number-lines code-with-copy"><code class="sourceCode"><span id="cb4-1"></span>
+<span id="cb4-2">#include &lt;iostream&gt;</span>
+<span id="cb4-3">#include &lt;string&gt;</span>
+<span id="cb4-4">#include &lt;cmath&gt;</span>
+<span id="cb4-5">using namespace std;</span>
+<span id="cb4-6"></span>
+<span id="cb4-7">// slightly different version of switch.cpp</span>
+<span id="cb4-8">// using || and &amp;&amp; and adding weekend </span>
+<span id="cb4-9"></span>
+<span id="cb4-10"></span>
+<span id="cb4-11">int main()</span>
+<span id="cb4-12">{</span>
+<span id="cb4-13">  int dayNum;</span>
+<span id="cb4-14">  cout &lt;&lt; "Enter a number day (1 Sunday, 2 Monday, 3 Tuesday .. etc" &lt;&lt; endl;</span>
+<span id="cb4-15">  cin &gt;&gt; dayNum;</span>
+<span id="cb4-16">  cout &lt;&lt; "You selected ";</span>
+<span id="cb4-17">  </span>
+<span id="cb4-18">  if(dayNum == 1)</span>
+<span id="cb4-19">  {</span>
+<span id="cb4-20">    cout &lt;&lt; "Sunday. ";</span>
+<span id="cb4-21"></span>
+<span id="cb4-22">  }</span>
+<span id="cb4-23">  else if(dayNum == 2)</span>
+<span id="cb4-24">  {</span>
+<span id="cb4-25">    cout &lt;&lt; "Monday. ";</span>
+<span id="cb4-26">  }</span>
+<span id="cb4-27">  else if(dayNum == 3)</span>
+<span id="cb4-28">  {</span>
+<span id="cb4-29">    cout &lt;&lt; "Tuesday. ";</span>
+<span id="cb4-30">  }</span>
+<span id="cb4-31">  else if(dayNum == 4)</span>
+<span id="cb4-32">  {</span>
+<span id="cb4-33">    cout &lt;&lt; "Wednesday. ";</span>
+<span id="cb4-34">  }</span>
+<span id="cb4-35">  else if(dayNum == 5)</span>
+<span id="cb4-36">  {</span>
+<span id="cb4-37">    cout &lt;&lt; "Thursday. ";</span>
+<span id="cb4-38">  }</span>
+<span id="cb4-39">  else if(dayNum == 6)</span>
+<span id="cb4-40">  {</span>
+<span id="cb4-41">    cout &lt;&lt; "Friday. ";</span>
+<span id="cb4-42">  }</span>
+<span id="cb4-43">  else if(dayNum == 6)</span>
+<span id="cb4-44">  {</span>
+<span id="cb4-45">    cout &lt;&lt; "Saturday. ";</span>
+<span id="cb4-46">  }</span>
+<span id="cb4-47">  else</span>
+<span id="cb4-48">    cout &lt;&lt; "Please enter a valid day. ";</span>
+<span id="cb4-49"></span>
+<span id="cb4-50"></span>
+<span id="cb4-51">  if(dayNum == 1 || dayNum == 7)</span>
+<span id="cb4-52">  {</span>
+<span id="cb4-53">    cout &lt;&lt; "It's a weekend.";</span>
+<span id="cb4-54">  }</span>
+<span id="cb4-55">  else if(dayNum &gt;=2 &amp;&amp; dayNum &lt;= 6)</span>
+<span id="cb4-56">  {</span>
+<span id="cb4-57">    cout &lt;&lt; "It's a weekday." &lt;&lt; endl;</span>
+<span id="cb4-58">  }</span>
+<span id="cb4-59">  return 0;</span>
+<span id="cb4-60">}</span></code></pre></div></div>
+</details>
+</div>
+</section>
+<section id="number-of-the-day-switch" class="level2">
+<h2 class="anchored" data-anchor-id="number-of-the-day-switch">Number of the Day (switch):</h2>
+<ul>
+<li><code>switch</code> is a cleaner choice for fixed numeric options.</li>
+<li>Each <code>case</code> handles one specific value.</li>
+<li><code>break</code> prevents “falling through” to the next case.</li>
+<li><code>default</code> is like the <code>else</code> of switch statements.</li>
+</ul>
+<div id="300d5abc-a07b-4837-9d56-266e6f369621" class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5" style="background: #f1f3f5;"><pre class="sourceCode numberSource cpp17 number-lines code-with-copy"><code class="sourceCode"><span id="cb5-1">#include &lt;iostream&gt;</span>
+<span id="cb5-2">#include &lt;string&gt;</span>
+<span id="cb5-3">#include &lt;cmath&gt;</span>
+<span id="cb5-4">using namespace std;</span>
+<span id="cb5-5">// same as what I did in switch.cpp but now I will use swith instead of if statements.</span>
+<span id="cb5-6"></span>
+<span id="cb5-7">int main()</span>
+<span id="cb5-8">{</span>
+<span id="cb5-9">  int dayNumber;</span>
+<span id="cb5-10">  cout &lt;&lt; "Enter a number day ( 1 for Sunday, 2 Monday, 3 Tuesday ...etc)" &lt;&lt; endl;</span>
+<span id="cb5-11">  cin &gt;&gt; dayNumber;</span>
+<span id="cb5-12">  </span>
+<span id="cb5-13"></span>
+<span id="cb5-14">  switch(dayNumber)</span>
+<span id="cb5-15">  {</span>
+<span id="cb5-16">    case 1:</span>
+<span id="cb5-17">      cout &lt;&lt; "Sunday. " &lt;&lt; endl;</span>
+<span id="cb5-18">      break;</span>
+<span id="cb5-19">    case 2:</span>
+<span id="cb5-20">      cout &lt;&lt; "Monday. " &lt;&lt; endl;</span>
+<span id="cb5-21">      break;</span>
+<span id="cb5-22">    case 3:</span>
+<span id="cb5-23">      cout &lt;&lt; "Tuesday. " &lt;&lt; endl;</span>
+<span id="cb5-24">      break;</span>
+<span id="cb5-25">    case 4:</span>
+<span id="cb5-26">      cout &lt;&lt; "Wednesday. " &lt;&lt; endl;</span>
+<span id="cb5-27">      break;</span>
+<span id="cb5-28">    case 5:</span>
+<span id="cb5-29">      cout &lt;&lt; "Thursday. " &lt;&lt; endl;</span>
+<span id="cb5-30">      break;</span>
+<span id="cb5-31">    case 6:</span>
+<span id="cb5-32">      cout &lt;&lt; "Friday. " &lt;&lt; endl;</span>
+<span id="cb5-33">      break;</span>
+<span id="cb5-34">    case 7:</span>
+<span id="cb5-35">      cout &lt;&lt; "Saturday. " &lt;&lt; endl;</span>
+<span id="cb5-36">      break;</span>
+<span id="cb5-37">    default:</span>
+<span id="cb5-38">      cout &lt;&lt; "an invalid day. " &lt;&lt; endl;</span>
+<span id="cb5-39">  }</span>
+<span id="cb5-40">  return 0;</span>
+<span id="cb5-41"></span>
+<span id="cb5-42">}</span></code></pre></div></div>
+</details>
+</div>
+</section>
+<section id="day-2-summarization" class="level2">
+<h2 class="anchored" data-anchor-id="day-2-summarization">Day 2 Summarization :</h2>
+<p>Here is what I achieved:</p>
+<ul>
+<li><p>I learned the <strong><code>if</code> statement</strong>, the first building block of logical decision-making.</p></li>
+<li><p>I used <strong>comparison operators</strong> like <code>==</code>, <code>&lt;=</code>, and <code>&gt;=</code> to evaluate conditions.</p></li>
+<li><p>I combined conditions using logical operators such as <code>||</code> and <code>&amp;&amp;</code>.</p></li>
+<li><p>I controlled program behavior with <strong><code>if</code> / <code>else</code> / <code>else if</code></strong> chains for multiple outcomes.</p></li>
+<li><p>I explored <strong><code>switch</code></strong> as a cleaner option for specific numeric cases.</p></li>
+<li><p>I wrote several mini programs with real-world logic:</p>
+<ul>
+<li>Even or odd number checker</li>
+<li>Weekly pay calculator with overtime</li>
+<li>Water state detector (ice, liquid, steam)</li>
+<li>Day-of-the-week selector (two versions)</li>
+</ul></li>
+</ul>
+
+
+</section>
+
+ ]]></description>
+  <category>Kernel Engineering</category>
+  <category>Cuda</category>
+  <category>Pytorch</category>
+  <category>CPP</category>
+  <guid>https://iSmailTG.github.io/Lifelong-Learner.github.io/posts/Learning_CPP/basics_Lesson2.html</guid>
+  <pubDate>Thu, 23 Oct 2025 23:00:00 GMT</pubDate>
+  <media:content url="https://iSmailTG.github.io/Lifelong-Learner.github.io/posts/Learning_CPP/PythonVsCPP.png" medium="image" type="image/png" height="65" width="144"/>
+</item>
 <item>
   <title>Learning CPP As Pythonista: Day-1</title>
   <dc:creator>Ismail TG</dc:creator>
@@ -687,6 +1007,9 @@ this is the first character of that word: w</code></pre>
 <span id="cb48-27">}</span></code></pre></div></div>
 </details>
 </div>
+<ul>
+<li>Further using <code>cin &gt;&gt;</code> in a function where I have to calculate many values and manipulate them:</li>
+</ul>
 <div id="275f43ab-03a8-41e7-bda3-d204367816e4" class="cell">
 <details class="code-fold">
 <summary>Code</summary>
@@ -2660,6 +2983,9 @@ font-style: inherit;">;</span></span>
 <span id="cb47-27"><span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">}</span></span></code></pre></div></div>
+<ul>
+<li>Further using <code>cin &gt;&gt;</code> in a function where I have to calculate many values and manipulate them:</li>
+</ul>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb48" style="background: #f1f3f5;"><pre class="sourceCode numberSource cpp number-lines code-with-copy"><code class="sourceCode cpp"><span id="cb48-1"><span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">%%</span>writefile gasMileage<span class="op" style="color: #5E5E5E;
@@ -13834,708 +14160,6 @@ font-style: inherit;">return</span> new_labels</span>
   <guid>https://iSmailTG.github.io/Lifelong-Learner.github.io/posts/Fastai_ch7/Questionnaire.html</guid>
   <pubDate>Sun, 30 Oct 2022 23:00:00 GMT</pubDate>
   <media:content url="https://iSmailTG.github.io/Lifelong-Learner.github.io/posts/Fastai_ch7/fastai-book-2.jpg" medium="image" type="image/jpeg"/>
-</item>
-<item>
-  <title>Chapter 7: Deep learning for coders with fastai and pytorch</title>
-  <dc:creator>Ismail TG</dc:creator>
-  <link>https://iSmailTG.github.io/Lifelong-Learner.github.io/posts/Fastai_ch7/Ch7.html</link>
-  <description><![CDATA[ 
-
-
-
-
-
-<section id="training-a-state-of-the-art-model" class="level1">
-<h1>Training a State-of-the-Art Model</h1>
-<ul>
-<li>In this chapter we will discuss more advanced technics for training image classifier models and getting better results.</li>
-<li>In this chapter we will see:
-<ul>
-<li>What is <strong>Normalization</strong>?</li>
-<li>Data augmentation with <strong>Mixup</strong></li>
-<li><strong>Progressive Risizing</strong></li>
-<li><strong>Test Time Augmentation</strong></li>
-</ul></li>
-<li>To implement all those technics, we will build model from scartch an train it on a subset of <strong>ImageNet</strong> called <a href="https://github.com/fastai/imagenette">Imagenette</a></li>
-</ul>
-<section id="imagenette" class="level2">
-<h2 class="anchored" data-anchor-id="imagenette">Imagenette</h2>
-<ul>
-<li>This dataset is created by Fastai community, the goal of it is to have a dataset that can train models that generelize well on the larger version (ImageNet), which will help Machine learning practitioners to build and experiment many ideas and projects with less computation power.</li>
-<li>Imagenette has 10 classes, which are very different from one another.</li>
-<li>Let’s download the dataset</li>
-</ul>
-<div id="cell-5" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}}" data-outputid="083a9d7b-5e03-474d-f6c8-67af5824513f">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">!</span> [ <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">-</span>e <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">/</span>content ] <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">&amp;&amp;</span> pip install <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">-</span>Uqq fastbook</span>
-<span id="cb1-2"><span class="im" style="color: #00769E;
-background-color: null;
-font-style: inherit;">import</span> fastbook</span>
-<span id="cb1-3">fastbook.setup_book()</span></code></pre></div></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>     |████████████████████████████████| 719 kB 5.1 MB/s 
-     |████████████████████████████████| 5.3 MB 26.5 MB/s 
-     |████████████████████████████████| 1.3 MB 49.1 MB/s 
-     |████████████████████████████████| 441 kB 16.3 MB/s 
-     |████████████████████████████████| 163 kB 50.3 MB/s 
-     |████████████████████████████████| 212 kB 56.5 MB/s 
-     |████████████████████████████████| 115 kB 39.6 MB/s 
-     |████████████████████████████████| 127 kB 50.6 MB/s 
-     |████████████████████████████████| 7.6 MB 72.8 MB/s 
-Mounted at /content/gdrive</code></pre>
-</div>
-</div>
-<div id="cell-6" class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><span class="im" style="color: #00769E;
-background-color: null;
-font-style: inherit;">from</span> fastbook <span class="im" style="color: #00769E;
-background-color: null;
-font-style: inherit;">import</span> <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">*</span></span></code></pre></div></div>
-</div>
-<div id="cell-7" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:37}}" data-outputid="2fd0ea83-ed5c-41ae-dc26-f3e3307dda19">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><span class="im" style="color: #00769E;
-background-color: null;
-font-style: inherit;">from</span> fastai.vision.<span class="bu" style="color: null;
-background-color: null;
-font-style: inherit;">all</span> <span class="im" style="color: #00769E;
-background-color: null;
-font-style: inherit;">import</span> <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">*</span></span>
-<span id="cb4-2">path <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> untar_data(URLs.IMAGENETTE)</span></code></pre></div></div>
-<div class="cell-output cell-output-display">
-
-<style>
-    /* Turns off some styling */
-    progress {
-        /* gets rid of default border in Firefox and Opera. */
-        border: none;
-        /* Needs to be in here for Safari polyfill so background images work as expected. */
-        background-size: auto;
-    }
-    progress:not([value]), progress:not([value])::-webkit-progress-bar {
-        background: repeating-linear-gradient(45deg, #7e7e7e, #7e7e7e 10px, #5c5c5c 10px, #5c5c5c 20px);
-    }
-    .progress-bar-interrupted, .progress-bar-interrupted::-webkit-progress-bar {
-        background: #F44336;
-    }
-</style>
-</div>
-<div class="cell-output cell-output-display">
-
-    <div>
-      <progress value="1557168128" class="" max="1557161267" style="width:300px; height:20px; vertical-align: middle;"></progress>
-      100.00% [1557168128/1557161267 00:38&lt;00:00]
-    </div>
-    
-</div>
-</div>
-<ul>
-<li>Here we create <code>DataLoaders</code> using the <code>Resize</code> technic we saw in CH5</li>
-</ul>
-<div id="cell-9" class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1">dblock <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> DataBlock(blocks<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span>(ImageBlock(), CategoryBlock()),</span>
-<span id="cb5-2">                   get_items<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span>get_image_files,</span>
-<span id="cb5-3">                   get_y<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span>parent_label,</span>
-<span id="cb5-4">                   item_tfms<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span>Resize(<span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">460</span>),</span>
-<span id="cb5-5">                   batch_tfms<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span>aug_transforms(size<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span><span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">224</span>, min_scale<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span><span class="fl" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">0.75</span>))</span>
-<span id="cb5-6">dls <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> dblock.dataloaders(path, bs<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span><span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">64</span>)</span></code></pre></div></div>
-</div>
-<ul>
-<li>Now we do the training just to have something to begin with</li>
-</ul>
-<div id="cell-11" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:206}}" data-outputid="b4e28afe-a0bd-4527-cf13-7e0ac1d9653d">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1">model <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> xresnet50(n_out<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span>dls.c)</span>
-<span id="cb6-2">learn <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> Learner(dls, model, loss_func<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span>CrossEntropyLossFlat(), metrics<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span>accuracy)</span>
-<span id="cb6-3">learn.fit_one_cycle(<span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">5</span>, <span class="fl" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">3e-3</span>)</span></code></pre></div></div>
-<div class="cell-output cell-output-display">
-
-<style>
-    /* Turns off some styling */
-    progress {
-        /* gets rid of default border in Firefox and Opera. */
-        border: none;
-        /* Needs to be in here for Safari polyfill so background images work as expected. */
-        background-size: auto;
-    }
-    progress:not([value]), progress:not([value])::-webkit-progress-bar {
-        background: repeating-linear-gradient(45deg, #7e7e7e, #7e7e7e 10px, #5c5c5c 10px, #5c5c5c 20px);
-    }
-    .progress-bar-interrupted, .progress-bar-interrupted::-webkit-progress-bar {
-        background: #F44336;
-    }
-</style>
-</div>
-<div class="cell-output cell-output-display">
-<table class="dataframe caption-top table table-sm table-striped small" data-border="1">
-<thead>
-<tr class="header">
-<th data-quarto-table-cell-role="th">epoch</th>
-<th data-quarto-table-cell-role="th">train_loss</th>
-<th data-quarto-table-cell-role="th">valid_loss</th>
-<th data-quarto-table-cell-role="th">accuracy</th>
-<th data-quarto-table-cell-role="th">time</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>0</td>
-<td>1.615762</td>
-<td>1.960073</td>
-<td>0.446229</td>
-<td>02:59</td>
-</tr>
-<tr class="even">
-<td>1</td>
-<td>1.231709</td>
-<td>1.436732</td>
-<td>0.542943</td>
-<td>03:01</td>
-</tr>
-<tr class="odd">
-<td>2</td>
-<td>0.946307</td>
-<td>0.957584</td>
-<td>0.703883</td>
-<td>03:01</td>
-</tr>
-<tr class="even">
-<td>3</td>
-<td>0.710163</td>
-<td>0.686722</td>
-<td>0.788648</td>
-<td>02:59</td>
-</tr>
-<tr class="odd">
-<td>4</td>
-<td>0.581876</td>
-<td>0.551411</td>
-<td>0.833831</td>
-<td>02:57</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<ul>
-<li>Not bad result considering that we didn’t use a pretrained model.</li>
-<li>The aim of this chapter is to increase the peformance of this base-line model by implementing different technics</li>
-</ul>
-</section>
-<section id="normalization" class="level2">
-<h2 class="anchored" data-anchor-id="normalization">Normalization</h2>
-<ul>
-<li>Normalization means having a dataset with mean of 0 and standard diviation of 1.</li>
-<li>Most images and computer vision libraries use values between 0 and 255 for pixels, or between 0 and 1; in either case, your data is not going to have a mean of 0 and a standard deviation of 1.</li>
-<li>Let’s grab a batch of data and take the average of each axis except the channels axis (indx==1)</li>
-</ul>
-<div id="cell-15" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}}" data-outputid="71ccc725-e59b-45e5-95ba-568420522712">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1">x,y <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> dls.one_batch()</span>
-<span id="cb7-2">x.mean(dim<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span>[<span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">0</span>,<span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">2</span>,<span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">3</span>]),x.std(dim<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span>[<span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">0</span>,<span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">2</span>,<span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">3</span>])</span></code></pre></div></div>
-<div class="cell-output cell-output-display" data-execution_count="6">
-<pre><code>(TensorImage([0.4573, 0.4509, 0.4188], device='cuda:0'),
- TensorImage([0.2730, 0.2652, 0.2803], device='cuda:0'))</code></pre>
-</div>
-</div>
-<ul>
-<li>As expected, the <code>mean</code> and <code>std</code> is different than what we desire.</li>
-<li>Fastai provide the method <code>Normalize</code> which can be applied on the whole batch, so we could add it to <code>batch_tfms</code> section of the datablock, we just need to tell fastai which are the mean and the standard deviation we want to use (in this case we will use ImageNet stats) but even without giving these stats fastai will calculate them from one batch and use them.</li>
-<li>Notice here we build the datablock withing a function that take <code>batch_size</code> and <code>size</code> as parameters, we will see way later</li>
-</ul>
-<div id="cell-17" class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb9-1"><span class="kw" style="color: #003B4F;
-background-color: null;
-font-weight: bold;
-font-style: inherit;">def</span> get_dls(bs, size):</span>
-<span id="cb9-2">    dblock <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> DataBlock(blocks<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span>(ImageBlock, CategoryBlock),</span>
-<span id="cb9-3">                   get_items<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span>get_image_files,</span>
-<span id="cb9-4">                   get_y<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span>parent_label,</span>
-<span id="cb9-5">                   item_tfms<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span>Resize(<span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">460</span>),</span>
-<span id="cb9-6">                   batch_tfms<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span>[<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">*</span>aug_transforms(size<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span>size, min_scale<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span><span class="fl" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">0.75</span>),</span>
-<span id="cb9-7">                               Normalize.from_stats(<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">*</span>imagenet_stats)])</span>
-<span id="cb9-8">    <span class="cf" style="color: #003B4F;
-background-color: null;
-font-weight: bold;
-font-style: inherit;">return</span> dblock.dataloaders(path, bs<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span>bs)</span></code></pre></div></div>
-</div>
-<div id="cell-18" class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb10-1">dls <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> get_dls(<span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">64</span>, <span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">224</span>)</span></code></pre></div></div>
-</div>
-<div id="cell-19" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}}" data-outputid="3b6401f9-4438-4937-a1f6-c1156d87713d">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb11-1">x,y <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> dls.one_batch()</span>
-<span id="cb11-2">x.mean(dim<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span>[<span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">0</span>,<span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">2</span>,<span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">3</span>]),x.std(dim<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span>[<span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">0</span>,<span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">2</span>,<span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">3</span>])</span></code></pre></div></div>
-<div class="cell-output cell-output-display" data-execution_count="12">
-<pre><code>(TensorImage([-0.0920, -0.0490,  0.0548], device='cuda:0'),
- TensorImage([1.1969, 1.1888, 1.2855], device='cuda:0'))</code></pre>
-</div>
-</div>
-<ul>
-<li>This <code>Normalize</code> method help us to get close to the desired values for <code>mean</code> and <code>std</code></li>
-<li>Let’s how this effect the performance of the model:</li>
-</ul>
-<div id="cell-21" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:206}}" data-outputid="4131da38-1d8e-4bcb-ef54-c5541e9a92c9">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb13-1">model <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> xresnet50(n_out<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span>dls.c)</span>
-<span id="cb13-2">learn <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> Learner(dls, model, loss_func<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span>CrossEntropyLossFlat(), metrics<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span>accuracy)</span>
-<span id="cb13-3">learn.fit_one_cycle(<span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">5</span>, <span class="fl" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">3e-3</span>)</span></code></pre></div></div>
-<div class="cell-output cell-output-display">
-
-<style>
-    /* Turns off some styling */
-    progress {
-        /* gets rid of default border in Firefox and Opera. */
-        border: none;
-        /* Needs to be in here for Safari polyfill so background images work as expected. */
-        background-size: auto;
-    }
-    progress:not([value]), progress:not([value])::-webkit-progress-bar {
-        background: repeating-linear-gradient(45deg, #7e7e7e, #7e7e7e 10px, #5c5c5c 10px, #5c5c5c 20px);
-    }
-    .progress-bar-interrupted, .progress-bar-interrupted::-webkit-progress-bar {
-        background: #F44336;
-    }
-</style>
-</div>
-<div class="cell-output cell-output-display">
-<table class="dataframe caption-top table table-sm table-striped small" data-border="1">
-<thead>
-<tr class="header">
-<th data-quarto-table-cell-role="th">epoch</th>
-<th data-quarto-table-cell-role="th">train_loss</th>
-<th data-quarto-table-cell-role="th">valid_loss</th>
-<th data-quarto-table-cell-role="th">accuracy</th>
-<th data-quarto-table-cell-role="th">time</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>0</td>
-<td>1.617465</td>
-<td>1.945767</td>
-<td>0.462285</td>
-<td>02:58</td>
-</tr>
-<tr class="even">
-<td>1</td>
-<td>1.272744</td>
-<td>2.252786</td>
-<td>0.462659</td>
-<td>02:58</td>
-</tr>
-<tr class="odd">
-<td>2</td>
-<td>0.947452</td>
-<td>1.084139</td>
-<td>0.643017</td>
-<td>02:58</td>
-</tr>
-<tr class="even">
-<td>3</td>
-<td>0.722699</td>
-<td>0.795408</td>
-<td>0.765123</td>
-<td>03:00</td>
-</tr>
-<tr class="odd">
-<td>4</td>
-<td>0.610676</td>
-<td>0.577560</td>
-<td>0.819642</td>
-<td>02:58</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<ul>
-<li>Implementing the normalization didn’t help the model get better results, because this technic works better when using a pretrained model.</li>
-</ul>
-</section>
-<section id="progressive-resizing" class="level2">
-<h2 class="anchored" data-anchor-id="progressive-resizing">Progressive Resizing</h2>
-<ul>
-<li><p>The idea behind Progressive Resizing is to start training the model with small images, and end the training fase with large images.</p></li>
-<li><p>As we have seen, the image size doesn’t play a role in the learning process.</p></li>
-<li><p>Although changing the image size in the middel of training will effect how the model behave in a way or another.</p></li>
-<li><p>The best way is to deal with the transition from small image to larger images as if we do transfer learning. After changing the images size we should <code>fine_tune</code> method.</p></li>
-<li><p>We can look to Progressive Resizing as a form of data augmentation, which mean the model will generalize well.</p></li>
-<li><p>To implement progressive resizing it is most convenient if you first create a <code>get_dls</code> function which takes an image size and a batch size as we did in the section before, and returns your <code>DataLoaders</code>:</p></li>
-<li><p>Now you can create your <code>DataLoaders</code> with a small size and use <code>fit_one_cycle</code> in the usual way, training for a few less epochs than you might otherwise do:</p></li>
-</ul>
-<div id="cell-25" class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb14-1">dls <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> get_dls(<span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">128</span>, <span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">128</span>)</span>
-<span id="cb14-2">learn <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> Learner(dls, xresnet50(n_out<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span>dls.c), loss_func<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span>CrossEntropyLossFlat(), </span>
-<span id="cb14-3">                metrics<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span>accuracy)</span>
-<span id="cb14-4">learn.fit_one_cycle(<span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">4</span>, <span class="fl" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">3e-3</span>)</span></code></pre></div></div>
-</div>
-<ul>
-<li>Then you can replace the <code>DataLoaders</code> inside the <code>Learner</code>, and fine-tune:</li>
-</ul>
-<div id="cell-27" class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb15-1">learn.dls <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> get_dls(<span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">64</span>, <span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">224</span>)</span>
-<span id="cb15-2">learn.fine_tune(<span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">5</span>, <span class="fl" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">1e-3</span>)</span></code></pre></div></div>
-</div>
-<ul>
-<li>We can increase the image size by a bit, untill we reach the normal size of the actual image in dataset.</li>
-<li>Progressive resizing can be good or bad depending many factors:
-<ul>
-<li>For transfer learning, if the model is already trained on similar task we will use it for, and on similar size of images, normally re-training it on smaller images will damage the performance.</li>
-<li>In other hand if the model is trained on dataset with different size of images, and on dfferent task, using progressive resizing may help the model performance.</li>
-</ul></li>
-<li>There’s no right answear for every situation, we just need to try and experiment different things.</li>
-</ul>
-</section>
-<section id="test-time-augmentation" class="level2">
-<h2 class="anchored" data-anchor-id="test-time-augmentation">Test Time Augmentation</h2>
-<ul>
-<li><p>Till now all kind of data augmentations we implement are done on training set, while the validation set is taking the same images.</p></li>
-<li><p>The idea behind Test Time Augmentation <code>tta</code> is to use some augmented images for the validation set to get predictions (for the same image) and average (or take the maximun) them.</p></li>
-<li><p>Usually fastai do center cropping for validation.</p></li>
-<li><p>This method may cause the model to miss valuable lessons from edges of the cropped images.</p></li>
-<li><p>We could avoid center cropping but instead to select a number of areas to crop from the original rectangular image, pass each of them through our model, then take the average of predictions or the maximum</p></li>
-<li><p>By default, fastai will use the unaugmented center crop image plus four randomly augmented images.</p></li>
-<li><p>You can pass any <code>DataLoader</code> to fastai’s <code>tta</code> method; by default, it will use your validation set:</p></li>
-</ul>
-<div id="cell-32" class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb16-1">preds,targs <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> learn.tta()</span>
-<span id="cb16-2">accuracy(preds, targs).item()</span></code></pre></div></div>
-</div>
-</section>
-<section id="mixup" class="level2">
-<h2 class="anchored" data-anchor-id="mixup">Mixup</h2>
-<ul>
-<li>The idea of mixup is to take two data points (images) and mix them together with some percentage, then do the ine-hot encodings where the new image represented with the new values (percentages) instead of <code>0</code> or <code>1</code>. The model here have to predict not only the right label, but also the percentage by which the label is represented in that image.</li>
-<li>We can express this idea with code as:</li>
-</ul>
-<div id="cell-35" class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb17-1">church <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> PILImage.create(get_image_files_sorted(path<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">/</span><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">'train'</span><span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">/</span><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">'n03028079'</span>)[<span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">0</span>])</span>
-<span id="cb17-2">gas <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> PILImage.create(get_image_files_sorted(path<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">/</span><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">'train'</span><span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">/</span><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">'n03425413'</span>)[<span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">0</span>])</span>
-<span id="cb17-3">church <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> church.resize((<span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">256</span>,<span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">256</span>))</span>
-<span id="cb17-4">gas <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> gas.resize((<span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">256</span>,<span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">256</span>))</span>
-<span id="cb17-5">tchurch <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> tensor(church).<span class="bu" style="color: null;
-background-color: null;
-font-style: inherit;">float</span>() <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">/</span> <span class="fl" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">255.</span></span>
-<span id="cb17-6">tgas <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> tensor(gas).<span class="bu" style="color: null;
-background-color: null;
-font-style: inherit;">float</span>() <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">/</span> <span class="fl" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">255.</span></span>
-<span id="cb17-7"></span>
-<span id="cb17-8">_,axs <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> plt.subplots(<span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">1</span>, <span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">3</span>, figsize<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span>(<span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">12</span>,<span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">4</span>))</span>
-<span id="cb17-9">show_image(tchurch, ax<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span>axs[<span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">0</span>])<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">;</span></span>
-<span id="cb17-10">show_image(tgas, ax<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span>axs[<span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">1</span>])<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">;</span></span>
-<span id="cb17-11">show_image((<span class="fl" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">0.3</span><span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">*</span>tchurch <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">+</span> <span class="fl" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">0.7</span><span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">*</span>tgas), ax<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span>axs[<span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">2</span>])<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">;</span></span></code></pre></div></div>
-</div>
-<div id="cell-36" class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb18-1">model <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> xresnet50(n_out<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span>dls.c)</span>
-<span id="cb18-2">learn <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> Learner(dls, model, loss_func<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span>CrossEntropyLossFlat(), </span>
-<span id="cb18-3">                metrics<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span>accuracy, cbs<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span>MixUp())</span>
-<span id="cb18-4">learn.fit_one_cycle(<span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">5</span>, <span class="fl" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">3e-3</span>)</span></code></pre></div></div>
-</div>
-<ul>
-<li>Training a model with mixup techninx make it way hareder for the model to learn, because the model need to predict 2 labels for each image instead of one, plus predicting the righ percentage of each label.</li>
-<li>Overfitting seems less likely to be a problem when mixup is used.</li>
-<li>Mixup tend to produce good results with 80 epochs of training or more.</li>
-<li>One other benefit of using Mixup is when we have labels == 0, 1, because of using <code>softmax</code> and <code>sigmoid</code> the output can never be 0 or 1, thus our loss can never be perfect. With mixup labels cannot be 0 or 1 unless we mix 2 images with the same label, the rest of the time our labels will be linear combinations like 0.4, 0.6 ..</li>
-</ul>
-</section>
-<section id="label-smoothing" class="level2">
-<h2 class="anchored" data-anchor-id="label-smoothing">Label Smoothing</h2>
-<ul>
-<li>In classfication problems we usually have labels like <code>0</code> and <code>1</code>, so the model job is to return them accuaratly, even 0.999 is not good enough where the label is 1!. this cuase the model to update the weights in order to get closer and closer to the right and unique answear, what will lead to overfitting.</li>
-<li>The solution to this problem is to smooth the labels, by replacing 1 with a bit smaller number, and 0 with a bit bigger number. this will encourage the model to be less confident, which will help to better generalization.</li>
-<li><strong>Label Smoothing</strong> can be expressed mathematically:
-<ul>
-<li><p><code>0</code>: <img src="https://latex.codecogs.com/png.latex?%5Cfrac%7B%5Cepsilon%7D%7BN%7D"> where N is number of classes we have and epsilon represent a parameter usually 0.1(it’s like saying we’re 10% less confident about the label)</p></li>
-<li><p><code>1</code>: <img src="https://latex.codecogs.com/png.latex?1-%5Cepsilon%20+%20%5Cfrac%7B%5Cepsilon%7D%7BN%7D"></p></li>
-</ul></li>
-<li>In our Imagenette example where we have 10 classes, the targets become something like (here for a target that corresponds to the index 3):</li>
-</ul>
-<pre><code>[0.01, 0.01, 0.01, 0.91, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01]</code></pre>
-<ul>
-<li>To use this in practice, we just have to change the loss function in our call to <code>Learner</code>:</li>
-</ul>
-<p>```python model = xresnet50(n_out=dls.c) learn = Learner(dls, model, loss_func=LabelSmoothingCrossEntropy(), metrics=accuracy) learn.fit_one_cycle(5, 3e-3)</p>
-
-
-</section>
-</section>
-
- ]]></description>
-  <category>Fastai</category>
-  <category>Pytorch</category>
-  <category>Deep Learning</category>
-  <guid>https://iSmailTG.github.io/Lifelong-Learner.github.io/posts/Fastai_ch7/Ch7.html</guid>
-  <pubDate>Sat, 29 Oct 2022 23:00:00 GMT</pubDate>
-  <media:content url="https://iSmailTG.github.io/Lifelong-Learner.github.io/posts/Fastai_ch7/fastbook.jpg" medium="image" type="image/jpeg"/>
 </item>
 </channel>
 </rss>

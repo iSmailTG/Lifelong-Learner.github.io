@@ -750,6 +750,9 @@ this is the first character of that word: w</code></pre>
 <span id="cb47-25"><a href="#cb47-25"></a></span>
 <span id="cb47-26"><a href="#cb47-26"></a>    <span class="cf">return</span> <span class="dv">0</span><span class="op">;</span></span>
 <span id="cb47-27"><a href="#cb47-27"></a><span class="op">}</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<ul>
+<li>Further using <code>cin &gt;&gt;</code> in a function where I have to calculate many values and manipulate them:</li>
+</ul>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb48"><pre class="sourceCode numberSource cpp number-lines code-with-copy"><code class="sourceCode cpp"><span id="cb48-1"><a href="#cb48-1"></a><span class="op">%%</span>writefile gasMileage<span class="op">.</span>cpp</span>
 <span id="cb48-2"><a href="#cb48-2"></a></span>
 <span id="cb48-3"><a href="#cb48-3"></a><span class="pp">#include </span><span class="im">&lt;iostream&gt;</span></span>
@@ -1887,74 +1890,76 @@ this is the first character of that word: w</code></pre>
 <span id="cb49-614"><a href="#cb49-614"></a><span class="op">}</span></span>
 <span id="cb49-615"><a href="#cb49-615"></a><span class="in">```</span></span>
 <span id="cb49-616"><a href="#cb49-616"></a></span>
-<span id="cb49-617"><a href="#cb49-617"></a></span>
-<span id="cb49-618"><a href="#cb49-618"></a><span class="in">```cpp</span></span>
-<span id="cb49-619"><a href="#cb49-619"></a><span class="op">%%</span>writefile gasMileage<span class="op">.</span>cpp</span>
-<span id="cb49-620"><a href="#cb49-620"></a></span>
-<span id="cb49-621"><a href="#cb49-621"></a><span class="pp">#include </span><span class="im">&lt;iostream&gt;</span></span>
-<span id="cb49-622"><a href="#cb49-622"></a><span class="pp">#include </span><span class="im">&lt;string&gt;</span></span>
-<span id="cb49-623"><a href="#cb49-623"></a><span class="pp">#include </span><span class="im">&lt;cmath&gt;</span></span>
-<span id="cb49-624"><a href="#cb49-624"></a><span class="kw">using</span> <span class="kw">namespace</span> std<span class="op">;</span></span>
-<span id="cb49-625"><a href="#cb49-625"></a></span>
-<span id="cb49-626"><a href="#cb49-626"></a></span>
-<span id="cb49-627"><a href="#cb49-627"></a><span class="dt">int</span> main<span class="op">()</span></span>
-<span id="cb49-628"><a href="#cb49-628"></a><span class="op">{</span></span>
-<span id="cb49-629"><a href="#cb49-629"></a>  <span class="dt">float</span> distance<span class="op">;</span></span>
-<span id="cb49-630"><a href="#cb49-630"></a>  string carBrand<span class="op">;</span></span>
-<span id="cb49-631"><a href="#cb49-631"></a>  string carModel<span class="op">;</span></span>
-<span id="cb49-632"><a href="#cb49-632"></a>  <span class="dt">float</span> carCapacity<span class="op">;</span></span>
-<span id="cb49-633"><a href="#cb49-633"></a>  <span class="dt">float</span> mpg<span class="op">;</span></span>
-<span id="cb49-634"><a href="#cb49-634"></a></span>
-<span id="cb49-635"><a href="#cb49-635"></a>  cout <span class="op">&lt;&lt;</span> <span class="st">"Enter the Distance of the Trip: "</span> <span class="op">&lt;&lt;</span> endl<span class="op">;</span></span>
-<span id="cb49-636"><a href="#cb49-636"></a>  cin <span class="op">&gt;&gt;</span> distance<span class="op">;</span></span>
-<span id="cb49-637"><a href="#cb49-637"></a></span>
-<span id="cb49-638"><a href="#cb49-638"></a>  cout <span class="op">&lt;&lt;</span> <span class="st">"Enter the rand of the car: "</span> <span class="op">&lt;&lt;</span> endl<span class="op">;</span></span>
-<span id="cb49-639"><a href="#cb49-639"></a>  cin <span class="op">&gt;&gt;</span> carBrand<span class="op">;</span></span>
-<span id="cb49-640"><a href="#cb49-640"></a></span>
-<span id="cb49-641"><a href="#cb49-641"></a>  cout  <span class="op">&lt;&lt;</span> <span class="st">"Enter the car Model: "</span> <span class="op">&lt;&lt;</span> endl<span class="op">;</span></span>
-<span id="cb49-642"><a href="#cb49-642"></a>  cin <span class="op">&gt;&gt;</span> carModel<span class="op">;</span></span>
-<span id="cb49-643"><a href="#cb49-643"></a></span>
-<span id="cb49-644"><a href="#cb49-644"></a>  cout <span class="op">&lt;&lt;</span> <span class="st">"Enter the fuel Tank Capacity: "</span> <span class="op">&lt;&lt;</span> endl<span class="op">;</span></span>
-<span id="cb49-645"><a href="#cb49-645"></a>  cin <span class="op">&gt;&gt;</span> carCapacity<span class="op">;</span></span>
-<span id="cb49-646"><a href="#cb49-646"></a>  </span>
-<span id="cb49-647"><a href="#cb49-647"></a>  cout <span class="op">&lt;&lt;</span> <span class="st">"Enter the MPG of the car: "</span> <span class="op">&lt;&lt;</span> endl<span class="op">;</span></span>
-<span id="cb49-648"><a href="#cb49-648"></a>  cin <span class="op">&gt;&gt;</span> mpg<span class="op">;</span></span>
-<span id="cb49-649"><a href="#cb49-649"></a></span>
-<span id="cb49-650"><a href="#cb49-650"></a></span>
-<span id="cb49-651"><a href="#cb49-651"></a>  <span class="dt">float</span> mileageOnFullTank<span class="op">;</span></span>
-<span id="cb49-652"><a href="#cb49-652"></a>  mileageOnFullTank <span class="op">=</span> mpg <span class="op">*</span> carCapacity<span class="op">;</span></span>
-<span id="cb49-653"><a href="#cb49-653"></a>  <span class="dt">float</span> numOfStops <span class="op">=</span> <span class="dt">int</span><span class="op">(</span>distance <span class="op">/</span> mileageOnFullTank<span class="op">);</span></span>
-<span id="cb49-654"><a href="#cb49-654"></a>  <span class="dt">float</span> gasRequired <span class="op">=</span> distance <span class="op">/</span> mpg<span class="op">;</span></span>
-<span id="cb49-655"><a href="#cb49-655"></a>  <span class="dt">float</span> galonsLeft <span class="op">=</span> <span class="op">((</span>numOfStops<span class="op">+</span><span class="dv">1</span><span class="op">)</span> <span class="op">*</span> carCapacity<span class="op">)</span> <span class="op">-</span> gasRequired<span class="op">;</span></span>
-<span id="cb49-656"><a href="#cb49-656"></a>  </span>
-<span id="cb49-657"><a href="#cb49-657"></a>  </span>
-<span id="cb49-658"><a href="#cb49-658"></a>  cout <span class="op">&lt;&lt;</span> <span class="st">"For a trip of "</span> <span class="op">&lt;&lt;</span> distance <span class="op">&lt;&lt;</span> <span class="st">" miles"</span> <span class="op">&lt;&lt;</span> endl<span class="op">;</span></span>
-<span id="cb49-659"><a href="#cb49-659"></a>  cout <span class="op">&lt;&lt;</span> <span class="st">" a "</span> <span class="op">&lt;&lt;</span> carBrand <span class="op">&lt;&lt;</span> <span class="st">" model "</span> <span class="op">&lt;&lt;</span> carModel <span class="op">&lt;&lt;</span> <span class="st">" requires "</span> <span class="op">&lt;&lt;</span> gasRequired <span class="op">&lt;&lt;</span> <span class="st">" Gallons Of Gas "</span> <span class="op">&lt;&lt;</span> endl<span class="op">;</span></span>
-<span id="cb49-660"><a href="#cb49-660"></a>  cout <span class="op">&lt;&lt;</span> <span class="st">" will require "</span> <span class="op">&lt;&lt;</span> numOfStops <span class="op">&lt;&lt;</span> <span class="st">" stop for gas "</span> <span class="op">&lt;&lt;</span> endl<span class="op">;</span></span>
-<span id="cb49-661"><a href="#cb49-661"></a>  cout <span class="op">&lt;&lt;</span> <span class="st">" and will have "</span> <span class="op">&lt;&lt;</span> galonsLeft <span class="op">&lt;&lt;</span> <span class="st">" gallons of gas left in the tank"</span> <span class="op">&lt;&lt;</span> endl<span class="op">;</span></span>
-<span id="cb49-662"><a href="#cb49-662"></a>  <span class="cf">return</span> <span class="dv">0</span><span class="op">;</span></span>
-<span id="cb49-663"><a href="#cb49-663"></a><span class="op">}</span>  </span>
-<span id="cb49-664"><a href="#cb49-664"></a><span class="in">```</span></span>
-<span id="cb49-665"><a href="#cb49-665"></a></span>
-<span id="cb49-666"><a href="#cb49-666"></a><span class="fu">## Day 1 Recap:</span></span>
-<span id="cb49-667"><a href="#cb49-667"></a><span class="ss">* </span>Today I started exploring C++ as a Python programmer, motivated by my goal of writing CUDA kernels. I covered the following fundamentals:</span>
-<span id="cb49-668"><a href="#cb49-668"></a></span>
-<span id="cb49-669"><a href="#cb49-669"></a><span class="ss">* </span>The compilation process (pre-processor → compiler → assembler → linker) and how C++ differs from interpreted languages. </span>
+<span id="cb49-617"><a href="#cb49-617"></a><span class="ss">* </span>Further using <span class="in">`cin &gt;&gt;`</span> in a function where I have to calculate many values and manipulate them:</span>
+<span id="cb49-618"><a href="#cb49-618"></a></span>
+<span id="cb49-619"><a href="#cb49-619"></a></span>
+<span id="cb49-620"><a href="#cb49-620"></a><span class="in">```cpp</span></span>
+<span id="cb49-621"><a href="#cb49-621"></a><span class="op">%%</span>writefile gasMileage<span class="op">.</span>cpp</span>
+<span id="cb49-622"><a href="#cb49-622"></a></span>
+<span id="cb49-623"><a href="#cb49-623"></a><span class="pp">#include </span><span class="im">&lt;iostream&gt;</span></span>
+<span id="cb49-624"><a href="#cb49-624"></a><span class="pp">#include </span><span class="im">&lt;string&gt;</span></span>
+<span id="cb49-625"><a href="#cb49-625"></a><span class="pp">#include </span><span class="im">&lt;cmath&gt;</span></span>
+<span id="cb49-626"><a href="#cb49-626"></a><span class="kw">using</span> <span class="kw">namespace</span> std<span class="op">;</span></span>
+<span id="cb49-627"><a href="#cb49-627"></a></span>
+<span id="cb49-628"><a href="#cb49-628"></a></span>
+<span id="cb49-629"><a href="#cb49-629"></a><span class="dt">int</span> main<span class="op">()</span></span>
+<span id="cb49-630"><a href="#cb49-630"></a><span class="op">{</span></span>
+<span id="cb49-631"><a href="#cb49-631"></a>  <span class="dt">float</span> distance<span class="op">;</span></span>
+<span id="cb49-632"><a href="#cb49-632"></a>  string carBrand<span class="op">;</span></span>
+<span id="cb49-633"><a href="#cb49-633"></a>  string carModel<span class="op">;</span></span>
+<span id="cb49-634"><a href="#cb49-634"></a>  <span class="dt">float</span> carCapacity<span class="op">;</span></span>
+<span id="cb49-635"><a href="#cb49-635"></a>  <span class="dt">float</span> mpg<span class="op">;</span></span>
+<span id="cb49-636"><a href="#cb49-636"></a></span>
+<span id="cb49-637"><a href="#cb49-637"></a>  cout <span class="op">&lt;&lt;</span> <span class="st">"Enter the Distance of the Trip: "</span> <span class="op">&lt;&lt;</span> endl<span class="op">;</span></span>
+<span id="cb49-638"><a href="#cb49-638"></a>  cin <span class="op">&gt;&gt;</span> distance<span class="op">;</span></span>
+<span id="cb49-639"><a href="#cb49-639"></a></span>
+<span id="cb49-640"><a href="#cb49-640"></a>  cout <span class="op">&lt;&lt;</span> <span class="st">"Enter the rand of the car: "</span> <span class="op">&lt;&lt;</span> endl<span class="op">;</span></span>
+<span id="cb49-641"><a href="#cb49-641"></a>  cin <span class="op">&gt;&gt;</span> carBrand<span class="op">;</span></span>
+<span id="cb49-642"><a href="#cb49-642"></a></span>
+<span id="cb49-643"><a href="#cb49-643"></a>  cout  <span class="op">&lt;&lt;</span> <span class="st">"Enter the car Model: "</span> <span class="op">&lt;&lt;</span> endl<span class="op">;</span></span>
+<span id="cb49-644"><a href="#cb49-644"></a>  cin <span class="op">&gt;&gt;</span> carModel<span class="op">;</span></span>
+<span id="cb49-645"><a href="#cb49-645"></a></span>
+<span id="cb49-646"><a href="#cb49-646"></a>  cout <span class="op">&lt;&lt;</span> <span class="st">"Enter the fuel Tank Capacity: "</span> <span class="op">&lt;&lt;</span> endl<span class="op">;</span></span>
+<span id="cb49-647"><a href="#cb49-647"></a>  cin <span class="op">&gt;&gt;</span> carCapacity<span class="op">;</span></span>
+<span id="cb49-648"><a href="#cb49-648"></a>  </span>
+<span id="cb49-649"><a href="#cb49-649"></a>  cout <span class="op">&lt;&lt;</span> <span class="st">"Enter the MPG of the car: "</span> <span class="op">&lt;&lt;</span> endl<span class="op">;</span></span>
+<span id="cb49-650"><a href="#cb49-650"></a>  cin <span class="op">&gt;&gt;</span> mpg<span class="op">;</span></span>
+<span id="cb49-651"><a href="#cb49-651"></a></span>
+<span id="cb49-652"><a href="#cb49-652"></a></span>
+<span id="cb49-653"><a href="#cb49-653"></a>  <span class="dt">float</span> mileageOnFullTank<span class="op">;</span></span>
+<span id="cb49-654"><a href="#cb49-654"></a>  mileageOnFullTank <span class="op">=</span> mpg <span class="op">*</span> carCapacity<span class="op">;</span></span>
+<span id="cb49-655"><a href="#cb49-655"></a>  <span class="dt">float</span> numOfStops <span class="op">=</span> <span class="dt">int</span><span class="op">(</span>distance <span class="op">/</span> mileageOnFullTank<span class="op">);</span></span>
+<span id="cb49-656"><a href="#cb49-656"></a>  <span class="dt">float</span> gasRequired <span class="op">=</span> distance <span class="op">/</span> mpg<span class="op">;</span></span>
+<span id="cb49-657"><a href="#cb49-657"></a>  <span class="dt">float</span> galonsLeft <span class="op">=</span> <span class="op">((</span>numOfStops<span class="op">+</span><span class="dv">1</span><span class="op">)</span> <span class="op">*</span> carCapacity<span class="op">)</span> <span class="op">-</span> gasRequired<span class="op">;</span></span>
+<span id="cb49-658"><a href="#cb49-658"></a>  </span>
+<span id="cb49-659"><a href="#cb49-659"></a>  </span>
+<span id="cb49-660"><a href="#cb49-660"></a>  cout <span class="op">&lt;&lt;</span> <span class="st">"For a trip of "</span> <span class="op">&lt;&lt;</span> distance <span class="op">&lt;&lt;</span> <span class="st">" miles"</span> <span class="op">&lt;&lt;</span> endl<span class="op">;</span></span>
+<span id="cb49-661"><a href="#cb49-661"></a>  cout <span class="op">&lt;&lt;</span> <span class="st">" a "</span> <span class="op">&lt;&lt;</span> carBrand <span class="op">&lt;&lt;</span> <span class="st">" model "</span> <span class="op">&lt;&lt;</span> carModel <span class="op">&lt;&lt;</span> <span class="st">" requires "</span> <span class="op">&lt;&lt;</span> gasRequired <span class="op">&lt;&lt;</span> <span class="st">" Gallons Of Gas "</span> <span class="op">&lt;&lt;</span> endl<span class="op">;</span></span>
+<span id="cb49-662"><a href="#cb49-662"></a>  cout <span class="op">&lt;&lt;</span> <span class="st">" will require "</span> <span class="op">&lt;&lt;</span> numOfStops <span class="op">&lt;&lt;</span> <span class="st">" stop for gas "</span> <span class="op">&lt;&lt;</span> endl<span class="op">;</span></span>
+<span id="cb49-663"><a href="#cb49-663"></a>  cout <span class="op">&lt;&lt;</span> <span class="st">" and will have "</span> <span class="op">&lt;&lt;</span> galonsLeft <span class="op">&lt;&lt;</span> <span class="st">" gallons of gas left in the tank"</span> <span class="op">&lt;&lt;</span> endl<span class="op">;</span></span>
+<span id="cb49-664"><a href="#cb49-664"></a>  <span class="cf">return</span> <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb49-665"><a href="#cb49-665"></a><span class="op">}</span>  </span>
+<span id="cb49-666"><a href="#cb49-666"></a><span class="in">```</span></span>
+<span id="cb49-667"><a href="#cb49-667"></a></span>
+<span id="cb49-668"><a href="#cb49-668"></a><span class="fu">## Day 1 Recap:</span></span>
+<span id="cb49-669"><a href="#cb49-669"></a><span class="ss">* </span>Today I started exploring C++ as a Python programmer, motivated by my goal of writing CUDA kernels. I covered the following fundamentals:</span>
 <span id="cb49-670"><a href="#cb49-670"></a></span>
-<span id="cb49-671"><a href="#cb49-671"></a></span>
-<span id="cb49-672"><a href="#cb49-672"></a><span class="ss">* </span>How to **`include`** libraries using `#include`, and the special role of the **`main()`** function. </span>
+<span id="cb49-671"><a href="#cb49-671"></a><span class="ss">* </span>The compilation process (pre-processor → compiler → assembler → linker) and how C++ differs from interpreted languages. </span>
+<span id="cb49-672"><a href="#cb49-672"></a></span>
 <span id="cb49-673"><a href="#cb49-673"></a></span>
-<span id="cb49-674"><a href="#cb49-674"></a></span>
-<span id="cb49-675"><a href="#cb49-675"></a><span class="ss">* </span>Basic printing with **`std::cout`**, ending lines with **`&lt;&lt; std::endl`**, and formatting simple output. </span>
+<span id="cb49-674"><a href="#cb49-674"></a><span class="ss">* </span>How to **`include`** libraries using `#include`, and the special role of the **`main()`** function. </span>
+<span id="cb49-675"><a href="#cb49-675"></a></span>
 <span id="cb49-676"><a href="#cb49-676"></a></span>
-<span id="cb49-677"><a href="#cb49-677"></a></span>
-<span id="cb49-678"><a href="#cb49-678"></a><span class="ss">* </span>**Variables**: declaring types explicitly (e.g., <span class="in">`int`</span>, <span class="in">`float`</span>), how static typing enforces constraints, and understanding variables as named boxes in memory. </span>
+<span id="cb49-677"><a href="#cb49-677"></a><span class="ss">* </span>Basic printing with **`std::cout`**, ending lines with **`&lt;&lt; std::endl`**, and formatting simple output. </span>
+<span id="cb49-678"><a href="#cb49-678"></a></span>
 <span id="cb49-679"><a href="#cb49-679"></a></span>
-<span id="cb49-680"><a href="#cb49-680"></a></span>
-<span id="cb49-681"><a href="#cb49-681"></a><span class="ss">* </span>Fundamental data types: integers, floats, characters, strings; string operations like length, indexing, concatenation, substrings. </span>
+<span id="cb49-680"><a href="#cb49-680"></a><span class="ss">* </span>**Variables**: declaring types explicitly (e.g., <span class="in">`int`</span>, <span class="in">`float`</span>), how static typing enforces constraints, and understanding variables as named boxes in memory. </span>
+<span id="cb49-681"><a href="#cb49-681"></a></span>
 <span id="cb49-682"><a href="#cb49-682"></a></span>
-<span id="cb49-683"><a href="#cb49-683"></a></span>
-<span id="cb49-684"><a href="#cb49-684"></a><span class="ss">* </span>A simple user-input example: using **`std::cin`** to build a basic “weekly pay” calculator. </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
+<span id="cb49-683"><a href="#cb49-683"></a><span class="ss">* </span>Fundamental data types: integers, floats, characters, strings; string operations like length, indexing, concatenation, substrings. </span>
+<span id="cb49-684"><a href="#cb49-684"></a></span>
+<span id="cb49-685"><a href="#cb49-685"></a></span>
+<span id="cb49-686"><a href="#cb49-686"></a><span class="ss">* </span>A simple user-input example: using **`std::cin`** to build a basic “weekly pay” calculator. </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 <footer class="footer">
