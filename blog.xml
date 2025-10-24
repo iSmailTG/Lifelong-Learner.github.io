@@ -624,9 +624,134 @@ this is the first character of that word: w</code></pre>
 <span id="cb46-23">  }</span></code></pre></div></div>
 </details>
 </div>
-
-
+<ul>
+<li>I could revisit the <strong><code>distance formula</code></strong> I program earlier and apply the idea of <strong><code>cin</code></strong> values instead of hard coding them like in the first version.</li>
+</ul>
+<div id="bf1d2fff-5ce1-4ed1-af34-78246cff367e" class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb47" style="background: #f1f3f5;"><pre class="sourceCode numberSource cpp17 number-lines code-with-copy"><code class="sourceCode"><span id="cb47-1">// old version</span>
+<span id="cb47-2">int main()</span>
+<span id="cb47-3">{</span>
+<span id="cb47-4">  int x0;</span>
+<span id="cb47-5">  int y0;</span>
+<span id="cb47-6">  int x1;</span>
+<span id="cb47-7">  int y1;</span>
+<span id="cb47-8"></span>
+<span id="cb47-9">  x0 = 2;</span>
+<span id="cb47-10">  y0 = 3;</span>
+<span id="cb47-11">  x1 = 3;</span>
+<span id="cb47-12">  y1 = 4;</span>
+<span id="cb47-13"></span>
+<span id="cb47-14">  float distanceFormula;</span>
+<span id="cb47-15"></span>
+<span id="cb47-16">  distanceFormula = sqrt(((x1 - x0) * (x1 - x0)) - ((y1 - y0) * (y1 - y0))</span>
+<span id="cb47-17"></span>
+<span id="cb47-18">  return 0;</span>
+<span id="cb47-19">  </span>
+<span id="cb47-20">}</span></code></pre></div></div>
+</details>
+</div>
+<ul>
+<li>In the new version the values <code>x0, x1, y0, y1</code> will be decided by the user through <code>cin</code>.</li>
+</ul>
+<div id="50f44ee0-04fb-45c0-b1b7-1a64bb2f1c40" class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb48" style="background: #f1f3f5;"><pre class="sourceCode numberSource cpp17 number-lines code-with-copy"><code class="sourceCode"><span id="cb48-1">#include &lt;iostream&gt;</span>
+<span id="cb48-2">#include &lt;cmath&gt;</span>
+<span id="cb48-3">using namespace std;</span>
+<span id="cb48-4"></span>
+<span id="cb48-5">int main()</span>
+<span id="cb48-6">{</span>
+<span id="cb48-7">    float x0, x1, y0, y1;  // Changed to float for better precision</span>
+<span id="cb48-8"></span>
+<span id="cb48-9">    cout &lt;&lt; "Please enter the values of the first point: " &lt;&lt; endl;</span>
+<span id="cb48-10">    cout &lt;&lt; "X: ";</span>
+<span id="cb48-11">    cin &gt;&gt; x0;</span>
+<span id="cb48-12">    cout &lt;&lt; "Y: ";</span>
+<span id="cb48-13">    cin &gt;&gt; y0;</span>
+<span id="cb48-14"></span>
+<span id="cb48-15">    cout &lt;&lt; "Please enter the values of the second point: " &lt;&lt; endl;</span>
+<span id="cb48-16">    cout &lt;&lt; "X: ";</span>
+<span id="cb48-17">    cin &gt;&gt; x1;</span>
+<span id="cb48-18">    cout &lt;&lt; "Y: ";</span>
+<span id="cb48-19">    cin &gt;&gt; y1;</span>
+<span id="cb48-20">    </span>
+<span id="cb48-21">    // distance formula: sqrt((x1-x0)² + (y1-y0)²)</span>
+<span id="cb48-22">    float distanceFormula = sqrt(pow(x1 - x0, 2) + pow(y1 - y0, 2));</span>
+<span id="cb48-23">    </span>
+<span id="cb48-24">    cout &lt;&lt; "The length of the line is: " &lt;&lt; distanceFormula &lt;&lt; endl;</span>
+<span id="cb48-25"></span>
+<span id="cb48-26">    return 0;</span>
+<span id="cb48-27">}</span></code></pre></div></div>
+</details>
+</div>
+<div id="275f43ab-03a8-41e7-bda3-d204367816e4" class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb49" style="background: #f1f3f5;"><pre class="sourceCode numberSource cpp17 number-lines code-with-copy"><code class="sourceCode"><span id="cb49-1">%%writefile gasMileage.cpp</span>
+<span id="cb49-2"></span>
+<span id="cb49-3">#include &lt;iostream&gt;</span>
+<span id="cb49-4">#include &lt;string&gt;</span>
+<span id="cb49-5">#include &lt;cmath&gt;</span>
+<span id="cb49-6">using namespace std;</span>
+<span id="cb49-7"></span>
+<span id="cb49-8"></span>
+<span id="cb49-9">int main()</span>
+<span id="cb49-10">{</span>
+<span id="cb49-11">  float distance;</span>
+<span id="cb49-12">  string carBrand;</span>
+<span id="cb49-13">  string carModel;</span>
+<span id="cb49-14">  float carCapacity;</span>
+<span id="cb49-15">  float mpg;</span>
+<span id="cb49-16"></span>
+<span id="cb49-17">  cout &lt;&lt; "Enter the Distance of the Trip: " &lt;&lt; endl;</span>
+<span id="cb49-18">  cin &gt;&gt; distance;</span>
+<span id="cb49-19"></span>
+<span id="cb49-20">  cout &lt;&lt; "Enter the rand of the car: " &lt;&lt; endl;</span>
+<span id="cb49-21">  cin &gt;&gt; carBrand;</span>
+<span id="cb49-22"></span>
+<span id="cb49-23">  cout  &lt;&lt; "Enter the car Model: " &lt;&lt; endl;</span>
+<span id="cb49-24">  cin &gt;&gt; carModel;</span>
+<span id="cb49-25"></span>
+<span id="cb49-26">  cout &lt;&lt; "Enter the fuel Tank Capacity: " &lt;&lt; endl;</span>
+<span id="cb49-27">  cin &gt;&gt; carCapacity;</span>
+<span id="cb49-28">  </span>
+<span id="cb49-29">  cout &lt;&lt; "Enter the MPG of the car: " &lt;&lt; endl;</span>
+<span id="cb49-30">  cin &gt;&gt; mpg;</span>
+<span id="cb49-31"></span>
+<span id="cb49-32"></span>
+<span id="cb49-33">  float mileageOnFullTank;</span>
+<span id="cb49-34">  mileageOnFullTank = mpg * carCapacity;</span>
+<span id="cb49-35">  float numOfStops = int(distance / mileageOnFullTank);</span>
+<span id="cb49-36">  float gasRequired = distance / mpg;</span>
+<span id="cb49-37">  float galonsLeft = ((numOfStops+1) * carCapacity) - gasRequired;</span>
+<span id="cb49-38">  </span>
+<span id="cb49-39">  </span>
+<span id="cb49-40">  cout &lt;&lt; "For a trip of " &lt;&lt; distance &lt;&lt; " miles" &lt;&lt; endl;</span>
+<span id="cb49-41">  cout &lt;&lt; " a " &lt;&lt; carBrand &lt;&lt; " model " &lt;&lt; carModel &lt;&lt; " requires " &lt;&lt; gasRequired &lt;&lt; " Gallons Of Gas " &lt;&lt; endl;</span>
+<span id="cb49-42">  cout &lt;&lt; " will require " &lt;&lt; numOfStops &lt;&lt; " stop for gas " &lt;&lt; endl;</span>
+<span id="cb49-43">  cout &lt;&lt; " and will have " &lt;&lt; galonsLeft &lt;&lt; " gallons of gas left in the tank" &lt;&lt; endl;</span>
+<span id="cb49-44">  return 0;</span>
+<span id="cb49-45">}  </span></code></pre></div></div>
+</details>
+</div>
 </section>
+</section>
+<section id="day-1-recap" class="level2">
+<h2 class="anchored" data-anchor-id="day-1-recap">Day 1 Recap:</h2>
+<ul>
+<li><p>Today I started exploring C++ as a Python programmer, motivated by my goal of writing CUDA kernels. I covered the following fundamentals:</p></li>
+<li><p>The compilation process (pre-processor → compiler → assembler → linker) and how C++ differs from interpreted languages.</p></li>
+<li><p>How to <strong><code>include</code></strong> libraries using <code>#include</code>, and the special role of the <strong><code>main()</code></strong> function.</p></li>
+<li><p>Basic printing with <strong><code>std::cout</code></strong>, ending lines with <strong><code>&lt;&lt; std::endl</code></strong>, and formatting simple output.</p></li>
+<li><p><strong>Variables</strong>: declaring types explicitly (e.g., <code>int</code>, <code>float</code>), how static typing enforces constraints, and understanding variables as named boxes in memory.</p></li>
+<li><p>Fundamental data types: integers, floats, characters, strings; string operations like length, indexing, concatenation, substrings.</p></li>
+<li><p>A simple user-input example: using <strong><code>std::cin</code></strong> to build a basic “weekly pay” calculator.</p></li>
+</ul>
+
+
 </section>
 
  ]]></description>
@@ -2250,12 +2375,586 @@ font-style: inherit;">;</span></span>
 <span id="cb45-23">  <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">}</span></span></code></pre></div></div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb46" style="background: #f1f3f5;"><pre class="sourceCode numberSource cpp number-lines code-with-copy"><code class="sourceCode cpp"></code></pre></div></div>
+<ul>
+<li>I could revisit the <strong><code>distance formula</code></strong> I program earlier and apply the idea of <strong><code>cin</code></strong> values instead of hard coding them like in the first version.</li>
+</ul>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb46" style="background: #f1f3f5;"><pre class="sourceCode numberSource cpp number-lines code-with-copy"><code class="sourceCode cpp"><span id="cb46-1"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">// old version</span></span>
+<span id="cb46-2"><span class="dt" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">int</span> main<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">()</span></span>
+<span id="cb46-3"><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">{</span></span>
+<span id="cb46-4">  <span class="dt" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">int</span> x0<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span></span>
+<span id="cb46-5">  <span class="dt" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">int</span> y0<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span></span>
+<span id="cb46-6">  <span class="dt" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">int</span> x1<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span></span>
+<span id="cb46-7">  <span class="dt" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">int</span> y1<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span></span>
+<span id="cb46-8"></span>
+<span id="cb46-9">  x0 <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span></span>
+<span id="cb46-10">  y0 <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">3</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span></span>
+<span id="cb46-11">  x1 <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">3</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span></span>
+<span id="cb46-12">  y1 <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">4</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span></span>
+<span id="cb46-13"></span>
+<span id="cb46-14">  <span class="dt" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">float</span> distanceFormula<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span></span>
+<span id="cb46-15"></span>
+<span id="cb46-16">  distanceFormula <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> sqrt<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">(((</span>x1 <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">-</span> x0<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">)</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">*</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">(</span>x1 <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">-</span> x0<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">))</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">-</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">((</span>y1 <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">-</span> y0<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">)</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">*</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">(</span>y1 <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">-</span> y0<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">))</span></span>
+<span id="cb46-17"></span>
+<span id="cb46-18">  <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">return</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span></span>
+<span id="cb46-19">  </span>
+<span id="cb46-20"><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">}</span></span></code></pre></div></div>
+<ul>
+<li>In the new version the values <code>x0, x1, y0, y1</code> will be decided by the user through <code>cin</code>.</li>
+</ul>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb47" style="background: #f1f3f5;"><pre class="sourceCode numberSource cpp number-lines code-with-copy"><code class="sourceCode cpp"><span id="cb47-1"><span class="pp" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">#include </span><span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">&lt;iostream&gt;</span></span>
+<span id="cb47-2"><span class="pp" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">#include </span><span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">&lt;cmath&gt;</span></span>
+<span id="cb47-3"><span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">using</span> <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">namespace</span> std<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span></span>
+<span id="cb47-4"></span>
+<span id="cb47-5"><span class="dt" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">int</span> main<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">()</span></span>
+<span id="cb47-6"><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">{</span></span>
+<span id="cb47-7">    <span class="dt" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">float</span> x0<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">,</span> x1<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">,</span> y0<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">,</span> y1<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span>  <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">// Changed to float for better precision</span></span>
+<span id="cb47-8"></span>
+<span id="cb47-9">    cout <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;&lt;</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Please enter the values of the first point: "</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;&lt;</span> endl<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span></span>
+<span id="cb47-10">    cout <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;&lt;</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"X: "</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span></span>
+<span id="cb47-11">    cin <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&gt;&gt;</span> x0<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span></span>
+<span id="cb47-12">    cout <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;&lt;</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Y: "</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span></span>
+<span id="cb47-13">    cin <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&gt;&gt;</span> y0<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span></span>
+<span id="cb47-14"></span>
+<span id="cb47-15">    cout <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;&lt;</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Please enter the values of the second point: "</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;&lt;</span> endl<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span></span>
+<span id="cb47-16">    cout <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;&lt;</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"X: "</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span></span>
+<span id="cb47-17">    cin <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&gt;&gt;</span> x1<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span></span>
+<span id="cb47-18">    cout <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;&lt;</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Y: "</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span></span>
+<span id="cb47-19">    cin <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&gt;&gt;</span> y1<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span></span>
+<span id="cb47-20">    </span>
+<span id="cb47-21">    <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">// distance formula: sqrt((x1-x0)² + (y1-y0)²)</span></span>
+<span id="cb47-22">    <span class="dt" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">float</span> distanceFormula <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> sqrt<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">(</span>pow<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">(</span>x1 <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">-</span> x0<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">,</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">)</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span> pow<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">(</span>y1 <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">-</span> y0<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">,</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">));</span></span>
+<span id="cb47-23">    </span>
+<span id="cb47-24">    cout <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;&lt;</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"The length of the line is: "</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;&lt;</span> distanceFormula <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;&lt;</span> endl<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span></span>
+<span id="cb47-25"></span>
+<span id="cb47-26">    <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">return</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span></span>
+<span id="cb47-27"><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">}</span></span></code></pre></div></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb48" style="background: #f1f3f5;"><pre class="sourceCode numberSource cpp number-lines code-with-copy"><code class="sourceCode cpp"><span id="cb48-1"><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">%%</span>writefile gasMileage<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">.</span>cpp</span>
+<span id="cb48-2"></span>
+<span id="cb48-3"><span class="pp" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">#include </span><span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">&lt;iostream&gt;</span></span>
+<span id="cb48-4"><span class="pp" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">#include </span><span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">&lt;string&gt;</span></span>
+<span id="cb48-5"><span class="pp" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">#include </span><span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">&lt;cmath&gt;</span></span>
+<span id="cb48-6"><span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">using</span> <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">namespace</span> std<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span></span>
+<span id="cb48-7"></span>
+<span id="cb48-8"></span>
+<span id="cb48-9"><span class="dt" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">int</span> main<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">()</span></span>
+<span id="cb48-10"><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">{</span></span>
+<span id="cb48-11">  <span class="dt" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">float</span> distance<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span></span>
+<span id="cb48-12">  string carBrand<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span></span>
+<span id="cb48-13">  string carModel<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span></span>
+<span id="cb48-14">  <span class="dt" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">float</span> carCapacity<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span></span>
+<span id="cb48-15">  <span class="dt" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">float</span> mpg<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span></span>
+<span id="cb48-16"></span>
+<span id="cb48-17">  cout <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;&lt;</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Enter the Distance of the Trip: "</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;&lt;</span> endl<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span></span>
+<span id="cb48-18">  cin <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&gt;&gt;</span> distance<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span></span>
+<span id="cb48-19"></span>
+<span id="cb48-20">  cout <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;&lt;</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Enter the rand of the car: "</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;&lt;</span> endl<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span></span>
+<span id="cb48-21">  cin <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&gt;&gt;</span> carBrand<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span></span>
+<span id="cb48-22"></span>
+<span id="cb48-23">  cout  <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;&lt;</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Enter the car Model: "</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;&lt;</span> endl<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span></span>
+<span id="cb48-24">  cin <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&gt;&gt;</span> carModel<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span></span>
+<span id="cb48-25"></span>
+<span id="cb48-26">  cout <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;&lt;</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Enter the fuel Tank Capacity: "</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;&lt;</span> endl<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span></span>
+<span id="cb48-27">  cin <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&gt;&gt;</span> carCapacity<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span></span>
+<span id="cb48-28">  </span>
+<span id="cb48-29">  cout <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;&lt;</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Enter the MPG of the car: "</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;&lt;</span> endl<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span></span>
+<span id="cb48-30">  cin <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&gt;&gt;</span> mpg<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span></span>
+<span id="cb48-31"></span>
+<span id="cb48-32"></span>
+<span id="cb48-33">  <span class="dt" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">float</span> mileageOnFullTank<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span></span>
+<span id="cb48-34">  mileageOnFullTank <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> mpg <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">*</span> carCapacity<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span></span>
+<span id="cb48-35">  <span class="dt" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">float</span> numOfStops <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="dt" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">int</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">(</span>distance <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">/</span> mileageOnFullTank<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">);</span></span>
+<span id="cb48-36">  <span class="dt" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">float</span> gasRequired <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> distance <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">/</span> mpg<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span></span>
+<span id="cb48-37">  <span class="dt" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">float</span> galonsLeft <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">((</span>numOfStops<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">)</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">*</span> carCapacity<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">)</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">-</span> gasRequired<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span></span>
+<span id="cb48-38">  </span>
+<span id="cb48-39">  </span>
+<span id="cb48-40">  cout <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;&lt;</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"For a trip of "</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;&lt;</span> distance <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;&lt;</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">" miles"</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;&lt;</span> endl<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span></span>
+<span id="cb48-41">  cout <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;&lt;</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">" a "</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;&lt;</span> carBrand <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;&lt;</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">" model "</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;&lt;</span> carModel <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;&lt;</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">" requires "</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;&lt;</span> gasRequired <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;&lt;</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">" Gallons Of Gas "</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;&lt;</span> endl<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span></span>
+<span id="cb48-42">  cout <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;&lt;</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">" will require "</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;&lt;</span> numOfStops <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;&lt;</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">" stop for gas "</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;&lt;</span> endl<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span></span>
+<span id="cb48-43">  cout <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;&lt;</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">" and will have "</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;&lt;</span> galonsLeft <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;&lt;</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">" gallons of gas left in the tank"</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;&lt;</span> endl<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span></span>
+<span id="cb48-44">  <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">return</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span></span>
+<span id="cb48-45"><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">}</span>  </span></code></pre></div></div>
+</section>
+</section>
+<section id="day-1-recap" class="level2">
+<h2 class="anchored" data-anchor-id="day-1-recap">Day 1 Recap:</h2>
+<ul>
+<li><p>Today I started exploring C++ as a Python programmer, motivated by my goal of writing CUDA kernels. I covered the following fundamentals:</p></li>
+<li><p>The compilation process (pre-processor → compiler → assembler → linker) and how C++ differs from interpreted languages.</p></li>
+<li><p>How to <strong><code>include</code></strong> libraries using <code>#include</code>, and the special role of the <strong><code>main()</code></strong> function.</p></li>
+<li><p>Basic printing with <strong><code>std::cout</code></strong>, ending lines with <strong><code>&lt;&lt; std::endl</code></strong>, and formatting simple output.</p></li>
+<li><p><strong>Variables</strong>: declaring types explicitly (e.g., <code>int</code>, <code>float</code>), how static typing enforces constraints, and understanding variables as named boxes in memory.</p></li>
+<li><p>Fundamental data types: integers, floats, characters, strings; string operations like length, indexing, concatenation, substrings.</p></li>
+<li><p>A simple user-input example: using <strong><code>std::cin</code></strong> to build a basic “weekly pay” calculator.</p></li>
+</ul>
 
 
 <!-- -->
 
-</section>
 </section>
 
  ]]></description>
