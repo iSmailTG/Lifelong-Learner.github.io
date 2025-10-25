@@ -55,7 +55,7 @@ Following Sebastian Raschka's book on building LLMs from first principles.
 Learning C++ fundamentals and CUDA programming for GPU kernel development.
 
 - [View Learning Notes](posts/Learning_CPP/basicsLesson1.md) -Lesson - 1 :  Understanding the Compiler system of C++ and basic Synatax.
-
+- [View Learning Notes](posts/Learning_CPP/basicsLesson2.md) -Lesson - 2 :  Learning about if statements, evaluating statements, comparison operators.
 
 **Status**: Currently Learning 🔄
 
