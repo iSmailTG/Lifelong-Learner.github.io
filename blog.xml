@@ -10,7 +10,1588 @@
 <atom:link href="https://iSmailTG.github.io/Lifelong-Learner.github.io/blog.xml" rel="self" type="application/rss+xml"/>
 <description></description>
 <generator>quarto-1.8.25</generator>
-<lastBuildDate>Thu, 23 Oct 2025 23:00:00 GMT</lastBuildDate>
+<lastBuildDate>Tue, 28 Oct 2025 23:00:00 GMT</lastBuildDate>
+<item>
+  <title>Learning CPP As Pythonista: Day-3</title>
+  <dc:creator>Ismail TG</dc:creator>
+  <link>https://iSmailTG.github.io/Lifelong-Learner.github.io/posts/Learning_CPP/loops_Lesson.html</link>
+  <description><![CDATA[ 
+
+
+
+
+
+<section id="loops-in-c" class="level1">
+<h1>Loops in C++:</h1>
+<p>Today I learned how to repeat actions in C++ using <code>while</code> and <code>for</code> loops. I practiced printing values multiple times, validating input, summing ranges of numbers, using nested loops for a multiplication table, and even modifying characters inside a string. I also learned how break and continue can control the flow inside a loop.</p>
+<section id="repeating-output-with-a-while-loop" class="level2">
+<h2 class="anchored" data-anchor-id="repeating-output-with-a-while-loop">Repeating Output with a while Loop</h2>
+<p><strong>Concept</strong>: Counter-controlled loop</p>
+<p><strong>What it does</strong>: Asks the user how many times to print their name, then uses a while loop to repeat the output.</p>
+<p><strong>Key learning</strong>: Loop structure, incrementing counters.</p>
+<div id="26ee761b-3d38-4c46-a677-841d151b41c0" class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode numberSource cpp17 number-lines code-with-copy"><code class="sourceCode"><span id="cb1-1">#include &lt;iostream&gt;</span>
+<span id="cb1-2">#include &lt;string&gt;</span>
+<span id="cb1-3">#include &lt;cmath&gt;</span>
+<span id="cb1-4">using namespace std;</span>
+<span id="cb1-5"></span>
+<span id="cb1-6">int main()</span>
+<span id="cb1-7">{</span>
+<span id="cb1-8">  int numberOfIterations;</span>
+<span id="cb1-9">  string name;</span>
+<span id="cb1-10"></span>
+<span id="cb1-11">  cout &lt;&lt; "Enter number of times your name will be printed: " &lt;&lt; endl;</span>
+<span id="cb1-12">  cin &gt;&gt; numberOfIterations;</span>
+<span id="cb1-13">  cout &lt;&lt; "Enter your name: " &lt;&lt; endl;</span>
+<span id="cb1-14">  cin &gt;&gt; name;</span>
+<span id="cb1-15"></span>
+<span id="cb1-16">  int count = 1;</span>
+<span id="cb1-17">  while( count &lt;= numberOfIterations)</span>
+<span id="cb1-18">  {</span>
+<span id="cb1-19">    cout &lt;&lt; name &lt;&lt; endl;</span>
+<span id="cb1-20">    count++;</span>
+<span id="cb1-21">  }    </span>
+<span id="cb1-22">  return 0;</span>
+<span id="cb1-23">}  </span></code></pre></div></div>
+</details>
+</div>
+</section>
+<section id="validating-user-input-in-a-loop" class="level2">
+<h2 class="anchored" data-anchor-id="validating-user-input-in-a-loop">Validating User Input in a Loop:</h2>
+<p><strong>Concept</strong>: Boolean condition control (<code>bool</code> + <code>while</code>)</p>
+<p><strong>What it does</strong>: Keeps asking the user a <code>Yes/No</code> question until the correct answer is given.</p>
+<p><strong>Key learning</strong>: Using a <strong>flag</strong> (<code>doneYet</code>) to control loop exit, <code>if/else</code> inside a loop.</p>
+<div id="a47c6a35-c26c-4cb2-a414-52da3c3e8ca6" class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2" style="background: #f1f3f5;"><pre class="sourceCode numberSource cpp17 number-lines code-with-copy"><code class="sourceCode"><span id="cb2-1">#include &lt;iostream&gt;</span>
+<span id="cb2-2">#include &lt;string&gt;</span>
+<span id="cb2-3">#include &lt;cmath&gt;</span>
+<span id="cb2-4">using namespace std;</span>
+<span id="cb2-5"></span>
+<span id="cb2-6">int main()</span>
+<span id="cb2-7">{</span>
+<span id="cb2-8">  bool doneYet = false;</span>
+<span id="cb2-9">  char answer;</span>
+<span id="cb2-10"></span>
+<span id="cb2-11">  while(!doneYet)</span>
+<span id="cb2-12">  {</span>
+<span id="cb2-13">    cout &lt;&lt; "Are you Ismail Taghouchti?:(Y or N)  " &lt;&lt; endl;</span>
+<span id="cb2-14">    cin &gt;&gt; answer;</span>
+<span id="cb2-15">    </span>
+<span id="cb2-16">    if(answer == 'Y')</span>
+<span id="cb2-17">    {</span>
+<span id="cb2-18">      doneYet = true;</span>
+<span id="cb2-19">      cout &lt;&lt; "access granted .." &lt;&lt; endl;</span>
+<span id="cb2-20">    }</span>
+<span id="cb2-21">    else </span>
+<span id="cb2-22">    {</span>
+<span id="cb2-23">      cout &lt;&lt; "Only Ismail Taghouchti could access." &lt;&lt; endl;</span>
+<span id="cb2-24">    }</span>
+<span id="cb2-25">    </span>
+<span id="cb2-26">  }    </span>
+<span id="cb2-27">  return 0;</span>
+<span id="cb2-28">}  </span></code></pre></div></div>
+</details>
+</div>
+</section>
+<section id="summing-a-range-of-numbers-using-while" class="level2">
+<h2 class="anchored" data-anchor-id="summing-a-range-of-numbers-using-while">Summing a Range of Numbers (Using while):</h2>
+<p><strong>Concepts</strong>: Input validation + running total</p>
+<p><strong>What it does</strong>: Ensures the ending value is larger than the starting value, then calculates the sum step by step.</p>
+<p><strong>Key learning</strong>: Nested logic using validation loop followed by a counting accumulation loop.</p>
+<div id="c1ed31ce-7843-401b-bb44-a5d7ac8be640" class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3" style="background: #f1f3f5;"><pre class="sourceCode numberSource cpp17 number-lines code-with-copy"><code class="sourceCode"><span id="cb3-1">#include &lt;iostream&gt;</span>
+<span id="cb3-2">#include &lt;string&gt;</span>
+<span id="cb3-3">#include &lt;cmath&gt;</span>
+<span id="cb3-4">using namespace std;</span>
+<span id="cb3-5"></span>
+<span id="cb3-6">int main()</span>
+<span id="cb3-7">{</span>
+<span id="cb3-8">  int startingV;</span>
+<span id="cb3-9">  int endingV;</span>
+<span id="cb3-10"></span>
+<span id="cb3-11">  cout &lt;&lt; "Enter in a starting value: ";</span>
+<span id="cb3-12">  cin &gt;&gt; startingV;</span>
+<span id="cb3-13"></span>
+<span id="cb3-14">  cout &lt;&lt; "Enter in an ending value:  ";</span>
+<span id="cb3-15">  cin &gt;&gt; endingV;</span>
+<span id="cb3-16"></span>
+<span id="cb3-17"></span>
+<span id="cb3-18">  while( endingV &lt;= startingV)</span>
+<span id="cb3-19">  {</span>
+<span id="cb3-20">    cout &lt;&lt; "Please enter starting value larger then ending value. Try again." &lt;&lt; endl;</span>
+<span id="cb3-21">    cout &lt;&lt; "Enter in a starting value: ";</span>
+<span id="cb3-22">    cin  &gt;&gt; startingV;</span>
+<span id="cb3-23">    cout &lt;&lt; "Enter in a ending value: " &lt;&lt; endl;</span>
+<span id="cb3-24">    cin &gt;&gt; endingV;</span>
+<span id="cb3-25">  }</span>
+<span id="cb3-26">   </span>
+<span id="cb3-27">  int count = startingV + 1;</span>
+<span id="cb3-28">  int totalSum = startingV;</span>
+<span id="cb3-29">  while(count &lt;= endingV)</span>
+<span id="cb3-30">  {</span>
+<span id="cb3-31">      cout &lt;&lt; totalSum &lt;&lt; " + " &lt;&lt; count &lt;&lt; " = ";</span>
+<span id="cb3-32">      totalSum = totalSum + count;</span>
+<span id="cb3-33">      cout &lt;&lt; totalSum &lt;&lt; endl;</span>
+<span id="cb3-34">      count ++;</span>
+<span id="cb3-35">  }</span>
+<span id="cb3-36">    </span>
+<span id="cb3-37">  cout &lt;&lt; "The Sum of the numbers from " &lt;&lt; startingV &lt;&lt; " to " &lt;&lt; endingV &lt;&lt; " is ";</span>
+<span id="cb3-38">  cout &lt;&lt; totalSum &lt;&lt; endl;</span>
+<span id="cb3-39">     </span>
+<span id="cb3-40">  return 0;</span>
+<span id="cb3-41">}</span></code></pre></div></div>
+</details>
+</div>
+</section>
+<section id="multiplication-table-nested-loops" class="level2">
+<h2 class="anchored" data-anchor-id="multiplication-table-nested-loops">Multiplication Table (Nested Loops):</h2>
+<p><strong>Concept</strong>: Nested <code>while</code> loops</p>
+<p><strong>What it does</strong>: Prints a full <code>9×9</code> multiplication table by looping rows and columns.</p>
+<p><strong>Key learning</strong>: Inner loop runs completely for each iteration of the outer loop.</p>
+<div id="bc5a2806-2a3d-4db3-8fa7-4d886444ea05" class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4" style="background: #f1f3f5;"><pre class="sourceCode numberSource cpp17 number-lines code-with-copy"><code class="sourceCode"><span id="cb4-1">#include &lt;iostream&gt;</span>
+<span id="cb4-2">#include &lt;string&gt;</span>
+<span id="cb4-3">#include &lt;cmath&gt;</span>
+<span id="cb4-4">using namespace std;</span>
+<span id="cb4-5"></span>
+<span id="cb4-6"></span>
+<span id="cb4-7">int main()</span>
+<span id="cb4-8">{</span>
+<span id="cb4-9">  int left;</span>
+<span id="cb4-10">  int right;</span>
+<span id="cb4-11">  int product;</span>
+<span id="cb4-12">  </span>
+<span id="cb4-13"></span>
+<span id="cb4-14">  left = 1;</span>
+<span id="cb4-15">  while(left &lt; 10)</span>
+<span id="cb4-16">  {</span>
+<span id="cb4-17">    right = 1;</span>
+<span id="cb4-18">    while(right &lt; 10)</span>
+<span id="cb4-19">    {</span>
+<span id="cb4-20">      product = left * right;</span>
+<span id="cb4-21">      cout &lt;&lt; left &lt;&lt; "X" &lt;&lt; right &lt;&lt; "=" &lt;&lt; product &lt;&lt; " ";</span>
+<span id="cb4-22">      right++;</span>
+<span id="cb4-23">    }</span>
+<span id="cb4-24">    left++;</span>
+<span id="cb4-25">    cout &lt;&lt; endl;</span>
+<span id="cb4-26">  }</span>
+<span id="cb4-27"></span>
+<span id="cb4-28">  return 0;</span>
+<span id="cb4-29">}</span></code></pre></div></div>
+</details>
+</div>
+</section>
+<section id="summing-a-range-of-numbers-using-for" class="level2">
+<h2 class="anchored" data-anchor-id="summing-a-range-of-numbers-using-for">Summing a Range of Numbers (Using for)</h2>
+<p><strong>Concept</strong>: Comparison between <code>for</code> and <code>while</code> for counting</p>
+<p><strong>What it does</strong>: Same task as Program 3, but uses a for loop for cleaner counting logic.</p>
+<p><strong>Key learning</strong>: When iteration count is known → for loop is simpler and more readable.</p>
+<div id="6f93f9c7-d146-4e7b-8ac1-0ba5eebab687" class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5" style="background: #f1f3f5;"><pre class="sourceCode numberSource cpp17 number-lines code-with-copy"><code class="sourceCode"><span id="cb5-1">#include &lt;iostream&gt;</span>
+<span id="cb5-2">#include &lt;string&gt;</span>
+<span id="cb5-3">using namespace std;</span>
+<span id="cb5-4"></span>
+<span id="cb5-5">int main()</span>
+<span id="cb5-6">{</span>
+<span id="cb5-7">  int startingV;</span>
+<span id="cb5-8">  int endingV;</span>
+<span id="cb5-9">  int sum;</span>
+<span id="cb5-10">  </span>
+<span id="cb5-11">  cout &lt;&lt; "Enter in starting value: " &lt;&lt; endl;</span>
+<span id="cb5-12">  cin &gt;&gt; startingV;</span>
+<span id="cb5-13"></span>
+<span id="cb5-14">  cout &lt;&lt; "Enter in endingV: " &lt;&lt; endl;</span>
+<span id="cb5-15">  cin &gt;&gt; endingV;</span>
+<span id="cb5-16"></span>
+<span id="cb5-17">  while(endingV &lt; startingV)</span>
+<span id="cb5-18">  {</span>
+<span id="cb5-19">    cout &lt;&lt; "The ending value must be greater than or equal to starting value " &lt;&lt; startingV &lt;&lt; "Please enter again: "&lt;&lt; endl;</span>
+<span id="cb5-20">    cin &gt;&gt; startingV;</span>
+<span id="cb5-21"></span>
+<span id="cb5-22">    cout &lt;&lt; "Enter in ending value: " &lt;&lt; endl;</span>
+<span id="cb5-23">    cin  &gt;&gt; endingV;</span>
+<span id="cb5-24"></span>
+<span id="cb5-25">  }    </span>
+<span id="cb5-26">  sum = startingV;</span>
+<span id="cb5-27">  for(int count = startingV + 1; count &lt;= endingV; count++)</span>
+<span id="cb5-28">  {</span>
+<span id="cb5-29">    cout &lt;&lt; sum &lt;&lt; " + " &lt;&lt; count &lt;&lt; " = ";</span>
+<span id="cb5-30">    sum = sum + count;</span>
+<span id="cb5-31">    cout &lt;&lt; sum &lt;&lt; endl;</span>
+<span id="cb5-32">  </span>
+<span id="cb5-33">  }</span>
+<span id="cb5-34">  cout &lt;&lt; "the summation of numbers from " &lt;&lt; startingV &lt;&lt; " to " &lt;&lt; endingV &lt;&lt; " is: " &lt;&lt; sum &lt;&lt; endl;</span>
+<span id="cb5-35">  return 0;</span>
+<span id="cb5-36">}</span></code></pre></div></div>
+</details>
+</div>
+</section>
+<section id="capitalizing-letters-after-spaces" class="level2">
+<h2 class="anchored" data-anchor-id="capitalizing-letters-after-spaces">Capitalizing Letters After Spaces:</h2>
+<p><strong>Concept</strong>: Looping through strings using indexes</p>
+<p><strong>What it does</strong>: Detects spaces and capitalizes the next character.</p>
+<p><strong>Key learning</strong>: Boolean flag (<code>isCap</code>) + character processing using <code>toupper()</code>.</p>
+<div id="1dfd633e-0f78-4218-adc8-fcd25c51216a" class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6" style="background: #f1f3f5;"><pre class="sourceCode numberSource cpp17 number-lines code-with-copy"><code class="sourceCode"><span id="cb6-1">#include &lt;iostream&gt;</span>
+<span id="cb6-2">#include &lt;string&gt;</span>
+<span id="cb6-3">using namespace std;</span>
+<span id="cb6-4"></span>
+<span id="cb6-5">int main()</span>
+<span id="cb6-6">{</span>
+<span id="cb6-7">  string sentence = "Today was a bit sunny.";</span>
+<span id="cb6-8">  cout &lt;&lt; sentence &lt;&lt; endl;</span>
+<span id="cb6-9">  cout &lt;&lt; "After Capitalization: " &lt;&lt; endl;</span>
+<span id="cb6-10">  bool isCap = false;</span>
+<span id="cb6-11">  for(int i=0; i &lt; sentence.length(); i++)</span>
+<span id="cb6-12">  {</span>
+<span id="cb6-13">    if(isCap)</span>
+<span id="cb6-14">    {</span>
+<span id="cb6-15">      char capL = toupper(sentence[i]);</span>
+<span id="cb6-16">      cout &lt;&lt; capL;</span>
+<span id="cb6-17">      isCap = false;</span>
+<span id="cb6-18">    }</span>
+<span id="cb6-19">    else </span>
+<span id="cb6-20">    {</span>
+<span id="cb6-21">      cout &lt;&lt; sentence[i];</span>
+<span id="cb6-22">    }</span>
+<span id="cb6-23">    if(sentence[i] == ' ')</span>
+<span id="cb6-24">    {</span>
+<span id="cb6-25">      isCap = true;</span>
+<span id="cb6-26">    }</span>
+<span id="cb6-27">      </span>
+<span id="cb6-28">  }</span>
+<span id="cb6-29">  cout &lt;&lt; endl;</span>
+<span id="cb6-30">  return 0;</span>
+<span id="cb6-31">}</span></code></pre></div></div>
+</details>
+</div>
+</section>
+<section id="using-break-and-continue" class="level2">
+<h2 class="anchored" data-anchor-id="using-break-and-continue">Using break and continue:</h2>
+<p><strong>Concept</strong>: Loop flow control</p>
+<p><strong>What it does</strong>: Loops from 0 to 49 but:</p>
+<p><code>continue</code> skips printing even numbers</p>
+<p><code>break</code> stops when <code>i == 21</code></p>
+<p><strong>Key learning</strong>: Adjusting loop behavior without changing loop condition.</p>
+<div id="9d778d37-6afd-493a-b314-3e488f5437e8" class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7" style="background: #f1f3f5;"><pre class="sourceCode numberSource cpp17 number-lines code-with-copy"><code class="sourceCode"><span id="cb7-1">#include &lt;iostream&gt;</span>
+<span id="cb7-2">#include &lt;string&gt;</span>
+<span id="cb7-3">using namespace std;</span>
+<span id="cb7-4"></span>
+<span id="cb7-5"></span>
+<span id="cb7-6">int main()</span>
+<span id="cb7-7">{</span>
+<span id="cb7-8">  for(int i = 0; i &lt; 50; i++)</span>
+<span id="cb7-9">  {</span>
+<span id="cb7-10">    if(i == 21)</span>
+<span id="cb7-11">    {</span>
+<span id="cb7-12">      break;</span>
+<span id="cb7-13">    }  </span>
+<span id="cb7-14"></span>
+<span id="cb7-15">    if(i % 2 == 0)</span>
+<span id="cb7-16">    {</span>
+<span id="cb7-17">      continue;</span>
+<span id="cb7-18">    }  </span>
+<span id="cb7-19">    cout &lt;&lt; i &lt;&lt; endl;</span>
+<span id="cb7-20">  }  </span>
+<span id="cb7-21">  return 0;  </span>
+<span id="cb7-22">}</span></code></pre></div></div>
+</details>
+</div>
+</section>
+</section>
+<section id="summarization" class="level1">
+<h1>Summarization:</h1>
+<p>Loops make it possible to automate repetitive tasks and control how many times something runs. This session helped me understand both <code>while</code> and <code>for</code> loops, and when it makes sense to use each one.</p>
+<p>Next time, I will continue building on this foundation by learning <strong><code>arrays</code></strong>.</p>
+
+
+</section>
+
+ ]]></description>
+  <category>Kernel Engineering</category>
+  <category>Cuda</category>
+  <category>Pytorch</category>
+  <category>CPP</category>
+  <guid>https://iSmailTG.github.io/Lifelong-Learner.github.io/posts/Learning_CPP/loops_Lesson.html</guid>
+  <pubDate>Tue, 28 Oct 2025 23:00:00 GMT</pubDate>
+  <media:content url="https://iSmailTG.github.io/Lifelong-Learner.github.io/posts/Learning_CPP/PythonVsCPP.png" medium="image" type="image/png" height="65" width="144"/>
+</item>
+<item>
+  <title>Learning CPP As Pythonista: Day-3</title>
+  <dc:creator>Ismail TG</dc:creator>
+  <link>https://iSmailTG.github.io/Lifelong-Learner.github.io/posts/Learning_CPP/loopsLesson.html</link>
+  <description><![CDATA[ 
+
+
+
+
+
+<section id="loops-in-c" class="level1">
+<h1>Loops in C++:</h1>
+<p>Today I learned how to repeat actions in C++ using <code>while</code> and <code>for</code> loops. I practiced printing values multiple times, validating input, summing ranges of numbers, using nested loops for a multiplication table, and even modifying characters inside a string. I also learned how break and continue can control the flow inside a loop.</p>
+<section id="repeating-output-with-a-while-loop" class="level2">
+<h2 class="anchored" data-anchor-id="repeating-output-with-a-while-loop">Repeating Output with a while Loop</h2>
+<p><strong>Concept</strong>: Counter-controlled loop</p>
+<p><strong>What it does</strong>: Asks the user how many times to print their name, then uses a while loop to repeat the output.</p>
+<p><strong>Key learning</strong>: Loop structure, incrementing counters.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode numberSource cpp number-lines code-with-copy"><code class="sourceCode cpp"><span id="cb1-1"><span class="pp" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">#include </span><span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">&lt;iostream&gt;</span></span>
+<span id="cb1-2"><span class="pp" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">#include </span><span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">&lt;string&gt;</span></span>
+<span id="cb1-3"><span class="pp" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">#include </span><span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">&lt;cmath&gt;</span></span>
+<span id="cb1-4"><span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">using</span> <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">namespace</span> std<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span></span>
+<span id="cb1-5"></span>
+<span id="cb1-6"><span class="dt" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">int</span> main<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">()</span></span>
+<span id="cb1-7"><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">{</span></span>
+<span id="cb1-8">  <span class="dt" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">int</span> numberOfIterations<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span></span>
+<span id="cb1-9">  string name<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span></span>
+<span id="cb1-10"></span>
+<span id="cb1-11">  cout <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;&lt;</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Enter number of times your name will be printed: "</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;&lt;</span> endl<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span></span>
+<span id="cb1-12">  cin <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&gt;&gt;</span> numberOfIterations<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span></span>
+<span id="cb1-13">  cout <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;&lt;</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Enter your name: "</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;&lt;</span> endl<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span></span>
+<span id="cb1-14">  cin <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&gt;&gt;</span> name<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span></span>
+<span id="cb1-15"></span>
+<span id="cb1-16">  <span class="dt" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">int</span> count <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span></span>
+<span id="cb1-17">  <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">while</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">(</span> count <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;=</span> numberOfIterations<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">)</span></span>
+<span id="cb1-18">  <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">{</span></span>
+<span id="cb1-19">    cout <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;&lt;</span> name <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;&lt;</span> endl<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span></span>
+<span id="cb1-20">    count<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">++;</span></span>
+<span id="cb1-21">  <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">}</span>    </span>
+<span id="cb1-22">  <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">return</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span></span>
+<span id="cb1-23"><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">}</span>  </span></code></pre></div></div>
+</section>
+<section id="validating-user-input-in-a-loop" class="level2">
+<h2 class="anchored" data-anchor-id="validating-user-input-in-a-loop">Validating User Input in a Loop:</h2>
+<p><strong>Concept</strong>: Boolean condition control (<code>bool</code> + <code>while</code>)</p>
+<p><strong>What it does</strong>: Keeps asking the user a <code>Yes/No</code> question until the correct answer is given.</p>
+<p><strong>Key learning</strong>: Using a <strong>flag</strong> (<code>doneYet</code>) to control loop exit, <code>if/else</code> inside a loop.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2" style="background: #f1f3f5;"><pre class="sourceCode numberSource cpp number-lines code-with-copy"><code class="sourceCode cpp"><span id="cb2-1"><span class="pp" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">#include </span><span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">&lt;iostream&gt;</span></span>
+<span id="cb2-2"><span class="pp" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">#include </span><span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">&lt;string&gt;</span></span>
+<span id="cb2-3"><span class="pp" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">#include </span><span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">&lt;cmath&gt;</span></span>
+<span id="cb2-4"><span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">using</span> <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">namespace</span> std<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span></span>
+<span id="cb2-5"></span>
+<span id="cb2-6"><span class="dt" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">int</span> main<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">()</span></span>
+<span id="cb2-7"><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">{</span></span>
+<span id="cb2-8">  <span class="dt" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">bool</span> doneYet <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">false</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span></span>
+<span id="cb2-9">  <span class="dt" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">char</span> answer<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span></span>
+<span id="cb2-10"></span>
+<span id="cb2-11">  <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">while</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">(!</span>doneYet<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">)</span></span>
+<span id="cb2-12">  <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">{</span></span>
+<span id="cb2-13">    cout <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;&lt;</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Are you Ismail Taghouchti?:(Y or N)  "</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;&lt;</span> endl<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span></span>
+<span id="cb2-14">    cin <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&gt;&gt;</span> answer<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span></span>
+<span id="cb2-15">    </span>
+<span id="cb2-16">    <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">if</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">(</span>answer <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">==</span> <span class="ch" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'Y'</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">)</span></span>
+<span id="cb2-17">    <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">{</span></span>
+<span id="cb2-18">      doneYet <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">true</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span></span>
+<span id="cb2-19">      cout <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;&lt;</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"access granted .."</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;&lt;</span> endl<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span></span>
+<span id="cb2-20">    <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">}</span></span>
+<span id="cb2-21">    <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">else</span> </span>
+<span id="cb2-22">    <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">{</span></span>
+<span id="cb2-23">      cout <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;&lt;</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Only Ismail Taghouchti could access."</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;&lt;</span> endl<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span></span>
+<span id="cb2-24">    <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">}</span></span>
+<span id="cb2-25">    </span>
+<span id="cb2-26">  <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">}</span>    </span>
+<span id="cb2-27">  <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">return</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span></span>
+<span id="cb2-28"><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">}</span>  </span></code></pre></div></div>
+</section>
+<section id="summing-a-range-of-numbers-using-while" class="level2">
+<h2 class="anchored" data-anchor-id="summing-a-range-of-numbers-using-while">Summing a Range of Numbers (Using while):</h2>
+<p><strong>Concepts</strong>: Input validation + running total</p>
+<p><strong>What it does</strong>: Ensures the ending value is larger than the starting value, then calculates the sum step by step.</p>
+<p><strong>Key learning</strong>: Nested logic using validation loop followed by a counting accumulation loop.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3" style="background: #f1f3f5;"><pre class="sourceCode numberSource cpp number-lines code-with-copy"><code class="sourceCode cpp"><span id="cb3-1"><span class="pp" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">#include </span><span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">&lt;iostream&gt;</span></span>
+<span id="cb3-2"><span class="pp" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">#include </span><span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">&lt;string&gt;</span></span>
+<span id="cb3-3"><span class="pp" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">#include </span><span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">&lt;cmath&gt;</span></span>
+<span id="cb3-4"><span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">using</span> <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">namespace</span> std<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span></span>
+<span id="cb3-5"></span>
+<span id="cb3-6"><span class="dt" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">int</span> main<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">()</span></span>
+<span id="cb3-7"><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">{</span></span>
+<span id="cb3-8">  <span class="dt" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">int</span> startingV<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span></span>
+<span id="cb3-9">  <span class="dt" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">int</span> endingV<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span></span>
+<span id="cb3-10"></span>
+<span id="cb3-11">  cout <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;&lt;</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Enter in a starting value: "</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span></span>
+<span id="cb3-12">  cin <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&gt;&gt;</span> startingV<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span></span>
+<span id="cb3-13"></span>
+<span id="cb3-14">  cout <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;&lt;</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Enter in an ending value:  "</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span></span>
+<span id="cb3-15">  cin <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&gt;&gt;</span> endingV<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span></span>
+<span id="cb3-16"></span>
+<span id="cb3-17"></span>
+<span id="cb3-18">  <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">while</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">(</span> endingV <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;=</span> startingV<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">)</span></span>
+<span id="cb3-19">  <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">{</span></span>
+<span id="cb3-20">    cout <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;&lt;</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Please enter starting value larger then ending value. Try again."</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;&lt;</span> endl<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span></span>
+<span id="cb3-21">    cout <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;&lt;</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Enter in a starting value: "</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span></span>
+<span id="cb3-22">    cin  <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&gt;&gt;</span> startingV<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span></span>
+<span id="cb3-23">    cout <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;&lt;</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Enter in a ending value: "</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;&lt;</span> endl<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span></span>
+<span id="cb3-24">    cin <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&gt;&gt;</span> endingV<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span></span>
+<span id="cb3-25">  <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">}</span></span>
+<span id="cb3-26">   </span>
+<span id="cb3-27">  <span class="dt" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">int</span> count <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> startingV <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span></span>
+<span id="cb3-28">  <span class="dt" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">int</span> totalSum <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> startingV<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span></span>
+<span id="cb3-29">  <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">while</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">(</span>count <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;=</span> endingV<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">)</span></span>
+<span id="cb3-30">  <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">{</span></span>
+<span id="cb3-31">      cout <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;&lt;</span> totalSum <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;&lt;</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">" + "</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;&lt;</span> count <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;&lt;</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">" = "</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span></span>
+<span id="cb3-32">      totalSum <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> totalSum <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span> count<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span></span>
+<span id="cb3-33">      cout <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;&lt;</span> totalSum <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;&lt;</span> endl<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span></span>
+<span id="cb3-34">      count <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">++;</span></span>
+<span id="cb3-35">  <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">}</span></span>
+<span id="cb3-36">    </span>
+<span id="cb3-37">  cout <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;&lt;</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"The Sum of the numbers from "</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;&lt;</span> startingV <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;&lt;</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">" to "</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;&lt;</span> endingV <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;&lt;</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">" is "</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span></span>
+<span id="cb3-38">  cout <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;&lt;</span> totalSum <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;&lt;</span> endl<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span></span>
+<span id="cb3-39">     </span>
+<span id="cb3-40">  <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">return</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span></span>
+<span id="cb3-41"><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">}</span></span></code></pre></div></div>
+</section>
+<section id="multiplication-table-nested-loops" class="level2">
+<h2 class="anchored" data-anchor-id="multiplication-table-nested-loops">Multiplication Table (Nested Loops):</h2>
+<p><strong>Concept</strong>: Nested <code>while</code> loops</p>
+<p><strong>What it does</strong>: Prints a full <code>9×9</code> multiplication table by looping rows and columns.</p>
+<p><strong>Key learning</strong>: Inner loop runs completely for each iteration of the outer loop.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4" style="background: #f1f3f5;"><pre class="sourceCode numberSource cpp number-lines code-with-copy"><code class="sourceCode cpp"><span id="cb4-1"><span class="pp" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">#include </span><span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">&lt;iostream&gt;</span></span>
+<span id="cb4-2"><span class="pp" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">#include </span><span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">&lt;string&gt;</span></span>
+<span id="cb4-3"><span class="pp" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">#include </span><span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">&lt;cmath&gt;</span></span>
+<span id="cb4-4"><span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">using</span> <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">namespace</span> std<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span></span>
+<span id="cb4-5"></span>
+<span id="cb4-6"></span>
+<span id="cb4-7"><span class="dt" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">int</span> main<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">()</span></span>
+<span id="cb4-8"><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">{</span></span>
+<span id="cb4-9">  <span class="dt" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">int</span> left<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span></span>
+<span id="cb4-10">  <span class="dt" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">int</span> right<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span></span>
+<span id="cb4-11">  <span class="dt" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">int</span> product<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span></span>
+<span id="cb4-12">  </span>
+<span id="cb4-13"></span>
+<span id="cb4-14">  left <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span></span>
+<span id="cb4-15">  <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">while</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">(</span>left <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">10</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">)</span></span>
+<span id="cb4-16">  <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">{</span></span>
+<span id="cb4-17">    right <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span></span>
+<span id="cb4-18">    <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">while</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">(</span>right <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">10</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">)</span></span>
+<span id="cb4-19">    <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">{</span></span>
+<span id="cb4-20">      product <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> left <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">*</span> right<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span></span>
+<span id="cb4-21">      cout <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;&lt;</span> left <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;&lt;</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"X"</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;&lt;</span> right <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;&lt;</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"="</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;&lt;</span> product <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;&lt;</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">" "</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span></span>
+<span id="cb4-22">      right<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">++;</span></span>
+<span id="cb4-23">    <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">}</span></span>
+<span id="cb4-24">    left<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">++;</span></span>
+<span id="cb4-25">    cout <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;&lt;</span> endl<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span></span>
+<span id="cb4-26">  <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">}</span></span>
+<span id="cb4-27"></span>
+<span id="cb4-28">  <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">return</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span></span>
+<span id="cb4-29"><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">}</span></span></code></pre></div></div>
+</section>
+<section id="summing-a-range-of-numbers-using-for" class="level2">
+<h2 class="anchored" data-anchor-id="summing-a-range-of-numbers-using-for">Summing a Range of Numbers (Using for)</h2>
+<p><strong>Concept</strong>: Comparison between <code>for</code> and <code>while</code> for counting</p>
+<p><strong>What it does</strong>: Same task as Program 3, but uses a for loop for cleaner counting logic.</p>
+<p><strong>Key learning</strong>: When iteration count is known → for loop is simpler and more readable.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5" style="background: #f1f3f5;"><pre class="sourceCode numberSource cpp number-lines code-with-copy"><code class="sourceCode cpp"><span id="cb5-1"><span class="pp" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">#include </span><span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">&lt;iostream&gt;</span></span>
+<span id="cb5-2"><span class="pp" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">#include </span><span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">&lt;string&gt;</span></span>
+<span id="cb5-3"><span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">using</span> <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">namespace</span> std<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span></span>
+<span id="cb5-4"></span>
+<span id="cb5-5"><span class="dt" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">int</span> main<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">()</span></span>
+<span id="cb5-6"><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">{</span></span>
+<span id="cb5-7">  <span class="dt" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">int</span> startingV<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span></span>
+<span id="cb5-8">  <span class="dt" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">int</span> endingV<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span></span>
+<span id="cb5-9">  <span class="dt" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">int</span> sum<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span></span>
+<span id="cb5-10">  </span>
+<span id="cb5-11">  cout <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;&lt;</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Enter in starting value: "</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;&lt;</span> endl<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span></span>
+<span id="cb5-12">  cin <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&gt;&gt;</span> startingV<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span></span>
+<span id="cb5-13"></span>
+<span id="cb5-14">  cout <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;&lt;</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Enter in endingV: "</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;&lt;</span> endl<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span></span>
+<span id="cb5-15">  cin <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&gt;&gt;</span> endingV<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span></span>
+<span id="cb5-16"></span>
+<span id="cb5-17">  <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">while</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">(</span>endingV <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;</span> startingV<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">)</span></span>
+<span id="cb5-18">  <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">{</span></span>
+<span id="cb5-19">    cout <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;&lt;</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"The ending value must be greater than or equal to starting value "</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;&lt;</span> startingV <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;&lt;</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Please enter again: "</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;&lt;</span> endl<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span></span>
+<span id="cb5-20">    cin <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&gt;&gt;</span> startingV<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span></span>
+<span id="cb5-21"></span>
+<span id="cb5-22">    cout <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;&lt;</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Enter in ending value: "</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;&lt;</span> endl<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span></span>
+<span id="cb5-23">    cin  <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&gt;&gt;</span> endingV<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span></span>
+<span id="cb5-24"></span>
+<span id="cb5-25">  <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">}</span>    </span>
+<span id="cb5-26">  sum <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> startingV<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span></span>
+<span id="cb5-27">  <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">for</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">(</span><span class="dt" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">int</span> count <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> startingV <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span> count <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;=</span> endingV<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span> count<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">++)</span></span>
+<span id="cb5-28">  <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">{</span></span>
+<span id="cb5-29">    cout <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;&lt;</span> sum <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;&lt;</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">" + "</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;&lt;</span> count <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;&lt;</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">" = "</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span></span>
+<span id="cb5-30">    sum <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> sum <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span> count<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span></span>
+<span id="cb5-31">    cout <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;&lt;</span> sum <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;&lt;</span> endl<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span></span>
+<span id="cb5-32">  </span>
+<span id="cb5-33">  <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">}</span></span>
+<span id="cb5-34">  cout <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;&lt;</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"the summation of numbers from "</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;&lt;</span> startingV <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;&lt;</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">" to "</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;&lt;</span> endingV <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;&lt;</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">" is: "</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;&lt;</span> sum <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;&lt;</span> endl<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span></span>
+<span id="cb5-35">  <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">return</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span></span>
+<span id="cb5-36"><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">}</span></span></code></pre></div></div>
+</section>
+<section id="capitalizing-letters-after-spaces" class="level2">
+<h2 class="anchored" data-anchor-id="capitalizing-letters-after-spaces">Capitalizing Letters After Spaces:</h2>
+<p><strong>Concept</strong>: Looping through strings using indexes</p>
+<p><strong>What it does</strong>: Detects spaces and capitalizes the next character.</p>
+<p><strong>Key learning</strong>: Boolean flag (<code>isCap</code>) + character processing using <code>toupper()</code>.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6" style="background: #f1f3f5;"><pre class="sourceCode numberSource cpp number-lines code-with-copy"><code class="sourceCode cpp"><span id="cb6-1"><span class="pp" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">#include </span><span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">&lt;iostream&gt;</span></span>
+<span id="cb6-2"><span class="pp" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">#include </span><span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">&lt;string&gt;</span></span>
+<span id="cb6-3"><span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">using</span> <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">namespace</span> std<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span></span>
+<span id="cb6-4"></span>
+<span id="cb6-5"><span class="dt" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">int</span> main<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">()</span></span>
+<span id="cb6-6"><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">{</span></span>
+<span id="cb6-7">  string sentence <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Today was a bit sunny."</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span></span>
+<span id="cb6-8">  cout <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;&lt;</span> sentence <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;&lt;</span> endl<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span></span>
+<span id="cb6-9">  cout <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;&lt;</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"After Capitalization: "</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;&lt;</span> endl<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span></span>
+<span id="cb6-10">  <span class="dt" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">bool</span> isCap <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">false</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span></span>
+<span id="cb6-11">  <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">for</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">(</span><span class="dt" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">int</span> i<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span> i <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;</span> sentence<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">.</span>length<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">();</span> i<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">++)</span></span>
+<span id="cb6-12">  <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">{</span></span>
+<span id="cb6-13">    <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">if</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">(</span>isCap<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">)</span></span>
+<span id="cb6-14">    <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">{</span></span>
+<span id="cb6-15">      <span class="dt" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">char</span> capL <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> toupper<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">(</span>sentence<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">[</span>i<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">]);</span></span>
+<span id="cb6-16">      cout <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;&lt;</span> capL<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span></span>
+<span id="cb6-17">      isCap <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">false</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span></span>
+<span id="cb6-18">    <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">}</span></span>
+<span id="cb6-19">    <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">else</span> </span>
+<span id="cb6-20">    <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">{</span></span>
+<span id="cb6-21">      cout <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;&lt;</span> sentence<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">[</span>i<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">];</span></span>
+<span id="cb6-22">    <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">}</span></span>
+<span id="cb6-23">    <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">if</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">(</span>sentence<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">[</span>i<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">]</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">==</span> <span class="ch" style="color: #20794D;
+background-color: null;
+font-style: inherit;">' '</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">)</span></span>
+<span id="cb6-24">    <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">{</span></span>
+<span id="cb6-25">      isCap <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">true</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span></span>
+<span id="cb6-26">    <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">}</span></span>
+<span id="cb6-27">      </span>
+<span id="cb6-28">  <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">}</span></span>
+<span id="cb6-29">  cout <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;&lt;</span> endl<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span></span>
+<span id="cb6-30">  <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">return</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span></span>
+<span id="cb6-31"><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">}</span></span></code></pre></div></div>
+</section>
+<section id="using-break-and-continue" class="level2">
+<h2 class="anchored" data-anchor-id="using-break-and-continue">Using break and continue:</h2>
+<p><strong>Concept</strong>: Loop flow control</p>
+<p><strong>What it does</strong>: Loops from 0 to 49 but:</p>
+<p><code>continue</code> skips printing even numbers</p>
+<p><code>break</code> stops when <code>i == 21</code></p>
+<p><strong>Key learning</strong>: Adjusting loop behavior without changing loop condition.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7" style="background: #f1f3f5;"><pre class="sourceCode numberSource cpp number-lines code-with-copy"><code class="sourceCode cpp"><span id="cb7-1"><span class="pp" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">#include </span><span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">&lt;iostream&gt;</span></span>
+<span id="cb7-2"><span class="pp" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">#include </span><span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">&lt;string&gt;</span></span>
+<span id="cb7-3"><span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">using</span> <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">namespace</span> std<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span></span>
+<span id="cb7-4"></span>
+<span id="cb7-5"></span>
+<span id="cb7-6"><span class="dt" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">int</span> main<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">()</span></span>
+<span id="cb7-7"><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">{</span></span>
+<span id="cb7-8">  <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">for</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">(</span><span class="dt" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">int</span> i <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span> i <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">50</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span> i<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">++)</span></span>
+<span id="cb7-9">  <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">{</span></span>
+<span id="cb7-10">    <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">if</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">(</span>i <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">==</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">21</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">)</span></span>
+<span id="cb7-11">    <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">{</span></span>
+<span id="cb7-12">      <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">break</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span></span>
+<span id="cb7-13">    <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">}</span>  </span>
+<span id="cb7-14"></span>
+<span id="cb7-15">    <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">if</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">(</span>i <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">%</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">==</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">)</span></span>
+<span id="cb7-16">    <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">{</span></span>
+<span id="cb7-17">      <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">continue</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span></span>
+<span id="cb7-18">    <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">}</span>  </span>
+<span id="cb7-19">    cout <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;&lt;</span> i <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;&lt;</span> endl<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span></span>
+<span id="cb7-20">  <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">}</span>  </span>
+<span id="cb7-21">  <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">return</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span>  </span>
+<span id="cb7-22"><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">}</span></span></code></pre></div></div>
+</section>
+</section>
+<section id="summarization" class="level1">
+<h1>Summarization:</h1>
+<p>Loops make it possible to automate repetitive tasks and control how many times something runs. This session helped me understand both <code>while</code> and <code>for</code> loops, and when it makes sense to use each one.</p>
+<p>Next time, I will continue building on this foundation by learning <strong><code>arrays</code></strong>.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8" style="background: #f1f3f5;"><pre class="sourceCode numberSource cpp number-lines code-with-copy"><code class="sourceCode cpp"></code></pre></div></div>
+
+
+<!-- -->
+
+</section>
+
+ ]]></description>
+  <category>Kernel Engineering</category>
+  <category>Cuda</category>
+  <category>Pytorch</category>
+  <category>CPP</category>
+  <guid>https://iSmailTG.github.io/Lifelong-Learner.github.io/posts/Learning_CPP/loopsLesson.html</guid>
+  <pubDate>Tue, 28 Oct 2025 23:00:00 GMT</pubDate>
+  <media:content url="https://iSmailTG.github.io/Lifelong-Learner.github.io/posts/Learning_CPP/PythonVsCPP.png" medium="image" type="image/png" height="65" width="144"/>
+</item>
 <item>
   <title>Learning CPP As Pythonista: Day-2</title>
   <dc:creator>Ismail TG</dc:creator>
@@ -14516,898 +16097,6 @@ Done!</code></pre>
   <guid>https://iSmailTG.github.io/Lifelong-Learner.github.io/posts/Kaggling_0/Kaggling_Tutorial__0.html</guid>
   <pubDate>Tue, 17 Oct 2023 23:00:00 GMT</pubDate>
   <media:content url="https://iSmailTG.github.io/Lifelong-Learner.github.io/posts/Kaggling_0/kaggle.png" medium="image" type="image/png" height="66" width="144"/>
-</item>
-<item>
-  <title>Building QAs System Using Haystack</title>
-  <dc:creator>Ismail TG</dc:creator>
-  <link>https://iSmailTG.github.io/Lifelong-Learner.github.io/posts/Haystack_1/Haystack_1.html</link>
-  <description><![CDATA[ 
-
-
-
-
-
-<section id="introduction" class="level1">
-<h1>Introduction:</h1>
-<ul>
-<li>Haystack Library is an end-2-end framework that allow us orchesting many components in order to build LLM application with minimum lines of code.</li>
-</ul>
-</section>
-<section id="questionanswer-systems-an-overview" class="level1">
-<h1>Question/Answer Systems: An Overview</h1>
-<ul>
-<li>Q/A system is a discipline which focus on building system that answers human questionm by retrieving the answers from a stored documents.</li>
-<li>Although this is a very (very!) simplistic way of describing the mechanisms that defines how the Q/A systems works, but is all we need to know at this moment.</li>
-<li>We have some stored documents, we use a retriever to pick the right documents for that match the question, and we use a language model to get the answer from them.</li>
-</ul>
-</section>
-<section id="building-a-simple-qa-system-for-a-specific-task" class="level1">
-<h1>Building A simple Q/A system for a specific task:</h1>
-<ul>
-<li><p>In this tutorial we will try to build a simple Q/A system that can answer questions about specific topic using the **<code>HayStack**</code> library.</p>
-<ul>
-<li>According to the simple <em>Definition</em> we gave to the Q/A above, we need to start the process of building that system by collecting and storing data/documents about that topic, which is by the way: <strong>Game Of Thrones</strong>. To achive that goal we will use <strong><code>DocumentStore</code></strong></li>
-<li>Then we need some kind of mechanism that help us to find documents that may provide us with answers. Wwe will use the <strong><code>Retriever</code></strong> API.</li>
-<li>Finally, we need a Deep Learning model that highlights possible answers in the context of the picked documents. We will use the <strong><code>Reader</code></strong> to achieve that goal.</li>
-</ul></li>
-</ul>
-<section id="initializing-the-documentstore" class="level2">
-<h2 class="anchored" data-anchor-id="initializing-the-documentstore">Initializing the DocumentStore:</h2>
-<ul>
-<li>In this tutorial we will use the basic type of the <code>DocumentStore</code> class, which is <strong><code>InMemoryDocumentStore</code></strong></li>
-</ul>
-<div id="cell-5" class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><span class="im" style="color: #00769E;
-background-color: null;
-font-style: inherit;">from</span> haystack.document_stores <span class="im" style="color: #00769E;
-background-color: null;
-font-style: inherit;">import</span> InMemoryDocumentStore</span>
-<span id="cb1-2">document_store<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> InMemoryDocumentStore(use_bm25<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span><span class="va" style="color: #111111;
-background-color: null;
-font-style: inherit;">True</span>)</span></code></pre></div></div>
-</div>
-<ul>
-<li>DocumentStore is a like a database or a warehouse that need to be filled with data/documents.</li>
-<li>Here we use the <code>fetch_archive_from_http</code> function to download our documents from the web.</li>
-<li>The downloaded docements needed to be prepared and organized to be processed in the next step:</li>
-</ul>
-<div id="cell-7" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}}" data-outputid="39352b3c-c3a7-4ab8-fa1e-e94f08be1e8d">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><span class="im" style="color: #00769E;
-background-color: null;
-font-style: inherit;">from</span> haystack.utils <span class="im" style="color: #00769E;
-background-color: null;
-font-style: inherit;">import</span> fetch_archive_from_http</span>
-<span id="cb2-2">doc_dir<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">'data/directory_project'</span></span>
-<span id="cb2-3">fetch_archive_from_http(url<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">'https://s3.eu-central-1.amazonaws.com/deepset.ai-farm-qa/datasets/documents/wiki_gameofthrones_txt1.zip'</span>, output_dir<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> doc_dir)</span></code></pre></div></div>
-<div class="cell-output cell-output-display" data-execution_count="3">
-<pre><code>True</code></pre>
-</div>
-</div>
-<ul>
-<li>Now we have all our data stored in this path: <code>data/directory_project</code> and assigned to <code>doc_dir</code></li>
-<li>At this momment our data is raw and should be converted in Document objects according the <code>HayStack</code> standars. In order to do that we will use <code>TextIndexingPipeline</code> and write them into <code>DocumentStore</code></li>
-</ul>
-<div id="cell-9" class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><span class="im" style="color: #00769E;
-background-color: null;
-font-style: inherit;">import</span> os</span>
-<span id="cb4-2"><span class="im" style="color: #00769E;
-background-color: null;
-font-style: inherit;">from</span> haystack.pipelines.standard_pipelines <span class="im" style="color: #00769E;
-background-color: null;
-font-style: inherit;">import</span> TextIndexingPipeline</span>
-<span id="cb4-3"></span>
-<span id="cb4-4">files_to_index <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> [doc_dir <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">+</span> <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">'/'</span> <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">+</span> f <span class="cf" style="color: #003B4F;
-background-color: null;
-font-weight: bold;
-font-style: inherit;">for</span> f <span class="kw" style="color: #003B4F;
-background-color: null;
-font-weight: bold;
-font-style: inherit;">in</span> os.listdir(doc_dir)]</span>
-<span id="cb4-5">indexing_pipeline <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> TextIndexingPipeline(document_store)</span>
-<span id="cb4-6">indexing_pipeline.run_batch(file_paths<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span>files_to_index)</span></code></pre></div></div>
-</div>
-</section>
-<section id="initializing-a-retriever" class="level2">
-<h2 class="anchored" data-anchor-id="initializing-a-retriever">Initializing A Retriever:</h2>
-<ul>
-<li>A retriever will map through all documents we stored and find the more likely dosuments that contains possible answer to our question</li>
-<li>Here we initialize the <strong>BM25Retriever</strong> algorithm and make it access the InMemoryDocumentStore</li>
-</ul>
-<div id="cell-11" class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><span class="im" style="color: #00769E;
-background-color: null;
-font-style: inherit;">from</span> haystack.nodes <span class="im" style="color: #00769E;
-background-color: null;
-font-style: inherit;">import</span> BM25Retriever</span>
-<span id="cb5-2">retriever<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> BM25Retriever(document_store<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span>document_store)</span></code></pre></div></div>
-</div>
-</section>
-<section id="initializing-the-reader" class="level2">
-<h2 class="anchored" data-anchor-id="initializing-the-reader">Initializing the Reader:</h2>
-<ul>
-<li>The Reader get access to all texts from Retriver and extracts candidates answers</li>
-<li>Reader is based on LLM’s</li>
-<li>In this turorial we used the <code>roberta-base-squad2</code> model</li>
-</ul>
-<div id="cell-13" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:209,&quot;referenced_widgets&quot;:[&quot;691d1dd3b92642598120cb1d49a075b9&quot;,&quot;c484d26c41204b27b8eddf95b56efa58&quot;,&quot;a5831b3bfd46485e899b7dea668f3f69&quot;,&quot;0b180785bd5043dc94735b3960352a10&quot;,&quot;152ef510a8aa40d8af9692cbb3333026&quot;,&quot;dbc6d0fa4f224d49a775d89e0825de6d&quot;,&quot;48252b94dd9243e08d8881d02dec10b1&quot;,&quot;98ad078b87444dba8424d727e1dab559&quot;,&quot;2cfeb696f20c46cd934658e66027e6fa&quot;,&quot;e4d5ac4a822c484e8493ee3c1f9302b9&quot;,&quot;1ff76a2a4e404e4eba17ad9199998169&quot;,&quot;8aa945da97164878ae71c6905b1e7d9c&quot;,&quot;1b1ae85f0c0842aebd99395e1056c124&quot;,&quot;e215317651454ef19f64a8d6f487b586&quot;,&quot;8a488828c954445987e476f55e4d9150&quot;,&quot;1bd5a68dc66f4392ad7bac97ee405136&quot;,&quot;95c810e92ca948b991f01e36982875e6&quot;,&quot;e68aca7862b34784a26e15d4a51be4c2&quot;,&quot;d2360d78b0f746b2a8107e4339d6a49c&quot;,&quot;42594251bef4451bbebadda917b6399c&quot;,&quot;dcbb5c4fe9dc4e428471a661e97835b3&quot;,&quot;5037e3e1cf814708817c2b65409abb02&quot;,&quot;02170cb7ec194dd4a4cccaf7e4ccde2e&quot;,&quot;2cda224d226a44fab16ed3fef7a975d6&quot;,&quot;9faa15f96d124b4d90cb70d34d863922&quot;,&quot;c796625d3f9c4f09bdc78812f345eea1&quot;,&quot;d91a417e3ed2498dbdbd9138cc2cdf91&quot;,&quot;cd6fa408995c4177a7617368a7c26117&quot;,&quot;667c6cb7da86417ea4f3bdfb09b4a552&quot;,&quot;9428ddcd480543068f5b005e7cd99607&quot;,&quot;2968cf0f7b9645db8e3bd6776d779d19&quot;,&quot;9c0b1e0f87b54490a2d16adcbc069fbf&quot;,&quot;275b8ad6a45042c29ee6aae67d2403d5&quot;,&quot;a162cc6d3a004415b7987e086e06ed9c&quot;,&quot;8159738ac3a94125a0df48996f66aebb&quot;,&quot;d05d7bbff49d4d56b2b2f9e6f51e8aa0&quot;,&quot;4371865e98a4450391ad21f431e4348a&quot;,&quot;5984532b51b14a6d9b9069b193020b54&quot;,&quot;55331cc02b574e50b1d4b4e085ead15f&quot;,&quot;de25eb720b7f405c9a9d8353e5c91e0c&quot;,&quot;dbbb470187104bbfbbd34f207f6fa7f2&quot;,&quot;30d8f45877b746b78e4f0cb4573d699c&quot;,&quot;fc2a9e59a3d74856b9ac89d27db1db7e&quot;,&quot;2974ebe29be740158e82af47d81b5918&quot;,&quot;28b6786ef9ae4811af0e1ecd8f1f4a78&quot;,&quot;188b96c88e9f4bde9d0c612258743cb6&quot;,&quot;f51be85df67a453992c3137e59501dcf&quot;,&quot;58a160bf7e7f436e80532d4f3f027499&quot;,&quot;c8a354ddc1d24eff9da4e71a8a9e2127&quot;,&quot;0bf8021c81124febabd4e4ce395cd4a1&quot;,&quot;c14da191555f4a49835a6f7071860e31&quot;,&quot;75c9a46c204348309b6f18b02a10e378&quot;,&quot;702ac255a4914def993961cb0bccd8ba&quot;,&quot;1f785caa87e44e4381988285530f07f9&quot;,&quot;460ebd2b0ad141e388a4c5abe91994f1&quot;,&quot;1a3b0d2bedee42bbb12a561c2d2c0e23&quot;,&quot;ea43103fe30b4082af48ca89311c7f0c&quot;,&quot;fb739bbbdc9a4a4eb8f164e3e7acf54d&quot;,&quot;48181d72e5674f9585fff8283118ff91&quot;,&quot;7dba68e67769464983b7d529a2b38302&quot;,&quot;9750244535a447348948fbb2a34391b4&quot;,&quot;960395a899d841cd8250e38cfd82ca54&quot;,&quot;40eaf2c72940456ba0c5b48553f2d569&quot;,&quot;00945c07759b44c99f53658e0c572e8e&quot;,&quot;3af2ec0e7d63451db9ee5a6484899947&quot;,&quot;46bed05006c641299dd28c2f091f2345&quot;]}}" data-outputid="f25b671d-7636-4ba5-b1ab-334644f778cc">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><span class="im" style="color: #00769E;
-background-color: null;
-font-style: inherit;">from</span> haystack.nodes <span class="im" style="color: #00769E;
-background-color: null;
-font-style: inherit;">import</span> FARMReader</span>
-<span id="cb6-2">reader <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> FARMReader(model_name_or_path<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">'deepset/roberta-base-squad2'</span>, use_gpu<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span><span class="va" style="color: #111111;
-background-color: null;
-font-style: inherit;">True</span>)</span></code></pre></div></div>
-<div class="cell-output cell-output-display">
-<script type="application/vnd.jupyter.widget-view+json">
-{"model_id":"691d1dd3b92642598120cb1d49a075b9","version_major":2,"version_minor":0,"quarto_mimetype":"application/vnd.jupyter.widget-view+json"}
-</script>
-</div>
-<div class="cell-output cell-output-display">
-<script type="application/vnd.jupyter.widget-view+json">
-{"model_id":"8aa945da97164878ae71c6905b1e7d9c","version_major":2,"version_minor":0,"quarto_mimetype":"application/vnd.jupyter.widget-view+json"}
-</script>
-</div>
-<div class="cell-output cell-output-display">
-<script type="application/vnd.jupyter.widget-view+json">
-{"model_id":"02170cb7ec194dd4a4cccaf7e4ccde2e","version_major":2,"version_minor":0,"quarto_mimetype":"application/vnd.jupyter.widget-view+json"}
-</script>
-</div>
-<div class="cell-output cell-output-display">
-<script type="application/vnd.jupyter.widget-view+json">
-{"model_id":"a162cc6d3a004415b7987e086e06ed9c","version_major":2,"version_minor":0,"quarto_mimetype":"application/vnd.jupyter.widget-view+json"}
-</script>
-</div>
-<div class="cell-output cell-output-display">
-<script type="application/vnd.jupyter.widget-view+json">
-{"model_id":"28b6786ef9ae4811af0e1ecd8f1f4a78","version_major":2,"version_minor":0,"quarto_mimetype":"application/vnd.jupyter.widget-view+json"}
-</script>
-</div>
-<div class="cell-output cell-output-display">
-<script type="application/vnd.jupyter.widget-view+json">
-{"model_id":"1a3b0d2bedee42bbb12a561c2d2c0e23","version_major":2,"version_minor":0,"quarto_mimetype":"application/vnd.jupyter.widget-view+json"}
-</script>
-</div>
-</div>
-</section>
-<section id="creating-the-retriver-reader-pipeline" class="level2">
-<h2 class="anchored" data-anchor-id="creating-the-retriver-reader-pipeline">Creating the Retriver-Reader Pipeline:</h2>
-<ul>
-<li>Since we have everything we need to build this Q/A system nom, all we have to do is put every piece together in one <code>Pipeline</code></li>
-</ul>
-<div id="cell-15" class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><span class="im" style="color: #00769E;
-background-color: null;
-font-style: inherit;">from</span> haystack.pipelines <span class="im" style="color: #00769E;
-background-color: null;
-font-style: inherit;">import</span> ExtractiveQAPipeline</span>
-<span id="cb7-2">pipe <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> ExtractiveQAPipeline(reader, retriever)</span></code></pre></div></div>
-</div>
-</section>
-<section id="asking-questions" class="level2">
-<h2 class="anchored" data-anchor-id="asking-questions">Asking Questions:</h2>
-<div id="cell-17" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}}" data-outputid="0d830aed-2fed-4536-fc09-7fd14f505b1f">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb8-1">predictions <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> pipe.run(query<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">'who is the most powerful creature?'</span>, params<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span>{<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"Retriever"</span>: {<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"top_k"</span>: <span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">10</span>}, <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"Reader"</span>: {<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"top_k"</span>: <span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">5</span>}})</span></code></pre></div></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Inferencing Samples: 100%|██████████| 1/1 [00:03&lt;00:00,  3.66s/ Batches]</code></pre>
-</div>
-</div>
-<div id="cell-18" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}}" data-outputid="04256ebd-e122-4a19-97ea-187c8e28319a">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb10-1"><span class="im" style="color: #00769E;
-background-color: null;
-font-style: inherit;">from</span> haystack.utils <span class="im" style="color: #00769E;
-background-color: null;
-font-style: inherit;">import</span> print_answers</span>
-<span id="cb10-2">print_answers(predictions, details<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">'minimum'</span>)</span></code></pre></div></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>'Query: who is the most powerful creature?'
-'Answers:'
-[   {   'answer': 'Khal Drogo',
-        'context': '\n'
-                   '\n'
-                   "'''Khal Drogo''' is a fictional character in the ''A Song "
-                   "of Ice and Fire'' series of fantasy novels by American "
-                   'author George R. R. Martin and in t'},
-    {   'answer': 'Night King',
-        'context': '\n'
-                   '\n'
-                   "The '''Night King''' is a fictional character appearing in "
-                   "the HBO high fantasy television series ''Game of "
-                   "Thrones'', based on George R. R. Martin'"},
-    {   'answer': 'Drogo',
-        'context': ' prove to be fundamental to her growth as both a ruler and '
-                   'a conqueror.\n'
-                   '\n'
-                   'Drogo is portrayed by Jason Momoa in the HBO television '
-                   'adaptation.\n'
-                   '\n'
-                   '==Overvi'},
-    {   'answer': 'Jon Snow',
-        'context': 'rge and sinewy man that towers over others, such as Davos '
-                   'Seaworth and Jon Snow, a Baratheon trait. He lacks the '
-                   'long black hair of his brothers, and '},
-    {   'answer': 'Night King',
-        'context': 'urdik in seasons 6 to 8.\n'
-                   '\n'
-                   '==Description==\n'
-                   "In ''Game of Thrones'', the Night King is physically "
-                   'distinguished from the other White Walkers by his "crow'}]</code></pre>
-</div>
-</div>
-
-
-</section>
-</section>
-
- ]]></description>
-  <category>Haystack</category>
-  <category>LLMs</category>
-  <category>QAs</category>
-  <category>NLP</category>
-  <guid>https://iSmailTG.github.io/Lifelong-Learner.github.io/posts/Haystack_1/Haystack_1.html</guid>
-  <pubDate>Mon, 16 Oct 2023 23:00:00 GMT</pubDate>
-  <media:content url="https://iSmailTG.github.io/Lifelong-Learner.github.io/posts/Haystack_1/Haystack.png" medium="image" type="image/png" height="70" width="144"/>
-</item>
-<item>
-  <title>Utilizing Existing FAQs for Question Answering</title>
-  <dc:creator>Ismail TG</dc:creator>
-  <link>https://iSmailTG.github.io/Lifelong-Learner.github.io/posts/Haystack_2/ch3_haystack.html</link>
-  <description><![CDATA[ 
-
-
-
-
-
-<section id="introduction" class="level1">
-
-<ul>
-<li>Usually the Extractive Question Answering systems uses pure data-texts to generate answers, but in some cases it we could useful to use them on previous FAQs as dataset</li>
-<li>This can be appealing for many reasons:
-<ul>
-<li>We already have data</li>
-<li>Inference time is reduced</li>
-<li>Much control over answers</li>
-</ul></li>
-<li>The problem is that this can generalize good enough only on similar questions, which make this method good for certain situations only.</li>
-</ul>
-</section>
-<section id="create-simple-documentstore" class="level1">
-<h1>Create simple DocumentStore:</h1>
-<ul>
-<li>As we saw before <code>InMemoryDocumentStore</code> is an easy way for creating <code>DocumentStore</code> for simple prototyping.</li>
-</ul>
-<div id="cell-3" class="cell" data-execution_count="2">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><span class="im" style="color: #00769E;
-background-color: null;
-font-style: inherit;">from</span> haystack.document_stores <span class="im" style="color: #00769E;
-background-color: null;
-font-style: inherit;">import</span> InMemoryDocumentStore</span>
-<span id="cb1-2">document_store <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> InMemoryDocumentStore()</span></code></pre></div></div>
-</div>
-</section>
-<section id="create-a-retriever-using-embeddings" class="level1">
-<h1>Create a Retriever using embeddings:</h1>
-<ul>
-<li>The idea here to create embeddings for questions we will get from users</li>
-<li>This embeddings must match the FAQs we have</li>
-<li>First we need to create the embeddings from a model we use</li>
-<li>Then apply the same embeddings on the FAQs we will use as dataset</li>
-</ul>
-<div id="cell-5" class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><span class="im" style="color: #00769E;
-background-color: null;
-font-style: inherit;">from</span> haystack.nodes <span class="im" style="color: #00769E;
-background-color: null;
-font-style: inherit;">import</span> EmbeddingRetriever</span>
-<span id="cb2-2"></span>
-<span id="cb2-3">retriever <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> EmbeddingRetriever(document_store <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> document_store,</span>
-<span id="cb2-4">                               embedding_model <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"sentence-transformers/all-MiniLM-L6-v2"</span>,</span>
-<span id="cb2-5">                               use_gpu <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> <span class="va" style="color: #111111;
-background-color: null;
-font-style: inherit;">True</span>,</span>
-<span id="cb2-6">                               scale_score <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> <span class="va" style="color: #111111;
-background-color: null;
-font-style: inherit;">False</span>)</span></code></pre></div></div>
-</div>
-<ul>
-<li>Download FAQs dataset</li>
-</ul>
-<div id="cell-7" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}}" data-outputid="7a34a8bf-982c-417f-eb0c-d1c5fc5c5998" data-execution_count="4">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;"># download</span></span>
-<span id="cb3-2"><span class="im" style="color: #00769E;
-background-color: null;
-font-style: inherit;">from</span> haystack.utils <span class="im" style="color: #00769E;
-background-color: null;
-font-style: inherit;">import</span> fetch_archive_from_http</span>
-<span id="cb3-3">doc_dir <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">'data/tutorial'</span></span>
-<span id="cb3-4">urls <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">'https://s3.eu-central-1.amazonaws.com/deepset.ai-farm-qa/datasets/documents/small_faq_covid.csv.zip'</span></span>
-<span id="cb3-5">fetch_archive_from_http(url <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> urls, output_dir <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> doc_dir)</span></code></pre></div></div>
-<div class="cell-output cell-output-display" data-execution_count="4">
-<pre><code>True</code></pre>
-</div>
-</div>
-<ul>
-<li>Here we use <code>Pandas</code> to manipulate the dataset we just downloaded.</li>
-<li>First create the dataframe</li>
-</ul>
-<div id="cell-9" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:660}}" data-outputid="475e9cf3-c227-4789-db07-68d2f8a8ab56" data-execution_count="5">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><span class="im" style="color: #00769E;
-background-color: null;
-font-style: inherit;">import</span> pandas <span class="im" style="color: #00769E;
-background-color: null;
-font-style: inherit;">as</span> pd</span>
-<span id="cb5-2">df <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> pd.read_csv(<span class="ss" style="color: #20794D;
-background-color: null;
-font-style: inherit;">f'</span><span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">{</span>doc_dir<span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">}</span><span class="ss" style="color: #20794D;
-background-color: null;
-font-style: inherit;">/small_faq_covid.csv'</span>)</span>
-<span id="cb5-3">df.head()</span></code></pre></div></div>
-<div class="cell-output cell-output-display" data-execution_count="5">
-<div id="df-7c46bc16-ddd5-43b6-b331-bbc2cc7a2a7a" class="colab-df-container">
-    <div>
-
-
-<table class="dataframe caption-top table table-sm table-striped small" data-border="1">
-<thead>
-<tr class="header">
-<th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th">question</th>
-<th data-quarto-table-cell-role="th">answer</th>
-<th data-quarto-table-cell-role="th">answer_html</th>
-<th data-quarto-table-cell-role="th">link</th>
-<th data-quarto-table-cell-role="th">name</th>
-<th data-quarto-table-cell-role="th">source</th>
-<th data-quarto-table-cell-role="th">category</th>
-<th data-quarto-table-cell-role="th">country</th>
-<th data-quarto-table-cell-role="th">region</th>
-<th data-quarto-table-cell-role="th">city</th>
-<th data-quarto-table-cell-role="th">lang</th>
-<th data-quarto-table-cell-role="th">last_update</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<th data-quarto-table-cell-role="th">0</th>
-<td>What is a novel coronavirus?</td>
-<td>A novel coronavirus is a new coronavirus that ...</td>
-<td>&lt;p&gt;A novel coronavirus is a new coronavirus th...</td>
-<td>\nhttps://www.cdc.gov/coronavirus/2019-ncov/fa...</td>
-<td>Frequently Asked Questions</td>
-<td>Center for Disease Control and Prevention (CDC)</td>
-<td>Coronavirus Disease 2019 Basics</td>
-<td>USA</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>en</td>
-<td>2020/03/17</td>
-</tr>
-<tr class="even">
-<th data-quarto-table-cell-role="th">1</th>
-<td>Why is the disease being called coronavirus di...</td>
-<td>On February 11, 2020 the World Health Organiza...</td>
-<td>&lt;p&gt;On February 11, 2020 the World Health Organ...</td>
-<td>\nhttps://www.cdc.gov/coronavirus/2019-ncov/fa...</td>
-<td>Frequently Asked Questions</td>
-<td>Center for Disease Control and Prevention (CDC)</td>
-<td>Coronavirus Disease 2019 Basics</td>
-<td>USA</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>en</td>
-<td>2020/03/17</td>
-</tr>
-<tr class="odd">
-<th data-quarto-table-cell-role="th">2</th>
-<td>Why might someone blame or avoid individuals a...</td>
-<td>People in the U.S. may be worried or anxious a...</td>
-<td>&lt;p&gt;People in the U.S. may be worried or anxiou...</td>
-<td>\nhttps://www.cdc.gov/coronavirus/2019-ncov/fa...</td>
-<td>Frequently Asked Questions</td>
-<td>Center for Disease Control and Prevention (CDC)</td>
-<td>Coronavirus Disease 2019 Basics</td>
-<td>USA</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>en</td>
-<td>2020/03/17</td>
-</tr>
-<tr class="even">
-<th data-quarto-table-cell-role="th">3</th>
-<td>How can people help stop stigma related to COV...</td>
-<td>People can fight stigma and help, not hurt, ot...</td>
-<td>&lt;p&gt;People can fight stigma and help, not hurt,...</td>
-<td>\nhttps://www.cdc.gov/coronavirus/2019-ncov/fa...</td>
-<td>Frequently Asked Questions</td>
-<td>Center for Disease Control and Prevention (CDC)</td>
-<td>How It Spreads</td>
-<td>USA</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>en</td>
-<td>2020/03/17</td>
-</tr>
-<tr class="odd">
-<th data-quarto-table-cell-role="th">4</th>
-<td>What is the source of the virus?</td>
-<td>Coronaviruses are a large family of viruses. S...</td>
-<td>&lt;p&gt;Coronaviruses are a large family of viruses...</td>
-<td>\nhttps://www.cdc.gov/coronavirus/2019-ncov/fa...</td>
-<td>Frequently Asked Questions</td>
-<td>Center for Disease Control and Prevention (CDC)</td>
-<td>How It Spreads</td>
-<td>USA</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>en</td>
-<td>2020/03/17</td>
-</tr>
-</tbody>
-</table>
-
-</div>
-    <div class="colab-df-buttons">
-
-  <div class="colab-df-container">
-    <button class="colab-df-convert" onclick="convertToInteractive('df-7c46bc16-ddd5-43b6-b331-bbc2cc7a2a7a')" title="Convert this dataframe to an interactive table." style="display:none;">
-
-  <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewbox="0 -960 960 960">
-    <path d="M120-120v-720h720v720H120Zm60-500h600v-160H180v160Zm220 220h160v-160H400v160Zm0 220h160v-160H400v160ZM180-400h160v-160H180v160Zm440 0h160v-160H620v160ZM180-180h160v-160H180v160Zm440 0h160v-160H620v160Z"></path>
-  </svg>
-    </button>
-
-  <style>
-    .colab-df-container {
-      display:flex;
-      gap: 12px;
-    }
-
-    .colab-df-convert {
-      background-color: #E8F0FE;
-      border: none;
-      border-radius: 50%;
-      cursor: pointer;
-      display: none;
-      fill: #1967D2;
-      height: 32px;
-      padding: 0 0 0 0;
-      width: 32px;
-    }
-
-    .colab-df-convert:hover {
-      background-color: #E2EBFA;
-      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
-      fill: #174EA6;
-    }
-
-    .colab-df-buttons div {
-      margin-bottom: 4px;
-    }
-
-    [theme=dark] .colab-df-convert {
-      background-color: #3B4455;
-      fill: #D2E3FC;
-    }
-
-    [theme=dark] .colab-df-convert:hover {
-      background-color: #434B5C;
-      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
-      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
-      fill: #FFFFFF;
-    }
-  </style>
-
-    <script>
-      const buttonEl =
-        document.querySelector('#df-7c46bc16-ddd5-43b6-b331-bbc2cc7a2a7a button.colab-df-convert');
-      buttonEl.style.display =
-        google.colab.kernel.accessAllowed ? 'block' : 'none';
-
-      async function convertToInteractive(key) {
-        const element = document.querySelector('#df-7c46bc16-ddd5-43b6-b331-bbc2cc7a2a7a');
-        const dataTable =
-          await google.colab.kernel.invokeFunction('convertToInteractive',
-                                                    [key], {});
-        if (!dataTable) return;
-
-        const docLinkHtml = 'Like what you see? Visit the ' +
-          '<a target="_blank" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'
-          + ' to learn more about interactive tables.';
-        element.innerHTML = '';
-        dataTable['output_type'] = 'display_data';
-        await google.colab.output.renderOutput(dataTable, element);
-        const docLink = document.createElement('div');
-        docLink.innerHTML = docLinkHtml;
-        element.appendChild(docLink);
-      }
-    </script>
-  </div>
-
-
-<div id="df-53091ddd-9248-44cc-bb01-66ba7a293729">
-  <button class="colab-df-quickchart" onclick="quickchart('df-53091ddd-9248-44cc-bb01-66ba7a293729')" title="Suggest charts." style="display:none;">
-
-<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewbox="0 0 24 24" width="24px">
-    <g>
-        <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z"></path>
-    </g>
-</svg>
-  </button>
-
-<style>
-  .colab-df-quickchart {
-      --bg-color: #E8F0FE;
-      --fill-color: #1967D2;
-      --hover-bg-color: #E2EBFA;
-      --hover-fill-color: #174EA6;
-      --disabled-fill-color: #AAA;
-      --disabled-bg-color: #DDD;
-  }
-
-  [theme=dark] .colab-df-quickchart {
-      --bg-color: #3B4455;
-      --fill-color: #D2E3FC;
-      --hover-bg-color: #434B5C;
-      --hover-fill-color: #FFFFFF;
-      --disabled-bg-color: #3B4455;
-      --disabled-fill-color: #666;
-  }
-
-  .colab-df-quickchart {
-    background-color: var(--bg-color);
-    border: none;
-    border-radius: 50%;
-    cursor: pointer;
-    display: none;
-    fill: var(--fill-color);
-    height: 32px;
-    padding: 0;
-    width: 32px;
-  }
-
-  .colab-df-quickchart:hover {
-    background-color: var(--hover-bg-color);
-    box-shadow: 0 1px 2px rgba(60, 64, 67, 0.3), 0 1px 3px 1px rgba(60, 64, 67, 0.15);
-    fill: var(--button-hover-fill-color);
-  }
-
-  .colab-df-quickchart-complete:disabled,
-  .colab-df-quickchart-complete:disabled:hover {
-    background-color: var(--disabled-bg-color);
-    fill: var(--disabled-fill-color);
-    box-shadow: none;
-  }
-
-  .colab-df-spinner {
-    border: 2px solid var(--fill-color);
-    border-color: transparent;
-    border-bottom-color: var(--fill-color);
-    animation:
-      spin 1s steps(1) infinite;
-  }
-
-  @keyframes spin {
-    0% {
-      border-color: transparent;
-      border-bottom-color: var(--fill-color);
-      border-left-color: var(--fill-color);
-    }
-    20% {
-      border-color: transparent;
-      border-left-color: var(--fill-color);
-      border-top-color: var(--fill-color);
-    }
-    30% {
-      border-color: transparent;
-      border-left-color: var(--fill-color);
-      border-top-color: var(--fill-color);
-      border-right-color: var(--fill-color);
-    }
-    40% {
-      border-color: transparent;
-      border-right-color: var(--fill-color);
-      border-top-color: var(--fill-color);
-    }
-    60% {
-      border-color: transparent;
-      border-right-color: var(--fill-color);
-    }
-    80% {
-      border-color: transparent;
-      border-right-color: var(--fill-color);
-      border-bottom-color: var(--fill-color);
-    }
-    90% {
-      border-color: transparent;
-      border-bottom-color: var(--fill-color);
-    }
-  }
-</style>
-
-  <script>
-    async function quickchart(key) {
-      const quickchartButtonEl =
-        document.querySelector('#' + key + ' button');
-      quickchartButtonEl.disabled = true;  // To prevent multiple clicks.
-      quickchartButtonEl.classList.add('colab-df-spinner');
-      try {
-        const charts = await google.colab.kernel.invokeFunction(
-            'suggestCharts', [key], {});
-      } catch (error) {
-        console.error('Error during call to suggestCharts:', error);
-      }
-      quickchartButtonEl.classList.remove('colab-df-spinner');
-      quickchartButtonEl.classList.add('colab-df-quickchart-complete');
-    }
-    (() => {
-      let quickchartButtonEl =
-        document.querySelector('#df-53091ddd-9248-44cc-bb01-66ba7a293729 button');
-      quickchartButtonEl.style.display =
-        google.colab.kernel.accessAllowed ? 'block' : 'none';
-    })();
-  </script>
-</div>
-    </div>
-  </div>
-</div>
-</div>
-<ul>
-<li>Since we download the data from internet we should clean it properly before use in kind of data processing</li>
-</ul>
-<div id="cell-11" class="cell" data-execution_count="6">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1">df.fillna(value<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">''</span>, inplace<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> <span class="va" style="color: #111111;
-background-color: null;
-font-style: inherit;">True</span>)</span>
-<span id="cb6-2">df[<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"question"</span>] <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> df[<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"question"</span>].<span class="bu" style="color: null;
-background-color: null;
-font-style: inherit;">apply</span>(<span class="kw" style="color: #003B4F;
-background-color: null;
-font-weight: bold;
-font-style: inherit;">lambda</span> x: x.strip())</span>
-<span id="cb6-3">questions <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> <span class="bu" style="color: null;
-background-color: null;
-font-style: inherit;">list</span>(df.question.values)</span></code></pre></div></div>
-</div>
-<ul>
-<li>Create Embeddings on the questions</li>
-</ul>
-<div id="cell-13" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:121,&quot;referenced_widgets&quot;:[&quot;4c53cd9e9f0f4f98bae1d86cb2a4b166&quot;,&quot;227d20b994434ad1a4a4c937dfc80d5f&quot;,&quot;99c3103b299d4e52a86e8ef7d6a3a69c&quot;,&quot;934fa525fbea47a38734013cfe7b3677&quot;,&quot;c374dfc09bc44ca48c639c48063424d8&quot;,&quot;e3b6efd698f841db87d0026f91e3a46f&quot;,&quot;c425ee9630d240f5829e300a24f2af1a&quot;,&quot;362adfef2b024879a6bf1347d685f8e6&quot;,&quot;8beb12e7e9b34fe1b6d9adb93ba6d2f7&quot;,&quot;786f6e42087e44519a324710175f1daf&quot;,&quot;4546f44418a949dd8d964b05739a60a9&quot;]}}" data-outputid="1b9bbd8d-8fd2-4fe0-e3d5-851a77ae258c" data-execution_count="7">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1">df.embedding <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> retriever.embed_queries(queries<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span>questions).tolist()</span>
-<span id="cb7-2"><span class="bu" style="color: null;
-background-color: null;
-font-style: inherit;">len</span>(df.embedding)</span></code></pre></div></div>
-<div class="cell-output cell-output-display">
-<script type="application/vnd.jupyter.widget-view+json">
-{"model_id":"4c53cd9e9f0f4f98bae1d86cb2a4b166","version_major":2,"version_minor":0,"quarto_mimetype":"application/vnd.jupyter.widget-view+json"}
-</script>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>UserWarning: Pandas doesn't allow columns to be created via a new attribute name - see https://pandas.pydata.org/pandas-docs/stable/indexing.html#attribute-access
-  df.embedding = retriever.embed_queries(queries=questions).tolist()</code></pre>
-</div>
-<div class="cell-output cell-output-display" data-execution_count="7">
-<pre><code>213</code></pre>
-</div>
-</div>
-<ul>
-<li>Rename the <code>question</code> series with content</li>
-</ul>
-<div id="cell-15" class="cell" data-execution_count="8">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb10-1">df <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> df.rename(columns<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span>{<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">'question'</span>:<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">'content'</span>})</span></code></pre></div></div>
-</div>
-<ul>
-<li>Convert te dataframe into a list of dics and index them in our DocumentStore</li>
-</ul>
-<div id="cell-17" class="cell" data-execution_count="9">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb11-1">docs_to_index <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> df.to_dict(orient<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">'records'</span>)</span>
-<span id="cb11-2">document_store.write_documents(docs_to_index)</span></code></pre></div></div>
-</div>
-</section>
-<section id="ask-questions" class="level1">
-<h1>Ask questions</h1>
-<ul>
-<li>We first need to initialize the pipeline:</li>
-</ul>
-<div id="cell-19" class="cell" data-execution_count="10">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb12-1"><span class="im" style="color: #00769E;
-background-color: null;
-font-style: inherit;">from</span> haystack.pipelines <span class="im" style="color: #00769E;
-background-color: null;
-font-style: inherit;">import</span> FAQPipeline</span>
-<span id="cb12-2">pipe <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> FAQPipeline(retriever<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span>retriever)</span></code></pre></div></div>
-</div>
-<div id="cell-20" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:138,&quot;referenced_widgets&quot;:[&quot;19f2dbc821aa4db89c56747c7bfa0d4b&quot;,&quot;dd12b71e4be94cdda693b4c9aca28014&quot;,&quot;4c646028aba549e4b115962483322288&quot;,&quot;31f47c1e9aa64697824ef9e24e093446&quot;,&quot;058e775e1ea84d298e2eed2555318e7d&quot;,&quot;cbc03e61fd334570bef89815f883f66e&quot;,&quot;7cceb34781ba45758a1980a6e2b625f0&quot;,&quot;30ef78745a494b61aaa12531dd3553d6&quot;,&quot;6aad51b5887b424fa0a93499aea7fd43&quot;,&quot;513d1d7a0aa4480dbab9714ca0834fb2&quot;,&quot;b06f2c3e0fdf4cab8e00a8d39c244d82&quot;]}}" data-outputid="7c3d4fa4-80f3-4411-c905-d45daffc4b39" data-execution_count="11">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb13-1"><span class="im" style="color: #00769E;
-background-color: null;
-font-style: inherit;">from</span> haystack.utils <span class="im" style="color: #00769E;
-background-color: null;
-font-style: inherit;">import</span> print_answers</span>
-<span id="cb13-2"></span>
-<span id="cb13-3"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;"># Run any question and change top_k to see more or less answers</span></span>
-<span id="cb13-4">prediction <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> pipe.run(query<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"How is the virus spreading?"</span>, params<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span>{<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"Retriever"</span>: {<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"top_k"</span>: <span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">1</span>}})</span>
-<span id="cb13-5"></span>
-<span id="cb13-6">print_answers(prediction, details<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"medium"</span>)</span></code></pre></div></div>
-<div class="cell-output cell-output-display">
-<script type="application/vnd.jupyter.widget-view+json">
-{"model_id":"19f2dbc821aa4db89c56747c7bfa0d4b","version_major":2,"version_minor":0,"quarto_mimetype":"application/vnd.jupyter.widget-view+json"}
-</script>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>WARNING:haystack.document_stores.memory:Skipping some of your documents that don't have embeddings. To generate embeddings, run the document store's update_embeddings() method.</code></pre>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code>'Query: How is the virus spreading?'
-'Answers:'
-[]</code></pre>
-</div>
-</div>
-
-
-</section>
-
- ]]></description>
-  <category>Haystack</category>
-  <category>LLMs</category>
-  <category>QAs</category>
-  <category>NLP</category>
-  <category>Pandas</category>
-  <guid>https://iSmailTG.github.io/Lifelong-Learner.github.io/posts/Haystack_2/ch3_haystack.html</guid>
-  <pubDate>Mon, 16 Oct 2023 23:00:00 GMT</pubDate>
-  <media:content url="https://iSmailTG.github.io/Lifelong-Learner.github.io/posts/Haystack_2/Haystack.png" medium="image" type="image/png" height="70" width="144"/>
 </item>
 </channel>
 </rss>
