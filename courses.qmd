@@ -56,6 +56,8 @@ Learning C++ fundamentals and CUDA programming for GPU kernel development.
 
 - [View Learning Notes](posts/Learning_CPP/basicsLesson1.md) -Lesson - 1 :  Understanding the Compiler system of C++ and basic Synatax.
 - [View Learning Notes](posts/Learning_CPP/basicsLesson2.md) -Lesson - 2 :  Learning about if statements, evaluating statements, comparison operators.
+- [View Learning Notes](posts/Learning_CPP/loopsLesson.md) -Lesson - 3 : Learning about Lopps, their syntax, and how to use them properly.
+- [View Learning Notes](posts/Learning_CPP/arrayslesson.md) -Lesson - 4 : Learning about arrays, and how to use combine them with loops, etc ..
 
 **Status**: Currently Learning 🔄
 
