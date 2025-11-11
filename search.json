@@ -1201,7 +1201,7 @@
     "href": "courses.html#learning-c-and-cuda",
     "title": "Courses & Learning Notes",
     "section": "⚡ Learning C++ and CUDA",
-    "text": "⚡ Learning C++ and CUDA\nLearning C++ fundamentals and CUDA programming for GPU kernel development.\n\nView Learning Notes -Lesson - 1 : Understanding the Compiler system of C++ and basic Synatax.\nView Learning Notes -Lesson - 2 : Learning about if statements, evaluating statements, comparison operators.\nView Learning Notes -Lesson - 3 : Learning about Lopps, their syntax, and how to use them properly.\nView Learning Notes\n\nStatus: Currently Learning 🔄"
+    "text": "⚡ Learning C++ and CUDA\nLearning C++ fundamentals and CUDA programming for GPU kernel development.\n\nView Learning Notes -Lesson - 1 : Understanding the Compiler system of C++ and basic Synatax.\nView Learning Notes -Lesson - 2 : Learning about if statements, evaluating statements, comparison operators.\nView Learning Notes -Lesson - 3 : Learning about Lopps, their syntax, and how to use them properly.\nView Learning Notes -Lesson - 4 : Learning about arrays, and how to use combine them with loops, etc ..\n\nStatus: Currently Learning 🔄"
   },
   {
     "objectID": "courses.html#whats-next",
