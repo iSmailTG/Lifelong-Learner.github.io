@@ -1,0 +1,1590 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.25">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Ismail TG">
+<meta name="dcterms.date" content="2022-10-25">
+
+<title>Chapter 2: Deep learning for coders with fastai and pytorch – Ismail's Learning Journey</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" integrity="sha384-ZvpUoO/+PpLXR1lu4jmpXWu80pZlYUAfxl5NsBMWOEPSjUn/6Z/hRTt8+pR6L4N2" crossorigin="anonymous"></script><script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-065a5179aebd64318d7ea99d77b64a9e.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-7aec330bd7e81af58b36d374cce8c0c9.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<style>html{ scroll-behavior: smooth; }</style>
+<script src="https://cdn.jsdelivr.net/npm/requirejs@2.3.6/require.min.js" integrity="sha384-c9c+LnTbwQ3aujuU7ULEPVvgLs+Fn6fJUvIGTsuu1ZcCf11fiEubah0ttpca4ntM sha384-6V1/AdqZRWk1KAlWbKBlGhN7VG4iE/yAZcO6NZPMF8od0vukrvr0tg4qY6NSrItx" crossorigin="anonymous"></script>
+
+<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
+<script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@*/dist/embed-amd.js" crossorigin="anonymous"></script>
+
+
+<link rel="stylesheet" href="../../styles.css">
+</head>
+
+<body class="nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a href="../../index.html" class="navbar-brand navbar-brand-logo">
+    </a>
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">Ismail’s Learning Journey</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../projects.html"> 
+<span class="menu-text">Projects</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../courses.html"> 
+<span class="menu-text">Courses</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../blog.html"> 
+<span class="menu-text">Blog</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../about.html"> 
+<span class="menu-text">About</span></a>
+  </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/ismaai008l"> <i class="bi bi-github" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://twitter.com/ismailTG3"> <i class="bi bi-twitter" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">Chapter 2: Deep learning for coders with fastai and pytorch</h1>
+                                <div class="quarto-categories">
+                <div class="quarto-category">Fastai</div>
+                <div class="quarto-category">Pytorch</div>
+                <div class="quarto-category">HugginFace</div>
+                <div class="quarto-category">Gradio</div>
+                <div class="quarto-category">Deep Learning</div>
+              </div>
+                  </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      <div>
+      <div class="quarto-title-meta-heading">Author</div>
+      <div class="quarto-title-meta-contents">
+               <p>Ismail TG </p>
+            </div>
+    </div>
+      
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">October 25, 2022</p>
+      </div>
+    </div>
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#practice-of-deep-learning" id="toc-practice-of-deep-learning" class="nav-link active" data-scroll-target="#practice-of-deep-learning">Practice of Deep Learning</a></li>
+  <li><a href="#the-mindset-of-deep-learning-practitioner" id="toc-the-mindset-of-deep-learning-practitioner" class="nav-link" data-scroll-target="#the-mindset-of-deep-learning-practitioner">The mindset Of Deep Learning Practitioner</a></li>
+  <li><a href="#the-drivetrain-approach" id="toc-the-drivetrain-approach" class="nav-link" data-scroll-target="#the-drivetrain-approach">The Drivetrain Approach</a></li>
+  <li><a href="#data-gathering" id="toc-data-gathering" class="nav-link" data-scroll-target="#data-gathering">Data Gathering</a></li>
+  <li><a href="#from-data-to-dataloaders" id="toc-from-data-to-dataloaders" class="nav-link" data-scroll-target="#from-data-to-dataloaders">From Data to DataLoaders</a></li>
+  <li><a href="#dataloaders" id="toc-dataloaders" class="nav-link" data-scroll-target="#dataloaders">Dataloaders</a></li>
+  <li><a href="#dataloder" id="toc-dataloder" class="nav-link" data-scroll-target="#dataloder">Dataloder</a></li>
+  <li><a href="#data-block-api" id="toc-data-block-api" class="nav-link" data-scroll-target="#data-block-api">Data block API</a></li>
+  <li><a href="#data-augmentation" id="toc-data-augmentation" class="nav-link" data-scroll-target="#data-augmentation">Data augmentation</a></li>
+  <li><a href="#training-your-model-and-using-it-to-clean-your-data" id="toc-training-your-model-and-using-it-to-clean-your-data" class="nav-link" data-scroll-target="#training-your-model-and-using-it-to-clean-your-data">Training Your Model, and Using It to Clean Your Data</a></li>
+  <li><a href="#deep-learning-in-production" id="toc-deep-learning-in-production" class="nav-link" data-scroll-target="#deep-learning-in-production">Deep Learning In Production</a>
+  <ul class="collapse">
+  <li><a href="#from-model-to-inference" id="toc-from-model-to-inference" class="nav-link" data-scroll-target="#from-model-to-inference">From Model to Inference</a></li>
+  <li><a href="#gradio-hugginface-spaces" id="toc-gradio-hugginface-spaces" class="nav-link" data-scroll-target="#gradio-hugginface-spaces">Gradio + HugginFace Spaces</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content quarto-banner-title-block" id="quarto-document-content">
+
+
+
+
+
+<section id="practice-of-deep-learning" class="level3">
+<h3 class="anchored" data-anchor-id="practice-of-deep-learning">Practice of Deep Learning</h3>
+<ul>
+<li>As we saw in the previous Chapter, we can create powerful model with only 6 lines of code<br>
+</li>
+<li>Althought we should understand the constraints of the process and not overestimate the capabilities of deep learnig, this may lead to frustaingtly poor result<br>
+</li>
+<li>Also we need to not overestimate the constraints, and underestimate what could do with deep learning</li>
+</ul>
+</section>
+<section id="the-mindset-of-deep-learning-practitioner" class="level3">
+<h3 class="anchored" data-anchor-id="the-mindset-of-deep-learning-practitioner">The mindset Of Deep Learning Practitioner</h3>
+<ul>
+<li>Before starting any Deep learning project, we need first to investigate the data availability<br>
+</li>
+<li>That doens’t mean we need the <strong>Perfect dataset</strong><br>
+</li>
+<li>We need to iterate from End-2-End
+<ul>
+<li>Do not spent weeks on fine-tuning, polishing the GUI, or desing the perfect way of labeling the dataset</li>
+<li>Just complet each step in a reasonable amout of time, then iterate the whole proccess from beginning</li>
+<li>Iteration shows the flows of your project as well as its capabilities</li>
+<li>The early Demo of your project helps you to have feedback and try to do better</li>
+</ul></li>
+<li>Start a project in field that Deep Learning already been shown good results</li>
+</ul>
+</section>
+<section id="the-drivetrain-approach" class="level3">
+<h3 class="anchored" data-anchor-id="the-drivetrain-approach">The Drivetrain Approach</h3>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="1.png" class="img-fluid figure-img"></p>
+<figcaption>drivetrain_approach</figcaption>
+</figure>
+</div>
+<ul>
+<li>In <a href="https://www.oreilly.com/radar/drivetrain-approach-data-products/">this article</a> <strong>-<em>Jeremy Howard, Margit Zwemer and Mike Loukides</em>-</strong> talks about the driventain approach for building a great data product through Four-Steps process<br>
+</li>
+<li>Steps
+<ul>
+<li>Define your Objective<br>
+</li>
+<li>Levers
+<ul>
+<li>What inputs can we control?<br>
+</li>
+<li>The necessary actions the realise that Objective<br>
+</li>
+</ul></li>
+<li>Data
+<ul>
+<li>What Data can we collect<br>
+</li>
+</ul></li>
+<li>Models
+<ul>
+<li>Build a model that make us meet our objective, but also in respect to: Levers an Data</li>
+</ul></li>
+</ul></li>
+</ul>
+</section>
+<section id="data-gathering" class="level3">
+<h3 class="anchored" data-anchor-id="data-gathering">Data Gathering</h3>
+<p>In this Chapter we will build a model that can differentiate among 3 types of bears: Grizzly, Black, Teddy-bear.<br>
+Often we can find the data we need for a project online. In our case we will collect data from search enging <strong>DuckDuckGo</strong><br>
+<strong>But first we need to install the fastai package and import some dependecies since I’m working on Google Colab</strong></p>
+<div id="cell-5" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}}" data-outputid="c1d9c5eb-c912-4a2f-8d08-c3a8d785f0fa">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1"></a><span class="op">!</span> [ <span class="op">-</span>e <span class="op">/</span>content ] <span class="op">&amp;&amp;</span> pip install <span class="op">-</span>Uqq fastbook</span>
+<span id="cb1-2"><a href="#cb1-2"></a><span class="im">import</span> fastbook</span>
+<span id="cb1-3"><a href="#cb1-3"></a>fastbook.setup_book()</span>
+<span id="cb1-4"><a href="#cb1-4"></a><span class="im">from</span> fastai.vision.widgets <span class="im">import</span> <span class="op">*</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>     |████████████████████████████████| 719 kB 5.0 MB/s 
+     |████████████████████████████████| 5.3 MB 59.8 MB/s 
+     |████████████████████████████████| 441 kB 71.2 MB/s 
+     |████████████████████████████████| 1.3 MB 49.3 MB/s 
+     |████████████████████████████████| 1.6 MB 28.8 MB/s 
+     |████████████████████████████████| 212 kB 71.2 MB/s 
+     |████████████████████████████████| 163 kB 71.3 MB/s 
+     |████████████████████████████████| 115 kB 56.6 MB/s 
+     |████████████████████████████████| 127 kB 72.1 MB/s 
+     |████████████████████████████████| 115 kB 70.4 MB/s 
+     |████████████████████████████████| 7.6 MB 51.7 MB/s 
+Mounted at /content/gdrive</code></pre>
+</div>
+</div>
+<div id="cell-6" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1"></a><span class="im">from</span> fastbook <span class="im">import</span> <span class="op">*</span></span>
+<span id="cb3-2"><a href="#cb3-2"></a><span class="im">from</span> fastai.vision.widgets <span class="im">import</span> <span class="op">*</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div id="cell-7" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}}" data-outputid="bb51fbd9-f46b-4b03-afaf-a813bcad743c">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1"></a><span class="co"># use search_images_ddg in order to collect urls for 'grizzly bear'</span></span>
+<span id="cb4-2"><a href="#cb4-2"></a>urls <span class="op">=</span> search_images_ddg(<span class="st">'grizzly bear'</span>, max_images<span class="op">=</span><span class="dv">100</span>)</span>
+<span id="cb4-3"><a href="#cb4-3"></a><span class="bu">len</span>(urls), urls[<span class="dv">44</span>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="3">
+<pre><code>(100,
+ 'https://i2.wp.com/nypost.com/wp-content/uploads/sites/2/2020/09/grizzly-bear-89.jpg?quality=90&amp;strip=all&amp;ssl=1')</code></pre>
+</div>
+</div>
+<div id="cell-8" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:207}}" data-outputid="c8e6325f-2c09-418c-f6a8-f1980dd751e1">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1"></a><span class="co"># Now let's download an url and store it in a specified destination ('images/bear.jpg') then open it</span></span>
+<span id="cb6-2"><a href="#cb6-2"></a>download_url(urls[<span class="dv">7</span>], <span class="st">'images/bear.jpg'</span>)</span>
+<span id="cb6-3"><a href="#cb6-3"></a>im <span class="op">=</span> Image.<span class="bu">open</span>(<span class="st">'images/bear.jpg'</span>)</span>
+<span id="cb6-4"><a href="#cb6-4"></a>im.thumbnail((<span class="dv">256</span>,<span class="dv">256</span>))</span>
+<span id="cb6-5"><a href="#cb6-5"></a>im</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display">
+
+<style>
+    /* Turns off some styling */
+    progress {
+        /* gets rid of default border in Firefox and Opera. */
+        border: none;
+        /* Needs to be in here for Safari polyfill so background images work as expected. */
+        background-size: auto;
+    }
+    progress:not([value]), progress:not([value])::-webkit-progress-bar {
+        background: repeating-linear-gradient(45deg, #7e7e7e, #7e7e7e 10px, #5c5c5c 10px, #5c5c5c 20px);
+    }
+    .progress-bar-interrupted, .progress-bar-interrupted::-webkit-progress-bar {
+        background: #F44336;
+    }
+</style>
+</div>
+<div class="cell-output cell-output-display">
+
+    <div>
+      <progress value="229376" class="" max="225897" style="width:300px; height:20px; vertical-align: middle;"></progress>
+      101.54% [229376/225897 00:00&lt;00:00]
+    </div>
+    
+</div>
+<div class="cell-output cell-output-display" data-execution_count="4">
+<div>
+<figure class="figure">
+<p><img src="2022_09_09_Fastai_Lesson2_files/figure-html/cell-5-output-3.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<div id="cell-9" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1"></a><span class="co"># now let's create our dataset</span></span>
+<span id="cb7-2"><a href="#cb7-2"></a>bear_types <span class="op">=</span> <span class="st">'grizzly'</span>,<span class="st">'black'</span>,<span class="st">'teddy'</span> <span class="co"># create 3 types of bears variable</span></span>
+<span id="cb7-3"><a href="#cb7-3"></a>path <span class="op">=</span> Path(<span class="st">'bears'</span>) <span class="co"># create the father folder for the 3 types</span></span>
+<span id="cb7-4"><a href="#cb7-4"></a><span class="cf">if</span> <span class="kw">not</span> path.exists(): <span class="co"># decide the path</span></span>
+<span id="cb7-5"><a href="#cb7-5"></a>  path.mkdir()</span>
+<span id="cb7-6"><a href="#cb7-6"></a>  <span class="cf">for</span> o <span class="kw">in</span> bear_types:</span>
+<span id="cb7-7"><a href="#cb7-7"></a>    dest <span class="op">=</span> (path<span class="op">/</span>o) <span class="co"># put the 3 folder in bear folder</span></span>
+<span id="cb7-8"><a href="#cb7-8"></a>    dest.mkdir(exist_ok<span class="op">=</span><span class="va">True</span>) <span class="co"># create a folder for each type of bear</span></span>
+<span id="cb7-9"><a href="#cb7-9"></a>    urls <span class="op">=</span> search_images_ddg(<span class="ss">f' </span><span class="sc">{</span>o<span class="sc">}</span><span class="ss"> bear'</span>) <span class="co"># search images for each bear type</span></span>
+<span id="cb7-10"><a href="#cb7-10"></a>    download_images(dest, urls<span class="op">=</span>urls)  <span class="co"># download these images from urls and put them in their correspondent folder</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div id="cell-10" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}}" data-outputid="d39e05d9-8b60-48d1-ef90-c227aeb68350">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1"></a><span class="co"># let's see folders inside the path </span></span>
+<span id="cb8-2"><a href="#cb8-2"></a>path.ls()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="6">
+<pre><code>(#3) [Path('bears/black'),Path('bears/teddy'),Path('bears/grizzly')]</code></pre>
+</div>
+</div>
+<div id="cell-11" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}}" data-outputid="8bdbae44-783e-467e-a6ef-bcd762276751">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1"></a><span class="co"># we could also see file inside each folder</span></span>
+<span id="cb10-2"><a href="#cb10-2"></a>fns <span class="op">=</span> get_image_files(path)</span>
+<span id="cb10-3"><a href="#cb10-3"></a>fns</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="7">
+<pre><code>(#581) [Path('bears/black/2fe59e51-e056-472e-8b1f-97719f4daead.jpg'),Path('bears/black/1cf3beed-5b8b-4ef2-bb6b-9bb185c7b7ed.jpg'),Path('bears/black/942f89fe-6ce0-4f8a-8219-05878694bf92.jpg'),Path('bears/black/67e6baaf-469c-46c2-925a-657290ed6f54.jpg'),Path('bears/black/d58d87bc-e2c9-40e0-ae36-a81cdf30169a.jpg'),Path('bears/black/b7a58f5b-0aeb-4785-ba7d-b3c4003555cf.JPG'),Path('bears/black/f0c103ab-c50f-45c1-81d4-805e20e9e942.JPG'),Path('bears/black/2be0ed55-3ea2-413a-bc78-a2e00cff5c86.jpg'),Path('bears/black/9840ba3a-3582-44eb-b25a-17d5d65abb4d.jpg'),Path('bears/black/3bcd5a1c-b41a-4edc-815b-6f36435be8e3.jpg')...]</code></pre>
+</div>
+</div>
+<div id="cell-12" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}}" data-outputid="f533ccfa-080a-4775-fc04-35a9b7f67ae7">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1"></a><span class="co"># or see what's inside specific folder</span></span>
+<span id="cb12-2"><a href="#cb12-2"></a>black_files <span class="op">=</span> get_image_files(path<span class="op">/</span><span class="st">'black'</span>)</span>
+<span id="cb12-3"><a href="#cb12-3"></a>black_files</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="8">
+<pre><code>(#195) [Path('bears/black/2fe59e51-e056-472e-8b1f-97719f4daead.jpg'),Path('bears/black/1cf3beed-5b8b-4ef2-bb6b-9bb185c7b7ed.jpg'),Path('bears/black/942f89fe-6ce0-4f8a-8219-05878694bf92.jpg'),Path('bears/black/67e6baaf-469c-46c2-925a-657290ed6f54.jpg'),Path('bears/black/d58d87bc-e2c9-40e0-ae36-a81cdf30169a.jpg'),Path('bears/black/b7a58f5b-0aeb-4785-ba7d-b3c4003555cf.JPG'),Path('bears/black/f0c103ab-c50f-45c1-81d4-805e20e9e942.JPG'),Path('bears/black/2be0ed55-3ea2-413a-bc78-a2e00cff5c86.jpg'),Path('bears/black/9840ba3a-3582-44eb-b25a-17d5d65abb4d.jpg'),Path('bears/black/3bcd5a1c-b41a-4edc-815b-6f36435be8e3.jpg')...]</code></pre>
+</div>
+</div>
+<div id="cell-13" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}}" data-outputid="083f143c-3833-4561-cff2-61c8953cc81b">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1"></a><span class="co"># since we're collecting from internet, there's a chance some of the files we downloaded are corrupted</span></span>
+<span id="cb14-2"><a href="#cb14-2"></a>failed <span class="op">=</span> verify_images(fns)</span>
+<span id="cb14-3"><a href="#cb14-3"></a><span class="bu">len</span>(failed), failed <span class="co"># 2 corrupted images founded!</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="9">
+<pre><code>(7,
+ (#7) [Path('bears/teddy/49c3ae24-62de-4ae8-aa6f-406423348619.jpg'),Path('bears/teddy/822c52a8-995f-46a5-a86e-9c5eed47e732.jpg'),Path('bears/teddy/9e747533-58c5-4005-9aab-d91d55468a1d.jpg'),Path('bears/teddy/9e1f043c-ecaf-4db3-bb7c-af4dbd3c04a0.jpg'),Path('bears/teddy/2432bf79-a4e6-4858-b23a-15f2e2ee6a0e.jpg'),Path('bears/teddy/d21046b0-0711-48cd-84fb-a042107b0d2f.jpg'),Path('bears/grizzly/5979d5e8-031e-4b33-901b-903975e49af6.jpg')])</code></pre>
+</div>
+</div>
+<div id="cell-14" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}}" data-outputid="cb25f77e-8f78-45be-9dd3-8a3ec0c758ff">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1"></a>failed.<span class="bu">map</span>(Path.unlink)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="10">
+<pre><code>(#7) [None,None,None,None,None,None,None]</code></pre>
+</div>
+</div>
+</section>
+<section id="from-data-to-dataloaders" class="level3">
+<h3 class="anchored" data-anchor-id="from-data-to-dataloaders">From Data to DataLoaders</h3>
+<p>The dataset that we’ve created still isn’t ready to be used in the training fase, we still need to make suitable for the model, in order to do that we need <code>DataBlock</code> and <code>DataLoaders</code></p>
+</section>
+<section id="dataloaders" class="level3">
+<h3 class="anchored" data-anchor-id="dataloaders">Dataloaders</h3>
+<ul>
+<li><p>A thin fastai class that just stores whatever DataLoader objects passed to it and makes them available as the properties <code>train</code> and <code>valid</code></p></li>
+<li><p>Provides the data for your model</p></li>
+<li><p>Information needed to turn downloaded data into DataLoaders objects * The kind of data we are working with * How to get the list of items * How to label these items * How to create the validation set</p></li>
+</ul>
+</section>
+<section id="dataloder" class="level3">
+<h3 class="anchored" data-anchor-id="dataloder">Dataloder</h3>
+<ul>
+<li>A class that provides batches of a few items at a time to the GPU</li>
+</ul>
+</section>
+<section id="data-block-api" class="level3">
+<h3 class="anchored" data-anchor-id="data-block-api">Data block API</h3>
+<ul>
+<li>A flexible system to fully customize every stage of the creation of your DataLoaders</li>
+<li>Data block: a template for creating a DataLoaders object</li>
+<li>Independent variable: the thing we are using to make predictions</li>
+<li>Dependent variable: the target variable to predict</li>
+<li>Training data is fed to a model in batches
+<ul>
+<li>Each image in a batch needs to be the same size</li>
+</ul></li>
+</ul>
+<div id="cell-16" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1"></a>bears <span class="op">=</span> DataBlock(</span>
+<span id="cb18-2"><a href="#cb18-2"></a>    blocks<span class="op">=</span>(   <span class="co"># Define blocks for data and labels</span></span>
+<span id="cb18-3"><a href="#cb18-3"></a>        ImageBlock, <span class="co"># TransformBlock for Images</span></span>
+<span id="cb18-4"><a href="#cb18-4"></a>        CategoryBlock), <span class="co"># TransformBlock for labels</span></span>
+<span id="cb18-5"><a href="#cb18-5"></a>    get_items<span class="op">=</span>get_image_files, <span class="co"># Get images from the path</span></span>
+<span id="cb18-6"><a href="#cb18-6"></a>    splitter<span class="op">=</span>RandomSplitter(valid_pct<span class="op">=</span><span class="fl">0.2</span>, seed<span class="op">=</span><span class="dv">42</span>), <span class="co"># Create training set, and training set (20% of dataset) randomely</span></span>
+<span id="cb18-7"><a href="#cb18-7"></a>    get_y<span class="op">=</span>parent_label, <span class="co"># Label `item` with the parent folder name </span></span>
+<span id="cb18-8"><a href="#cb18-8"></a>    item_tfms<span class="op">=</span>Resize(<span class="dv">128</span>)) <span class="co"># Resize and crop image to 128x128</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div id="cell-17" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1"></a><span class="co"># Create a `DataLoaders` object from `path`</span></span>
+<span id="cb19-2"><a href="#cb19-2"></a>dls <span class="op">=</span> bears.dataloaders(path)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div id="cell-18" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:193}}" data-outputid="6531db97-4d76-4181-a82c-ab52cb8f1272">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1"></a><span class="co"># Show some samples from the validation set</span></span>
+<span id="cb20-2"><a href="#cb20-2"></a>dls.valid.show_batch(max_n<span class="op">=</span><span class="dv">4</span>, nrows<span class="op">=</span><span class="dv">1</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="2022_09_09_Fastai_Lesson2_files/figure-html/cell-14-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>By default <code>Resize</code> crop the image into a square of the requested size, but that can result losing some important details which will negatively impact the model performance. <code>Fastai</code> provide many methods that we can use, we can squatsh, pad(with zeros) or stretch the images:</p>
+<div id="cell-20" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1"></a><span class="co"># Create a new `DataBlock` that resizes and squishes images to 128x128</span></span>
+<span id="cb21-2"><a href="#cb21-2"></a>bears <span class="op">=</span> bears.new(item_tfms<span class="op">=</span>Resize(<span class="dv">128</span>, ResizeMethod.Squish))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div id="cell-21" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:193}}" data-outputid="e29da031-9dcb-499d-e4f2-3aa061adcdea">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1"></a>dls <span class="op">=</span> bears.dataloaders(path)</span>
+<span id="cb22-2"><a href="#cb22-2"></a>dls.valid.show_batch(max_n<span class="op">=</span><span class="dv">4</span>, nrows<span class="op">=</span><span class="dv">1</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="2022_09_09_Fastai_Lesson2_files/figure-html/cell-16-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<div id="cell-22" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:193}}" data-outputid="f6da189b-a8ec-42b4-d6a7-a062fb2cea64">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1"></a><span class="co"># or pad the images</span></span>
+<span id="cb23-2"><a href="#cb23-2"></a>bears <span class="op">=</span> bears.new(item_tfms<span class="op">=</span>Resize(<span class="dv">128</span>, ResizeMethod.Pad, pad_mode<span class="op">=</span><span class="st">'zeros'</span>))</span>
+<span id="cb23-3"><a href="#cb23-3"></a>dls <span class="op">=</span> bears.dataloaders(path)</span>
+<span id="cb23-4"><a href="#cb23-4"></a>dls.valid.show_batch(max_n<span class="op">=</span><span class="dv">4</span>, nrows<span class="op">=</span><span class="dv">1</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="2022_09_09_Fastai_Lesson2_files/figure-html/cell-17-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<ul>
+<li><p>The problem with these approaches, is that they add detaills and they mess with the original images, which will certainely influence the learnings of the model, this will effect the accuracy of the model later.</p></li>
+<li><p>Instead, we could randomly crop a part of the image, one part at the time (each epoch) and pass it to the training process, what will force the model to focus on recognizing different features of the image each time.</p></li>
+<li><p>The method <code>RandomResizedCrop</code> allow us to transform images in the way we just described</p></li>
+</ul>
+<div id="cell-24" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:193}}" data-outputid="ba61a016-a947-4e0a-dcaa-65dc7cbaab8d">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1"></a><span class="co"># Create a new `DataBlock` that picks a random scaled crop of an image and resize it to 128x128</span></span>
+<span id="cb24-2"><a href="#cb24-2"></a>bears <span class="op">=</span> bears.new(item_tfms<span class="op">=</span>RandomResizedCrop(<span class="dv">128</span>, min_scale<span class="op">=</span><span class="fl">0.3</span>))</span>
+<span id="cb24-3"><a href="#cb24-3"></a>dls <span class="op">=</span> bears.dataloaders(path)</span>
+<span id="cb24-4"><a href="#cb24-4"></a><span class="co"># Show some unique random crops of a single sample from the validation set</span></span>
+<span id="cb24-5"><a href="#cb24-5"></a>dls.train.show_batch(max_n<span class="op">=</span><span class="dv">4</span>, nrows<span class="op">=</span><span class="dv">1</span>, unique<span class="op">=</span><span class="va">True</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="2022_09_09_Fastai_Lesson2_files/figure-html/cell-18-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="data-augmentation" class="level3">
+<h3 class="anchored" data-anchor-id="data-augmentation">Data augmentation</h3>
+<ul>
+<li>Data augmentation refers to creating random variations of the data, such as they appears different, but without changing the real meaning of the data.<br>
+</li>
+<li>Examples of common data augmentation techniques for images are rotation, flipping, perspective warping, brightness changes and contrast changes.<br>
+</li>
+<li>It seems that for natural image like the ones we have here, the function: <code>aug_transforms</code> works well
+<ul>
+<li>because our images have different size, using the parametrs <code>batch_tfms</code> and feeding them to GPU will save use a lot of time.</li>
+</ul></li>
+</ul>
+<div id="cell-26" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:371}}" data-outputid="85344e68-2856-4fd5-8fe3-5b762488fa91">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1"></a><span class="co"># Create a new `DataBlock` that crops and resizes each image to 128x128</span></span>
+<span id="cb25-2"><a href="#cb25-2"></a><span class="co"># and applies a list of data augmentations including flip, rotate, zoom, warp, lighting transforms</span></span>
+<span id="cb25-3"><a href="#cb25-3"></a><span class="co"># to each batch on the GPU</span></span>
+<span id="cb25-4"><a href="#cb25-4"></a>bears <span class="op">=</span> bears.new(item_tfms<span class="op">=</span>Resize(<span class="dv">128</span>), batch_tfms<span class="op">=</span>aug_transforms(mult<span class="op">=</span><span class="dv">2</span>))</span>
+<span id="cb25-5"><a href="#cb25-5"></a>dls <span class="op">=</span> bears.dataloaders(path)</span>
+<span id="cb25-6"><a href="#cb25-6"></a>dls.train.show_batch(max_n<span class="op">=</span><span class="dv">8</span>, nrows<span class="op">=</span><span class="dv">2</span>, unique<span class="op">=</span><span class="va">True</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="2022_09_09_Fastai_Lesson2_files/figure-html/cell-19-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="training-your-model-and-using-it-to-clean-your-data" class="level3">
+<h3 class="anchored" data-anchor-id="training-your-model-and-using-it-to-clean-your-data">Training Your Model, and Using It to Clean Your Data</h3>
+<ul>
+<li>Cleaning data and getting it ready for your model are two of the biggest challenges for data scientists
+<ul>
+<li>Data scientists say it takes 90% of their time</li>
+</ul></li>
+<li>Using the model for data cleaning
+<ul>
+<li>Train the model on the current dataset</li>
+<li>Examine the incorrectly classified images with the highest confidence score
+<ul>
+<li>There might be images that were incorrectly labeled</li>
+</ul></li>
+<li>Examine the incorrectly labeled images with the lowest confidence scores
+<ul>
+<li>There might be poor quality images in the training set</li>
+</ul></li>
+<li>Move any misplaced images to the correct folder</li>
+<li>Remove any poor quality images</li>
+<li>Retrain model on updated dataset</li>
+</ul></li>
+</ul>
+<div id="cell-28" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1"></a>bears <span class="op">=</span> bears.new(</span>
+<span id="cb26-2"><a href="#cb26-2"></a>    item_tfms<span class="op">=</span>RandomResizedCrop(<span class="dv">224</span>, min_scale<span class="op">=</span><span class="fl">0.5</span>),</span>
+<span id="cb26-3"><a href="#cb26-3"></a>    batch_tfms<span class="op">=</span>aug_transforms())</span>
+<span id="cb26-4"><a href="#cb26-4"></a>dls <span class="op">=</span> bears.dataloaders(path)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div id="cell-29" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:156,&quot;referenced_widgets&quot;:[&quot;0b21ed6086b54069988011dee67aacce&quot;,&quot;d0f77fcf10294829a65c399f8a6ec638&quot;,&quot;d6801c2e7df34829835a2879c1703b98&quot;,&quot;97cecf73ce83476d95637271919c66ce&quot;,&quot;d20e6502dedb495ab12a96415ae14903&quot;,&quot;39355cbb74684db59363c0aa721f2c85&quot;,&quot;ed5f8590dbdf48408fa202f44d1a83b9&quot;,&quot;4c9934553f454701ba1435c365dbfea4&quot;,&quot;4fd4b0427ca5463abffbcf8a6426ddfe&quot;,&quot;1bdbe0f56c9c4e0cbf4db380ff33945e&quot;,&quot;eff54551da2b4093b63095434a2bdeb6&quot;]}}" data-outputid="33be2bca-167d-4437-b57b-35a5afca84ea">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1"></a><span class="co"># create the learner and fine-tune it as usual</span></span>
+<span id="cb27-2"><a href="#cb27-2"></a>learn <span class="op">=</span> vision_learner(dls, resnet18, metrics<span class="op">=</span>error_rate)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>/usr/local/lib/python3.7/dist-packages/torchvision/models/_utils.py:209: UserWarning: The parameter 'pretrained' is deprecated since 0.13 and will be removed in 0.15, please use 'weights' instead.
+  f"The parameter '{pretrained_param}' is deprecated since 0.13 and will be removed in 0.15, "
+/usr/local/lib/python3.7/dist-packages/torchvision/models/_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and will be removed in 0.15. The current behavior is equivalent to passing `weights=ResNet18_Weights.IMAGENET1K_V1`. You can also use `weights=ResNet18_Weights.DEFAULT` to get the most up-to-date weights.
+  warnings.warn(msg)
+Downloading: "https://download.pytorch.org/models/resnet18-f37072fd.pth" to /root/.cache/torch/hub/checkpoints/resnet18-f37072fd.pth</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<script type="application/vnd.jupyter.widget-view+json">
+{"model_id":"0b21ed6086b54069988011dee67aacce","version_major":2,"version_minor":0,"quarto_mimetype":"application/vnd.jupyter.widget-view+json"}
+</script>
+</div>
+</div>
+<div id="cell-30" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:239}}" data-outputid="267a2d13-0728-41a1-b171-974a239b658d">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1"></a>learn.fine_tune(<span class="dv">4</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display">
+
+<style>
+    /* Turns off some styling */
+    progress {
+        /* gets rid of default border in Firefox and Opera. */
+        border: none;
+        /* Needs to be in here for Safari polyfill so background images work as expected. */
+        background-size: auto;
+    }
+    progress:not([value]), progress:not([value])::-webkit-progress-bar {
+        background: repeating-linear-gradient(45deg, #7e7e7e, #7e7e7e 10px, #5c5c5c 10px, #5c5c5c 20px);
+    }
+    .progress-bar-interrupted, .progress-bar-interrupted::-webkit-progress-bar {
+        background: #F44336;
+    }
+</style>
+</div>
+<div class="cell-output cell-output-display">
+<table class="dataframe caption-top table table-sm table-striped small" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th">epoch</th>
+<th data-quarto-table-cell-role="th">train_loss</th>
+<th data-quarto-table-cell-role="th">valid_loss</th>
+<th data-quarto-table-cell-role="th">error_rate</th>
+<th data-quarto-table-cell-role="th">time</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>0</td>
+<td>0.909149</td>
+<td>0.064802</td>
+<td>0.026316</td>
+<td>00:31</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="cell-output cell-output-display">
+
+<style>
+    /* Turns off some styling */
+    progress {
+        /* gets rid of default border in Firefox and Opera. */
+        border: none;
+        /* Needs to be in here for Safari polyfill so background images work as expected. */
+        background-size: auto;
+    }
+    progress:not([value]), progress:not([value])::-webkit-progress-bar {
+        background: repeating-linear-gradient(45deg, #7e7e7e, #7e7e7e 10px, #5c5c5c 10px, #5c5c5c 20px);
+    }
+    .progress-bar-interrupted, .progress-bar-interrupted::-webkit-progress-bar {
+        background: #F44336;
+    }
+</style>
+</div>
+<div class="cell-output cell-output-display">
+<table class="dataframe caption-top table table-sm table-striped small" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th">epoch</th>
+<th data-quarto-table-cell-role="th">train_loss</th>
+<th data-quarto-table-cell-role="th">valid_loss</th>
+<th data-quarto-table-cell-role="th">error_rate</th>
+<th data-quarto-table-cell-role="th">time</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>0</td>
+<td>0.130756</td>
+<td>0.022457</td>
+<td>0.008772</td>
+<td>00:27</td>
+</tr>
+<tr class="even">
+<td>1</td>
+<td>0.118846</td>
+<td>0.019686</td>
+<td>0.008772</td>
+<td>00:27</td>
+</tr>
+<tr class="odd">
+<td>2</td>
+<td>0.086960</td>
+<td>0.024602</td>
+<td>0.017544</td>
+<td>00:28</td>
+</tr>
+<tr class="even">
+<td>3</td>
+<td>0.072738</td>
+<td>0.024477</td>
+<td>0.017544</td>
+<td>00:28</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="cell-31" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:310}}" data-outputid="5a601290-d710-4a55-ea95-4cad6ef5b05d">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb30"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1"></a><span class="co"># this allow us investigate where the model do bad prediction, </span></span>
+<span id="cb30-2"><a href="#cb30-2"></a><span class="co"># and we can see these datapoints in order to understand what happend</span></span>
+<span id="cb30-3"><a href="#cb30-3"></a>interp <span class="op">=</span> ClassificationInterpretation.from_learner(learn)</span>
+<span id="cb30-4"><a href="#cb30-4"></a>interp.plot_confusion_matrix()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display">
+
+<style>
+    /* Turns off some styling */
+    progress {
+        /* gets rid of default border in Firefox and Opera. */
+        border: none;
+        /* Needs to be in here for Safari polyfill so background images work as expected. */
+        background-size: auto;
+    }
+    progress:not([value]), progress:not([value])::-webkit-progress-bar {
+        background: repeating-linear-gradient(45deg, #7e7e7e, #7e7e7e 10px, #5c5c5c 10px, #5c5c5c 20px);
+    }
+    .progress-bar-interrupted, .progress-bar-interrupted::-webkit-progress-bar {
+        background: #F44336;
+    }
+</style>
+</div>
+<div class="cell-output cell-output-display">
+
+</div>
+<div class="cell-output cell-output-display">
+
+<style>
+    /* Turns off some styling */
+    progress {
+        /* gets rid of default border in Firefox and Opera. */
+        border: none;
+        /* Needs to be in here for Safari polyfill so background images work as expected. */
+        background-size: auto;
+    }
+    progress:not([value]), progress:not([value])::-webkit-progress-bar {
+        background: repeating-linear-gradient(45deg, #7e7e7e, #7e7e7e 10px, #5c5c5c 10px, #5c5c5c 20px);
+    }
+    .progress-bar-interrupted, .progress-bar-interrupted::-webkit-progress-bar {
+        background: #F44336;
+    }
+</style>
+</div>
+<div class="cell-output cell-output-display">
+
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="2022_09_09_Fastai_Lesson2_files/figure-html/cell-23-output-5.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<div id="cell-32" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:206}}" data-outputid="bed683ef-cd89-41fb-f5b4-2d8e7d94ae55">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb31"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1"></a><span class="co">#show where the model has bad loss</span></span>
+<span id="cb31-2"><a href="#cb31-2"></a>interp.plot_top_losses(<span class="dv">5</span>, nrows<span class="op">=</span><span class="dv">1</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display">
+
+<style>
+    /* Turns off some styling */
+    progress {
+        /* gets rid of default border in Firefox and Opera. */
+        border: none;
+        /* Needs to be in here for Safari polyfill so background images work as expected. */
+        background-size: auto;
+    }
+    progress:not([value]), progress:not([value])::-webkit-progress-bar {
+        background: repeating-linear-gradient(45deg, #7e7e7e, #7e7e7e 10px, #5c5c5c 10px, #5c5c5c 20px);
+    }
+    .progress-bar-interrupted, .progress-bar-interrupted::-webkit-progress-bar {
+        background: #F44336;
+    }
+</style>
+</div>
+<div class="cell-output cell-output-display">
+
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="2022_09_09_Fastai_Lesson2_files/figure-html/cell-24-output-3.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>As we see here the model did good predictions in 3 of 5 high losses datapoints but it was mislabeled, the other two images are actualy not actual bears. This method allow us to clean the dataset in a efficient way.<br>
+fastai includes a handy GUI for data cleaning called <code>ImageClassifierCleaner</code> that allows you to choose a category and the training versus validation set and view the highest-loss images (in order), along with menus to allow images to be selected for removal or relabeling:</p>
+<div id="cell-34" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:17}}" data-outputid="672bbae4-9a2d-454e-f158-2b5944e7b1b3">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb32"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1"></a>cleaner <span class="op">=</span> ImageClassifierCleaner(learn)</span>
+<span id="cb32-2"><a href="#cb32-2"></a>cleaner</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display">
+
+<style>
+    /* Turns off some styling */
+    progress {
+        /* gets rid of default border in Firefox and Opera. */
+        border: none;
+        /* Needs to be in here for Safari polyfill so background images work as expected. */
+        background-size: auto;
+    }
+    progress:not([value]), progress:not([value])::-webkit-progress-bar {
+        background: repeating-linear-gradient(45deg, #7e7e7e, #7e7e7e 10px, #5c5c5c 10px, #5c5c5c 20px);
+    }
+    .progress-bar-interrupted, .progress-bar-interrupted::-webkit-progress-bar {
+        background: #F44336;
+    }
+</style>
+</div>
+<div class="cell-output cell-output-display">
+
+</div>
+<div class="cell-output cell-output-display">
+
+<style>
+    /* Turns off some styling */
+    progress {
+        /* gets rid of default border in Firefox and Opera. */
+        border: none;
+        /* Needs to be in here for Safari polyfill so background images work as expected. */
+        background-size: auto;
+    }
+    progress:not([value]), progress:not([value])::-webkit-progress-bar {
+        background: repeating-linear-gradient(45deg, #7e7e7e, #7e7e7e 10px, #5c5c5c 10px, #5c5c5c 20px);
+    }
+    .progress-bar-interrupted, .progress-bar-interrupted::-webkit-progress-bar {
+        background: #F44336;
+    }
+</style>
+</div>
+<div class="cell-output cell-output-display">
+
+</div>
+</div>
+<div id="cell-35" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb33"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1"></a><span class="co"># change directory for all miss-labeled images</span></span>
+<span id="cb33-2"><a href="#cb33-2"></a><span class="cf">for</span> idx <span class="kw">in</span> cleaner.delete(): cleaner.fns[idx].unlink()</span>
+<span id="cb33-3"><a href="#cb33-3"></a><span class="co"># delete unrelated images</span></span>
+<span id="cb33-4"><a href="#cb33-4"></a><span class="cf">for</span> idx,cat <span class="kw">in</span> cleaner.change(): shutil.move(<span class="bu">str</span>(cleaner.fns[idx]), path<span class="op">/</span>cat)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="deep-learning-in-production" class="level2">
+<h2 class="anchored" data-anchor-id="deep-learning-in-production">Deep Learning In Production</h2>
+<p>When we create a model that met our objectives, we can then pass to the <strong>Production</strong> phase, where we transform the model into an appliction/service etc..<br>
+But first we need to export the model into a file:</p>
+<div id="cell-37" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb34"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1"></a>learn.export()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>Let’s check that the file exists, by using the <code>ls</code> method that fastai adds to Python’s <code>Path</code> class:</p>
+<div id="cell-39" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}}" data-outputid="e3d711dc-f21e-420d-a61a-733eb3becdfb">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb35"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1"></a>path <span class="op">=</span> Path()</span>
+<span id="cb35-2"><a href="#cb35-2"></a>path.ls(file_exts<span class="op">=</span><span class="st">'.pkl'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="27">
+<pre><code>(#1) [Path('export.pkl')]</code></pre>
+</div>
+</div>
+<ul>
+<li>Now with the <code>export.pkl</code> file we can create normal program that takes inputs(images) and produce results (predictions) just like any traditional app</li>
+<li>At this point we won’t call it a model anymore, we call it <code>inference</code>.</li>
+</ul>
+<p><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAagAAABTCAYAAADKkJOuAAAAiHpUWHRSYXcgcHJvZmlsZSB0eXBlIGV4aWYAAHjaVY7LDYBACETvVGEJ/JZPOcZoYgeWL+tuYvYdYIaQATif+4KtQ6igzcPSDAtNTd5LBA4EkRip96qD2YVKcdnpQXgIy3DUf1EVF5pY2OXqbs0OO7jS+RT5KgnCt9XD+iv5B+0xlazzJusBeAH9Ii0VGef/9AAACgRpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+Cjx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IlhNUCBDb3JlIDQuNC4wLUV4aXYyIj4KIDxyZGY6UkRGIHhtbG5zOnJkZj0iaHR0cDovL3d3dy53My5vcmcvMTk5OS8wMi8yMi1yZGYtc3ludGF4LW5zIyI+CiAgPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIKICAgIHhtbG5zOmV4aWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20vZXhpZi8xLjAvIgogICAgeG1sbnM6dGlmZj0iaHR0cDovL25zLmFkb2JlLmNvbS90aWZmLzEuMC8iCiAgIGV4aWY6UGl4ZWxYRGltZW5zaW9uPSI0MjQiCiAgIGV4aWY6UGl4ZWxZRGltZW5zaW9uPSI4MyIKICAgdGlmZjpJbWFnZVdpZHRoPSI0MjQiCiAgIHRpZmY6SW1hZ2VIZWlnaHQ9IjgzIgogICB0aWZmOk9yaWVudGF0aW9uPSIxIi8+CiA8L3JkZjpSREY+CjwveDp4bXBtZXRhPgogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgCjw/eHBhY2tldCBlbmQ9InciPz5h1CbrAAAABHNCSVQICAgIfAhkiAAAIABJREFUeNrt3XlcVPX6B/APCNwZ2QYDZVFmBtAcUmRAxQFcwIWESgTTRE2NyFTcwrwp2GK0WJhe0xaVqwZYaWL+uujVclwI0FBAMJCbMoALXKVAHGCU5fn9IUzSRcUFGOR5v17n5TjMmTnznHO+n7N85xw9IiIwxhhjOkafS8AYY4wDijHGGOOAYowxxgHFGGOMcUAxxhjrCgy4BEzXFBcXo6CggAvRToYNGwaBQMCFYBxQjN1NTk4OfHx88Pvvv3Mx2klBQQGkUikXgukcPsTHdCqcRo0ahYCAADQ0NICIeGijYebMmTA1NQUANDQ08MLHOKAYu5OzZ89i1KhReOaZZ7Bt2zbo6elxUdrIrFmz8P333+PLL7/kYjCdxof4mE6E04gRIxAcHIwvv/ySw6kdwunIkSO858R4D4qx1oRTYGAgNm3axOHUTuHk6urKBWE6T4+vxcc6SnV1NXr16gW1Ws3FaAdWVlY4ePCgNpwyMjLg7u6Oc+fOwdHRkQvEdA4f4mMdGlBqtRqffPIJ5HI5F6QNxcbG4syZM7znxDigGLsfrq6uGDVqFBeiDf3444/49ddfuRCsU+FzUIwxxngP6lE5e/YsCgsLUVhYiJKSElRWVkKtVt91qKioAABYWFjA2NgYJiYmdxzMzc1hY2MDiUQCqVSKfv368ZLCGHtgZWVlKC4u1g5Xr17F9evXUVVVhaqqKqjVau3jvz5XXV0NoVCobbeMjY2bDbc/Z2ZmhieeeAL29vawt7eHWCyGlZUVB9SjpFarceLECZw/f14bREVFRSgoKEBpaan2dVKpFPb29jA1NdWGi7W1dYuhIxKJUFdXd88gKykpwfXr11FcXIzCwkLtZ9nY2EAqlUIikWgHR0dHDBs2DN27d+c1kLEuTKPR4NSpUzh//nyzICoqKkJxcTGqq6sBAN27d4e9vT1sbW2bhUzPnj1bDJymx03na1sKtKbHV69ehVqtRmlpKYqLi7WdjwQCAezt7SGRSNC7d2+IxWLY29vDwcEBgwcP1un2SycC6o8//sDRo0dx7NgxHDt2DKdPnwYRwdbWVhsKY8aMgVQq1Q52dnbo1q1bm05XfX09Ll68CJVKpR0KCwtx7NgxbN++HZcvX4a+vj7kcjlGjBihHSwsLHiNZewxdvnyZaSkpCAlJQWpqanIyspCbW0trKystAHg7OyM8ePHa/dk7O3tYWlp2W7TWF5erg3IoqIi7eOkpCQUFRXhypUr0NfXh4uLC7y8vODp6QlPT0+IxeKuHVClpaVQKpVITk7GsWPHkJeXB4FAAA8PDwQEBODDDz+El5dXhyd7t27dIBaLIRaLWzyJr1arkZKSguTkZCQnJ+Ozzz7DjRs38NRTT2nDysfHBz179uQ1mrFOqr6+HllZWUhNTdUOxcXFMDU1xdChQ+Hn54e3334bCoVCpzZOLSwsYGFhcceem5WVlThx4gRSU1ORlpaG+Ph4VFRUwNbWVhtWXl5ekMvlMDQ0fLwDqry8HPHx8di+fTtOnToFkUgELy8vvPjiixg+fDiGDBnSYUV4UCYmJvDz84Ofnx8A4ObNm0hPT9cGVkJCAq5duwYPDw/MnDkTISEhMDc35zWeMR3X0NAApVKJb775Brt370ZFRQX69u0LhUKB5cuXQ6FQYODAgdDX77z9zMzMzDB27FiMHTsWAEBEyMvLQ1paGlJTU7F582ZERETAxMQEgYGBmDp1KsaOHQsDg3bcr6E2dPPmTdqzZw8FBgaSoaEhCYVCeuGFF2j//v1UX19Pj7u6ujpKSkqiyZMn09/+9jcyMjKiSZMm0Q8//EC1tbXU1V29epUAkFKpJNa2VqxYQXK5vNlzp06dIgB07tw5LlCj1NRUWrBgAVlbWxMAGjRoEH344YdUWFjYJetRUlJCa9eupSFDhhAAeuKJJ2jOnDl09OhRamhoaPPPb5OASk9PpwULFpClpSUBIC8vL9q0aRNdv369yy74lZWV9MUXX5BCoSAA1LNnT1q8eDFlZWVxQHFAcUB1oKysLHrjjTdIIpEQAHJycqKVK1dSbm4uLzi3KSgooOjoaHJ2diYAZGdnR6+99hqlp6frfkA1NDRQYmIieXh4EACSSCS0cuXKLrvlca8ZHRkZSX369CEApFAoaO/eve2yRcIBxQHFAUVUW1tLCQkJNHTo0HZrbB8n2dnZzULdxcWFYmNjSaPR6F5Abd26lfr160cAyMfHhw4cOMBzsJX2799P3t7eBID69+9PcXFxHFCMA6qNVFRUUHR0NNna2hIA8vPzo4MHD/IC8hCSk5MpKCiIAJCVlRVFRUVRWVnZI3nvhzrDl5GRgUGDBmH27NmQSCRIS0uDUqnEuHHj+CxrKz399NNITk7GkSNHYGtrixkzZsDd3R3Z2dlcHMYeYaeHTZs2oW/fvli1ahXGjh2Ls2fP4t///re2kwB7MN7e3ti9ezfOnz+P4OBgxMTEwMnJCevWrUNdXd1DvfcDBdT169cxZ84cuLu7Q19fHz///DMOHDiAYcOG8dx6QCNHjsShQ4egVCpx8+ZNDBo0COHh4aiqquLiMPYQUlNT4erqijlz5sDPzw+//fYbtm3bhieffJKL8wg5ODjg888/h0qlwuTJk7FkyRI89dRTOHToUPsF1OnTpyGXy7Fnzx5s27YNmZmZ8PLy4rnziPj4+CAnJwebNm3C119/DXd3d5w5c4YLw9gDeP311+Hl5QU7Ozvk5uYiLi4O9vb2XJg2ZG1tjS+//BLnzp2Di4sLxowZg/nz50Oj0bRtQG3cuBEeHh7o1asXsrOzMXPmTJ4bbSQsLAzZ2dkwNzfH0KFDsWXLFi4KY62Ul5cHFxcXfPHFF9i6dSv2798PmUzGhWlHjo6O2LVrF/bs2YOEhAS4uLggMzOzbQJq4cKFCA8Px+LFi5GSkgJra2ueA23Mzs4OJ06cQFhYGMLCwvD6669zURi7h4MHD2Lw4MEwNDREdnY2Zs2axUXpQIGBgfj111/Rq1cvuLm5YefOna0e954/CSYizJkzB1u2bMGmTZsQFhbGFW9n//jHPyCVSrFkyRJoNBp8+umnXBTGWrBr1y5MnToVzzzzDL755hsIBAIuio5sbCuVSsyePRsvvPACrl271qosuWdArVq1Cps3b0Z8fDymTZvGle4gixcvhpmZGUJDQ9G7d2/8/e9/56Iwdpu9e/di8uTJCA8P5404HWRoaIj4+HhIJBK88sorMDIyuudporse4vvpp5/wzjvv4MMPP2zfcCqMRbDUBp4fZ/Jcvc1LL72Et99+GytWrMCRI0e4IDqrFMrP38PLw22gZxqMHerWjFOBtM3vIXycA/SEo7HxIlfxfuTl5WHq1KmYMmVK1wqns4l4b1kw3Ez1YLNQ2SkmOTo6GnPnzkVYWBhSUlIeLKCqq6sREhKCSZMmtf/Wet2t+6ugjle8v3rrrbfw3HPPYfr06Q/UK4a1B2v4zo1EhL8UrT/AJIIiLBJRE+9nHAbcutr4xIkTMWTIEMTFxXWtL98/CJHvz4enZeea7A0bNsDPzw/PP/+89l5Z9xVQq1evRn19PbZu3dr+U+8UiqSScqQul3foVvDG54IRW6Z7M3fbtm1Qq9VYu3Ytt06sy1u/fj0uXLiA7777rtPdEaFN9yo/GI2Xf9DNadPX10dCQgJu3LiBDz744P4C6vLly1i9ejUiIyNhbGzcNefuyQ3YeFg391DMzc2xbNkyvPfee7hy5YpOTNOoUaMwceJE7N27l1uGRgIDrkFrSSQSLFmyBFlZWfc1XllZGd566y288cYbnfrW5o+ceh/WbMpAjQ5PopmZGVatWoWPP/4YxcXFrQ+ouLg4EBHmzp3bAYXNROyyYDib6sFmXuMxVXUa1gS5wcJQCLcXl+Ll5zzhYCOE0NQGbi/FIq/u1h5P4muecBDqwcZ3GqaNc4ODlRBCK2eMnheLTDUAaJAZtxQBMj3oyd9DZuN4yk+XInigEHp9lyKtDijd/x6mhW1EniYVa571hKdvFJSaxml7ZTTcFKMx2tcTbgM9Eb6rtENmbnh4ODQaDb7++mudWeD27t2LwMBAmJiYYPbs2boTVic3YprCBnqGDghYGI7g4c6wMb21bAS8uw+Zh2MR9eJoONsIIbRwwOhl+9BsrlakYeO8AHgqPDF6nCfc5J6Y9u4+qOqa73ErP34Zowc6w813NAKCghG+Iw/NN3E0yNsajoAhbvD0vfU+L3+ahgpuTlFUVIT169dDLpejT58+WLJkCQoLC+853pYtW1BdXY3Fixd32LRrsmIRPs4BQqEn3vs5EzvenAbPvg4I/7Fx8Tm+ES+Pc4Pb8NHwlLth9LxY5GnPS1Yg7eNp8BziidHjbv3dc4USmla2VS06l4ilIUuRUFgB5QpPeA4PwJqTutV+NQkLC4ORkRE+++yzll/Q0gX6AgICaPz48R14qeFUinACWc899Odz5QnkLwDJZm+h1JwCKrmQS4dW+pLIQEQhO8u140X2Bwme3UAF5URENVSwL4IUIpB09m5qfBXtniEguEZTxm23ZDq0wJrgFEGpjc8VfKIggcCftlz98zUZy2Uk8ImhgsbX1CgjKGR9QYeVycfHh4KDg3XigpEjR44kANqhW7duBIBMTU1p8eLFlJmZ2bEXiz0YStYG1uS/ajcdSs+l3MwkinnWmtD0XFoG5eak0pbZMhIYyCiy6aLWtbkU4yMi62c3UEFN43MXEihEIiDZgkONy1QNpS6Xk8DSl2JyarQfmfu+ggQmQZTQeJeZ8p0hZC2QUYSycaz0SJILrP9cfomo5DNfEgh8acOFrnWx2NuXHQBkZGREAMjZ2ZnWrVtHKpWqxfFGjx5N/v7+Hb8C7AslkYGI5DOiacPOJEpY4EvzDxKRagP5WwpI8X4G1RARlSfRfCcBSRccohoiqtkXSlLLIEooaWrndlNoWMJ9tVVUe4jmS0DWC25rL9MjSWYgopD/0932q8n06dNp8ODBrb9Y7JkzZ+Dh4aGLB00gkvlCMUAK694y+L4WCl8DDfLOlTR/laUUUtGt10vHR2PNbClUu2Kx+6E2FiqQd1YFmIggbDx0I/CJxsYZ0g6rhoeHh85eBqm+vh7Ares2fvbZZ5DL5bCzs3ugwziPjhAynyD4DpZB5uqPiAXBsAYgHRYE32FyyAYoELowCDKooLrQuO+TvBEbkwUImBsKaVPvhd4hWPqSDKqta24tUxWJiNmcCZupkZg/4E5dHEqRsDkRFYNDMd9HdGv5cQ2Gf/9SJH69j/ei/uLmzZsAgNzcXEREREAqlcLFxQXbt29HRcWf1crOzoa3t7eOTLUNfOdFYv7z/ghZtQHzBwKZcbHYp/FFaJj8VucXkT+Cxoqg2rUDSg1QcjYXJQYCCEwa30IUhJiPgiB65NOme+1XE29vb5w+fbrFv7V4lPzSpUsQi8Wd4CC/ADC4V28/AeRD5BB8morMHAAPfAEMEeRD5MCbS+E/WYX5c0MR7COFSNRxX18sFqOkpEQnupxXVlbes7G5fPkyNmzYgHXr1qF3794dcwi5WV4JIASaH4YzEN5aKxqXKdXJDJQYSCGTNg8eWX8ZoFEiLRMINc1AZoUAMrnbnXvg1WUgM0cDwVgpbLSfZQOpjQAalQqqOkDeQeesTpw4gQsXLujsat60sZOTk4OwsDDMmjULAQEBCAoKQllZGRwcHHRvokUyyFCBHZl5gLUvnG9rJ2z62EBQoYKqDPAd4glp2RrMHytE3sJQhExUQCpqi36cutd+NXFwcEBtbS3KyspgaWl594Cqrq5GXV0devXq9dhsjQlMLCCABuUP2edB9noikhCBqE1r8PKu9xDePwjRW2MRMaxj5rKNjQ0qKyvh4+PT4TUWCoWtel3T5fcvXryIyMhIALd6jOrCd2hxu7O8AhrY/LmFq12mhBDUVaBGrQHqSlBeB4jutrbXaVCjBjSHoxEwbqP26ZoSG8hsOrZjeWf6AX5tbS0AICkpCUlJSQCArKwsTJkyRQenVoNyNYDSRET4Z0K7hpRrYCMRQQBA4B2NpJ0CLH0/FtEhsYiylCPk/QTEhske+c8NdK39amJrawsA+P333+8dUN27d4ehoSGuXr362ASURl0ODSxgY/GQb2RgDd/lCUhdroHqx42IWhiFpTOi4ZkXA0UHbP1evXoV5ubm+P777zu8xq+99lqrLgRpZGSEmzdvonfv3nj11VcRFRWl01fFEFmIIEANNOq/LlM10BiIIDQRAAYWEBgAGnUFcKeDMwYCCE0AwdhoHPqnv059x4SEBG0j0VFau4FiaGiI2tpa+Pv7Y9KkSQgNDYW7u7uubhrDwgSAdRDW7LtTGyGAdGI0dk+MRsWZfdi4LBRRC0PhPDwVkf0f8eToWPvVpKkn8hNPPPG/k9zSCH369MHly5cfm4DKzMyDRiSH24CmRUIA1N2rA6bwf7aGMg9nQuqjgAgCSMdGYOMyJRLn5SG3AlB0wA/lLl68CDs7O4waNarDa2xmZnbPULK1tcXzzz+PWbNmwdXVFWVlZYiKitLpZUc62A02dbuRp9IA/f/cps3LyYNG4AaFHECdDM4GGmSmZ0Azw7flLV8DN8gHCpCQk4m8On/IdKgLuoeHBxwdHXV2HnTr1g319fUYMGAAIiIiEBgYqN1bjYyMxMWLunrZDRFkA2TAj3nILQMULZxeqPhZCdVgX8gFgGiAPyLXL0XSwGiofgPQv7VtVev25nSt/Wpy4cIFGBgY/M/eE3CHbuaDBw/G8ePHH490KoxFTJwK8rClCGrcuLXpKwXO7UPsD3koLS2FKkuJtHPNj/9ZiARAnQqZmRVAnQaaOg0yPo/CxjMa7QxXqUqA/nK4ddAe8vHjxzF48GCdbVQAwNTUFHPnzkVmZiYuXbqEdevWwdXVtfMsP8PnY/5wDZI+j/2zW/nFHYiJy4NsxnwEWwPoHYzQZ62hiotC1H7VrXNaahXyLlTcdn7LGsGz/SHKikH4qn1QNe2RqUtRWsZXBGlpowYAZDIZYmJioFKpkJOTg1mzZjU7lOrh4YGff/5ZZ7+H/MVQ+Brsw3uvrIHyYuN81lSgtPRWR4/ytDWIjlP9GVi/qVAqcIN8YOvbqhaZWEBkoIEqKxMa3Loyj661X02Sk5PvfE/Blrr2xcfHk5GREVVWVrZ/n8O83RS9IIhkJiBBf3+avzKBcsszKGGJP0kNQNbeoRT9fwVE5am0pfE50bBQilGW/NnN3ElB/s/6k/9YBcldFRTy/iEqua2bJpUkUYSPlAQCAVkP8KWQ5RsoZoaUYCIl37AtlFtLRFeTKGKYNQlMrEk6LIQ25NRQ6vv+pBggJ8VYX/L1UZBi/HxKuK1bcXv6448/qFu3bvTdd9/pTDdzPT09AkDGxsY0c+ZM2rNnz13Habdu5nm7KXKijAQGApI/H0EbksupPG0LRTwvJ4GBgGQTI2iDsoTKMxMocoaCRAYg6fgI2pLeOG/LU2nDXH9SDPMl37G+JB/sSyGrkrTddbWvCfMlmaWABCYikg4LovnPy0lgYE3yqTGUev1Wd/SMf84nf1drEgkEZO0kI8Wz82lDWjkRlVPqpkgK9bnV9d03LJK2JJd0qW7m+vr6BIB69+5NixYtumPX8tvFxcWRoaFhx7RVTXISGpcvEcmfj6DoxOZdt8uTN1DoWBlZmwhIZC0luU8QRXyVSzVEVL4vkvwHy0ju7Uu+YxUkHxZEkbePf6+2Kmc3Rb8eRHITkGBAEEW8v/tW+0UFlDBbRiITEVn396X5O/J0qv1qcvPmTTIxMaH169e3vFy09GR1dTVZWlrS6tWrqVNpDChRWBI97t5++22ysbGhGzdu6ExATZgw4Z6h1GG/g+ridD2gxGIxLVq0qMXfy91NTU0NWVtb05tvvskzuRNau3YtmZubU0VFRYt/b/FIuFAoxBtvvIFVq1bh5ZdfRo8ePTrX8YHH/CKzV69exUcffYSPPvpIeyiko/HV1dlDHYlvxVUjWuxiIBDgnXfewcKFCxEaGsq3c+9EysrK8OabbyIyMhLm5uYtvuaOF4udN28ejIyM+G6UOoaIEBISAnNzc755JGMAQkNDYWdnh0mTJuHGjRtckE6goaEBkyZNQvfu3bFo0aI7vu6OASUUCvHVV1/hX//6Fz7++ONO8JVVSFwVg32lgCZ5DcJXxCLtMfx5fnR0NJRKJRISEnRm74mxjtStWzd8++23OHPmDGbMmMEF6QRee+01pKamYufOnXe/6/G9jhFGR0eTnp4excfH8wHTDhYbG0t6enoUExPzWHwfPgfF56AepR9++IH09fXppZdeovr6ep7pOmrZsmUEgL755pt7vvaev8aIjIxEWVkZZsyYgcrKyo6/PE0XtW7dOixZsgQrVqxAREQEF4Sxv3jmmWeQmJiIKVOmoKSkBImJiXffOmftqra2FtOmTUNiYiLi4+NbdfWPVv1ccO3atejRowfmzZuHgoKCTnLI7/GxZMkSrFu3DjExMRxOjN3FhAkT8NNPPyEgIAAjRozAzp07IZFIuDAdrLS0FFOmTEF6ejqSkpLg5+fXqvH0W/sBK1euREJCAj7//HN4eXmhtLSUq97GLl26BA8PD2zZsgV79uzhcGKsFby9vZGdnQ0AcHFxwVdffcVF6UA//PADZDIZysvLcfr06VaH030FFACEhIQgMzMTarUagwYNwvbt27n6bWTz5s1wdXVFXV0dsrOzERgYyEVhrJXEYjF++eUXLFu2DDNnzsSECROQn5/PhWlHKpUKISEheO655/Dqq68iOzsbffv2va/30L/fD+3bty/S09PxyiuvICwsDK6urkhJSeG58YikpKTA2dkZ4eHhCA8Px/HjxyGVSrkwjD2AqKgonD59GmVlZXB2dsbs2bNx6dIlLkwbunLlCl599VX069cP+fn5OHHiBD744IMHei/9BxnJyMgI7777Lk6fPg09PT14e3tj/Pjxj8/1+zrA0aNHMWbMGHh7e8PY2BhnzpzBW2+9BUNDQy4OYw/BxcUFKSkp2LZtG/bv3w+pVIrZs2fzHtUjVlBQgDlz5kAsFmPnzp1Yv349Tp48iaFDhz7we+o/zATJZDJkZmZi69atOH/+PBQKBXx9fXHw4EGeW6104MABDB8+HKNGjcKlS5cQFxeH9PT0+94VZozd3YwZM5Cfn48333wTBw4cQP/+/fH000/j0KFDXJyH8PPPP2PChAlwdHTUniv/7bffMHfuXOjp6T3Ue+s/igmcNWsW8vPzsWfPHlRXV8PPzw8SiQQrV66ESqXiOfgXKpUKkZGREIvFePrpp9HQ0IC9e/ciNzcX06dP5wIx1kbMzc0RFRWFoqIi7NixA+Xl5RgzZgzs7OwQERGBkydPcpFa4fTp01i+fDmkUimGDx+OwsJCxMbG4sKFC4iOjm7x3k4PpC1+iHXq1ClauHAhWVpaEgDy8vKiTZs2dewVhztYZWUlffHFF6RQKAgAWVlZ0aJFiygjI6PL1oR/qMs/1NUF2dnZtHz5cpJIJASAnJycaOXKlZSfn88Lzm0KCgro3XffJWdnZwJAdnZ2tGTJEvrll1/a7DPRll+otraWvv/+ewoMDCRDQ0MSCAT0wgsv0P79+7vEL73r6+spKSmJJk+eTAKBgIyMjCgoKIj27t1LtbW1XX6B54DigNI1aWlptGDBAurVqxcBoEGDBtHq1aupuLi4S9ajpKSEPvnkExoyZAgBoB49etArr7xChw8fbpc2XI+IqD12CcvLyxEfH4/t27fj1KlTEIlEUCgU8PLygre3Nzw8PDr9r75ramqQlpaG1NRUpKSkIC0tDdeuXcPQoUPx4osvYvr06Xe8am9XVFZWBisrKyiVylbf8ps9mMjISOzfvx8ZGRna5zIyMuDu7o5z587p9B11O0JDQwOUSiV27NiBxMREXLt2DU5OThg2bJh2cHV11d6Y83H5ztnZ2Thx4gSOHz+O48ePIz8/H8bGxpgwYQKmTp2KcePGtWvHrXYLqNuVlpbi0KFDOHr0KI4dO4b8/HwYGhpCLpdrA2v48OGwsrLS6Rl65coVHD16FCkpKUhJSUFWVhbq6urQv39/jBw5EiNGjMCYMWPQs2dPXuM5oDigOqm6ujpkZWVp1/OUlBRcvnwZQqEQ7u7u2sDy8PBA7969O833unr1KlJSUrRhdPLkSVRVVaFnz57w8vKCp6cnvLy84O7u3mEXpu6QgGqpUIcPH9YG1q+//goigqWlJaRSKRwcHODg4NDscZ8+fWBgYNDmC2ZRURFUKhUKCgpQUFDQ7PEff/wBPT09DBgwACNHjsTIkSPh4+Pz6E4QckAxDiidVFRU1CywcnJy0NDQAHNzc4jFYkgkEojF4v953J4b3b///juKiopQWFiIoqIi7dD0//Lycujp6cHZ2blZIDk5OelMnQ10YSKsrKwwefJkTJ48GcCtQ2Xnzp2DSqXCf/7zHxQUFCAjIwO7du3CuXPntOM1zXhTU1OYmJhoBzMzM3Tv3l37f1NTU5ibm6Ourg5qtbrZUFVVhevXr0OtVjf7t2lmNunbty+cnJwglUoxdOhQ9OvXD1KpFI6OjhAKhbzGMtaFNAVOSEiI9rn8/HwUFhaioKAAhYWFUKlUOHHiBAoKClBWVgbg1m2MxGIxbG1tYWxsDGNjY5iYmMDY2BimpqYQCoXa/9/+t+rqam17VVVVBbVajZqaGm2b1fR8VVUVSkpKUFRUhKqqKgBAjx494ODgALFYjL59+2LMmDHa/0ulUp1uvwx0caKEQiEGDhyIgQMHtvj3wsJCnD9/HufPn8elS5dQWVmpDZzS0tJmodM0VFTcujmUhYWFdqY3hdftj21sbGBubg47Ozs4OjrC0dERYrGY10jG2F09+eSTePLJJ1v8W3V1dbPgunLlCq5fv64Nm//+97/NQub20Kmurv6f4Lo9vJoGKysrmJmtenDgAAABAElEQVSZwdLSEhKJRHvEycTEpNPW1KAzTrREIoFEIsHo0aN5rWCM6bzu3btjwIABGDBgABfjPuhzCRhjjHFAMcYYYxxQjLG7+fbbb2FmZgYLCwsuBtNJBlwCxrqe119/HZs3b8bhw4fRo0cPLgjjPSjGmO6Ek1KphJubGxeE8R4UY6zjLViwAHFxcRxOjAOKMaY7Ll68iG3btuHo0aMcTqxT0IlLHbGuqelSR6x9GBkZ4dixY/Dw8OBiMA4oxu7lyJEjXIR2Ym9vDwcHBy4E44BijDHGHgb34mOMMcYBxRhjjHFAMcYY44BijDHGOKAYY4xxQDHGGGMcUIwxxtht/h87c/Wt0UqIIAAAAABJRU5ErkJggg==" class="img-fluid" alt="using-a-trained-model.png"> &gt;<em>Using the trained model as program</em></p>
+<p>The <code>export()</code> function allow us to save the model in oreder to use it later, and as we know model is <strong>Architecture + Parameters</strong>, <strong>Fastai</strong> by default saves also the method of which we’ve created the <code>DataLoaders</code>, because otherwise we have to define it again in order to work with the new data we will feed to the model.</p>
+<section id="from-model-to-inference" class="level3">
+<h3 class="anchored" data-anchor-id="from-model-to-inference">From Model to Inference</h3>
+<p>This file <code>export.pkl</code> is allways needed wherever we will create an app from it, for now we will use it whithin this notebook in order to create a small app that can predict bears type from image we will provide.</p>
+<p>When we use a model for getting predictions, instead of training, we call it <strong>inference</strong>.<br>
+To create <code>inference learner</code> from <code>export.pkl</code> file we use <code>load_learner</code>:</p>
+<div id="cell-43" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb37"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1"></a>learn_inf <span class="op">=</span> load_learner(path<span class="op">/</span><span class="st">'export.pkl'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div id="cell-44" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:34}}" data-outputid="108e6c7d-16a6-4566-97eb-7db13b270e87">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb38"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1"></a><span class="co"># predicting one image</span></span>
+<span id="cb38-2"><a href="#cb38-2"></a>learn_inf.predict(<span class="st">'images/bear.jpg'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display">
+
+<style>
+    /* Turns off some styling */
+    progress {
+        /* gets rid of default border in Firefox and Opera. */
+        border: none;
+        /* Needs to be in here for Safari polyfill so background images work as expected. */
+        background-size: auto;
+    }
+    progress:not([value]), progress:not([value])::-webkit-progress-bar {
+        background: repeating-linear-gradient(45deg, #7e7e7e, #7e7e7e 10px, #5c5c5c 10px, #5c5c5c 20px);
+    }
+    .progress-bar-interrupted, .progress-bar-interrupted::-webkit-progress-bar {
+        background: #F44336;
+    }
+</style>
+</div>
+<div class="cell-output cell-output-display">
+
+</div>
+<div class="cell-output cell-output-display" data-execution_count="29">
+<pre><code>('grizzly', TensorBase(1), TensorBase([8.0130e-07, 1.0000e+00, 2.0153e-07]))</code></pre>
+</div>
+</div>
+<ul>
+<li>This has returned three things:
+<ul>
+<li>the predicted category(label) in the same format we originally provided (in this case that’s a string),</li>
+<li>the index of the predicted category, and the probabilities of each category.</li>
+<li>the last two are based on the order of categories in the <em>vocab</em> of the <code>DataLoaders</code>; that is, the stored list of all possible categories.</li>
+</ul></li>
+<li>At inference time, you can access the <code>DataLoaders</code> as an attribute of the <code>Learner</code>:</li>
+</ul>
+<div id="cell-46" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}}" data-outputid="327d489a-5693-49d0-a568-a6e6136a44a1">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb40"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb40-1"><a href="#cb40-1"></a>learn_inf.dls.vocab</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="30">
+<pre><code>['black', 'grizzly', 'teddy']</code></pre>
+</div>
+</div>
+<p>We can see here that if we index into the vocab with the integer returned by <code>predict</code> then we get back “grizzly,” as expected. Also, note that if we index into the list of probabilities, we see a nearly 1.00 probability that this is a grizzly.</p>
+</section>
+<section id="gradio-hugginface-spaces" class="level3">
+<h3 class="anchored" data-anchor-id="gradio-hugginface-spaces">Gradio + HugginFace Spaces</h3>
+<ul>
+<li>If we want to share our model with a broader audience, and showcase our skills we need to create a real app that can be used outside of the datascience/machine learning word where nobody know or have the ability to use jupyter notebook or python.. and that’s why we will show using a combination of python package <strong>Gradio</strong> that will allow us to build our app, then host it on <strong>HuggingFace</strong></li>
+</ul>
+<div id="cell-50" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}}" data-outputid="c93fa95e-e13c-4941-8309-82f15f177cf7">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb42"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb42-1"><a href="#cb42-1"></a><span class="co"># firstly install gradio</span></span>
+<span id="cb42-2"><a href="#cb42-2"></a><span class="op">!</span>pip install gradio</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Looking in indexes: https://pypi.org/simple, https://us-python.pkg.dev/colab-wheels/public/simple/
+Collecting gradio
+  Downloading gradio-3.6-py3-none-any.whl (5.3 MB)
+     |████████████████████████████████| 5.3 MB 5.2 MB/s 
+Requirement already satisfied: requests in /usr/local/lib/python3.7/dist-packages (from gradio) (2.23.0)
+Requirement already satisfied: pydantic in /usr/local/lib/python3.7/dist-packages (from gradio) (1.9.2)
+Collecting pydub
+  Downloading pydub-0.25.1-py2.py3-none-any.whl (32 kB)
+Collecting paramiko
+  Downloading paramiko-2.11.0-py2.py3-none-any.whl (212 kB)
+     |████████████████████████████████| 212 kB 67.2 MB/s 
+Collecting httpx
+  Downloading httpx-0.23.0-py3-none-any.whl (84 kB)
+     |████████████████████████████████| 84 kB 3.9 MB/s 
+Requirement already satisfied: pandas in /usr/local/lib/python3.7/dist-packages (from gradio) (1.3.5)
+Collecting orjson
+  Downloading orjson-3.8.0-cp37-cp37m-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (270 kB)
+     |████████████████████████████████| 270 kB 62.9 MB/s 
+Collecting ffmpy
+  Downloading ffmpy-0.3.0.tar.gz (4.8 kB)
+Requirement already satisfied: aiohttp in /usr/local/lib/python3.7/dist-packages (from gradio) (3.8.3)
+Requirement already satisfied: pillow in /usr/local/lib/python3.7/dist-packages (from gradio) (7.1.2)
+Collecting fastapi
+  Downloading fastapi-0.85.1-py3-none-any.whl (55 kB)
+     |████████████████████████████████| 55 kB 3.8 MB/s 
+Requirement already satisfied: jinja2 in /usr/local/lib/python3.7/dist-packages (from gradio) (2.11.3)
+Collecting h11&lt;0.13,&gt;=0.11
+  Downloading h11-0.12.0-py3-none-any.whl (54 kB)
+     |████████████████████████████████| 54 kB 3.7 MB/s 
+Requirement already satisfied: matplotlib in /usr/local/lib/python3.7/dist-packages (from gradio) (3.2.2)
+Collecting pycryptodome
+  Downloading pycryptodome-3.15.0-cp35-abi3-manylinux2010_x86_64.whl (2.3 MB)
+     |████████████████████████████████| 2.3 MB 47.6 MB/s 
+Requirement already satisfied: fsspec in /usr/local/lib/python3.7/dist-packages (from gradio) (2022.8.2)
+Collecting markdown-it-py[linkify,plugins]
+  Downloading markdown_it_py-2.1.0-py3-none-any.whl (84 kB)
+     |████████████████████████████████| 84 kB 3.9 MB/s 
+Requirement already satisfied: numpy in /usr/local/lib/python3.7/dist-packages (from gradio) (1.21.6)
+Collecting python-multipart
+  Downloading python-multipart-0.0.5.tar.gz (32 kB)
+Requirement already satisfied: pyyaml in /usr/local/lib/python3.7/dist-packages (from gradio) (6.0)
+Collecting uvicorn
+  Downloading uvicorn-0.19.0-py3-none-any.whl (56 kB)
+     |████████████████████████████████| 56 kB 5.3 MB/s 
+Collecting websockets
+  Downloading websockets-10.3-cp37-cp37m-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_12_x86_64.manylinux2010_x86_64.whl (112 kB)
+     |████████████████████████████████| 112 kB 70.9 MB/s 
+Requirement already satisfied: frozenlist&gt;=1.1.1 in /usr/local/lib/python3.7/dist-packages (from aiohttp-&gt;gradio) (1.3.1)
+Requirement already satisfied: typing-extensions&gt;=3.7.4 in /usr/local/lib/python3.7/dist-packages (from aiohttp-&gt;gradio) (4.1.1)
+Requirement already satisfied: async-timeout&lt;5.0,&gt;=4.0.0a3 in /usr/local/lib/python3.7/dist-packages (from aiohttp-&gt;gradio) (4.0.2)
+Requirement already satisfied: attrs&gt;=17.3.0 in /usr/local/lib/python3.7/dist-packages (from aiohttp-&gt;gradio) (22.1.0)
+Requirement already satisfied: charset-normalizer&lt;3.0,&gt;=2.0 in /usr/local/lib/python3.7/dist-packages (from aiohttp-&gt;gradio) (2.1.1)
+Requirement already satisfied: aiosignal&gt;=1.1.2 in /usr/local/lib/python3.7/dist-packages (from aiohttp-&gt;gradio) (1.2.0)
+Requirement already satisfied: multidict&lt;7.0,&gt;=4.5 in /usr/local/lib/python3.7/dist-packages (from aiohttp-&gt;gradio) (6.0.2)
+Requirement already satisfied: yarl&lt;2.0,&gt;=1.0 in /usr/local/lib/python3.7/dist-packages (from aiohttp-&gt;gradio) (1.8.1)
+Requirement already satisfied: asynctest==0.13.0 in /usr/local/lib/python3.7/dist-packages (from aiohttp-&gt;gradio) (0.13.0)
+Requirement already satisfied: idna&gt;=2.0 in /usr/local/lib/python3.7/dist-packages (from yarl&lt;2.0,&gt;=1.0-&gt;aiohttp-&gt;gradio) (2.10)
+Collecting starlette==0.20.4
+  Downloading starlette-0.20.4-py3-none-any.whl (63 kB)
+     |████████████████████████████████| 63 kB 2.5 MB/s 
+Collecting anyio&lt;5,&gt;=3.4.0
+  Downloading anyio-3.6.2-py3-none-any.whl (80 kB)
+     |████████████████████████████████| 80 kB 10.6 MB/s 
+Collecting sniffio&gt;=1.1
+  Downloading sniffio-1.3.0-py3-none-any.whl (10 kB)
+Requirement already satisfied: certifi in /usr/local/lib/python3.7/dist-packages (from httpx-&gt;gradio) (2022.9.24)
+Collecting httpcore&lt;0.16.0,&gt;=0.15.0
+  Downloading httpcore-0.15.0-py3-none-any.whl (68 kB)
+     |████████████████████████████████| 68 kB 6.7 MB/s 
+Collecting rfc3986[idna2008]&lt;2,&gt;=1.3
+  Downloading rfc3986-1.5.0-py2.py3-none-any.whl (31 kB)
+Requirement already satisfied: MarkupSafe&gt;=0.23 in /usr/local/lib/python3.7/dist-packages (from jinja2-&gt;gradio) (2.0.1)
+Collecting mdurl~=0.1
+  Downloading mdurl-0.1.2-py3-none-any.whl (10.0 kB)
+Collecting mdit-py-plugins
+  Downloading mdit_py_plugins-0.3.1-py3-none-any.whl (46 kB)
+     |████████████████████████████████| 46 kB 4.5 MB/s 
+Collecting linkify-it-py~=1.0
+  Downloading linkify_it_py-1.0.3-py3-none-any.whl (19 kB)
+Collecting uc-micro-py
+  Downloading uc_micro_py-1.0.1-py3-none-any.whl (6.2 kB)
+Requirement already satisfied: pyparsing!=2.0.4,!=2.1.2,!=2.1.6,&gt;=2.0.1 in /usr/local/lib/python3.7/dist-packages (from matplotlib-&gt;gradio) (3.0.9)
+Requirement already satisfied: cycler&gt;=0.10 in /usr/local/lib/python3.7/dist-packages (from matplotlib-&gt;gradio) (0.11.0)
+Requirement already satisfied: python-dateutil&gt;=2.1 in /usr/local/lib/python3.7/dist-packages (from matplotlib-&gt;gradio) (2.8.2)
+Requirement already satisfied: kiwisolver&gt;=1.0.1 in /usr/local/lib/python3.7/dist-packages (from matplotlib-&gt;gradio) (1.4.4)
+Requirement already satisfied: six&gt;=1.5 in /usr/local/lib/python3.7/dist-packages (from python-dateutil&gt;=2.1-&gt;matplotlib-&gt;gradio) (1.15.0)
+Requirement already satisfied: pytz&gt;=2017.3 in /usr/local/lib/python3.7/dist-packages (from pandas-&gt;gradio) (2022.4)
+Collecting pynacl&gt;=1.0.1
+  Downloading PyNaCl-1.5.0-cp36-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.manylinux_2_24_x86_64.whl (856 kB)
+     |████████████████████████████████| 856 kB 63.6 MB/s 
+Collecting cryptography&gt;=2.5
+  Downloading cryptography-38.0.1-cp36-abi3-manylinux_2_24_x86_64.whl (4.0 MB)
+     |████████████████████████████████| 4.0 MB 41.4 MB/s 
+Collecting bcrypt&gt;=3.1.3
+  Downloading bcrypt-4.0.1-cp36-abi3-manylinux_2_24_x86_64.whl (593 kB)
+     |████████████████████████████████| 593 kB 68.7 MB/s 
+Requirement already satisfied: cffi&gt;=1.12 in /usr/local/lib/python3.7/dist-packages (from cryptography&gt;=2.5-&gt;paramiko-&gt;gradio) (1.15.1)
+Requirement already satisfied: pycparser in /usr/local/lib/python3.7/dist-packages (from cffi&gt;=1.12-&gt;cryptography&gt;=2.5-&gt;paramiko-&gt;gradio) (2.21)
+Requirement already satisfied: urllib3!=1.25.0,!=1.25.1,&lt;1.26,&gt;=1.21.1 in /usr/local/lib/python3.7/dist-packages (from requests-&gt;gradio) (1.25.11)
+Requirement already satisfied: chardet&lt;4,&gt;=3.0.2 in /usr/local/lib/python3.7/dist-packages (from requests-&gt;gradio) (3.0.4)
+Requirement already satisfied: click&gt;=7.0 in /usr/local/lib/python3.7/dist-packages (from uvicorn-&gt;gradio) (7.1.2)
+Building wheels for collected packages: ffmpy, python-multipart
+  Building wheel for ffmpy (setup.py) ... done
+  Created wheel for ffmpy: filename=ffmpy-0.3.0-py3-none-any.whl size=4712 sha256=bf42b4bf9ba2633a885814063d3340770c60207e05f131d9e165fafd4a5e1aa5
+  Stored in directory: /root/.cache/pip/wheels/13/e4/6c/e8059816e86796a597c6e6b0d4c880630f51a1fcfa0befd5e6
+  Building wheel for python-multipart (setup.py) ... done
+  Created wheel for python-multipart: filename=python_multipart-0.0.5-py3-none-any.whl size=31678 sha256=f8ff9e663a939cd5bba16c9c7ce235f69c0fab5ae8199bbfce9b5fdb3361d05e
+  Stored in directory: /root/.cache/pip/wheels/2c/41/7c/bfd1c180534ffdcc0972f78c5758f89881602175d48a8bcd2c
+Successfully built ffmpy python-multipart
+Installing collected packages: sniffio, mdurl, uc-micro-py, rfc3986, markdown-it-py, h11, anyio, starlette, pynacl, mdit-py-plugins, linkify-it-py, httpcore, cryptography, bcrypt, websockets, uvicorn, python-multipart, pydub, pycryptodome, paramiko, orjson, httpx, ffmpy, fastapi, gradio
+Successfully installed anyio-3.6.2 bcrypt-4.0.1 cryptography-38.0.1 fastapi-0.85.1 ffmpy-0.3.0 gradio-3.6 h11-0.12.0 httpcore-0.15.0 httpx-0.23.0 linkify-it-py-1.0.3 markdown-it-py-2.1.0 mdit-py-plugins-0.3.1 mdurl-0.1.2 orjson-3.8.0 paramiko-2.11.0 pycryptodome-3.15.0 pydub-0.25.1 pynacl-1.5.0 python-multipart-0.0.5 rfc3986-1.5.0 sniffio-1.3.0 starlette-0.20.4 uc-micro-py-1.0.1 uvicorn-0.19.0 websockets-10.3</code></pre>
+</div>
+</div>
+<div id="cell-51" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb44"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb44-1"><a href="#cb44-1"></a><span class="co"># create labels from dalaloaders vocab</span></span>
+<span id="cb44-2"><a href="#cb44-2"></a>labels <span class="op">=</span> learn.dls.vocab</span>
+<span id="cb44-3"><a href="#cb44-3"></a><span class="co"># predicting function that take an image as input and use learn.predict to ouput:</span></span>
+<span id="cb44-4"><a href="#cb44-4"></a><span class="co"># prediction, prediction index, and probability.</span></span>
+<span id="cb44-5"><a href="#cb44-5"></a><span class="kw">def</span> predict(img):</span>
+<span id="cb44-6"><a href="#cb44-6"></a>    img <span class="op">=</span> PILImage.create(img)</span>
+<span id="cb44-7"><a href="#cb44-7"></a>    pred,pred_idx,probs <span class="op">=</span> learn.predict(img)</span>
+<span id="cb44-8"><a href="#cb44-8"></a>    <span class="cf">return</span> {labels[i]: <span class="bu">float</span>(probs[i]) <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(labels))}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<ul>
+<li>Here we will use gradio in order to create an app withing this notebook.</li>
+</ul>
+<div id="cell-53" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:802}}" data-outputid="d4bf320c-de3b-42c4-9044-43d782acf54e">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb45"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb45-1"><a href="#cb45-1"></a></span>
+<span id="cb45-2"><a href="#cb45-2"></a><span class="im">import</span> gradio <span class="im">as</span> gr</span>
+<span id="cb45-3"><a href="#cb45-3"></a>gr.Interface(fn<span class="op">=</span>predict, inputs<span class="op">=</span>gr.inputs.Image(shape<span class="op">=</span>(<span class="dv">512</span>, <span class="dv">512</span>)), outputs<span class="op">=</span>gr.outputs.Label(num_top_classes<span class="op">=</span><span class="dv">3</span>)).launch(share<span class="op">=</span><span class="va">True</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>/usr/local/lib/python3.7/dist-packages/gradio/inputs.py:257: UserWarning: Usage of gradio.inputs is deprecated, and will not be supported in the future, please import your component from gradio.components
+  "Usage of gradio.inputs is deprecated, and will not be supported in the future, please import your component from gradio.components",
+/usr/local/lib/python3.7/dist-packages/gradio/deprecation.py:40: UserWarning: `optional` parameter is deprecated, and it has no effect
+  warnings.warn(value)
+/usr/local/lib/python3.7/dist-packages/gradio/outputs.py:197: UserWarning: Usage of gradio.outputs is deprecated, and will not be supported in the future, please import your components from gradio.components
+  "Usage of gradio.outputs is deprecated, and will not be supported in the future, please import your components from gradio.components",
+/usr/local/lib/python3.7/dist-packages/gradio/deprecation.py:40: UserWarning: The 'type' parameter has been deprecated. Use the Number component instead.
+  warnings.warn(value)</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Colab notebook detected. To show errors in colab notebook, set `debug=True` in `launch()`
+Running on public URL: https://bbc80cb39aa58cc0.gradio.app
+
+This share link expires in 72 hours. For free permanent hosting and GPU upgrades (NEW!), check out Spaces: https://huggingface.co/spaces</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<div><iframe src="https://bbc80cb39aa58cc0.gradio.app" width="900" height="500" allow="autoplay; camera; microphone; clipboard-read; clipboard-write;" frameborder="0" allowfullscreen=""></iframe></div>
+</div>
+<div class="cell-output cell-output-display" data-execution_count="33">
+<pre><code>(&lt;gradio.routes.App at 0x7f45d2b49710&gt;,
+ 'http://127.0.0.1:7860/',
+ 'https://bbc80cb39aa58cc0.gradio.app')</code></pre>
+</div>
+</div>
+<ul>
+<li>Still the best way of creating app for inference is to use Hugginface platform with help of gradio.</li>
+<li>Here is the app that classify bears types based the <code>.pkl</code> file we created from our model we trained: <a href="https://huggingface.co/spaces/Smail/b-Class">Here</a></li>
+</ul>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script type="application/vnd.jupyter.widget-state+json">
+{"0b21ed6086b54069988011dee67aacce":{"model_module":"@jupyter-widgets/controls","model_module_version":"1.5.0","model_name":"HBoxModel","state":{"_dom_classes":[],"_model_module":"@jupyter-widgets/controls","_model_module_version":"1.5.0","_model_name":"HBoxModel","_view_count":null,"_view_module":"@jupyter-widgets/controls","_view_module_version":"1.5.0","_view_name":"HBoxView","box_style":"","children":["IPY_MODEL_d0f77fcf10294829a65c399f8a6ec638","IPY_MODEL_d6801c2e7df34829835a2879c1703b98","IPY_MODEL_97cecf73ce83476d95637271919c66ce"],"layout":"IPY_MODEL_d20e6502dedb495ab12a96415ae14903"}},"1bdbe0f56c9c4e0cbf4db380ff33945e":{"model_module":"@jupyter-widgets/base","model_module_version":"1.2.0","model_name":"LayoutModel","state":{"_model_module":"@jupyter-widgets/base","_model_module_version":"1.2.0","_model_name":"LayoutModel","_view_count":null,"_view_module":"@jupyter-widgets/base","_view_module_version":"1.2.0","_view_name":"LayoutView","align_content":null,"align_items":null,"align_self":null,"border":null,"bottom":null,"display":null,"flex":null,"flex_flow":null,"grid_area":null,"grid_auto_columns":null,"grid_auto_flow":null,"grid_auto_rows":null,"grid_column":null,"grid_gap":null,"grid_row":null,"grid_template_areas":null,"grid_template_columns":null,"grid_template_rows":null,"height":null,"justify_content":null,"justify_items":null,"left":null,"margin":null,"max_height":null,"max_width":null,"min_height":null,"min_width":null,"object_fit":null,"object_position":null,"order":null,"overflow":null,"overflow_x":null,"overflow_y":null,"padding":null,"right":null,"top":null,"visibility":null,"width":null}},"39355cbb74684db59363c0aa721f2c85":{"model_module":"@jupyter-widgets/base","model_module_version":"1.2.0","model_name":"LayoutModel","state":{"_model_module":"@jupyter-widgets/base","_model_module_version":"1.2.0","_model_name":"LayoutModel","_view_count":null,"_view_module":"@jupyter-widgets/base","_view_module_version":"1.2.0","_view_name":"LayoutView","align_content":null,"align_items":null,"align_self":null,"border":null,"bottom":null,"display":null,"flex":null,"flex_flow":null,"grid_area":null,"grid_auto_columns":null,"grid_auto_flow":null,"grid_auto_rows":null,"grid_column":null,"grid_gap":null,"grid_row":null,"grid_template_areas":null,"grid_template_columns":null,"grid_template_rows":null,"height":null,"justify_content":null,"justify_items":null,"left":null,"margin":null,"max_height":null,"max_width":null,"min_height":null,"min_width":null,"object_fit":null,"object_position":null,"order":null,"overflow":null,"overflow_x":null,"overflow_y":null,"padding":null,"right":null,"top":null,"visibility":null,"width":null}},"4c9934553f454701ba1435c365dbfea4":{"model_module":"@jupyter-widgets/base","model_module_version":"1.2.0","model_name":"LayoutModel","state":{"_model_module":"@jupyter-widgets/base","_model_module_version":"1.2.0","_model_name":"LayoutModel","_view_count":null,"_view_module":"@jupyter-widgets/base","_view_module_version":"1.2.0","_view_name":"LayoutView","align_content":null,"align_items":null,"align_self":null,"border":null,"bottom":null,"display":null,"flex":null,"flex_flow":null,"grid_area":null,"grid_auto_columns":null,"grid_auto_flow":null,"grid_auto_rows":null,"grid_column":null,"grid_gap":null,"grid_row":null,"grid_template_areas":null,"grid_template_columns":null,"grid_template_rows":null,"height":null,"justify_content":null,"justify_items":null,"left":null,"margin":null,"max_height":null,"max_width":null,"min_height":null,"min_width":null,"object_fit":null,"object_position":null,"order":null,"overflow":null,"overflow_x":null,"overflow_y":null,"padding":null,"right":null,"top":null,"visibility":null,"width":null}},"4fd4b0427ca5463abffbcf8a6426ddfe":{"model_module":"@jupyter-widgets/controls","model_module_version":"1.5.0","model_name":"ProgressStyleModel","state":{"_model_module":"@jupyter-widgets/controls","_model_module_version":"1.5.0","_model_name":"ProgressStyleModel","_view_count":null,"_view_module":"@jupyter-widgets/base","_view_module_version":"1.2.0","_view_name":"StyleView","bar_color":null,"description_width":""}},"97cecf73ce83476d95637271919c66ce":{"model_module":"@jupyter-widgets/controls","model_module_version":"1.5.0","model_name":"HTMLModel","state":{"_dom_classes":[],"_model_module":"@jupyter-widgets/controls","_model_module_version":"1.5.0","_model_name":"HTMLModel","_view_count":null,"_view_module":"@jupyter-widgets/controls","_view_module_version":"1.5.0","_view_name":"HTMLView","description":"","description_tooltip":null,"layout":"IPY_MODEL_1bdbe0f56c9c4e0cbf4db380ff33945e","placeholder":"​","style":"IPY_MODEL_eff54551da2b4093b63095434a2bdeb6","value":" 44.7M/44.7M [00:00&lt;00:00, 176MB/s]"}},"d0f77fcf10294829a65c399f8a6ec638":{"model_module":"@jupyter-widgets/controls","model_module_version":"1.5.0","model_name":"HTMLModel","state":{"_dom_classes":[],"_model_module":"@jupyter-widgets/controls","_model_module_version":"1.5.0","_model_name":"HTMLModel","_view_count":null,"_view_module":"@jupyter-widgets/controls","_view_module_version":"1.5.0","_view_name":"HTMLView","description":"","description_tooltip":null,"layout":"IPY_MODEL_39355cbb74684db59363c0aa721f2c85","placeholder":"​","style":"IPY_MODEL_ed5f8590dbdf48408fa202f44d1a83b9","value":"100%"}},"d20e6502dedb495ab12a96415ae14903":{"model_module":"@jupyter-widgets/base","model_module_version":"1.2.0","model_name":"LayoutModel","state":{"_model_module":"@jupyter-widgets/base","_model_module_version":"1.2.0","_model_name":"LayoutModel","_view_count":null,"_view_module":"@jupyter-widgets/base","_view_module_version":"1.2.0","_view_name":"LayoutView","align_content":null,"align_items":null,"align_self":null,"border":null,"bottom":null,"display":null,"flex":null,"flex_flow":null,"grid_area":null,"grid_auto_columns":null,"grid_auto_flow":null,"grid_auto_rows":null,"grid_column":null,"grid_gap":null,"grid_row":null,"grid_template_areas":null,"grid_template_columns":null,"grid_template_rows":null,"height":null,"justify_content":null,"justify_items":null,"left":null,"margin":null,"max_height":null,"max_width":null,"min_height":null,"min_width":null,"object_fit":null,"object_position":null,"order":null,"overflow":null,"overflow_x":null,"overflow_y":null,"padding":null,"right":null,"top":null,"visibility":null,"width":null}},"d6801c2e7df34829835a2879c1703b98":{"model_module":"@jupyter-widgets/controls","model_module_version":"1.5.0","model_name":"FloatProgressModel","state":{"_dom_classes":[],"_model_module":"@jupyter-widgets/controls","_model_module_version":"1.5.0","_model_name":"FloatProgressModel","_view_count":null,"_view_module":"@jupyter-widgets/controls","_view_module_version":"1.5.0","_view_name":"ProgressView","bar_style":"success","description":"","description_tooltip":null,"layout":"IPY_MODEL_4c9934553f454701ba1435c365dbfea4","max":46830571,"min":0,"orientation":"horizontal","style":"IPY_MODEL_4fd4b0427ca5463abffbcf8a6426ddfe","value":46830571}},"ed5f8590dbdf48408fa202f44d1a83b9":{"model_module":"@jupyter-widgets/controls","model_module_version":"1.5.0","model_name":"DescriptionStyleModel","state":{"_model_module":"@jupyter-widgets/controls","_model_module_version":"1.5.0","_model_name":"DescriptionStyleModel","_view_count":null,"_view_module":"@jupyter-widgets/base","_view_module_version":"1.2.0","_view_name":"StyleView","description_width":""}},"eff54551da2b4093b63095434a2bdeb6":{"model_module":"@jupyter-widgets/controls","model_module_version":"1.5.0","model_name":"DescriptionStyleModel","state":{"_model_module":"@jupyter-widgets/controls","_model_module_version":"1.5.0","_model_name":"DescriptionStyleModel","_view_count":null,"_view_module":"@jupyter-widgets/base","_view_module_version":"1.2.0","_view_name":"StyleView","description_width":""}}}
+</script>
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+    const viewSource = window.document.getElementById('quarto-view-source') ||
+                       window.document.getElementById('quarto-code-tools-source');
+    if (viewSource) {
+      const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
+      viewSource.addEventListener("click", function(e) {
+        if (sourceUrl) {
+          // rstudio viewer pane
+          if (/\bcapabilities=\b/.test(window.location)) {
+            window.open(sourceUrl);
+          } else {
+            window.location.href = sourceUrl;
+          }
+        } else {
+          const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
+          modal.show();
+        }
+        return false;
+      });
+    }
+    function toggleCodeHandler(show) {
+      return function(e) {
+        const detailsSrc = window.document.querySelectorAll(".cell > details > .sourceCode");
+        for (let i=0; i<detailsSrc.length; i++) {
+          const details = detailsSrc[i].parentElement;
+          if (show) {
+            details.open = true;
+          } else {
+            details.removeAttribute("open");
+          }
+        }
+        const cellCodeDivs = window.document.querySelectorAll(".cell > .sourceCode");
+        const fromCls = show ? "hidden" : "unhidden";
+        const toCls = show ? "unhidden" : "hidden";
+        for (let i=0; i<cellCodeDivs.length; i++) {
+          const codeDiv = cellCodeDivs[i];
+          if (codeDiv.classList.contains(fromCls)) {
+            codeDiv.classList.remove(fromCls);
+            codeDiv.classList.add(toCls);
+          } 
+        }
+        return false;
+      }
+    }
+    const hideAllCode = window.document.getElementById("quarto-hide-all-code");
+    if (hideAllCode) {
+      hideAllCode.addEventListener("click", toggleCodeHandler(false));
+    }
+    const showAllCode = window.document.getElementById("quarto-show-all-code");
+    if (showAllCode) {
+      showAllCode.addEventListener("click", toggleCodeHandler(true));
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/iSmailTG\.github\.io\/Lifelong-Learner\.github\.io\/");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+            // target, if specified
+            link.setAttribute("target", "_blank");
+            if (link.getAttribute("rel") === null) {
+              link.setAttribute("rel", "noopener");
+            }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>© 2025 Ismail TG. Learning in public.</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item">
+    <a class="nav-link" href="../../index.xml">
+<p>RSS</p>
+</a>
+  </li>  
+</ul>
+    </div>
+  </div>
+</footer>
+
+
+
+
+<script src="../../site_libs/quarto-html/zenscroll-min.js"></script>
+</body></html>
