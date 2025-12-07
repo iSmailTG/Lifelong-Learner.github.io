@@ -6,6 +6,8 @@ int main()
 {
   cout << "last week";
   cout << endl;
+  cout << "today";
+
 
   return 0;
 }
