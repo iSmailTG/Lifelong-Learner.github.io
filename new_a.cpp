@@ -8,6 +8,7 @@ int main()
   cout << endl;
   cout << "last";
   cout << "thing";
+  cout << "today";
 
   return 0;
 }
