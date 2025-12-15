@@ -6,6 +6,7 @@ int main()
 {
   cout << "cleaning room";
   cout << "part 1";
+  cout <<  endl;
 
 
   return 0;
