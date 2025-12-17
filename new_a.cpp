@@ -9,6 +9,7 @@ int main()
   cout << "last";
   cout << "thing";
   cout << "today";
+  cout << "."
   cout << endl;
 
   return 0;
