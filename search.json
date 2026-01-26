@@ -32,14 +32,21 @@
     "href": "projects.html",
     "title": "Projects",
     "section": "",
-    "text": "Description: Fine-tuned a small language model on the Manim dataset using instruction tuning methodology. The model generates executable Manim code that produces mathematical animations from natural language descriptions.\nTechnologies: - LLM Fine-tuning - Instruction Tuning - Code Generation - Manim\nStatus: Completed\nView Project"
+    "text": "Description: Fine-tuned a small language model on the Manim dataset using instruction tuning methodology. The model generates executable Manim code that produces mathematical animations from natural language descriptions.\nTechnologies: - LLM Fine-tuning - Instruction Tuning - Code Generation - Manim\nStatus: Completed\nView Project\n\n\n\nDecription: todo\nTechnologies: - PyTorch - CUDA - VLLM\nStatus: working"
   },
   {
     "objectID": "projects.html#featured-project",
     "href": "projects.html#featured-project",
     "title": "Projects",
     "section": "",
-    "text": "Description: Fine-tuned a small language model on the Manim dataset using instruction tuning methodology. The model generates executable Manim code that produces mathematical animations from natural language descriptions.\nTechnologies: - LLM Fine-tuning - Instruction Tuning - Code Generation - Manim\nStatus: Completed\nView Project"
+    "text": "Description: Fine-tuned a small language model on the Manim dataset using instruction tuning methodology. The model generates executable Manim code that produces mathematical animations from natural language descriptions.\nTechnologies: - LLM Fine-tuning - Instruction Tuning - Code Generation - Manim\nStatus: Completed\nView Project\n\n\n\nDecription: todo\nTechnologies: - PyTorch - CUDA - VLLM\nStatus: working"
+  },
+  {
+    "objectID": "projects.html#view-project",
+    "href": "projects.html#view-project",
+    "title": "Projects",
+    "section": "View Project",
+    "text": "View Project"
   },
   {
     "objectID": "projects.html#learning-journey",
