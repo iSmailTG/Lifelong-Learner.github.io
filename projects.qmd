@@ -19,6 +19,18 @@ subtitle: "Machine Learning and Deep Learning Projects"
 
 [View Project](posts/Manim-Project/Blog_0.ipynb)
 
+### Inference project end-2-end
+
+**Decription:** todo
+
+**Technologies:**
+- PyTorch
+- CUDA
+- VLLM
+
+**Status:** working
+
+[View Project](posts/vllm/LESSON_1_ROADMAP.md)
 ---
 
 ## Learning Journey
